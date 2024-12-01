@@ -7,14 +7,14 @@
 can also use ~verbatim~ or =code=. Use +strikethrough+ if
 needed.[fn:org-manual][fn:publish]
 
-**** HTML snippet:
+** HTML snippet:
      #+BEGIN_SRC html
        <html>
          <h1></h1>
        </html>
      #+END_SRC
 
-**** Python snippet with line numbers:
+** Python snippet with line numbers:
      #+BEGIN_SRC python -n
        from contextlib import contextmanager
 
@@ -28,47 +28,47 @@ needed.[fn:org-manual][fn:publish]
            print("foo")
      #+END_SRC
 
-**** Emacs Lisp snippet
+** Emacs Lisp snippet
      #+BEGIN_SRC emacs-lisp
        (message "foo-bar")
      #+END_SRC
 
-**** Github Gist:
+** Github Gist:
      #+HTML:  <script src="https://gist.github.com/psachin/97708deb39aa60484c95a9df6f535ba6.js"></script>
 
-**** Gitlab Snippet
+** Gitlab Snippet
      #+HTML: <script src="https://gitlab.com/snippets/1790218.js"></script>
 
-**** Below is the content of =.gitlab-ci.yml=:
+** Below is the content of =.gitlab-ci.yml=:
      #+INCLUDE: "../.gitlab-ci.yml" src conf
 
-**** Center aligned image with no border:
+** Center aligned image with no border:
      #+ATTR_HTML: :class center no-border
      [[../images/posts/template/Spring19-fan-of-fsf.png]]
 
-**** Image with Black border:
+** Image with Black border:
      #+ATTR_HTML: :class black-border
      [[../images/posts/template/Spring19-fan-of-fsf.png]]
-**** Image with spaced border:
+** Image with spaced border:
      #+ATTR_HTML: :class spaced-border
      [[../images/posts/template/Spring19-fan-of-fsf.png]]
-**** Image with rounded corners:
+** Image with rounded corners:
      #+ATTR_HTML: :class rounded-border
      [[../images/posts/template/Spring19-fan-of-fsf.png]]
 
-**** Image with rounded corners and border:
+** Image with rounded corners and border:
      #+ATTR_HTML: :class rounded-border black-border
      [[../images/posts/template/Spring19-fan-of-fsf.png]]
 
-**** Image with Caption:
+** Image with Caption:
      #+CAPTION: Fan of FSF
      [[../images/posts/template/Spring19-fan-of-fsf.png]]
 
-**** Image with 40% width:
+** Image with 40% width:
      #+ATTR_HTML: :width 40% :height
      [[../images/posts/template/Spring19-fan-of-fsf.png]]
 
-**** Table:
+** Table:
 
      #+ATTR_HTML: :align center
      #+ATTR_HTML: :align |c|c|

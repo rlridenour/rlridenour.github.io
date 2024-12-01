@@ -1,0 +1,9 @@
+#+TITLE: Still Cancer Free in 2023
+#+draft: false
+#+tags[]: 
+#+date: <2023-07-26 Wed>
+#+lastmod: 2023-08-02T10:56:27
+#+mathjax: 
+#+setupfile: ../org-templates/post.org
+
+Yesterday, I had my semi-annual exam with my oncologist. All the tests came back negative, and I feel better than I have in years.

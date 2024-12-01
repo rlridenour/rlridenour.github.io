@@ -1,0 +1,24 @@
+#+TITLE: Fixing a HomePod Stuck in Configuration
+#+draft: false
+#+tags[]: apple
+#+date: <2023-12-26 Tue>
+#+lastmod: 2023-12-26T11:13:44
+#+mathjax: 
+#+setupfile: ../org-templates/post.org
+
+I've had a HomePod Mini in my home office for about six months now that has been working great. I'm really impressed with the audio produced by such a small speaker. I've been wanting another one to try out a stereo pair, so I put it on my Christmas list. Installing the first one was simple, but installing the second was frustrating. I connected it to power, and scanned the light with my iPhone. The HomePod went through a set-up process, offered to pair to the first, but the stereo pairing never worked. I noticed that the Home app said that the new HomePod was being configured and full functionality would be available shortly, but it never finished. I also notice that the old HomePod was on version 17.2 of the HomePod software, but the new one was still on version 16.0. So, as one does in such cases, I turned to the Internet for solutions. Evidently, this is a common problem, especially with HomePods on version 16.0 of the software. and here are some of the potential solutions that I found.
+
+- Unplug for at least ten seconds, then reconnect to power. The HomePod should update. (It didn't).
+- Change your location setting in iCloud to something else, update the HomePod, and then change the location to the original setting. (I found that you can't change your location setting until you first cancel Apple One and other subscriptions, which I did not want to until I was absolutely desperate.)
+- Install the HomePod into a temporary new home in the Home app.
+- Connect the new HomePod to a Mac and update in the Finder.
+
+A combination of the last two worked. Here are the steps that I remember doing, if you ever find yourself in the same position:
+
+1. Connect the HomePod to a Mac. Select it when it shows up in the Finder sidebar, and choose to restore it. It will then update to the latest version of the software.
+2. Remove the old HomePod from the Home app by selecting it in the Home app, selecting "Reset HomePod...", and then selecting "Remove Accessory". (I don't know if this was necessary, but it's what I did.)
+3. Add a new home in the Home app by first clicking on the circle with three little dots inside in the top right corner. In the "Home Settings" page, you'll find "Add Home" in the top left. Name it anything you like.
+4. Add the new HomePod to the new home. After the installation process is finally complete, move the new HomePod to the old home, by selecting the HomePod and choosing "Remove Accessory".
+5. Add the new HomePod to the original home. Then, I added the old Homepod as a stereo pair. After everything was working, I then deleted the new temporary home from the Home app.
+
+Hope this helps someone.

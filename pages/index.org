@@ -1,6 +1,6 @@
-#+title: Sample Post
+#+title: Home
 #+setupfile: ../org-templates/post.org
-
+#+options: title:nil
 
 ** Recent Posts
 

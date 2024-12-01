@@ -1,0 +1,9 @@
+#+TITLE: Emacs From Scratch
+#+draft: false
+#+tags[]: emacs 
+#+date: <2023-04-16 Sun>
+#+lastmod: 2023-06-01T19:28:52
+#+mathjax: 
+#+setupfile: ../org-templates/post.org
+
+Trying out a new Emacs config from scratch. This is a test of all of my Hugo functions.

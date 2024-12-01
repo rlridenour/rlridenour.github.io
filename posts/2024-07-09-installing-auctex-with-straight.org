@@ -1,0 +1,9 @@
+#+TITLE: Installing Auctex with Straight
+#+draft: false
+#+tags[]: emacs latex 
+#+date: [2024-07-09 Tue]
+#+lastmod: 2024-08-01T11:11:13
+#+mathjax: 
+#+setupfile: ../org-templates/post.org
+
+Auctex suddenly stopped loading yesterday. I saw hints that a makefile now had to be run, but I wasn't sure where. I install packages using straight.el, which has a build and a repos directory. Running "make" in the straight/repos/auctex directory fixed everything.

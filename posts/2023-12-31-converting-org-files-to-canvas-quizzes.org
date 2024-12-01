@@ -1,0 +1,133 @@
+#+TITLE: Converting Org Files to Canvas Quizzes
+#+draft: false
+#+tags[]: org education canvas
+#+date: <2024-05-24 Fri>
+#+lastmod: 2024-05-24T05:55:06
+#+mathjax: 
+#+setupfile: ../org-templates/post.org
+
+Oklahoma Baptist University, like many others, uses [[https://www.instructure.com][Canvas]] for a Learning Management System. There are many things I like about Canvas, but creating quizzes is not one of them. It is very difficult to do without constantly using the mouse, something that I find irritating and inefficient.
+
+Before we used Canvas, we used [[https://moodle.org][Moodle]]. One of the features that I really liked about Moodle was the ability to write tests in a simple format ([[https://docs.moodle.org/403/en/GIFT_format][GIFT]]) using a text editor that could be imported into the LMS. Canvas, on the other hand, can import QTI files, which can be created with a text editor, but, unfortunately, QTI is not a simple format. QTI files are fairly complex XML files. One of my projects this January was to write something to convert a simple text file to the QTI format needed for Canvas. Since I use Emacs, Org mode is the natural file type to use. The more that I looked into the QTI format, the more I realized that this is a project best left to the summer, not the short time between the Fall and Spring semesters. Still, my research revealed some other options:
+
+- Geoffrey Poore's [[https://github.com/gpoore/text2qti][text2qti]] converts Markdown files into QTI format quizzes. This would probably be the smart thing to use. I'll experiment with it over the next few weeks.
+- The [[https://canconvert.k-state.edu/qti/][Classic to Canvas Converter]] provided by Kansas State. This inputs a CSV file created with a spreadsheet, and outputs a QTI file that can imported into Canvas. It works well, using [[https://dl.sps.northwestern.edu/canvas/2021/06/add-quiz-questions-to-canvas-by-converting-csv-files-to-qti-zip-files/][these instructions]] provided by the Northwestern University School of Professional Studies.
+- The [[https://www.nyit.edu/its/canvas_exam_converter][Canvas Exam Converter]] provided by the New York Institute of Technology. This has a text field in which can be pasted simply formatted text for the following question types: multiple choice, multiple answers, short answer, essay, and file upload. The tool checks for syntax errors, then converts the text to a QTI file and automatically downloads it.
+
+In the end, I'll probably use text2qti, but for now, I've opted for the Canvas Exam Converter. I mostly use multiple choice and essay questions on my Canvas quizzes, but have occasionally also used multiple answer questions. So. the Canvas Exam Converter is more than enough for my needs. Here is an example using each of the five question types that the converter allows: 
+
+#+begin_example 
+1. Multiple choice question (single correct answer)
+a) Wrong
+b) Wrong
+*c) Right
+d) Wrong
+
+2. Multiple choice question (several correct answers)
+[*] Right
+[ ] Wrong
+[*] Right
+[ ] Wrong
+
+3. Short answer question
+,* Acceptable answer
+,* Another acceptable answer
+
+4. Essay question
+####
+
+5. File upload question
+^^^^
+#+end_example
+
+
+Now, this would be very simple to just type from scratch. Note that it is just a list with different styles of bullets for different kinds of questions, and Org mode is a very good tool for quickly creating lists. Org mode offers different options for the list indicators, and for each list type that converter requires, there is something very close to it in Org mode. To cycle through all of the options, put the point on a list item and enter ~C-c <right>~. So, here's the Org text that I decided to use:
+
+#+begin_example
+1. Multiple choice question (single correct answer)
+   a) Wrong
+   b) Wrong
+   c) Right*
+   d) Wrong
+2. Multiple answer question (several correct answers)
+   - [X] Right
+   - [ ] Wrong
+   - [X] Right
+   - [ ] Wrong
+3. Short answer question
+   + Acceptable answer
+   + Another acceptable answer
+4. Essay question
+   - ####
+5. File upload question
+   - ^^^^
+#+end_example
+
+The first thing to do is to allow letters for numbered lists in Org mode.[fn:1]  This is done by adding this to the init file:
+
+#+begin_src emacs-lisp
+(setq org-list-allow-alphabetical t)
+#+end_src
+
+Note that the correct answer to a multiple choice question is marked with an asterisk at the end of the option. Now, I just needed to do a few things, each accomplished easily with a regex search and replace:
+
+1. Remove the hyphens.
+2. Move the asterisk from the end of the correct multiple choice answer to the before the list item letter.
+3. Change each short answer "+" bullet to an asterisk.
+4. Change the multiple answer correct answer indicator to an asterisk.
+5. Remove the whitespace from the beginning of each line
+6. Add a blank line between each question.
+
+I'm sure that the third and fourth steps can be combined. For various reasons the converter didn't like the blank lines at the beginning and the end, so I added a couple of steps to delete those. Initially, I had all of these replacements done on the text in the original buffer, requiring me to undo everything if I wanted to add something to the quiz. So, I decided it would be best to copy the Org text to a temp buffer, perform the replacements in the temp buffer, and copy the result to the clipboard ready to paste into the converter. To make things even easier, I have the function open the converter page in my default browser. In the end, the conversion function looks like this:
+
+#+begin_src emacs-lisp
+  (defun convert-qti-nyit ()
+    (interactive)
+    ;; Copy all to a temp buffer and set to text mode.
+    (let ((old-buffer (current-buffer)))
+      (with-temp-buffer
+	(insert-buffer-substring old-buffer)
+	(text-mode)
+	;; convert multiple correct answer and essay questions
+	(beginning-of-buffer)
+	(while (re-search-forward "-" nil t)
+	  (replace-match ""))
+	;; Change correct multiple answer options to "*"
+	(beginning-of-buffer)
+(let ((case-fold-search nil))
+	(while (re-search-forward "\[X\]" nil t)
+	  (replace-match "*")))
+	;; Mark short answer responses with "**"
+	(beginning-of-buffer)
+	(while (re-search-forward "+" nil t)
+	  (replace-match "*"))
+	;; remove whitespace at beginning of lines
+	(beginning-of-buffer)
+	(while (re-search-forward "^\s-*" nil t)
+	  (replace-match ""))
+	(beginning-of-buffer)
+	(while (re-search-forward "\\([0-9]\\)" nil t)
+	  (replace-match "\n\\1"))
+	;; move correct answer symbol to beginning of line
+	(beginning-of-buffer)
+	(while (re-search-forward "\\(^.*\\)\\(\*$\\)" nil t)
+	  (replace-match "\*\\1"))
+	(delete-trailing-whitespace)
+	;; delete empty line at end and beginning
+	(end-of-buffer)
+	(delete-char -1)
+	(beginning-of-buffer)
+	(kill-line)
+	;; Copy result to clipboard
+	(clipboard-kill-ring-save (point-min) (point-max))
+	)
+      )
+    (browse-url "https://www.nyit.edu/its/canvas_exam_converter")
+    )
+#+end_src
+
+The file generated by the converter has to be compressed to a zip file before uploading the Canvas. In Mac OS, that's done with a right-click on the file in the Finder and choosing the compress option. An advantage to using text2qti is that the conversion and compression could be automated using a shell script. Maybe that will be tomorrow's project.
+
+* Footnotes
+
+[fn:1] I didn't realize this was possible at first. I initially used a numbered list for the multiple choice answers, then did five separate regex replaces, changing "1)" to "a)" and so on through "5)" to "e)", and just resigned myself to adding any other options in Canvas itself. Changing the value of ~setq org-list-allow-alphabetical~ to ~t~ simplifies the conversion function and allows for an arbitrary number of answer options.

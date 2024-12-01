@@ -1,0 +1,67 @@
+#+TITLE: Beamer Article and Org Mode
+#+draft: false
+#+tags[]: org latex 
+#+date: <2024-07-04 Thu>
+#+lastmod: 2024-07-05T09:52:46
+#+mathjax: 
+#+setupfile: ../org-templates/post.org
+
+I generate LaTeX Beamer lecture slides and handouts from a single Org mode data file.[fn:1] The handouts include the information on the slides plus some extra explanation. I like to draw a box around the slide information so that students can easily differentiate the slides from the notes. I have scripts that export the Org file, generate the LaTeX files, then create the PDF's. Everything seemed to work well so far, or at least I hadn't noticed anything that wasn't working. I'm teaching a course this summer that covers the same material in one day that I usually cover in three days during a regular semester. Ordinarily, I structure the presentation using only sections and slides, but stitching three of them together required adding subsections to keep everything clear. Adding subsections shouldn't have been a problem, it's just a matter of changing one line in the Org header from
+
+#+begin_src org
+,#+OPTIONS: H:3
+#+end_src
+
+to
+
+#+begin_src org
+,#+OPTIONS: H:2
+#+end_src
+
+Unfortunately, this messed up the nice boxes around the slide material on the handouts. Suddenly, the boxes had completely disappeared. I didn't understand why until I started looking at the LaTeX files. It turned out that I had been using tcolorbox to draw boxes around every block environment. Once I made the change, the slides were in a frame environment on the handouts, as they should have been. Easy fix, or so I thought — just change "block" to "frame" in the tcolorbox command. That brought the boxes back, but only around the slide titles, not around the slide contents.
+
+After many completely unproductive Internet searches, I stumbled on the problem. Org Beamer exports a slide to this LaTeX code:
+
+#+begin_src tex
+  \begin{frame}[label]{Slide Title}
+    Slide contents
+  \end{frame}
+#+end_src
+
+This is fine for everything except my lecture handouts. I found that a small change to the LaTeX file completely fixed everything, though. All I needed to do was to change the frame environment to look like this:
+
+#+begin_src tex
+  \begin{frame}[label]
+    \frametitle{Slide Title}
+    Slide contents
+  \end{frame}
+#+end_src
+
+Now, the problem was getting Org mode to export the subtree to look like that. After many, many more unproductive Internet searches, I learned that new Org exports could be made from pre-existing ones using org-export-define-derived-backend. Unfortunately, I couldn't get it to work. Finally, it struck me that since I only needed to use frametitle for the handouts, a simple search and replace might be best. Adding this function to my compilation script worked:
+
+#+begin_src lisp
+  (defun rlr/create-frametitle ()
+    "Convert title to frametitle."
+    (interactive)
+    (goto-char 1)
+    (while (ignore-errors
+	     (re-search-forward "begin{frame}.*]"))
+      (insert "\n \\frametitle"))
+    )
+#+end_src
+
+This finds a line containing "begin{frame}", moves the point after the closing bracket of the label, inserts a new line then puts "\frametitle" before the slide title.
+
+Here's the simple tcolorbox commands that go in the header:
+
+#+begin_src org
+#+LaTeX_HEADER: \usepackage{tcolorbox}
+#+LaTeX_HEADER: \mode<article>{\setbeamertemplate{frame begin}{\begin{tcolorbox}[colback=white, colframe=gray,]} \setbeamertemplate{frame end}{\end{tcolorbox}}}
+#+end_src
+
+Simple enough, and only took four days....
+
+
+* Footnotes
+
+[fn:1] I sketched out the process I use in [[https://randyridenour.net/posts/2020-06-01-beamer-presentations-with-org-mode/][this post]] from 2020. I've changed a few things since then, but the basic strategy is the same.

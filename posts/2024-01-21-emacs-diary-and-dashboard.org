@@ -1,0 +1,126 @@
+#+TITLE: Org, Diary, and Dashboard
+#+draft: false
+#+tags[]: 
+#+date: <2024-01-24 Wed>
+#+lastmod: 2024-01-24T08:48:31
+#+mathjax: 
+#+setupfile: ../org-templates/post.org
+
+When I'm not in class, most of my time is spent at my desk, with stacks of books, writing in Emacs. I also have a tendency to lose track of time when I'm focused on a problem. So, it would be nice to have something in Emacs to remind me of the start times of meetings and classes. That sent me down a two-day rabbit hole exploring the Emacs diary and getting deeper into Org mode.
+
+I won't bother detailing all of the options that I tried, but here are the highlights:
+
+1. I first tried putting all of my appointments in Org mode. That seemed the natural thing to do, since I was already using it for task management. Unfortunately, I couldn't figure out how to do simple things like creating recurring appointments that ended by a certain date, much less complex ones like a class that meets every Tuesday and Thursday except for Spring Break, conference breaks, etc.
+2. I then explored using the diary. The [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Format-of-Diary-File.html][diary file]] has an extremely simple format; simple appointments are made just by listing the date, time, and appointment title on a line. Complex appointments are made by using special [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Special-Diary-Entries.html][sexp entries]], which allowed me to create the appointments for my courses. It is also very easy to display these appointments in org-agenda, which very conveniently marks the current time with a line across the agenda, providing a nice visual representation of the relative time before my next appointment. I didn't quite like how the appointments were displayed in emphasized text, but everything else worked great. A reminder pops up in the minibuffer several minutes before the appointment. The pop-up reminder soon disappears, but the modeline continues to list, and update, the number of minutes until the appointment.
+3. Finally, as I researched how to form complex sexp appointments, I saw that Org mode is able to use the sexp appointment format. So, it was back to Org mode. Here is what I used in the end.
+
+** Init Settings
+
+I created an agenda display for just the current day:
+
+#+begin_src lisp
+(setq org-agenda-custom-commands
+    '(("d" "Agenda for today" agenda ""
+	((org-agenda-overriding-header "Today's agenda")
+	 (org-agenda-span 'day)
+	))))
+#+end_src
+
+Next is to clear the existing appointment list when Emacs starts:
+
+#+begin_src lisp
+(setq appt-time-msg-list nil)
+#+end_src
+
+Then generate the appointment list from the Org agenda files and update it hourly:
+
+#+begin_src lisp
+(org-agenda-to-appt)
+(run-at-time "24:01" 3600 'org-agenda-to-appt)
+#+end_src
+
+Finally, update the appointment list every time that an agenda is viewed:
+
+#+begin_src lisp
+(add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
+#+end_src
+
+An alert is issued 12 minutes before every appointment. This can be changed with ~(setq appt-message-warning-time 'n)~, where ~n~ is the number of minutes desired. There are ways to generate system alerts using the [[https://github.com/spegoraro/org-alert][Org Alert]] package and others, but I only want something visible that counts down the time until I need to be somewhere. For this, the default appointment system works just fine.
+
+I use the [[https://github.com/emacs-dashboard/emacs-dashboard][Emacs Dashboard]] package. To display appointments, I found this function from [[https://github.com/KaratasFurkan][Furkan Karataş]] to insert the agenda view for the day:
+
+#+begin_src lisp
+(defun dashboard-insert-agenda (&rest _)
+  "Insert a copy of org-agenda buffer."
+  (insert (save-window-excursion
+            (org-agenda nil "d")
+            (prog1 (buffer-string)
+              (kill-buffer)))))
+#+end_src
+
+I don't need to see the time grid, just the current time and the appointment times:
+
+#+begin_src lisp
+(setq org-agenda-time-grid
+  '((daily today require-timed remove-match)
+    ()
+    "......"
+    ""))
+#+end_src
+
+
+** The Agenda File
+
+I have two separate agenda files, one for tasks and another for events. Here's how the event file is currently structured with an example or two in each category.
+
+#+begin_src org
+,* Birthdays and Anniversaries
+
+%%(org-anniversary 2019 12 19) Lucy's %d%s birthday
+
+,* Classes
+
+,** Intro 12:30-13:45
+<%%(and (memq (calendar-day-of-week date) '(2 4))
+   (diary-block 1 25 2024 5 10 2024)
+   (not (or
+        (diary-block 3 18 2024 3 22 2024)
+        (diary-date 3 29 2024))))>
+
+,* Recurring
+
+,** Edward 15:00
+<%%(memq (calendar-day-of-week date) '(3))>
+
+,* Future
+
+,** Total Eclipse <2024-04-08 Mon>
+,** Colloquium <2024-02-09 Fri 15:00>
+
+,* Past
+#+end_src
+
+All one-time appointments go under the future heading. Each appointment is simply a level-two heading that contains the appointment name and a timestamp. I haven't yet decided whether I'll later archive them or send them to "Past" with org-refile.
+
+The first example is for our dog's birthday. The "%d" prints the number and the "%s" adds the ordinal ending. So, the agenda for December 19, 2023 contained "Lucy's 4th birthday". I also have entries for family birthdays and anniversaries.
+
+The second example is one of my classes this semester. At first, I struggled with where to put the time, until I realized that it doesn't go in the sexp. Just put the appointment name and time in the sub-heading with the sexp below. In my file, I have the sexp formulas on one line, but I've split it up here to make it more readable. The first line means that this appointment is on Tuesdays and Thursdays. (Sunday=0, Monday=1, and so on.) The second line says that the appointment occurs only between January 25 and May 10, 2024, which are the beginning and end dates for our Spring semester. Conjoining these with "and" gives us all Tuesdays and Thursdays in the Spring semester. Next are lines with the exclusions, signified with "not". The first exclusion is a block for spring break, and the second is one day that classes are cancelled. Note that these are in the scope of an "or" operator, meaning that a date is excluded if it meets at least one of these conditions.
+
+The recurring section is for any recurring appointment that is not a class. Note that this could have been done with something like this, if the appointment never changes:
+
+#+begin_src org
+,** Edward <2024-01-24 Wed 15:00 +1w>
+#+end_src
+
+I used the slightly more complicated formula because we will probably not meet in the summer, so it will be easy to add an exception block to the sexp.
+
+Finally, I added an org-capture template for easily creating simple appointments:
+
+#+begin_src lisp
+("e" "Event" entry (file+headline "path to events.org" "Future")
+	   "** %? %T")
+#+end_src
+
+This creates the appointment entry with a timestamp and puts the mark where the appointment name will go.
+
+There are many examples that can be found online, but few were of the type that I needed to see. I hope this helps someone else.

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title>Blog Index</title>
+  <atom:link href="http://example.com/index.xml" rel="self" type="application/rss+xml" />
+  <link>http://example.com/</link>
+  <description><![CDATA[]]></description>
+  <language>en</language>
+  <pubDate>Sun, 01 Dec 2024 16:47:55 -0600</pubDate>
+  <lastBuildDate>Sun, 01 Dec 2024 16:47:55 -0600</lastBuildDate>
+  <generator>Emacs 29.4 Org-mode 9.8-pre</generator>
+  <webMaster>rlridenour@fastmail.com (Randy Ridenour)</webMaster>
+  <image>
+    <url>https://orgmode.org/img/org-mode-unicorn-logo.png</url>
+    <title>Blog Index</title>
+    <link>http://example.com/</link>
+  </image>
+
+  <ul class="org-ul">
+    <li><a href="http://example.com/2024-12-1-text-styles.html">Text Styles</a></li>
+    <li><a href="http://example.com/2024-07-09-installing-auctex-with-straight.html">Installing Auctex with Straight</a></li>
+    <li><a href="http://example.com/2024-07-04-beamer-article-and-org-mode.html">Beamer Article and Org Mode</a></li>
+    <li><a href="http://example.com/2023-12-31-converting-org-files-to-canvas-quizzes.html">Converting Org Files to Canvas Quizzes</a></li>
+    <li><a href="http://example.com/2024-01-21-emacs-diary-and-dashboard.html">Org, Diary, and Dashboard</a></li>
+    <li><a href="http://example.com/2023-12-26-fixing-a-homepod-stuck-in-configuration.html">Fixing a HomePod Stuck in Configuration</a></li>
+    <li><a href="http://example.com/2023-07-31-emacs-literate-config.html">Emacs Literate Config</a></li>
+    <li><a href="http://example.com/2023-07-26-still-cancer-free-in-2003.html">Still Cancer Free in 2023</a></li>
+    <li><a href="http://example.com/2023-04-16-emacs-from-scratch.html">Emacs From Scratch</a></li>
+    <li><a href="http://example.com/template.html">Sample Post</a></li>
+  </ul>
+</channel>
+</rss>

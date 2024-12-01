@@ -1,0 +1,31 @@
+/* Put your custom CSS rules here */
+
+.banner {
+    text-align: center;
+    /* border-bottom: 1px solid black; */
+    margin: 10px;
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline-block;
+    margin: 5px;
+}
+
+.banner a:link {
+    text-decoration: none;
+}
+
+.banner a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    text-align: center;
+}

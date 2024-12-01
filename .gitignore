@@ -9,3 +9,7 @@
 
 # Undo-tree save-files
 *.~undo-tree
+
+public/
+.gitlab-ci.yml
+disquss.inc

@@ -4,7 +4,7 @@
 <!-- Dec 01, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Blog Index</title>
+<title>Doom Native Compiler Error</title>
 <meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
@@ -52,29 +52,40 @@
 </header>
 <main id="content" class="content">
 <header>
-<h1 class="title">Blog Index</h1>
-</header><ul class="org-ul">
-<li><a href="2024-07-09-installing-auctex-with-straight.html">Installing Auctex with Straight</a></li>
-<li><a href="2024-07-04-beamer-article-and-org-mode.html">Beamer Article and Org Mode</a></li>
-<li><a href="2023-12-31-converting-org-files-to-canvas-quizzes.html">Converting Org Files to Canvas Quizzes</a></li>
-<li><a href="2024-01-21-emacs-diary-and-dashboard.html">Org, Diary, and Dashboard</a></li>
-<li><a href="2023-12-26-fixing-a-homepod-stuck-in-configuration.html">Fixing a HomePod Stuck in Configuration</a></li>
-<li><a href="2023-07-31-emacs-literate-config.html">Emacs Literate Config</a></li>
-<li><a href="2023-07-26-still-cancer-free-in-2003.html">Still Cancer Free in 2023</a></li>
-<li><a href="2023-04-16-emacs-from-scratch.html">Emacs From Scratch</a></li>
-<li><a href="2023-04-13-introduction-to-existentialism.html">Introduction to Existentialism</a></li>
-<li><a href="2023-04-13-indoctrinating-students.html">Indoctrinating Students</a></li>
-<li><a href="2023-02-06-fixing-emacs-doom-upgrade.html">Fixing Emacs Doom Upgrade</a></li>
-<li><a href="2023-02-06-doom-native-compiler-error.html">Doom Native Compiler Error</a></li>
-<li><a href="2023-02-05-testing-some-functions.html">Testing Some Functions</a></li>
-<li><a href="2023-02-05-new-hugo-functions.html">New Hugo Functions</a></li>
-<li><a href="2023-02-04-venn-diagrams-in-latex.html">Venn Diagrams in LaTeX</a></li>
-<li><a href="2023-02-01-list-spacing-in-org-mode-with-enumitem.html">List Spacing in Org Mode with Enumitem</a></li>
-<li><a href="2023-01-25-org-mode-footnotes-in-hugo.html">Org Mode Footnotes in Hugo</a></li>
-<li><a href="2023-01-24-updating-the-site.html">Updating the Site</a></li>
-<li><a href="2023-01-23-styling-arguments-in-org-mode.html">Styling Arguments in Org Mode</a></li>
-<li><a href="2023-01-21-arara-and-latexmk.html">Arara and Latexmk</a></li>
-</ul>
+<h1 class="title">Doom Native Compiler Error</h1>
+<p class="subtitle" role="doc-subtitle">Feb 06, 2023</p>
+</header><p>
+For those of us who live in Emacs, it&rsquo;s always a bad feeling when Emacs won&rsquo;t start, which happened to me today after upgrading my office Mac. I ran <code>doom doctor</code> which ran through a few checks and stopped with 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">There was an unexpected runtime error
+    Message: Native compiler error
+    Details: ((lambda (arg106 &amp;optional arg107 arg108) (let (...) (funcall f arg106 arg107 arg108))) <span class="org-string">"Compiling /Users/rlridenour/.emacs.d/.local/cache/eln/28.2-75f7b60d/subr--trampoline-72657175697265_require_0.eln...\nxcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun\nlibgccjit.so</span>
+</pre>
+</div>
+
+<p>
+followed by a bunch of incomprehensible (to me) nonsense. The important part being
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">invalid active developer path (/Library/Developer/CommandLineTools)
+</pre>
+</div>
+
+<p>
+I always forget that upgrading the OS usually necessitates upgrading the Command Line Developer Tools, so 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">xcode-select --install
+</pre>
+</div>
+
+<p>
+fixed everything.
+</p>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>

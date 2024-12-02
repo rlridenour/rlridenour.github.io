@@ -14,8 +14,8 @@
   <link>http://example.com/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Sun, 01 Dec 2024 16:47:55 -0600</pubDate>
-  <lastBuildDate>Sun, 01 Dec 2024 16:47:55 -0600</lastBuildDate>
+  <pubDate>Sun, 01 Dec 2024 19:58:22 -0600</pubDate>
+  <lastBuildDate>Sun, 01 Dec 2024 19:58:22 -0600</lastBuildDate>
   <generator>Emacs 29.4 Org-mode 9.8-pre</generator>
   <webMaster>rlridenour@fastmail.com (Randy Ridenour)</webMaster>
   <image>
@@ -25,7 +25,6 @@
   </image>
 
   <ul class="org-ul">
-    <li><a href="http://example.com/2024-12-1-text-styles.html">Text Styles</a></li>
     <li><a href="http://example.com/2024-07-09-installing-auctex-with-straight.html">Installing Auctex with Straight</a></li>
     <li><a href="http://example.com/2024-07-04-beamer-article-and-org-mode.html">Beamer Article and Org Mode</a></li>
     <li><a href="http://example.com/2023-12-31-converting-org-files-to-canvas-quizzes.html">Converting Org Files to Canvas Quizzes</a></li>
@@ -34,7 +33,18 @@
     <li><a href="http://example.com/2023-07-31-emacs-literate-config.html">Emacs Literate Config</a></li>
     <li><a href="http://example.com/2023-07-26-still-cancer-free-in-2003.html">Still Cancer Free in 2023</a></li>
     <li><a href="http://example.com/2023-04-16-emacs-from-scratch.html">Emacs From Scratch</a></li>
-    <li><a href="http://example.com/template.html">Sample Post</a></li>
+    <li><a href="http://example.com/2023-04-13-introduction-to-existentialism.html">Introduction to Existentialism</a></li>
+    <li><a href="http://example.com/2023-04-13-indoctrinating-students.html">Indoctrinating Students</a></li>
+    <li><a href="http://example.com/2023-02-06-fixing-emacs-doom-upgrade.html">Fixing Emacs Doom Upgrade</a></li>
+    <li><a href="http://example.com/2023-02-06-doom-native-compiler-error.html">Doom Native Compiler Error</a></li>
+    <li><a href="http://example.com/2023-02-05-testing-some-functions.html">Testing Some Functions</a></li>
+    <li><a href="http://example.com/2023-02-05-new-hugo-functions.html">New Hugo Functions</a></li>
+    <li><a href="http://example.com/2023-02-04-venn-diagrams-in-latex.html">Venn Diagrams in LaTeX</a></li>
+    <li><a href="http://example.com/2023-02-01-list-spacing-in-org-mode-with-enumitem.html">List Spacing in Org Mode with Enumitem</a></li>
+    <li><a href="http://example.com/2023-01-25-org-mode-footnotes-in-hugo.html">Org Mode Footnotes in Hugo</a></li>
+    <li><a href="http://example.com/2023-01-24-updating-the-site.html">Updating the Site</a></li>
+    <li><a href="http://example.com/2023-01-23-styling-arguments-in-org-mode.html">Styling Arguments in Org Mode</a></li>
+    <li><a href="http://example.com/2023-01-21-arara-and-latexmk.html">Arara and Latexmk</a></li>
   </ul>
 </channel>
 </rss>

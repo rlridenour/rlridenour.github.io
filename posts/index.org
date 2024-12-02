@@ -1,6 +1,5 @@
 #+TITLE: Blog Index
 
-- [[file:2024-12-1-text-styles.org][Text Styles]]
 - [[file:2024-07-09-installing-auctex-with-straight.org][Installing Auctex with Straight]]
 - [[file:2024-07-04-beamer-article-and-org-mode.org][Beamer Article and Org Mode]]
 - [[file:2023-12-31-converting-org-files-to-canvas-quizzes.org][Converting Org Files to Canvas Quizzes]]
@@ -9,4 +8,15 @@
 - [[file:2023-07-31-emacs-literate-config.org][Emacs Literate Config]]
 - [[file:2023-07-26-still-cancer-free-in-2003.org][Still Cancer Free in 2023]]
 - [[file:2023-04-16-emacs-from-scratch.org][Emacs From Scratch]]
-- [[file:template.org][Sample Post]]
+- [[file:2023-04-13-introduction-to-existentialism.org][Introduction to Existentialism]]
+- [[file:2023-04-13-indoctrinating-students.org][Indoctrinating Students]]
+- [[file:2023-02-06-fixing-emacs-doom-upgrade.org][Fixing Emacs Doom Upgrade]]
+- [[file:2023-02-06-doom-native-compiler-error.org][Doom Native Compiler Error]]
+- [[file:2023-02-05-testing-some-functions.org][Testing Some Functions]]
+- [[file:2023-02-05-new-hugo-functions.org][New Hugo Functions]]
+- [[file:2023-02-04-venn-diagrams-in-latex.org][Venn Diagrams in LaTeX]]
+- [[file:2023-02-01-list-spacing-in-org-mode-with-enumitem.org][List Spacing in Org Mode with Enumitem]]
+- [[file:2023-01-25-org-mode-footnotes-in-hugo.org][Org Mode Footnotes in Hugo]]
+- [[file:2023-01-24-updating-the-site.org][Updating the Site]]
+- [[file:2023-01-23-styling-arguments-in-org-mode.org][Styling Arguments in Org Mode]]
+- [[file:2023-01-21-arara-and-latexmk.org][Arara and Latexmk]]

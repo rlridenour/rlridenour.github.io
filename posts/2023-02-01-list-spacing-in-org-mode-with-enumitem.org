@@ -1,0 +1,26 @@
+#+TITLE: List Spacing in Org Mode with Enumitem
+#+draft: false
+#+filetags: org latex
+#+date: <2023-02-01 Wed>
+#+mathjax: 
+
+I like to use the LaTeX package enumitem to eliminate the spacing in lists. To do this globally, add the following to the Org mode headers:
+
+#+begin_src org
+#+LaTeX_HEADER: \usepackage{enumitem}
+#+LaTeX_HEADER: \setlist{nosep}
+#+end_src
+
+If you also don't want your lists to be indented, use 
+
+#+begin_src org
+#+LaTeX_HEADER: \setlist{nosep,wide}
+#+end_src
+
+These global options can be overridden for individual lists by putting something like this immediately before the list begins:
+
+#+begin_src org
+#+ATTR_LaTeX: :options [itemsep=1em]
+#+end_src
+
+This will put a space equal to the width of an upper-case "M" between each list item. 

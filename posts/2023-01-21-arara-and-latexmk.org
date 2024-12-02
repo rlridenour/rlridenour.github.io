@@ -1,0 +1,98 @@
+#+TITLE: Arara and Latexmk
+#+filetags: latex
+#+date: <2023-01-21 Sat>
+#+mathjax: false
+
+Compiling LaTeX documents can be a chore, especially if the document has a table of contents, bibliographic references, cross-references, or labels. Getting the final output an be up to a four-step process:
+
+1. Run pdflatex to to create the labels, table of contents, and undefined bibliographic references.
+2. Run bibtex or biber to get the relevant bibliographic data from the bib files.
+3. Run pdflatex to put that bibliographic data into the document
+4. Run pdflatex again to fix any page numbers that need to change because of the new material.
+
+** Latexmk
+
+Using Latexmk is a great way to automate all of this. Latexmk will do all of these steps as needed, you just need to tell what engine to use (pdfLaTeX, LuaLatex, XeLaTeX) and whether to run Bibtex or Biber. A pdfLaTeX document named "sample.tex" containing bibliographic references would be compiled from the command line like this:
+
+#+begin_src shell
+latexmk -pdflatex -bibtex sample.tex
+#+end_src
+
+There are many other options that can be used, making the command to compile even longer. Fortunately, these options can all be set in a latexmkrc file.
+
+#+begin_src shell
+# LaTeXmk configuration file
+
+# Usage example
+# latexmk file.tex
+
+# Main command line options
+# -pdflatex : compile with pdflatex
+# -lualatex : compile with lualatex
+# -pv       : run file previewer
+# -pvc      : run file previewer and continually recompile on change
+# -c        :
+# -C        :clean up auxiliary and output files
+
+# Use bibtex if a .bib file exists
+$bibtex_use = 1;
+
+# Define commands to compile with pdfsync support and nonstopmode
+$pdflatex = 'pdflatex -synctex=1 --interaction=nonstopmode %O %S';
+
+$lualatex = 'lualatex -synctex=1 --interaction=nonstopmode %O %S';
+
+# Also remove pdfsync files on clean
+$clean_ext = '%R.synctex.gz';
+#+end_src
+
+If you always use the same engine to compile, then you can add a line like this to your latexmkrc:
+
+#+begin_src shell
+$pdf_mode = n
+#+end_src
+
+where n=1 for pdflatex, 4 for lualatex, and 5 for xelatex. The compile command then becomes simply
+
+#+begin_src shell
+latexmk sample.tex
+#+end_src
+
+Since I use Emacs, I could just add latexmk to the list of TeX commands and compile documents with a simple keystroke. The problem is that I don't do the smart thing and use just one engine. I like to use pdflatex sometimes and lualatex for other documents. It would be nice if I could specify the compiling steps within the document.
+
+** Arara
+
+Here's where Arara shines. Arara is another way to compile tex files. Unlike latexmk, arara does not do anything automatically. Running
+
+#+begin_src shell
+arara sample.tex
+#+end_src
+
+doesn't do anything without some special instructions within the file. To compile the file with pdflatex, I would put this as the first line:
+
+#+begin_src
+% arara: pdflatex: { interaction: nonstopmode, synctex: yes }
+#+end_src
+
+Then, running arara on the file would compile once with pdflatex. If I had a bibliography and wanted to use lualatex, I would put this at the top of the file:
+
+#+begin_src
+% arara: lualatex: { interaction: nonstopmode, synctex: yes }
+% arara: biber
+% arara: lualatex: { interaction: nonstopmode, synctex: yes }
+% arara: lualatex: { interaction: nonstopmode, synctex: yes }
+#+end_src
+
+This would get all of the steps that I described above. So, I could compile any file with the same command, and have it compile exactly the way I wanted with the engine that I specified.
+
+The problem (and I admit it's a minor one) is that I lose the automation of latexmk. Latexmk does all of the steps automatically, and only /if/ they are needed. Arara does them all every time. Latexmk is smart, but not easily flexible. Arara is very flexible, but not very smart.
+
+** Solution
+
+Fortunately, arara can be told to compile with latexmk, and the engine and any options can be specified in the file. This compiles with latexmk using pdflatex:
+
+#+begin_src
+% arara: latexmk: { engine: pdflatex }
+#+end_src
+
+Since the options that I want are in my latexmkrc file, there's nothing else I need to do. Changing "pdflatex" to "lualatex" would make it compile with lualatex instead as many times as necessary to produce the final document.

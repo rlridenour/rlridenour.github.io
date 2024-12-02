@@ -1,0 +1,126 @@
+#+TITLE: Updating the Site
+#+draft: false
+#+filetags: hugo emacs org
+#+date: <2023-01-24 Tue>
+#+mathjax:  
+
+I've had trouble getting verified as an educator with GitLab. After getting some notification from them that the "ultimate" status was being downgraded on my site project (not that it really would have mattered for this, since it's a public repository), I decided to move it to GitHub, where I've had it before. I had moved it to GitLab because GitLab would do the Hugo build for me after I pushed the updated content to them. In the past, GitHub would build a Jekyll site, but any others needed to be built locally. So, I was pleasantly surprised to see that I could set up a Hugo build on GitHub now. Unfortunately, I couldn't get it to work reliably. What did work exceptionally well is to connect the repository to [[https://www.netlify.com][Netlify]], and let them handle serving the site. I followed the [[https://gohugo.io/hosting-and-deployment/hosting-on-netlify/][instructions]] in the Hugo documentation, and everything went very smoothly. Netlify automatically detected that the repository was a Hugo site. Their instructions for pointing the domain's name servers to Netlify were clear and simple to follow. It's important to note that the site's theme /must/ be installed as a git submodule. It won't work as a simple git clone. The instructions for most Hugo themes that I see specify installing as a submodule, so you likely already have that done.
+
+This seemed to be a good opportunity to update the site's theme. I had started with another theme and rewrote it into my own, but lately I've been happier letting other people do as much of the configuration work as possible, which explains my move back to [[https://github.com/doomemacs/doomemacs][Doom Emacs]]. I picked the [[https://github.com/WingLim/hugo-tania][Hugo Tania]] theme, since it has nice built-in search and tag support.
+
+
+* Hugo and Org Mode
+
+I do most of my writing in Org mode in Emacs. Markdown is the most commonly used simple markup language, and Hugo has always had excellent native support for it. I remember its native support for Org mode to be missing some important things, although I can't really remember what they were. So, I was using [[https://ox-hugo.scripter.co][ox-hugo]] to convert the Org files to Markdown. Evidently, Hugo's parser for Org mode is much more robust than it was, because I haven't had a problem with it parsing native Org files. So, I removed the ox-hugo package and now my posts are written in Org mode and not converted to Markdown. To do so, simply put the Hugo front-matter at the beginning in typical Org fashion. For instance, the front-matter for this post looks like this:
+
+#+begin_src org
+#+TITLE: Updating the Site
+#+draft: false
+#+tags[]: hugo emacs org
+#+date: 2023-01-24T06:41:27
+#+end_src
+
+Now, that's all that really needs to be done. You can just write posts in Org mode, commit the changes, and push to the repository. Netlify detects that the repository has been changed and rebuilds the site. Of course, since this is Emacs, all of this except the writing can be automated. I modified the scripts that I was using for ox-hugo to make the process simple.
+
+First, there is a function that updates the date for the post:
+
+
+#+begin_src elisp
+(defun hugo-timestamp ()
+  "Update existing date: timestamp on a Hugo post."
+  (interactive)
+  (save-excursion (
+                   goto-char 1)
+                  (re-search-forward "^#\\+date:")
+                  (let ((beg (point)))
+                    (end-of-line)
+                    (delete-region beg (point)))
+                  (insert (concat " " (format-time-string "%Y-%m-%dT%H:%M:%S")))))
+#+end_src
+
+This sets some variables that are used later. The hugo-post-template variable contains the front-matter items that I generally use. 
+
+#+begin_src elisp
+(defvar hugo-directory "~/Sites/blog/" "Path to Hugo blog.")
+(defvar hugo-posts-dir "content/posts/" "Relative path to posts directory.")
+(defvar hugo-post-ext ".org"  "File extension of Hugo posts.")
+(defvar hugo-post-template "#+TITLE: \%s\n#+draft: true\n#+tags[]: \n#+date: \n#+mathjax: \n\n"
+  "Default template for Hugo posts. %s will be replace by the post title.")
+#+end_src
+
+These are used to generate the file name:
+
+#+begin_src elisp
+(defun hugo-make-slug (s) "Turn a string into a slug."
+       (replace-regexp-in-string " " "-"  (downcase (replace-regexp-in-string "[^A-Za-z0-9 ]" "" s))))
+
+(defun hugo-yaml-escape (s) "Escape a string for YAML."
+       (if (or (string-match ":" s) (string-match "\"" s)) (concat "\"" (replace-regexp-in-string "\"" "\\\\\"" s) "\"") s))
+#+end_src
+
+This creates the file and puts in the front-matter:
+
+#+begin_src elisp
+(defun hugo-draft-post (title) "Create a new Hugo blog post."
+       (interactive "sPost Title: ")
+       (let ((draft-file (concat hugo-directory hugo-posts-dir
+                                 (format-time-string "%Y-%m-%d-")
+                                 (hugo-make-slug title)
+                                 hugo-post-ext)))
+         (if (file-exists-p draft-file)
+             (find-file draft-file)
+           (find-file draft-file)
+           (insert (format hugo-post-template (hugo-yaml-escape title)))
+           (hugo-timestamp))))
+#+end_src
+
+This sets "draft" to "true", updates the date stamp, and saves the file:
+
+#+begin_src elisp
+(defun hugo-publish-post ()
+  "Set draft to false and save."
+  (interactive)
+  (save-excursion (
+                   goto-char 1)
+                  (re-search-forward "^#\\+draft:")
+                  (let ((beg (point)))
+                    (end-of-line)
+                    (delete-region beg (point)))
+                  (insert " false")
+                  (hugo-timestamp))
+  (save-buffer))
+#+end_src
+
+
+This commits the changes and pushes them to GitHub, using the current date and time as the commit message:
+
+#+begin_src elisp
+(defmacro with-dir (DIR &rest FORMS)
+  "Execute FORMS in DIR."
+  (let ((orig-dir (gensym)))
+    `(progn (setq ,orig-dir default-directory)
+            (cd ,DIR) ,@FORMS (cd ,orig-dir))))
+
+(defun hugo-deploy ()
+  "Push changes upstream."
+  (interactive)
+  (with-dir hugo-directory
+            (shell-command "git add .")
+            (--> (current-time-string)
+                 (concat "git commit -m \"" it "\"")
+                 (shell-command it))
+            (magit-push-current-to-upstream nil)))
+#+end_src
+
+Finally, set some keybindings to make it all easy.
+
+#+begin_src elisp
+(global-set-key (kbd "C-c h n") 'hugo-draft-post)
+(global-set-key (kbd "C-c h p") 'hugo-publish-post)
+(global-set-key (kbd "C-c h t") 'hugo-timestamp)
+(global-set-key (kbd "C-c h O") (lambda () (interactive) (find-file "~/Sites/blog/")))
+(global-set-key (kbd "C-c h P") (lambda () (interactive) (find-file "~/Sites/blog/content/post/")))
+(global-set-key (kbd "C-c h d") 'hugo-deploy)
+#+end_src
+
+I have a few more things to do, like create "About" and tag pages, and adjust the footnote styling. Unfortunately, I need to get ready for the new semester which begins on Thursday.

@@ -1,0 +1,8 @@
+#+TITLE: Fixing Emacs Doom Upgrade
+#+draft: false
+#+filetags: emacs 
+#+date: <2023-02-06 Mon>
+#+lastmod: 2023-02-06T13:12:57
+#+mathjax: 
+
+I had this problem on another machine a few weeks ago, researched it, fixed it, and apparently I've already forgotten what to do. When =doom upgrade= fails, it's likely to be because someone changed the name of a branch in the repository. The easiest thing to do is to delete =~/.emacs.d/.local/straight/repos=. Run =doom sync= to rebuild the repositories, and everything should work fine.

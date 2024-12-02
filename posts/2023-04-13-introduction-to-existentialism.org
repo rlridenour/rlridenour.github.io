@@ -1,0 +1,98 @@
+#+TITLE: Introduction to Existentialism
+#+draft: false
+#+filetags: philosophy, existentialism
+#+date: <2023-04-13 Thu>
+#+lastmod: 2023-04-13T08:02:58
+#+mathjax: 
+
+* Introduction
+
+This seems to be our condition:
+
+We find ourselves in a malaise, living lives that are out of our control, superficially connected, but ever so disconnected in the ways that matter. Some go on in blissful ignorance, but those who are more self-reflective, ask, "What, if anything, is the meaning of life?" In response, they hear either the incoherent noise of the mob, or the deafening silence of the abyss.
+
+Existentialism is a branch of philosophy that attempts, if not to provide answers, at least to diagnose the problem.
+
+** Who are the Existentialists?
+
+Saying who counts as an existentialist is more difficult than one might think for two reasons:
+
+First, almost all of the thinkers who we associate with existentialism expressly rejected the label at some point. As far as I know, only Karl Jaspers gladly claimed to be an existentialist.
+
+Second, who is counted as an existentialist depends on how one defines existentialism, and there's no consensus on a simple definition. I tend to think of existentialism in terms of some themes that tend to go together. It's a broad understanding, so my list of existentialists is pretty long. I'm willing to include:
+
+- The author of Job
+- The author of Ecclesiastes
+- Greek Cynics
+- Augustine
+- Pascal
+
+Four names are particularly important. Two from the 19th century are Kierkegaard, a Danish philosopher and theologian, and Nietzsche, a German philosopher. From them, we get the two branches of existentialism, a religious branch and an atheistic branch.
+
+The other two names are from the 20th century. First is Martin Heidegger, a German philosopher; second is Jean-Paul Sartre, a French philosopher. All of the proposed lists of existentialists differ somewhat, but everyone agrees that those two belong on the list.
+
+* What is Existentialism?
+
+Existentialism is about existence, but existence used in a particular way. It's the kind of existence that is had only by human beings, and distinguishes humans from other creatures. What this is will, I hope, become clear as we look at some common existentialist themes.
+
+** Alienation
+
+The first theme is alienation --- alienation from the world, alienation from others, and alienation from oneself. Like the ancient stoics, Heidegger and Sartre thought that this alienation was a result of false beliefs about the world and about human beings. Existentialist philosophy, then, was therapy, a treatment for existential alienation.
+
+** Being-in-the-World
+
+One of the causes of this alienation is our failure to understand the nature of human existence and our relation to the world. What is the world? The standard way to answer this question is to list the things that the world contains. As I look around, I see a few things that I might want to put on my list: books, clocks, and classrooms. The problem with these lists, according to the existentialists, is not the lists themselves, it is the pretension to objectivity. 
+
+To call something a book, clock, or classroom is to have already taken a stand on what that that thing is /for/. These are examples of what Heidegger calls things "ready-to-hand".
+To encounter something as ready-to-hand is to see it as useful for some purpose. They have what Sartre calls 'being-in-itself,' that is, there is something that they are. When I tell you that something is a water-bottle, you know what it is for. I've described its essence, in a sense. That presupposes my previous encounter with water-bottles, though, hence the famous existentialist dictum, "Existence precedes essence."
+
+We are beings in the world, but the nature of our being is not like those things that are present or ready at hand. Instead, Heidegger calls the being of humans by a technical term, /Dasein/, Sartre's phrase is 'being-for-itself.' How does the being that we have differ from the being of the things present-at-hand?
+
+We are the only creatures that take a stand on what it means to be human. My dog, as far as I know, never considers what it really means to be a dog. There is no list of goals in her puppy school yearbook that says "Becoming more fully dog." We though, have Bible studies on being a man or woman, bookstores sell self-help books on capturing our masculine and feminine identities, and we hear people say things like "I'm trying to discover myself," or "I want to pick the major that is right for me," or "I'm trying to find the person who is perfect for me." That is one of the sources of our alienation. We want to know what we are right now, but we can't have it, for it assumes that we are being-in-itself, but instead we are being-for-itself.
+
+Let me explain. First, contrary to another well-used phrase, we don't simply "live in the moment." What we are as individuals, is not something that is static in time. In fact, I can't even, in a sense, think of myself as solely in this moment, because I can't separate my current self from my future self. When you ask, "Is this the right person for me?" you are really asking, "Is this the right person for me, given my plans for the future, and who I want to become." We are, whether we want to or not, always in the process of becoming. Sartre uses the language of facticity and transcendence to refer to the static, and to the becoming.
+
+Second, to say that there is something that I am, is often used as an excuse. "I couldn't help it, that's just what I am." Sartre was drafted into the French army, was captured by the Germans in 1940, and then spent nine months in a German prisoner of war camp. What he has in mind here is the person who says, I can't go to war, because I am a coward. That's just what I am.
+
+
+** Rejection of dualisms
+
+Another characteristic theme of existentialism is the rejection, or dissolution, of dualisms. Here are some examples:
+
+- The subjective vs. the objective
+- Mind vs. body
+- Reason vs. emotions or passions
+- Fact vs. value: the things we encounter are ready-to-hand, already imbued with value.
+
+** The self and others
+
+We fall into the trap of defining ourselves in terms of others, feeling like we must live up to their expectations, or succumb to their demands, or merely do something because "that's what one does."
+
+Sartre's masterpiece play, /No Exit/ is the perfect illustration. Three people find themselves locked in a room together in Hell. There are no torture devices. I love the scene when one woman, particularly vain, despairs at the lack of a mirror. Another woman, offers to be her mirror and describe to her what she sees. She says, "Hello, what's that --- that nasty red spot at the bottom of your cheek? A pimple?" The conclusion is that "Hell is other people."
+
+Incidentally, this refusal to follow the herd is what Nietzsche admired in Jesus. (People are always surprised when I tell them how much Nietzsche admired Jesus, given his attitude towards Christianity. He said, "The only true Christian died on a cross.")
+
+** Freedom, anxiety, death, and the absurd
+
+These are very interconnected, so I'll treat them as one theme.
+
+Anxiety is a pivotal concept in existentialist thought. Kierkegaard wrote a whole book titled /The Concept of Anxiety./ It's not what we usually understand as anxiety, though. Maybe it's better to use the German word, /angst/, not because of its meaning in German, but because we English speakers can better treat it as a technical term, or term of art, because that is certainly what it is in existentialism. Angst is the disturbing feeling that we have when confronted with our possibilities. Sartre's preferred example is vertigo, that disturbing feeling one has standing at the edge of a cliff. Sartre points out that it can't be the fear of falling, you're not going to fall. So what is it? It must be the knowledge that you could throw yourself over. We always face a choice, and nothing prevents us from taking the choice. We are free, and that is the source of our anxiety, or as Kierkegaard puts it, despair.
+
+This freedom is not the same thing as political freedom. Even people who lack political freedom still have this existential freedom. It's also not what philosophers call metaphysical freedom. It's not about determinism or fatalism. Even if we are determined, we must still choose.
+
+We often pretend that we don't have a choice, though. I don't want to go to class, but I have to. (That's something that I hear from both students and colleagues.) That's a fiction that we construct, though, an example of what Sartre calls, bad-faith, a kind of self-deception. The man who refuses to join the resistance because he is a coward is living in another kind of bad-faith. There is always a choice.
+
+Angst is a result of our freedom, but only because we face death. Given our mortality, our choices have a weight, or importance, that they otherwise would not have. It's only because we face death that our choices have the importance that they do. Otherwise, we could do everything, and it wouldn't matter what we chose now. There would always be another opportunity. Also, it is only because we are mortal that we are individuals. Sartre's response to the man who claims to be a coward is "No, you do not do these things because you are a coward, you are a coward because you do these things." We are defined by our choices. If there were an infinite time in which to make choices, we would conceivably make every possible choice, and therefore there would be no choice that individuated us.
+
+Finally, there is the absurd. Sartre claims that death is absurd, in that we rarely get to finish our projects. We are absurd, in that we want to pretend to live in facticity, but cannot deny our transcendence. The world is absurd, because it refuses to be what we want it to be. I must choose, and to choose, I must value some things over another, but there is no reason why I should value what I do. In fact, my values, are a result of my choices --- absurd.
+
+
+** Authenticity
+
+Because we have a tendency to conform to the leveled-down roles and identities of the public world, the question of authenticity, of being true to oneself, is central to the existentialists. The idea is formulated in many different ways, in terms of being a 'knight of faith' (Kierkegaard), for example, an 'overman' (Nietzsche), a 'rebel' (Camus), or an 'authentic individual' (Heidegger). In this way, existentialists develop the possibility of living a meaningful, committed, and fulfilling life in the face of absurdity and death. The idea of authenticity serves as a powerful rejoinder to the criticism of existentialism as representing a kind of nihilistic, 'anything goes' philosophy.
+
+** Responsibility
+
+We are free and responsible for who we are and what we do. No moral absolutes, utilitarian calculations, or natural laws that can explain, justify, or rationalize our actions. As Sartre writes, when it comes to human actions, "there are no excuses behind us nor justifications before us."
+
+Existentialism does not, in itself, require adherence to any normative moral principle. Yet the argument that existentialism is an amoral philosophy is undeserved. Existentialism centers around the most fundamental of moral questions: ‘ What should I do?' and 'How should I live?' Moreover, in acknowledging our fundamental freedom, existentialists recognize that we are not free from taking responsibility for our actions or from cultivating the ideal of freedom for others. To this end, existentialism offers a clear vision of what a valuable or praiseworthy way of life is. It is a life that faces up to the inescapable freedom and vulnerability of the human situation, and takes responsibility for the fact that our actions have consequences and impact the lives of others.

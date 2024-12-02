@@ -1,0 +1,80 @@
+#+TITLE: New Hugo Functions
+#+draft: false
+#+filetags: hugo emacs 
+#+date: <2023-02-05 Sun>
+#+lastmod: 2023-02-06T06:44:55
+#+mathjax: 
+
+I found some some new functions for automating Hugo in Emacs, that I was able to modify slightly to fit my own needs.
+
+[[https://whatacold.io/blog/2022-10-10-emacs-hugo-blogging/][Ken Huang]] has a nice function to select a tag from a list of tags used on the site, then insert it into the right place in the front-matter. 
+
+#+begin_src emacs-lisp
+(defun hugo-select-tags ()
+  "Select tags from the hugo org files in the current dir.
+
+Note that it only extracts tags from lines like the below:
+#+tags[]: emacs org"
+  (interactive)
+  ;; Move to end of tag line.
+  (save-excursion
+    (goto-char 1)
+    (re-search-forward "^#\\+tags")
+    (end-of-line)
+
+    (let ((files (directory-files-recursively default-directory "\\.org$")))
+      (let ((source (with-temp-buffer
+                      (while files
+                        (when (file-exists-p (car files))
+                          (insert-file-contents (car files)))
+                        (pop files))
+                      (buffer-string))))
+        (save-match-data
+          (let ((pos 0)
+                matches)
+            (while (string-match "^#\\+[Tt]ags\\[\\]: \\(.+?\\)$" source pos)
+              (push (match-string 1 source) matches)
+              (setq pos (match-end 0)))
+            (insert
+             (completing-read
+              "Insert a tag: "
+              (sort
+               (delete-dups
+                (delete "" (split-string
+                            (replace-regexp-in-string "[\"\']" " "
+                                                      (replace-regexp-in-string
+                                                       "[,()]" ""
+                                                       (format "%s" matches)))
+                            " ")))
+               (lambda (a b)
+                 (string< (downcase a) (downcase b))))))))))
+    (insert " ")
+    )
+  )
+#+end_src
+
+
+Look at this post from [[https://lucidmanager.org/productivity/create-websites-with-org-mode-and-hugo/][Peter Prevos]], for inserting links to other pages in the site. With it, you're able to just  ~C-c C-l~ to bring up a list of link types, select "hugo", then pick the file name of the page you want to link. This is the code:
+
+
+#+begin_src emacs-lisp
+;; Follow Hugo links
+  (defun org-hugo-follow (link)
+    "Follow Hugo link shortcodes"
+    (org-link-open-as-file
+     (string-trim "{{</* ref test.org */>}}" "{{</* ref " "*/>}}")))
+
+  ;; New link type for Org-Hugo internal links
+  (org-link-set-parameters
+   "hugo"
+   :complete (lambda ()
+               (concat "{{</* ref "
+                       (file-name-nondirectory
+                        (read-file-name "File: "))
+                       " */>}}"))
+   :follow #'org-hugo-follow)
+#+end_src
+
+
+
+They both have some other useful things that might also be helpful. I'm grateful to others who solve problems they have and post the code online. I know just enough Emacs-lisp to figure out what is going on, and modify something to my own particular use-case, but not enough to be able to start from scratch.

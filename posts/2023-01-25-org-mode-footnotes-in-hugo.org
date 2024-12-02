@@ -1,0 +1,97 @@
+#+TITLE: Org Mode Footnotes in Hugo
+#+draft: false
+#+filetags: hugo org
+#+date: <2023-01-25 Wed>
+#+mathjax: 
+
+I mentioned yesterday that I couldn't remember what I didn't like about Hugo's parsing of Org mode in the past. When I viewed the published post, I quickly remembered what it was: footnotes. If I remember correctly, at the time that I first tried using native Org mode parsing, Hugo didn't parse the footnotes at all. Now, it does, but they render in an odd way. The footnote number is in subscript on one line, followed by a blank line, followed by the footnote text on another line. So, instead of getting something like this:
+
+#+begin_src 
+1. Footnote text.
+#+end_src
+
+We get this:
+
+#+begin_src 
+1.
+
+Footnote text.
+#+end_src
+
+A Google search resulted in one question on the [[https://discourse.gohugo.io/t/footnotes-rendered-different-for-org-files-compared-to-markdown-source/20415/][Hugo help forum]], but no good answer. The problem is the way that Hugo renders the HTML. In a Markdown post, this content
+
+#+begin_src markdown
+This is a footnote test.[^1]
+
+[^1]: Footnote content.
+#+end_src
+
+results in this HTML code:
+
+#+begin_src html
+<div class="article-post">
+    <p>This is a footnote test.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+    <div class="footnotes" role="doc-endnotes">
+        <hr>
+        <ol>
+            <li id="fn:1">
+                <p>Footnote content.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+            </li>
+        </ol>
+    </div>
+
+</div>
+#+end_src
+
+This turns the footnotes into numbered list items that end with a nice return character that is linked to the footnote number in the text.
+
+This Org mode content, however,
+
+#+begin_src org
+This is a footnote test.[fn:1]
+
+[fn:1] Footnote content. 
+#+end_src
+
+renders like this:
+
+#+begin_src html
+<div class="article-post">
+    <p>
+        This is a footnote test.<sup class="footnote-reference"><a id="footnote-reference-1" href="#footnote-1">1</a></sup></p>
+    <div class="footnotes">
+        <hr class="footnotes-separatator">
+        <div class="footnote-definitions">
+            <div class="footnote-definition">
+                <sup id="footnote-1"><a href="#footnote-reference-1">1</a></sup>
+                <div class="footnote-body">
+                    <p>Footnote content. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+#+end_src
+
+Notice that there is no list, instead the footnote text is separated from the number by a =<div>=, which is normally rendered as an empty line.
+
+Hacking around with some CSS, I managed to get the number and the text on the same line.[fn:1] Here's the CSS code:
+
+#+begin_src css
+.footnote-definition {
+  display: block;
+}
+
+.footnote-body {
+  display: inline-block;
+}
+#+end_src
+
+
+
+I'm not quite satisfied with the superscript number in the footnote, but I haven't found a good fix for that yet.
+
+
+
+[fn:1] Like this. 

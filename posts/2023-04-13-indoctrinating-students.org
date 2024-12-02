@@ -1,0 +1,12 @@
+#+TITLE: Indoctrinating Students
+#+draft: false
+#+filetags: quotes, education
+#+date: <2023-04-13 Thu>
+#+lastmod: 2023-04-13T14:07:26
+#+mathjax: 
+
+I saw this on the internet months ago, but can't remember the source:
+
+#+begin_quote
+And if ‘indoctrinating’ students truly existed, I would have classes with 100% assignment turn-in rates, no one ever attempting to get on a cell phone, and I would never need to repeat instructions more than a couple of times.
+#+end_quote

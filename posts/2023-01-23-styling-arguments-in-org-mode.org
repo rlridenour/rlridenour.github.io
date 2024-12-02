@@ -1,0 +1,59 @@
+#+TITLE: Styling Arguments in Org Mode
+#+draft: false
+#+filetags: org
+#+date: <2023-01-23 Mon>
+#+mathjax: true
+
+
+Org mode is particularly useful for its ability to easily export to many other file formats. I often prepare handouts that contain philosophical arguments. Some of these handouts are intended to be printed, others are intended to be viewed electronically. Printed handouts are prepared by exporting the org file to PDF using LaTeX, and the other handouts are made by exporting to HTML.
+
+We often put arguments in what is called "standard form." The premises are written on numbered lines, with a line underneath the last premise. The conclusion is then written beneath the line. In LaTeX, this is easily done with this code:
+
+#+begin_src latex
+\begin{enumerate}
+\item First Premise
+\item \underline{Last Premise}
+\item [$\therefore$] Conclusion
+\end{enumerate}
+#+end_src
+
+For HTML, I use a class  that I named "arg" and defined in my custom css file:
+
+#+begin_src css
+.arg li:last-child {
+  list-style: none;
+}
+
+.arg li:nth-last-child(2) {
+  text-decoration: underline;
+}
+
+.arg li {
+  margin: 0px;
+}
+#+end_src
+
+
+This tells the rendering engine to not put any number before the last item of a list (nor any other styling) and to underline the penultimate item of the list. 
+
+To use an HTML class in org mode, just put this immediately before the element you want to style:
+
+#+begin_src org
+#+ATTR_HTML: :class classname
+#+end_src
+
+The argument is written like this:
+
+#+begin_src 
+#+ATTR_HTML: :class arg
+1. First premise
+2. Second premise
+3. Conclusion
+#+end_src
+
+which produces this:
+
+#+ATTR_HTML: :class arg
+1. First premise
+2. Second premise
+3. Conclusion

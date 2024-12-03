@@ -1,0 +1,67 @@
+#+TITLE: LaTeX Compilation Scripts
+#+filetags: latex emacs org
+#+date: <2022-06-09>
+#+mathjax: true
+
+I'm trying to automate \(\LaTeX\) compilation from Emacs as much as I can. Here are the shell scripts and Emacs functions that I'm using.
+** Shell Scripts
+
+Here are some very simple scripts for compiling \(\LaTeX\) files with arara and the fish shell. The first, called "mkt" for "make TeX", runs arara on the source file, then opens the resulting PDF.
+
+#+begin_src 
+function mkt 
+  arara $argv 
+  set output_file (string replace -r tex\$ pdf $argv) 
+  open -g $output_file 
+end
+#+end_src
+
+The second, called "mktc" for "make TeX continuously", runs arara, opens the PDF, watches for changes, and runs arara whenever the file is saved.
+
+#+begin_src fish
+function mktc
+  arara $argv
+  set output_file (string replace -r tex\$ pdf $argv)
+  open -g $output_file
+  fswatch -o $argv | xargs -n1 -I{} arara $argv
+end
+#+end_src
+
+** Emacs
+
+Here are some functions to use in Emacs to run the scripts.
+
+*** Auctex
+
+#+begin_src emacs-lisp
+(defun rlr/tex-mkt ()
+  "Compile with arara."
+  (interactive)
+  (async-shell-command (concat "mkt " (buffer-file-name))))
+
+(defun rlr/tex-mktc ()
+  "Compile continuously with arara."
+  (interactive)
+  (start-process-shell-command (concat "mktc-" (buffer-file-name)) (concat "mktc-" (buffer-file-name)) (concat "mktc " (buffer-file-name))))
+#+end_src
+
+The first compiles with an asynchronous shell command, so that you can immediately return to editing the file while arara runs. I decided to use ~start-process-shell-command~ instead of ~async-shell-command~ for ~mktc~, since ~mkt~ runs once and stops, while ~mktc~ keeps running in the background. When ~rlr/tex-mktc~ is called, a process is started that has the same name as the file with "mktc-" prepended it to it. The process is shown in a buffer that has the same name. That way, several files can be compiled at the same time.
+
+*** Org Mode
+
+#+begin_src emacs-lisp
+
+(defun rlr/org-mkt ()
+  "Make PDF with Arara."
+  (interactive)
+  (org-latex-export-to-latex)
+  (async-shell-command (concat "mkt " (file-name-sans-extension (buffer-file-name))".tex")))
+
+(defun rlr/org-mktc ()
+  "Compile continuously with arara."
+  (interactive)
+  (org-latex-export-to-latex)
+  (start-process-shell-command (concat "mktc-" (buffer-file-name)) (concat "mktc-" (buffer-file-name)) (concat "mktc " (file-name-sans-extension (buffer-file-name))".tex")))
+#+end_src
+
+These functions first export the org file to \(\LaTeX\), then compile the corresponding TeX files. All in all, a morning's worth of work to save a few keystrokes. I run them using [[https://github.com/jerrypnz/major-mode-hydra.el][major mode hydras]].

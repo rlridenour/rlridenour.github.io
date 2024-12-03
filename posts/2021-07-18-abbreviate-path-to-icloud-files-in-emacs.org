@@ -1,0 +1,27 @@
+#+TITLE: Abbreviate Path to iCloud Files in Emacs
+#+draft: false
+#+filetags: emacs
+#+date: <2021-07-18>
+#+mathjax:  
+
+When I include everything I do over my breaks in summer and January, I probably work more from my home computer than I do my office computer. A good file synchronization service makes that much easier. For years, I really only used Dropbox, and it served my needs very well. Just like the 20 MB (as in megabytes, not a typo) hard drive that I had in my first PC, it seemed like I would never run out of Dropbox space. Two problems eventually occurred. First, I did indeed reach the limit of my free tier. Second, Dropbox began enforcing a limit on the number of different devices that could sync with the free tier. I wasn't inclined to pay for more space, because, I was already paying for extra space in iCloud for photo syncing. So, I decided to move my working documents from Dropbox to iCloud, which has worked great except for one small thing. Here is the full path and filename for one of my typical files:
+
+~/Users/rlridenour/Library/Mobile Documents/com~apple~CloudDocs/Documents/teaching/critical-thinking/notes/probabability-presentation.tex~
+
+This line is 136 characters long, and unless I expanded the size of the Emacs frame to at least half of the size of my 32-inch desktop monitor, I couldn't see the filename in the recent files list.
+
+Adding this to my Doom Emacs config solved the problem:
+
+#+begin_src emacs-lisp
+(use-package ivy-rich
+  :after counsel
+  :config
+  (setq ivy-rich-display-transformers-list
+        (plist-put ivy-rich-display-transformers-list
+'counsel-buffer-or-recentf
+    '(:columns
+      ((counsel-buffer-or-recentf-transformer (:width (lambda (x) (ivy-rich-switch-buffer-shorten-path x (ivy-rich-minibuffer-width 1.0))))))))))
+#+end_src
+
+Now, when I run ~counsel-buffer-or-recentf~, Emacs abbreviates enough of the file paths to make each line fit into the frame. How much is abbreviated depends on how large the frame is. No matter how narrow the frame, though, I can still see the filename.
+

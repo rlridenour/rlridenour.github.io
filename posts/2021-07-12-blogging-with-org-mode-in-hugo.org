@@ -1,0 +1,8 @@
+#+TITLE: Blogging with Org Mode in Hugo
+#+draft: false
+#+filetags: emacs hugo
+#+date: <2021-07-12>
+#+mathjax:  
+
+Like most Emacs users, I tend to use Org Mode as much as I can. Hugo has native support for Org files, but it's not as thorough as I would like. It seems that most people who blog using Emacs and Hugo use Ox-Hugo to export their Org files to the Markdown format that is best supported by Hugo. I'll experiment with some test posts over the next few days, then come back and post my thoughts.
+

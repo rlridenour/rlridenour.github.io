@@ -1,0 +1,111 @@
+#+TITLE: Workflow with Hugo and Org Mode
+#+draft: false
+#+filetags: emacs hugo org
+#+date: <2021-07-14>
+#+mathjax:  
+
+Setting up the [[https://github.com/kaushalmodi/ox-hugo][Ox-hugo]] package to use Org mode with Hugo was much easier than I expected. Here is how I configured it, the workflow for posting with Doom Emacs, and some things to keep in mind.
+
+
+** Installation and configuration
+
+I'm back to using Doom Emacs, so adding Ox-hugo required nothing more than adding the ~+hugo~ flag to ~:lang org~ in the init.el file. Look for ~org~ in init.el, and change it to ~(org +hugo)~. Ox-hugo has excellent [[https://ox-hugo.scripter.co/][documentation]], and I configured it almost exactly the way that was suggested. I was skeptical that having a single Org file that contained every blog post was a good idea, but after two days, it seems to be the way to go. I have a file called "blog.org" in a directory named "content-org" in my hugo project directory. This file has the following settings at the top:
+
+#+begin_src org
+#+hugo_base_dir: ~/Sites/blog
+#+seq_todo: TODO DRAFT DONE
+#+hugo_front_matter_format: yaml
+#+hugo_weight: auto
+#+hugo_auto_set_lastmod: t
+#+author: Randy Ridenour
+#+end_src
+
+Then, there is a top-level heading called "Blog Ideas". All other top-level headings are categories. Each second-level heading will be a post under that particular category.
+
+Next, <I copied the Org-capture template and made some small modifications. I changed ~EXPORT_FILE_NAME~ to format file names with a date string to match my other post file names. I also included a line with some custom front matter that I usually use, mostly because I know I wouldn't remember how to insert it when I needed i>
+
+Here is the template:
+
+#+begin_src emacs-lisp
+;; Populates only the EXPORT_FILE_NAME property in the inserted headline.
+(with-eval-after-load 'org-capture
+  (defun org-hugo-new-subtree-post-capture-template ()
+    "Returns `org-capture' template string for new Hugo post.
+See `org-capture-templates' for more information."
+    (let* ((title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
+           (fname (org-hugo-slug title)))
+      (mapconcat #'identity
+                 `(
+                   ,(concat "* TODO " title)
+                   ":PROPERTIES:"
+                   ,(concat ":EXPORT_FILE_NAME: " (format-time-string "%Y%m%d-") fname)
+":EXPORT_HUGO_CUSTOM_FRONT_MATTER: :highlight true :math false"
+                   ":END:"
+                   "%?\n")          ;Place the cursor here finally
+                 "\n")))
+
+  (add-to-list 'org-capture-templates
+               '("h"                ;`org-capture' binding + h
+                 "Hugo post"
+                 entry
+                 ;; It is assumed that below file is present in `org-directory'
+                 ;; and that it has a "Blog Ideas" heading. It can even be a
+                 ;; symlink pointing to the actual location of all-posts.org!
+                 (file+olp "blog.org" "Blog Ideas")
+                 (function org-hugo-new-subtree-post-capture-template))))
+#+end_src
+
+
+** Workflow
+
+~C-c n n~ in Doom opens a hydra for Org-capture. Selecting "h" prompts for a post title in the minibuffer. Enter the title, press the return key, and a new Org-mode window opens with the file settings from the capture template. Enter the desired text, then press ~C-c C-c~ to close the window. The post is filed in the site's Org content file under the Blog Ideas section. When ready, move the cursor to a point in the post, and use org-refile to put it in the category that you would like.
+
+Add a file called "dir-locals.el" to the root level of the hugo site directory that has this content:
+
+#+begin_src emacs-lisp
+(("content-org/"
+  . ((org-mode . ((eval . (org-hugo-auto-export-mode)))))))
+#+end_src
+
+Then, as you write your posts, you can preview them at localhost:1313 as you edit them; just start the Hugo server in your terminal application like this:
+
+#+begin_src bash
+hugo server -D --navigateToChanged
+#+end_src
+
+Now, every the Org file is saved, it automatically exports the correctly formatted Markdown post to the "content/posts" directory, and Hugo serves up the changed post in your browser.
+
+When the draft is finished, change the ~TODO~ flag in the post title to ~DONE~, and the date will be updated.
+
+** Miscellaneous discoveries
+
+So far, I've found two things to keep in mind. First, headings in the Markdown files will be one level above the headings in the Org file. So, an H2 in the Org file is the post title, sections of the post have a H3 heading. The three stars in the Org file become two octothorpes in the Markdown file.
+
+Second, to specify a CSS class, just put this on the line directly preceding the item needing styling:
+
+#+begin_src org
+#+attr_html: :class classname
+#+end_src
+
+For example, here's how I use my style for philosophical arguments.
+
+#+begin_src org
+#+attr_html: :class arg
+1. First premise
+2. Second premise
+3. Conclusion
+#+end_src
+
+produces this:
+
+#+attr_html: :class arg
+1. First premise
+2. Second premise
+3. Conclusion
+
+
+
+** Conclusion
+
+Ox-hugo works amazingly well for producing well-formed Hugo Goldmark markdown from an Org mode source file. Since I write nearly everything in Org mode, this enables me to easily use the same material for posts, handouts, and other formats.
+

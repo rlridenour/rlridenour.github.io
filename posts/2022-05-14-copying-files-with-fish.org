@@ -1,0 +1,10 @@
+#+TITLE: Copying Files with Fish
+#+filetags: fish
+#+date: <2022-05-14>
+
+I needed to copy certain files from a bunch of subfolders to another folder. This turned out to be an easy way to do in Fish shell. 
+
+#+begin_src shell
+cp (find . -name '<name>') <target folder>
+#+end_src
+

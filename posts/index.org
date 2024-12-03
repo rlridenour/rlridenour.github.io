@@ -19,4 +19,8 @@
 - [[file:2023-01-25-org-mode-footnotes-in-hugo.org][Org Mode Footnotes in Hugo]]
 - [[file:2023-01-24-updating-the-site.org][Updating the Site]]
 - [[file:2023-01-23-styling-arguments-in-org-mode.org][Styling Arguments in Org Mode]]
+- [[file:2022-06-06-harmony-of-the-gospels.org][Harmony of the Gospels]]
 - [[file:2023-01-21-arara-and-latexmk.org][Arara and Latexmk]]
+- [[file:2022-11-13-sticking-with-hugo.org][Sticking with Hugo]]
+- [[file:2022-10-30-reformation-sunday.org][Reformation Sunday]]
+- [[file:2022-05-14-copying-files-with-fish.org][Copying Files with Fish]]

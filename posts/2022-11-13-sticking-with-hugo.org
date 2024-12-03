@@ -1,0 +1,5 @@
+#+TITLE: Sticking with Hugo
+#+filetags: org
+#+date: <2022-11-13>
+
+I have been toying with the idea of blogging entirely with Emacs and Org Mode, but I haven't been able to make it work like I like. I guess I'll stick with Hugo. 

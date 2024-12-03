@@ -36,3 +36,6 @@ body {
     color: #202020
 }
 
+pre {
+    white-space: pre-wrap;
+}

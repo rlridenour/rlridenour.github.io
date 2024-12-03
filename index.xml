@@ -14,8 +14,8 @@
   <link>http://example.com/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Sun, 01 Dec 2024 19:58:22 -0600</pubDate>
-  <lastBuildDate>Sun, 01 Dec 2024 19:58:22 -0600</lastBuildDate>
+  <pubDate>Tue, 03 Dec 2024 06:56:53 -0600</pubDate>
+  <lastBuildDate>Tue, 03 Dec 2024 06:56:53 -0600</lastBuildDate>
   <generator>Emacs 29.4 Org-mode 9.8-pre</generator>
   <webMaster>rlridenour@fastmail.com (Randy Ridenour)</webMaster>
   <image>
@@ -44,7 +44,11 @@
     <li><a href="http://example.com/2023-01-25-org-mode-footnotes-in-hugo.html">Org Mode Footnotes in Hugo</a></li>
     <li><a href="http://example.com/2023-01-24-updating-the-site.html">Updating the Site</a></li>
     <li><a href="http://example.com/2023-01-23-styling-arguments-in-org-mode.html">Styling Arguments in Org Mode</a></li>
+    <li><a href="http://example.com/2022-06-06-harmony-of-the-gospels.html">Harmony of the Gospels</a></li>
     <li><a href="http://example.com/2023-01-21-arara-and-latexmk.html">Arara and Latexmk</a></li>
+    <li><a href="http://example.com/2022-11-13-sticking-with-hugo.html">Sticking with Hugo</a></li>
+    <li><a href="http://example.com/2022-10-30-reformation-sunday.html">Reformation Sunday</a></li>
+    <li><a href="http://example.com/2022-05-14-copying-files-with-fish.html">Copying Files with Fish</a></li>
   </ul>
 </channel>
 </rss>

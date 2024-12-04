@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 04, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LaTeX Compilation Scripts</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">LaTeX Compilation Scripts</h1>
+<p class="subtitle" role="doc-subtitle">Jun 09, 2022</p>
+</header><p>
+I&rsquo;m trying to automate \(\LaTeX\) compilation from Emacs as much as I can. Here are the shell scripts and Emacs functions that I&rsquo;m using.
+</p>
+<section id="outline-container-org07a2e9d" class="outline-2">
+<h2 id="org07a2e9d">Shell Scripts</h2>
+<div class="outline-text-2" id="text-org07a2e9d">
+<p>
+Here are some very simple scripts for compiling \(\LaTeX\) files with arara and the fish shell. The first, called &ldquo;mkt&rdquo; for &ldquo;make TeX&rdquo;, runs arara on the source file, then opens the resulting PDF.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil">function mkt 
+  arara $argv 
+  set output_file (string replace -r tex\$ pdf $argv) 
+  open -g $output_file 
+end
+</pre>
+</div>
+
+<p>
+The second, called &ldquo;mktc&rdquo; for &ldquo;make TeX continuously&rdquo;, runs arara, opens the PDF, watches for changes, and runs arara whenever the file is saved.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-fish"><span class="org-keyword">function</span> <span class="org-function-name">mktc</span>
+  <span class="org-builtin">arara</span> <span class="org-string">$</span><span class="org-variable-name">argv</span>
+  <span class="org-keyword">set</span> <span class="org-variable-name">output_file</span> (<span class="org-builtin">string</span> replace -r tex<span class="org-negation-char">\</span>$ pdf <span class="org-string">$</span><span class="org-variable-name">argv</span>)
+  <span class="org-builtin">open</span> -g <span class="org-string">$</span><span class="org-variable-name">output_file</span>
+  <span class="org-builtin">fswatch</span> -o <span class="org-string">$</span><span class="org-variable-name">argv</span> <span class="org-negation-char">|</span> <span class="org-builtin">xargs</span> -n1 -I{} arara <span class="org-string">$</span><span class="org-variable-name">argv</span>
+<span class="org-keyword">end</span>
+</pre>
+</div>
+</div>
+</section>
+<section id="outline-container-orgcc73789" class="outline-2">
+<h2 id="orgcc73789">Emacs</h2>
+<div class="outline-text-2" id="text-orgcc73789">
+<p>
+Here are some functions to use in Emacs to run the scripts.
+</p>
+</div>
+<div id="outline-container-org46be629" class="outline-3">
+<h3 id="org46be629">Auctex</h3>
+<div class="outline-text-3" id="text-org46be629">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/tex-mkt</span> ()
+  <span class="org-doc">"Compile with arara."</span>
+  (<span class="org-keyword">interactive</span>)
+  (async-shell-command (concat <span class="org-string">"mkt "</span> (buffer-file-name))))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/tex-mktc</span> ()
+  <span class="org-doc">"Compile continuously with arara."</span>
+  (<span class="org-keyword">interactive</span>)
+  (start-process-shell-command (concat <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat <span class="org-string">"mktc "</span> (buffer-file-name))))
+</pre>
+</div>
+
+<p>
+The first compiles with an asynchronous shell command, so that you can immediately return to editing the file while arara runs. I decided to use <code>start-process-shell-command</code> instead of <code>async-shell-command</code> for <code>mktc</code>, since <code>mkt</code> runs once and stops, while <code>mktc</code> keeps running in the background. When <code>rlr/tex-mktc</code> is called, a process is started that has the same name as the file with &ldquo;mktc-&rdquo; prepended it to it. The process is shown in a buffer that has the same name. That way, several files can be compiled at the same time.
+</p>
+</div>
+</div>
+<div id="outline-container-org06d754f" class="outline-3">
+<h3 id="org06d754f">Org Mode</h3>
+<div class="outline-text-3" id="text-org06d754f">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/org-mkt</span> ()
+  <span class="org-doc">"Make PDF with Arara."</span>
+  (<span class="org-keyword">interactive</span>)
+  (org-latex-export-to-latex)
+  (async-shell-command (concat <span class="org-string">"mkt "</span> (file-name-sans-extension (buffer-file-name))<span class="org-string">".tex"</span>)))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/org-mktc</span> ()
+  <span class="org-doc">"Compile continuously with arara."</span>
+  (<span class="org-keyword">interactive</span>)
+  (org-latex-export-to-latex)
+  (start-process-shell-command (concat <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat <span class="org-string">"mktc "</span> (file-name-sans-extension (buffer-file-name))<span class="org-string">".tex"</span>)))
+</pre>
+</div>
+
+<p>
+These functions first export the org file to \(\LaTeX\), then compile the corresponding TeX files. All in all, a morning&rsquo;s worth of work to save a few keystrokes. I run them using <a href="https://github.com/jerrypnz/major-mode-hydra.el">major mode hydras</a>.
+</p>
+</div>
+</div>
+</section>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 04, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

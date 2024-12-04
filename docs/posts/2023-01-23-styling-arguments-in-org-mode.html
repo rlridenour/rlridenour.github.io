@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 04, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Styling Arguments in Org Mode</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Styling Arguments in Org Mode</h1>
+<p class="subtitle" role="doc-subtitle">Jan 23, 2023</p>
+</header><p>
+Org mode is particularly useful for its ability to easily export to many other file formats. I often prepare handouts that contain philosophical arguments. Some of these handouts are intended to be printed, others are intended to be viewed electronically. Printed handouts are prepared by exporting the org file to PDF using LaTeX, and the other handouts are made by exporting to HTML.
+</p>
+
+<p>
+We often put arguments in what is called &ldquo;standard form.&rdquo; The premises are written on numbered lines, with a line underneath the last premise. The conclusion is then written beneath the line. In LaTeX, this is easily done with this code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">enumerate</span>}
+<span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> First Premise
+<span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> <span class="org-font-latex-sedate"><span class="org-keyword">\underline</span></span>{<span class="org-font-latex-underline">Last Premise</span>}
+<span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> [<span class="org-variable-name"><span class="org-font-latex-math">$</span></span><span class="org-font-latex-sedate"><span class="org-variable-name"><span class="org-font-latex-math">\therefore</span></span></span><span class="org-variable-name"><span class="org-font-latex-math">$</span></span>] Conclusion
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">enumerate</span>}
+</pre>
+</div>
+
+<p>
+For HTML, I use a class  that I named &ldquo;arg&rdquo; and defined in my custom css file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-css"><span class="org-css-selector">.arg li:last-child</span> {
+  <span class="org-css-property">list-style</span>: none;
+}
+
+<span class="org-css-selector">.arg li:nth-last-child(2)</span> {
+  <span class="org-css-property">text-decoration</span>: underline;
+}
+
+<span class="org-css-selector">.arg li</span> {
+  <span class="org-css-property">margin</span>: 0px;
+}
+</pre>
+</div>
+
+
+<p>
+This tells the rendering engine to not put any number before the last item of a list (nor any other styling) and to underline the penultimate item of the list. 
+</p>
+
+<p>
+To use an HTML class in org mode, just put this immediately before the element you want to style:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-meta-line">#+ATTR_HTML: :class classname</span>
+</pre>
+</div>
+
+<p>
+The argument is written like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil">#+ATTR_HTML: :class arg
+1. First premise
+2. Second premise
+3. Conclusion
+</pre>
+</div>
+
+<p>
+which produces this:
+</p>
+
+<ol class="org-ol arg">
+<li>First premise</li>
+<li>Second premise</li>
+<li>Conclusion</li>
+</ol>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 04, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

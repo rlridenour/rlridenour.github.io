@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Dec 04, 2024 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs Literate Config</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Emacs Literate Config
+<br />
+<span class="subtitle">Aug 02, 2023</span>
+</h1>
+<p>
+Having some time this summer, I decided to try to convert my very disorganized Emacs config files into one Org-mode file. I have had a literate config in the past, and it went much more easily than I remember. If you&rsquo;re thinking about creating one, here is what I recommend.
+</p>
+
+<p>
+First, use the same org file to generate both <code>early-init.el</code> and <code>init.el</code>. The file that a section tangles to is specified in the section&rsquo;s properties. My first top-level section heading is this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-level-1">* Early init file</span>
+<span class="org-org-drawer">:PROPERTIES:</span>
+<span class="org-org-special-keyword">:header-args:</span> <span class="org-org-property-value">:tangle early-init.el</span>
+<span class="org-org-drawer">:END:</span>
+</pre>
+</div>
+
+<p>
+Anything in this section becomes part of <code>early-init.el</code>. All of the other top-level sections specify to tangle to <code>init.el</code>. Both files are created when the Org file is tangled. Lower-level sections inherit their properties from the top-levels. So, only the top-level sections need the properties specified.
+</p>
+
+<p>
+I recommend beginning by adding just enough to set up package management and installing <a href="https://github.com/yilkalargaw/org-auto-tangle">Org Auto Tangle</a>, and then use <code>C-c C-v t</code> to tangle the file and generate both <code>early-init.el</code> and <code>init.el</code>. After that, Org Auto Tangle will automatically tangle the file every time that the Org file is saved.
+</p>
+
+<p>
+My <a href="https://github.com/rlridenour/config-files/blob/master/emacs/README.org">Emacs Config</a> is on Github. View the raw file to see all of the properties and src blocks.
+</p>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 04, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

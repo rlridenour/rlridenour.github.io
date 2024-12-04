@@ -109,7 +109,7 @@ publishing directory. Returns output file name."
          :base-extension "org"
          :recursive t
          :publishing-function org-html-publish-to-html
-         :publishing-directory "~/sites/rlridenour.github.io/posts/"
+         :publishing-directory "./docs/posts/"
          :exclude ,(regexp-opt '("README.org" "draft"))
          :auto-sitemap t
          :sitemap-filename "index.org"
@@ -131,7 +131,7 @@ publishing directory. Returns output file name."
          :index-filename "index.org"
          :recursive t
          :publishing-function org-html-publish-to-html
-         :publishing-directory "~/sites/rlridenour.github.io/"
+         :publishing-directory "./docs/"
          :html-link-home "/"
          :html-link-up "/"
          :html-head-include-scripts t
@@ -142,19 +142,19 @@ publishing directory. Returns output file name."
         ("css"
          :base-directory "./css"
          :base-extension "css"
-         :publishing-directory "~/sites/rlridenour.github.io/css"
+         :publishing-directory "./docs/css"
          :publishing-function org-publish-attachment
          :recursive t)
         ("images"
          :base-directory "./images"
          :base-extension ,site-attachments
-         :publishing-directory "~/sites/rlridenour.github.io/images"
+         :publishing-directory "./docs/images"
          :publishing-function org-publish-attachment
          :recursive t)
         ("assets"
          :base-directory "./assets"
          :base-extension ,site-attachments
-         :publishing-directory "~/sites/rlridenour.github.io/assets"
+         :publishing-directory "./docs/assets"
          :publishing-function org-publish-attachment
          :recursive t)
         ("rss"
@@ -164,7 +164,7 @@ publishing directory. Returns output file name."
          :rss-link-home "http://example.com/"
          :html-link-use-abs-url t
          :rss-extension "xml"
-         :publishing-directory "~/sites/rlridenour.github.io"
+         :publishing-directory "./docs"
          :publishing-function (org-rss-publish-to-rss)
          :section-number nil
          :exclude ".*"

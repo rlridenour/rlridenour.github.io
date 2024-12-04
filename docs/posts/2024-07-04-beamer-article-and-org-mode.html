@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Dec 04, 2024 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Beamer Article and Org Mode</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Beamer Article and Org Mode
+<br />
+<span class="subtitle">Jul 04, 2024</span>
+</h1>
+<p>
+I generate LaTeX Beamer lecture slides and handouts from a single Org mode data file.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> The handouts include the information on the slides plus some extra explanation. I like to draw a box around the slide information so that students can easily differentiate the slides from the notes. I have scripts that export the Org file, generate the LaTeX files, then create the PDF&rsquo;s. Everything seemed to work well so far, or at least I hadn&rsquo;t noticed anything that wasn&rsquo;t working. I&rsquo;m teaching a course this summer that covers the same material in one day that I usually cover in three days during a regular semester. Ordinarily, I structure the presentation using only sections and slides, but stitching three of them together required adding subsections to keep everything clear. Adding subsections shouldn&rsquo;t have been a problem, it&rsquo;s just a matter of changing one line in the Org header from
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-meta-line">#+OPTIONS: H:3</span>
+</pre>
+</div>
+
+<p>
+to
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-meta-line">#+OPTIONS: H:2</span>
+</pre>
+</div>
+
+<p>
+Unfortunately, this messed up the nice boxes around the slide material on the handouts. Suddenly, the boxes had completely disappeared. I didn&rsquo;t understand why until I started looking at the LaTeX files. It turned out that I had been using tcolorbox to draw boxes around every block environment. Once I made the change, the slides were in a frame environment on the handouts, as they should have been. Easy fix, or so I thought — just change &ldquo;block&rdquo; to &ldquo;frame&rdquo; in the tcolorbox command. That brought the boxes back, but only around the slide titles, not around the slide contents.
+</p>
+
+<p>
+After many completely unproductive Internet searches, I stumbled on the problem. Org Beamer exports a slide to this LaTeX code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-tex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">frame</span>}[label]{Slide Title}
+  Slide contents
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">frame</span>}
+</pre>
+</div>
+
+<p>
+This is fine for everything except my lecture handouts. I found that a small change to the LaTeX file completely fixed everything, though. All I needed to do was to change the frame environment to look like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-tex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">frame</span>}[label]
+  <span class="org-font-latex-sedate">\frametitle</span>{Slide Title}
+  Slide contents
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">frame</span>}
+</pre>
+</div>
+
+<p>
+Now, the problem was getting Org mode to export the subtree to look like that. After many, many more unproductive Internet searches, I learned that new Org exports could be made from pre-existing ones using org-export-define-derived-backend. Unfortunately, I couldn&rsquo;t get it to work. Finally, it struck me that since I only needed to use frametitle for the handouts, a simple search and replace might be best. Adding this function to my compilation script worked:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/create-frametitle</span> ()
+  <span class="org-doc">"Convert title to frametitle."</span>
+  (interactive)
+  (goto-char 1)
+  (<span class="org-keyword">while</span> (<span class="org-keyword">ignore-errors</span>
+             (re-search-forward <span class="org-string">"begin{frame}.*]"</span>))
+    (insert <span class="org-string">"\n \\frametitle"</span>))
+  )
+</pre>
+</div>
+
+<p>
+This finds a line containing &ldquo;begin{frame}&rdquo;, moves the point after the closing bracket of the label, inserts a new line then puts &ldquo;\frametitle&rdquo; before the slide title.
+</p>
+
+<p>
+Here&rsquo;s the simple tcolorbox commands that go in the header:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-meta-line">#+LaTeX_HEADER: \usepackage{tcolorbox}</span>
+<span class="org-org-meta-line">#+LaTeX_HEADER: \mode&lt;article&gt;{\setbeamertemplate{frame begin}{\begin{tcolorbox}[colback=white, colframe=gray,]} \setbeamertemplate{frame end}{\end{tcolorbox}}}</span>
+</pre>
+</div>
+
+<p>
+Simple enough, and only took four days&#x2026;.
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+I sketched out the process I use in <a href="https://randyridenour.net/posts/2020-06-01-beamer-presentations-with-org-mode/">this post</a> from 2020. I&rsquo;ve changed a few things since then, but the basic strategy is the same.
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 04, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

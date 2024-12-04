@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 04, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Org Mode Footnotes in Hugo</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Org Mode Footnotes in Hugo</h1>
+<p class="subtitle" role="doc-subtitle">Jan 25, 2023</p>
+</header><p>
+I mentioned yesterday that I couldn&rsquo;t remember what I didn&rsquo;t like about Hugo&rsquo;s parsing of Org mode in the past. When I viewed the published post, I quickly remembered what it was: footnotes. If I remember correctly, at the time that I first tried using native Org mode parsing, Hugo didn&rsquo;t parse the footnotes at all. Now, it does, but they render in an odd way. The footnote number is in subscript on one line, followed by a blank line, followed by the footnote text on another line. So, instead of getting something like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil">1. Footnote text.
+</pre>
+</div>
+
+<p>
+We get this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil">1.
+
+Footnote text.
+</pre>
+</div>
+
+<p>
+A Google search resulted in one question on the <a href="https://discourse.gohugo.io/t/footnotes-rendered-different-for-org-files-compared-to-markdown-source/20415/">Hugo help forum</a>, but no good answer. The problem is the way that Hugo renders the HTML. In a Markdown post, this content
+</p>
+
+<div class="org-src-container">
+<pre class="src src-markdown">This is a footnote test.<span class="org-markdown-markup">[^</span><span class="org-markdown-footnote-marker">1</span><span class="org-markdown-markup">]</span>
+
+<span class="org-markdown-markup">[^</span><span class="org-markdown-footnote-marker">1</span><span class="org-markdown-markup">]:</span> <span class="org-markdown-url">Footnote content.</span>
+</pre>
+</div>
+
+<p>
+results in this HTML code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"article-post"</span>&gt;
+    &lt;<span class="org-function-name">p</span>&gt;This is a footnote test.&lt;<span class="org-function-name">sup</span> <span class="org-variable-name">id</span>=<span class="org-string">"fnref:1"</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">href</span>=<span class="org-string">"#fn:1"</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-ref"</span> <span class="org-variable-name">role</span>=<span class="org-string">"doc-noteref"</span>&gt;1&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">sup</span>&gt;&lt;/<span class="org-function-name">p</span>&gt;
+    &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnotes"</span> <span class="org-variable-name">role</span>=<span class="org-string">"doc-endnotes"</span>&gt;
+        &lt;<span class="org-function-name">hr</span>&gt;
+        &lt;<span class="org-function-name">ol</span>&gt;
+            &lt;<span class="org-function-name">li</span> <span class="org-variable-name">id</span>=<span class="org-string">"fn:1"</span>&gt;
+                &lt;<span class="org-function-name">p</span>&gt;Footnote content.&amp;#160;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">href</span>=<span class="org-string">"#fnref:1"</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-backref"</span> <span class="org-variable-name">role</span>=<span class="org-string">"doc-backlink"</span>&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">p</span>&gt;
+            &lt;/<span class="org-function-name">li</span>&gt;
+        &lt;/<span class="org-function-name">ol</span>&gt;
+    &lt;/<span class="org-function-name">div</span>&gt;
+
+&lt;/<span class="org-function-name">div</span>&gt;
+</pre>
+</div>
+
+<p>
+This turns the footnotes into numbered list items that end with a nice return character that is linked to the footnote number in the text.
+</p>
+
+<p>
+This Org mode content, however,
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">This is a footnote test.<span class="org-org-footnote">[fn:1]</span>
+
+<span class="org-org-footnote">[fn:1]</span> Footnote content. 
+</pre>
+</div>
+
+<p>
+renders like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"article-post"</span>&gt;
+    &lt;<span class="org-function-name">p</span>&gt;
+        This is a footnote test.&lt;<span class="org-function-name">sup</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-reference"</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">id</span>=<span class="org-string">"footnote-reference-1"</span> <span class="org-variable-name">href</span>=<span class="org-string">"#footnote-1"</span>&gt;1&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">sup</span>&gt;&lt;/<span class="org-function-name">p</span>&gt;
+    &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnotes"</span>&gt;
+        &lt;<span class="org-function-name">hr</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnotes-separatator"</span>&gt;
+        &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-definitions"</span>&gt;
+            &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-definition"</span>&gt;
+                &lt;<span class="org-function-name">sup</span> <span class="org-variable-name">id</span>=<span class="org-string">"footnote-1"</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">href</span>=<span class="org-string">"#footnote-reference-1"</span>&gt;1&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">sup</span>&gt;
+                &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-body"</span>&gt;
+                    &lt;<span class="org-function-name">p</span>&gt;Footnote content. &lt;/<span class="org-function-name">p</span>&gt;
+                &lt;/<span class="org-function-name">div</span>&gt;
+            &lt;/<span class="org-function-name">div</span>&gt;
+        &lt;/<span class="org-function-name">div</span>&gt;
+    &lt;/<span class="org-function-name">div</span>&gt;
+
+&lt;/<span class="org-function-name">div</span>&gt;
+</pre>
+</div>
+
+<p>
+Notice that there is no list, instead the footnote text is separated from the number by a <code>&lt;div&gt;</code>, which is normally rendered as an empty line.
+</p>
+
+<p>
+Hacking around with some CSS, I managed to get the number and the text on the same line.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> Here&rsquo;s the CSS code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-css"><span class="org-css-selector">.footnote-definition</span> {
+  <span class="org-css-property">display</span>: block;
+}
+
+<span class="org-css-selector">.footnote-body</span> {
+  <span class="org-css-property">display</span>: inline-block;
+}
+</pre>
+</div>
+
+
+
+<p>
+I&rsquo;m not quite satisfied with the superscript number in the footnote, but I haven&rsquo;t found a good fix for that yet.
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Like this. 
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 04, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Dec 04, 2024 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Org, Diary, and Dashboard</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Org, Diary, and Dashboard
+<br />
+<span class="subtitle">Jan 24, 2024</span>
+</h1>
+<p>
+When I&rsquo;m not in class, most of my time is spent at my desk, with stacks of books, writing in Emacs. I also have a tendency to lose track of time when I&rsquo;m focused on a problem. So, it would be nice to have something in Emacs to remind me of the start times of meetings and classes. That sent me down a two-day rabbit hole exploring the Emacs diary and getting deeper into Org mode.
+</p>
+
+<p>
+I won&rsquo;t bother detailing all of the options that I tried, but here are the highlights:
+</p>
+
+<ol class="org-ol">
+<li>I first tried putting all of my appointments in Org mode. That seemed the natural thing to do, since I was already using it for task management. Unfortunately, I couldn&rsquo;t figure out how to do simple things like creating recurring appointments that ended by a certain date, much less complex ones like a class that meets every Tuesday and Thursday except for Spring Break, conference breaks, etc.</li>
+<li>I then explored using the diary. The <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Format-of-Diary-File.html">diary file</a> has an extremely simple format; simple appointments are made just by listing the date, time, and appointment title on a line. Complex appointments are made by using special <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Special-Diary-Entries.html">sexp entries</a>, which allowed me to create the appointments for my courses. It is also very easy to display these appointments in org-agenda, which very conveniently marks the current time with a line across the agenda, providing a nice visual representation of the relative time before my next appointment. I didn&rsquo;t quite like how the appointments were displayed in emphasized text, but everything else worked great. A reminder pops up in the minibuffer several minutes before the appointment. The pop-up reminder soon disappears, but the modeline continues to list, and update, the number of minutes until the appointment.</li>
+<li>Finally, as I researched how to form complex sexp appointments, I saw that Org mode is able to use the sexp appointment format. So, it was back to Org mode. Here is what I used in the end.</li>
+</ol>
+<section id="outline-container-org1d81d23" class="outline-2">
+<h2 id="org1d81d23">Init Settings</h2>
+<div class="outline-text-2" id="text-org1d81d23">
+<p>
+I created an agenda display for just the current day:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(setq org-agenda-custom-commands
+    '((<span class="org-string">"d"</span> <span class="org-string">"Agenda for today"</span> agenda <span class="org-string">""</span>
+        ((org-agenda-overriding-header <span class="org-string">"Today's agenda"</span>)
+         (org-agenda-span 'day)
+        ))))
+</pre>
+</div>
+
+<p>
+Next is to clear the existing appointment list when Emacs starts:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(setq appt-time-msg-list nil)
+</pre>
+</div>
+
+<p>
+Then generate the appointment list from the Org agenda files and update it hourly:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(org-agenda-to-appt)
+(run-at-time <span class="org-string">"24:01"</span> 3600 'org-agenda-to-appt)
+</pre>
+</div>
+
+<p>
+Finally, update the appointment list every time that an agenda is viewed:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
+</pre>
+</div>
+
+<p>
+An alert is issued 12 minutes before every appointment. This can be changed with <code>(setq appt-message-warning-time 'n)</code>, where <code>n</code> is the number of minutes desired. There are ways to generate system alerts using the <a href="https://github.com/spegoraro/org-alert">Org Alert</a> package and others, but I only want something visible that counts down the time until I need to be somewhere. For this, the default appointment system works just fine.
+</p>
+
+<p>
+I use the <a href="https://github.com/emacs-dashboard/emacs-dashboard">Emacs Dashboard</a> package. To display appointments, I found this function from <a href="https://github.com/KaratasFurkan">Furkan Karataş</a> to insert the agenda view for the day:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">dashboard-insert-agenda</span> (<span class="org-type">&amp;rest</span> _)
+  <span class="org-doc">"Insert a copy of org-agenda buffer."</span>
+  (insert (save-window-excursion
+            (org-agenda nil <span class="org-string">"d"</span>)
+            (<span class="org-keyword">prog1</span> (buffer-string)
+              (kill-buffer)))))
+</pre>
+</div>
+
+<p>
+I don&rsquo;t need to see the time grid, just the current time and the appointment times:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(setq org-agenda-time-grid
+  '((daily today require-timed remove-match)
+    ()
+    <span class="org-string">"......"</span>
+    <span class="org-string">""</span>))
+</pre>
+</div>
+</div>
+</section>
+<section id="outline-container-org5260d7b" class="outline-2">
+<h2 id="org5260d7b">The Agenda File</h2>
+<div class="outline-text-2" id="text-org5260d7b">
+<p>
+I have two separate agenda files, one for tasks and another for events. Here&rsquo;s how the event file is currently structured with an example or two in each category.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-level-1">* Birthdays and Anniversaries</span>
+
+<span class="org-org-sexp-date">%%(org-anniversary 2019 12 19) Lucy's %d%s birthday</span>
+
+<span class="org-org-level-1">* Classes</span>
+
+<span class="org-org-level-2">** Intro 12:30-13:45</span>
+&lt;%%(and (memq (calendar-day-of-week date) '(2 4))
+   (diary-block 1 25 2024 5 10 2024)
+   (not (or
+        (diary-block 3 18 2024 3 22 2024)
+        (diary-date 3 29 2024))))&gt;
+
+<span class="org-org-level-1">* Recurring</span>
+
+<span class="org-org-level-2">** Edward 15:00</span>
+<span class="org-org-sexp-date">&lt;%%(memq (calendar-day-of-week date) '(3))&gt;</span>
+
+<span class="org-org-level-1">* Future</span>
+
+<span class="org-org-level-2">** Total Eclipse </span><span class="org-org-level-2"><span class="org-org-date">&lt;2024-04-08 Mon&gt;</span></span>
+<span class="org-org-level-2">** Colloquium </span><span class="org-org-level-2"><span class="org-org-date">&lt;2024-02-09 Fri 15:00&gt;</span></span>
+
+<span class="org-org-level-1">* Past</span>
+</pre>
+</div>
+
+<p>
+All one-time appointments go under the future heading. Each appointment is simply a level-two heading that contains the appointment name and a timestamp. I haven&rsquo;t yet decided whether I&rsquo;ll later archive them or send them to &ldquo;Past&rdquo; with org-refile.
+</p>
+
+<p>
+The first example is for our dog&rsquo;s birthday. The &ldquo;%d&rdquo; prints the number and the &ldquo;%s&rdquo; adds the ordinal ending. So, the agenda for December 19, 2023 contained &ldquo;Lucy&rsquo;s 4th birthday&rdquo;. I also have entries for family birthdays and anniversaries.
+</p>
+
+<p>
+The second example is one of my classes this semester. At first, I struggled with where to put the time, until I realized that it doesn&rsquo;t go in the sexp. Just put the appointment name and time in the sub-heading with the sexp below. In my file, I have the sexp formulas on one line, but I&rsquo;ve split it up here to make it more readable. The first line means that this appointment is on Tuesdays and Thursdays. (Sunday=0, Monday=1, and so on.) The second line says that the appointment occurs only between January 25 and May 10, 2024, which are the beginning and end dates for our Spring semester. Conjoining these with &ldquo;and&rdquo; gives us all Tuesdays and Thursdays in the Spring semester. Next are lines with the exclusions, signified with &ldquo;not&rdquo;. The first exclusion is a block for spring break, and the second is one day that classes are cancelled. Note that these are in the scope of an &ldquo;or&rdquo; operator, meaning that a date is excluded if it meets at least one of these conditions.
+</p>
+
+<p>
+The recurring section is for any recurring appointment that is not a class. Note that this could have been done with something like this, if the appointment never changes:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-level-2">** Edward </span><span class="org-org-level-2"><span class="org-org-date">&lt;2024-01-24 Wed 15:00 +1w&gt;</span></span>
+</pre>
+</div>
+
+<p>
+I used the slightly more complicated formula because we will probably not meet in the summer, so it will be easy to add an exception block to the sexp.
+</p>
+
+<p>
+Finally, I added an org-capture template for easily creating simple appointments:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span class="org-string">"e"</span> <span class="org-string">"Event"</span> entry (file+headline <span class="org-string">"path to events.org"</span> <span class="org-string">"Future"</span>)
+           <span class="org-string">"** %? %T"</span>)
+</pre>
+</div>
+
+<p>
+This creates the appointment entry with a timestamp and puts the mark where the appointment name will go.
+</p>
+
+<p>
+There are many examples that can be found online, but few were of the type that I needed to see. I hope this helps someone else.
+</p>
+</div>
+</section>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 04, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

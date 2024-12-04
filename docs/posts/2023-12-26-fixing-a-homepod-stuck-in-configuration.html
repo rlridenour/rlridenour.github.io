@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Dec 04, 2024 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fixing a HomePod Stuck in Configuration</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Fixing a HomePod Stuck in Configuration
+<br />
+<span class="subtitle">Dec 26, 2023</span>
+</h1>
+<p>
+I&rsquo;ve had a HomePod Mini in my home office for about six months now that has been working great. I&rsquo;m really impressed with the audio produced by such a small speaker. I&rsquo;ve been wanting another one to try out a stereo pair, so I put it on my Christmas list. Installing the first one was simple, but installing the second was frustrating. I connected it to power, and scanned the light with my iPhone. The HomePod went through a set-up process, offered to pair to the first, but the stereo pairing never worked. I noticed that the Home app said that the new HomePod was being configured and full functionality would be available shortly, but it never finished. I also notice that the old HomePod was on version 17.2 of the HomePod software, but the new one was still on version 16.0. So, as one does in such cases, I turned to the Internet for solutions. Evidently, this is a common problem, especially with HomePods on version 16.0 of the software. and here are some of the potential solutions that I found.
+</p>
+
+<ul class="org-ul">
+<li>Unplug for at least ten seconds, then reconnect to power. The HomePod should update. (It didn&rsquo;t).</li>
+<li>Change your location setting in iCloud to something else, update the HomePod, and then change the location to the original setting. (I found that you can&rsquo;t change your location setting until you first cancel Apple One and other subscriptions, which I did not want to until I was absolutely desperate.)</li>
+<li>Install the HomePod into a temporary new home in the Home app.</li>
+<li>Connect the new HomePod to a Mac and update in the Finder.</li>
+</ul>
+
+<p>
+A combination of the last two worked. Here are the steps that I remember doing, if you ever find yourself in the same position:
+</p>
+
+<ol class="org-ol">
+<li>Connect the HomePod to a Mac. Select it when it shows up in the Finder sidebar, and choose to restore it. It will then update to the latest version of the software.</li>
+<li>Remove the old HomePod from the Home app by selecting it in the Home app, selecting &ldquo;Reset HomePod&#x2026;&rdquo;, and then selecting &ldquo;Remove Accessory&rdquo;. (I don&rsquo;t know if this was necessary, but it&rsquo;s what I did.)</li>
+<li>Add a new home in the Home app by first clicking on the circle with three little dots inside in the top right corner. In the &ldquo;Home Settings&rdquo; page, you&rsquo;ll find &ldquo;Add Home&rdquo; in the top left. Name it anything you like.</li>
+<li>Add the new HomePod to the new home. After the installation process is finally complete, move the new HomePod to the old home, by selecting the HomePod and choosing &ldquo;Remove Accessory&rdquo;.</li>
+<li>Add the new HomePod to the original home. Then, I added the old Homepod as a stereo pair. After everything was working, I then deleted the new temporary home from the Home app.</li>
+</ol>
+
+<p>
+Hope this helps someone.
+</p>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 04, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

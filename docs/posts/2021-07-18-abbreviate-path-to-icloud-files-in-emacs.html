@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 04, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Abbreviate Path to iCloud Files in Emacs</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Abbreviate Path to iCloud Files in Emacs</h1>
+<p class="subtitle" role="doc-subtitle">Jul 18, 2021</p>
+</header><p>
+When I include everything I do over my breaks in summer and January, I probably work more from my home computer than I do my office computer. A good file synchronization service makes that much easier. For years, I really only used Dropbox, and it served my needs very well. Just like the 20 MB (as in megabytes, not a typo) hard drive that I had in my first PC, it seemed like I would never run out of Dropbox space. Two problems eventually occurred. First, I did indeed reach the limit of my free tier. Second, Dropbox began enforcing a limit on the number of different devices that could sync with the free tier. I wasn&rsquo;t inclined to pay for more space, because, I was already paying for extra space in iCloud for photo syncing. So, I decided to move my working documents from Dropbox to iCloud, which has worked great except for one small thing. Here is the full path and filename for one of my typical files:
+</p>
+
+<p>
+<code>/Users/rlridenour/Library/Mobile Documents/com~apple~CloudDocs/Documents/teaching/critical-thinking/notes/probabability-presentation.tex</code>
+</p>
+
+<p>
+This line is 136 characters long, and unless I expanded the size of the Emacs frame to at least half of the size of my 32-inch desktop monitor, I couldn&rsquo;t see the filename in the recent files list.
+</p>
+
+<p>
+Adding this to my Doom Emacs config solved the problem:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">use-package</span> <span class="org-constant">ivy-rich</span>
+  <span class="org-builtin">:after</span> counsel
+  <span class="org-builtin">:config</span>
+  (<span class="org-keyword">setq</span> ivy-rich-display-transformers-list
+        (plist-put ivy-rich-display-transformers-list
+'counsel-buffer-or-recentf
+    '(<span class="org-builtin">:columns</span>
+      ((counsel-buffer-or-recentf-transformer (<span class="org-builtin">:width</span> (<span class="org-keyword">lambda</span> (x) (ivy-rich-switch-buffer-shorten-path x (ivy-rich-minibuffer-width 1.0))))))))))
+</pre>
+</div>
+
+<p>
+Now, when I run <code>counsel-buffer-or-recentf</code>, Emacs abbreviates enough of the file paths to make each line fit into the frame. How much is abbreviated depends on how large the frame is. No matter how narrow the frame, though, I can still see the filename.
+</p>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 04, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

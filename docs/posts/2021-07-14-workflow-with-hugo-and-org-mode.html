@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 04, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Workflow with Hugo and Org Mode</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Workflow with Hugo and Org Mode</h1>
+<p class="subtitle" role="doc-subtitle">Jul 14, 2021</p>
+</header><p>
+Setting up the <a href="https://github.com/kaushalmodi/ox-hugo">Ox-hugo</a> package to use Org mode with Hugo was much easier than I expected. Here is how I configured it, the workflow for posting with Doom Emacs, and some things to keep in mind.
+</p>
+<section id="outline-container-org9d51719" class="outline-2">
+<h2 id="org9d51719">Installation and configuration</h2>
+<div class="outline-text-2" id="text-org9d51719">
+<p>
+I&rsquo;m back to using Doom Emacs, so adding Ox-hugo required nothing more than adding the <code>+hugo</code> flag to <code>:lang org</code> in the init.el file. Look for <code>org</code> in init.el, and change it to <code>(org +hugo)</code>. Ox-hugo has excellent <a href="https://ox-hugo.scripter.co/">documentation</a>, and I configured it almost exactly the way that was suggested. I was skeptical that having a single Org file that contained every blog post was a good idea, but after two days, it seems to be the way to go. I have a file called &ldquo;blog.org&rdquo; in a directory named &ldquo;content-org&rdquo; in my hugo project directory. This file has the following settings at the top:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-meta-line">#+hugo_base_dir: ~/Sites/blog</span>
+<span class="org-org-meta-line">#+seq_todo: TODO DRAFT DONE</span>
+<span class="org-org-meta-line">#+hugo_front_matter_format: yaml</span>
+<span class="org-org-meta-line">#+hugo_weight: auto</span>
+<span class="org-org-meta-line">#+hugo_auto_set_lastmod: t</span>
+<span class="org-org-document-info-keyword">#+author:</span> <span class="org-org-document-info">Randy Ridenour</span>
+</pre>
+</div>
+
+<p>
+Then, there is a top-level heading called &ldquo;Blog Ideas&rdquo;. All other top-level headings are categories. Each second-level heading will be a post under that particular category.
+</p>
+
+<p>
+Next, &lt;I copied the Org-capture template and made some small modifications. I changed <code>EXPORT_FILE_NAME</code> to format file names with a date string to match my other post file names. I also included a line with some custom front matter that I usually use, mostly because I know I wouldn&rsquo;t remember how to insert it when I needed i&gt;
+</p>
+
+<p>
+Here is the template:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Populates only the EXPORT_FILE_NAME property in the inserted headline.</span>
+(<span class="org-keyword">with-eval-after-load</span> 'org-capture
+  (<span class="org-keyword">defun</span> <span class="org-function-name">org-hugo-new-subtree-post-capture-template</span> ()
+    <span class="org-doc">"Returns `</span><span class="org-doc"><span class="org-constant">org-capture</span></span><span class="org-doc">' template string for new Hugo post.</span>
+<span class="org-doc">See `</span><span class="org-doc"><span class="org-constant">org-capture-templates</span></span><span class="org-doc">' for more information."</span>
+    (<span class="org-keyword">let*</span> ((title (read-from-minibuffer <span class="org-string">"Post Title: "</span>)) <span class="org-comment-delimiter">;</span><span class="org-comment">Prompt to enter the post title</span>
+           (fname (org-hugo-slug title)))
+      (mapconcat #'identity
+                 `(
+                   ,(concat <span class="org-string">"* TODO "</span> title)
+                   <span class="org-string">":PROPERTIES:"</span>
+                   ,(concat <span class="org-string">":EXPORT_FILE_NAME: "</span> (format-time-string <span class="org-string">"%Y%m%d-"</span>) fname)
+<span class="org-string">":EXPORT_HUGO_CUSTOM_FRONT_MATTER: :highlight true :math false"</span>
+                   <span class="org-string">":END:"</span>
+                   <span class="org-string">"%?\n"</span>)          <span class="org-comment-delimiter">;</span><span class="org-comment">Place the cursor here finally</span>
+                 <span class="org-string">"\n"</span>)))
+
+  (add-to-list 'org-capture-templates
+               '(<span class="org-string">"h"</span>                <span class="org-comment-delimiter">;</span><span class="org-comment">`</span><span class="org-comment"><span class="org-constant">org-capture</span></span><span class="org-comment">' binding + h</span>
+                 <span class="org-string">"Hugo post"</span>
+                 entry
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">It is assumed that below file is present in `</span><span class="org-comment"><span class="org-constant">org-directory</span></span><span class="org-comment">'</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">and that it has a "Blog Ideas" heading. It can even be a</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">symlink pointing to the actual location of all-posts.org!</span>
+                 (file+olp <span class="org-string">"blog.org"</span> <span class="org-string">"Blog Ideas"</span>)
+                 (<span class="org-keyword">function</span> org-hugo-new-subtree-post-capture-template))))
+</pre>
+</div>
+</div>
+</section>
+<section id="outline-container-orgffe2173" class="outline-2">
+<h2 id="orgffe2173">Workflow</h2>
+<div class="outline-text-2" id="text-orgffe2173">
+<p>
+<code>C-c n n</code> in Doom opens a hydra for Org-capture. Selecting &ldquo;h&rdquo; prompts for a post title in the minibuffer. Enter the title, press the return key, and a new Org-mode window opens with the file settings from the capture template. Enter the desired text, then press <code>C-c C-c</code> to close the window. The post is filed in the site&rsquo;s Org content file under the Blog Ideas section. When ready, move the cursor to a point in the post, and use org-refile to put it in the category that you would like.
+</p>
+
+<p>
+Add a file called &ldquo;dir-locals.el&rdquo; to the root level of the hugo site directory that has this content:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">((<span class="org-string">"content-org/"</span>
+  . ((org-mode . ((eval . (org-hugo-auto-export-mode)))))))
+</pre>
+</div>
+
+<p>
+Then, as you write your posts, you can preview them at localhost:1313 as you edit them; just start the Hugo server in your terminal application like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">hugo server -D --navigateToChanged
+</pre>
+</div>
+
+<p>
+Now, every the Org file is saved, it automatically exports the correctly formatted Markdown post to the &ldquo;content/posts&rdquo; directory, and Hugo serves up the changed post in your browser.
+</p>
+
+<p>
+When the draft is finished, change the <code>TODO</code> flag in the post title to <code>DONE</code>, and the date will be updated.
+</p>
+</div>
+</section>
+<section id="outline-container-org2d9df47" class="outline-2">
+<h2 id="org2d9df47">Miscellaneous discoveries</h2>
+<div class="outline-text-2" id="text-org2d9df47">
+<p>
+So far, I&rsquo;ve found two things to keep in mind. First, headings in the Markdown files will be one level above the headings in the Org file. So, an H2 in the Org file is the post title, sections of the post have a H3 heading. The three stars in the Org file become two octothorpes in the Markdown file.
+</p>
+
+<p>
+Second, to specify a CSS class, just put this on the line directly preceding the item needing styling:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-meta-line">#+attr_html: :class classname</span>
+</pre>
+</div>
+
+<p>
+For example, here&rsquo;s how I use my style for philosophical arguments.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-meta-line">#+attr_html: :class arg</span>
+1. First premise
+2. Second premise
+3. Conclusion
+</pre>
+</div>
+
+<p>
+produces this:
+</p>
+
+<ol class="org-ol arg">
+<li>First premise</li>
+<li>Second premise</li>
+<li>Conclusion</li>
+</ol>
+</div>
+</section>
+<section id="outline-container-org2b5d3c2" class="outline-2">
+<h2 id="org2b5d3c2">Conclusion</h2>
+<div class="outline-text-2" id="text-org2b5d3c2">
+<p>
+Ox-hugo works amazingly well for producing well-formed Hugo Goldmark markdown from an Org mode source file. Since I write nearly everything in Org mode, this enables me to easily use the same material for posts, handouts, and other formats.
+</p>
+</div>
+</section>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 04, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

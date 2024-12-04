@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 04, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Updating the Site</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Updating the Site</h1>
+<p class="subtitle" role="doc-subtitle">Jan 24, 2023</p>
+</header><p>
+I&rsquo;ve had trouble getting verified as an educator with GitLab. After getting some notification from them that the &ldquo;ultimate&rdquo; status was being downgraded on my site project (not that it really would have mattered for this, since it&rsquo;s a public repository), I decided to move it to GitHub, where I&rsquo;ve had it before. I had moved it to GitLab because GitLab would do the Hugo build for me after I pushed the updated content to them. In the past, GitHub would build a Jekyll site, but any others needed to be built locally. So, I was pleasantly surprised to see that I could set up a Hugo build on GitHub now. Unfortunately, I couldn&rsquo;t get it to work reliably. What did work exceptionally well is to connect the repository to <a href="https://www.netlify.com">Netlify</a>, and let them handle serving the site. I followed the <a href="https://gohugo.io/hosting-and-deployment/hosting-on-netlify/">instructions</a> in the Hugo documentation, and everything went very smoothly. Netlify automatically detected that the repository was a Hugo site. Their instructions for pointing the domain&rsquo;s name servers to Netlify were clear and simple to follow. It&rsquo;s important to note that the site&rsquo;s theme <i>must</i> be installed as a git submodule. It won&rsquo;t work as a simple git clone. The instructions for most Hugo themes that I see specify installing as a submodule, so you likely already have that done.
+</p>
+
+<p>
+This seemed to be a good opportunity to update the site&rsquo;s theme. I had started with another theme and rewrote it into my own, but lately I&rsquo;ve been happier letting other people do as much of the configuration work as possible, which explains my move back to <a href="https://github.com/doomemacs/doomemacs">Doom Emacs</a>. I picked the <a href="https://github.com/WingLim/hugo-tania">Hugo Tania</a> theme, since it has nice built-in search and tag support.
+</p>
+<section id="outline-container-orgc3d1917" class="outline-2">
+<h2 id="orgc3d1917">Hugo and Org Mode</h2>
+<div class="outline-text-2" id="text-orgc3d1917">
+<p>
+I do most of my writing in Org mode in Emacs. Markdown is the most commonly used simple markup language, and Hugo has always had excellent native support for it. I remember its native support for Org mode to be missing some important things, although I can&rsquo;t really remember what they were. So, I was using <a href="https://ox-hugo.scripter.co">ox-hugo</a> to convert the Org files to Markdown. Evidently, Hugo&rsquo;s parser for Org mode is much more robust than it was, because I haven&rsquo;t had a problem with it parsing native Org files. So, I removed the ox-hugo package and now my posts are written in Org mode and not converted to Markdown. To do so, simply put the Hugo front-matter at the beginning in typical Org fashion. For instance, the front-matter for this post looks like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-document-info-keyword">#+TITLE:</span> <span class="org-org-document-title">Updating the Site</span>
+<span class="org-org-meta-line">#+draft: false</span>
+<span class="org-org-meta-line">#+tags[]: hugo emacs org</span>
+<span class="org-org-document-info-keyword">#+date:</span> <span class="org-org-document-info">2023-01-24T06:41:27</span>
+</pre>
+</div>
+
+<p>
+Now, that&rsquo;s all that really needs to be done. You can just write posts in Org mode, commit the changes, and push to the repository. Netlify detects that the repository has been changed and rebuilds the site. Of course, since this is Emacs, all of this except the writing can be automated. I modified the scripts that I was using for ox-hugo to make the process simple.
+</p>
+
+<p>
+First, there is a function that updates the date for the post:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-timestamp</span> ()
+  <span class="org-doc">"Update existing date: timestamp on a Hugo post."</span>
+  (<span class="org-keyword">interactive</span>)
+  (<span class="org-keyword">save-excursion</span> (
+                   goto-char 1)
+                  (re-search-forward <span class="org-string">"^#\\+date:"</span>)
+                  (<span class="org-keyword">let</span> ((beg (point)))
+                    (end-of-line)
+                    (delete-region beg (point)))
+                  (insert (concat <span class="org-string">" "</span> (format-time-string <span class="org-string">"%Y-%m-%dT%H:%M:%S"</span>)))))
+</pre>
+</div>
+
+<p>
+This sets some variables that are used later. The hugo-post-template variable contains the front-matter items that I generally use. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-directory</span> <span class="org-string">"~/Sites/blog/"</span> <span class="org-doc">"Path to Hugo blog."</span>)
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-posts-dir</span> <span class="org-string">"content/posts/"</span> <span class="org-doc">"Relative path to posts directory."</span>)
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-post-ext</span> <span class="org-string">".org"</span>  <span class="org-doc">"File extension of Hugo posts."</span>)
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-post-template</span> <span class="org-string">"#+TITLE: </span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">%s\n#+draft: true\n#+tags[]: \n#+date: \n#+mathjax: \n\n"</span>
+  <span class="org-doc">"Default template for Hugo posts. %s will be replace by the post title."</span>)
+</pre>
+</div>
+
+<p>
+These are used to generate the file name:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-make-slug</span> (s) <span class="org-doc">"Turn a string into a slug."</span>
+       (replace-regexp-in-string <span class="org-string">" "</span> <span class="org-string">"-"</span>  (downcase (replace-regexp-in-string <span class="org-string">"[</span><span class="org-string"><span class="org-negation-char">^</span></span><span class="org-string">A-Za-z0-9 ]"</span> <span class="org-string">""</span> s))))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-yaml-escape</span> (s) <span class="org-doc">"Escape a string for YAML."</span>
+       (<span class="org-keyword">if</span> (<span class="org-keyword">or</span> (string-match <span class="org-string">":"</span> s) (string-match <span class="org-string">"\""</span> s)) (concat <span class="org-string">"\""</span> (replace-regexp-in-string <span class="org-string">"\""</span> <span class="org-string">"\\\\\""</span> s) <span class="org-string">"\""</span>) s))
+</pre>
+</div>
+
+<p>
+This creates the file and puts in the front-matter:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-draft-post</span> (title) <span class="org-doc">"Create a new Hugo blog post."</span>
+       (<span class="org-keyword">interactive</span> <span class="org-string">"sPost Title: "</span>)
+       (<span class="org-keyword">let</span> ((draft-file (concat hugo-directory hugo-posts-dir
+                                 (format-time-string <span class="org-string">"%Y-%m-%d-"</span>)
+                                 (hugo-make-slug title)
+                                 hugo-post-ext)))
+         (<span class="org-keyword">if</span> (file-exists-p draft-file)
+             (find-file draft-file)
+           (find-file draft-file)
+           (insert (format hugo-post-template (hugo-yaml-escape title)))
+           (hugo-timestamp))))
+</pre>
+</div>
+
+<p>
+This sets &ldquo;draft&rdquo; to &ldquo;true&rdquo;, updates the date stamp, and saves the file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-publish-post</span> ()
+  <span class="org-doc">"Set draft to false and save."</span>
+  (<span class="org-keyword">interactive</span>)
+  (<span class="org-keyword">save-excursion</span> (
+                   goto-char 1)
+                  (re-search-forward <span class="org-string">"^#\\+draft:"</span>)
+                  (<span class="org-keyword">let</span> ((beg (point)))
+                    (end-of-line)
+                    (delete-region beg (point)))
+                  (insert <span class="org-string">" false"</span>)
+                  (hugo-timestamp))
+  (save-buffer))
+</pre>
+</div>
+
+
+<p>
+This commits the changes and pushes them to GitHub, using the current date and time as the commit message:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span class="org-keyword">defmacro</span> <span class="org-function-name">with-dir</span> (DIR <span class="org-type">&amp;rest</span> FORMS)
+  <span class="org-doc">"Execute FORMS in DIR."</span>
+  (<span class="org-keyword">let</span> ((orig-dir (gensym)))
+    `(<span class="org-keyword">progn</span> (<span class="org-keyword">setq</span> ,orig-dir default-directory)
+            (cd ,DIR) ,@FORMS (cd ,orig-dir))))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-deploy</span> ()
+  <span class="org-doc">"Push changes upstream."</span>
+  (<span class="org-keyword">interactive</span>)
+  (<span class="org-keyword">with-dir</span> hugo-directory
+            (shell-command <span class="org-string">"git add ."</span>)
+            (<span class="org-keyword">--&gt;</span> (current-time-string)
+                 (concat <span class="org-string">"git commit -m \""</span> it <span class="org-string">"\""</span>)
+                 (shell-command it))
+            (magit-push-current-to-upstream nil)))
+</pre>
+</div>
+
+<p>
+Finally, set some keybindings to make it all easy.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(global-set-key (kbd <span class="org-string">"C-c h n"</span>) 'hugo-draft-post)
+(global-set-key (kbd <span class="org-string">"C-c h p"</span>) 'hugo-publish-post)
+(global-set-key (kbd <span class="org-string">"C-c h t"</span>) 'hugo-timestamp)
+(global-set-key (kbd <span class="org-string">"C-c h O"</span>) (<span class="org-keyword">lambda</span> () (<span class="org-keyword">interactive</span>) (find-file <span class="org-string">"~/Sites/blog/"</span>)))
+(global-set-key (kbd <span class="org-string">"C-c h P"</span>) (<span class="org-keyword">lambda</span> () (<span class="org-keyword">interactive</span>) (find-file <span class="org-string">"~/Sites/blog/content/post/"</span>)))
+(global-set-key (kbd <span class="org-string">"C-c h d"</span>) 'hugo-deploy)
+</pre>
+</div>
+
+<p>
+I have a few more things to do, like create &ldquo;About&rdquo; and tag pages, and adjust the footnote styling. Unfortunately, I need to get ready for the new semester which begins on Thursday.
+</p>
+</div>
+</section>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 04, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

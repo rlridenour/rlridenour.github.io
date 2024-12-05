@@ -1,0 +1,9 @@
+#+TITLE: Moving the Site
+#+date: <2024-12-05 Thu>
+#+filetags: 
+#+setupfile: ../org-templates/post.org
+
+I've been tempted to do this for years, but have just now transitioned from Hugo to a pure Org mode blog. The process went much more smoothly than I expected, although I still need to convert old Markdown posts to Org mode. That will have to wait until the semester ends. I'll write something soon explaining the transition.
+
+The site is still found at [[https://randyridenour.net][randyridenour.net]].
+

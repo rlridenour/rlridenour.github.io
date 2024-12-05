@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <!-- Dec 05, 2024 -->
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Org Export to PDF with Arara</title>
+<title>Moving the Site</title>
 <meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
@@ -32,38 +34,6 @@
      }
 // @license-end
 </script>
-<script>
-  window.MathJax = {
-    tex: {
-      ams: {
-        multlineWidth: '85%'
-      },
-      tags: 'ams',
-      tagSide: 'right',
-      tagIndent: '.8em'
-    },
-    chtml: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    svg: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    output: {
-      font: 'mathjax-modern',
-      displayOverflow: 'overflow'
-    }
-  };
-</script>
-
-<script
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -83,17 +53,17 @@
 </div>
 </header>
 <main id="content" class="content">
-<header>
-<h1 class="title">Org Export to PDF with Arara</h1>
-<p class="subtitle" role="doc-subtitle">Jul 21, 2021</p>
-</header><p>
-I switched from latexmk to <a href="https://mirrors.concertpass.com/tex-archive/support/arara/doc/arara-quickstart.pdf">arara</a> for compiling \(\LaTeX\) files. I like being able to embed the compilation steps into the document. That way, I can run the same command to compile, but use PDFLaTeX on some and LuaLaTeX on others. Org mode&rsquo;s export to PDF uses latexmk, though. I think I managed to set it to arara with this:
+<h1 class="title">Moving the Site
+<br />
+<span class="subtitle">Dec 05, 2024</span>
+</h1>
+<p>
+I&rsquo;ve been tempted to do this for years, but have just now transitioned from Hugo to a pure Org mode blog. The process went much more smoothly than I expected, although I still need to convert old Markdown posts to Org mode. That will have to wait until the semester ends. I&rsquo;ll write something soon explaining the transition.
 </p>
 
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span class="org-keyword">setq</span> org-latex-pdf-process '(<span class="org-string">"arara %f"</span>))
-</pre>
-</div>
+<p>
+The site is still found at <a href="https://randyridenour.net">randyridenour.net</a>.
+</p>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>

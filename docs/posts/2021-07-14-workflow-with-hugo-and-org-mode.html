@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 04, 2024 -->
+<!-- Dec 05, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Workflow with Hugo and Org Mode</title>
@@ -57,9 +57,9 @@
 </header><p>
 Setting up the <a href="https://github.com/kaushalmodi/ox-hugo">Ox-hugo</a> package to use Org mode with Hugo was much easier than I expected. Here is how I configured it, the workflow for posting with Doom Emacs, and some things to keep in mind.
 </p>
-<section id="outline-container-org9d51719" class="outline-2">
-<h2 id="org9d51719">Installation and configuration</h2>
-<div class="outline-text-2" id="text-org9d51719">
+<section id="outline-container-org21677c6" class="outline-2">
+<h2 id="org21677c6">Installation and configuration</h2>
+<div class="outline-text-2" id="text-org21677c6">
 <p>
 I&rsquo;m back to using Doom Emacs, so adding Ox-hugo required nothing more than adding the <code>+hugo</code> flag to <code>:lang org</code> in the init.el file. Look for <code>org</code> in init.el, and change it to <code>(org +hugo)</code>. Ox-hugo has excellent <a href="https://ox-hugo.scripter.co/">documentation</a>, and I configured it almost exactly the way that was suggested. I was skeptical that having a single Org file that contained every blog post was a good idea, but after two days, it seems to be the way to go. I have a file called &ldquo;blog.org&rdquo; in a directory named &ldquo;content-org&rdquo; in my hugo project directory. This file has the following settings at the top:
 </p>
@@ -117,9 +117,9 @@ Here is the template:
 </div>
 </div>
 </section>
-<section id="outline-container-orgffe2173" class="outline-2">
-<h2 id="orgffe2173">Workflow</h2>
-<div class="outline-text-2" id="text-orgffe2173">
+<section id="outline-container-org74db6e7" class="outline-2">
+<h2 id="org74db6e7">Workflow</h2>
+<div class="outline-text-2" id="text-org74db6e7">
 <p>
 <code>C-c n n</code> in Doom opens a hydra for Org-capture. Selecting &ldquo;h&rdquo; prompts for a post title in the minibuffer. Enter the title, press the return key, and a new Org-mode window opens with the file settings from the capture template. Enter the desired text, then press <code>C-c C-c</code> to close the window. The post is filed in the site&rsquo;s Org content file under the Blog Ideas section. When ready, move the cursor to a point in the post, and use org-refile to put it in the category that you would like.
 </p>
@@ -152,9 +152,9 @@ When the draft is finished, change the <code>TODO</code> flag in the post title 
 </p>
 </div>
 </section>
-<section id="outline-container-org2d9df47" class="outline-2">
-<h2 id="org2d9df47">Miscellaneous discoveries</h2>
-<div class="outline-text-2" id="text-org2d9df47">
+<section id="outline-container-org2b4f0af" class="outline-2">
+<h2 id="org2b4f0af">Miscellaneous discoveries</h2>
+<div class="outline-text-2" id="text-org2b4f0af">
 <p>
 So far, I&rsquo;ve found two things to keep in mind. First, headings in the Markdown files will be one level above the headings in the Org file. So, an H2 in the Org file is the post title, sections of the post have a H3 heading. The three stars in the Org file become two octothorpes in the Markdown file.
 </p>
@@ -191,9 +191,9 @@ produces this:
 </ol>
 </div>
 </section>
-<section id="outline-container-org2b5d3c2" class="outline-2">
-<h2 id="org2b5d3c2">Conclusion</h2>
-<div class="outline-text-2" id="text-org2b5d3c2">
+<section id="outline-container-orgc8cd843" class="outline-2">
+<h2 id="orgc8cd843">Conclusion</h2>
+<div class="outline-text-2" id="text-orgc8cd843">
 <p>
 Ox-hugo works amazingly well for producing well-formed Hugo Goldmark markdown from an Org mode source file. Since I write nearly everything in Org mode, this enables me to easily use the same material for posts, handouts, and other formats.
 </p>
@@ -203,7 +203,7 @@ Ox-hugo works amazingly well for producing well-formed Hugo Goldmark markdown fr
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 04, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Dec 05, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

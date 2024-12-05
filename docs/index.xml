@@ -14,8 +14,8 @@
   <link>http://example.com/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 04 Dec 2024 20:05:51 -0600</pubDate>
-  <lastBuildDate>Wed, 04 Dec 2024 20:05:51 -0600</lastBuildDate>
+  <pubDate>Thu, 05 Dec 2024 07:30:40 -0600</pubDate>
+  <lastBuildDate>Thu, 05 Dec 2024 07:30:40 -0600</lastBuildDate>
   <generator>Emacs 29.4 Org-mode 9.8-pre</generator>
   <webMaster>rlridenour@fastmail.com (Randy Ridenour)</webMaster>
   <image>
@@ -25,6 +25,7 @@
   </image>
 
   <ul class="org-ul">
+    <li><a href="http://example.com/24-12-05-test-post.html">Test Post</a></li>
     <li><a href="http://example.com/24-12-04-org-mode-blogging-test.html">Org Mode Blogging Test</a></li>
     <li><a href="http://example.com/2024-07-09-installing-auctex-with-straight.html">Installing Auctex with Straight</a></li>
     <li><a href="http://example.com/2024-07-04-beamer-article-and-org-mode.html">Beamer Article and Org Mode</a></li>

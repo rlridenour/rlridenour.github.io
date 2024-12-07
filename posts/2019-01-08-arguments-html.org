@@ -1,0 +1,173 @@
+#+title: Arguments in HTML
+#+date: <2021-06-24>
+#+filetags: 
+#+setupfile: ../org-templates/post.org
+
+This post is not about arguments that occur on the internet, but about how to display philosophical/logical arguments in standard form on the internet. To put an argument in standard form:
+
+1. Write each premise on a separate, numbered line,
+2. Draw a line underneath the last premise, and
+3. Write the conclusion underneath the line.
+
+I'll first show how to format an argument in HTML, then show an easier way in Markdown with Hugo.
+
+** HTML
+:PROPERTIES:
+:CUSTOM_ID: html
+:END:
+
+It's easy enough to produce an ordered list in HTML, but then the conclusion is numbered, which makes it look like another premise. This can be fixed with a trick in CSS, just add something like this to your stylesheet:
+
+=.list-arg li:last-child { list-style: none }=
+
+If one doesn't need to post very many arguments in standard form, then it might not be worth it to clutter up the main stylesheet with another class. It's just as easy to add the style specification to each argument, like this:
+
+#+begin_src html
+  <ol>
+    <li>
+      First Premise
+    </li>
+    <li>
+      <u>Last Premise</u>
+    </li>
+    <li style="list-style:none;">
+      Conclusion
+    </li>
+  </ol>
+#+end_src
+
+Both methods produce something that looks like this:
+
+#+begin_src html
+  <ol>
+    <li>
+      First Premise
+    </li>
+    <li>
+      Last Premise
+    </li>
+    <li style="list-style:none;">
+      Conclusion
+  </ol>
+#+end_src
+
+
+#+begin_src html
+  <ol class="arg">
+    <li>
+      First Premise
+    </li>
+    <li>
+      Last Premise
+    </li>
+    <li>
+      Conclusion
+    </li>
+  </ol>
+#+end_src
+
+Sometimes, the last premise is significantly shorter than the others, and the underline doesn't look quite right. For example,
+
+#+begin_src html
+  <ol>
+    <li>
+      P ⊃ Q
+    </li>
+    <li>
+      P
+    </li>
+    <li style="list-style:none;">
+      Q
+    </li>
+  </ol>
+#+end_src
+
+That can be fixed with some non-breaking spaces. It looks ugly, but it does take care of the problem.
+
+#+begin_example
+<ol>
+  <li>
+    P &#8835; Q
+  </li>
+  <li>
+    <u>P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<;/u>
+  </li>
+  <li style="list-style:none;">
+    Q
+  </li>
+</ol>
+#+end_example
+
+That produces
+
+#+begin_src html
+  <ol>
+    <li>
+      P ⊃ Q
+    </li>
+    <li>
+      P
+    </li>
+    <li style="list-style:none;">
+      Q
+    </li>
+  </ol>
+#+end_src
+
+** Markdown
+:PROPERTIES:
+:CUSTOM_ID: markdown
+:END:
+It is very easy to make lists in Markdown. Unfortunately, we have the same problem that we started with in HTML. That is, the conclusion is numbered:
+
+1. First Premise
+2. Second Premise
+3. Conclusion
+
+Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldmark rendering engine that Hugo uses allows attributes and classes in Markdown, there is another, far simpler, option. First, make sure that your site config.toml page has "unsafe = true" and "block = true" in the markup section. Mine looks like this:
+
+#+begin_example
+[markup]
+  [markup.goldmark]
+  [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+      [markup.goldmark.parser.attribute]
+	block = true
+	title = true
+    [markup.goldmark.renderer]
+      unsafe = true
+#+end_example
+
+Now, add a new class to your stylesheet. I called it "arg" and styled it like this:
+
+#+begin_example css
+.arg li:last-child {
+  list-style: none;
+}
+
+.arg li:nth-last-child(2) {
+text-decoration: underline;
+}
+
+.arg li {
+margin: 0px;
+}
+#+end_example
+
+The first part removes the number at the line with the conclusion, and the second part underlines the last premise. Finally, I decided to tighten up the lines. Now, when you write your post, just use a normal Markdown ordered list with the class after the last item:
+
+#+begin_example
+1. First premise
+2. Second premise
+3. Conclusion
+{.arg}
+#+end_example
+
+When published, that code produces this:
+
+#+ATTR_HTML: :class arg
+1. First premise
+2. Second premise
+3. Conclusion 
+

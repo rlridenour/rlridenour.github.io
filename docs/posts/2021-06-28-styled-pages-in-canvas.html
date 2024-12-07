@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Dec 07, 2024 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Styled Pages in Canvas</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Styled Pages in Canvas
+<br />
+<span class="subtitle">Jun 29, 2021</span>
+</h1>
+<p>
+My <a href="https://randyridenour.net/posts/2019-01-08-arguments-html/">method</a> of formatting philosophical arguments in HTML works fine when writing web pages on my own site, but not so well when I don&rsquo;t have access to the site&rsquo;s CSS, or so I thought. I tell students to format arguments in what is usually called &ldquo;standard form&rdquo; &#x2014; a list with numbered premises and a line separating the premises from the conclusion. So, it should look like this:
+</p>
+
+<ol class="org-ol arg">
+<li>First premise</li>
+<li>Second premise</li>
+<li>Conclusion</li>
+</ol>
+
+<p>
+This is simple to do in LaTeX with this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-tex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">enumerate</span>}
+<span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> First Premise
+<span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> <span class="org-font-latex-sedate"><span class="org-keyword">\underline</span></span>{<span class="org-font-latex-underline">Last Premise</span>}
+<span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> [] Conclusion
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">enumerate</span>}
+</pre>
+</div>
+
+<p>
+As I explained <a href="https://randyridenour.net/posts/arguments-in-html/">earlier</a>, it&rsquo;s also easy to in HTML by declaring a CSS class. Unfortunately, I see nowhere in Canvas, the learning management system used by our university, to put an external style sheet. So, my options seemed to be, first, to put the premises in a list and the conclusion on a separate line following the list. That would produce something like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+    &lt;<span class="org-function-name">li</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
+    &lt;<span class="org-function-name">li</span>&gt;&lt;<span class="org-function-name">u</span>&gt;<span class="org-underline">Second premise</span>&lt;/<span class="org-function-name">u</span>&gt;&lt;/<span class="org-function-name">li</span>&gt;
+&lt;/<span class="org-function-name">ol</span>&gt;
+</pre>
+</div>
+
+
+
+<p>
+Conclusion
+</p>
+
+<p>
+The premises are fine, but the conclusion is a new paragraph. A better option would be to put the conclusion as a numbered item in the list:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+&lt;<span class="org-function-name">li</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
+&lt;<span class="org-function-name">li</span>&gt;&lt;<span class="org-function-name">u</span>&gt;<span class="org-underline">Second premise</span>&lt;/<span class="org-function-name">u</span>&gt;&lt;/<span class="org-function-name">li</span>&gt;
+&lt;<span class="org-function-name">li</span>&gt;Conclusion&lt;/<span class="org-function-name">li</span>&gt;
+&lt;/<span class="org-function-name">ol</span>&gt;
+</pre>
+</div>
+
+
+<p>
+This looks better, although I don&rsquo;t really like the separation between the list items. Unfortunately, since the conclusion is also numbered, it&rsquo;s easy to mistake the conclusion for another premise.
+</p>
+
+<p>
+The best option seemed to be to produce handouts as PDF&rsquo;s with LaTeX. They would be formatted correctly, but difficult to read on small mobile devices. Still, there had to be a better way. Pages in Canvas are just HTML documents, although the rich text editor hides the code from most users. There is an option to use an HTML editor when editing a page, though. My first thought was to reference an external style sheet in a document head in the usual way, like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-keyword">!doctype</span> html&gt;
+&lt;<span class="org-function-name">html</span>&gt;
+        &lt;<span class="org-function-name">head</span>&gt;
+                &lt;<span class="org-function-name">link</span> <span class="org-variable-name">rel</span>=<span class="org-string">"stylesheet"</span> <span class="org-variable-name">href</span>=<span class="org-string">"mystyle.css"</span>&gt;
+                &lt;<span class="org-function-name">meta</span> <span class="org-variable-name">charset</span>=<span class="org-string">"utf-8"</span> /&gt;
+        &lt;/<span class="org-function-name">head</span>&gt;
+        &lt;<span class="org-function-name">body</span>&gt;
+                &lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
+                        &lt;<span class="org-function-name">li</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
+                        &lt;<span class="org-function-name">li</span>&gt;Second premise&lt;/<span class="org-function-name">li</span>&gt;
+                        &lt;<span class="org-function-name">li</span>&gt;Conclusion&lt;/<span class="org-function-name">li</span>&gt;
+                &lt;/<span class="org-function-name">ol</span>&gt;
+        &lt;/<span class="org-function-name">body</span>&gt;
+&lt;/<span class="org-function-name">html</span>&gt;
+</pre>
+</div>
+
+<p>
+That would have been nice and simple, if it had worked. I then tried internal CSS:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-keyword">!doctype</span> html&gt;
+&lt;<span class="org-function-name">html</span>&gt;
+        &lt;<span class="org-function-name">head</span>&gt;
+                &lt;<span class="org-function-name">meta</span> <span class="org-variable-name">charset</span>=<span class="org-string">"utf-8"</span> /&gt;
+                &lt;<span class="org-function-name">style</span>&gt;
+                 .arg li:last-child {list-style: none;}
+                 .arg li:nth-last-child(2) {text-decoration: underline;}
+                 .arg li {margin: 0px;}
+                &lt;/<span class="org-function-name">style</span>&gt;
+        &lt;/<span class="org-function-name">head</span>&gt;
+        &lt;<span class="org-function-name">body</span>&gt;
+                &lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
+                        &lt;<span class="org-function-name">li</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
+                        &lt;<span class="org-function-name">li</span>&gt;Second premise&lt;/<span class="org-function-name">li</span>&gt;
+                        &lt;<span class="org-function-name">li</span>&gt;Conclusion&lt;/<span class="org-function-name">li</span>&gt;
+                &lt;/<span class="org-function-name">ol</span>&gt;
+        &lt;/<span class="org-function-name">body</span>&gt;
+&lt;/<span class="org-function-name">html</span>&gt;
+</pre>
+</div>
+
+<p>
+Success! That is, until I clicked &ldquo;Edit&rdquo; again, and Canvas stripped away everything outside the body tags. Finally, I tried inline CSS:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
+        &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"margin: 0px;"</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
+        &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"margin: 0px; text-decoration: underline;"</span>&gt;Second premise&lt;/<span class="org-function-name">li</span>&gt;
+        &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"margin: 0px; list-style: none;"</span>&gt;Conclusion&lt;/<span class="org-function-name">li</span>&gt;
+&lt;/<span class="org-function-name">ol</span>&gt;
+</pre>
+</div>
+
+<p>
+That finally worked. Unfortunately, it meant that the CSS had to be explicitly declared on every item that needed styling, every time that the item was used on the page. Then, I discovered CSS Inliners. An inliner is a tool that takes externally styled HTML as input, and outputs HTML with all inline CSS. Evidently, these are used by people who want to control the formatting of their HTML emails. <a href="https://templates.mailchimp.com/resources/inline-css/">Mailchimp&rsquo;s Inline Tool</a> works well. I&rsquo;m using an inliner tool called &ldquo;Juice&rdquo; that can be installed using the Node package manager. That way, I can automate the process with a simple shell script. Here&rsquo;s the function I use in <a href="https://templates.mailchimp.com/resources/inline-css/">fish</a>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span class="org-keyword">function</span> <span class="org-function-name">canvas</span>
+        juice canvas.html canvas.html
+        find . -type f -name <span class="org-string">"canvas.html"</span> -print0 | xargs -0 sed -i <span class="org-string">''</span> -e <span class="org-string">'s/body&gt;/div&gt;/g'</span>
+        pbcopy &lt; <span class="org-string">"canvas.html"</span>
+        rm canvas.html
+end
+</pre>
+</div>
+
+<p>
+Line 2 runs the inliner on a file named &ldquo;canvas.html&rdquo; and overwrites that file. Line 3 changes the body tags to div tags, which prevents Canvas from deleting any text outside the body tags. Finally, line 3 copies the resulting file to the clipboard, ready to be pasted into the Canvas HTML editor, and line 4 then deletes the HTML file. I delete the HTML file, because, since I use Emacs, the handouts themselves are written in Org mode. So, any changes are made to the Org document, which would then need to be exported again to HTML. The Org document header contains these lines:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-orgmode">#+AUTHOR: Randy Ridenour
+#+LANGUAGE: en-us
+#+EXPORT_FILE_NAME: canvas.html
+#+HTML_DOCTYPE: html5
+#+OPTIONS: toc:nil
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: &lt;link rel="stylesheet" type="text/css" href="https://randyridenour.net/css/canvas.css"/&gt;
+</pre>
+</div>
+
+<p>
+Line 3 ensures that the output file is named <code>canvas.html</code>. That makes the shell script easier to write, and it doesn&rsquo;t need a unique name since it will just be deleted immediately after being copied to the clipboard. Line 5 prevents a table of contents from being generated. If the handout is long enough to warrant a TOC, then just change that to <code>toc:true</code>. Line 6 prevents the Org exporter from adding its usual CSS, and line 7 adds the reference to an external stylesheet located on my personal website.
+</p>
+
+<p>
+Everything is tied together with a very simple Emacs function:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">canvas-copy</span> ()
+  <span class="org-doc">"Copy html for canvas pages"</span>
+  (<span class="org-keyword">interactive</span>)
+  (org-html-export-to-html)
+  (shell-command <span class="org-string">"canvas"</span>)
+)
+</pre>
+</div>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 07, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

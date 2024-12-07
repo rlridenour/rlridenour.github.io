@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Dec 07, 2024 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Arguments in HTML</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Arguments in HTML
+<br />
+<span class="subtitle">Jun 24, 2021</span>
+</h1>
+<p>
+This post is not about arguments that occur on the internet, but about how to display philosophical/logical arguments in standard form on the internet. To put an argument in standard form:
+</p>
+
+<ol class="org-ol">
+<li>Write each premise on a separate, numbered line,</li>
+<li>Draw a line underneath the last premise, and</li>
+<li>Write the conclusion underneath the line.</li>
+</ol>
+
+<p>
+I&rsquo;ll first show how to format an argument in HTML, then show an easier way in Markdown with Hugo.
+</p>
+<section id="outline-container-html" class="outline-2">
+<h2 id="html">HTML</h2>
+<div class="outline-text-2" id="text-html">
+<p>
+It&rsquo;s easy enough to produce an ordered list in HTML, but then the conclusion is numbered, which makes it look like another premise. This can be fixed with a trick in CSS, just add something like this to your stylesheet:
+</p>
+
+<p>
+<code>.list-arg li:last-child { list-style: none }</code>
+</p>
+
+<p>
+If one doesn&rsquo;t need to post very many arguments in standard form, then it might not be worth it to clutter up the main stylesheet with another class. It&rsquo;s just as easy to add the style specification to each argument, like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+  &lt;<span class="org-function-name">li</span>&gt;
+    First Premise
+  &lt;/<span class="org-function-name">li</span>&gt;
+  &lt;<span class="org-function-name">li</span>&gt;
+    &lt;<span class="org-function-name">u</span>&gt;<span class="org-underline">Last Premise</span>&lt;/<span class="org-function-name">u</span>&gt;
+  &lt;/<span class="org-function-name">li</span>&gt;
+  &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"list-style:none;"</span>&gt;
+    Conclusion
+  &lt;/<span class="org-function-name">li</span>&gt;
+&lt;/<span class="org-function-name">ol</span>&gt;
+</pre>
+</div>
+
+<p>
+Both methods produce something that looks like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+  &lt;<span class="org-function-name">li</span>&gt;
+    First Premise
+  &lt;/<span class="org-function-name">li</span>&gt;
+  &lt;<span class="org-function-name">li</span>&gt;
+    Last Premise
+  &lt;/<span class="org-function-name">li</span>&gt;
+  &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"list-style:none;"</span>&gt;
+    Conclusion
+&lt;/<span class="org-function-name">ol</span>&gt;
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
+  &lt;<span class="org-function-name">li</span>&gt;
+    First Premise
+  &lt;/<span class="org-function-name">li</span>&gt;
+  &lt;<span class="org-function-name">li</span>&gt;
+    Last Premise
+  &lt;/<span class="org-function-name">li</span>&gt;
+  &lt;<span class="org-function-name">li</span>&gt;
+    Conclusion
+  &lt;/<span class="org-function-name">li</span>&gt;
+&lt;/<span class="org-function-name">ol</span>&gt;
+</pre>
+</div>
+
+<p>
+Sometimes, the last premise is significantly shorter than the others, and the underline doesn&rsquo;t look quite right. For example,
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+  &lt;<span class="org-function-name">li</span>&gt;
+    P &#8835; Q
+  &lt;/<span class="org-function-name">li</span>&gt;
+  &lt;<span class="org-function-name">li</span>&gt;
+    P
+  &lt;/<span class="org-function-name">li</span>&gt;
+  &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"list-style:none;"</span>&gt;
+    Q
+  &lt;/<span class="org-function-name">li</span>&gt;
+&lt;/<span class="org-function-name">ol</span>&gt;
+</pre>
+</div>
+
+<p>
+That can be fixed with some non-breaking spaces. It looks ugly, but it does take care of the problem.
+</p>
+
+<pre class="example" id="org380f09a">
+&lt;ol&gt;
+  &lt;li&gt;
+    P &amp;#8835; Q
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;u&gt;P&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;;/u&gt;
+  &lt;/li&gt;
+  &lt;li style="list-style:none;"&gt;
+    Q
+  &lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+
+<p>
+That produces
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+  &lt;<span class="org-function-name">li</span>&gt;
+    P &#8835; Q
+  &lt;/<span class="org-function-name">li</span>&gt;
+  &lt;<span class="org-function-name">li</span>&gt;
+    P
+  &lt;/<span class="org-function-name">li</span>&gt;
+  &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"list-style:none;"</span>&gt;
+    Q
+  &lt;/<span class="org-function-name">li</span>&gt;
+&lt;/<span class="org-function-name">ol</span>&gt;
+</pre>
+</div>
+</div>
+</section>
+<section id="outline-container-markdown" class="outline-2">
+<h2 id="markdown">Markdown</h2>
+<div class="outline-text-2" id="text-markdown">
+<p>
+It is very easy to make lists in Markdown. Unfortunately, we have the same problem that we started with in HTML. That is, the conclusion is numbered:
+</p>
+
+<ol class="org-ol">
+<li>First Premise</li>
+<li>Second Premise</li>
+<li>Conclusion</li>
+</ol>
+
+<p>
+Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldmark rendering engine that Hugo uses allows attributes and classes in Markdown, there is another, far simpler, option. First, make sure that your site config.toml page has &ldquo;unsafe = true&rdquo; and &ldquo;block = true&rdquo; in the markup section. Mine looks like this:
+</p>
+
+<pre class="example" id="orgaefab25">
+[markup]
+  [markup.goldmark]
+  [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+      [markup.goldmark.parser.attribute]
+	block = true
+	title = true
+    [markup.goldmark.renderer]
+      unsafe = true
+</pre>
+
+<p>
+Now, add a new class to your stylesheet. I called it &ldquo;arg&rdquo; and styled it like this:
+</p>
+
+<pre class="example" id="orgc3b927c">
+.arg li:last-child {
+  list-style: none;
+}
+
+.arg li:nth-last-child(2) {
+text-decoration: underline;
+}
+
+.arg li {
+margin: 0px;
+}
+</pre>
+
+<p>
+The first part removes the number at the line with the conclusion, and the second part underlines the last premise. Finally, I decided to tighten up the lines. Now, when you write your post, just use a normal Markdown ordered list with the class after the last item:
+</p>
+
+<pre class="example" id="org6995b38">
+1. First premise
+2. Second premise
+3. Conclusion
+{.arg}
+</pre>
+
+<p>
+When published, that code produces this:
+</p>
+
+<ol class="org-ol arg">
+<li>First premise</li>
+<li>Second premise</li>
+<li>Conclusion</li>
+</ol>
+</div>
+</section>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 07, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

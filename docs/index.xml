@@ -14,8 +14,8 @@
   <link>http://example.com/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Sat, 07 Dec 2024 05:05:16 -0600</pubDate>
-  <lastBuildDate>Sat, 07 Dec 2024 05:05:16 -0600</lastBuildDate>
+  <pubDate>Sat, 07 Dec 2024 12:36:31 -0600</pubDate>
+  <lastBuildDate>Sat, 07 Dec 2024 12:36:31 -0600</lastBuildDate>
   <generator>Emacs 29.4 Org-mode 9.8-pre</generator>
   <webMaster>rlridenour@fastmail.com (Randy Ridenour)</webMaster>
   <image>
@@ -55,6 +55,8 @@
     <li><a href="http://example.com/2021-07-18-abbreviate-path-to-icloud-files-in-emacs.html">Abbreviate Path to iCloud Files in Emacs</a></li>
     <li><a href="http://example.com/2021-07-14-workflow-with-hugo-and-org-mode.html">Workflow with Hugo and Org Mode</a></li>
     <li><a href="http://example.com/2021-07-12-blogging-with-org-mode-in-hugo.html">Blogging with Org Mode in Hugo</a></li>
+    <li><a href="http://example.com/2021-06-28-styled-pages-in-canvas.html">Styled Pages in Canvas</a></li>
+    <li><a href="http://example.com/2019-01-08-arguments-html.html">Arguments in HTML</a></li>
   </ul>
 </channel>
 </rss>

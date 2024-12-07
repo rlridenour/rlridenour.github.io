@@ -30,3 +30,5 @@
 - [[file:2021-07-18-abbreviate-path-to-icloud-files-in-emacs.org][Abbreviate Path to iCloud Files in Emacs]]
 - [[file:2021-07-14-workflow-with-hugo-and-org-mode.org][Workflow with Hugo and Org Mode]]
 - [[file:2021-07-12-blogging-with-org-mode-in-hugo.org][Blogging with Org Mode in Hugo]]
+- [[file:2021-06-28-styled-pages-in-canvas.org][Styled Pages in Canvas]]
+- [[file:2019-01-08-arguments-html.org][Arguments in HTML]]

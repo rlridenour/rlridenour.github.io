@@ -32,3 +32,6 @@
 - [[file:2021-07-12-blogging-with-org-mode-in-hugo.org][Blogging with Org Mode in Hugo]]
 - [[file:2021-06-28-styled-pages-in-canvas.org][Styled Pages in Canvas]]
 - [[file:2019-01-08-arguments-html.org][Arguments in HTML]]
+- [[file:2020-07-29-on-the-use-of-political-pejoratives.org][On the Use of Political Pejoratives]]
+- [[file:2020-06-01-beamer-presentations-with-org-mode.org][Beamer Presentations with Org Mode]]
+- [[file:2020-05-12-emacs-org-capture.org][Emacs Org-Capture]]

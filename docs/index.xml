@@ -14,8 +14,8 @@
   <link>http://example.com/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Sat, 07 Dec 2024 12:36:31 -0600</pubDate>
-  <lastBuildDate>Sat, 07 Dec 2024 12:36:31 -0600</lastBuildDate>
+  <pubDate>Sat, 07 Dec 2024 17:23:44 -0600</pubDate>
+  <lastBuildDate>Sat, 07 Dec 2024 17:23:44 -0600</lastBuildDate>
   <generator>Emacs 29.4 Org-mode 9.8-pre</generator>
   <webMaster>rlridenour@fastmail.com (Randy Ridenour)</webMaster>
   <image>
@@ -57,6 +57,9 @@
     <li><a href="http://example.com/2021-07-12-blogging-with-org-mode-in-hugo.html">Blogging with Org Mode in Hugo</a></li>
     <li><a href="http://example.com/2021-06-28-styled-pages-in-canvas.html">Styled Pages in Canvas</a></li>
     <li><a href="http://example.com/2019-01-08-arguments-html.html">Arguments in HTML</a></li>
+    <li><a href="http://example.com/2020-07-29-on-the-use-of-political-pejoratives.html">On the Use of Political Pejoratives</a></li>
+    <li><a href="http://example.com/2020-06-01-beamer-presentations-with-org-mode.html">Beamer Presentations with Org Mode</a></li>
+    <li><a href="http://example.com/2020-05-12-emacs-org-capture.html">Emacs Org-Capture</a></li>
   </ul>
 </channel>
 </rss>

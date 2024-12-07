@@ -1,0 +1,20 @@
+.arg li:last-child {
+    list-style: none;
+}
+
+.arg li:nth-last-child(2) {
+    text-decoration: underline;
+}
+
+.arg li {
+    margin: 0px;
+}
+
+.footnote-definition {
+    display: block;
+}
+
+.footnote-body {
+    display: inline-block;
+}
+

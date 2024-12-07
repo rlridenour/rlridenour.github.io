@@ -39,3 +39,26 @@ body {
 pre {
     white-space: pre-wrap;
 }
+
+/*Bibliography styles*/
+ol.bibliography {
+  list-style-type: none;
+  padding-left: 1rem;
+  text-indent: -1rem;
+}
+
+ol.bibliography li {
+  margin: 1rem 0;
+}
+
+.arg li:last-child {
+  list-style: none;
+}
+
+.arg li:nth-last-child(2) {
+  text-decoration: underline;
+}
+
+.arg li {
+  margin: 0px;
+}

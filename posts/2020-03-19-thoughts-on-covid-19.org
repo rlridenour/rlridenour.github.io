@@ -1,0 +1,19 @@
+#+title: Thoughts on COVID-19
+#+date: <2020-03-19>
+
+Here are some thoughts as I reflect on comments about, and available data on, the COVID-19 coronavirus.
+
+I have seen some posts pointing out that 700 million people contracted H1N1 Swine Flue without any schools or businesses closing. The posts then go on to infer that COVID-19 has been "over-hyped." There are several things to note as people decide how to appropriately respond to the pandemic, using the best numbers that I can find. H1N1 was indeed a serious pandemic, but the 700 million infected is not the only important number. H1N1 resulted in 150,000 fatalities (both of these numbers are minimum estimates), so the mortality rate for H1N1 was a mere 0.02%.
+
+The mortality rate for COVID-19 is difficult to estimate, mainly because of the lack of adequate testing. Accurately estimating the mortality rate requires not only a decent estimate of the number of deaths from the infection, but also a good estimate of the total number of people infected. Without readily available tests, the tendency is to underestimate the number of people infected, which leads to an overestimation of the mortality rate. Early estimates were around 2%, then quickly rose to 3.4%, but now appear to be decreasing with more data. The best data comes from countries that tested a higher percentage of residents. So far, only 7 of every million residents of the U.S. have been tested, but South Korea's rate of testing was over 150 times that of the U.S. The mortality rate in South Korea was only 0.6%, far lower than the estimates that we are hearing.
+
+Good news for the COVID-19 skeptics? Not really, 0.6% is far lower than 2%, but it is 30 times greater than the mortality rate for H1N1. Even more important, we should only expect to have the 0.6% rate if we take the same steps as South Korea, which immediately set up a central disaster headquarters for a uniform and consistent response across the country, and ordered all schools from kindergarten through high school to postpone their spring semester. The mortality rate for Italy, also a country with a high testing percentage, is much higher. So far, the response to COVID-19 in the United States seems to be more like Italy than South Korea.
+
+We should also compare COVID-19 to the SARS coronavirus. SARS killed 774 people in 2003, out of 8,096 known cases. The mortality rate for SARS, then, was a staggering 10%. Does that make SARS worse than COVID-19? We should keep in mind that there were only 8,096 known cases; there have now been over 45,000 known recoveries from COVID-19. The infection rate seems to be far, far greater with COVID-19.
+
+Rational risk assessment is a function of two factors: the probability of harm and the degree of harm. Coronavirus wins the risk assessment game compared with both SARS and H1N1. The infection rate is far greater than that of SARS, and the mortality rate is far greater than that of H1N1.
+
+Still, these numbers don't apply to every population group. The mortality rate in China for children under 10 was 0%, for non-geriatric adults, it was 0.2–0.4%. The rates appear to significantly increase at 70 to 1.1%, then to 4.9% for those over 80. So, most of us have little or nothing to fear for ourselves from COVID-19, but those in high-risk groups, including the elderly and those with compromised immune systems, may have much to fear. The best way to save those people is to do everything we can to minimize the spreading of the virus, not just to them, but to anyone with whom they may have contact. The experience of other countries shows us that this requires these measures that motivate those negative social media posts.
+
+There are those, not in high-risk groups, who may ask, "Why should we change our lifestyles if we are not personally at risk? Isn't that just giving in to fear?" The answer is simple, we do these things not out of fear, but out of love for our neighbor.
+

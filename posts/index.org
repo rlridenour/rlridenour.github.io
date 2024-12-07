@@ -35,3 +35,4 @@
 - [[file:2020-07-29-on-the-use-of-political-pejoratives.org][On the Use of Political Pejoratives]]
 - [[file:2020-06-01-beamer-presentations-with-org-mode.org][Beamer Presentations with Org Mode]]
 - [[file:2020-05-12-emacs-org-capture.org][Emacs Org-Capture]]
+- [[file:2020-03-19-thoughts-on-covid-19.org][Thoughts on COVID-19]]

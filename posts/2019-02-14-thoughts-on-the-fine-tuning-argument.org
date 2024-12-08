@@ -23,7 +23,7 @@ The probability that there is not a designer, given a life sustaining universe i
 
 \( \Pr(\neg D \vert L) = \frac{\Pr(\neg D) \times \Pr(L \vert \neg D)}{\Pr (L)} \)
 
-Since the denominators are the same, \( \Pr(D\vert L) > \Pr(\neg D \vert L)\\) if and only \\( \Pr(D) \times \Pr(L \vert D) >\Pr(\neg D) \times \Pr(L \vert \neg D)\). Now, all we need to know is the prior probability of God existing, and we would know the probability of a life-sustaining universe on the assumption that there is a God. Easier said than done, as they say.
+Since the denominators are the same, \( \Pr(D\vert L) > \Pr(\neg D \vert L)\) if and only \( \Pr(D) \times \Pr(L \vert D) > \Pr(\neg D) \times \Pr(L \vert \neg D)\). Now, all we need to know is the prior probability of God existing, and we would know the probability of a life-sustaining universe on the assumption that there is a God. Easier said than done, as they say.
 
 Instead, maybe we should rethink the strategy. If I knew how each additional factor affected the probability, then I might be able to assess how low the prior probability of /D/ must be in order for the evidence to /not/ raise \( \Pr(D\vert L)\) over 0.5. To do this, we can use the odds version of Bayes' theorem: the odds of /D/ given /L/ is equal to the prior odds of /D/ times the likelihood ratio:
 

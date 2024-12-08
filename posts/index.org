@@ -42,3 +42,7 @@
 - [[file:2019-06-10-what-we-need.org][What We Need]]
 - [[file:2019-02-20-questions-and-answers.org][Questions and Answers]]
 - [[file:2019-02-14-thoughts-on-the-fine-tuning-argument.org][Thoughts on The Fine-Tuning Argument]]
+- [[file:2019-02-10-prayer-for-the-fifth-sunday-of-epiphany.org][Prayer for the Fifth Sunday of Epiphany]]
+- [[file:2019-01-08-growth.org][Growth]]
+- [[file:2018-12-12-success.org][Success]]
+- [[file:2018-12-10-finals-week.org][Finals Week]]

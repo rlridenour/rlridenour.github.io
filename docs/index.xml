@@ -14,8 +14,8 @@
   <link>http://example.com/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Sat, 07 Dec 2024 18:20:39 -0600</pubDate>
-  <lastBuildDate>Sat, 07 Dec 2024 18:20:39 -0600</lastBuildDate>
+  <pubDate>Sat, 07 Dec 2024 18:47:51 -0600</pubDate>
+  <lastBuildDate>Sat, 07 Dec 2024 18:47:51 -0600</lastBuildDate>
   <generator>Emacs 29.4 Org-mode 9.8-pre</generator>
   <webMaster>rlridenour@fastmail.com (Randy Ridenour)</webMaster>
   <image>
@@ -61,6 +61,10 @@
     <li><a href="http://example.com/2020-06-01-beamer-presentations-with-org-mode.html">Beamer Presentations with Org Mode</a></li>
     <li><a href="http://example.com/2020-05-12-emacs-org-capture.html">Emacs Org-Capture</a></li>
     <li><a href="http://example.com/2020-03-19-thoughts-on-covid-19.html">Thoughts on COVID-19</a></li>
+    <li><a href="http://example.com/2019-08-06-some-thoughts-on-mass-shootings.html">Some Thoughts on Mass Shootings</a></li>
+    <li><a href="http://example.com/2019-08-01-free-shows-in-the-hospital.html">Free Shows in the Hospital</a></li>
+    <li><a href="http://example.com/2019-06-16-prayer-for-trinity-sunday-2.html">Prayer for Trinity Sunday</a></li>
+    <li><a href="http://example.com/2019-06-10-what-we-need.html">What We Need</a></li>
   </ul>
 </channel>
 </rss>

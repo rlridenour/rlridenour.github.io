@@ -1,5 +1,5 @@
 #+title: Some Thoughts on Mass Shootings
-date: <2019-08-06>
+#+date: <2019-08-06>
 
 ** The Second Amendment
 
@@ -11,8 +11,7 @@ I do believe, however, that every person has an inherent right to self-defense.[
 
 Lately, there have been demands to arm teachers to prevent school shootings. This is a variation on the idea that the only solution to gun violence is more good guys with guns. There are obvious reasons why this is untenable. We had problems with active shooters when I was in Afghanistan. The solution was not to have more people carrying guns, since everyone except me and the other two chaplains were already armed. The solution was to have a soldier standing at the ready at every meeting, doing nothing but looking for signs of hostility, prepared to shoot as soon as a weapon was drawn. That's what the only "more guns" solution looks like – an armed guard standing with weapon drawn in every classroom, in every corridor of the mall, covering every line of sight in every public venue, etc.[fn:4]  That's not a country where I want to live.
 
-Possible Solutions
-------------------
+** Possible Solutions
 
 Mass shootings are a complex problem, but not irreducibly complex. We shouldn’t pretend that our only options are an impossible perfect solution and doing nothing. So, what should be done? There are some means that, I believe, would help reduce the level of gun violence.
 

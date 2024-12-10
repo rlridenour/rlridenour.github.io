@@ -1,0 +1,34 @@
+#+title: Race, Police Shooting, and Probability
+#+date: <2016-10-01>
+#+tags: critical-thinking politics
+
+
+I just read a Facebook comment by someone who was apparently downplaying the Black Lives Matter movement by pointing out that the police shoot more white Americans than black Americans. 
+
+True, but it's a classic error in statistical reasoning. The vast majority of drivers involved in accidents are sober, but it doesn't follow that one is more likely to have an accident if one is sober than if drunk. That is, the probability that a person was drunk given that he was in an accident is very low, but the probability that someone will be in an accident given that he is drunk is very high.
+
+Whites comprise 62% of the population, while African-Americans are only 13%. Of people killed by police officers, 49% are white and 24% are black. Since Jan 1, 2015, roughly 1,500 people have been shot and killed by police in the United States.[fn:1] This tells us that a person who has been killed by police is twice as likely to be white than black, exactly as the commenter stated. As is often the case with statistics, though, what we're given is not what we want to know, but it can be used to derive what we want to know.
+
+Let \(W\) be white, \(B\) be black, and \(K\) be killed by police. The probability that someone is white if they are killed by police, \(\Pr (W \vert K)\), is 0.49. The probability that someone is black if they are killed by police, \(\Pr (B \vert K)\), is 0.24. What we need to know, though, is the probability that someone will be killed by police given their race. To do this, we need to use Bayes' theorem.
+
+\[ \Pr (K \vert R) = \Pr (K) \times \frac{\Pr (R \vert K)}{\Pr (R)}\]
+
+Since \(\Pr(K)\) is the same for both whites and blacks, we can safely ignore it when determining how much more likely a person is to be killed given that their race. We simply need to compare \(\frac{\Pr (W \vert K)}{\Pr (W)}\) to \(\frac{\Pr (B) \vert (K)}{\Pr (B)}\).
+
+\[\frac{\Pr (W \vert K)}{\Pr (W)} = \frac{0.49}{0.62} = 0.79\]
+
+On the other hand,
+
+\[\frac{\Pr (B \vert K)}{\Pr (B)} = \frac{0.24}{0.13} = 1.84\]
+
+That is, a person that is an African-American is 2.34 times more likely to be killed by police than a White-American.
+
+All lives do indeed, objectively, equally matter. Unfortunately, though, we must confess that America has a history of black lives not mattering subjectively to those who have held social power. When a truth has been ignored, even suppressed, for so long, it must be emphasized to gain its rightful standing in our social reality. To do otherwise, that is to simply say "All lives matter," is to maintain an unjust status quo that serves the interests of some, but not all Americans.
+
+*UPDATE (October  2, 2016)*: I want to be careful to note what I am arguing here, and more importantly what I am /not/ arguing. I am merely pointing out the fairly trivial claim that \(\Pr(A \vert B)\) does not necessarily equal \( \Pr(B \vert A) \), and, in this case, actually does not.
+
+I am not accusing the police of being racist, and I have not endeavored to show that anyone has been unjustly shot. I am simply showing that, even though more white Americans are killed by police, black Americans are more likely to be killed by police. There are many possible explanations for this, ranging from racial bias in the police force to high rates of violent crime in predominately African-American communities. There are significant studies that conclude that the former is more likely than the latter to be the correct explanation, but that will have to wait for another post.
+
+* Footnotes
+
+[fn:1] Wesley Lowery, [[https://www.washingtonpost.com/news/post-nation/wp/2016/07/11/arent-more-white-people-than-black-people-killed-by-police-yes-but-no/?utm_term=.6664411d9967&wpisrc=nl_most&wpmm=1][/The Washington Post/]], July 11, 2016.

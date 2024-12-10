@@ -1,4 +1,4 @@
-#+title: "The Burden of Freedom"
+#+title: The Burden of Freedom
 #+filetags: prayer religion
 #+date: <2017-10-12>
 

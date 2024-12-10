@@ -1,0 +1,11 @@
+#+title: The Art of Taxation
+#+date: <2018-03-30>
+#+filetags: quotes
+
+
+#+begin_quote
+The art of taxation consists in so plucking the goose as to obtain the largest possible amount of feathers with the smallest possible amount of hissing.
+#+end_quote
+
+Attributed to Jean-Baptiste Colbert,  Finance Minister to Louis XIV
+

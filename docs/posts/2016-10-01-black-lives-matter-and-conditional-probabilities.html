@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 10, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Race, Police Shooting, and Probability</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Race, Police Shooting, and Probability</h1>
+<p class="subtitle" role="doc-subtitle">Oct 01, 2016</p>
+</header><p>
+I just read a Facebook comment by someone who was apparently downplaying the Black Lives Matter movement by pointing out that the police shoot more white Americans than black Americans. 
+</p>
+
+<p>
+True, but it&rsquo;s a classic error in statistical reasoning. The vast majority of drivers involved in accidents are sober, but it doesn&rsquo;t follow that one is more likely to have an accident if one is sober than if drunk. That is, the probability that a person was drunk given that he was in an accident is very low, but the probability that someone will be in an accident given that he is drunk is very high.
+</p>
+
+<p>
+Whites comprise 62% of the population, while African-Americans are only 13%. Of people killed by police officers, 49% are white and 24% are black. Since Jan 1, 2015, roughly 1,500 people have been shot and killed by police in the United States.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> This tells us that a person who has been killed by police is twice as likely to be white than black, exactly as the commenter stated. As is often the case with statistics, though, what we&rsquo;re given is not what we want to know, but it can be used to derive what we want to know.
+</p>
+
+<p>
+Let \(W\) be white, \(B\) be black, and \(K\) be killed by police. The probability that someone is white if they are killed by police, \(\Pr (W \vert K)\), is 0.49. The probability that someone is black if they are killed by police, \(\Pr (B \vert K)\), is 0.24. What we need to know, though, is the probability that someone will be killed by police given their race. To do this, we need to use Bayes&rsquo; theorem.
+</p>
+
+<p>
+\[ \Pr (K \vert R) = \Pr (K) \times \frac{\Pr (R \vert K)}{\Pr (R)}\]
+</p>
+
+<p>
+Since \(\Pr(K)\) is the same for both whites and blacks, we can safely ignore it when determining how much more likely a person is to be killed given that their race. We simply need to compare \(\frac{\Pr (W \vert K)}{\Pr (W)}\) to \(\frac{\Pr (B) \vert (K)}{\Pr (B)}\).
+</p>
+
+<p>
+\[\frac{\Pr (W \vert K)}{\Pr (W)} = \frac{0.49}{0.62} = 0.79\]
+</p>
+
+<p>
+On the other hand,
+</p>
+
+<p>
+\[\frac{\Pr (B \vert K)}{\Pr (B)} = \frac{0.24}{0.13} = 1.84\]
+</p>
+
+<p>
+That is, a person that is an African-American is 2.34 times more likely to be killed by police than a White-American.
+</p>
+
+<p>
+All lives do indeed, objectively, equally matter. Unfortunately, though, we must confess that America has a history of black lives not mattering subjectively to those who have held social power. When a truth has been ignored, even suppressed, for so long, it must be emphasized to gain its rightful standing in our social reality. To do otherwise, that is to simply say &ldquo;All lives matter,&rdquo; is to maintain an unjust status quo that serves the interests of some, but not all Americans.
+</p>
+
+<p>
+<b>UPDATE (October  2, 2016)</b>: I want to be careful to note what I am arguing here, and more importantly what I am <i>not</i> arguing. I am merely pointing out the fairly trivial claim that \(\Pr(A \vert B)\) does not necessarily equal \( \Pr(B \vert A) \), and, in this case, actually does not.
+</p>
+
+<p>
+I am not accusing the police of being racist, and I have not endeavored to show that anyone has been unjustly shot. I am simply showing that, even though more white Americans are killed by police, black Americans are more likely to be killed by police. There are many possible explanations for this, ranging from racial bias in the police force to high rates of violent crime in predominately African-American communities. There are significant studies that conclude that the former is more likely than the latter to be the correct explanation, but that will have to wait for another post.
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Wesley Lowery, <a href="https://www.washingtonpost.com/news/post-nation/wp/2016/07/11/arent-more-white-people-than-black-people-killed-by-police-yes-but-no/?utm_term=.6664411d9967&amp;wpisrc=nl_most&amp;wpmm=1"><i>The Washington Post</i></a>, July 11, 2016.
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 10, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

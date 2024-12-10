@@ -1,0 +1,10 @@
+#+title: Pascal on Might and Right
+#+date: <2018-06-20>
+
+
+On the birthday of Blaise Pascal, consider this wisdom from /The Pensees/:
+
+#+begin_quote
+Right is open to dispute, might is easily recognized and beyond dispute. Therefore right could not be made mighty because might challenged right, calling it unjust and itself claiming to be just. Being thus unable to make right into might, we have made might into right. (L 103)
+#+end_quote
+

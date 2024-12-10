@@ -1,0 +1,25 @@
+#+title: "Do Not Be Daunted"
+#+filetags: prayer religion
+#+date: <2017-10-03>
+
+
+I bought an entire book for these two paragraphs, but they are worth much more than I paid:
+
+#+begin_quote
+"Rabbi Tarfon would say:
+
+You are not obligated to complete the work,  
+but neither are you free to abandon it.
+
+Do not be daunted  
+by the enormity of the world's grief.
+Do justly, now,  
+Love mercy, now.  
+Walk humbly, now."[fn:1]
+#+end_quote
+
+
+
+* Footnotes
+
+[fn:1] [^1]: Rabbi Rami M. Shapiro, *Wisdom of the Jewish Sages: A Modern Reading of Pirke Avot*, p. 41.

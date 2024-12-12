@@ -1,0 +1,11 @@
+#+date: <2017-05-18>
+#+filetags: misc
+#+title: Favorite Bad Amazon Review
+
+This is now my favorite 1-star book review on Amazon. It's a review of /R For Dummies/, a book on the R statistics programming language: 
+
+#+begin_quote
+If you're looking for a book to explain the letter "R" to you, keep looking, this isn't it.
+#+end_quote
+
+I hope that person eventually found what they needed.

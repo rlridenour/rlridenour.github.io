@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2018-02-10-move-to-wordpress.org][2018-02-10-move-to-wordpress]]
 - [[file:24-12-05-moving-site.org][Moving the Site]]
 - [[file:2024-07-09-installing-auctex-with-straight.org][Installing Auctex with Straight]]
 - [[file:2024-07-04-beamer-article-and-org-mode.org][Beamer Article and Org Mode]]
@@ -59,6 +60,10 @@
 - [[file:2018-03-30-the-art-of-taxation.org][The Art of Taxation]]
 - [[file:2018-02-20-benediction.org][Benediction]]
 - [[file:2018-02-19-prayer-in-times-of-fear.org][Prayer in Times of Fear]]
+- [[file:2018-02-15-homily-for-ash-wednesday.org][Homily for Ash Wednesday]]
+- [[file:2017-12-24-prayer-for-the-fourth-sunday-of-advent.org][Prayer for the Fourth Sunday of Advent]]
+- [[file:2017-12-09-ordination-prayer.org][Ordination Prayer]]
+- [[file:2017-12-04-no-democrat-voted-for-what.org][No Democrat Voted for What?]]
 - [[file:2017-10-24-when-the-idols-are-destroyed.org][When the Idols are Destroyed]]
 - [[file:2017-10-12-the-burden-of-freedom.org][The Burden of Freedom]]
 - [[file:2017-10-03-do-not-be-daunted.org][Do Not Be Daunted]]

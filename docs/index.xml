@@ -14,8 +14,8 @@
   <link>http://example.com/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 11 Dec 2024 07:52:35 -0600</pubDate>
-  <lastBuildDate>Wed, 11 Dec 2024 07:52:35 -0600</lastBuildDate>
+  <pubDate>Thu, 12 Dec 2024 08:18:45 -0600</pubDate>
+  <lastBuildDate>Thu, 12 Dec 2024 08:18:45 -0600</lastBuildDate>
   <generator>Emacs 29.4 Org-mode 9.8-pre</generator>
   <webMaster>rlridenour@fastmail.com (Randy Ridenour)</webMaster>
   <image>
@@ -25,6 +25,7 @@
   </image>
 
   <ul class="org-ul">
+    <li><a href="http://example.com/2018-02-10-move-to-wordpress.html">2018-02-10-move-to-wordpress</a></li>
     <li><a href="http://example.com/24-12-05-moving-site.html">Moving the Site</a></li>
     <li><a href="http://example.com/2024-07-09-installing-auctex-with-straight.html">Installing Auctex with Straight</a></li>
     <li><a href="http://example.com/2024-07-04-beamer-article-and-org-mode.html">Beamer Article and Org Mode</a></li>
@@ -84,6 +85,10 @@
     <li><a href="http://example.com/2018-03-30-the-art-of-taxation.html">The Art of Taxation</a></li>
     <li><a href="http://example.com/2018-02-20-benediction.html">Benediction</a></li>
     <li><a href="http://example.com/2018-02-19-prayer-in-times-of-fear.html">Prayer in Times of Fear</a></li>
+    <li><a href="http://example.com/2018-02-15-homily-for-ash-wednesday.html">Homily for Ash Wednesday</a></li>
+    <li><a href="http://example.com/2017-12-24-prayer-for-the-fourth-sunday-of-advent.html">Prayer for the Fourth Sunday of Advent</a></li>
+    <li><a href="http://example.com/2017-12-09-ordination-prayer.html">Ordination Prayer</a></li>
+    <li><a href="http://example.com/2017-12-04-no-democrat-voted-for-what.html">No Democrat Voted for What?</a></li>
     <li><a href="http://example.com/2017-10-24-when-the-idols-are-destroyed.html">When the Idols are Destroyed</a></li>
     <li><a href="http://example.com/2017-10-12-the-burden-of-freedom.html">The Burden of Freedom</a></li>
     <li><a href="http://example.com/2017-10-03-do-not-be-daunted.html">Do Not Be Daunted</a></li>

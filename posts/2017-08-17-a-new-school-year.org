@@ -1,4 +1,4 @@
-#+title: "A New School Year"
+#+title: A New School Year
 #+filetags: prayer religion
 #+date: <2017-08-17>
 

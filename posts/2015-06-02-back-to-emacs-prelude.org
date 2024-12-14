@@ -1,0 +1,9 @@
+#+date: <2015-06-02>
+#+filetags: emacs
+#+title: Back to Emacs Prelude
+
+As I said a few days ago, I switch my Emacs config files to Kieran Healy's Starter Kit. I really liked the use of Org-mode for the config, and especially the LaTeX and RefTeX configuration. I still like Batsov's Prelude, though, and there were certainly some things that I missed greatly.
+
+This afternoon, I found Mike McFarland's [[http://thrownforaloop.com/posts/emacs-configuration/][Emacs configuration]] online. He uses Prelude with a personal configuration in Org-mode. I have switched back, and brought in much of Kieran's LaTeX configuration.
+
+You can see the results [[https://github.com/rlridenour/prelude/blob/master/personal/settings.org][here]], although it's not now as literate as I hope it will be.

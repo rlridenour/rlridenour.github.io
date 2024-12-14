@@ -1,0 +1,32 @@
+#+date: <2015-01-19>
+#+filetags: science religion philosophy
+#+title: Penn Jillette on Science and Religion
+
+[[https://www.daringfireball.net][John Gruber]] recently posted this interesting quote from Penn Jillette, of Penn and Teller fame:
+
+
+#+begin_quote
+There is no god and that’s the simple truth. If every trace of any single religion died out and nothing were passed on, it would never be created exactly that way again. There might be some other nonsense in its place, but not that exact nonsense. If all of science were wiped out, it would still be true and someone would find a way to figure it all out again.
+#+end_quote
+
+--- Penn Jillette, [[http://books.google.com/books?id=KsI3sswEg14C&printsec=frontcover&dq=god+no+penn+jillette&hl=en&sa=X&ei=bHXrTuSJNYnt0gHoqrikCQ&ved=0CDcQ6AEwAA#v=onepage&q=%22that%20exact%20nonsense%22&f=false][/God, No!: Signs You May Already Be an Atheist and Other Magical Tales/]] 
+
+
+There is a lot to think about here. Keep in mind that I haven't read the book, but have only seen this single paragraph. Here are my initial thoughts in no particular order.
+
+The argument seems to be this: imagine that a body of belief were somehow completely eradicated from human minds. If humans were somehow to replicate this body of belief, then such replication would be evidence in favor of its truth. Failure to replicate the body of belief would be evidence in favor of its falsity.
+
+Now, as I often say in class, it's a bit more complicated than this. First, science itself is not a body of belief. It is instead a method of producing beliefs. So, the proposal must be not to "wipe out science" but instead to eradicate all belief in and memory of all propositions that we consider part of science, that is, claims in physics, biology, chemistry, etc. Then, we should ask if these beliefs would eventually be replicated.
+
+I assume that Jillette requires only that current scientific beliefs be replicated. There's no reason why he should require Galen's ideas about physiology and anatomy or Aristotle's physics to be replicated, since they are false. Why believe that current scientific beliefs would be replicated? I guess because Jillette assumes that they are true. Now, only the most radical antirealist would assume that nothing in current science is true, so I'll grant that we have good reason for believing that at least much of current science is in fact true. How much of current scientific belief is true, though? Surely not all of it. As Newtonian mechanics was eventually replaced with relativity theory and quantum mechanics, might there at some point be another theoretical framework that replaces current physics? There's no reason to think that everything science asserts now is true, so there's no reason to think that it would be exactly replicated. So, what is true of religion is also true of science - "There might be some other nonsense in its place, but not that exact nonsense."
+
+So, if we won't demand exact replication in science, then we shouldn't demand exact replication for religion either. Does that mean that those religious beliefs that would be replicated then should be considered true? I don't find it difficult to believe that the belief that a god exists would find its way back into the human psyche, along with other beliefs about the god's role in causing the universe to be, the demands that the god makes on humans, etc.
+
+I suppose that the reply would be that these are individual religious beliefs, what must be replicated is a system of religious belief, and that there's no reason to believe that any current system of religious thought would be replicated. Surely though, there are bodies of religious belief that could easily be replicated. Some minimal deism, for instance, is very likely to be replicated.
+
+There is reason why one would think that, if scientific knowledge were somehow eradicated, that we would come to discover those scientific truths again. That is because we think that the method of science is truth-conducive. That is, the scientific method, in the long run, will produce true beliefs and eliminate false beliefs. This is something famously argued by the American pragmatist Charles Sanders Peirce (1839-1914).[fn:1] Now, that doesn't mean that every use of the scientific method produces true belief or eliminates false beliefs. Some people may just not be very good scientists. In other cases, the particular scientists may be very good, but simply have some false background assumptions.[fn:2] The particular beliefs that are true, though, would be replicated if science is truth-conducive. So, would religious beliefs be eventually replicated if they were eradicated? That depends on the means by which such beliefs were produced. If religious beliefs are formed by a truth-conducive method, then there is every reason that they would be. What could be the method that produced my religious beliefs? One possibility is that God gave them to me, and surely that's a truth-conducive method. 
+
+So, in the end, Jillette's argument begs the question. That is, he hasn't given us a successful argument that religious belief is false because religious belief would not be replicated. Instead, if he argues successfully for anything, it is that religious belief would not be replicated if all religious belief is false. I grant that the conditional is true, but I haven't been shown any reason why I should grant that all religious belief is false. If one paragraph was this thought-provoking, I'm looking forward to reading the rest of the book. 
+
+[fn:1]: Interestingly, Peirce also thought that the method would produce belief in God. I'm teaching American philosophy next semester, so I'll likely have a post on Peirce's "Neglected Argument."
+[fn:2]: An example is Hertz's early experiment to determine the speed of radio waves.

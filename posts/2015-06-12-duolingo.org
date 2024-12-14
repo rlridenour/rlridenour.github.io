@@ -1,0 +1,5 @@
+#+date: <2015-06-12>
+#+filetags: education
+#+title: DuoLingo
+
+Speaking of interesting, free resources, [[https://www.duolingo.com/][DuoLingo]] is a site reminiscent of Rosetta Stone. I've started the German course for review, and it seems to be very well done so far. I notice that they have Danish — maybe it's time to get serious about studying Kierkegaard.

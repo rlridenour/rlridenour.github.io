@@ -1,0 +1,5 @@
+#+date: <2015-06-12>
+#+filetags: books
+#+title: LibriVox
+
+I just found [[https://librivox.org][LibriVox]], a collection of audiobooks, all public domain works read by volunteers. What is especially cool is that they can be subscribed to, and played by, your preferred podcast app.

@@ -1,0 +1,9 @@
+#+date: <2016-06-29>
+#+filetags: quotes
+#+title: The Real Mover
+
+#+begin+quote
+	It is not the horse that draws the cart, but the oats.
+#+end_quote
+
+--- Russian proverb

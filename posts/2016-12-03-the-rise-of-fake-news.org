@@ -1,0 +1,11 @@
+#+date: <2016-12-03>
+#+filetags: critical-thinking politics
+#+title: The Rise of Fake News
+
+NPR has a fascinating, if not troubling, [[http://www.npr.org/sections/alltechconsidered/2016/11/23/503146770/npr-finds-the-head-of-a-covert-fake-news-operation-in-the-suburbs][interview]] with a creator of various fake news sites that began to profilerate during the 2016 presidential election. This part of the interview was particularly telling:
+
+#+begin_quote
+Well, this isn't just a Trump-supporter problem. This is a right-wing issue. Sarah Palin's famous blasting of the lamestream media is kind of record and testament to the rise of these kinds of people. The post-fact era is what I would refer to it as. This isn't something that started with Trump. This is something that's been in the works for a while. His whole campaign was this thing of discrediting mainstream media sources, which is one of those dog whistles to his supporters. When we were coming up with headlines it's always kind of about the red meat. Trump really got into the red meat. He knew who his base was. He knew how to feed them a constant diet of this red meat.
+
+We've tried to do similar things to liberals. It just has never worked, it never takes off. You'll get debunked within the first two comments and then the whole thing just kind of fizzles out.
+#+end_quote

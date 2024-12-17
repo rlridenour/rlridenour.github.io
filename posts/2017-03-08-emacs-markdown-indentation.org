@@ -1,0 +1,5 @@
+#+date: <2017-03-08>
+#+filetags: emacs markdown
+#+title: Emacs Markdown Indentation
+
+Beginning today, for some reason, I could not indent Markdown list items in Emacs. Disabling aggressive-indent-mode fixed the problem.

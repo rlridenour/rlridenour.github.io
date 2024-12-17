@@ -1,0 +1,10 @@
+#+date: <2016-06-14>
+#+filetags: quotes
+#+title: Dont Be Afraid
+
+#+begin_quote
+Here is the world. Beautiful and terrible things will happen. Don't be afraid.
+#+end_quote
+
+
+--- Frederick Buechner

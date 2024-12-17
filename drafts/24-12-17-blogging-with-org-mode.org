@@ -1,0 +1,6 @@
+#+TITLE: Blogging with Org Mode
+#+date: <2024-12-17 Tue>
+#+filetags: emacs org blog
+#+setupfile: ../org-templates/post.org
+
+This blog has been through many different versions. At various times, I've used WordPress, Ghost, Jekyll, and Hugo, some more than once. I've written posts in Markdown, HTML, Org mode, sometimes more than one in the same post. 

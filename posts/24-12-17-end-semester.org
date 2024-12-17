@@ -1,0 +1,6 @@
+#+TITLE: End of the Semester
+#+date: <2024-12-17 Tue>
+#+filetags: teaching
+#+setupfile: ../org-templates/post.org
+
+Final exams have been graded and final grades have been turned in. Unfortunately, there's only a few short weeks to prepare for the next semester.

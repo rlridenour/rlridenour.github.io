@@ -65,7 +65,7 @@ This blog has been through many different versions. At various times, I&rsquo;ve
 I started with the template provided by Sachin Patel that he describes <a href="https://opensource.com/article/20/3/blog-emacs">here</a>. I have changed some things, so I&rsquo;ll describe the site as I&rsquo;ve put it together. I highly recommend reading his post and cloning a copy of the template, though. Everything is in a directory named &ldquo;orgblog&rdquo; that has the following structure:
 </p>
 
-<pre class="example" id="org53438b0">
+<pre class="example" id="org0658dff">
 .
 ├── css
 │   └── stylesheet.css
@@ -111,7 +111,7 @@ All the work gets done by the <code>publish.el</code> file. Here are some change
 </p>
 
 
-<pre class="example" id="orgec024c9">
+<pre class="example" id="org1310fee">
 (defun me/website-html-preamble (plist)
   "PLIST: An entry."
   (if (org-export-get-date plist this-date-format)
@@ -127,7 +127,7 @@ I made some slight changes to the <code>org-publish-project-alist</code>. First,
 </p>
 
 
-<pre class="example" id="orgc684411">
+<pre class="example" id="orgd7c9d61">
 (setq org-publish-project-alist
       `(("posts"
          :base-directory "posts"
@@ -175,7 +175,7 @@ I have a folder for drafts that doesn&rsquo;t get an entry in the <code>=project
 Here are the functions I use to build, serve, and deploy. To build the site, I run
 </p>
 
-<pre class="example" id="orgc6b1c01">
+<pre class="example" id="orgbc16cb2">
 (defun orgblog-build ()
   (interactive)
   (progn
@@ -190,14 +190,14 @@ This function starts the server, waits for a second, then opens the default brow
 </p>
 
 
-<pre class="example" id="org893e655">
+<pre class="example" id="org90cb8b6">
 (defun orgblog-serve ()
   (interactive)
   (progn
     (let ((default-directory "~/sites/orgblog/docs"))
-      (async-shell-command "serve")
-      (sleep-for 1)
-      (async-shell-command "open http://localhost:3000"))))
+	(async-shell-command "serve")
+	(sleep-for 1)
+	(async-shell-command "open http://localhost:3000"))))
 </pre>
 
 
@@ -206,7 +206,7 @@ This function starts the server, waits for a second, then opens the default brow
 If everything, looks good, then I can push changes to Github. The fish function <code>orgblog-push</code> changes to the site directory, adds all modifications, creates a commit with a default message, pushes the remote, then displays the current status of the repo.
 </p>
 
-<pre class="example" id="org573ecd0">
+<pre class="example" id="orgbf9ce7e">
 (defun orgblog-push ()
   (interactive)
   (async-shell-command "orgblog-push"))
@@ -217,7 +217,7 @@ If everything, looks good, then I can push changes to Github. The fish function 
 This moves a draft to the posts directory by saving the buffer, copying it to posts, moving the original to the trash in case something goes wrong, and killing the buffer. It then opens the posts directory in Dired.
 </p>
 
-<pre class="example" id="org9b1a7f6">
+<pre class="example" id="org7877c6d">
 (defun publish-orgblog-draft ()
   (interactive)
   (save-buffer)
@@ -231,7 +231,7 @@ This moves a draft to the posts directory by saving the buffer, copying it to po
 Finally, posts have these header lines:
 </p>
 
-<pre class="example" id="org4daeef5">
+<pre class="example" id="orga5f7a6b">
 #+TITLE: Sample Post
 #+date: &lt;2024-12-05 Thu&gt;
 #+filetags: blog emacs org
@@ -245,7 +245,7 @@ I&rsquo;m very happy with how things have turned out, and this should be enough 
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
+  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

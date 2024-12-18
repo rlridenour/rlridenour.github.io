@@ -1,6 +1,7 @@
 #+date: <2009-10-21>
 #+filetags: critical-thinking
 #+title: Car Accidents and Conditional Probabilities
+#+HTML_MATHJAX: font:"mathjax-fira"
 
 A problem we looked at in Critical Thinking today asked why most car accidents occur close to home. The answer is that most of our driving is close to home. The problem then asked us to explain that in terms of conditional probabilities. I don't think that I explained it very well, so let me take another shot at it.
     

@@ -13,3 +13,5 @@
 public/
 .gitlab-ci.yml
 disquss.inc
+
+CNAME

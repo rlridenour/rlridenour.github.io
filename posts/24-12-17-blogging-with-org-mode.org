@@ -34,7 +34,7 @@ I started with the template provided by Sachin Patel that he describes [[https:/
 I've included a sample post and an about page as examples. I left the two files in the "org-templates" directory unchanged from the template, other than changing the author's name. I changed the HTML templates, removing the image and changing the menu from =preamble.html=, with no significant changes to =postamble.html=. Here is =preamble.html=:
 
 
-#+begin_export html
+#+begin_example html
 <div class="banner">
   <h2><a href="/">Randy Ridenour</a></h2>
   <nav class="navbar">
@@ -45,7 +45,7 @@ I've included a sample post and an about page as examples. I left the two files 
     </ul>
   </nav>
 </div>
-#+end_export
+#+end_example
 
 
 All the work gets done by the =publish.el= file. Here are some changes that I made to the template. First, since I'm the sole author, I don't need "Published by..." by every post title on the index page. 

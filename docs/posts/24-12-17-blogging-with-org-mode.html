@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Dec 18, 2024 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blogging with Org Mode</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Blogging with Org Mode
+<br />
+<span class="subtitle">Dec 17, 2024</span>
+</h1>
+<p>
+This blog has been through many different versions. At various times, I&rsquo;ve used WordPress, Ghost, Jekyll, and Hugo, some more than once. I&rsquo;ve written posts in Markdown, HTML, Org mode, sometimes using more than one format in the same post. As Emacs users are prone to do, though, I&rsquo;m constantly trying to do more in Org mode. I could write posts in Org mode for Hugo, but I&rsquo;ve been tempted by the prospects of using Org to generate the entire site. I finally did it, and I&rsquo;m pleased with the results so far.
+</p>
+
+<p>
+I started with the template provided by Sachin Patel that he describes <a href="https://opensource.com/article/20/3/blog-emacs">here</a>. I have changed some things, so I&rsquo;ll describe the site as I&rsquo;ve put it together. I highly recommend reading his post and cloning a copy of the template, though. Everything is in a directory named &ldquo;orgblog&rdquo; that has the following structure:
+</p>
+
+<pre class="example" id="org53438b0">
+.
+├── css
+│   └── stylesheet.css
+├── docs
+├── drafts
+├── html-templates
+│   ├── postamble.html
+│   └── preamble.html
+├── images
+│   ├── favicon.ico
+│   └── posts
+├── org-templates
+│   ├── latex-pdf.org
+│   └── post.org
+├── pages
+│   ├── about.org
+│   └── index.org
+├── posts
+│   ├── 24-12-05-sample-post.org
+│   └── index.org
+└── publish.el
+</pre>
+
+<p>
+I&rsquo;ve included a sample post and an about page as examples. I left the two files in the &ldquo;org-templates&rdquo; directory unchanged from the template, other than changing the author&rsquo;s name. I changed the HTML templates, removing the image and changing the menu from <code>preamble.html</code>, with no significant changes to <code>postamble.html</code>. Here is <code>preamble.html</code>:
+</p>
+
+
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+<p>
+All the work gets done by the <code>publish.el</code> file. Here are some changes that I made to the template. First, since I&rsquo;m the sole author, I don&rsquo;t need &ldquo;Published by&#x2026;&rdquo; by every post title on the index page. 
+</p>
+
+
+<pre class="example" id="orgec024c9">
+(defun me/website-html-preamble (plist)
+  "PLIST: An entry."
+  (if (org-export-get-date plist this-date-format)
+      (plist-put plist
+                 :subtitle (format "%s"
+                                   (org-export-get-date plist this-date-format)
+                                   (car (plist-get plist :author)))))
+</pre>
+
+
+<p>
+I made some slight changes to the <code>org-publish-project-alist</code>. First, I added a posts directory to help keep things organized. I also added a pages directory, instead of using a directory for each individual page. I also changed every reference to the &ldquo;public&rdquo; folder to &ldquo;docs&rdquo;, since Github pages will serve a site from a directory title &ldquo;docs&rdquo;. Here are the entries for posts and pages &#x2014; all of the others are basically the same as the template except for changing &ldquo;public&rdquo; to &ldquo;docs&rdquo;.
+</p>
+
+
+<pre class="example" id="orgc684411">
+(setq org-publish-project-alist
+      `(("posts"
+         :base-directory "posts"
+         :base-extension "org"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "./docs/posts/"
+         :exclude ,(regexp-opt '("README.org" "draft"))
+         :auto-sitemap t
+         :sitemap-filename "index.org"
+         :sitemap-title "Blog Index"
+         ;; :sitemap-format-entry me/org-sitemap-format-entry
+         ;; :sitemap-style list
+         :sitemap-sort-files anti-chronologically
+         :html-link-home "/"
+         :html-link-up "/"
+         :html-head-include-scripts t
+         :html-head-include-default-style nil
+         :html-head ,me/website-html-head
+         :html-preamble me/website-html-preamble
+         :html-postamble me/website-html-postamble)
+        ("pages"
+         :base-directory "pages"
+         :base-extension "org"
+         :exclude ,(regexp-opt '("README.org" "draft"))
+         :index-filename "index.org"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "./docs/"
+         :html-link-home "/"
+         :html-link-up "/"
+         :html-head-include-scripts t
+         :html-head-include-default-style nil
+         :html-head ,me/website-html-head
+         :html-preamble me/website-html-preamble
+         :html-postamble me/website-html-postamble)
+</pre>
+
+
+<p>
+I have a folder for drafts that doesn&rsquo;t get an entry in the <code>=project-alist</code>. When I&rsquo;m ready to publish a draft, I have a function that copies it to the posts directory and deletes it from the drafts directory.  I don&rsquo;t use the <code>serve.el</code> or the <code>makefile</code> from the template. Instead, I use the <code>org-publish-all</code> function to build the site and <code>serve</code> from npm to serve a local copy. I dropped a copy of <a href="https://neat.joeldare.com">Neat CSS</a> into the CSS folder and modified the <code>me/website-html-head</code> variable in <code>publish.el</code> to reflect that.
+</p>
+
+<p>
+Here are the functions I use to build, serve, and deploy. To build the site, I run
+</p>
+
+<pre class="example" id="orgc6b1c01">
+(defun orgblog-build ()
+  (interactive)
+  (progn
+    (find-file "~/sites/orgblog/publish.el")
+    (eval-buffer)
+    (org-publish-all)
+    (kill-buffer)))
+</pre>
+
+<p>
+This function starts the server, waits for a second, then opens the default browser to localhost:
+</p>
+
+
+<pre class="example" id="org893e655">
+(defun orgblog-serve ()
+  (interactive)
+  (progn
+    (let ((default-directory "~/sites/orgblog/docs"))
+      (async-shell-command "serve")
+      (sleep-for 1)
+      (async-shell-command "open http://localhost:3000"))))
+</pre>
+
+
+
+<p>
+If everything, looks good, then I can push changes to Github. The fish function <code>orgblog-push</code> changes to the site directory, adds all modifications, creates a commit with a default message, pushes the remote, then displays the current status of the repo.
+</p>
+
+<pre class="example" id="org573ecd0">
+(defun orgblog-push ()
+  (interactive)
+  (async-shell-command "orgblog-push"))
+</pre>
+
+
+<p>
+This moves a draft to the posts directory by saving the buffer, copying it to posts, moving the original to the trash in case something goes wrong, and killing the buffer. It then opens the posts directory in Dired.
+</p>
+
+<pre class="example" id="org9b1a7f6">
+(defun publish-orgblog-draft ()
+  (interactive)
+  (save-buffer)
+  (copy-file (buffer-file-name) "~/sites/orgblog/posts/")
+  (delete-file (buffer-file-name) t)
+  (kill-buffer)
+  (dired "~/sites/orgblog/posts"))
+</pre>
+
+<p>
+Finally, posts have these header lines:
+</p>
+
+<pre class="example" id="org4daeef5">
+#+TITLE: Sample Post
+#+date: &lt;2024-12-05 Thu&gt;
+#+filetags: blog emacs org
+#+setupfile: ../org-templates/post.org
+</pre>
+
+<p>
+I&rsquo;m very happy with how things have turned out, and this should be enough to help others do the same. I&rsquo;ve been converting old posts to the new format and still have some 250 to go. That&rsquo;s giving me plenty of opportunities to develop my regex skills. The source for the site can be found on Github <a href="https://github.com/rlridenour/rlridenour.github.io">here</a>.
+</p>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
+</div>
+</footer>
+</body>
+</html>

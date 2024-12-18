@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Dec 05, 2024 -->
+<!-- Dec 18, 2024 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Org, Diary, and Dashboard</title>
@@ -70,17 +70,18 @@ I won&rsquo;t bother detailing all of the options that I tried, but here are the
 <li>I then explored using the diary. The <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Format-of-Diary-File.html">diary file</a> has an extremely simple format; simple appointments are made just by listing the date, time, and appointment title on a line. Complex appointments are made by using special <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Special-Diary-Entries.html">sexp entries</a>, which allowed me to create the appointments for my courses. It is also very easy to display these appointments in org-agenda, which very conveniently marks the current time with a line across the agenda, providing a nice visual representation of the relative time before my next appointment. I didn&rsquo;t quite like how the appointments were displayed in emphasized text, but everything else worked great. A reminder pops up in the minibuffer several minutes before the appointment. The pop-up reminder soon disappears, but the modeline continues to list, and update, the number of minutes until the appointment.</li>
 <li>Finally, as I researched how to form complex sexp appointments, I saw that Org mode is able to use the sexp appointment format. So, it was back to Org mode. Here is what I used in the end.</li>
 </ol>
-<section id="outline-container-org0dba13d" class="outline-2">
-<h2 id="org0dba13d">Init Settings</h2>
-<div class="outline-text-2" id="text-org0dba13d">
+
+<section id="outline-container-org79b3a21" class="outline-2">
+<h2 id="org79b3a21">Init Settings</h2>
+<div class="outline-text-2" id="text-org79b3a21">
 <p>
 I created an agenda display for just the current day:
 </p>
 
 <div class="org-src-container">
 <pre class="src src-lisp">(setq org-agenda-custom-commands
-    '((<span class="org-string">"d"</span> <span class="org-string">"Agenda for today"</span> agenda <span class="org-string">""</span>
-        ((org-agenda-overriding-header <span class="org-string">"Today's agenda"</span>)
+    '(("d" "Agenda for today" agenda ""
+        ((org-agenda-overriding-header "Today's agenda")
          (org-agenda-span 'day)
         ))))
 </pre>
@@ -101,7 +102,7 @@ Then generate the appointment list from the Org agenda files and update it hourl
 
 <div class="org-src-container">
 <pre class="src src-lisp">(org-agenda-to-appt)
-(run-at-time <span class="org-string">"24:01"</span> 3600 'org-agenda-to-appt)
+(run-at-time "24:01" 3600 'org-agenda-to-appt)
 </pre>
 </div>
 
@@ -123,11 +124,11 @@ I use the <a href="https://github.com/emacs-dashboard/emacs-dashboard">Emacs Das
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">dashboard-insert-agenda</span> (<span class="org-type">&amp;rest</span> _)
-  <span class="org-doc">"Insert a copy of org-agenda buffer."</span>
+<pre class="src src-lisp">(defun dashboard-insert-agenda (&amp;rest _)
+  "Insert a copy of org-agenda buffer."
   (insert (save-window-excursion
-            (org-agenda nil <span class="org-string">"d"</span>)
-            (<span class="org-keyword">prog1</span> (buffer-string)
+            (org-agenda nil "d")
+            (prog1 (buffer-string)
               (kill-buffer)))))
 </pre>
 </div>
@@ -140,44 +141,46 @@ I don&rsquo;t need to see the time grid, just the current time and the appointme
 <pre class="src src-lisp">(setq org-agenda-time-grid
   '((daily today require-timed remove-match)
     ()
-    <span class="org-string">"......"</span>
-    <span class="org-string">""</span>))
+    "......"
+    ""))
 </pre>
 </div>
 </div>
 </section>
-<section id="outline-container-org98d3324" class="outline-2">
-<h2 id="org98d3324">The Agenda File</h2>
-<div class="outline-text-2" id="text-org98d3324">
+
+
+<section id="outline-container-org310f080" class="outline-2">
+<h2 id="org310f080">The Agenda File</h2>
+<div class="outline-text-2" id="text-org310f080">
 <p>
 I have two separate agenda files, one for tasks and another for events. Here&rsquo;s how the event file is currently structured with an example or two in each category.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-level-1">* Birthdays and Anniversaries</span>
+<pre class="src src-org">* Birthdays and Anniversaries
 
-<span class="org-org-sexp-date">%%(org-anniversary 2019 12 19) Lucy's %d%s birthday</span>
+%%(org-anniversary 2019 12 19) Lucy's %d%s birthday
 
-<span class="org-org-level-1">* Classes</span>
+* Classes
 
-<span class="org-org-level-2">** Intro 12:30-13:45</span>
+** Intro 12:30-13:45
 &lt;%%(and (memq (calendar-day-of-week date) '(2 4))
    (diary-block 1 25 2024 5 10 2024)
    (not (or
         (diary-block 3 18 2024 3 22 2024)
         (diary-date 3 29 2024))))&gt;
 
-<span class="org-org-level-1">* Recurring</span>
+* Recurring
 
-<span class="org-org-level-2">** Edward 15:00</span>
-<span class="org-org-sexp-date">&lt;%%(memq (calendar-day-of-week date) '(3))&gt;</span>
+** Edward 15:00
+&lt;%%(memq (calendar-day-of-week date) '(3))&gt;
 
-<span class="org-org-level-1">* Future</span>
+* Future
 
-<span class="org-org-level-2">** Total Eclipse </span><span class="org-org-level-2"><span class="org-org-date">&lt;2024-04-08 Mon&gt;</span></span>
-<span class="org-org-level-2">** Colloquium </span><span class="org-org-level-2"><span class="org-org-date">&lt;2024-02-09 Fri 15:00&gt;</span></span>
+** Total Eclipse &lt;2024-04-08 Mon&gt;
+** Colloquium &lt;2024-02-09 Fri 15:00&gt;
 
-<span class="org-org-level-1">* Past</span>
+* Past
 </pre>
 </div>
 
@@ -198,7 +201,7 @@ The recurring section is for any recurring appointment that is not a class. Note
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-level-2">** Edward </span><span class="org-org-level-2"><span class="org-org-date">&lt;2024-01-24 Wed 15:00 +1w&gt;</span></span>
+<pre class="src src-org">** Edward &lt;2024-01-24 Wed 15:00 +1w&gt;
 </pre>
 </div>
 
@@ -211,8 +214,8 @@ Finally, I added an org-capture template for easily creating simple appointments
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(<span class="org-string">"e"</span> <span class="org-string">"Event"</span> entry (file+headline <span class="org-string">"path to events.org"</span> <span class="org-string">"Future"</span>)
-           <span class="org-string">"** %? %T"</span>)
+<pre class="src src-lisp">("e" "Event" entry (file+headline "path to events.org" "Future")
+           "** %? %T")
 </pre>
 </div>
 
@@ -229,7 +232,7 @@ There are many examples that can be found online, but few were of the type that 
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 05, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
 </div>
 </footer>
 </body>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 05, 2024 -->
+<!-- Dec 18, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>List Spacing in Org Mode with Enumitem</title>
-<meta name="author" content="Randy Ridenour" />
+<meta name="author" content="Randall Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -59,8 +59,8 @@ I like to use the LaTeX package enumitem to eliminate the spacing in lists. To d
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-meta-line">#+LaTeX_HEADER: \usepackage{enumitem}</span>
-<span class="org-org-meta-line">#+LaTeX_HEADER: \setlist{nosep}</span>
+<pre class="src src-org">#+LaTeX_HEADER: \usepackage{enumitem}
+#+LaTeX_HEADER: \setlist{nosep}
 </pre>
 </div>
 
@@ -69,7 +69,7 @@ If you also don&rsquo;t want your lists to be indented, use
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-meta-line">#+LaTeX_HEADER: \setlist{nosep,wide}</span>
+<pre class="src src-org">#+LaTeX_HEADER: \setlist{nosep,wide}
 </pre>
 </div>
 
@@ -78,7 +78,7 @@ These global options can be overridden for individual lists by putting something
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-meta-line">#+ATTR_LaTeX: :options [itemsep=1em]</span>
+<pre class="src src-org">#+ATTR_LaTeX: :options [itemsep=1em]
 </pre>
 </div>
 
@@ -89,7 +89,7 @@ This will put a space equal to the width of an upper-case &ldquo;M&rdquo; betwee
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 05, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
 </div>
 </footer>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Dec 12, 2024 -->
+<!-- Dec 18, 2024 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Arguments in HTML</title>
@@ -70,6 +70,7 @@ This post is not about arguments that occur on the internet, but about how to di
 <p>
 I&rsquo;ll first show how to format an argument in HTML, then show an easier way in Markdown with Hugo.
 </p>
+
 <section id="outline-container-html" class="outline-2">
 <h2 id="html">HTML</h2>
 <div class="outline-text-2" id="text-html">
@@ -86,17 +87,17 @@ If one doesn&rsquo;t need to post very many arguments in standard form, then it 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
-  &lt;<span class="org-function-name">li</span>&gt;
+<pre class="src src-html">&lt;ol&gt;
+  &lt;li&gt;
     First Premise
-  &lt;/<span class="org-function-name">li</span>&gt;
-  &lt;<span class="org-function-name">li</span>&gt;
-    &lt;<span class="org-function-name">u</span>&gt;<span class="org-underline">Last Premise</span>&lt;/<span class="org-function-name">u</span>&gt;
-  &lt;/<span class="org-function-name">li</span>&gt;
-  &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"list-style:none;"</span>&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;u&gt;Last Premise&lt;/u&gt;
+  &lt;/li&gt;
+  &lt;li style="list-style:none;"&gt;
     Conclusion
-  &lt;/<span class="org-function-name">li</span>&gt;
-&lt;/<span class="org-function-name">ol</span>&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 </pre>
 </div>
 
@@ -105,32 +106,32 @@ Both methods produce something that looks like this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
-  &lt;<span class="org-function-name">li</span>&gt;
+<pre class="src src-html">&lt;ol&gt;
+  &lt;li&gt;
     First Premise
-  &lt;/<span class="org-function-name">li</span>&gt;
-  &lt;<span class="org-function-name">li</span>&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
     Last Premise
-  &lt;/<span class="org-function-name">li</span>&gt;
-  &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"list-style:none;"</span>&gt;
+  &lt;/li&gt;
+  &lt;li style="list-style:none;"&gt;
     Conclusion
-&lt;/<span class="org-function-name">ol</span>&gt;
+&lt;/ol&gt;
 </pre>
 </div>
 
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
-  &lt;<span class="org-function-name">li</span>&gt;
+<pre class="src src-html">&lt;ol class="arg"&gt;
+  &lt;li&gt;
     First Premise
-  &lt;/<span class="org-function-name">li</span>&gt;
-  &lt;<span class="org-function-name">li</span>&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
     Last Premise
-  &lt;/<span class="org-function-name">li</span>&gt;
-  &lt;<span class="org-function-name">li</span>&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
     Conclusion
-  &lt;/<span class="org-function-name">li</span>&gt;
-&lt;/<span class="org-function-name">ol</span>&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 </pre>
 </div>
 
@@ -139,17 +140,17 @@ Sometimes, the last premise is significantly shorter than the others, and the un
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
-  &lt;<span class="org-function-name">li</span>&gt;
-    P &#8835; Q
-  &lt;/<span class="org-function-name">li</span>&gt;
-  &lt;<span class="org-function-name">li</span>&gt;
+<pre class="src src-html">&lt;ol&gt;
+  &lt;li&gt;
+    P ⊃ Q
+  &lt;/li&gt;
+  &lt;li&gt;
     P
-  &lt;/<span class="org-function-name">li</span>&gt;
-  &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"list-style:none;"</span>&gt;
+  &lt;/li&gt;
+  &lt;li style="list-style:none;"&gt;
     Q
-  &lt;/<span class="org-function-name">li</span>&gt;
-&lt;/<span class="org-function-name">ol</span>&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 </pre>
 </div>
 
@@ -157,7 +158,7 @@ Sometimes, the last premise is significantly shorter than the others, and the un
 That can be fixed with some non-breaking spaces. It looks ugly, but it does take care of the problem.
 </p>
 
-<pre class="example" id="orga82f49b">
+<pre class="example" id="orgea6edc8">
 &lt;ol&gt;
   &lt;li&gt;
     P &amp;#8835; Q
@@ -176,21 +177,22 @@ That produces
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
-  &lt;<span class="org-function-name">li</span>&gt;
-    P &#8835; Q
-  &lt;/<span class="org-function-name">li</span>&gt;
-  &lt;<span class="org-function-name">li</span>&gt;
+<pre class="src src-html">&lt;ol&gt;
+  &lt;li&gt;
+    P ⊃ Q
+  &lt;/li&gt;
+  &lt;li&gt;
     P
-  &lt;/<span class="org-function-name">li</span>&gt;
-  &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"list-style:none;"</span>&gt;
+  &lt;/li&gt;
+  &lt;li style="list-style:none;"&gt;
     Q
-  &lt;/<span class="org-function-name">li</span>&gt;
-&lt;/<span class="org-function-name">ol</span>&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 </pre>
 </div>
 </div>
 </section>
+
 <section id="outline-container-markdown" class="outline-2">
 <h2 id="markdown">Markdown</h2>
 <div class="outline-text-2" id="text-markdown">
@@ -208,7 +210,7 @@ It is very easy to make lists in Markdown. Unfortunately, we have the same probl
 Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldmark rendering engine that Hugo uses allows attributes and classes in Markdown, there is another, far simpler, option. First, make sure that your site config.toml page has &ldquo;unsafe = true&rdquo; and &ldquo;block = true&rdquo; in the markup section. Mine looks like this:
 </p>
 
-<pre class="example" id="org8a9c6c5">
+<pre class="example" id="org2c0fd3b">
 [markup]
   [markup.goldmark]
   [markup.goldmark.parser]
@@ -225,7 +227,7 @@ Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldma
 Now, add a new class to your stylesheet. I called it &ldquo;arg&rdquo; and styled it like this:
 </p>
 
-<pre class="example" id="org5ed70fd">
+<pre class="example" id="org4e95465">
 .arg li:last-child {
   list-style: none;
 }
@@ -243,7 +245,7 @@ margin: 0px;
 The first part removes the number at the line with the conclusion, and the second part underlines the last premise. Finally, I decided to tighten up the lines. Now, when you write your post, just use a normal Markdown ordered list with the class after the last item:
 </p>
 
-<pre class="example" id="orgf7df35b">
+<pre class="example" id="orgee1c9be">
 1. First premise
 2. Second premise
 3. Conclusion
@@ -265,7 +267,7 @@ When published, that code produces this:
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 12, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
 </div>
 </footer>
 </body>

@@ -1,0 +1,167 @@
+#+TITLE: Blogging with Org Mode
+#+date: <2024-12-17 Tue>
+#+filetags: emacs org blog
+#+setupfile: ../org-templates/post.org
+
+This blog has been through many different versions. At various times, I've used WordPress, Ghost, Jekyll, and Hugo, some more than once. I've written posts in Markdown, HTML, Org mode, sometimes using more than one format in the same post. As Emacs users are prone to do, though, I'm constantly trying to do more in Org mode. I could write posts in Org mode for Hugo, but I've been tempted by the prospects of using Org to generate the entire site. I finally did it, and I'm pleased with the results so far.
+
+I started with the template provided by Sachin Patel that he describes [[https://opensource.com/article/20/3/blog-emacs][here]]. I have changed some things, so I'll describe the site as I've put it together. I highly recommend reading his post and cloning a copy of the template, though. Everything is in a directory named "orgblog" that has the following structure:
+
+#+begin_example shell
+.
+├── css
+│   └── stylesheet.css
+├── docs
+├── drafts
+├── html-templates
+│   ├── postamble.html
+│   └── preamble.html
+├── images
+│   ├── favicon.ico
+│   └── posts
+├── org-templates
+│   ├── latex-pdf.org
+│   └── post.org
+├── pages
+│   ├── about.org
+│   └── index.org
+├── posts
+│   ├── 24-12-05-sample-post.org
+│   └── index.org
+└── publish.el
+#+end_example
+
+I've included a sample post and an about page as examples. I left the two files in the "org-templates" directory unchanged from the template, other than changing the author's name. I changed the HTML templates, removing the image and changing the menu from =preamble.html=, with no significant changes to =postamble.html=. Here is =preamble.html=:
+
+
+#+begin_export html
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+#+end_export
+
+
+All the work gets done by the =publish.el= file. Here are some changes that I made to the template. First, since I'm the sole author, I don't need "Published by..." by every post title on the index page. 
+
+
+#+begin_example emacs-lisp
+(defun me/website-html-preamble (plist)
+  "PLIST: An entry."
+  (if (org-export-get-date plist this-date-format)
+      (plist-put plist
+                 :subtitle (format "%s"
+                                   (org-export-get-date plist this-date-format)
+                                   (car (plist-get plist :author)))))
+#+end_example
+
+
+I made some slight changes to the =org-publish-project-alist=. First, I added a posts directory to help keep things organized. I also added a pages directory, instead of using a directory for each individual page. I also changed every reference to the "public" folder to "docs", since Github pages will serve a site from a directory title "docs". Here are the entries for posts and pages --- all of the others are basically the same as the template except for changing "public" to "docs".
+
+
+#+begin_example emacs-lisp
+(setq org-publish-project-alist
+      `(("posts"
+         :base-directory "posts"
+         :base-extension "org"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "./docs/posts/"
+         :exclude ,(regexp-opt '("README.org" "draft"))
+         :auto-sitemap t
+         :sitemap-filename "index.org"
+         :sitemap-title "Blog Index"
+         ;; :sitemap-format-entry me/org-sitemap-format-entry
+         ;; :sitemap-style list
+         :sitemap-sort-files anti-chronologically
+         :html-link-home "/"
+         :html-link-up "/"
+         :html-head-include-scripts t
+         :html-head-include-default-style nil
+         :html-head ,me/website-html-head
+         :html-preamble me/website-html-preamble
+         :html-postamble me/website-html-postamble)
+        ("pages"
+         :base-directory "pages"
+         :base-extension "org"
+         :exclude ,(regexp-opt '("README.org" "draft"))
+         :index-filename "index.org"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "./docs/"
+         :html-link-home "/"
+         :html-link-up "/"
+         :html-head-include-scripts t
+         :html-head-include-default-style nil
+         :html-head ,me/website-html-head
+         :html-preamble me/website-html-preamble
+         :html-postamble me/website-html-postamble)
+#+end_example
+
+
+I have a folder for drafts that doesn't get an entry in the ==project-alist=. When I'm ready to publish a draft, I have a function that copies it to the posts directory and deletes it from the drafts directory.  I don't use the =serve.el= or the =makefile= from the template. Instead, I use the =org-publish-all= function to build the site and =serve= from npm to serve a local copy. I dropped a copy of [[https://neat.joeldare.com][Neat CSS]] into the CSS folder and modified the =me/website-html-head= variable in =publish.el= to reflect that.
+
+Here are the functions I use to build, serve, and deploy. To build the site, I run
+
+#+begin_example emacs-lisp
+  (defun orgblog-build ()
+    (interactive)
+    (progn
+      (find-file "~/sites/orgblog/publish.el")
+      (eval-buffer)
+      (org-publish-all)
+      (kill-buffer)))
+#+end_example
+
+This function starts the server, waits for a second, then opens the default browser to localhost:
+
+
+#+begin_example emacs-lisp
+  (defun orgblog-serve ()
+    (interactive)
+    (progn
+      (let ((default-directory "~/sites/orgblog/docs"))
+	(async-shell-command "serve")
+	(sleep-for 1)
+	(async-shell-command "open http://localhost:3000"))))
+#+end_example
+
+
+
+If everything, looks good, then I can push changes to Github. The fish function =orgblog-push= changes to the site directory, adds all modifications, creates a commit with a default message, pushes the remote, then displays the current status of the repo.
+
+#+begin_example emacs-lisp
+  (defun orgblog-push ()
+    (interactive)
+    (async-shell-command "orgblog-push"))
+#+end_example
+
+
+This moves a draft to the posts directory by saving the buffer, copying it to posts, moving the original to the trash in case something goes wrong, and killing the buffer. It then opens the posts directory in Dired.
+
+#+begin_example emacs-lisp
+  (defun publish-orgblog-draft ()
+    (interactive)
+    (save-buffer)
+    (copy-file (buffer-file-name) "~/sites/orgblog/posts/")
+    (delete-file (buffer-file-name) t)
+    (kill-buffer)
+    (dired "~/sites/orgblog/posts"))
+#+end_example
+
+Finally, posts have these header lines:
+
+#+begin_example org
+,#+TITLE: Sample Post
+,#+date: <2024-12-05 Thu>
+,#+filetags: blog emacs org
+,#+setupfile: ../org-templates/post.org
+#+end_example
+
+I'm very happy with how things have turned out, and this should be enough to help others do the same. I've been converting old posts to the new format and still have some 250 to go. That's giving me plenty of opportunities to develop my regex skills. The source for the site can be found on Github [[https://github.com/rlridenour/rlridenour.github.io][here]].

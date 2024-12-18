@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Dec 12, 2024 -->
+<!-- Dec 18, 2024 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Styled Pages in Canvas</title>
@@ -72,11 +72,11 @@ This is simple to do in LaTeX with this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-tex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">enumerate</span>}
-<span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> First Premise
-<span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> <span class="org-font-latex-sedate"><span class="org-keyword">\underline</span></span>{<span class="org-font-latex-underline">Last Premise</span>}
-<span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> [] Conclusion
-<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">enumerate</span>}
+<pre class="src src-tex">\begin{enumerate}
+\item First Premise
+\item \underline{Last Premise}
+\item [] Conclusion
+\end{enumerate}
 </pre>
 </div>
 
@@ -85,10 +85,10 @@ As I explained <a href="https://randyridenour.net/posts/arguments-in-html/">earl
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
-    &lt;<span class="org-function-name">li</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
-    &lt;<span class="org-function-name">li</span>&gt;&lt;<span class="org-function-name">u</span>&gt;<span class="org-underline">Second premise</span>&lt;/<span class="org-function-name">u</span>&gt;&lt;/<span class="org-function-name">li</span>&gt;
-&lt;/<span class="org-function-name">ol</span>&gt;
+<pre class="src src-html">&lt;ol&gt;
+    &lt;li&gt;First premise&lt;/li&gt;
+    &lt;li&gt;&lt;u&gt;Second premise&lt;/u&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </pre>
 </div>
 
@@ -103,11 +103,11 @@ The premises are fine, but the conclusion is a new paragraph. A better option wo
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
-&lt;<span class="org-function-name">li</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
-&lt;<span class="org-function-name">li</span>&gt;&lt;<span class="org-function-name">u</span>&gt;<span class="org-underline">Second premise</span>&lt;/<span class="org-function-name">u</span>&gt;&lt;/<span class="org-function-name">li</span>&gt;
-&lt;<span class="org-function-name">li</span>&gt;Conclusion&lt;/<span class="org-function-name">li</span>&gt;
-&lt;/<span class="org-function-name">ol</span>&gt;
+<pre class="src src-html">&lt;ol&gt;
+&lt;li&gt;First premise&lt;/li&gt;
+&lt;li&gt;&lt;u&gt;Second premise&lt;/u&gt;&lt;/li&gt;
+&lt;li&gt;Conclusion&lt;/li&gt;
+&lt;/ol&gt;
 </pre>
 </div>
 
@@ -121,20 +121,20 @@ The best option seemed to be to produce handouts as PDF&rsquo;s with LaTeX. They
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-keyword">!doctype</span> html&gt;
-&lt;<span class="org-function-name">html</span>&gt;
-        &lt;<span class="org-function-name">head</span>&gt;
-                &lt;<span class="org-function-name">link</span> <span class="org-variable-name">rel</span>=<span class="org-string">"stylesheet"</span> <span class="org-variable-name">href</span>=<span class="org-string">"mystyle.css"</span>&gt;
-                &lt;<span class="org-function-name">meta</span> <span class="org-variable-name">charset</span>=<span class="org-string">"utf-8"</span> /&gt;
-        &lt;/<span class="org-function-name">head</span>&gt;
-        &lt;<span class="org-function-name">body</span>&gt;
-                &lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
-                        &lt;<span class="org-function-name">li</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
-                        &lt;<span class="org-function-name">li</span>&gt;Second premise&lt;/<span class="org-function-name">li</span>&gt;
-                        &lt;<span class="org-function-name">li</span>&gt;Conclusion&lt;/<span class="org-function-name">li</span>&gt;
-                &lt;/<span class="org-function-name">ol</span>&gt;
-        &lt;/<span class="org-function-name">body</span>&gt;
-&lt;/<span class="org-function-name">html</span>&gt;
+<pre class="src src-html">&lt;!doctype html&gt;
+&lt;html&gt;
+        &lt;head&gt;
+                &lt;link rel="stylesheet" href="mystyle.css"&gt;
+                &lt;meta charset="utf-8" /&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+                &lt;ol class="arg"&gt;
+                        &lt;li&gt;First premise&lt;/li&gt;
+                        &lt;li&gt;Second premise&lt;/li&gt;
+                        &lt;li&gt;Conclusion&lt;/li&gt;
+                &lt;/ol&gt;
+        &lt;/body&gt;
+&lt;/html&gt;
 </pre>
 </div>
 
@@ -143,24 +143,24 @@ That would have been nice and simple, if it had worked. I then tried internal CS
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-keyword">!doctype</span> html&gt;
-&lt;<span class="org-function-name">html</span>&gt;
-        &lt;<span class="org-function-name">head</span>&gt;
-                &lt;<span class="org-function-name">meta</span> <span class="org-variable-name">charset</span>=<span class="org-string">"utf-8"</span> /&gt;
-                &lt;<span class="org-function-name">style</span>&gt;
+<pre class="src src-html">&lt;!doctype html&gt;
+&lt;html&gt;
+        &lt;head&gt;
+                &lt;meta charset="utf-8" /&gt;
+                &lt;style&gt;
                  .arg li:last-child {list-style: none;}
                  .arg li:nth-last-child(2) {text-decoration: underline;}
                  .arg li {margin: 0px;}
-                &lt;/<span class="org-function-name">style</span>&gt;
-        &lt;/<span class="org-function-name">head</span>&gt;
-        &lt;<span class="org-function-name">body</span>&gt;
-                &lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
-                        &lt;<span class="org-function-name">li</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
-                        &lt;<span class="org-function-name">li</span>&gt;Second premise&lt;/<span class="org-function-name">li</span>&gt;
-                        &lt;<span class="org-function-name">li</span>&gt;Conclusion&lt;/<span class="org-function-name">li</span>&gt;
-                &lt;/<span class="org-function-name">ol</span>&gt;
-        &lt;/<span class="org-function-name">body</span>&gt;
-&lt;/<span class="org-function-name">html</span>&gt;
+                &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+                &lt;ol class="arg"&gt;
+                        &lt;li&gt;First premise&lt;/li&gt;
+                        &lt;li&gt;Second premise&lt;/li&gt;
+                        &lt;li&gt;Conclusion&lt;/li&gt;
+                &lt;/ol&gt;
+        &lt;/body&gt;
+&lt;/html&gt;
 </pre>
 </div>
 
@@ -169,11 +169,11 @@ Success! That is, until I clicked &ldquo;Edit&rdquo; again, and Canvas stripped 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
-        &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"margin: 0px;"</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
-        &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"margin: 0px; text-decoration: underline;"</span>&gt;Second premise&lt;/<span class="org-function-name">li</span>&gt;
-        &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"margin: 0px; list-style: none;"</span>&gt;Conclusion&lt;/<span class="org-function-name">li</span>&gt;
-&lt;/<span class="org-function-name">ol</span>&gt;
+<pre class="src src-html">&lt;ol class="arg"&gt;
+        &lt;li style="margin: 0px;"&gt;First premise&lt;/li&gt;
+        &lt;li style="margin: 0px; text-decoration: underline;"&gt;Second premise&lt;/li&gt;
+        &lt;li style="margin: 0px; list-style: none;"&gt;Conclusion&lt;/li&gt;
+&lt;/ol&gt;
 </pre>
 </div>
 
@@ -182,10 +182,10 @@ That finally worked. Unfortunately, it meant that the CSS had to be explicitly d
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span class="org-keyword">function</span> <span class="org-function-name">canvas</span>
+<pre class="src src-shell">function canvas
         juice canvas.html canvas.html
-        find . -type f -name <span class="org-string">"canvas.html"</span> -print0 | xargs -0 sed -i <span class="org-string">''</span> -e <span class="org-string">'s/body&gt;/div&gt;/g'</span>
-        pbcopy &lt; <span class="org-string">"canvas.html"</span>
+        find . -type f -name "canvas.html" -print0 | xargs -0 sed -i '' -e 's/body&gt;/div&gt;/g'
+        pbcopy &lt; "canvas.html"
         rm canvas.html
 end
 </pre>
@@ -215,11 +215,11 @@ Everything is tied together with a very simple Emacs function:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">canvas-copy</span> ()
-  <span class="org-doc">"Copy html for canvas pages"</span>
-  (<span class="org-keyword">interactive</span>)
+<pre class="src src-elisp">(defun canvas-copy ()
+  "Copy html for canvas pages"
+  (interactive)
   (org-html-export-to-html)
-  (shell-command <span class="org-string">"canvas"</span>)
+  (shell-command "canvas")
 )
 </pre>
 </div>
@@ -227,7 +227,7 @@ Everything is tied together with a very simple Emacs function:
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 12, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
 </div>
 </footer>
 </body>

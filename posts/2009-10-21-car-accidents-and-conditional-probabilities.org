@@ -6,9 +6,9 @@ A problem we looked at in Critical Thinking today asked why most car accidents o
     
 Remember the definition of conditional probability: \(\Pr ( A \mid B) = \frac{ \Pr (A \& B)}{\Pr (B)} \)
 
-Let's assume that 90% of driving is close to home and 10% is not. Let's also assume that the probability of having a car accident is 0.1 (that's high, but it will keep the math easy). Then, the probability of being near home given that you had an accident is equal to the probability of the conjunction of being near home and having an accident divided by the probability of having an accident, or \(Pr(H \mid A) = \frac{\Pr(H \& A)}{/Pr(A)}\).
+Let's assume that 90% of driving is close to home and 10% is not. Let's also assume that the probability of having a car accident is 0.1 (that's high, but it will keep the math easy). Then, the probability of being near home given that you had an accident is equal to the probability of the conjunction of being near home and having an accident divided by the probability of having an accident, or \(Pr(H \mid A) = \frac{\Pr(H \& A)}{\Pr(A)}\).
     
-On the assumptions I made above concerning the relative frequencies of trips and accidents, out of 110 total trips, 11 are away from home and 99 are near home. Out of those 11 trips away from home, 1 is an accident. Out of the 99 near home, 10 are accidents. So, \(Pr(H \mid A) = \frac{.1}{.11} = .90\), but \(Pr(\neg H \mid A) = \frac{.01}{.11} = .09\).
+On the assumptions I made above concerning the relative frequencies of trips and accidents, out of 110 total trips, 11 are away from home and 99 are near home. Out of those 11 trips away from home, 1 is an accident. Out of the 99 near home, 10 are accidents. So, \(\Pr(H \mid A) = \frac{.1}{.11} = .90\), but \(\Pr(\neg H \mid A) = \frac{.01}{.11} = .09\).
     
 Another way to look at it is to use Bayes' Theorem, but we'll save that for another time.
     

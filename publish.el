@@ -24,6 +24,9 @@
 (require 'ox-publish)
 ;; (require 'ox-reveal)
 
+(add-to-list 'load-path "/Users/rlridenour/.config/emacs/elpaca/repos/ox-rss/")
+(require 'ox-rss)
+
 ;; setting to nil, avoids "Author: x" at the bottom
 (setq org-export-with-section-numbers nil
       org-export-with-smart-quotes t

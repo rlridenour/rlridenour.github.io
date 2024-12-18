@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 18, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Car Accidents and Conditional Probabilities</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Car Accidents and Conditional Probabilities</h1>
+<p class="subtitle" role="doc-subtitle">Oct 21, 2009</p>
+</header><p>
+A problem we looked at in Critical Thinking today asked why most car accidents occur close to home. The answer is that most of our driving is close to home. The problem then asked us to explain that in terms of conditional probabilities. I don&rsquo;t think that I explained it very well, so let me take another shot at it.
+</p>
+
+<p>
+Remember the definition of conditional probability: \(\Pr ( A \mid B) = \frac{ \Pr (A \& B)}{\Pr (B)} \)
+</p>
+
+<p>
+Let&rsquo;s assume that 90% of driving is close to home and 10% is not. Let&rsquo;s also assume that the probability of having a car accident is 0.1 (that&rsquo;s high, but it will keep the math easy). Then, the probability of being near home given that you had an accident is equal to the probability of the conjunction of being near home and having an accident divided by the probability of having an accident, or \(Pr(H \mid A) = \frac{\Pr(H \& A)}{/Pr(A)}\).
+</p>
+
+<p>
+On the assumptions I made above concerning the relative frequencies of trips and accidents, out of 110 total trips, 11 are away from home and 99 are near home. Out of those 11 trips away from home, 1 is an accident. Out of the 99 near home, 10 are accidents. So, \(Pr(H \mid A) = \frac{.1}{.11} = .90\), but \(Pr(\neg H \mid A) = \frac{.01}{.11} = .09\).
+</p>
+
+<p>
+Another way to look at it is to use Bayes&rsquo; Theorem, but we&rsquo;ll save that for another time.
+</p>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

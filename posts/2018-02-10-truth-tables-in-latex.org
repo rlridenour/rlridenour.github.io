@@ -1,0 +1,94 @@
+#+#+title: Truth Tables in LaTeX
+#+#+date: <2018-02-10>
+#+filetags: latex logic teaching
+
+
+Typesetting truth tables has never been easy. LaTeX is the gold standard for displaying logic and mathematics, but tables are awkward to edit at best. Tables are much simpler in Microsoft Word, but displaying formulas is a horrible experience.[fn:1]
+Here is my current workflow.
+
+The text that I'm using this semester is [[https://global.oup.com/ushe/product/introduction-to-formal-logic-with-philosophical-applications-9780199386482?cc=us&lang=en&][Introduction to Formal Logic with Philosophical Applications]] by Russell Marcus. Instead of arrows and the ampersand, it uses the horseshoe, triple bar, and dot. So, I add the following lines to my LaTeX preamble to simplify entering the symbols.[fn:2]
+
+
+#+begin_src latex
+\newcommand{\lneg}{\mathord{\sim}}
+\renewcommand{\land}{\bullet}
+\newcommand{\lif}{\supset}
+\newcommand{\liff}{\equiv}
+#+end_src
+
+
+Then, I enter the truth table in either Excel or Numbers. For example, this would be a simple one line table determining the truth value of a formula for a given valuation:
+
+[[../images/posts/2018/02/numbers-truth-table1.png]]
+
+Copy the cells that you want included in the truth table. Go to [[http://www.tablesgenerator.com][Tables Generator]] and select "LaTeX Tables" from the top menu bar. Below the top menu bar is a drop-down menu bar. Click on "File" then "Paste table data..." and paste the table data. Table Generator will generate a nicely formatted LaTeX table; be sure to uncheck "Escape special TeX symbols" and select the option to remove all borders.
+
+#+begin_src latex
+\begin{table}[]
+\begin{tabular}{cccccccc}
+\hline
+P & Q & R & P & \lif & (\lneg Q & \land & R) \\
+1 & 1 & 1 & 1 & 0    & 0        & 0     & 1  \\
+\end{tabular}
+\end{table}
+#+end_src
+
+I delete the first and last line, leaving just the table data and the lines declaring the tabular environment: 
+
+#+begin_src latex
+\begin{tabular}{cccccccc}
+\hline
+P & Q & R & P & \lif & (\lneg Q & \land & R) \\
+1 & 1 & 1 & 1 & 0    & 0        & 0     & 1  \\
+\end{tabular}
+#+end_src
+
+
+At this point, typesetting will fail because the symbols need to be in math mode. So, I've found two options. The first is to put all the commands for the symbols in math mode: 
+
+#+begin_src latex
+\begin{tabular}{cccccccc}
+\hline
+P & Q & R & P & \(\lif\) & (\(\lneg\) Q & \(\land\) & R) \\
+1 & 1 & 1 & 1 & 0    & 0        & 0     & 1  \\
+\end{tabular}
+#+end_src
+
+The second option is to change "tabular" to "array" and put the entire table into math mode:
+
+#+begin_src latex
+    \[
+      \begin{array}{cccccccc}
+        \hline
+        P & Q & R & P & \lif & (\lneg Q & \land & R) \\
+        1 & 1 & 1 & 1 & 0    & 0        & 0     & 1  \\
+        \end{array}
+      \]
+#+end_src
+
+
+
+Arrays are centered on the page. If you would prefer them printed at the left margin, add "fleqn" to the document class options: =\documentclass[fleqn]{article}=. Since the array is in math mode, the letters will be italicized. I use the newtxmath font package, and it has a "frenchmath" option that sets the math font to non-italic. Other math fonts may have a similar option. Finally, whichever option is used, we need to add two lines. Adding a vertical line character to the table or array formatting options will place a vertical line between the valuation section and the rest of the truth table. Adding the booktabs package to the preamble will allow us to separate the sentence letters from the rest of the truth table with a "|" and, if desired, add a border line under the first row of the table.. This gives us the final version, 
+
+#+begin_src latex
+    \[
+      \begin{array}{cc|cccccc}
+        \hline
+        P & Q & R & P & \lif & (\lneg Q & \land & R) \\ \midrule
+        1 & 1 & 1 & 1 & 0    & 0        & 0     & 1  \\ 
+        \end{array}
+      \]
+#+end_src
+
+which produces this: 
+
+#+begin_center
+#+ATTR_HTML: :width 40% :height
+[[../images/posts/2018/02/truth-table.png]]
+#+end_center
+
+* Footnotes
+[fn:2] The AMS LaTeX packages already include a command called "\lor" for entering the vee or wedge.
+
+[fn:1] Apple's Pages now allows users to [[https://support.apple.com/en-us/HT207569][add formulas]] with LaTeX. It's looking like a good solution for those who like more traditional word processors.
+ 

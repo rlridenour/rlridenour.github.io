@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 19, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<p>
+Typesetting truth tables has never been easy. LaTeX is the gold standard for displaying logic and mathematics, but tables are awkward to edit at best. Tables are much simpler in Microsoft Word, but displaying formulas is a horrible experience.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
+Here is my current workflow.
+</p>
+
+<p>
+The text that I&rsquo;m using this semester is <a href="https://global.oup.com/ushe/product/introduction-to-formal-logic-with-philosophical-applications-9780199386482?cc=us&amp;lang=en&amp;">Introduction to Formal Logic with Philosophical Applications</a> by Russell Marcus. Instead of arrows and the ampersand, it uses the horseshoe, triple bar, and dot. So, I add the following lines to my LaTeX preamble to simplify entering the symbols.<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-latex"><span class="org-font-latex-sedate"><span class="org-keyword">\newcommand</span></span>{<span class="org-font-latex-sedate"><span class="org-function-name">\lneg</span></span>}{<span class="org-font-latex-sedate"><span class="org-function-name">\mathord</span></span><span class="org-function-name">{</span><span class="org-font-latex-sedate"><span class="org-function-name">\sim</span></span><span class="org-function-name">}</span>}
+<span class="org-font-latex-sedate"><span class="org-keyword">\renewcommand</span></span>{<span class="org-font-latex-sedate"><span class="org-function-name">\land</span></span>}{<span class="org-font-latex-sedate"><span class="org-function-name">\bullet</span></span>}
+<span class="org-font-latex-sedate"><span class="org-keyword">\newcommand</span></span>{<span class="org-font-latex-sedate"><span class="org-function-name">\lif</span></span>}{<span class="org-font-latex-sedate"><span class="org-function-name">\supset</span></span>}
+<span class="org-font-latex-sedate"><span class="org-keyword">\newcommand</span></span>{<span class="org-font-latex-sedate"><span class="org-function-name">\liff</span></span>}{<span class="org-font-latex-sedate"><span class="org-function-name">\equiv</span></span>}
+</pre>
+</div>
+
+
+<p>
+Then, I enter the truth table in either Excel or Numbers. For example, this would be a simple one line table determining the truth value of a formula for a given valuation:
+</p>
+
+
+<figure id="org3479d38">
+<img src="../images/posts/2018/02/numbers-truth-table1.png" alt="numbers-truth-table1.png">
+
+</figure>
+
+<p>
+Copy the cells that you want included in the truth table. Go to <a href="http://www.tablesgenerator.com">Tables Generator</a> and select &ldquo;LaTeX Tables&rdquo; from the top menu bar. Below the top menu bar is a drop-down menu bar. Click on &ldquo;File&rdquo; then &ldquo;Paste table data&#x2026;&rdquo; and paste the table data. Table Generator will generate a nicely formatted LaTeX table; be sure to uncheck &ldquo;Escape special TeX symbols&rdquo; and select the option to remove all borders.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">table</span>}[]
+<span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">tabular</span>}{cccccccc}
+<span class="org-font-latex-sedate"><span class="org-keyword">\hline</span></span>
+P <span class="org-font-latex-warning">&amp;</span> Q <span class="org-font-latex-warning">&amp;</span> R <span class="org-font-latex-warning">&amp;</span> P <span class="org-font-latex-warning">&amp;</span> <span class="org-font-latex-sedate">\lif</span> <span class="org-font-latex-warning">&amp;</span> (<span class="org-font-latex-sedate">\lneg</span> Q <span class="org-font-latex-warning">&amp;</span> <span class="org-font-latex-sedate">\land</span> <span class="org-font-latex-warning">&amp;</span> R) <span class="org-font-latex-warning">\\</span>
+1 <span class="org-font-latex-warning">&amp;</span> 1 <span class="org-font-latex-warning">&amp;</span> 1 <span class="org-font-latex-warning">&amp;</span> 1 <span class="org-font-latex-warning">&amp;</span> 0    <span class="org-font-latex-warning">&amp;</span> 0        <span class="org-font-latex-warning">&amp;</span> 0     <span class="org-font-latex-warning">&amp;</span> 1  <span class="org-font-latex-warning">\\</span>
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">tabular</span>}
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">table</span>}
+</pre>
+</div>
+
+<p>
+I delete the first and last line, leaving just the table data and the lines declaring the tabular environment: 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">tabular</span>}{cccccccc}
+<span class="org-font-latex-sedate"><span class="org-keyword">\hline</span></span>
+P <span class="org-font-latex-warning">&amp;</span> Q <span class="org-font-latex-warning">&amp;</span> R <span class="org-font-latex-warning">&amp;</span> P <span class="org-font-latex-warning">&amp;</span> <span class="org-font-latex-sedate">\lif</span> <span class="org-font-latex-warning">&amp;</span> (<span class="org-font-latex-sedate">\lneg</span> Q <span class="org-font-latex-warning">&amp;</span> <span class="org-font-latex-sedate">\land</span> <span class="org-font-latex-warning">&amp;</span> R) <span class="org-font-latex-warning">\\</span>
+1 <span class="org-font-latex-warning">&amp;</span> 1 <span class="org-font-latex-warning">&amp;</span> 1 <span class="org-font-latex-warning">&amp;</span> 1 <span class="org-font-latex-warning">&amp;</span> 0    <span class="org-font-latex-warning">&amp;</span> 0        <span class="org-font-latex-warning">&amp;</span> 0     <span class="org-font-latex-warning">&amp;</span> 1  <span class="org-font-latex-warning">\\</span>
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">tabular</span>}
+</pre>
+</div>
+
+
+<p>
+At this point, typesetting will fail because the symbols need to be in math mode. So, I&rsquo;ve found two options. The first is to put all the commands for the symbols in math mode: 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">tabular</span>}{cccccccc}
+<span class="org-font-latex-sedate"><span class="org-keyword">\hline</span></span>
+P <span class="org-font-latex-warning">&amp;</span> Q <span class="org-font-latex-warning">&amp;</span> R <span class="org-font-latex-warning">&amp;</span> P <span class="org-font-latex-warning">&amp;</span> <span class="org-font-latex-sedate"><span class="org-font-latex-math">\(\lif\)</span></span> <span class="org-font-latex-warning">&amp;</span> (<span class="org-font-latex-sedate"><span class="org-font-latex-math">\(\lneg\)</span></span> Q <span class="org-font-latex-warning">&amp;</span> <span class="org-font-latex-sedate"><span class="org-font-latex-math">\(\land\)</span></span> <span class="org-font-latex-warning">&amp;</span> R) <span class="org-font-latex-warning">\\</span>
+1 <span class="org-font-latex-warning">&amp;</span> 1 <span class="org-font-latex-warning">&amp;</span> 1 <span class="org-font-latex-warning">&amp;</span> 1 <span class="org-font-latex-warning">&amp;</span> 0    <span class="org-font-latex-warning">&amp;</span> 0        <span class="org-font-latex-warning">&amp;</span> 0     <span class="org-font-latex-warning">&amp;</span> 1  <span class="org-font-latex-warning">\\</span>
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">tabular</span>}
+</pre>
+</div>
+
+<p>
+The second option is to change &ldquo;tabular&rdquo; to &ldquo;array&rdquo; and put the entire table into math mode:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span class="org-font-latex-math">\[</span>
+<span class="org-font-latex-math">  </span><span class="org-font-latex-sedate"><span class="org-font-latex-math"><span class="org-keyword">\begin</span></span></span><span class="org-font-latex-math">{</span><span class="org-font-latex-math"><span class="org-function-name">array</span></span><span class="org-font-latex-math">}{cccccccc}</span>
+<span class="org-font-latex-math">    </span><span class="org-font-latex-sedate"><span class="org-font-latex-math"><span class="org-keyword">\hline</span></span></span>
+<span class="org-font-latex-math">    P </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> Q </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> R </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> P </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> </span><span class="org-font-latex-sedate"><span class="org-font-latex-math">\lif</span></span><span class="org-font-latex-math"> </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> (</span><span class="org-font-latex-sedate"><span class="org-font-latex-math">\lneg</span></span><span class="org-font-latex-math"> Q </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> </span><span class="org-font-latex-sedate"><span class="org-font-latex-math">\land</span></span><span class="org-font-latex-math"> </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> R) </span><span class="org-font-latex-math"><span class="org-font-latex-warning">\\</span></span>
+<span class="org-font-latex-math">    1 </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 1 </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 1 </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 1 </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 0    </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 0        </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 0     </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 1  </span><span class="org-font-latex-math"><span class="org-font-latex-warning">\\</span></span>
+<span class="org-font-latex-math">    </span><span class="org-font-latex-sedate"><span class="org-font-latex-math"><span class="org-keyword">\end</span></span></span><span class="org-font-latex-math">{</span><span class="org-font-latex-math"><span class="org-function-name">array</span></span><span class="org-font-latex-math">}</span>
+<span class="org-font-latex-math">  \]</span>
+</pre>
+</div>
+
+
+
+<p>
+Arrays are centered on the page. If you would prefer them printed at the left margin, add &ldquo;fleqn&rdquo; to the document class options: <code>\documentclass[fleqn]{article}</code>. Since the array is in math mode, the letters will be italicized. I use the newtxmath font package, and it has a &ldquo;frenchmath&rdquo; option that sets the math font to non-italic. Other math fonts may have a similar option. Finally, whichever option is used, we need to add two lines. Adding a vertical line character to the table or array formatting options will place a vertical line between the valuation section and the rest of the truth table. Adding the booktabs package to the preamble will allow us to separate the sentence letters from the rest of the truth table with a &ldquo;|&rdquo; and, if desired, add a border line under the first row of the table.. This gives us the final version, 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span class="org-font-latex-math">\[</span>
+<span class="org-font-latex-math">  </span><span class="org-font-latex-sedate"><span class="org-font-latex-math"><span class="org-keyword">\begin</span></span></span><span class="org-font-latex-math">{</span><span class="org-font-latex-math"><span class="org-function-name">array</span></span><span class="org-font-latex-math">}{cc|cccccc}</span>
+<span class="org-font-latex-math">    </span><span class="org-font-latex-sedate"><span class="org-font-latex-math"><span class="org-keyword">\hline</span></span></span>
+<span class="org-font-latex-math">    P </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> Q </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> R </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> P </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> </span><span class="org-font-latex-sedate"><span class="org-font-latex-math">\lif</span></span><span class="org-font-latex-math"> </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> (</span><span class="org-font-latex-sedate"><span class="org-font-latex-math">\lneg</span></span><span class="org-font-latex-math"> Q </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> </span><span class="org-font-latex-sedate"><span class="org-font-latex-math">\land</span></span><span class="org-font-latex-math"> </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> R) </span><span class="org-font-latex-math"><span class="org-font-latex-warning">\\</span></span><span class="org-font-latex-math"> </span><span class="org-font-latex-sedate"><span class="org-font-latex-math">\midrule</span></span>
+<span class="org-font-latex-math">    1 </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 1 </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 1 </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 1 </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 0    </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 0        </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 0     </span><span class="org-font-latex-math"><span class="org-font-latex-warning">&amp;</span></span><span class="org-font-latex-math"> 1  </span><span class="org-font-latex-math"><span class="org-font-latex-warning">\\</span></span><span class="org-font-latex-math"> </span>
+<span class="org-font-latex-math">    </span><span class="org-font-latex-sedate"><span class="org-font-latex-math"><span class="org-keyword">\end</span></span></span><span class="org-font-latex-math">{</span><span class="org-font-latex-math"><span class="org-function-name">array</span></span><span class="org-font-latex-math">}</span>
+<span class="org-font-latex-math">  \]</span>
+</pre>
+</div>
+
+<p>
+which produces this: 
+</p>
+
+<div class="org-center">
+
+<figure id="org6c03223">
+<img src="../images/posts/2018/02/truth-table.png" alt="truth-table.png" width="40%">
+
+</figure>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Apple&rsquo;s Pages now allows users to <a href="https://support.apple.com/en-us/HT207569">add formulas</a> with LaTeX. It&rsquo;s looking like a good solution for those who like more traditional word processors.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+The AMS LaTeX packages already include a command called &ldquo;&or;&rdquo; for entering the vee or wedge.
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 19, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

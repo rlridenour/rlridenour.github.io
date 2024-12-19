@@ -1,6 +1,5 @@
 #+TITLE: Blog Index
 
-- [[file:2018-02-10-truth-tables-in-latex.org][2018-02-10-truth-tables-in-latex]]
 - [[file:24-12-17-blogging-with-org-mode.org][Blogging with Org Mode]]
 - [[file:24-12-17-end-semester.org][End of the Semester]]
 - [[file:24-12-05-moving-site.org][Moving the Site]]
@@ -63,6 +62,7 @@
 - [[file:2018-02-20-benediction.org][Benediction]]
 - [[file:2018-02-19-prayer-in-times-of-fear.org][Prayer in Times of Fear]]
 - [[file:2018-02-15-homily-for-ash-wednesday.org][Homily for Ash Wednesday]]
+- [[file:2018-02-10-truth-tables-in-latex.org][Truth Tables in LaTeX]]
 - [[file:2018-02-10-move-to-wordpress.org][Move to WordPress]]
 - [[file:2017-12-24-prayer-for-the-fourth-sunday-of-advent.org][Prayer for the Fourth Sunday of Advent]]
 - [[file:2017-12-09-ordination-prayer.org][Ordination Prayer]]

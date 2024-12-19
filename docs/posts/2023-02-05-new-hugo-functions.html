@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 18, 2024 -->
+<!-- Dec 19, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>New Hugo Functions</title>
-<meta name="author" content="Randall Ridenour" />
+<meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -63,45 +63,45 @@ I found some some new functions for automating Hugo in Emacs, that I was able to
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun hugo-select-tags ()
-  "Select tags from the hugo org files in the current dir.
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-select-tags</span> ()
+  <span class="org-doc">"Select tags from the hugo org files in the current dir.</span>
 
-Note that it only extracts tags from lines like the below:
-#+tags[]: emacs org"
-  (interactive)
-  ;; Move to end of tag line.
-  (save-excursion
+<span class="org-doc">Note that it only extracts tags from lines like the below:</span>
+<span class="org-doc">#+tags[]: emacs org"</span>
+  (<span class="org-keyword">interactive</span>)
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">Move to end of tag line.</span>
+  (<span class="org-keyword">save-excursion</span>
     (goto-char 1)
-    (re-search-forward "^#\\+tags")
+    (re-search-forward <span class="org-string">"^#\\+tags"</span>)
     (end-of-line)
 
-    (let ((files (directory-files-recursively default-directory "\\.org$")))
-      (let ((source (with-temp-buffer
-                      (while files
-                        (when (file-exists-p (car files))
+    (<span class="org-keyword">let</span> ((files (directory-files-recursively default-directory <span class="org-string">"\\.org$"</span>)))
+      (<span class="org-keyword">let</span> ((source (<span class="org-keyword">with-temp-buffer</span>
+                      (<span class="org-keyword">while</span> files
+                        (<span class="org-keyword">when</span> (file-exists-p (car files))
                           (insert-file-contents (car files)))
-                        (pop files))
+                        (<span class="org-keyword">pop</span> files))
                       (buffer-string))))
-        (save-match-data
-          (let ((pos 0)
+        (<span class="org-keyword">save-match-data</span>
+          (<span class="org-keyword">let</span> ((pos 0)
                 matches)
-            (while (string-match "^#\\+[Tt]ags\\[\\]: \\(.+?\\)$" source pos)
-              (push (match-string 1 source) matches)
-              (setq pos (match-end 0)))
+            (<span class="org-keyword">while</span> (string-match <span class="org-string">"^#\\+[Tt]ags\\[</span><span class="org-string"><span class="org-constant">\\</span></span><span class="org-string">]: </span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">.+?</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">$"</span> source pos)
+              (<span class="org-keyword">push</span> (match-string 1 source) matches)
+              (<span class="org-keyword">setq</span> pos (match-end 0)))
             (insert
              (completing-read
-              "Insert a tag: "
+              <span class="org-string">"Insert a tag: "</span>
               (sort
                (delete-dups
-                (delete "" (split-string
-                            (replace-regexp-in-string "[\"\']" " "
+                (delete <span class="org-string">""</span> (split-string
+                            (replace-regexp-in-string <span class="org-string">"[\"</span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">']"</span> <span class="org-string">" "</span>
                                                       (replace-regexp-in-string
-                                                       "[,()]" ""
-                                                       (format "%s" matches)))
-                            " ")))
-               (lambda (a b)
+                                                       <span class="org-string">"[,()]"</span> <span class="org-string">""</span>
+                                                       (format <span class="org-string">"%s"</span> matches)))
+                            <span class="org-string">" "</span>)))
+               (<span class="org-keyword">lambda</span> (a b)
                  (string&lt; (downcase a) (downcase b))))))))))
-    (insert " ")
+    (insert <span class="org-string">" "</span>)
     )
   )
 </pre>
@@ -114,21 +114,21 @@ Look at this post from <a href="https://lucidmanager.org/productivity/create-web
 
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">;; Follow Hugo links
-  (defun org-hugo-follow (link)
-    "Follow Hugo link shortcodes"
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Follow Hugo links</span>
+  (<span class="org-keyword">defun</span> <span class="org-function-name">org-hugo-follow</span> (link)
+    <span class="org-doc">"Follow Hugo link shortcodes"</span>
     (org-link-open-as-file
-     (string-trim "{{&lt;/* ref test.org */&gt;}}" "{{&lt;/* ref " "*/&gt;}}")))
+     (string-trim <span class="org-string">"{{&lt;/* ref test.org */&gt;}}"</span> <span class="org-string">"{{&lt;/* ref "</span> <span class="org-string">"*/&gt;}}"</span>)))
 
-  ;; New link type for Org-Hugo internal links
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">New link type for Org-Hugo internal links</span>
   (org-link-set-parameters
-   "hugo"
-   :complete (lambda ()
-               (concat "{{&lt;/* ref "
+   <span class="org-string">"hugo"</span>
+   <span class="org-builtin">:complete</span> (<span class="org-keyword">lambda</span> ()
+               (concat <span class="org-string">"{{&lt;/* ref "</span>
                        (file-name-nondirectory
-                        (read-file-name "File: "))
-                       " */&gt;}}"))
-   :follow #'org-hugo-follow)
+                        (read-file-name <span class="org-string">"File: "</span>))
+                       <span class="org-string">" */&gt;}}"</span>))
+   <span class="org-builtin">:follow</span> #'org-hugo-follow)
 </pre>
 </div>
 
@@ -141,7 +141,7 @@ They both have some other useful things that might also be helpful. I&rsquo;m gr
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
+  Last updated on Dec 19, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

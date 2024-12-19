@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Dec 18, 2024 -->
+<!-- Dec 19, 2024 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blogging with Org Mode</title>
@@ -65,47 +65,49 @@ This blog has been through many different versions. At various times, I&rsquo;ve
 I started with the template provided by Sachin Patel that he describes <a href="https://opensource.com/article/20/3/blog-emacs">here</a>. I have changed some things, so I&rsquo;ll describe the site as I&rsquo;ve put it together. I highly recommend reading his post and cloning a copy of the template, though. Everything is in a directory named &ldquo;orgblog&rdquo; that has the following structure:
 </p>
 
-<pre class="example" id="org4952f01">
-.
-├── css
-│   └── stylesheet.css
-├── docs
-├── drafts
-├── html-templates
-│   ├── postamble.html
-│   └── preamble.html
-├── images
-│   ├── favicon.ico
-│   └── posts
-├── org-templates
-│   ├── latex-pdf.org
-│   └── post.org
-├── pages
-│   ├── about.org
-│   └── index.org
-├── posts
-│   ├── 24-12-05-sample-post.org
-│   └── index.org
-└── publish.el
+<div class="org-src-container">
+<pre class="src src-shell">.
+&#9500;&#9472;&#9472; css
+&#9474;&#160;&#160; &#9492;&#9472;&#9472; stylesheet.css
+&#9500;&#9472;&#9472; docs
+&#9500;&#9472;&#9472; drafts
+&#9500;&#9472;&#9472; html-templates
+&#9474;&#160;&#160; &#9500;&#9472;&#9472; postamble.html
+&#9474;&#160;&#160; &#9492;&#9472;&#9472; preamble.html
+&#9500;&#9472;&#9472; images
+&#9474;&#160;&#160; &#9500;&#9472;&#9472; favicon.ico
+&#9474;&#160;&#160; &#9492;&#9472;&#9472; posts
+&#9500;&#9472;&#9472; org-templates
+&#9474;&#160;&#160; &#9500;&#9472;&#9472; latex-pdf.org
+&#9474;&#160;&#160; &#9492;&#9472;&#9472; post.org
+&#9500;&#9472;&#9472; pages
+&#9474;&#160;&#160; &#9500;&#9472;&#9472; about.org
+&#9474;&#160;&#160; &#9492;&#9472;&#9472; index.org
+&#9500;&#9472;&#9472; posts
+&#9474;&#160;&#160; &#9500;&#9472;&#9472; 24-12-05-sample-post.org
+&#9474;&#160;&#160; &#9492;&#9472;&#9472; index.org
+&#9492;&#9472;&#9472; publish.el
 </pre>
+</div>
 
 <p>
 I&rsquo;ve included a sample post and an about page as examples. I left the two files in the &ldquo;org-templates&rdquo; directory unchanged from the template, other than changing the author&rsquo;s name. I changed the HTML templates, removing the image and changing the menu from <code>preamble.html</code>, with no significant changes to <code>postamble.html</code>. Here is <code>preamble.html</code>:
 </p>
 
 
-<pre class="example" id="orgc82e7d0">
-&lt;div class="banner"&gt;
-  &lt;h2&gt;&lt;a href="/"&gt;Randy Ridenour&lt;/a&gt;&lt;/h2&gt;
-  &lt;nav class="navbar"&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href="/posts/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="/index.xml"&gt;RSS&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-&lt;/div&gt;
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"banner"</span>&gt;
+  &lt;<span class="org-function-name">h2</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">href</span>=<span class="org-string">"/"</span>&gt;Randy Ridenour&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">h2</span>&gt;
+  &lt;<span class="org-function-name">nav</span> <span class="org-variable-name">class</span>=<span class="org-string">"navbar"</span>&gt;
+    &lt;<span class="org-function-name">ul</span>&gt;
+      &lt;<span class="org-function-name">li</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">href</span>=<span class="org-string">"/posts/"</span>&gt;Blog&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">li</span>&gt;
+      &lt;<span class="org-function-name">li</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">href</span>=<span class="org-string">"/about.html"</span>&gt;About&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">li</span>&gt;
+      &lt;<span class="org-function-name">li</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">href</span>=<span class="org-string">"/index.xml"</span>&gt;RSS&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">li</span>&gt;
+    &lt;/<span class="org-function-name">ul</span>&gt;
+  &lt;/<span class="org-function-name">nav</span>&gt;
+&lt;/<span class="org-function-name">div</span>&gt;
 </pre>
+</div>
 
 
 <p>
@@ -113,15 +115,16 @@ All the work gets done by the <code>publish.el</code> file. Here are some change
 </p>
 
 
-<pre class="example" id="org89c7efb">
-(defun me/website-html-preamble (plist)
-  "PLIST: An entry."
-  (if (org-export-get-date plist this-date-format)
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">me/website-html-preamble</span> (plist)
+  <span class="org-doc">"PLIST: An entry."</span>
+  (<span class="org-keyword">if</span> (org-export-get-date plist this-date-format)
       (plist-put plist
-                 :subtitle (format "%s"
+                 <span class="org-builtin">:subtitle</span> (format <span class="org-string">"%s"</span>
                                    (org-export-get-date plist this-date-format)
-                                   (car (plist-get plist :author)))))
+                                   (car (plist-get plist <span class="org-builtin">:author</span>)))))
 </pre>
+</div>
 
 
 <p>
@@ -129,44 +132,45 @@ I made some slight changes to the <code>org-publish-project-alist</code>. First,
 </p>
 
 
-<pre class="example" id="org55d27c7">
-(setq org-publish-project-alist
-      `(("posts"
-         :base-directory "posts"
-         :base-extension "org"
-         :recursive t
-         :publishing-function org-html-publish-to-html
-         :publishing-directory "./docs/posts/"
-         :exclude ,(regexp-opt '("README.org" "draft"))
-         :auto-sitemap t
-         :sitemap-filename "index.org"
-         :sitemap-title "Blog Index"
-         ;; :sitemap-format-entry me/org-sitemap-format-entry
-         ;; :sitemap-style list
-         :sitemap-sort-files anti-chronologically
-         :html-link-home "/"
-         :html-link-up "/"
-         :html-head-include-scripts t
-         :html-head-include-default-style nil
-         :html-head ,me/website-html-head
-         :html-preamble me/website-html-preamble
-         :html-postamble me/website-html-postamble)
-        ("pages"
-         :base-directory "pages"
-         :base-extension "org"
-         :exclude ,(regexp-opt '("README.org" "draft"))
-         :index-filename "index.org"
-         :recursive t
-         :publishing-function org-html-publish-to-html
-         :publishing-directory "./docs/"
-         :html-link-home "/"
-         :html-link-up "/"
-         :html-head-include-scripts t
-         :html-head-include-default-style nil
-         :html-head ,me/website-html-head
-         :html-preamble me/website-html-preamble
-         :html-postamble me/website-html-postamble)
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">setq</span> org-publish-project-alist
+      `((<span class="org-string">"posts"</span>
+         <span class="org-builtin">:base-directory</span> <span class="org-string">"posts"</span>
+         <span class="org-builtin">:base-extension</span> <span class="org-string">"org"</span>
+         <span class="org-builtin">:recursive</span> t
+         <span class="org-builtin">:publishing-function</span> org-html-publish-to-html
+         <span class="org-builtin">:publishing-directory</span> <span class="org-string">"./docs/posts/"</span>
+         <span class="org-builtin">:exclude</span> ,(regexp-opt '(<span class="org-string">"README.org"</span> <span class="org-string">"draft"</span>))
+         <span class="org-builtin">:auto-sitemap</span> t
+         <span class="org-builtin">:sitemap-filename</span> <span class="org-string">"index.org"</span>
+         <span class="org-builtin">:sitemap-title</span> <span class="org-string">"Blog Index"</span>
+         <span class="org-comment-delimiter">;; </span><span class="org-comment">:sitemap-format-entry me/org-sitemap-format-entry</span>
+         <span class="org-comment-delimiter">;; </span><span class="org-comment">:sitemap-style list</span>
+         <span class="org-builtin">:sitemap-sort-files</span> anti-chronologically
+         <span class="org-builtin">:html-link-home</span> <span class="org-string">"/"</span>
+         <span class="org-builtin">:html-link-up</span> <span class="org-string">"/"</span>
+         <span class="org-builtin">:html-head-include-scripts</span> t
+         <span class="org-builtin">:html-head-include-default-style</span> nil
+         <span class="org-builtin">:html-head</span> ,me/website-html-head
+         <span class="org-builtin">:html-preamble</span> me/website-html-preamble
+         <span class="org-builtin">:html-postamble</span> me/website-html-postamble)
+        (<span class="org-string">"pages"</span>
+         <span class="org-builtin">:base-directory</span> <span class="org-string">"pages"</span>
+         <span class="org-builtin">:base-extension</span> <span class="org-string">"org"</span>
+         <span class="org-builtin">:exclude</span> ,(regexp-opt '(<span class="org-string">"README.org"</span> <span class="org-string">"draft"</span>))
+         <span class="org-builtin">:index-filename</span> <span class="org-string">"index.org"</span>
+         <span class="org-builtin">:recursive</span> t
+         <span class="org-builtin">:publishing-function</span> org-html-publish-to-html
+         <span class="org-builtin">:publishing-directory</span> <span class="org-string">"./docs/"</span>
+         <span class="org-builtin">:html-link-home</span> <span class="org-string">"/"</span>
+         <span class="org-builtin">:html-link-up</span> <span class="org-string">"/"</span>
+         <span class="org-builtin">:html-head-include-scripts</span> t
+         <span class="org-builtin">:html-head-include-default-style</span> nil
+         <span class="org-builtin">:html-head</span> ,me/website-html-head
+         <span class="org-builtin">:html-preamble</span> me/website-html-preamble
+         <span class="org-builtin">:html-postamble</span> me/website-html-postamble)
 </pre>
+</div>
 
 
 <p>
@@ -177,30 +181,32 @@ I have a folder for drafts that doesn&rsquo;t get an entry in the <code>=project
 Here are the functions I use to build, serve, and deploy. To build the site, I run
 </p>
 
-<pre class="example" id="org71e78fe">
-(defun orgblog-build ()
-  (interactive)
-  (progn
-    (find-file "~/sites/orgblog/publish.el")
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">orgblog-build</span> ()
+  (<span class="org-keyword">interactive</span>)
+  (<span class="org-keyword">progn</span>
+    (find-file <span class="org-string">"~/sites/orgblog/publish.el"</span>)
     (eval-buffer)
     (org-publish-all)
     (kill-buffer)))
 </pre>
+</div>
 
 <p>
 This function starts the server, waits for a second, then opens the default browser to localhost:
 </p>
 
 
-<pre class="example" id="org0a5fe25">
-(defun orgblog-serve ()
-  (interactive)
-  (progn
-    (let ((default-directory "~/sites/orgblog/docs"))
-	(async-shell-command "serve")
-	(sleep-for 1)
-	(async-shell-command "open http://localhost:3000"))))
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">orgblog-serve</span> ()
+  (<span class="org-keyword">interactive</span>)
+  (<span class="org-keyword">progn</span>
+    (<span class="org-keyword">let</span> ((default-directory <span class="org-string">"~/sites/orgblog/docs"</span>))
+        (async-shell-command <span class="org-string">"serve"</span>)
+        (sleep-for 1)
+        (async-shell-command <span class="org-string">"open http://localhost:3000"</span>))))
 </pre>
+</div>
 
 
 
@@ -208,37 +214,40 @@ This function starts the server, waits for a second, then opens the default brow
 If everything, looks good, then I can push changes to Github. The fish function <code>orgblog-push</code> changes to the site directory, adds all modifications, creates a commit with a default message, pushes the remote, then displays the current status of the repo.
 </p>
 
-<pre class="example" id="orgbc8b37c">
-(defun orgblog-push ()
-  (interactive)
-  (async-shell-command "orgblog-push"))
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">orgblog-push</span> ()
+  (<span class="org-keyword">interactive</span>)
+  (async-shell-command <span class="org-string">"orgblog-push"</span>))
 </pre>
+</div>
 
 
 <p>
 This moves a draft to the posts directory by saving the buffer, copying it to posts, moving the original to the trash in case something goes wrong, and killing the buffer. It then opens the posts directory in Dired.
 </p>
 
-<pre class="example" id="orge1c0419">
-(defun publish-orgblog-draft ()
-  (interactive)
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">publish-orgblog-draft</span> ()
+  (<span class="org-keyword">interactive</span>)
   (save-buffer)
-  (copy-file (buffer-file-name) "~/sites/orgblog/posts/")
+  (copy-file (buffer-file-name) <span class="org-string">"~/sites/orgblog/posts/"</span>)
   (delete-file (buffer-file-name) t)
   (kill-buffer)
-  (dired "~/sites/orgblog/posts"))
+  (dired <span class="org-string">"~/sites/orgblog/posts"</span>))
 </pre>
+</div>
 
 <p>
 Finally, posts have these header lines:
 </p>
 
-<pre class="example" id="org8c88486">
-#+TITLE: Sample Post
-#+date: &lt;2024-12-05 Thu&gt;
-#+filetags: blog emacs org
-#+setupfile: ../org-templates/post.org
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-document-info-keyword">#+TITLE:</span> <span class="org-org-document-title">Sample Post</span>
+<span class="org-org-document-info-keyword">#+date:</span> <span class="org-org-document-info">&lt;2024-12-05 Thu&gt;</span>
+<span class="org-org-meta-line">#+filetags: blog emacs org</span>
+<span class="org-org-meta-line">#+setupfile: ../org-templates/post.org</span>
 </pre>
+</div>
 
 <p>
 I&rsquo;m very happy with how things have turned out, and this should be enough to help others do the same. I&rsquo;ve been converting old posts to the new format and still have some 250 to go. That&rsquo;s giving me plenty of opportunities to develop my regex skills. The source for the site can be found on Github <a href="https://github.com/rlridenour/rlridenour.github.io">here</a>.
@@ -247,7 +256,7 @@ I&rsquo;m very happy with how things have turned out, and this should be enough 
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Dec 19, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

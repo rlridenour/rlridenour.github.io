@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 18, 2024 -->
+<!-- Dec 19, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Venn Diagrams in LaTeX</title>
-<meta name="author" content="Randall Ridenour" />
+<meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -64,18 +64,18 @@ I wrote a 2017 post describing how I code Venn diagrams in LaTeX with TikZ. Venn
 
 
 <div class="org-src-container">
-<pre class="src src-latex">\begin{tikzpicture}[thick,scale=1, every node/.style={transform shape}]
-  \begin{scope}
-    \begin{scope}[even odd rule]
-      \clip \pred (-1.5,-1.5) rectangle (1.5,1.5);
-      \fill[gray] \sub;
-    \end{scope}
-    \draw (-2,-0) node {$A$};
-    \draw (4,0) node {$B$};
-    \draw \sub;
-    \draw \pred;
-  \end{scope}
-\end{tikzpicture}
+<pre class="src src-latex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">tikzpicture</span>}[thick,scale=1, every node/.style={transform shape}]
+  <span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">scope</span>}
+    <span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">scope</span>}[even odd rule]
+      <span class="org-font-latex-sedate">\clip</span> <span class="org-font-latex-sedate">\pred</span> (-1.5,-1.5) rectangle (1.5,1.5);
+      <span class="org-font-latex-sedate">\fill</span>[gray] <span class="org-font-latex-sedate">\sub</span>;
+    <span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">scope</span>}
+    <span class="org-font-latex-sedate">\draw</span> (-2,-0) node {<span class="org-font-latex-math">$A$</span>};
+    <span class="org-font-latex-sedate">\draw</span> (4,0) node {<span class="org-font-latex-math">$B$</span>};
+    <span class="org-font-latex-sedate">\draw</span> <span class="org-font-latex-sedate">\sub</span>;
+    <span class="org-font-latex-sedate">\draw</span> <span class="org-font-latex-sedate">\pred</span>;
+  <span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">scope</span>}
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">tikzpicture</span>}
 </pre>
 </div>
 
@@ -84,10 +84,10 @@ Here is the code for the  same diagram with the <code>venndiagram</code> package
 </p>
 
 <div class="org-src-container">
-<pre class="src src-latex">\begin{venndiagram2sets}
+<pre class="src src-latex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">venndiagram2sets</span>}
   [tikzoptions={scale=1,thick}, showframe=false]
-  \fillANotB
-\end{venndiagram2sets}
+  <span class="org-font-latex-sedate">\fillANotB</span>
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">venndiagram2sets</span>}
 </pre>
 </div>
 
@@ -96,7 +96,7 @@ It produces this:
 </p>
 
 
-<figure id="org5f3e528">
+<figure id="org607cbc0">
 <img src="file:///images/2023/a-sentence.png" alt="a-sentence.png" width="400">
 
 <figcaption><span class="figure-number">Figure 1: </span>Venn diagram of an A-sentence in categorical logic.</figcaption>
@@ -107,15 +107,15 @@ Here&rsquo;s the code for Disamis (IAI-3):
 </p>
 
 <div class="org-src-container">
-<pre class="src src-latex">\begin{venndiagram3sets}
+<pre class="src src-latex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">venndiagram3sets</span>}
   [
   tikzoptions={scale=1,thick},
   showframe=false,
   labelOnlyB={x},
   labelABC={x}
   ]
-  \fillCNotA
-\end{venndiagram3sets}
+  <span class="org-font-latex-sedate">\fillCNotA</span>
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">venndiagram3sets</span>}
 </pre>
 </div>
 
@@ -124,8 +124,8 @@ The resulting diagram looks like this:
 </p>
 
 
-<figure id="orgfd50f19">
-<img src="file:///images/2023/disamis.png" alt="disamis.png" width="400px title: Disamis alt: Disamis argument">
+<figure id="orgbfe34db">
+<img src="file:///images/2023/disamis.png" alt="disamis.png" width="400px">
 
 <figcaption><span class="figure-number">Figure 2: </span>Venn diagram of Disamis in categorical logic.</figcaption>
 </figure>
@@ -140,7 +140,7 @@ Now, I just use this snippet for a 2-circle diagram:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-latex">\begin{venndiagram2sets}
+<pre class="src src-latex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">venndiagram2sets</span>}
   [
   tikzoptions={scale=1,thick},
   showframe=false,
@@ -149,8 +149,8 @@ Now, I just use this snippet for a 2-circle diagram:
   labelOnlyA={x},
   labelAB={x}
   ]
-  \fillANotB
-\end{venndiagram2sets}
+  <span class="org-font-latex-sedate">\fillANotB</span>
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">venndiagram2sets</span>}
 </pre>
 </div>
 
@@ -159,26 +159,26 @@ I use this for a 3-circle diagram:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-latex">\begin{venndiagram3sets}
+<pre class="src src-latex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">venndiagram3sets</span>}
   [
   tikzoptions={scale=1,thick},
   showframe=false,
-  labelA=S, %label circle A with "S"
-  labelB=P, %label circle B with "P"
-  labelC=M, %label circle M with "M"
-  labelOnlyA={x}, %puts an "x" in the region belonging only to A
-  labelOnlyBC={x}, %puts an "x" in intersection of B and C.
-  labelABC={x} %puts an "x" in the the intersection of A, B, and C.
+  labelA=S, <span class="org-comment">%label circle A with "S"</span>
+  labelB=P, <span class="org-comment">%label circle B with "P"</span>
+  labelC=M, <span class="org-comment">%label circle M with "M"</span>
+  labelOnlyA={x}, <span class="org-comment">%puts an "x" in the region belonging only to A</span>
+  labelOnlyBC={x}, <span class="org-comment">%puts an "x" in intersection of B and C.</span>
+  labelABC={x} <span class="org-comment">%puts an "x" in the the intersection of A, B, and C.</span>
   ]
-  \fillANotB %fills the region belonging only to B
-  \fillBCapC %fills the intersection of B and C.
-  % To put an x on the lines, uncomment the following:
-  % \setpostvennhook % places an "x" in other locations of the diagram.
-  % {
-  % \node[above = 1.6cm of labelC] {X};
-  % \node[above left = 1.4cm and .25cm of labelC, rotate=45] {X};
-  % }
-\end{venndiagram3sets}
+  <span class="org-font-latex-sedate">\fillANotB</span> <span class="org-comment">%fills the region belonging only to B</span>
+  <span class="org-font-latex-sedate">\fillBCapC</span> <span class="org-comment">%fills the intersection of B and C.</span>
+  <span class="org-comment">% To put an x on the lines, uncomment the following:</span>
+  <span class="org-comment">% </span><span class="org-font-latex-sedate"><span class="org-comment">\setpostvennhook</span></span><span class="org-comment"> % places an "x" in other locations of the diagram.</span>
+  <span class="org-comment">% {</span>
+  <span class="org-comment">% </span><span class="org-font-latex-sedate"><span class="org-comment">\node</span></span><span class="org-comment">[above = 1.6cm of labelC] {X};</span>
+  <span class="org-comment">% </span><span class="org-font-latex-sedate"><span class="org-comment">\node</span></span><span class="org-comment">[above left = 1.4cm and .25cm of labelC, rotate=45] {X};</span>
+  <span class="org-comment">% }</span>
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">venndiagram3sets</span>}
 </pre>
 </div>
 
@@ -189,7 +189,7 @@ Both have enough detail that I can remember what to change to make a particular 
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
+  Last updated on Dec 19, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

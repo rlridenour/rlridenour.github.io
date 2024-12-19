@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 18, 2024 -->
+<!-- Dec 19, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>LaTeX Compilation Scripts</title>
-<meta name="author" content="Randall Ridenour" />
+<meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -89,58 +89,57 @@
 </header><p>
 I&rsquo;m trying to automate \(\LaTeX\) compilation from Emacs as much as I can. Here are the shell scripts and Emacs functions that I&rsquo;m using.
 </p>
-<section id="outline-container-org02d5f75" class="outline-2">
-<h2 id="org02d5f75">Shell Scripts</h2>
-<div class="outline-text-2" id="text-org02d5f75">
+<section id="outline-container-org699e9cc" class="outline-2">
+<h2 id="org699e9cc">Shell Scripts</h2>
+<div class="outline-text-2" id="text-org699e9cc">
 <p>
 Here are some very simple scripts for compiling \(\LaTeX\) files with arara and the fish shell. The first, called &ldquo;mkt&rdquo; for &ldquo;make TeX&rdquo;, runs arara on the source file, then opens the resulting PDF.
 </p>
 
-<pre class="example">
-function mkt 
+<div class="org-src-container">
+<pre class="src src-nil">function mkt 
   arara $argv 
   set output_file (string replace -r tex\$ pdf $argv) 
   open -g $output_file 
 end
 </pre>
+</div>
 
 <p>
 The second, called &ldquo;mktc&rdquo; for &ldquo;make TeX continuously&rdquo;, runs arara, opens the PDF, watches for changes, and runs arara whenever the file is saved.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-fish">function mktc
-  arara $argv
-  set output_file (string replace -r tex\$ pdf $argv)
-  open -g $output_file
-  fswatch -o $argv | xargs -n1 -I{} arara $argv
-end
+<pre class="src src-fish"><span class="org-keyword">function</span> <span class="org-function-name">mktc</span>
+  <span class="org-builtin">arara</span> <span class="org-string">$</span><span class="org-variable-name">argv</span>
+  <span class="org-keyword">set</span> <span class="org-variable-name">output_file</span> (<span class="org-builtin">string</span> replace -r tex<span class="org-negation-char">\</span>$ pdf <span class="org-string">$</span><span class="org-variable-name">argv</span>)
+  <span class="org-builtin">open</span> -g <span class="org-string">$</span><span class="org-variable-name">output_file</span>
+  <span class="org-builtin">fswatch</span> -o <span class="org-string">$</span><span class="org-variable-name">argv</span> <span class="org-negation-char">|</span> <span class="org-builtin">xargs</span> -n1 -I{} arara <span class="org-string">$</span><span class="org-variable-name">argv</span>
+<span class="org-keyword">end</span>
 </pre>
 </div>
 </div>
 </section>
-
-<section id="outline-container-orgeab67a8" class="outline-2">
-<h2 id="orgeab67a8">Emacs</h2>
-<div class="outline-text-2" id="text-orgeab67a8">
+<section id="outline-container-org5409ca4" class="outline-2">
+<h2 id="org5409ca4">Emacs</h2>
+<div class="outline-text-2" id="text-org5409ca4">
 <p>
 Here are some functions to use in Emacs to run the scripts.
 </p>
 </div>
-
-<div id="outline-container-org6e71e56" class="outline-3">
-<h3 id="org6e71e56">Auctex</h3>
-<div class="outline-text-3" id="text-org6e71e56">
+<div id="outline-container-orgec8b971" class="outline-3">
+<h3 id="orgec8b971">Auctex</h3>
+<div class="outline-text-3" id="text-orgec8b971">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun rlr/tex-mkt ()
-  "Compile with arara."
-  (interactive)
-  (async-shell-command (concat "mkt " (buffer-file-name))))
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/tex-mkt</span> ()
+  <span class="org-doc">"Compile with arara."</span>
+  (<span class="org-keyword">interactive</span>)
+  (async-shell-command (concat <span class="org-string">"mkt "</span> (buffer-file-name))))
 
-(defun rlr/tex-mktc ()
-  "Compile continuously with arara."
-  (interactive)
-  (start-process-shell-command (concat "mktc-" (buffer-file-name)) (concat "mktc-" (buffer-file-name)) (concat "mktc " (buffer-file-name))))
+(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/tex-mktc</span> ()
+  <span class="org-doc">"Compile continuously with arara."</span>
+  (<span class="org-keyword">interactive</span>)
+  (start-process-shell-command (concat <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat <span class="org-string">"mktc "</span> (buffer-file-name))))
 </pre>
 </div>
 
@@ -149,23 +148,22 @@ The first compiles with an asynchronous shell command, so that you can immediate
 </p>
 </div>
 </div>
-
-<div id="outline-container-orgd5870ee" class="outline-3">
-<h3 id="orgd5870ee">Org Mode</h3>
-<div class="outline-text-3" id="text-orgd5870ee">
+<div id="outline-container-org78d6a90" class="outline-3">
+<h3 id="org78d6a90">Org Mode</h3>
+<div class="outline-text-3" id="text-org78d6a90">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
-(defun rlr/org-mkt ()
-  "Make PDF with Arara."
-  (interactive)
+(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/org-mkt</span> ()
+  <span class="org-doc">"Make PDF with Arara."</span>
+  (<span class="org-keyword">interactive</span>)
   (org-latex-export-to-latex)
-  (async-shell-command (concat "mkt " (file-name-sans-extension (buffer-file-name))".tex")))
+  (async-shell-command (concat <span class="org-string">"mkt "</span> (file-name-sans-extension (buffer-file-name))<span class="org-string">".tex"</span>)))
 
-(defun rlr/org-mktc ()
-  "Compile continuously with arara."
-  (interactive)
+(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/org-mktc</span> ()
+  <span class="org-doc">"Compile continuously with arara."</span>
+  (<span class="org-keyword">interactive</span>)
   (org-latex-export-to-latex)
-  (start-process-shell-command (concat "mktc-" (buffer-file-name)) (concat "mktc-" (buffer-file-name)) (concat "mktc " (file-name-sans-extension (buffer-file-name))".tex")))
+  (start-process-shell-command (concat <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat <span class="org-string">"mktc "</span> (file-name-sans-extension (buffer-file-name))<span class="org-string">".tex"</span>)))
 </pre>
 </div>
 
@@ -179,7 +177,7 @@ These functions first export the org file to \(\LaTeX\), then compile the corres
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
+  Last updated on Dec 19, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

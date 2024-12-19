@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Dec 18, 2024 -->
+<!-- Dec 19, 2024 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beamer Article and Org Mode</title>
@@ -94,7 +94,7 @@ I generate LaTeX Beamer lecture slides and handouts from a single Org mode data 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org">#+OPTIONS: H:3
+<pre class="src src-org"><span class="org-org-meta-line">#+OPTIONS: H:3</span>
 </pre>
 </div>
 
@@ -103,7 +103,7 @@ to
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org">#+OPTIONS: H:2
+<pre class="src src-org"><span class="org-org-meta-line">#+OPTIONS: H:2</span>
 </pre>
 </div>
 
@@ -116,9 +116,9 @@ After many completely unproductive Internet searches, I stumbled on the problem.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-tex">\begin{frame}[label]{Slide Title}
+<pre class="src src-tex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">frame</span>}[label]{Slide Title}
   Slide contents
-\end{frame}
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">frame</span>}
 </pre>
 </div>
 
@@ -127,10 +127,10 @@ This is fine for everything except my lecture handouts. I found that a small cha
 </p>
 
 <div class="org-src-container">
-<pre class="src src-tex">\begin{frame}[label]
-  \frametitle{Slide Title}
+<pre class="src src-tex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">frame</span>}[label]
+  <span class="org-font-latex-sedate">\frametitle</span>{Slide Title}
   Slide contents
-\end{frame}
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">frame</span>}
 </pre>
 </div>
 
@@ -139,13 +139,13 @@ Now, the problem was getting Org mode to export the subtree to look like that. A
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(defun rlr/create-frametitle ()
-  "Convert title to frametitle."
+<pre class="src src-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/create-frametitle</span> ()
+  <span class="org-doc">"Convert title to frametitle."</span>
   (interactive)
   (goto-char 1)
-  (while (ignore-errors
-           (re-search-forward "begin{frame}.*]"))
-    (insert "\n \\frametitle"))
+  (<span class="org-keyword">while</span> (<span class="org-keyword">ignore-errors</span>
+             (re-search-forward <span class="org-string">"begin{frame}.*]"</span>))
+    (insert <span class="org-string">"\n \\frametitle"</span>))
   )
 </pre>
 </div>
@@ -159,8 +159,8 @@ Here&rsquo;s the simple tcolorbox commands that go in the header:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org">#+LaTeX_HEADER: \usepackage{tcolorbox}
-#+LaTeX_HEADER: \mode&lt;article&gt;{\setbeamertemplate{frame begin}{\begin{tcolorbox}[colback=white, colframe=gray,]} \setbeamertemplate{frame end}{\end{tcolorbox}}}
+<pre class="src src-org"><span class="org-org-meta-line">#+LaTeX_HEADER: \usepackage{tcolorbox}</span>
+<span class="org-org-meta-line">#+LaTeX_HEADER: \mode&lt;article&gt;{\setbeamertemplate{frame begin}{\begin{tcolorbox}[colback=white, colframe=gray,]} \setbeamertemplate{frame end}{\end{tcolorbox}}}</span>
 </pre>
 </div>
 
@@ -181,7 +181,7 @@ I sketched out the process I use in <a href="https://randyridenour.net/posts/202
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
+  Last updated on Dec 19, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

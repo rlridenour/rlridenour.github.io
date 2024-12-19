@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 18, 2024 -->
+<!-- Dec 19, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Arara and Latexmk</title>
-<meta name="author" content="Randall Ridenour" />
+<meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -64,10 +64,9 @@ Compiling LaTeX documents can be a chore, especially if the document has a table
 <li>Run pdflatex to put that bibliographic data into the document</li>
 <li>Run pdflatex again to fix any page numbers that need to change because of the new material.</li>
 </ol>
-
-<section id="outline-container-org8711d91" class="outline-2">
-<h2 id="org8711d91">Latexmk</h2>
-<div class="outline-text-2" id="text-org8711d91">
+<section id="outline-container-orgb4ef102" class="outline-2">
+<h2 id="orgb4ef102">Latexmk</h2>
+<div class="outline-text-2" id="text-orgb4ef102">
 <p>
 Using Latexmk is a great way to automate all of this. Latexmk will do all of these steps as needed, you just need to tell what engine to use (pdfLaTeX, LuaLatex, XeLaTeX) and whether to run Bibtex or Biber. A pdfLaTeX document named &ldquo;sample.tex&rdquo; containing bibliographic references would be compiled from the command line like this:
 </p>
@@ -82,29 +81,29 @@ There are many other options that can be used, making the command to compile eve
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"># LaTeXmk configuration file
+<pre class="src src-shell"><span class="org-comment-delimiter"># </span><span class="org-comment">LaTeXmk configuration file</span>
 
-# Usage example
-# latexmk file.tex
+<span class="org-comment-delimiter"># </span><span class="org-comment">Usage example</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">latexmk file.tex</span>
 
-# Main command line options
-# -pdflatex : compile with pdflatex
-# -lualatex : compile with lualatex
-# -pv       : run file previewer
-# -pvc      : run file previewer and continually recompile on change
-# -c        :
-# -C        :clean up auxiliary and output files
+<span class="org-comment-delimiter"># </span><span class="org-comment">Main command line options</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">-pdflatex : compile with pdflatex</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">-lualatex : compile with lualatex</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">-pv       : run file previewer</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">-pvc      : run file previewer and continually recompile on change</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">-c        :</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">-C        :clean up auxiliary and output files</span>
 
-# Use bibtex if a .bib file exists
-$bibtex_use = 1;
+<span class="org-comment-delimiter"># </span><span class="org-comment">Use bibtex if a .bib file exists</span>
+$<span class="org-variable-name">bibtex_use</span> = 1;
 
-# Define commands to compile with pdfsync support and nonstopmode
-$pdflatex = 'pdflatex -synctex=1 --interaction=nonstopmode %O %S';
+<span class="org-comment-delimiter"># </span><span class="org-comment">Define commands to compile with pdfsync support and nonstopmode</span>
+$<span class="org-variable-name">pdflatex</span> = <span class="org-string">'pdflatex -synctex=1 --interaction=nonstopmode %O %S'</span>;
 
-$lualatex = 'lualatex -synctex=1 --interaction=nonstopmode %O %S';
+$<span class="org-variable-name">lualatex</span> = <span class="org-string">'lualatex -synctex=1 --interaction=nonstopmode %O %S'</span>;
 
-# Also remove pdfsync files on clean
-$clean_ext = '%R.synctex.gz';
+<span class="org-comment-delimiter"># </span><span class="org-comment">Also remove pdfsync files on clean</span>
+$<span class="org-variable-name">clean_ext</span> = <span class="org-string">'%R.synctex.gz'</span>;
 </pre>
 </div>
 
@@ -113,7 +112,7 @@ If you always use the same engine to compile, then you can add a line like this 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">$pdf_mode = n
+<pre class="src src-shell">$<span class="org-variable-name">pdf_mode</span> = n
 </pre>
 </div>
 
@@ -131,10 +130,9 @@ Since I use Emacs, I could just add latexmk to the list of TeX commands and comp
 </p>
 </div>
 </section>
-
-<section id="outline-container-org9c700c9" class="outline-2">
-<h2 id="org9c700c9">Arara</h2>
-<div class="outline-text-2" id="text-org9c700c9">
+<section id="outline-container-org2032d3a" class="outline-2">
+<h2 id="org2032d3a">Arara</h2>
+<div class="outline-text-2" id="text-org2032d3a">
 <p>
 Here&rsquo;s where Arara shines. Arara is another way to compile tex files. Unlike latexmk, arara does not do anything automatically. Running
 </p>
@@ -148,20 +146,22 @@ Here&rsquo;s where Arara shines. Arara is another way to compile tex files. Unli
 doesn&rsquo;t do anything without some special instructions within the file. To compile the file with pdflatex, I would put this as the first line:
 </p>
 
-<pre class="example">
-% arara: pdflatex: { interaction: nonstopmode, synctex: yes }
+<div class="org-src-container">
+<pre class="src src-nil">% arara: pdflatex: { interaction: nonstopmode, synctex: yes }
 </pre>
+</div>
 
 <p>
 Then, running arara on the file would compile once with pdflatex. If I had a bibliography and wanted to use lualatex, I would put this at the top of the file:
 </p>
 
-<pre class="example">
-% arara: lualatex: { interaction: nonstopmode, synctex: yes }
+<div class="org-src-container">
+<pre class="src src-nil">% arara: lualatex: { interaction: nonstopmode, synctex: yes }
 % arara: biber
 % arara: lualatex: { interaction: nonstopmode, synctex: yes }
 % arara: lualatex: { interaction: nonstopmode, synctex: yes }
 </pre>
+</div>
 
 <p>
 This would get all of the steps that I described above. So, I could compile any file with the same command, and have it compile exactly the way I wanted with the engine that I specified.
@@ -172,17 +172,17 @@ The problem (and I admit it&rsquo;s a minor one) is that I lose the automation o
 </p>
 </div>
 </section>
-
-<section id="outline-container-orgb0cb6b4" class="outline-2">
-<h2 id="orgb0cb6b4">Solution</h2>
-<div class="outline-text-2" id="text-orgb0cb6b4">
+<section id="outline-container-org9d1c62f" class="outline-2">
+<h2 id="org9d1c62f">Solution</h2>
+<div class="outline-text-2" id="text-org9d1c62f">
 <p>
 Fortunately, arara can be told to compile with latexmk, and the engine and any options can be specified in the file. This compiles with latexmk using pdflatex:
 </p>
 
-<pre class="example">
-% arara: latexmk: { engine: pdflatex }
+<div class="org-src-container">
+<pre class="src src-nil">% arara: latexmk: { engine: pdflatex }
 </pre>
+</div>
 
 <p>
 Since the options that I want are in my latexmkrc file, there&rsquo;s nothing else I need to do. Changing &ldquo;pdflatex&rdquo; to &ldquo;lualatex&rdquo; would make it compile with lualatex instead as many times as necessary to produce the final document.
@@ -193,7 +193,7 @@ Since the options that I want are in my latexmkrc file, there&rsquo;s nothing el
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
+  Last updated on Dec 19, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

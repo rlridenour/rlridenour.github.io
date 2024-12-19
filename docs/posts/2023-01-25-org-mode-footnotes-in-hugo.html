@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 18, 2024 -->
+<!-- Dec 19, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Org Mode Footnotes in Hugo</title>
-<meta name="author" content="Randall Ridenour" />
+<meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -58,28 +58,30 @@
 I mentioned yesterday that I couldn&rsquo;t remember what I didn&rsquo;t like about Hugo&rsquo;s parsing of Org mode in the past. When I viewed the published post, I quickly remembered what it was: footnotes. If I remember correctly, at the time that I first tried using native Org mode parsing, Hugo didn&rsquo;t parse the footnotes at all. Now, it does, but they render in an odd way. The footnote number is in subscript on one line, followed by a blank line, followed by the footnote text on another line. So, instead of getting something like this:
 </p>
 
-<pre class="example">
-1. Footnote text.
+<div class="org-src-container">
+<pre class="src src-nil">1. Footnote text.
 </pre>
+</div>
 
 <p>
 We get this:
 </p>
 
-<pre class="example">
-1.
+<div class="org-src-container">
+<pre class="src src-nil">1.
 
 Footnote text.
 </pre>
+</div>
 
 <p>
 A Google search resulted in one question on the <a href="https://discourse.gohugo.io/t/footnotes-rendered-different-for-org-files-compared-to-markdown-source/20415/">Hugo help forum</a>, but no good answer. The problem is the way that Hugo renders the HTML. In a Markdown post, this content
 </p>
 
 <div class="org-src-container">
-<pre class="src src-markdown">This is a footnote test.[^1]
+<pre class="src src-markdown">This is a footnote test.<span class="org-markdown-markup">[^</span><span class="org-markdown-footnote-marker">1</span><span class="org-markdown-markup">]</span>
 
-[^1]: Footnote content.
+<span class="org-markdown-markup">[^</span><span class="org-markdown-footnote-marker">1</span><span class="org-markdown-markup">]:</span> <span class="org-markdown-url">Footnote content.</span>
 </pre>
 </div>
 
@@ -88,18 +90,18 @@ results in this HTML code:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;div class="article-post"&gt;
-    &lt;p&gt;This is a footnote test.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-    &lt;div class="footnotes" role="doc-endnotes"&gt;
-        &lt;hr&gt;
-        &lt;ol&gt;
-            &lt;li id="fn:1"&gt;
-                &lt;p&gt;Footnote content.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-            &lt;/li&gt;
-        &lt;/ol&gt;
-    &lt;/div&gt;
+<pre class="src src-html">&lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"article-post"</span>&gt;
+    &lt;<span class="org-function-name">p</span>&gt;This is a footnote test.&lt;<span class="org-function-name">sup</span> <span class="org-variable-name">id</span>=<span class="org-string">"fnref:1"</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">href</span>=<span class="org-string">"#fn:1"</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-ref"</span> <span class="org-variable-name">role</span>=<span class="org-string">"doc-noteref"</span>&gt;1&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">sup</span>&gt;&lt;/<span class="org-function-name">p</span>&gt;
+    &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnotes"</span> <span class="org-variable-name">role</span>=<span class="org-string">"doc-endnotes"</span>&gt;
+        &lt;<span class="org-function-name">hr</span>&gt;
+        &lt;<span class="org-function-name">ol</span>&gt;
+            &lt;<span class="org-function-name">li</span> <span class="org-variable-name">id</span>=<span class="org-string">"fn:1"</span>&gt;
+                &lt;<span class="org-function-name">p</span>&gt;Footnote content.&amp;#160;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">href</span>=<span class="org-string">"#fnref:1"</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-backref"</span> <span class="org-variable-name">role</span>=<span class="org-string">"doc-backlink"</span>&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">p</span>&gt;
+            &lt;/<span class="org-function-name">li</span>&gt;
+        &lt;/<span class="org-function-name">ol</span>&gt;
+    &lt;/<span class="org-function-name">div</span>&gt;
 
-&lt;/div&gt;
+&lt;/<span class="org-function-name">div</span>&gt;
 </pre>
 </div>
 
@@ -112,9 +114,9 @@ This Org mode content, however,
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org">This is a footnote test.[fn:1]
+<pre class="src src-org">This is a footnote test.<span class="org-org-footnote">[fn:1]</span>
 
-[fn:1] Footnote content. 
+<span class="org-org-footnote">[fn:1]</span> Footnote content. 
 </pre>
 </div>
 
@@ -123,22 +125,22 @@ renders like this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;div class="article-post"&gt;
-    &lt;p&gt;
-        This is a footnote test.&lt;sup class="footnote-reference"&gt;&lt;a id="footnote-reference-1" href="#footnote-1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-    &lt;div class="footnotes"&gt;
-        &lt;hr class="footnotes-separatator"&gt;
-        &lt;div class="footnote-definitions"&gt;
-            &lt;div class="footnote-definition"&gt;
-                &lt;sup id="footnote-1"&gt;&lt;a href="#footnote-reference-1"&gt;1&lt;/a&gt;&lt;/sup&gt;
-                &lt;div class="footnote-body"&gt;
-                    &lt;p&gt;Footnote content. &lt;/p&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+<pre class="src src-html">&lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"article-post"</span>&gt;
+    &lt;<span class="org-function-name">p</span>&gt;
+        This is a footnote test.&lt;<span class="org-function-name">sup</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-reference"</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">id</span>=<span class="org-string">"footnote-reference-1"</span> <span class="org-variable-name">href</span>=<span class="org-string">"#footnote-1"</span>&gt;1&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">sup</span>&gt;&lt;/<span class="org-function-name">p</span>&gt;
+    &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnotes"</span>&gt;
+        &lt;<span class="org-function-name">hr</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnotes-separatator"</span>&gt;
+        &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-definitions"</span>&gt;
+            &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-definition"</span>&gt;
+                &lt;<span class="org-function-name">sup</span> <span class="org-variable-name">id</span>=<span class="org-string">"footnote-1"</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">href</span>=<span class="org-string">"#footnote-reference-1"</span>&gt;1&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">sup</span>&gt;
+                &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-body"</span>&gt;
+                    &lt;<span class="org-function-name">p</span>&gt;Footnote content. &lt;/<span class="org-function-name">p</span>&gt;
+                &lt;/<span class="org-function-name">div</span>&gt;
+            &lt;/<span class="org-function-name">div</span>&gt;
+        &lt;/<span class="org-function-name">div</span>&gt;
+    &lt;/<span class="org-function-name">div</span>&gt;
 
-&lt;/div&gt;
+&lt;/<span class="org-function-name">div</span>&gt;
 </pre>
 </div>
 
@@ -151,12 +153,12 @@ Hacking around with some CSS, I managed to get the number and the text on the sa
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css">.footnote-definition {
-  display: block;
+<pre class="src src-css"><span class="org-css-selector">.footnote-definition</span> {
+  <span class="org-css-property">display</span>: block;
 }
 
-.footnote-body {
-  display: inline-block;
+<span class="org-css-selector">.footnote-body</span> {
+  <span class="org-css-property">display</span>: inline-block;
 }
 </pre>
 </div>
@@ -180,7 +182,7 @@ Like this.
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 18, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15).
+  Last updated on Dec 19, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

@@ -160,6 +160,13 @@ publishing directory. Returns output file name."
          :publishing-directory "./docs/assets"
          :publishing-function org-publish-attachment
          :recursive t)
+        ("cname"
+         :base-directory "./cname"
+         ;; :base-extension ,site-attachments
+         :publishing-directory "./docs"
+         :publishing-function org-publish-attachment
+	 :include ("CNAME")
+         :recursive nil)
         ("rss"
          :base-directory "posts"
          :base-extension "org"
@@ -173,7 +180,7 @@ publishing directory. Returns output file name."
          :exclude ".*"
          :include ("index.org")
          :table-of-contents nil)
-        ("all" :components ("posts" "pages" "css" "images" "assets" "rss"))))
+        ("all" :components ("posts" "pages" "css" "images" "assets" "rss" "cname"))))
 
 (provide 'publish)
 ;;; publish.el ends here

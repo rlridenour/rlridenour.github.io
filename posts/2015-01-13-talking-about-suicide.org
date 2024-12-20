@@ -1,12 +1,7 @@
----
-comments: true
-date: '2015-01-13T13:48:52Z'
-tags:
-- ethics
-title: Talking About Suicide
-url: "/2015/01/13/talking-about-suicide/"
+#+date: <2015-01-13>
+#+filetags: ethics
+#+title: Talking About Suicide
 
----
 I was saddened to hear that Robin Williams died this week, apparently by suicide. I was also saddened to read how some people in faith communities reacted to the news. Some of these reactions struck me as callous, demonstrably false, or, at best, simply irrelevant.
 
 Over the past thirty years, I have known three soldiers who committed suicide, During my two deployments, I have been involved in more suicide interventions than I care to remember, and I regularly teach suicide prevention classes to Army units. To prepare for these classes, I always look at the latest studies, especially ones focusing on suicides in the military. The [[http://www.armystarrs.org][Army Study to Assess Risk and Resilience in Servicemembers]] is the largest ever conducted among military personnel, and will continue through 2015. Results are reported as they become available, and, so far, suggest that the problem is even worse in the Army than was previously thought. One thing is clear from the studies on suicide: suicide is a very complex problem, and there is no single determinant causal factor. So, any single-sentence explanation of a person's death by suicide, no matter how effective that sentence is as a sound-bite, is nearly certain to be overly naïve and simplistic.

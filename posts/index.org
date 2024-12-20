@@ -1,6 +1,5 @@
 #+TITLE: Blog Index
 
-- [[file:2015-01-13-talking-about-suicide.org][2015-01-13-talking-about-suicide]]
 - [[file:24-12-17-blogging-with-org-mode.org][Blogging with Org Mode]]
 - [[file:24-12-17-end-semester.org][End of the Semester]]
 - [[file:24-12-05-moving-site.org][Moving the Site]]
@@ -308,6 +307,7 @@
 - [[file:2015-01-13-twenty-second-sunday-after-pentecost.org][Twenty-Second Sunday After Pentecost]]
 - [[file:2015-01-13-the-twentieth-sunday-after-pentecost.org][The Twentieth Sunday After Pentecost]]
 - [[file:2015-01-13-thanksgiving-day-prayer.org][Thanksgiving Day Prayer]]
+- [[file:2015-01-13-talking-about-suicide.org][Talking About Suicide]]
 - [[file:2015-01-13-the-ninth-sunday-after-pentecost.org][The Ninth Sunday After Pentecost]]
 - [[file:2015-01-13-the-thirteenth-sunday-after-pentecost.org][The Thirteenth Sunday After Pentecost]]
 - [[file:2015-01-13-the-fourteenth-sunday-after-pentecost.org][The Fourteenth Sunday After Pentecost]]

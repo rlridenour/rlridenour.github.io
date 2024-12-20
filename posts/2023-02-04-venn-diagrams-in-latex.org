@@ -37,7 +37,7 @@ It produces this:
 
 #+attr_html: alt: A-sentence diagram: title: A-sentence :width 400
 #+caption: Venn diagram of an A-sentence in categorical logic.
-[[/images/2023/a-sentence.png]]
+[[../images/posts/a-sentence.png]]
 
 Here's the code for Disamis (IAI-3):
 
@@ -59,8 +59,7 @@ The resulting diagram looks like this:
 #+attr_html: title: Disamis
 #+caption: Venn diagram of Disamis in categorical logic.
 #+attr_html: :width 400px
-[[/images/2023/disamis.png]]
-
+[[../images/posts/disamis.png]]
 
 There was no way that I could remember my all of the details of my original method, so I had an 84-line snippet that I inserted for each diagram. I would then comment and uncomment various lines to produce the diagram I needed.
 

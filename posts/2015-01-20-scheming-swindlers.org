@@ -1,0 +1,9 @@
+#+date: <2015-01-20>
+#+filetags: quotes religion
+#+title: Scheming Swindlers
+
+#+begin+quote
+The Bible is very easy to understand. But we as Christians are a bunch of scheming swindlers. We pretend to be unable to understand it because we know very well that the minute we understand we are obliged to act accordingly. My God, you will say, if I do that my whole life will be ruined.
+#+end_quote
+
+--- Sø ren Kierkegaard, /Journals/

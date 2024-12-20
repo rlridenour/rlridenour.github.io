@@ -1,0 +1,39 @@
+#+date: <2015-01-18>
+#+filetags: jekyll
+#+title: My New Jekyll Site
+
+Jekyll was remarkably simple, much more than I expected. A competent person should be able to deploy a new Jekyll site in minutes. I, in usual fashion, took six hours. Here is a record of what I did, both what worked and what did not.
+
+** The Steps, Both True and Errant
+
+*** Install Jekyll
+
+The first step is to install [[http://jekyllrb.com ][Jekyll]]. Since it's a Ruby Gem, it's very easy to install. I then built the default site, but it wasn't quite the style I wanted. I saw this article by [[http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/][Barry Clark]], which led me to [[https://github.com/barryclark/jekyll-now ][Jekyll Now]], which was a full-fledged starter site, but still not the style that I wanted. [[http://jekyllbootstrap.com ][Jekyll Bootstrap]] is good for those who like Twitter Bootstrap, but I didn't need anything like that. Then, I saw something titled "How I Created a Beautiful and Minimal Blog Using Jekyll, Github Pages, and poole" by [[http://joshualande.com/jekyll-github-pages-poole/ ][Joshua Lande]]. That seemed to be exactly what I wanted.
+
+*** Poole and Lanyon
+
+[[http://getpoole.com][Poole]] provided a very nice minimalist site. When I went to the Poole site, I saw two themes. I really liked Lanyon, but couldn't figure out how to install a theme on top of Poole. After an embarrassing amount of time, I realized that the theme, Lanyon, already contained Poole. So, installing it was just a matter of downloading it.
+
+*** Configure the Site
+
+Configuring the site is simple. There are a few items to add to the _config.yml file in the root directory of the site, mostly standard things like the site title and base URL. Then, just run `jekyll server` from the root directory of the site, browse to http://localhost:4000, and you should see your new site.
+
+*** Deployment
+
+Deploying a Jekyll site is pretty easy; how it's done depends on where it's hosted. Github, besides having the best price (free!), it's also the easiest way to serve up a Jekyll site. Just name the repository <username>.github.io, and Github builds it and serves it automatically. After downloading and configuring Lanyon, I created a Git repository, and started to push that to Github, and... decided that this was a waste of time. Since Lanyon is hosted on Github, I forked Lanyon, changed the repository name, and cloned it. Then, I updated config.yml, browsed to rlridenour.github.io, and saw my home page.
+
+*** Styling the Site
+
+This cost met some time, but only because of some poor initial choices on my part. Lanyon is built on Poole, and there were three CSS files, one each for Poole, Lanyon, and one called syntax.css. Some things that I wanted changed were in the Poole css file, others were in the Lanyon file. So, I proceeded to change things in both files. Then, it struck me that any update to either Poole or Lanyon would create a host of problems trying to figure out what needed to be changed again. So, I scrapped everything, started over, and just copied what the items I wanted to change to a new css file, then loaded that file last. Later, I moved them all to an SCSS directory, since Jekyll uses both SASS and CoffeeScript, and changed the config file to minimize the CSS file. At this point, my SCSS files are just the original CSS files with the extension changed.
+
+*** Archive and Tag Pages
+
+I blatantly copied [[http://joshualande.com/jekyll-github-pages-poole/ ][Joshua Lande's]] archive page and [[http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html ][Michael Lanyon's]] tag page. I don't know if I'll add any search function, the tag page is probably a better way to find content.
+
+*** Final Details
+
+I added Disqus commenting, which  just a matter of copying some code from Disqus and copying it to the post layout file. I also added a reference to the MathJax script to the head.
+
+*** Finished
+
+Now, the site is up, and it just needs some more content. We'll see how long that takes.

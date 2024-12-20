@@ -1,0 +1,9 @@
+#+date: <2015-06-11>
+#+filetags: quotes
+#+title: The Deception of Power
+
+#+begin+quote
+We have, I fear, confused power with greatness.
+#+end_quote
+
+--- Stewart Udall

@@ -1,0 +1,9 @@
+#+date: <2015-01-22>
+#+filetags: quotes
+#+title: Cant Fix Stupid
+
+#+begin+quote
+You can't fix stupid with duct tape, but you can sure muffle the sound.
+#+end_quote
+
+--- Soldier, Round Rock, TX

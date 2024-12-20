@@ -1,0 +1,9 @@
+#+date: <2015-03-09>
+#+filetags: quotes philosophy
+#+title: Santayana on Fanaticism
+
+#+begin+quote
+Fanaticism consists in redoubling your efforts when you have forgotten your aim.
+#+end_quote
+
+--- George Santayana, /Reason in Common Sense/, Vol. I

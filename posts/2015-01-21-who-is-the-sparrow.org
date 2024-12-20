@@ -1,0 +1,10 @@
+#+date: <2015-01-21>
+#+filetags: quotes religion
+#+title: Who is the Sparrow?
+
+#+begin+quote
+If you're going to care about the fall of the sparrow you can't pick and choose who's going to be the sparrow. It's everybody.
+
+#+end_quote
+
+--- Madeleine L'Engle

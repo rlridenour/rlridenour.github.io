@@ -1,0 +1,39 @@
+---
+comments: true
+date: '2015-01-13T13:48:52Z'
+tags:
+- ethics
+title: Talking About Suicide
+url: "/2015/01/13/talking-about-suicide/"
+
+---
+I was saddened to hear that Robin Williams died this week, apparently by suicide. I was also saddened to read how some people in faith communities reacted to the news. Some of these reactions struck me as callous, demonstrably false, or, at best, simply irrelevant.
+
+Over the past thirty years, I have known three soldiers who committed suicide, During my two deployments, I have been involved in more suicide interventions than I care to remember, and I regularly teach suicide prevention classes to Army units. To prepare for these classes, I always look at the latest studies, especially ones focusing on suicides in the military. The [[http://www.armystarrs.org][Army Study to Assess Risk and Resilience in Servicemembers]] is the largest ever conducted among military personnel, and will continue through 2015. Results are reported as they become available, and, so far, suggest that the problem is even worse in the Army than was previously thought. One thing is clear from the studies on suicide: suicide is a very complex problem, and there is no single determinant causal factor. So, any single-sentence explanation of a person's death by suicide, no matter how effective that sentence is as a sound-bite, is nearly certain to be overly naïve and simplistic.
+
+Suicide prevention classes in the Army have mostly focused on identifying risk factors and warning signs and learning how to conduct an intervention. Risk factors are those qualities that make a problem more likely to occur, and warning signs are indicators that the problem is occurring. For example, high cholesterol is risk factor for heart attacks, while severe chest pain is a warning sign. The problem with just thinking in terms of risk factors and warning signs is that it doesn't help us know what to do to avoid the problem. I know that I should avoid having high cholesterol levels, but how do I do that? Knowing the risk factors and warning signs for suicide is essential for crisis intervention, but that alone won't necessarily help us prevent the crisis stage from occurring. We also need to think in terms of "protective" factors, those things that can be done to minimize the risk factors. The three major protective factors for suicide are effective mental health care, positive connections to high levels of interpersonal connectedness, and effective problem-solving skills.[fn:1]
+
+So, here are two things that I suggest to keep in mind when discussing suicide, or any other complex problem that affects people deeply.
+
+1. Remember Paul's admonition in 1 Corinthians 6:12, "All things are lawful for me, but not all things are beneficial." A lesson that I continually have to relearn is that not every opinion, even if true, should be shared. Will expressing this opinion will help lessen anyone's pain, or will it simply contribute to the pain that is already there?
+2. Be willing to engage in some critical self-reflection on the extent to which our individual actions, community interaction, and public policies have contributed to the problem. Do we tend to isolate those who are hurting because they make us feel uncomfortable? Do our attitudes concerning mental illness discourage those who are hurting from seeking help? Is there sufficient public funding for mental health care?
+
+[[http://themattwalshblog.com/2014/08/12/robin-williams-didnt-die-disease-died-choice/][Matt Walsh]] recently stated that suicide is a spiritual problem. I think that is at least partly true, but maybe not for the reasons that he proposed. On one hand, since the common thread in most suicide cases is depression, the problem is a biological one---an illness for which there is treatment.
+
+On the other hand, the extent to which these protective factors are not present in our society *is* a spiritual problem, /our/ spiritual problem. For Christians, the center of reality is a loving community, the Trinity, and our spiritual health is partly a function of how we reflect that love. So, today, and every day, I must ask myself if my words and actions demonstrate love and grace, or do they contribute to society's tendency to become ever increasingly individualistic, egoistic, and unwilling to care for the least of these.
+
+This admonition from Teresa of Avila hangs on my office door, and seems to be appropriate for meditation today:
+
+#+begin_quote
+Christ has no body now on earth but yours,  \\
+no hands but yours,  \\
+no feet but yours,  \\
+yours are the eyes through which Christ's compassion  \\
+is to look out to the earth,  \\
+yours are the feet by which He is to go about doing good  \\
+and yours are the hands by which He is to bless us now.
+#+end_quote
+
+/Amen/
+
+[fn:1]: For more information, see the http://www.afsp.org[American Foundation for Suicide Prevention][afsp].

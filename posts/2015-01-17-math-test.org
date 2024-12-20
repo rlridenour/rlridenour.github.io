@@ -1,0 +1,33 @@
+#+date: <2015-01-17>
+#+filetags: jekyll
+#+title: Math Test
+
+** Bayes' Theorem
+
+$$ \Pr (A\vert B)=\frac{\Pr (A)\times \Pr (B \vert A)}{\Pr (B)}  = \frac{\Pr (A)\times \Pr (B \vert A)}{\Pr (A)\times \Pr (B \vert A) + \Pr (\neg A)\times \Pr (B \vert \neg A)} $$
+
+** Array
+
+$$ \left[ \begin{array}{ccc}
+\lambda - a & -b & -c \\
+-d & \lambda - e & -f \\
+-g & -h & \lambda - i
+\end{array}
+\right] $$
+
+** Differential
+
+
+
+$$
+\iint xy^2\,dx\,dy
+=\frac{1}{6}x^2y^3,
+$$
+
+** Vector Problem
+
+$$
+u=\frac{-y}{x^2+y^2}\,,\quad
+v=\frac{x}{x^2+y^2}\,,\quad\text{and}\quad
+w=0\,.
+$$

@@ -1,0 +1,10 @@
+#+date: <2015-02-22>
+#+filetags: quotes
+- philosophy
+#+title: The Danger of Thinking
+
+#+begin+quote
+Anyone who has begun to think, places some portion of the world in jeopardy.
+#+end_quote
+
+--- John Dewey

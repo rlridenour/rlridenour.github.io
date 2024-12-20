@@ -1,0 +1,9 @@
+#+date: <2015-01-20>
+#+filetags: quotes
+#+title: Creating God in Our Own Image
+
+#+begin+quote
+You can safely assume that you've created God in your own image when it turns out that God hates all the same people you do.
+#+end_quote
+
+--- Anne Lamott, /Speech delivered in Washington D.C./

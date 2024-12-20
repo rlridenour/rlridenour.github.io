@@ -1,0 +1,51 @@
+#+date: <2015-01-17>
+#+filetags: jekyll
+#+title: Why Jekyll?
+
+** Same Old Story
+
+It must be that time of year again — the time that I do something new with the blog. I'm not sure that I could remember all of the tools that I've used to build web sites in the past:
+
+- Microsoft FrontPage (Those were dark days, indeed.)
+- Something that I vaguely remember being produced by Netscape
+- RapidWeaver
+- Blogger
+- RubyFrontier
+- Wordpress
+- Octopress
+- Statamic
+- Ghost
+- Squarespace
+
+I'm probably forgetting something, but you get the point. The problem is that none of these met all of my criteria for a good system. The last four are definitely viable, each have strengths and weaknesses. With Wordpress, Ghost, and Squarespace, I was able to post from my iPad when I didn't have access to the computer. With Octopress, I was able to keep an up-to-date copy of all posts in their native Markdown format. Posting from iOS with Octopress was possible, but tricky. With Squarespace, I could write the original post in my preferred text editor, then copy and paste into the Markdown field. If I later edited the post online, I would have to remember to update the stored file on the computer. I could download a backup, but it was an XML file, no longer Markdown. Statamic is a good solution, and if I had to design a site for a non-tech-savvy client, I would probably go with it.
+
+** What I'm Looking For
+
+Here are the features I wanted:
+
+- Inexpensive — I teach at a private, tuition-driven, liberal arts college.
+- Write in Markdown.
+- Write with Emacs.
+- Use some Markdown extension for footnotes[fn:1] and tables.
+- Typeset math with MathJax.
+- Easily keep an updated copy of all posts in their native format.
+- Occasionally write and publish a post with my iPad.
+- Control over the aesthetics of the site.
+
+[[http://scriptogr.am][Scriptogram]] looked ideal, with posts built from Markdown files kept in Dropbox. The problem is that services like Scriptogram have been shutting down, because they weren't sustainable. There are some services that looked like they had a plan for sustainability, like [[https://www.silvrback.com ][Silvrback]] and [[https://posthaven.com ][Posthaven]], but they didn't seem to meet my needs any better than Ghost.
+
+I copied everything from Squarespace and built an Octopress site, deciding to live with the mobile posting problem. Octopress seems to take a bit of time to build, which could be annoying as the site gets larger, but that's a minor complaint. [[http://hexo.io ][Hexo]] is fast, but most of the users seem to be Chinese, and like Blanche DuBois, I tend to rely on the kindness of strangers, at least I rely on others to have written about how to solve certain problems.
+
+** Jekyll to the Rescue
+
+I've played with [[http://jekyllrb.com ][Jekyll]] in the past, but didn't find it very friendly unless packaged in Octopress. I decided to give Jekyll another try. It turned out to be fairly easy to set up, and I believe it has all of the features that I wanted. I'm publish to Github Pages, so it's free. I'm using an extension of Markdown called Kramdown that has footnotes, tables, and MathJax support. I not only have a local copy of my posts, but they're all under version control, backed up on Github. I found a very nice theme that I was able to use to fairly closely replicate my Squarespace site. Finally, I can write and publish a post on the Github web site, which is then copied to my computer the next time I publish. Of course, Emacs is able to automate much of the process.
+
+So, here is the new Jekyll site.
+
+UPDATE: I should have mentioned that the day I deployed the new Jekyll site, Brandon Mathis posted information about [[http://octopress.org/2015/01/15/octopress-3.0-is-coming/][Octopress 3]].
+
+It sounds interesting, and I'll have to keep an eye on it. I saw [[http://www.websrvr.in/?utm_source=getsimpleform.com&utm_medium=nav&utm_campaign=simpleform1 ][websrvr]] this morning. It builds from Dropbox, but is a paid service, so it might be something that sticks around.[fn:2] It certainly looks worth a test run.
+
+[fn:1]: What can I say... I'm an academic.
+
+[fn:2]: It's only one dollar per month, so the cost is insignificant. I certainly like free, but I'm leery of depending on something when I can't figure out how the people responsible are managing to pay their bills.

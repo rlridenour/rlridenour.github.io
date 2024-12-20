@@ -1,0 +1,9 @@
+#+date: <2015-01-20>
+#+filetags: quotes religion
+#+title: Advice from Chesterton
+
+#+begin+quote
+Let your religion be less of a theory and more of a love affair.
+#+end_quote
+
+--- G.K. Chesterton

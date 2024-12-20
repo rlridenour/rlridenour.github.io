@@ -1,6 +1,6 @@
-#+#+date: <2015-08-03>
+#+date: <2015-08-03>
 #+filetags: religion
-#+#+title: Pie in the Sky
+#+title: Pie in the Sky
 
 Another thought-provoking sermon this morning by Mitch Randall​ at [[http://northhavenchurch.net/][NorthHaven Church]]​.
 [fn:1] Nietzsche's main criticism of the church in his day was that it was simply about the world to come, and that a religion that was of no value in this world now was of no value at all — a sentiment articulated in Joe Hill's poem "The Preacher and the Slave":

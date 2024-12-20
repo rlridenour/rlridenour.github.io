@@ -1,0 +1,9 @@
+#+date: <2015-03-02>
+#+filetags: quotes
+#+title: Ice-T and Politics
+
+#+begin+quote
+People ask me, "Ice, why don’t you get into politics?" I’m like, "I got out of crime!"
+#+end_quote
+
+--- Ice-T

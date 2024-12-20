@@ -1,0 +1,9 @@
+#+date: <2015-04-05>
+#+filetags: quotes religion
+#+title: Resurrection and Hope
+
+#+begin+quote
+Believing in the resurrection does not just mean assenting to a dogma and noting a historical fact. It means participating in this creative act of God. Resurrection is not a consoling opium, soothing us with the promise of a better world in the hereafter. It is the energy for a rebirth of this life. The hope doesn’t point to another world. It is focused on the redemption of this one.
+#+end_quote
+
+--- Jürgen Moltmann

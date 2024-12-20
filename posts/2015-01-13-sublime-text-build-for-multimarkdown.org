@@ -1,0 +1,36 @@
+#+date: <2015-01-13>
+#+filetags: sublime
+#+title: Sublime Text Build for MultiMarkdown
+
+I added some variants to Brett Terpstra's Marked.sublime-build file, which is part of the Marked [[http://brettterpstra.com/introducing-the-marked-bonus-pack/][Bonus Pack]]. It adds options for building tex, opml, and odf files. To build a tex file, open the command palette and search for "MMD to LaTeX." The file is saved as "Marked.sublime-build" in /Users/YourUserName/Library/Application Support/Sublime Text 3/Packages. Here is the complete build file:
+
+
+#+begin_example yaml
+{
+	"cmd": ["open","-a","/Applications/Marked.app","$file"],
+	"selector": "text.html.markdown",
+
+	"variants": [
+		{
+			"cmd": ["mmd2tex", "$file"],
+			"path": "/usr/local/bin",
+			"name": "MMD to LaTeX"
+		},
+
+		{
+			"cmd": ["mmd2odf", "$file"],
+			"path": "/usr/local/bin",
+			"name": "MMD to ODF"
+		},
+
+		{
+			"cmd": ["mmd2opml", "$file"],
+			"path": "/usr/local/bin",
+			"name": "MMD to OPML"
+		}
+
+	]
+}
+#+end_example
+
+Happy New Year!

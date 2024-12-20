@@ -14,8 +14,8 @@
   <link>https://randyridenour.net/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Fri, 20 Dec 2024 06:05:52 -0600</pubDate>
-  <lastBuildDate>Fri, 20 Dec 2024 06:05:52 -0600</lastBuildDate>
+  <pubDate>Fri, 20 Dec 2024 14:07:32 -0600</pubDate>
+  <lastBuildDate>Fri, 20 Dec 2024 14:07:32 -0600</lastBuildDate>
   <generator>Emacs 29.4 Org-mode 9.8-pre</generator>
   <webMaster>rlridenour@fastmail.com (Randy Ridenour)</webMaster>
   <image>
@@ -25,7 +25,7 @@
   </image>
 
   <ul class="org-ul">
-    <li><a href="https://randyridenour.net/2015-08-03-pie-in-the-sky.html">2015-08-03-pie-in-the-sky</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-talking-about-suicide.html">2015-01-13-talking-about-suicide</a></li>
     <li><a href="https://randyridenour.net/24-12-17-blogging-with-org-mode.html">Blogging with Org Mode</a></li>
     <li><a href="https://randyridenour.net/24-12-17-end-semester.html">End of the Semester</a></li>
     <li><a href="https://randyridenour.net/24-12-05-moving-site.html">Moving the Site</a></li>
@@ -223,6 +223,7 @@
     <li><a href="https://randyridenour.net/2015-09-08-bighaired-preachers.html">Big-Haired Preachers</a></li>
     <li><a href="https://randyridenour.net/2015-09-08-no-innocence.html">No Innocence</a></li>
     <li><a href="https://randyridenour.net/2015-08-11-the-day-is-short.html">The Day is Short</a></li>
+    <li><a href="https://randyridenour.net/2015-08-03-pie-in-the-sky.html">Pie in the Sky</a></li>
     <li><a href="https://randyridenour.net/2015-07-12-prayer-for-the-kingdom.html">Prayer for the Kingdom</a></li>
     <li><a href="https://randyridenour.net/2015-07-12-strength-enough.html">Strength Enough?</a></li>
     <li><a href="https://randyridenour.net/2015-07-12-courage-for-transformation.html">Courage for Transformation</a></li>
@@ -235,68 +236,115 @@
     <li><a href="https://randyridenour.net/2015-06-16-our-lives-as-art.html">Our Lives as Art</a></li>
     <li><a href="https://randyridenour.net/2015-06-12-duolingo.html">DuoLingo</a></li>
     <li><a href="https://randyridenour.net/2015-06-12-librivox.html">LibriVox</a></li>
+    <li><a href="https://randyridenour.net/2015-06-11-the-deception-of-power.html">The Deception of Power</a></li>
     <li><a href="https://randyridenour.net/2015-06-11-prayer-for-our-stories.html">Lives are Stories — A Prayer</a></li>
     <li><a href="https://randyridenour.net/2015-06-04-stringp-nil-error-in-emacs.html">Stringp, Nil Error in Emacs</a></li>
     <li><a href="https://randyridenour.net/2015-06-02-back-to-emacs-prelude.html">Back to Emacs Prelude</a></li>
     <li><a href="https://randyridenour.net/2015-06-01-prayer-for-trinity-sunday.html">Prayer for Trinity Sunday</a></li>
     <li><a href="https://randyridenour.net/2015-05-29-emacs-starter-kit.html">Emacs Starter Kit</a></li>
+    <li><a href="https://randyridenour.net/2015-05-25-love-as-art.html">Love as Art</a></li>
     <li><a href="https://randyridenour.net/2015-05-24-prayer-for-memorial-day-2015.html">Prayer for Memorial Day, 2015</a></li>
     <li><a href="https://randyridenour.net/2015-05-21-in-praise-of-an-unsafe-education.html">In Praise of an Unsafe Education</a></li>
     <li><a href="https://randyridenour.net/2015-05-20-working-copy.html">Blogging with Jekyll and Working Copy</a></li>
+    <li><a href="https://randyridenour.net/2015-05-19-visit-to-a-national-cemetery.html">Visit to a National Cemetery</a></li>
     <li><a href="https://randyridenour.net/2015-05-14-prayer-for-an-isolated-people.html">Prayer for an Isolated People</a></li>
+    <li><a href="https://randyridenour.net/2015-05-13-stories-and-community.html">Stories and Community</a></li>
     <li><a href="https://randyridenour.net/2015-05-10-prayer-for-mothers-day.html">Prayer for Mothers Day</a></li>
     <li><a href="https://randyridenour.net/2015-05-08-unexpected-grace.html">Unexpected Grace</a></li>
     <li><a href="https://randyridenour.net/2015-04-29-prayer-for-justice.html">Prayer for Justice</a></li>
     <li><a href="https://randyridenour.net/2015-04-27-prayer-for-silence.html">Prayer for Silence</a></li>
     <li><a href="https://randyridenour.net/2015-04-15-dostoevsky-suffering-and-the-prayer-for-the-week.html">Dostoevsky, Suffering, and the Prayer for the Week</a></li>
+    <li><a href="https://randyridenour.net/2015-04-05-resurrection-and-hope.html">Resurrection and Hope</a></li>
     <li><a href="https://randyridenour.net/2015-04-05-easter-prayer.html">Easter Prayer</a></li>
     <li><a href="https://randyridenour.net/2015-04-04-prayer-for-holy-saturday.html">Prayer for Holy Saturday</a></li>
     <li><a href="https://randyridenour.net/2015-04-03-good-friday-prayer.html">Good Friday Prayer</a></li>
     <li><a href="https://randyridenour.net/2015-04-02-maundy-thursday-2015.html">Maundy Thursday 2015</a></li>
+    <li><a href="https://randyridenour.net/2015-03-30-triumph-over-democracy.html">Triumph Over Democracy</a></li>
     <li><a href="https://randyridenour.net/2015-03-30-palm-sunday-2015.html">Palm Sunday 2015</a></li>
     <li><a href="https://randyridenour.net/2015-03-27-the-crossshattered-christ-chapter-4.html">The Cross-Shattered Christ, Chapter 4</a></li>
     <li><a href="https://randyridenour.net/2015-03-27-the-crossshattered-christ-chapter-5.html">The Cross-Shattered Christ, Chapter 5</a></li>
     <li><a href="https://randyridenour.net/2015-03-26-prayer-for-lent-5.html">Prayer for Lent 5</a></li>
     <li><a href="https://randyridenour.net/2015-03-16-prayer-for-lent-4.html">Prayer for Lent 4</a></li>
     <li><a href="https://randyridenour.net/2015-03-15-crucified-god-chapter-3.html">The Cross-Shattered Christ, Chapter 3</a></li>
+    <li><a href="https://randyridenour.net/2015-03-09-gregory-nyssa.html">Wonder and Concepts</a></li>
+    <li><a href="https://randyridenour.net/2015-03-09-santayana-on-fanaticism.html">Santayana on Fanaticism</a></li>
     <li><a href="https://randyridenour.net/2015-03-09-prayer-for-lent-3.html">Prayer for Lent 3</a></li>
+    <li><a href="https://randyridenour.net/2015-03-08-apostolic-living.html">Apostolic Living</a></li>
     <li><a href="https://randyridenour.net/2015-03-07-crucified-god-chapter-2.html">The Cross-Shattered Christ, Chapter 2</a></li>
+    <li><a href="https://randyridenour.net/2015-03-05-definition-of-lawyer.html">Definition of Lawyer</a></li>
     <li><a href="https://randyridenour.net/2015-03-03-prayer-for-lent-2.html">Prayer for Lent 2</a></li>
+    <li><a href="https://randyridenour.net/2015-03-02-icet-and-politics.html">Ice-T and Politics</a></li>
     <li><a href="https://randyridenour.net/2015-02-24-lent-1-prayer.html">Prayer for Lent 1</a></li>
     <li><a href="https://randyridenour.net/2015-02-24-father-forgive-them.html">The Cross Shattered Christ, Chapter 1</a></li>
+    <li><a href="https://randyridenour.net/2015-02-22-the-danger-of-thinking.html">The Danger of Thinking</a></li>
     <li><a href="https://randyridenour.net/2015-02-18-ash-wednesday-prayer.html">Ash Wednesday Prayer</a></li>
     <li><a href="https://randyridenour.net/2015-02-15-transfiguration-sunday-prayer.html">Transfiguration Sunday Prayer</a></li>
     <li><a href="https://randyridenour.net/2015-02-14-poem-for-my-valentine.html">Poem for my Valentine</a></li>
     <li><a href="https://randyridenour.net/2015-02-11-prayer-for-a-life-that-affirms.html">Prayer for a Life that Affirms</a></li>
+    <li><a href="https://randyridenour.net/2015-02-11-advice-for-those-about-to-be-tested.html">Advice for Those About to be Tested</a></li>
+    <li><a href="https://randyridenour.net/2015-02-05-the-fine-line.html">The Fine Line</a></li>
     <li><a href="https://randyridenour.net/2015-02-03-prayer-for-epiphany-4.html">Prayer for Epiphany 4</a></li>
+    <li><a href="https://randyridenour.net/2015-02-02-faith-and-doubt.html">Faith and Doubt</a></li>
     <li><a href="https://randyridenour.net/2015-01-27-prayer-for-resolutions.html">Prayer for Resolutions</a></li>
+    <li><a href="https://randyridenour.net/2015-01-22-cant-fix-stupid.html">Cant Fix Stupid</a></li>
+    <li><a href="https://randyridenour.net/2015-01-21-who-is-the-sparrow.html">Who is the Sparrow?</a></li>
     <li><a href="https://randyridenour.net/2015-01-20-christmas-prayer.html">Christmas Prayer</a></li>
     <li><a href="https://randyridenour.net/2015-01-20-relativism-and-the-rights-of-women-in-afghanistan.html">Relativism and the Rights of Women in Afghanistan</a></li>
+    <li><a href="https://randyridenour.net/2015-01-20-the-duty-of-a-philosopher.html">The Duty of A Philosopher</a></li>
+    <li><a href="https://randyridenour.net/2015-01-20-creating-god-in-our-own-image.html">Creating God in Our Own Image</a></li>
     <li><a href="https://randyridenour.net/2015-01-20-praying-for-enemies.html">Praying for Enemies</a></li>
     <li><a href="https://randyridenour.net/2015-01-20-who-is-my-enemy.html">Who Is My Enemy?</a></li>
+    <li><a href="https://randyridenour.net/2015-01-20-ordination-charge-for-brian-warfield.html">Ordination Charge for Brian Warfield</a></li>
+    <li><a href="https://randyridenour.net/2015-01-20-stay-awake.html">Stay Awake</a></li>
+    <li><a href="https://randyridenour.net/2015-01-20-nra-survey.html">NRA Survey</a></li>
+    <li><a href="https://randyridenour.net/2015-01-20-advice-from-chesterton.html">Advice from Chesterton</a></li>
+    <li><a href="https://randyridenour.net/2015-01-20-scheming-swindlers.html">Scheming Swindlers</a></li>
     <li><a href="https://randyridenour.net/2015-01-20-permanent-impermanence.html">Permanent Impermanence</a></li>
     <li><a href="https://randyridenour.net/2015-01-20-penn-jillette-on-science-and-religion.html">Penn Jillette on Science and Religion</a></li>
+    <li><a href="https://randyridenour.net/2015-01-18-my-new-jekyll-site.html">My New Jekyll Site</a></li>
+    <li><a href="https://randyridenour.net/2015-01-17-why-jekyll.html">Why Jekyll?</a></li>
+    <li><a href="https://randyridenour.net/2015-01-17-math-test.html">Math Test</a></li>
+    <li><a href="https://randyridenour.net/2015-01-16-emacs-blog-test.html">Emacs Blog Test</a></li>
+    <li><a href="https://randyridenour.net/2015-01-16-jekyll-test.html">Testing Jekyll</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-twenty-third-sunday-after-pentecost.html">Twenty-Third Sunday After Pentecost</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-prayer-for-the-medicated-preacher.html">Prayer for the Medicated Preacher</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-the-eighteenth-sunday-after-pentecost.html">The Eighteenth Sunday After Pentecost</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-the-fifth-sunday-of-lent.html">the Fifth Sunday of Lent</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-sadly-so-often-true.html">Sadly So Often True</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-the-seventh-sunday-after-pentecost.html">2015-01-13-the-seventh-sunday-after-pentecost</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-sublime-text-build-for-multimarkdown.html">Sublime Text Build for MultiMarkdown</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-third-sunday-of-advent.html">Third Sunday of Advent</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-the-second-sunday-of-easter.html">The Second Sunday of Easter</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-thoughts-on-burwell-vs-hobby-lobby.html">Thoughts on Burwell vs. Hobby Lobby</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-the-eleventh-sunday-after-pentecost.html">The Eleventh Sunday After Pentecost</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-twenty-first-sunday-after-pentecost.html">Twenty-First Sunday After Pentecost</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-the-fifteenth-sunday-after-pentecost.html">The Fifteenth Sunday After Pentecost</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-reloading-zshrc.html">Reloading zshrc</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-charge-to-the-church.html">Charge to the Church</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-the-third-sunday-of-easter.html">the Third Sunday of Easter</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-a-christmas-poem.html">A Christmas Poem</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-the-twelfth-sunday-after-pentecost.html">The Twelfth Sunday After Pentecost</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-the-tenth-sunday-after-pentecost.html">The Tenth Sunday After Pentecost</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-badass-philosophers.html">Badass Philosophers</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-the-fourth-sunday-after-pentecost.html">the Fourth Sunday after Pentecost</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-a-parents-love.html">A Parents Love</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-the-sixteenth-sunday-after-pentecost.html">The Sixteenth Sunday After Pentecost</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-the-fifth-sunday-after-pentecost.html">The Fifth Sunday After Pentecost</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-twenty-second-sunday-after-pentecost.html">Twenty-Second Sunday After Pentecost</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-the-twentieth-sunday-after-pentecost.html">The Twentieth Sunday After Pentecost</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-thanksgiving-day-prayer.html">Thanksgiving Day Prayer</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-the-ninth-sunday-after-pentecost.html">The Ninth Sunday After Pentecost</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-the-thirteenth-sunday-after-pentecost.html">The Thirteenth Sunday After Pentecost</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-the-fourteenth-sunday-after-pentecost.html">The Fourteenth Sunday After Pentecost</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-the-third-sunday-after-pentecost.html">The Third Sunday After Pentecost</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-the-fourth-sunday-of-easter.html">The Fourth Sunday of Easter</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-the-nineteenth-sunday-after-pentecost.html">The Nineteenth Sunday After Pentecost</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-epiphany-sunday.html">Epiphany Sunday</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-the-seventeenth-sunday-after-pentecost.html">The Seventeenth Sunday After Pentecost</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-christ-the-king-sunday.html">Christ the King Sunday</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-reinstalling-apps-from-mac-app-store.html">Reinstalling Apps from Mac App Store</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-the-chains-of-technology.html">The Chains of Technology</a></li>
+    <li><a href="https://randyridenour.net/2015-01-13-search-and-replace-with-regular-expressions.html">Search and Replace with Regular Expressions</a></li>
     <li><a href="https://randyridenour.net/2015-01-13-a-prayer-for-wellness.html">A Prayer for Wellness</a></li>
     <li><a href="https://randyridenour.net/2011-12-07-the-rights-of-women-in-afghanistan.html">The Rights of Women in Afghanistan</a></li>
     <li><a href="https://randyridenour.net/2011-11-30-using-keynote-in-class.html">Using Keynote in Class</a></li>

@@ -1,0 +1,9 @@
+#+date: <2015-09-08>
+#+filetags: quotes
+#+title: No Innocence
+
+#+begin+quote
+I once sent a dozen of my friends a telegram saying 'flee at once - all is discovered.' They all left town immediately.
+#+end_quote
+
+--- Mark Twain

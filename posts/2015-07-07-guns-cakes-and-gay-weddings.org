@@ -1,0 +1,19 @@
+#+date: <2015-07-07>
+#+filetags: religion ethics
+#+title: Guns, Cakes, and Gay Weddings
+
+Internet memes rarely constitute a high level of discourse, but they can sometimes prompt interesting conversations. This morning, a friend posted one that read,
+
+#+begin_quote
+If selling a gay couple a wedding cake means a "christian" baker participated in their marriage, does selling a gun to a murderer mean a "christian" gun store owner participated in the murder?
+#+end_quote
+
+The gun store owner does indeed participate in the murder, though not in a way that makes him[fn:1] morally responsible for the murder. He is even more of a participant in the murder than the baker is a participant in the marriage, because the actions of the gun store owner, however unwitting, are causally significant in a way that the actions of the baker are not. All other things being equal, without the gun, there would have been no murder. All other things being equal, without the cake, the couple would still be married.
+
+The important question with respect to the gun store owner is what kind of participation is required for moral culpability. Although negligence complicates things, let's assume that one is morally responsible for what one knowingly participates in. Since the gun dealer is not aware, (nor negligently unware — that is, there's no sign posted saying "If you plan to commit a murder with this firearm, please do not tell me...") then the store owner is not morally responsible.
+
+From what some service providers have said, though, it's not participation /per se/ that is the problem, it's that their participation could be viewed as tacit approval. I don't understand why that's the case — we wouldn't take a Bar Mitzvah cake baked by a Christian baker to imply approval of Judaism, an /Eid-al-Fitr/ cake to be an approval of Islam, or a Super Bowl cake to imply approval of professional sports.
+
+Maybe the gun case is not close enough to be a good analogy. Maybe we should instead ask if the Christian restaurant owner is a culpable participant in my act of gluttony by selling me overly large portions with the full expectation that I will eat it all on the spot.
+
+[fn:1]: I usually mix masculine and feminine pronouns to avoid sexist language, but in this case, I think it's reasonable to assume that most gun store owners are male.

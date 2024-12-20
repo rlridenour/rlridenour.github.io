@@ -1,0 +1,9 @@
+#+date: <2009-08-28>
+#+filetags: aesthetics political
+#+title: Triumph of the Will
+
+/Triumph of the Will/, directed by Leni Riefenstahl, is the film that I couldn't remember in Aesthetics this morning. Roger Ebert, in his 1994 [[http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/19940624/REVIEWS/406240302/1023][review]] of a documentary about Riefenstahl asks exactly the right question:
+    
+#+begin+quote
+"These are by general consent two of the best documentaries ever made. But because they reflect the ideology of a monstrous movement, they pose a classic question of the contest between art and morality: Is there such a thing as pure art, or does all art make a political statement?"
+#+end_quote

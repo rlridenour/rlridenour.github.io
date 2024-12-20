@@ -1,0 +1,9 @@
+#+date: <2015-08-11>
+#+filetags: quotes
+#+title: The Day is Short
+
+#+begin+quote
+The day is short, and the night so long. Why do you work so hard to get what you don't even want?
+#+end_quote
+
+--- Garrison Keillor

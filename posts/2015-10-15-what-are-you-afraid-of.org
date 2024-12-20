@@ -1,0 +1,9 @@
+#+date: <2015-10-15>
+#+filetags: quotes
+#+title: What Are You Afraid Of?
+
+#+begin+quote
+I can't understand why people are frightened of new ideas. I'm frightened of the old ones.
+#+end_quote
+
+--- John Cage

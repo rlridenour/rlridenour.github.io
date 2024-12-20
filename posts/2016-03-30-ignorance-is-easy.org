@@ -1,0 +1,11 @@
+#+date: <2016-03-30>
+#+filetags: quotes
+#+title: Ignorance is Easy
+
+#+begin+quote
+Ignorance may not be bliss, but it's certainly less work.
+#+end_quote
+
+--- Welcome to Nightvale, episode 30
+
+

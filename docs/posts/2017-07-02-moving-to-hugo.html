@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 19, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Moving to Hugo</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Moving to Hugo</h1>
+<p class="subtitle" role="doc-subtitle">Jul 02, 2017</p>
+</header><p>
+It&rsquo;s been longer than usual since I made a redesign of the web site. <a href="https://jekyllrb.com">Jekyll</a> had been serving my purposes well, but I managed to concoct two excuses for changing. I&rsquo;ve been slightly uncomfortable with handling the various dependencies with respect to other Ruby gems. Unsurprisingly, as the site got bigger and bigger, the time that Jekyll took to build the site has gotten longer and longer. The real reason for the redesign, though, is that I just like the chance to learn and work with something new.
+</p>
+
+<p>
+I thought about <a href="https://blog.getpelican.com">Pelican</a>, which is similar to Jekyll, but written in Python. I&rsquo;m more comfortable hacking around in Python than I am in Ruby, but that was the only advantage I could see with Pelican. <a href="https://gohugo.io">Hugo</a> has been getting a lot of press lately, and everyone remarked about it&rsquo;s apparently amazing build speed. It also installs as a single binary, so there is no need to manage dependencies.
+</p>
+
+<p>
+Building the Hugo site was relatively simple, and anyone with some experience with any static site generator should have no problem. Hugo has a <a href="https://gohugo.io/commands/hugo_import_jekyll/">command</a> to import a Jekyll blog, which worked very well. I had to clean up some meta-data, but after a bit of search and replace magic with regular expressions on the post directory, everything worked.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> 
+</p>
+
+<p>
+I thought about designing my own theme, but quickly discovered that it would take more time than I need to be spending now, so found this excellent academic oriented theme by <a href="https://georgecushen.com">George Cushen</a>, cleverly called &ldquo;<a href="https://github.com/gcushen/hugo-academic">Academic</a>.&rdquo; 
+</p>
+
+<p>
+The Internet chatter was correct — the site builds very quickly.<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup> I saw soon face, though, with the one disadvantage of Hugo compared to Jekyll, at least for me. As a professor at a small liberal arts college with a primary revenue stream of tuition, I prefer to use free services when possible. Github hosting was ideal. Since a large portion was powered by Jekyll, I could just push the source to Github. Github would build and serve the site automatically. It met two important criteria, simple and free. I was especially happy with that after discovering how to easily <a href="http://randyridenour.net/2017/06/21/jekyll-ios-workflow/">post from iOS</a>.
+</p>
+
+<p>
+Now, I had to build the Hugo site, then push the source to one repository and the HTML to another. It wasn&rsquo;t difficult, but it didn&rsquo;t have the single-step ease that I wanted. I stumbled on <a href="https://forestry.io">Forestry</a>, which is a CMS for Jekyll and Hugo sites. It works amazingly well, and could be a great tool for people who want the benefits of static sites but don&rsquo;t want to mess with the command line. It can be configured to build and push to the deployment repository when a change is made to the source repository.  For me at least, it didn&rsquo;t work well <b>in conjunction</b> with the command line, though. When it rebuilt the site, it changed a number of source files, and I would forget to pull those changes before working on something. I was soon tired of cleaning up merge conflicts. 
+</p>
+
+<p>
+Many people use either <a href="https://www.travis-ci.org">Travis CI</a> or <a href="http://www.wercker.com">Wercker</a> for deploying static sites. Both are tools for building and deploying software, but will also build and deploy static sites. Unfortunately, I just couldn&rsquo;t manage to make either one work. Finally, I stumbled on <a href="https://www.netlify.com">Netlify</a>. Netlify is a bit different from the others in that it builds and hosts, and, for the service that I need, all for free. It was easy to configure, the build worked perfectly, and I just had to point the domain to Netlify instead of Github. I write using Emacs or Editorial, push the post to Github, Netlify detects the change, then builds and serves the site. For anyone who is interested, the source code for the site is on <a href="https://github.com/rlridenour/blog">Github</a>.
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+: There was a bit more to it. Finding what to search for and replace was a bit of a hassle. The Hugo build-error messages weren&rsquo;t particularly helpful. I debugged by moving the files out of the post directory, then replacing some until I could find a file that failed to build. Then, it was easy to see what part of the meta-data was causing the problem, and fix it with a global search and replace. If the site is fairly large, it&rsquo;s easily worth it to learn a bit about regular expressions and invest some time in becoming comfortable with a good text editor that can do a multi-file search and replace.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+: Build time with Hugo is now 1.3 seconds, compared to 38.7 seconds for Jekyll.
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 19, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

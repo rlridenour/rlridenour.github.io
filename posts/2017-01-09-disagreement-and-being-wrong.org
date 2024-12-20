@@ -1,0 +1,47 @@
+#+date: <2017-01-09>
+#+filetags: critical-thinking
+#+title: Disagreement and Being Wrong
+
+This internet meme has been making the rounds lately:
+
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/20170109-disagreement.jpg]]
+#+end_center
+
+The graphic shows two people on opposite ends of an ambiguous figure on the ground. One person points down and says "Six." The other points down, saying "Nine." The original caption is "Just because you are right, does not mean I am wrong." That caption is crossed out, and this rebuttal placed below:
+
+#+begin_quote
+But one of those people is wrong, someone painted a six or nine, they need to back up ad orient themselves, see if there are any other numbers to alight with. Maybe there's a driveway of a building to face, or they can ask someone who actually knows.
+
+People having an uninformed opinion about something they don't understand and proclaiming their opinion as being equally valid as facts is what is ruining the world. No one wants to do any research, they just want to be right.
+#+end_quote
+
+
+There are number of things wrong here. First, the minor and less interesting problems:
+
+1. The distinction between opinion and fact — an opinion is just something someone believes. A fact is something that is the case. True opinions express facts; false ones do not. So, an opinion can very well be as "valid" as a fact, if it indeed expresses a fact.
+2. I do think that people having uninformed (I assume that is what was meant, not "uniformed") opinions is bad, however, I suspect there are worse problems in the world. Failure to be informed is not evidence that people want to be right, but that they want to win. There's an important difference.
+
+Now for the more interesting issues:
+
+One thing the explanation gets right is that context is important. Context might very well show that one person is in fact wrong, but context could also show that both are right. The explanation assumes that the figure is painted on the floor or ground, but that's not clear from the cartoon. Another possibility is that the two people are looking at a large sign that was not intentionally placed, but simply laid down. To save money, the sign-maker may have produced 9 different signs for the numerals, intending the same sign to be used for both 6 and 9. So, both are correct. It is both a 6 and 9. The explanation assumes that the person who placed the figure there was trying to communicate something, but that isn't necessarily the case.
+
+Another possibility, imagine that the two people live directly across the street from each other — one at 6 Elm Street and the other at 9 Elm Street. Not being very bright, they thought it would be cute to paint this large figure on the street between their houses. One points out that it is a 6, the other, a 9. Both walk away happy, and there is no real disagreement.
+
+To the broader point communicated by the original statement:
+
+We've all probably had disagreements that seemed irresolvable. Then, after some patient discussion, one person says, "You know, I think we're really saying the same thing." We often find that there are many different ways to express the same thought. One way being right does not mean that the others are wrong.
+
+Statements also have meaning relative to a linguistic context. We may assume the other is wrong, but we've just misunderstood the context. For example, one person says that it is 25 degrees outside, but another says that it is -4. Can they both be right? Of course, if they are assuming different temperature scales.
+
+So, in cases of disagreement, there are several possibilities:
+
+1. The disagreement is merely apparent. The parties believe the same thing, but do not understand each other.
+2. The disagreement is genuine, and the issue is such that only one party can be correct.
+3. The disagreement is genuine, but the issue is such that, even though they don't realize it, both parties can be correct.
+
+To know if someone's being right entails that another person is wrong, I have to know facts about the question, the issue, the linguistic context, etc. That's often not very difficult, but sometimes it is very hard. It's important to note that we are always hypothesizing about these things and our assumptions may be wrong. So, in situations of disagreement, maybe we should try to exercise a bit more charity.
+
+In the end, then, it is both one person's being right and facts about context that determine if the other person must be wrong. So, the original statement stands, one person's being right is not alone enough to guarantee that another person is wrong. We should certainly seek to be informed, but we should also seek to understand.
+

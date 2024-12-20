@@ -21,7 +21,7 @@ Then, I enter the truth table in either Excel or Numbers. For example, this woul
 
 #+begin_center
 #+ATTR_HTML: :width 100% :height
-[[../images/posts/numbers-truth-table1.png]]
+[[../images/posts/20180210-numbers-truth-table1.png]]
 #+end_center
 
 Copy the cells that you want included in the truth table. Go to [[http://www.tablesgenerator.com][Tables Generator]] and select "LaTeX Tables" from the top menu bar. Below the top menu bar is a drop-down menu bar. Click on "File" then "Paste table data..." and paste the table data. Table Generator will generate a nicely formatted LaTeX table; be sure to uncheck "Escape special TeX symbols" and select the option to remove all borders.
@@ -87,7 +87,7 @@ which produces this:
 
 #+begin_center
 #+ATTR_HTML: :width 50% :height
-[[../images/posts/truth-table.png]]
+[[../images/posts/20180210-truth-table.png]]
 #+end_center
 
 

@@ -2,7 +2,7 @@
 #+filetags: sublime
 #+title: Sublime Text Build for MultiMarkdown
 
-I added some variants to Brett Terpstra's Marked.sublime-build file, which is part of the Marked [[http://brettterpstra.com/introducing-the-marked-bonus-pack/][Bonus Pack]]. It adds options for building tex, opml, and odf files. To build a tex file, open the command palette and search for "MMD to LaTeX." The file is saved as "Marked.sublime-build" in /Users/YourUserName/Library/Application Support/Sublime Text 3/Packages. Here is the complete build file:
+I added some variants to Brett Terpstra's Marked.sublime-build file, which is part of the Marked [[http://brettterpstra.com/introducing-the-marked-bonus-pack/][Bonus Pack]]. It adds options for building tex, opml, and odf files. To build a tex file, open the command palette and search for "MMD to LaTeX." The file is saved as "Marked.sublime-build" in =/Users/YourUserName/Library/Application Support/Sublime Text 3/Packages=. Here is the complete build file:
 
 
 #+begin_example yaml

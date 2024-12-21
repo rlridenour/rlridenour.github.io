@@ -5,4 +5,6 @@
 This is a song by a HS Psychology teacher designed to help students learn about cognitive biases. Play it in the background as you study for the Critical Thinking final.
 
 
+#+begin_center
 [[yt:3RsbmjNLQkc][Cognitive biases song.]]
+#+end_center

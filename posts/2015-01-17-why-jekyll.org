@@ -46,6 +46,6 @@ UPDATE: I should have mentioned that the day I deployed the new Jekyll site, Bra
 
 It sounds interesting, and I'll have to keep an eye on it. I saw [[http://www.websrvr.in/?utm_source=getsimpleform.com&utm_medium=nav&utm_campaign=simpleform1 ][websrvr]] this morning. It builds from Dropbox, but is a paid service, so it might be something that sticks around.[fn:2] It certainly looks worth a test run.
 
-[fn:1]: What can I say... I'm an academic.
+[fn:1] What can I say... I'm an academic.
 
-[fn:2]: It's only one dollar per month, so the cost is insignificant. I certainly like free, but I'm leery of depending on something when I can't figure out how the people responsible are managing to pay their bills.
+[fn:2] It's only one dollar per month, so the cost is insignificant. I certainly like free, but I'm leery of depending on something when I can't figure out how the people responsible are managing to pay their bills.

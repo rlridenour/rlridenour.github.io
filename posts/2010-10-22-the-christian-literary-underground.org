@@ -2,12 +2,12 @@
 #+filetags: quotes religion
 #+title: The Christian Literary Underground
 
-The November issue of
-[[http://www.sojo.net/index.cfm?action=magazine.article&amp;issue=soj1011&amp;article=the-borderlands-of-publishing][/Sojourners/ Magazine]] has an interesting article by Julie Polter about the "Christian literary underground." There is also a
-[[http://blog.sojo.net/2010/10/21/7-essential-tips-for-fitting-in-with-the-christian-literary-underground-scene-near-you/][slightly tongue-in-cheek post]] on their website by Betsy Shirley titled "7 Essential Tips for Fitting in With the Christian Literary Underground Scene Near You!" I'm pleased to see that the first essential tip is this:
+The November issue of [[http://www.sojo.net/index.cfm?action=magazine.article&amp;issue=soj1011&amp;article=the-borderlands-of-publishing][/Sojourners/ Magazine]] has an interesting article by Julie Polter about the "Christian literary underground." There is also a [[http://blog.sojo.net/2010/10/21/7-essential-tips-for-fitting-in-with-the-christian-literary-underground-scene-near-you/][slightly tongue-in-cheek post]] on their website by Betsy Shirley titled "7 Essential Tips for Fitting in With the Christian Literary Underground Scene Near You!" I'm pleased to see that the first essential tip is this:
 
-<blockquote>
+
+#+begin_quote
 Be seen reading the grittier classics of Christian literature. Though /Blue Like Jazz/ is an almost irresistible first choice, try for something more subtle, like Flannery O’Connor, J.D. Salinger, or T.S. Eliot. And when all else fails, /The Brothers Karamazov/ is a sure-bet.
-</blockquote>
+#+end_quote
+
 
 I'm glad to see that we've gone for the "sure-bet" in the Existentialism course this semester.

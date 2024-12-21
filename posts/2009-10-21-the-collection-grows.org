@@ -4,5 +4,9 @@
 
 The collection grows...
 
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/it-grows.png]]
+#+end_center
 
-![It Grows](images/2009/it-grows.png)
+

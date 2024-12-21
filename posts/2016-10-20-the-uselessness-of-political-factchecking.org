@@ -6,8 +6,8 @@ I've decided that political fact-checking is largely useless. Either people comp
 
 Now, I'm seeing many claims that only 5.7% of Clinton Foundation donations go to charity.[fn:2] Unlike the claim about the classified leak, this is at least partly true. That is indeed the percentage that is given by the Foundation to other organizations that do charitable work. What it ignores is that most of the money is kept by the Foundation for the charitable work that it does directly. The Foundation spends 12% on overhead costs, compared to the average charity which spends nearly 37%[fn:3]. This earns the Clinton Foundation an "A" rating by the American Institute of Philanthropy's [[https://www.charitywatch.org/ratings-and-metrics/bill-hillary-chelsea-clinton-foundation/478][Charity Watch]]. That doesn't mean that Clinton's claim that 90% of the Foundation's money goes to charitable causes and work is true, though. According to Charity Watch, it's only 88%. I suppose one could criticize Clinton for rounding up from 88% to 90%. That strikes me as a bit petty, but at least it would be true.
 
-[fn:3]: [[http://www.thenonprofittimes.com/news-articles/survey-charities-should-spend-23-on-overhead/][The NonProfit Times]].
+[fn:3] [[http://www.thenonprofittimes.com/news-articles/survey-charities-should-spend-23-on-overhead/][The NonProfit Times]].
 
-[fn:2]: The first six pages of results from a Google search of "Clinton 5.7%" were entirely about this.
+[fn:2] The first six pages of results from a Google search of "Clinton 5.7%" were entirely about this.
 
-[fn:1]: It is more than a bit ironic that the writers of the many stories expressing shock and outrage over Clinton's broadcast of the response time are broadcasting the time themselves. 
+[fn:1] It is more than a bit ironic that the writers of the many stories expressing shock and outrage over Clinton's broadcast of the response time are broadcasting the time themselves. 

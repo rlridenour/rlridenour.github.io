@@ -1,6 +1,5 @@
 #+date: <2015-02-22>
-#+filetags: quotes
-- philosophy
+#+filetags: quotes philosophy
 #+title: The Danger of Thinking
 
 #+begin_quote

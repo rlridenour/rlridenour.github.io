@@ -22,4 +22,4 @@ Walk humbly, now."[fn:1]
 
 * Footnotes
 
-[fn:1] [^1]: Rabbi Rami M. Shapiro, *Wisdom of the Jewish Sages: A Modern Reading of Pirke Avot*, p. 41.
+[fn:1] Rabbi Rami M. Shapiro, /Wisdom of the Jewish Sages: A Modern Reading of Pirke Avot/, p. 41.

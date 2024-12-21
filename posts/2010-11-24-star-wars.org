@@ -4,4 +4,7 @@
 
 I thought about watching /Star Wars/ during the break, but this was more fun.
 
-[[yt:EBM854BTGL0]]
+[[
+#+begin_center
+yt:EBM854BTGL0]]
+#+end_center

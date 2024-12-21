@@ -36,9 +36,9 @@ Why are we here? Why is ordination important? Not so that you can minister. If y
 
 Paul's letters to Timothy give us a clue. 1 Timothy is primarily instructional. It's about taking care of the business of the church. Things are good, let's get down to work. 2 Timothy, though, has a different tone. After the salutation, Paul writes:
 
-#+begin_src
+#+begin_quote
 Recalling your tears, I long to see you so that I may be filled with joy. I am reminded of your sincere faith, a faith that lived first in your grandmother Lois and your mother Eunice and now, I am sure, lives in you. For this reason I remind you to rekindle the gift of God that is within you through the laying on of my hands; for God did not give us a spirit of cowardice, but rather a spirit of power and of love and of self- discipline.
-#+end_src
+#+end_quote
 
 What events prompted this change of tone? Why does Paul think it necessary to remind Timothy of the faith of his family and of the time of his ordination? I suspect that it's because Timothy is experiencing one of those times in ministry that we all have. There will come a time when this thought comes to mind. It has happened to me, and I'm sure that it has happened to many others. The thought is this: "The only mistake that God ever made in history is calling me to ministry." When that thought comes, remember this day.
 

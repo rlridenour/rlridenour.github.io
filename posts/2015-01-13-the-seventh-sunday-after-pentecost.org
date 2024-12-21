@@ -1,6 +1,6 @@
 #+date: <2015-01-13>
-#+filetags:
-#+- prayer title: The Seventh Sunday After Pentecost
+#+filetags: prayer
+#+title: The Seventh Sunday After Pentecost
 
 We say that God helps those who help themselves,\\
 that cleanliness is next to godliness,\\

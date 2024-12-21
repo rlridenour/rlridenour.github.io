@@ -5,7 +5,7 @@
 I received an interesting "package" in campus mail yesterday. It's a coconut with my name and box number written on it. There wasn't a note attached, so I really don't know what the significance of this is. Any ideas?
 
 #+begin_center
-#+ATTR_HTML: :width 100% :height
+#+ATTR_HTML: :width 60% :height
 [[../images/posts/coconut.jpeg]]
 #+end_center
 

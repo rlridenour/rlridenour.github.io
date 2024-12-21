@@ -4,5 +4,9 @@
 
 The Habitat for Humanity build in Norman. I'm getting lots of advice from David and Mitch.
     
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/habitat.jpg]]
+#+end_center
 
-![Habitat Build](images/2009/habitat.jpg)
+

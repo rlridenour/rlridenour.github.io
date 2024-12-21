@@ -4,6 +4,9 @@
 
 From SCTV: a parody of Sesame Street called "Philosophy Street."
 
-[[yt:6LX9NPR9lWU]]
 
-# <iframe width="640" height="360" src="https://www.youtube.com/embed/6LX9NPR9lWU" frameborder="0" allowfullscreen></iframe>
+#+begin_center
+[[yt:KuTBbZeSaSc]]
+#+end_center
+
+

@@ -33,4 +33,11 @@ but not just for us.
 
 /Amen/
 
-![Embrace](images/2016/embrace.jpg)
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/embrace.jpg]]
+#+end_center
+
+
+
+# ![Embrace](images/2016/embrace.jpg)

@@ -2,7 +2,12 @@
 #+filetags: poetry
 #+title: Visit to a National Cemetery
 
-![Military Cemetery](images/2015/cemetery.jpg)
+# ![military Cemetery](images/2015/cemetery.jpg)
+
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/cemetery.jpg]]
+#+end_center
 
 /A poem for Memorial Day, 2015, written after conducting a funeral at the Dallas-Fort Worth National Cemetery, April 23, 2015./
 

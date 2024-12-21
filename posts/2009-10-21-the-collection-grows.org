@@ -1,0 +1,8 @@
+#+date: <2009-10-21>
+#+filetags: aesthetics
+#+title: Even More
+
+The collection grows...
+
+
+![It Grows](images/2009/it-grows.png)

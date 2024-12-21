@@ -1,0 +1,14 @@
+#+date: <2009-09-22>
+#+filetags: aesthetics
+#+title: Not So Precious Moments
+
+Yesterday, I received an anonymous package by campus mail that contained this. I assume it was sent by a student in my Aesthetics class. It's a good example of an adequacy condition for an aesthetic theory — any theory that claims that this is good art must be rejected.
+
+What should I do to get even? Maybe we'll have to reinstate those daily presentations.
+
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/package-figurine.jpg]]
+#+end_center
+
+

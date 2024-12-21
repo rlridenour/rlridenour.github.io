@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 21, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Automating Jekyll with Fish</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Automating Jekyll with Fish</h1>
+<p class="subtitle" role="doc-subtitle">Jul 12, 2016</p>
+</header><p>
+<a href="http://randyridenour.net/2016/06/23/emacs-on-the-ipad/">Last month</a>, I wrote about my experiment with iOS and a remote server from
+<a href="http://wwww.digitalocean.com">Digital Ocean</a>. It&rsquo;s working very well, but Emacs can feel a bit sluggish at times, served up remotely over a crowded public wi-fi network. Vim is speedy, and since I use Evil on Emacs, it&rsquo;s not too painful to switch occasionally. Any pain comes from the loss of the automation with all of those Emacs functions I&rsquo;ve written and collected over the years.
+</p>
+
+<p>
+I thought about writing some scripts in Elisp, but settled on functions in the <a href="http://fishshell.com/">Fish</a> Shell. The first function
+creates an appropriately named Markdown file with YAML front-matter. The important parts come from <a href="https://gist.github.com/marcransome/6096005">Marc Ransome</a>:
+</p>
+
+
+<pre class="example" id="orgd5e8adf">
+function draft -d "Open default editor with date prepended filename and specified title for jekyll posts."
+
+cd ~/Dropbox/blog-drafts
+
+# Create file
+  set title (date +"%Y-%m-%d")
+
+  switch (count $argv)
+    case 0
+      echo "No post title was specified."
+      return 1
+    case 1
+      set lower_arg (echo $argv[1] | tr A-Z a-z)
+      set title $title-$lower_arg.md
+    case \*
+      for arg in $argv
+	set lower_arg (echo $arg | tr A-Z a-z)
+	set title $title-$lower_arg
+      end
+      set title $title.md
+  end
+
+# Append YAML
+echo "---" &gt;&gt; $title
+echo "layout: post" &gt;&gt; $title
+echo "title: " $argv &gt;&gt; $title
+echo "tags:" &gt;&gt; $title
+echo "- " &gt;&gt; $title
+echo "comments: true" &gt;&gt; $title
+echo "date:" (date +"%Y-%m-%d %H:%M:%S") &gt;&gt; $title
+echo "---" &gt;&gt; $title
+
+# Open file in VIM
+  EDITOR $title
+end
+</pre>
+
+<p>
+The other two functions were very simple – one to move a completed draft to the _posts folder, and another to commit the new post and push to Github with the imaginative commit message, &ldquo;New post&rdquo;:
+</p>
+
+
+<pre class="example" id="orgcf13a0f">
+function post
+   mv $argv ~/Sites/rlridenour.github.io/_posts
+end
+
+function publish
+ cd ~/Sites/rlridenour.github.io
+ git add .
+ git commit -m "New post."
+ git push
+end
+</pre>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 21, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

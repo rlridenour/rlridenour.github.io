@@ -1,0 +1,33 @@
+#+date: <2012-05-24>
+#+title: A Sordid Tale of Text Editors
+
+For years now, It seems like I have been searching for the perfect text editor. Evidently, there are those who believe that there is one single perfect text editor for everyone. If you need evidence, just search the Internet for &#8220;Vim vs. Emacs.&#8221; My experience, though, leads to me believe that, when it comes to text editors, like many other tools, perfection is relative to the individual. What tool is needed depends on how the individual writer works and thinks.
+
+I used word processors (beginning with WordPerfect 5.1, which I still think is the best, it's been all downhill for word processors ever since) until I started writing LaTeX documents. I began with TeXShop, which comes bundled with [[http://www.tug.org/mactex/2011/][MacTeX]]. TeXShop is an excellent resource for writing LaTeX. It's free, powerful, and I recommend it with no reservations at all.
+
+I don't know why I began experimenting with other editors. I surely didn't need any other editor to edit LaTeX. It may have been when I started writing in [[http://fletcherpenney.net/multimarkdown/][MultiMarkdown]] (MMD). Markdown, created by John Gruber, is a simple way to produce very readable documents and convert them to HTML. Markdown has grown in popularity recently, resulting in an abundance of simple Markdown editors for both OS X and iOS. I can't remember what year I stumbled on it, but at some point I discovered Fletcher Penney's MultiMarkdown. MultiMarkdown adds some features to Markdown, including tables and footnotes, among other things. The most important feature for me, though, was the ability to convert the document to both HTML and to LaTeX. So, I started writing in MultiMarkdown, which then gave me the ability to export the same document in several formats as needed. I could have used TeXShop to write MMD, but it wasn't the best experience.
+
+At the time, there was a great deal of excitement about [[http://macromates.com/][TextMate]]. After watching some videos on YouTube showing LaTeX editing with TextMate, I was hooked. Then, I discovered that Fletcher Penney himself had produced a Markdown bundle for TextMate. So, I could use TextMate to easily edit an MMD document, with a quick keyboard shortcut, convert it to a LaTeX file, touch up any TeX code, then build the PDF, all from within TextMate.
+
+But then, I started hearing things about Vim. So, I downloaded [[http://code.google.com/p/macvim/][MacVim]], and then spent a great deal of time learning the Vim commands and configuring my .vimrc. In my opinion, navigating files in Vim is pure magic, and I don't think that there is anything better for editing, that is, making small corrections to an existing document.
+
+Although I understand Vim, and can use it competently, it never quite fit the way that I work. Vim is a modal editor, which means that different modes are used for different things. For instance, insert mode is for inserting text.[fn:1] Normal mode is used for navigating the document, among other things. The beauty of Vim is how much one can do with very few keystrokes. For instance, pressing =dd= deletes a sentence, and =2dd= deletes two sentences. Vim experts look like sorcerers at the keyboard. Unfortunately, Vim just never quite fit for me as a tool to write longer documents, I still use it in the terminal for writing short things like Git commit statements. I would find myself starting to write after a break to think, and suddenly be inserting text in a completely different part of the document. For instance, in normal mode, =e= moves the cursor to the end of the word, =gg= moves the cursor to the beginning of the document, and =i= switches to insert mode. So, in normal mode, if I started typing the word "beginning" anywhere in the document, I would quickly find myself on the first line having typed =ng= with no idea where I started.
+
+The problem is that I stop often to think about what I'm writing, and during these pauses, would forget what mode I was in. Now, I know the mode is clearly labeled at the bottom of the screen, but that didn't help. The other problem is that I tend to edit as I write, which, it seems, eliminates much of the advantage that Vim offers.[fn:2]
+
+
+Then, there was my flirtation with Emacs. Emacs fits the way that I write better than Vim, and I'll keep it around. There are several reasons that Emacs doesn't quite fit for me, though. First, I have trouble remembering the key combinations. I thought Vim's commands were fairly intuitive, Emacs commands never quite clicked. Second, I preferred [[http://emacsformacosx.com/][Gnu Emacs]] over [[http://aquamacs.org/][href="]] for various reasons, but [[http://smilesoftware.com/TextExpander][Textexpander]] snippets wouldn't work in Gnu Emacs. Finally, configuring both Vim and Emacs can be a long painful process for amateur geeks.
+
+So, I kept returning to TextMate, and kept telling myself that there really wasn't anything wrong with TextMate, it worked fine. It was starting to seem a bit slow, and I found it difficult to ignore the arbiters of doom announcing TextMate's demise, given the absence of version 2.0.
+
+Then, the heavens opened, and a beta version of TextMate 2 appeared. I downloaded it, and it just doesn't work as well for me as TextMate 1. I've had [[http://www.barebones.com/products/bbedit/][BBEdit]] ever since it became available in the Mac App Store. It's nice, but it just doesn't have the ease of TextMate for LaTeX editing. Then, I heard [[http://brettterpstra.com/][Brett Terpstra]] on the  [[http://macpowerusers.com/][Mac Power Users]] podcast talk about [[http://www.sublimetext.com/2][Sublime Text 2]]. So, I downloaded a trial version, and showing great restraint (at least, for me) used it for three days before I bought it. It definitely appears to have been inspired by TextMate, but has many improvements over TextMate 1. It is in beta, but it seems to be solidly reliable. It is fast, edits LaTeX like TextMate, easily configurable, and beautiful.
+
+So, Sublime Text 2, I think I'm in love, but you need to know how fickle I am. I can give you today, we'll just have to see what the future holds.
+
+UPDATE: It's 2024 now, and I've been using Emacs for over a decade. I still like to try out new editors, but I'm no longer searching for a new love.
+
+* Footnotes
+
+[fn:1] Never underestimate the power of the obvious.
+
+[fn:2] See Dr. Drang's excellent explanation [[http://www.leancrew.com/all-this/2008/07/why-vi/][here]].

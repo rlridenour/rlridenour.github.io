@@ -1,12 +1,7 @@
----
-comments: true
-date: '2010-07-15T21:08:24Z'
-tags:
-- religion
-title: Justice
-url: "/2010/07/15/i-cant-stand-your-religious-meetings-im-fed/"
+#+date: <2010-07-15>
+#+filetags: religion
+#+title: Justice
 
----
 #+begin+quote
 I can't stand your religious meetings.\\
 I'm fed up with your conferences and conventions.\\

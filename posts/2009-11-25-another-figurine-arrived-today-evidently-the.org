@@ -1,0 +1,12 @@
+#+date: <2009-11-24>
+#+filetags: aesthetics
+#+title: Diversity of Figurines
+
+Another figurine arrived today. Evidently, the collection needed a little gender balance. Happy Thanksgiving to all of my extremely thoughtful Aesthetics students.
+
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/gender-figurine.png]]
+#+end_center
+
+

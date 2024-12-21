@@ -1,0 +1,9 @@
+#+date: <2009-11-23>
+#+filetags: quotes
+#+title: Philosophers and Bums
+
+#+begin+quote
+'You must be a philosopher.' 'No, I'm a bum.'
+#+end_quote
+
+--- From /Barney Miller/

@@ -1,6 +1,6 @@
-#+#+date: <2011-05-08>
+#+date: <2011-05-08>
 #+filetags: quotes
-#+#+title: Needs
+#+title: Needs
 
 The chart says it all.
 

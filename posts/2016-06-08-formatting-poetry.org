@@ -1,0 +1,50 @@
+#+date: <2016-06-08>
+#+filetags: jekyll poetry
+#+title: Formatting Poetry
+
+I have been browsing [[http://jekyllrb.com/][Jekyll]] themes lately,
+and found a very nice theme for academics, the [[http://elotroalex.github.io/ed/documentation/#bibliographies][Ed. Theme]]. Its main purpose seems to be publishing classic texts and poetry on the web, and it includes some very handy tools.
+
+Getting indentation right is a problem with poetry on the web. For example, consider these lines from "The Code—Heroics" by Robert Frost.
+
+Here is the Markdown source:
+
+
+#+begin_example  markdown
+What was there wrong?
+		     Something you said just now.
+What did I say?
+	       About our taking pains.
+
+
+Even though it contains the proper indentation, it renders like this:
+
+What was there wrong?
+		     Something you said just now.
+What did I say?
+	       About our taking pains.
+#+end_example
+
+Now, stripping out extra whitespace is generally a good thing, but I don't want it to happen with poetry. With help from the CSS in the .Ed theme, I can get the indentation right.
+
+
+#+begin_example  markdown
+- What was there wrong?
+- {:.indent-10}Something you said just now.
+- What did I say?
+- {:.indent-6}About our taking pains.
+{:.poetry}
+#+end_example
+
+
+Ed. sets poetry as an unordered list, with each line as a list item. List style is set to "none" and the indented lines contain an "indent-x" attribute. This produces these properly indented lines:
+
+#+begin_example  markdown
+- What was there wrong?
+- {:.indent-10}Something you said just now.
+- What did I say?
+- {:.indent-65}About our taking pains.
+{:.poetry}
+#+end_example
+
+Ed. also contains formatting tools for bibliographies. It's built on [[https://github.com/poole/lanyon][Lanyon]], the theme that I use, so it was easy for me to just add the CSS that I wanted to my existing site.

@@ -1,0 +1,5 @@
+#+date: <2009-09-29>
+#+filetags: quotes aesthetics
+#+title: Danto on Warhol
+
+[[https://www.nybooks.com/articles/23153][This article]] quotes Danto calling Warhol "the nearest thing to a philosophical genius the history of art has produced."

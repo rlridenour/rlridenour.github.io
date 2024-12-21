@@ -1,0 +1,23 @@
+#+date: <2009-09-24>
+#+filetags: aesthetics
+#+title: More Figurines
+
+Another package arrived in the mail today, wrapped in tissue paper with my address scrawled in permanent marker. Is it art? Let's consider the theories that are in contention.
+    
+Art as mimesis - No human being has eyes like that, so it's a bad imitation.
+    
+Art as expression - Surely the artist couldn't have been experiencing the same emotion that I'm experiencing as I look on these. I wouldn't wish that on any human being.
+    
+Formalism - What do you really think Clive Bell would say about this?
+    
+Institutional theory - Purporting to confer the status of art in this case is conclusive proof that you never had the right to confer such status at all.
+    
+I'm standing by my earlier claim: it's still not art.
+    
+I hope that sale at the dollar store ends soon.
+
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/another-package.jpg]]
+#+end_center
+

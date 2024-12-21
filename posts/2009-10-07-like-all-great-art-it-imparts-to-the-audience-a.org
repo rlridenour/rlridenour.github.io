@@ -1,0 +1,11 @@
+#+date: <2009-10-07>
+#+filetags: quotes
+#+title: Brenner on Brahms
+
+From [[http://www.newyorker.com/humor/2009/10/12/091012sh_shouts_brenner?currentPage=all][/The New Yorker/]]:
+
+#+begin+quote
+Like all great art, it imparts to the audience a profound sense of empathy and belief, as well as a tremendous desire to urinate.
+#+end_quote
+
+--- Yoni Brenner, referring to Brahms' *Symphony No. 2*

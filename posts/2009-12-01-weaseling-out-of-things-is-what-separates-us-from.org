@@ -1,0 +1,9 @@
+#+date: <2009-12-01>
+#+filetags: quotes
+#+title: Weasels
+
+#+begin+quote
+Weaseling out of things is what separates us from the animals. Well, except the weasel.
+#+end_quote
+
+--- Homer Simpson

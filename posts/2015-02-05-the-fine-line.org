@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: The Fine Line
 
-#+begin+quote
+#+begin_quote
 There's a fine line between genius and insanity. I have erased this line.
 
 #+end_quote

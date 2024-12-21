@@ -4,7 +4,7 @@
 
 I thought this was fitting, since classes start tomorrow:
 
-#+begin+quote
+#+begin_quote
 Prayer holds together the shattered fragments of the creation. It makes history possible.
 #+end_quote
 

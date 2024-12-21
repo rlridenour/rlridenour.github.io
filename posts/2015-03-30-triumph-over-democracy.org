@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Triumph Over Democracy
 
-#+begin+quote
+#+begin_quote
 In the Soviet Union, capitalism triumphed over communism; in this country, capitalism triumphed over democracy.
 #+end_quote
 

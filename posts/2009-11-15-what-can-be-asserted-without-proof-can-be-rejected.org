@@ -2,7 +2,7 @@
 #+filetags: philosophy quotes
 #+title: Hitchens
 
-#+begin+quote
+#+begin_quote
 What can be asserted without proof can be rejected without proof.
 #+end_quote
 

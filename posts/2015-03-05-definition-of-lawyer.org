@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Definition of Lawyer
 
-#+begin+quote
+#+begin_quote
 Lawyer (n.) One skilled in the circumvention of the law.
 
 #+end_quote

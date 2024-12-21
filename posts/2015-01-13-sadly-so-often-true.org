@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Sadly So Often True
 
-#+begin+quote
+#+begin_quote
 
 The only good argument against Christianity is Christians.
 

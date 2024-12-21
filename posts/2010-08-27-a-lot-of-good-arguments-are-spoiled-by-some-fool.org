@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: De Unamuno on Arguments
 
-#+begin+quote
+#+begin_quote
 A lot of good arguments are spoiled by some fool who knows what he is talking about.
 #+end_quote
 

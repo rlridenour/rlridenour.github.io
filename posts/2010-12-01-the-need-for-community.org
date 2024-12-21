@@ -2,7 +2,7 @@
 #+filetags: quotes religion
 #+title: The Need for Community
 
-#+begin+quote
+#+begin_quote
 In order to give us a precise and clear example of humility in the perfection of love, our Lord took a towel and washed his disciples' feet. So what about you, living entirely on your own, how will you ever discover such humility? Whose feet will you wash? Whom will you care for?
 #+end_quote
 

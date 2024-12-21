@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Girard on Blame and Innocence
 
-#+begin+quote
+#+begin_quote
 In biblical texts, victims are innocent and collective violence is to blame. ln myths, the victims are to blame and communities are always innocent.
 #+end_quote
 

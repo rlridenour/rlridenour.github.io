@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Muffin Top of Hate
 
-#+begin+quote
+#+begin_quote
 So calm down and smile and loosen up your judgy pants because I can see your muffin top of hate and it's so not flattering.
 #+end_quote
 

@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Philosophers and Bums
 
-#+begin+quote
+#+begin_quote
 'You must be a philosopher.' 'No, I'm a bum.'
 #+end_quote
 

@@ -2,7 +2,7 @@
 #+filetags: quotes religion
 #+title: Surrender
 
-#+begin+quote
+#+begin_quote
 Jesus does not demand great actions from us but simply surrender and gratitude.
 #+end_quote
 

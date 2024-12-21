@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Exactly
 
-#+begin+quote
+#+begin_quote
 	We should have much peace if we would not busy ourselves with the sayings and doings of others.
 #+end_quote
 

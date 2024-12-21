@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Go Into the Fray
 
-#+begin+quote
+#+begin_quote
 A philosopher who is not taking part in discussions is like a boxer who never goes into the ring.
 #+end_quote
 

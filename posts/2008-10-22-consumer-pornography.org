@@ -4,4 +4,6 @@
 
 Prophetic thought for the day from Mark Woods, editor of Britain's /Baptist Times/, in a column for [[http://www.ethicsdaily.com/article_detail.cfm?AID=11221][Ethics Daily.com]]:
 
-"The glossy lifestyle magazines which are such a feature of weekend papers are consumer pornography, designed to titillate us with longings for what most of us can never have, and those of us who can will never need."
+#+begin_quote
+The glossy lifestyle magazines which are such a feature of weekend papers are consumer pornography, designed to titillate us with longings for what most of us can never have, and those of us who can will never need.
+#+end_quote

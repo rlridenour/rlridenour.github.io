@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Big-Haired Preachers
 
-#+begin+quote
+#+begin_quote
 They have the same feeble, literal grasp of the Bible as all those big-haired preachers do.
 #+end_quote
 

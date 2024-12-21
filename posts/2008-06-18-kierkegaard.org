@@ -4,7 +4,7 @@
 
 I began reading Kierkegaard's /Fear and Trembling/ yesterday. It didn't take long for me to recall what a friend once said:
 
-#+begin+quote
+#+begin_quote
 Don't read Kierkegaard in the bathroom; you can't concentrate on either job.
 #+end_quote
 

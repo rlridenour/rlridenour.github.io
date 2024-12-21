@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Cant Fix Stupid
 
-#+begin+quote
+#+begin_quote
 You can't fix stupid with duct tape, but you can sure muffle the sound.
 #+end_quote
 

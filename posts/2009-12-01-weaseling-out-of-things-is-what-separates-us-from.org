@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Weasels
 
-#+begin+quote
+#+begin_quote
 Weaseling out of things is what separates us from the animals. Well, except the weasel.
 #+end_quote
 

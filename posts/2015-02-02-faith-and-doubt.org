@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Faith and Doubt
 
-#+begin+quote
+#+begin_quote
 Faith which does not doubt is dead faith.
 #+end_quote
 

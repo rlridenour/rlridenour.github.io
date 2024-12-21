@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Stay Awake
 
-#+begin+quote
+#+begin_quote
 
 
 Disciple: "Is there anything I can do to make myself enlightened?"

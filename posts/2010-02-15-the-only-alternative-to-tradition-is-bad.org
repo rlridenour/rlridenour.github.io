@@ -2,7 +2,7 @@
 #+filetags: quotes religion
 #+title: Pelikan on Tradition
 
-#+begin+quote
+#+begin_quote
 The only alternative to tradition is bad tradition.
 #+end_quote
 

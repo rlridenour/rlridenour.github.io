@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Ice-T and Politics
 
-#+begin+quote
+#+begin_quote
 People ask me, "Ice, why don’t you get into politics?" I’m like, "I got out of crime!"
 #+end_quote
 

@@ -2,7 +2,7 @@
 #+filetags: quotes religion
 #+title: Wonder and Concepts
 
-#+begin+quote
+#+begin_quote
 Concepts create idols; only wonder comprehends anything. People kill one another over idols. Wonder makes us fall to our knees.
 #+end_quote
 

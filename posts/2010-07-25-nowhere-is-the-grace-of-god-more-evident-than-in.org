@@ -2,7 +2,7 @@
 #+filetags: quotes religion
 #+title: Even Preachers
 
-#+begin+quote
+#+begin_quote
 Nowhere is the grace of God more evident than in the fact that some preachers will be saved.
 #+end_quote
 

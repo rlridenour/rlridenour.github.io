@@ -2,7 +2,7 @@
 #+filetags: quotes religion
 #+title: Thomas More on Labor
 
-#+begin+quote
+#+begin_quote
 The things, good Lord, that we pray for, give us the grace to
 labor for.
 #+end_quote

@@ -2,7 +2,7 @@
 #+filetags: religion
 #+title: Justice
 
-#+begin+quote
+#+begin_quote
 I can't stand your religious meetings.\\
 I'm fed up with your conferences and conventions.\\
 I want nothing to do with your religion projects,\\

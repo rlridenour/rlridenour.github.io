@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Ignorance is Easy
 
-#+begin+quote
+#+begin_quote
 Ignorance may not be bliss, but it's certainly less work.
 #+end_quote
 

@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Love as Art
 
-#+begin+quote
+#+begin_quote
 We will make love an art and we will love like artists.
 #+end_quote
 

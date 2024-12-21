@@ -8,7 +8,7 @@ This is for all my students who send me emails at 3:00 in the morning.
 From Tony Schwarz's post titled "Sleep is More Important than Food" at the [[http://bit.ly/hC4REa][Harvard Business Review]]:
 
 
-#+begin+quote
+#+begin_quote
 
 
 ...In reality, the research suggests that even small amounts of sleep deprivation take a significant toll on our health, our mood, our cognitive capacity and our productivity.

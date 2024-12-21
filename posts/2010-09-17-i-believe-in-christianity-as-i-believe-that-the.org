@@ -2,7 +2,7 @@
 #+filetags: quotes religion
 #+title: Why Believe?
 
-#+begin+quote
+#+begin_quote
 I believe in Christianity as I believe that the sun has risen: not only because I see it, but because by it, I see everything else.
 #+end_quote
 

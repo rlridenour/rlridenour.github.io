@@ -2,7 +2,7 @@
 #+filetags: quotes philosophy
 #+title: Santayana on Fanaticism
 
-#+begin+quote
+#+begin_quote
 Fanaticism consists in redoubling your efforts when you have forgotten your aim.
 #+end_quote
 

@@ -2,7 +2,7 @@
 #+filetags: quotes
 #+title: Good Advice
 
-#+begin+quote
+#+begin_quote
 You're never too old to have a happy childhood.
 #+end_quote
 

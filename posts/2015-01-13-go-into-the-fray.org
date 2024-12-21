@@ -1,0 +1,9 @@
+#+date: <2015-01-13>
+#+filetags: quotes
+#+title: Go Into the Fray
+
+#+begin+quote
+A philosopher who is not taking part in discussions is like a boxer who never goes into the ring.
+#+end_quote
+
+--- Ludwig Wittgenstein

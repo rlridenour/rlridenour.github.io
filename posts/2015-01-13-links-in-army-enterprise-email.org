@@ -1,0 +1,25 @@
+#+date: <2015-01-13>
+#+filetags: army
+#+title: Links in Army Enterprise Email
+
+This will probably be useful to only a few people, but maybe it will help someone who is frantically searching the internet for an answer.
+
+Roughly a year ago, the Army changed its email service to an Exchange Enterprise system. The old address, which I have had for years (decades?) forwards to the new address, which I never can seem to easily remember. It seems, though, that links in forwarded emails are stripped out for security purposes. This is not a problem if the url is visible in the message, like this:
+
+=http://google.com=
+
+One can simply copy and paste the url into the browser. If the link is embedded into text or a graphic, though, there is nothing to copy. Any link seems to go to
+
+=https://web-cols01.mail.mil/owa/UrlBlockedError.aspx=
+
+This makes it impossible to retrieve the original linked URL.
+
+The problem that I had was with the Microsoft Home Use Program (HUP), which sells copies of Microsoft Office to military members at a very low price. For various reasons, I don't like using Office, but it's what the military uses, and I occasionally need it. Of course, to verify eligibility, the email had to be sent to a .mil address, and the link couldn't be opened. I tried forwarding the email to a Gmail account, but the links were still broken.
+
+The solution was to select "Options" for the message, and forward it /as an attachment/ to Gmail. The links were still broken, but broken in a way that the original URL could be retrieved. After forwarding as an attachment, the link to Google would be
+
+=blockedhttp://google.com=
+
+Just copy the link, paste it in, and delete the word "blocked" before pressing the enter key.
+
+It only took two months to figure that out. It might be better if I'd simply learn the new Enterprise address.

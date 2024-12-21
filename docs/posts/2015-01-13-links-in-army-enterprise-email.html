@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 21, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Links in Army Enterprise Email</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Links in Army Enterprise Email</h1>
+<p class="subtitle" role="doc-subtitle">Jan 13, 2015</p>
+</header><p>
+This will probably be useful to only a few people, but maybe it will help someone who is frantically searching the internet for an answer.
+</p>
+
+<p>
+Roughly a year ago, the Army changed its email service to an Exchange Enterprise system. The old address, which I have had for years (decades?) forwards to the new address, which I never can seem to easily remember. It seems, though, that links in forwarded emails are stripped out for security purposes. This is not a problem if the url is visible in the message, like this:
+</p>
+
+<p>
+<code>http://google.com</code>
+</p>
+
+<p>
+One can simply copy and paste the url into the browser. If the link is embedded into text or a graphic, though, there is nothing to copy. Any link seems to go to
+</p>
+
+<p>
+<code>https://web-cols01.mail.mil/owa/UrlBlockedError.aspx</code>
+</p>
+
+<p>
+This makes it impossible to retrieve the original linked URL.
+</p>
+
+<p>
+The problem that I had was with the Microsoft Home Use Program (HUP), which sells copies of Microsoft Office to military members at a very low price. For various reasons, I don&rsquo;t like using Office, but it&rsquo;s what the military uses, and I occasionally need it. Of course, to verify eligibility, the email had to be sent to a .mil address, and the link couldn&rsquo;t be opened. I tried forwarding the email to a Gmail account, but the links were still broken.
+</p>
+
+<p>
+The solution was to select &ldquo;Options&rdquo; for the message, and forward it <i>as an attachment</i> to Gmail. The links were still broken, but broken in a way that the original URL could be retrieved. After forwarding as an attachment, the link to Google would be
+</p>
+
+<p>
+<code>blockedhttp://google.com</code>
+</p>
+
+<p>
+Just copy the link, paste it in, and delete the word &ldquo;blocked&rdquo; before pressing the enter key.
+</p>
+
+<p>
+It only took two months to figure that out. It might be better if I&rsquo;d simply learn the new Enterprise address.
+</p>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 21, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

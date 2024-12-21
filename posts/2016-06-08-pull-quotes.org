@@ -1,0 +1,29 @@
+#+date: <2016-06-08>
+#+filetags: jekyll
+#+title: Pull Quotes
+
+Here is my attempt at pull quotes in the Lanyon/Poole theme for Jekyll:
+
+
+#+begin_example css
+.pquote {
+    float: right;
+    width: 15rem;
+    color: #979797;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-style: italic;
+    padding: 1rem;
+	quotes: "\201C""\201D""\2018""\2019";
+}
+#+end_example
+
+I just learned that Kramdown makes it easy to specify classes and attributes. So, this produces the pull quote:
+
+#+begin_example markdown
+> This is some quoted text.
+{:.pquote}
+#+end_example
+
+
+It is easy to add quotation marks automatically, using the "before" and "after" class selectors. I decided not to do this for the sake of flexibility.

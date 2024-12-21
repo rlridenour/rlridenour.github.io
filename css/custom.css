@@ -1,5 +1,18 @@
 /* Put your custom CSS rules here */
 
+:root {
+    --light: #fff;
+    --lesslight: #efefef;
+    --dark: #333333;
+    --moredark: #000;
+    --link: #0047AB;
+    border-top: 5px solid var(--dark);
+    line-height: 1.5em;
+    font-family: system-ui, sans-serif;
+    font-size: 18px;
+    color: var(--dark);
+}
+
 
 .banner {
     text-align: center;

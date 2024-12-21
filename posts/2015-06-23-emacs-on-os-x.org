@@ -1,0 +1,47 @@
+#+date: <2015-06-23>
+#+filetags: emacs osx
+#+title: Emacs on OS X
+
+** Homebrew
+
+I install Emacs with [[http://brew.sh][Homebrew]]. After installing Homebrew, just type the following in Terminal:
+
+=brew install emacs --cocoa=
+
+This makes upgrading very easy, `brew upgrade` updates everything that you've installed in Homebrew. It also keeps things nicely organized in /usr/local/Cellar/ and puts symbolic links in /usr/local/bin/. After installation, you have two options for getting Emacs into your Applications directory. First, Homebrew can put a link there with `brew linkapps Emacs`. Second, you can copy Emacs to /Applications with
+
+=cp -r /usr/local/Cellar/emacs/24.5/Emacs.app /Applications/=
+
+** Prelude
+
+I use [[http://batsov.com/prelude/][Emacs Prelude]], a starter kit by Bozhidar Batsov. There are many Emacs users that advocate setting up your own configuration from scratch, and I've done that many times. I keep coming back to Prelude, though, it just makes the initial work so much easier. Prelude includes a personal directory for individual configuration files. I keep all of those files in a git repository located in Dropbox with symbolic links in the Prelude personal directory. That way, I can use Github for version control, but have all machines in sync with no effort.
+
+There are two important files in my personal directory. The first is an emacs-lisp file containing this:
+
+
+#+begin_example emacs-lisp
+;;Load emacs personal settings via org
+(prelude-require-package 'org)
+(org-babel-load-file
+(expand-file-name "personal/settings.org" user-emacs-directory))
+#+end_example
+
+This file loads an org-mode file that contains the actual configuration. If you'd like to see it, it's all [[https://github.com/rlridenour/prelude-personal ][here]] on Github.
+
+** Starting Emacs
+
+I like to start Emacs using the daemon, which keeps an Emacs server running in the background, then connect to that server with Emacs Client. This makes opening Emacs nearly instantaneous.
+
+In the past, I've done this from the terminal by putting with these aliases in my zshrc:
+
+
+- =alias daemon="emacs --daemon"=
+- =alias ec="emacsclient -c -a ''"=
+- =alias ef="emacsclient -c -a '' -F '((fullscreen . maximized))'"=
+- =alias e="emacsclient -t"=
+
+The first simply starts the server. I never used it, because the second would connect to the server one were already running, otherwise, it would start one, then connect to it. The third does the same thing, but starts an Emacs client with a maximized frame.
+
+This worked well, but I usually use Alfred to start applications, not the terminal. After trying many options, I ran across these instructions by [[http://blog.haberkucharsky.com/tech/2015/01/26/emacs-on-osx.html ][Jesse Haber-Kucharsky]]. I created the Emacs Daemon application with one change, instead of using Emacs in /Applications, I had the script point directly to /usr/local/bin/ instead. I created the three shell scripts as directed, but instead of the Emacs-Cocoa application, I created one called "Emacs Client" that started the "ec" script. The daemon runs at startup, then I call Emacs Client from Alfred whenever I want to start Emacs.
+
+There are parts of this that I really didn't need to do, but too much is better than not enough, I suppose.

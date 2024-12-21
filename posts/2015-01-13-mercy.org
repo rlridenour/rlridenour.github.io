@@ -1,0 +1,59 @@
+#+date: <2015-01-13>
+#+filetags: religion
+#+title: Mercy, the Law, and Les Misérables
+
+Mitch Randall always seems to have some clever and interesting themes to use for his sermon series. In the past, we've had, among others, movies, board-games, and monsters. This summer, the series was called "NorthHaven Goes to Broadway." Unfortunately, I missed most of it because of our vacation trip and military duty, but I was there this past Sunday for his sermon based on Les Misérables.
+
+I don't know if she was doing it to spiritually prepare for Sunday, but Sheri, my wife, had been playing the 2012 film version over the past week. A few days ago, she pointed out that there is an ethical problem in the film---specifically, the conflict between mercy, on the one hand, and faithfulness to the law on the other.
+
+In Victor Hugo's novel, Jean Valjean was an embittered ex-convict, unable to find food or lodging. When the the Bishop of Digne offered him shelter for the night, Valjean repaid him by stealing a set of expensive, extravagant silverware. The next morning, the police apprehended Valjean who told them an implausible story of how he had been given the silverware by the Bishop. When they dragged Valjean back to verify the story, we are given one of the most powerful scenes of grace found in literature:
+
+#+begin_quote
+The door opened to disclose a dramatic group. Three men were holding a fourth by the arms and neck. The three were gendarmes; the fourth was Jean Valjean...
+
+'So here you are!' he cried to Valjean. 'I'm delighted to see you. Had you forgotten that I gave you the candlesticks as well? They're silver like the rest, and worth a good two hundred francs. Did you forget to take them?'
+
+Jean Valjean's eyes had widened. He was now staring at the old man with an expression no words can convey...
+
+He fetched them from the mantelpiece and handed them to Valjean. The two women watched him do so without seeking by word or look to interfere. Valjean was trembling. He took the candlesticks mechanically and with a distracted air.
+
+'And now,' said the bishop, 'go in peace. Incidentally, my friend, when next you come here you need not go through the garden. This door is never locked.' He turned to the gendarmes. 'Thank you, gentlemen.'
+
+The gendarmes withdrew. Valjean stayed motionless as though he were on the verge of collapse. The bishop came up to him and said in a low voice:
+
+'Do not forget, do not ever forget, that you have promised me to use the money to make yourself an honest man.'
+
+Valjean, who did not recall having made any promise, was silent. The bishop had spoken the words slowly and deliberately. He concluded with a solemn emphasis:
+
+'Jean Valjean, my brother, you no longer belong to what is evil but to what is good. I have bought your soul to save it from black thoughts and the spirit of perdition, and I give it to God.'[fn:1]
+#+end_quote
+
+Jean Valjean was transformed, but like most transformations, it was not instantaneous---after he went on his way, in his confusion, he stole a coin from a boy. He soon realized what he had done, and attempted to return the coin, but the theft has already been reported. If he were caught, he would be sentenced to life as a repeat offender.
+
+Valjean adopted an alias and went on to forge a new life for himself. Eventually, he became a wealthy factory owner, the town mayor, and by all accounts, an honorable man. When Valjean learned that an innocent man faced punishment for Valjean's past crimes, he went to court and proclaimed his true identity.
+
+This led to a series of arrests and escapes, and Valjeans constant pursuit by Javert, a fanatical police inspector, who seemed to seek only the enforcement of the law. At a critical point, Valjean had an opportunity to kill Javert, but instead, saved his life. Javert could not reconcile mercy and the law, and after this act of mercy on the part of Valjean, he could neither arrest Valjean nor let him go free. Javert's only escape from his cognitive dissonance was suicide.
+
+In May, several news sources[fn:2] reported the story of the arrest of Cornealious Anderson. Anderson was convicted and sentenced when he was 23 for his role in a robbery. He was then told to wait for orders to report to prison, but those orders never came. He never hid his identity, and even asked his attorney what he should do. In the meantime, he married, raised four children, started and operated construction businesses, coached his son's football team, and ran the video during the services of his church.
+
+When his original sentence was supposed to end, the state realized its clerical error. Anderson, through no fault of his own, had never served any part of his sentence. Eight US Marshals were immediately sent to his home to take him into custody.
+
+Should the state of Missouri have enforced the original sentence or should it have shown mercy? Does acting on one show no respect for the other?
+
+Judge Terry Brown of Mississippi County, Missouri freed Anderson after a ten minute hearing, and granted him time-served for his entire sentence---he walked out of the courtroom with his family and no requirement for parole. Anderson's attorney said that the case shows that "justice can be swift, justice can be harsh, but justice also can be merciful."
+
+There lies the solution to the problem. The law should serve the interests of justice. So, we shouldn't ask if mercy is compatible with the law, but rather if mercy is compatible with *justice*, and that depends on what justice is. Is justice an act of revenge upon the one who committed the wrong, or is justice an act of restoration?
+
+An act of robbery has many more victims than just the one who was robbed. The criminal obviously harmed the one who was robbed, but also harmed the greater community. This explains, at least in part, why the state, not just the individual, has in interest in the  prosecution of crime. Socrates thought that the greatest harm was done to offender himself, self-harm that consists in harm both to one's moral personality and one's relation to other members of the community.
+
+The restorative justice movement understands justice as the repairing of the harm that was caused by criminal act, the harm done to victims, the community, and also to the offenders. The goal of justice, then, is the restoration of community and the transformation of those involved.
+
+In the fictional case of Valjean and the actual case of Anderson, meeting the demands of the law would do more to harm the restoration of community than had already been achieved. So, in these cases, justice is not only compatible with mercy, but demands mercy.
+
+For more information on Restorative Justice, see [[http://www.restorativejustice.org][Restorative Justice Online]].
+
+* Footnotes
+
+[fn:1]: Victor Hugo, /Les Misérables/, tr. Norman Denny (New York: Penguin, 2012), 110-111.
+
+[fn:2] Here are stories from the [[http://www.washingtonpost.com/news/post-nation/wp/2014/05/05/missouri-man-sent-to-prison-13-years-later-than-intended-is-released/][Washington Post]] and the [[http://www.theguardian.com/world/2014/may/05/missouri-man-imprisoned-13-year-delay][Guardian]].

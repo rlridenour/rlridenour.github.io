@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 21, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs on OS X</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">Emacs on OS X</h1>
+<p class="subtitle" role="doc-subtitle">Jun 23, 2015</p>
+</header><section id="outline-container-org3cab046" class="outline-2">
+<h2 id="org3cab046">Homebrew</h2>
+<div class="outline-text-2" id="text-org3cab046">
+<p>
+I install Emacs with <a href="http://brew.sh">Homebrew</a>. After installing Homebrew, just type the following in Terminal:
+</p>
+
+<p>
+<code>brew install emacs --cocoa</code>
+</p>
+
+<p>
+This makes upgrading very easy, `brew upgrade` updates everything that you&rsquo;ve installed in Homebrew. It also keeps things nicely organized in <i>usr/local/Cellar</i> and puts symbolic links in <i>usr/local/bin</i>. After installation, you have two options for getting Emacs into your Applications directory. First, Homebrew can put a link there with `brew linkapps Emacs`. Second, you can copy Emacs to /Applications with
+</p>
+
+<p>
+<code>cp -r /usr/local/Cellar/emacs/24.5/Emacs.app /Applications/</code>
+</p>
+</div>
+</section>
+<section id="outline-container-org750e158" class="outline-2">
+<h2 id="org750e158">Prelude</h2>
+<div class="outline-text-2" id="text-org750e158">
+<p>
+I use <a href="http://batsov.com/prelude/">Emacs Prelude</a>, a starter kit by Bozhidar Batsov. There are many Emacs users that advocate setting up your own configuration from scratch, and I&rsquo;ve done that many times. I keep coming back to Prelude, though, it just makes the initial work so much easier. Prelude includes a personal directory for individual configuration files. I keep all of those files in a git repository located in Dropbox with symbolic links in the Prelude personal directory. That way, I can use Github for version control, but have all machines in sync with no effort.
+</p>
+
+<p>
+There are two important files in my personal directory. The first is an emacs-lisp file containing this:
+</p>
+
+
+<pre class="example" id="orgf2b851f">
+;;Load emacs personal settings via org
+(prelude-require-package 'org)
+(org-babel-load-file
+(expand-file-name "personal/settings.org" user-emacs-directory))
+</pre>
+
+<p>
+This file loads an org-mode file that contains the actual configuration. If you&rsquo;d like to see it, it&rsquo;s all <a href="https://github.com/rlridenour/prelude-personal%20">here</a> on Github.
+</p>
+</div>
+</section>
+<section id="outline-container-orgebb64a2" class="outline-2">
+<h2 id="orgebb64a2">Starting Emacs</h2>
+<div class="outline-text-2" id="text-orgebb64a2">
+<p>
+I like to start Emacs using the daemon, which keeps an Emacs server running in the background, then connect to that server with Emacs Client. This makes opening Emacs nearly instantaneous.
+</p>
+
+<p>
+In the past, I&rsquo;ve done this from the terminal by putting with these aliases in my zshrc:
+</p>
+
+
+<ul class="org-ul">
+<li><code>alias daemon</code>&ldquo;emacs &#x2013;daemon&rdquo;=</li>
+<li><code>alias ec</code>&ldquo;emacsclient -c -a &lsquo;&rsquo;&rdquo;=</li>
+<li><code>alias ef</code>&ldquo;emacsclient -c -a &lsquo;&rsquo; -F &rsquo;((fullscreen . maximized))&rsquo;&rdquo;=</li>
+<li><code>alias e</code>&ldquo;emacsclient -t&rdquo;=</li>
+</ul>
+
+<p>
+The first simply starts the server. I never used it, because the second would connect to the server one were already running, otherwise, it would start one, then connect to it. The third does the same thing, but starts an Emacs client with a maximized frame.
+</p>
+
+<p>
+This worked well, but I usually use Alfred to start applications, not the terminal. After trying many options, I ran across these instructions by <a href="http://blog.haberkucharsky.com/tech/2015/01/26/emacs-on-osx.html%20">Jesse Haber-Kucharsky</a>. I created the Emacs Daemon application with one change, instead of using Emacs in <i>Applications, I had the script point directly to /usr/local/bin</i> instead. I created the three shell scripts as directed, but instead of the Emacs-Cocoa application, I created one called &ldquo;Emacs Client&rdquo; that started the &ldquo;ec&rdquo; script. The daemon runs at startup, then I call Emacs Client from Alfred whenever I want to start Emacs.
+</p>
+
+<p>
+There are parts of this that I really didn&rsquo;t need to do, but too much is better than not enough, I suppose.
+</p>
+</div>
+</section>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 21, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

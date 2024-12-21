@@ -4,7 +4,7 @@
 <!-- Dec 21, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Needs</title>
+<title>Formatting Poetry</title>
 <meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
@@ -52,19 +52,66 @@
 </header>
 <main id="content" class="content">
 <header>
-<h1 class="title">Needs</h1>
-<p class="subtitle" role="doc-subtitle">May 08, 2011</p>
+<h1 class="title">Formatting Poetry</h1>
+<p class="subtitle" role="doc-subtitle">Jun 08, 2016</p>
 </header><p>
-The chart says it all.
+I have been browsing <a href="http://jekyllrb.com/">Jekyll</a> themes lately,
+and found a very nice theme for academics, the <a href="http://elotroalex.github.io/ed/documentation/#bibliographies">Ed. Theme</a>. Its main purpose seems to be publishing classic texts and poetry on the web, and it includes some very handy tools.
 </p>
 
-<div class="org-center">
+<p>
+Getting indentation right is a problem with poetry on the web. For example, consider these lines from &ldquo;The Code—Heroics&rdquo; by Robert Frost.
+</p>
 
-<figure id="org67d2b41">
-<img src="../images/posts/needs.png" alt="needs.png" width="100%">
+<p>
+Here is the Markdown source:
+</p>
 
-</figure>
-</div>
+
+<pre class="example" id="orge56c9d0">
+What was there wrong?
+		     Something you said just now.
+What did I say?
+	       About our taking pains.
+
+
+Even though it contains the proper indentation, it renders like this:
+
+What was there wrong?
+		     Something you said just now.
+What did I say?
+	       About our taking pains.
+</pre>
+
+<p>
+Now, stripping out extra whitespace is generally a good thing, but I don&rsquo;t want it to happen with poetry. With help from the CSS in the .Ed theme, I can get the indentation right.
+</p>
+
+
+<pre class="example" id="orga8291c1">
+- What was there wrong?
+- {:.indent-10}Something you said just now.
+- What did I say?
+- {:.indent-6}About our taking pains.
+{:.poetry}
+</pre>
+
+
+<p>
+Ed. sets poetry as an unordered list, with each line as a list item. List style is set to &ldquo;none&rdquo; and the indented lines contain an &ldquo;indent-x&rdquo; attribute. This produces these properly indented lines:
+</p>
+
+<pre class="example" id="orge22e33d">
+- What was there wrong?
+- {:.indent-10}Something you said just now.
+- What did I say?
+- {:.indent-65}About our taking pains.
+{:.poetry}
+</pre>
+
+<p>
+Ed. also contains formatting tools for bibliographies. It&rsquo;s built on <a href="https://github.com/poole/lanyon">Lanyon</a>, the theme that I use, so it was easy for me to just add the CSS that I wanted to my existing site.
+</p>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>

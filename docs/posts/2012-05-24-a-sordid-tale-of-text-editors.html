@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Dec 21, 2024 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Sordid Tale of Text Editors</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
+<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<header>
+<h1 class="title">A Sordid Tale of Text Editors</h1>
+<p class="subtitle" role="doc-subtitle">May 24, 2012</p>
+</header><p>
+For years now, It seems like I have been searching for the perfect text editor. Evidently, there are those who believe that there is one single perfect text editor for everyone. If you need evidence, just search the Internet for &amp;#8220;Vim vs. Emacs.&amp;#8221; My experience, though, leads to me believe that, when it comes to text editors, like many other tools, perfection is relative to the individual. What tool is needed depends on how the individual writer works and thinks.
+</p>
+
+<p>
+I used word processors (beginning with WordPerfect 5.1, which I still think is the best, it&rsquo;s been all downhill for word processors ever since) until I started writing LaTeX documents. I began with TeXShop, which comes bundled with <a href="http://www.tug.org/mactex/2011/">MacTeX</a>. TeXShop is an excellent resource for writing LaTeX. It&rsquo;s free, powerful, and I recommend it with no reservations at all.
+</p>
+
+<p>
+I don&rsquo;t know why I began experimenting with other editors. I surely didn&rsquo;t need any other editor to edit LaTeX. It may have been when I started writing in <a href="http://fletcherpenney.net/multimarkdown/">MultiMarkdown</a> (MMD). Markdown, created by John Gruber, is a simple way to produce very readable documents and convert them to HTML. Markdown has grown in popularity recently, resulting in an abundance of simple Markdown editors for both OS X and iOS. I can&rsquo;t remember what year I stumbled on it, but at some point I discovered Fletcher Penney&rsquo;s MultiMarkdown. MultiMarkdown adds some features to Markdown, including tables and footnotes, among other things. The most important feature for me, though, was the ability to convert the document to both HTML and to LaTeX. So, I started writing in MultiMarkdown, which then gave me the ability to export the same document in several formats as needed. I could have used TeXShop to write MMD, but it wasn&rsquo;t the best experience.
+</p>
+
+<p>
+At the time, there was a great deal of excitement about <a href="http://macromates.com/">TextMate</a>. After watching some videos on YouTube showing LaTeX editing with TextMate, I was hooked. Then, I discovered that Fletcher Penney himself had produced a Markdown bundle for TextMate. So, I could use TextMate to easily edit an MMD document, with a quick keyboard shortcut, convert it to a LaTeX file, touch up any TeX code, then build the PDF, all from within TextMate.
+</p>
+
+<p>
+But then, I started hearing things about Vim. So, I downloaded <a href="http://code.google.com/p/macvim/">MacVim</a>, and then spent a great deal of time learning the Vim commands and configuring my .vimrc. In my opinion, navigating files in Vim is pure magic, and I don&rsquo;t think that there is anything better for editing, that is, making small corrections to an existing document.
+</p>
+
+<p>
+Although I understand Vim, and can use it competently, it never quite fit the way that I work. Vim is a modal editor, which means that different modes are used for different things. For instance, insert mode is for inserting text.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> Normal mode is used for navigating the document, among other things. The beauty of Vim is how much one can do with very few keystrokes. For instance, pressing <code>dd</code> deletes a sentence, and <code>2dd</code> deletes two sentences. Vim experts look like sorcerers at the keyboard. Unfortunately, Vim just never quite fit for me as a tool to write longer documents, I still use it in the terminal for writing short things like Git commit statements. I would find myself starting to write after a break to think, and suddenly be inserting text in a completely different part of the document. For instance, in normal mode, <code>e</code> moves the cursor to the end of the word, <code>gg</code> moves the cursor to the beginning of the document, and <code>i</code> switches to insert mode. So, in normal mode, if I started typing the word &ldquo;beginning&rdquo; anywhere in the document, I would quickly find myself on the first line having typed <code>ng</code> with no idea where I started.
+</p>
+
+<p>
+The problem is that I stop often to think about what I&rsquo;m writing, and during these pauses, would forget what mode I was in. Now, I know the mode is clearly labeled at the bottom of the screen, but that didn&rsquo;t help. The other problem is that I tend to edit as I write, which, it seems, eliminates much of the advantage that Vim offers.<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>
+</p>
+
+
+<p>
+Then, there was my flirtation with Emacs. Emacs fits the way that I write better than Vim, and I&rsquo;ll keep it around. There are several reasons that Emacs doesn&rsquo;t quite fit for me, though. First, I have trouble remembering the key combinations. I thought Vim&rsquo;s commands were fairly intuitive, Emacs commands never quite clicked. Second, I preferred <a href="http://emacsformacosx.com/">Gnu Emacs</a> over <a href="http://aquamacs.org/">href="</a> for various reasons, but <a href="http://smilesoftware.com/TextExpander">Textexpander</a> snippets wouldn&rsquo;t work in Gnu Emacs. Finally, configuring both Vim and Emacs can be a long painful process for amateur geeks.
+</p>
+
+<p>
+So, I kept returning to TextMate, and kept telling myself that there really wasn&rsquo;t anything wrong with TextMate, it worked fine. It was starting to seem a bit slow, and I found it difficult to ignore the arbiters of doom announcing TextMate&rsquo;s demise, given the absence of version 2.0.
+</p>
+
+<p>
+Then, the heavens opened, and a beta version of TextMate 2 appeared. I downloaded it, and it just doesn&rsquo;t work as well for me as TextMate 1. I&rsquo;ve had <a href="http://www.barebones.com/products/bbedit/">BBEdit</a> ever since it became available in the Mac App Store. It&rsquo;s nice, but it just doesn&rsquo;t have the ease of TextMate for LaTeX editing. Then, I heard <a href="http://brettterpstra.com/">Brett Terpstra</a> on the  <a href="http://macpowerusers.com/">Mac Power Users</a> podcast talk about <a href="http://www.sublimetext.com/2">Sublime Text 2</a>. So, I downloaded a trial version, and showing great restraint (at least, for me) used it for three days before I bought it. It definitely appears to have been inspired by TextMate, but has many improvements over TextMate 1. It is in beta, but it seems to be solidly reliable. It is fast, edits LaTeX like TextMate, easily configurable, and beautiful.
+</p>
+
+<p>
+So, Sublime Text 2, I think I&rsquo;m in love, but you need to know how fickle I am. I can give you today, we&rsquo;ll just have to see what the future holds.
+</p>
+
+<p>
+UPDATE: It&rsquo;s 2024 now, and I&rsquo;ve been using Emacs for over a decade. I still like to try out new editors, but I&rsquo;m no longer searching for a new love.
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes</h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Never underestimate the power of the obvious.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+See Dr. Drang&rsquo;s excellent explanation <a href="http://www.leancrew.com/all-this/2008/07/why-vi/">here</a>.
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 21, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+---
+comments: true
+date: '2010-07-15T21:08:24Z'
+tags:
+- religion
+title: Justice
+url: "/2010/07/15/i-cant-stand-your-religious-meetings-im-fed/"
+
+---
+#+begin+quote
+I can't stand your religious meetings.\\
+I'm fed up with your conferences and conventions.\\
+I want nothing to do with your religion projects,\\
+your pretentious slogans and goals.\\
+I'm sick of your fund-raising schemes,\\
+your public relations and image making.\\
+I've had all I can take of your noisy ego-music.\\
+When was the last time you sang to me?\\
+Do you know what I want?\\
+I want justice—oceans of it.\\
+I want fairness—rivers of it.\\
+That's what I want. That's all I want.
+
+#+end_quote
+
+--- Amos 5:21-24 (/The Message/)

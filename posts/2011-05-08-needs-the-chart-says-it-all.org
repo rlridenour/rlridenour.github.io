@@ -1,0 +1,11 @@
+#+#+date: <2011-05-08>
+#+filetags: quotes
+#+#+title: Needs
+
+The chart says it all.
+
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/needs.png]]
+#+end_center
+

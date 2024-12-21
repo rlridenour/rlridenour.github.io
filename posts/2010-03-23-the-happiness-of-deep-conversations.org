@@ -1,0 +1,7 @@
+#+date: <2010-03-23>
+#+filetags: philosophy
+#+title: The Happiness of Deep Conversations
+
+The New York Times [[http://well.blogs.nytimes.com/2010/03/17/talk-deeply-be-happy/?src=me&amp;ref=general][recently reported]] on a study published in [[http://pss.sagepub.com/content/early/2010/02/17/0956797610362675.full][/Psychological Science/]] suggesting that people who engage in substantive, meaningful conversations are happier than those who do not.
+
+It appears that Mill was right — it is better to be a dissatisfied Socrates than a satisfied pig.

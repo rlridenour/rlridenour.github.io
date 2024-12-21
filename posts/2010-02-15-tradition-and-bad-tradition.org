@@ -1,0 +1,17 @@
+#+date: <2010-02-15>
+#+filetags: religion philosophy
+#+title: Tradition and Bad Tradition
+
+Recently, I posted a quote on the [[http://rlridenour.tumblr.com/][Tumblr]] page from Jaroslav Pelikan: "The only alternative to tradition is bad tradition." At the time, I realized it needed some explanation, but posted it anyway. Some comments show that the quote is meaningless without some context.
+
+John Mouracade pointed out that it looks like a false dilemma. A false dilemma is a fallacy committed when one asserts that at least one of two different alternatives must be true, but ignores other alternatives that might also be true. Now, if Pelikan meant to say that the only alternative to /good/ tradition is bad tradition, then it's clearly a false dilemma. Surely, some tradition is neither good nor bad. Pelikan didn't say that, though. He said that the only alternative to tradition (unqualified) is /bad tradition/.
+
+Is that claim a false dilemma? On the surface it looks like it is. The claim is that one is either bound by tradition or by bad tradition. What about breaking from tradition completely? Surely that's an option. Pelikan has asserted two alternatives and ignored a third.
+
+Of course, it were a simple logical fallacy, the claim wouldn't be very interesting (and Pelikan probably wouldn't have deserved that prestigious chair at Yale!). Notice that Pelikan has not asserted that one of two different alternatives must be true. Since every instance of bad tradition is an instance of tradition, they are not two different things. Instead, he has asserted simply that there is no escaping tradition. That may be false, but it's not a false dilemma. If it were a false dilemma, then every false assertion commits the fallacy of a false dilemma. To say that either all roses are red or all roses are red is simply to say that all roses are red.
+
+In the interview that I quote from (an episode of Public Radio's [[http://speakingoffaith.publicradio.org/programs/pelikan//][/Speaking of Faith/]]), Pelikan is discussing the relationship of belief and church tradition. His claim is directed toward those who deny that tradition should play any role in our belief. A church could decide that tradition should play no role in the context of belief, or "We don't let tradition determine what we believe, we decide ourselves." Does this constitute an escape from tradition? In a sense, yes, but it really just constitutes the establishment of a new tradition. "It is our tradition not to pay any attention to past traditions...."
+
+It is best to intentionally critically examine one's tradition and keep the best parts of that tradition. There are two other likely alternatives, one is a break with past tradition that simply establishes a new tradition. The other is one that continues to hold on to the less desirable components of past tradition. Neither are likely to result in the best outcome. The latter keeps the things that we should be breaking from, while the former breaks from things that we should be retaining. So, indeed, the only alternative to tradition is bad tradition.
+
+For philosophers, that means we shouldn't stop teaching Plato and Aristotle. For Baptists, it means that we ignore the study of Baptist history at our peril. I guess the moral of the story is this: if you are a religion major and one of my advisees, don't ask to be excused from that Baptist History requirement. Keep in mind, though, there's no Baptist History requirement for a philosophy major.

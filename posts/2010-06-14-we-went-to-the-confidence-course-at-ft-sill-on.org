@@ -1,0 +1,11 @@
+#+date: <2010-06-14>
+#+filetags: army
+#+title: Bruised for the Gospel
+
+We went to the Confidence Course at Ft. Sill on Saturday. I came back with a black eye, multiple bruises, and a sprained knee. I also had a soldier come to chapel on Sunday who had never attended before. What's a few bruises for the sake of the Gospel?
+
+
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/confidence-course.png]]
+#+end_center

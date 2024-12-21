@@ -1,0 +1,9 @@
+#+date: <2010-08-27>
+#+filetags: quotes
+#+title: De Unamuno on Arguments
+
+#+begin+quote
+A lot of good arguments are spoiled by some fool who knows what he is talking about.
+#+end_quote
+
+--- Miguel De Unamuno

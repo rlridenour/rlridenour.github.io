@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:24-12-22-style-test.org][Style Test]]
 - [[file:24-12-17-blogging-with-org-mode.org][Blogging with Org Mode]]
 - [[file:24-12-17-end-semester.org][End of the Semester]]
 - [[file:24-12-05-moving-site.org][Moving the Site]]

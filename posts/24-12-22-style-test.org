@@ -1,0 +1,124 @@
+#+TITLE: Style Test
+#+date: <2024-12-22 Sun>
+#+filetags: 
+#+setupfile: ../org-templates/post.org
+
+This is a test page for trying out CSS styles.
+
+* Headings
+
+* H1 Heading
+
+** H2 Heading
+
+*** H3 Heading
+
+**** H4 Heading
+
+***** H5 Heading
+
+****** H6 Heading
+
+
+* Text
+
+Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum.[fn:1]
+
+Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum.[fn:2]
+
+Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum.
+
+
+* Markup
+
+- This is some *bold text*.
+- This is some /emphasized/ text.
+- This is some _underlined_ text.
+- This is some =code=.
+- This some ~styled~ text.
+- This is some +strikethrough text+.
+- These are subscripts and superscripts: H_{2}O, x^{2}^y{3}
+
+* Lists
+
+** Unordered List 
+
+
+- Donec id elit non
+- mi porta gravida at
+  - eget metus Donec id
+  - elit non mi porta gravida
+- at eget metus
+- Vestibulum id
+- ligula porta felis
+  - euismod semper
+  - Lorem ipsum dolor
+    - sit amet consectetur
+    - adipiscing elit Nullam
+    - id dolor id nibh ultricies
+- vehicula ut
+- id elit Vivamus
+
+** Ordered List 
+
+
+1. Donec id elit non
+2. mi porta gravida at
+   1. eget metus Donec id
+   2. elit non mi porta gravida
+3. at eget metus
+4. Vestibulum id
+5. ligula porta felis
+   1. euismod semper
+   2. Lorem ipsum dolor
+      1. sit amet consectetur
+      2. adipiscing elit Nullam
+      3. id dolor id nibh ultricies
+6. vehicula ut
+7. id elit Vivamus
+
+
+* Table
+
+#+CAPTION: Table 1
+| Column 1 | Column 2 | Column 3 | Column 4 |
+|----------+----------+----------+----------|
+| One      | Two      | Three    | Four     |
+| Five     | Six      | Seven    | Eight    |
+| Nine     | Ten      | Eleven   | Twelve   |
+
+
+* Code
+
+#+begin_src emacs-lisp
+  (defun publish-orgblog-draft ()
+    (interactive)
+    (save-buffer)
+    (copy-file (buffer-file-name) "~/sites/orgblog/posts/")
+    (delete-file (buffer-file-name) t)
+    (kill-buffer)
+    (dired "~/sites/orgblog/posts"))
+#+end_src
+
+
+* Graphics
+
+** Image
+
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/20170416-weeping-mary.jpg]]
+#+end_center
+
+
+** Video
+
+#+begin_center
+[[yt:voAntzB7EwE][Change Blindness]]
+#+end_center
+
+* Footnotes
+
+[fn:1] This is some footnote text.
+
+[fn:2] Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.

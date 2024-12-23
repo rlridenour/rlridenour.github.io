@@ -50,8 +50,7 @@
 (defvar me/website-html-head
   "<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<link rel='stylesheet' href='/css/neat.css' type='text/css'/>
-<link rel='stylesheet' href='/css/custom.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
 <link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>")
 
 (defun me/website-html-preamble (plist)

@@ -19,7 +19,15 @@ Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gra
 
 Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum.[fn:2]
 
-Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum.
+This is a link to [[https://randyridenour.net][my home page]].
+
+* Blockquote
+
+#+begin_quote
+Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+
+Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum.
+#+end_quote
 
 
 * Markup
@@ -30,7 +38,7 @@ Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gra
 - This is some =code=.
 - This some ~styled~ text.
 - This is some +strikethrough text+.
-- These are subscripts and superscripts: H_{2}O, x^{2}^y{3}
+- These are subscripts and superscripts: H_{2}O, x^{2}y^{3}
 
 * Lists
 

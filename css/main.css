@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light dark;
+    --light: #fff;
+    --lesslight: #efefef;
+    --dark: #333333;
+    --moredark: #000;
+    --link: #0047AB;
+    /* font-size: 16px; */
+}
+
+html {
+    border-top: 5px solid var(--dark);
+    font-family: system-ui, sans-serif;
+    color: var(--dark);
+}
+
+
+body {
+    font-size: clamp(1rem, 0.924vw + 0.761rem, 1.5rem);
+    line-height: clamp(1.8rem, 0.554vw + 1.657rem, 2.1rem);
+    background-color: var(--light);
+    margin: 0;
+    max-width: 800px;
+    padding: 0 20px 20px 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner {
+    text-align: center;
+    /* border-bottom: 1px solid black; */
+    margin: 10px;
+    padding: 10px;
+    color: var(--moredark);
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline-block;
+    margin: 5px;
+}
+
+.banner a:link {
+    text-decoration: none;
+}
+
+.banner a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    /* font-size: clamp(1.125rem, 0.462vw + 1.005rem, 1.375rem); */
+    /* line-height: clamp(1.925rem, -0.185vw + 2.073rem, 2.025rem); */
+    font-size: clamp(0.938rem, 0.693vw + 0.758rem, 1.313rem);
+    line-height: clamp(1.594rem, 0.087vw + 1.571rem, 1.641rem);
+    text-align: center;
+    padding:40px 0px 0px 0px;
+}
+
+
+
+h1 {
+    line-height: 2rem;
+}
+
+
+pre {
+    background-color: var(--lesslight);
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.5em;
+    overflow: auto;
+}
+
+code {
+    background-color: var(--lesslight);
+}
+
+
+blockquote {
+    padding: 0 0 0 2rem;
+    margin: 0 0 0 2rem;
+    color: #616161;
+    border-left: none;
+    font-style: italic;
+}
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+cite {
+    padding: .5rem 1rem;
+    margin: .8rem 0 0 1rem;
+    color: #7a7a7a;
+    font-size: 1rem;
+    font-style: normal;
+}
+
+
+blockquote.big {
+    display: block;
+    /* font-family: Merriweather, serif; */
+    font-size: 1.2rem;
+    border-left: none;
+    font-style: italic;
+    position: relative;
+    /* width: 500px; */
+    margin: 0.25em 0;
+    padding: 0.25em 45px;
+    line-height: 2rem;
+}
+
+blockquote.big:before {
+    display: block;
+    color: #ccc;
+    font-family: Georgia, serif;
+    content: "\201C";
+    font-size: 4em;
+    position: absolute;
+    left: -0px;
+    top: 30px;
+    right: 30px;
+    line-height: 0.1em;
+    /* margin-right: 2em; */
+    /* vertical-align: -0.4em; */
+
+}
+
+cite.big {
+    display: block;
+    border-left: none;
+    font-style: normal;
+    margin-left: 1.4rem;
+    position: relative;
+}
+
+cite.big:before {
+    content: "\2014 \2009";
+}
+
+a {
+    outline: none;
+    color: var(--dark);
+}
+
+a:hover {
+    text-decoration-color: var(--link);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.bordered {
+    border: 3px solid;
+}
+
+.home {
+    display: inline-block;
+    background-color: var(--dark);
+    color: var(--light);
+    margin-top: 20px;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+#footnotes {
+    font-size: clamp(0.938rem, 0.693vw + 0.758rem, 1.313rem);
+    line-height: clamp(1.594rem, 0.087vw + 1.571rem, 1.641rem);
+}
+
+
+/* Dark mode overrides (confusingly inverse) */
+@media (prefers-color-scheme: dark) {
+    :root {
+	--light: #222;
+	--lesslight: #333;
+	--dark: #eee;
+	--moredark: #fefefe;
+    }
+    /* This fixes an odd blue then white shadow on FF in dark mode */
+    *:focus {
+	outline: var(--light);
+	box-shadow: 0 0 0 .25em var(--link);
+    }
+}
+
+/*Bibliography styles*/
+ol.bibliography {
+    list-style-type: none;
+    padding-left: 1rem;
+    text-indent: -1rem;
+}
+
+ol.bibliography li {
+    margin: 1rem 0;
+}
+
+.arg li:last-child {
+    list-style: none;
+}
+
+.arg li:nth-last-child(2) {
+    text-decoration: underline;
+}
+
+.arg li {
+    margin: 0px;
+}
+
+
+
+/* Printing */
+@media print {
+    .home {
+	display: none;
+    }
+}

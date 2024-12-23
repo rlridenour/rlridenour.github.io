@@ -13,13 +13,6 @@ This is a test page for trying out CSS styles.
 
 *** H3 Heading
 
-**** H4 Heading
-
-***** H5 Heading
-
-****** H6 Heading
-
-
 * Text
 
 Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum.[fn:1]

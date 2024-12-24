@@ -1,9 +1,11 @@
 #+title: Growth
 #+date: <2019-01-08>
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
-Growth for the sake of growth is the ideology of the cancer cell
+Growth for the sake of growth is the ideology of the cancer cell.
 #+end_quote
- 
---- Edward Abbey
+
+#+ATTR_HTML: :class bigquote
+Edward Abbey
 

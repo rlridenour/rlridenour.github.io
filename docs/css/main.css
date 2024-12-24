@@ -20,8 +20,8 @@ html {
 
 
 body {
-font-size: clamp(1rem, 0.462vw + 0.88rem, 1.25rem);
-line-height: clamp(1.75rem, -0.092vw + 1.824rem, 1.8rem);
+font-size: clamp(1rem, 0.231vw + 0.94rem, 1.125rem);
+line-height: clamp(1.575rem, -0.416vw + 1.908rem, 1.8rem);
     background-color: var(--light);
     margin: 0;
     max-width: 800px;
@@ -68,8 +68,8 @@ span.subtitle {
 }
 
 .footer {
-    font-size: clamp(0.875rem, 0.693vw + 0.696rem, 1.25rem);
-    line-height: clamp(1.575rem, 0.323vw + 1.491rem, 1.75rem);
+    font-size: clamp(0.875rem, 0.231vw + 0.815rem, 1rem);
+line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);
     text-align: center;
     padding:40px 0px 0px 0px;
 }
@@ -111,17 +111,25 @@ pre code {
     overflow-x: auto;
 }
 
-
-
 blockquote {
     padding: 0 0 0 2rem;
     margin: 0 0 0 2rem;
-    color: #616161;
-    border-left: none;
-    font-style: italic;
+    /* color: #616161; */
+    border-left: solid;
+    border-width: 1px;
+    border-color: #939393;
+    /* font-style: italic; */
 }
 blockquote p:last-child {
     margin-bottom: 0;
+}
+
+p.source {
+    text-align: right;
+}
+
+p.source:before {
+    content: "\2014 \2009";
 }
 
 cite {
@@ -133,7 +141,7 @@ cite {
 }
 
 
-blockquote.big {
+blockquote.bigquote {
     display: block;
     /* font-family: Merriweather, serif; */
     font-size: 1.2rem;
@@ -141,36 +149,63 @@ blockquote.big {
     font-style: italic;
     position: relative;
     /* width: 500px; */
-    margin: 0.25em 0;
+    width: 35rem;
+    margin: auto;
+    margin-top: 2rem;
+    /* margin-left: 150px; */
+    /* margin: 0.25em 0; */
     padding: 0.25em 45px;
     line-height: 2rem;
 }
 
-blockquote.big:before {
+blockquote.bigquote:before {
     display: block;
     color: #ccc;
     font-family: Georgia, serif;
     content: "\201C";
-    font-size: 4em;
+    font-size: 4rem;
     position: absolute;
     left: -0px;
     top: 30px;
     right: 30px;
     line-height: 0.1em;
-    /* margin-right: 2em; */
-    /* vertical-align: -0.4em; */
+    margin-right: 2em;
+    vertical-align: -0.4em;
 
 }
 
-cite.big {
+cite.bigquote {
     display: block;
+    font-size: 1.1rem;
+    text-align: right;
     border-left: none;
     font-style: normal;
-    margin-left: 1.4rem;
+    width: 35rem;
+    padding-right: 3rem;
+    margin: auto;
+    margin-top: 1rem;
     position: relative;
 }
 
-cite.big:before {
+cite.bigquote:before {
+    content: "\2014 \2009";
+}
+
+
+p.bigquote {
+    display: block;
+    font-size: 1.1rem;
+    text-align: right;
+    border-left: none;
+    font-style: normal;
+    width: 35rem;
+    padding-right: 3rem;
+    margin: auto;
+    margin-top: 1rem;
+    position: relative;
+}
+
+p.bigquote:before {
     content: "\2014 \2009";
 }
 
@@ -212,8 +247,8 @@ img {
 
 
 #footnotes {
-    font-size: clamp(0.875rem, 0.693vw + 0.696rem, 1.25rem);
-    line-height: clamp(1.662rem, 0.393vw + 1.561rem, 1.875rem);
+ font-size: clamp(0.875rem, 0.231vw + 0.815rem, 1rem);
+line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);
 }
 
 

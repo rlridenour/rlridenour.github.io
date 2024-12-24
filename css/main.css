@@ -20,8 +20,8 @@ html {
 
 
 body {
-    font-size: clamp(1.063rem, 0.693vw + 0.883rem, 1.438rem);
-    line-height: clamp(1.913rem, 0.185vw + 1.865rem, 2.012rem);
+    font-size: clamp(1.125rem, 0.577vw + 0.976rem, 1.438rem);
+    line-height: clamp(2.012rem, -0.023vw + 2.031rem, 2.025rem);
     background-color: var(--light);
     margin: 0;
     max-width: 800px;

@@ -156,7 +156,7 @@ Sometimes, the last premise is significantly shorter than the others, and the un
 That can be fixed with some non-breaking spaces. It looks ugly, but it does take care of the problem.
 </p>
 
-<pre class="example" id="org40691f2">
+<pre class="example" id="orgb6e1e48">
 &lt;ol&gt;
   &lt;li&gt;
     P &amp;#8835; Q
@@ -207,7 +207,7 @@ It is very easy to make lists in Markdown. Unfortunately, we have the same probl
 Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldmark rendering engine that Hugo uses allows attributes and classes in Markdown, there is another, far simpler, option. First, make sure that your site config.toml page has &ldquo;unsafe = true&rdquo; and &ldquo;block = true&rdquo; in the markup section. Mine looks like this:
 </p>
 
-<pre class="example" id="org669df4f">
+<pre class="example" id="orgde9a418">
 [markup]
   [markup.goldmark]
   [markup.goldmark.parser]
@@ -224,7 +224,7 @@ Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldma
 Now, add a new class to your stylesheet. I called it &ldquo;arg&rdquo; and styled it like this:
 </p>
 
-<pre class="example" id="org6fc1989">
+<pre class="example" id="org75ec65f">
 .arg li:last-child {
   list-style: none;
 }
@@ -242,7 +242,7 @@ margin: 0px;
 The first part removes the number at the line with the conclusion, and the second part underlines the last premise. Finally, I decided to tighten up the lines. Now, when you write your post, just use a normal Markdown ordered list with the class after the last item:
 </p>
 
-<pre class="example" id="orge94c17e">
+<pre class="example" id="orgb2a1917">
 1. First premise
 2. Second premise
 3. Conclusion
@@ -264,7 +264,8 @@ When published, that code produces this:
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 23, 2024. Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Dec 23, 2024.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

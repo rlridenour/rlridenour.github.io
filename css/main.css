@@ -20,8 +20,8 @@ html {
 
 
 body {
-    font-size: clamp(1.125rem, 0.577vw + 0.976rem, 1.438rem);
-    line-height: clamp(2.012rem, -0.023vw + 2.031rem, 2.025rem);
+font-size: clamp(1rem, 0.462vw + 0.88rem, 1.25rem);
+line-height: clamp(1.75rem, -0.092vw + 1.824rem, 1.8rem);
     background-color: var(--light);
     margin: 0;
     max-width: 800px;
@@ -69,15 +69,15 @@ span.subtitle {
 
 .footer {
     font-size: clamp(0.875rem, 0.693vw + 0.696rem, 1.25rem);
-line-height: clamp(1.575rem, 0.323vw + 1.491rem, 1.75rem);
+    line-height: clamp(1.575rem, 0.323vw + 1.491rem, 1.75rem);
     text-align: center;
     padding:40px 0px 0px 0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
-  /* color: #313131; */
-  letter-spacing: -.025rem;
+    font-weight: 400;
+    /* color: #313131; */
+    letter-spacing: -.025rem;
 }
 
 
@@ -102,13 +102,13 @@ code {
 }
 
 pre, pre:hover {
-  white-space: pre-wrap;
-  word-break: break-all;
+    white-space: pre-wrap;
+    word-break: break-all;
 }
 
 pre code {
-  display: block;
-  overflow-x: auto;
+    display: block;
+    overflow-x: auto;
 }
 
 
@@ -212,8 +212,8 @@ img {
 
 
 #footnotes {
-font-size: clamp(0.875rem, 0.693vw + 0.696rem, 1.25rem);
-line-height: clamp(1.662rem, 0.393vw + 1.561rem, 1.875rem);
+    font-size: clamp(0.875rem, 0.693vw + 0.696rem, 1.25rem);
+    line-height: clamp(1.662rem, 0.393vw + 1.561rem, 1.875rem);
 }
 
 

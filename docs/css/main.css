@@ -78,7 +78,12 @@ h1 {
     line-height: 2rem;
 }
 
-pre {
+li + li {
+    margin-top: 0.5rem;
+}
+
+
+pre code {
     background-color: var(--lesslight);
     margin: 0.5rem 0 0.5rem 0;
     padding: 0.5em;

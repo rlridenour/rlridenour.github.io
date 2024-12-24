@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: Philosophers and Bums
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 'You must be a philosopher.' 'No, I'm a bum.'
 #+end_quote
 
---- From /Barney Miller/
+#+ATTR_HTML: :class bigquote
+From /Barney Miller/

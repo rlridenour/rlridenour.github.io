@@ -1,9 +1,9 @@
 #+TITLE: Blog Index
 
-- [[file:24-12-22-style-test.org][Style Test]]
-- [[file:24-12-17-blogging-with-org-mode.org][Blogging with Org Mode]]
-- [[file:24-12-17-end-semester.org][End of the Semester]]
-- [[file:24-12-05-moving-site.org][Moving the Site]]
+- [[file:2024-12-22-style-test.org][Style Test]]
+- [[file:2024-12-17-end-semester.org][End of the Semester]]
+- [[file:2024-12-17-blogging-with-org-mode.org][Blogging with Org Mode]]
+- [[file:2024-12-05-moving-site.org][Moving the Site]]
 - [[file:2024-07-09-installing-auctex-with-straight.org][Installing Auctex with Straight]]
 - [[file:2024-07-04-beamer-article-and-org-mode.org][Beamer Article and Org Mode]]
 - [[file:2023-12-31-converting-org-files-to-canvas-quizzes.org][Converting Org Files to Canvas Quizzes]]

@@ -2,11 +2,14 @@
 #+filetags: quotes
 #+title: Perfect Christianity
 
+
+#+ATTR_HTML: :class bigquote
 #+begin_quote
-	This is the rule of most perfect Christianity, it's the most exact definition, its highest point, namely, the seeking of the common  good. For nothing can so make people imitators of Christ as caring for their neighbors.
+This is the rule of most perfect Christianity, it's the most exact definition, its highest point, namely, the seeking of the common  good. For nothing can so make people imitators of Christ as caring for their neighbors.
 #+end_quote
 
---- John  Chrysostom
+#+ATTR_HTML: :class bigquote
+John  Chrysostom
 
 
 

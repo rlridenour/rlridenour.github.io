@@ -2,8 +2,10 @@
 #+filetags: religion
 #+title: Rahner
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 If God's incomprehensibility does not grip us in a word, if it does not draw us into our super-luminous darkness, if it does not call us out of the little house of our homely, close-hugged truths... we have misunderstood the words of Christianity.
 #+end_quote
 
---- Karl Rahner
+#+ATTR_HTML: :class bigquote
+Karl Rahner

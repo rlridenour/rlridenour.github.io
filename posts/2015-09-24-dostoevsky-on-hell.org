@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: Dostoevsky on Hell
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Fathers and teachers, I ask myself: "What is hell?" And I answer thus: "The suffering of being no longer able to love."
 #+end_quote
 
---- Fyodor Dostoevsky
+#+ATTR_HTML: :class bigquote
+Fyodor Dostoevsky

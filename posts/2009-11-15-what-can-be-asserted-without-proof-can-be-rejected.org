@@ -2,10 +2,12 @@
 #+filetags: philosophy quotes
 #+title: Hitchens
 
+
 #+begin_quote
 What can be asserted without proof can be rejected without proof.
 #+end_quote
 
---- Christopher Hitchens
+#+ATTR_HTML: :class source
+Christopher Hitchens
 
 What proof does he have for this claim? Is it self-referentially incoherent?

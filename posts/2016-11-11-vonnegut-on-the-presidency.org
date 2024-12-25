@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: Vonnegut on the Presidency
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 There is a tragic flaw in our precious Constitution, and I don’t know what can be done to fix it. This is it: Only nut cases want to be president.
 #+end_quote
 
---- [[http://inthesetimes.com/article/cold_turkey][Kurt Vonnegut]]
+#+ATTR_HTML: :class bigquote
+[[http://inthesetimes.com/article/cold_turkey][Kurt Vonnegut]]

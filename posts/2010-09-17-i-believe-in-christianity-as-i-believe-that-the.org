@@ -2,8 +2,10 @@
 #+filetags: quotes religion
 #+title: Why Believe?
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 I believe in Christianity as I believe that the sun has risen: not only because I see it, but because by it, I see everything else.
 #+end_quote
 
---- C.S. Lewis
+#+ATTR_HTML: :class bigquote
+C.S. Lewis

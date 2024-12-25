@@ -2,10 +2,10 @@
 #+filetags: quotes
 #+title: O'Connor on Evil
 
-
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 What has given the South her identity are those beliefs and qualities which she has absorbed from the Scriptures and from her own history of defeat and violation: a distrust of the abstract, a sense of human dependence on the grace of God, and a knowledge that evil is not simply a problem to be solved, but a mystery to be endured.
 #+end_quote
 
-
---- Flannery O’Connor, “The Catholic Novelist in the Protestant South,” in /Mystery and Manners: Occasional Prose/, eds. Robert Fitzgerald and Sally Fitzgerald (New York: Farrar, Straus, and Giroux, 1969), 209.
+#+ATTR_HTML: :class bigquote
+Flannery O’Connor, “The Catholic Novelist in the Protestant South,” in /Mystery and Manners: Occasional Prose/, eds. Robert Fitzgerald and Sally Fitzgerald (New York: Farrar, Straus, and Giroux, 1969), 209.

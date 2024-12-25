@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: The Real Mover
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
-	It is not the horse that draws the cart, but the oats.
+It is not the horse that draws the cart, but the oats.
 #+end_quote
 
---- Russian proverb
+#+ATTR_HTML: :class bigquote
+Russian proverb

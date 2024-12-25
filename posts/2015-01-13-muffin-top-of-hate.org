@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: Muffin Top of Hate
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 So calm down and smile and loosen up your judgy pants because I can see your muffin top of hate and it's so not flattering.
 #+end_quote
 
---- Autumn Raines Lockett
+#+ATTR_HTML: :class bigquote
+Autumn Raines Lockett

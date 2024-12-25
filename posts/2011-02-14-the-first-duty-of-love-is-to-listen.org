@@ -2,11 +2,13 @@
 #+filetags: quotes
 #+title: To Listen
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 The first duty of love is to listen.
 #+end_quote
 
---- Paul Tillich
+#+ATTR_HTML: :class bigquote
+Paul Tillich
 
 
 

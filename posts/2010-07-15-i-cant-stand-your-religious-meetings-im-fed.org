@@ -2,6 +2,7 @@
 #+filetags: religion
 #+title: Justice
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 I can't stand your religious meetings.\\
 I'm fed up with your conferences and conventions.\\
@@ -15,7 +16,7 @@ Do you know what I want?\\
 I want justice—oceans of it.\\
 I want fairness—rivers of it.\\
 That's what I want. That's all I want.
-
 #+end_quote
 
---- Amos 5:21-24 (/The Message/)
+#+ATTR_HTML: :class bigquote
+Amos 5:21-24 (/The Message/)

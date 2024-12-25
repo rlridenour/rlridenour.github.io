@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: Faith and Doubt
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Faith which does not doubt is dead faith.
 #+end_quote
 
---- Miguel de Unamuno
+#+ATTR_HTML: :class bigquote
+Miguel de Unamuno

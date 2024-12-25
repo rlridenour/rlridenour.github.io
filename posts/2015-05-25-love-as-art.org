@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: Love as Art
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 We will make love an art and we will love like artists.
 #+end_quote
 
+#+ATTR_HTML: :class bigquote
 --- Marianne Williamson

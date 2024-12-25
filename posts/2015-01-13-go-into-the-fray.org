@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: Go Into the Fray
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 A philosopher who is not taking part in discussions is like a boxer who never goes into the ring.
 #+end_quote
 
---- Ludwig Wittgenstein
+#+ATTR_HTML: :class bigquote
+Ludwig Wittgenstein

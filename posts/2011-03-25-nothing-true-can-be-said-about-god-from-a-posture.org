@@ -2,11 +2,13 @@
 #+filetags: quotes
 #+title: To Speak Truly
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Nothing true can be said about God from a posture of defense.
 #+end_quote
 
---- Marilynne Robinson
+#+ATTR_HTML: :class bigquote
+Marilynne Robinson
 
 
 

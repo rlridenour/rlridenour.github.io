@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: Big-Haired Preachers
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 They have the same feeble, literal grasp of the Bible as all those big-haired preachers do.
 #+end_quote
 
---- Fox Mulder, The X-Files
+#+ATTR_HTML: :class bigquote
+Fox Mulder, The X-Files

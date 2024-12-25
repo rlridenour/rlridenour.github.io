@@ -2,9 +2,10 @@
 #+filetags: quotes
 #+title: Housman on Thought
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Three minutes' thought would suffice to find this out; but thought is irksome and three minutes is a long time.
 #+end_quote
 
-
---- A. E. Housman, /Saturae of Juvenal/ (Cambridge: Cambridge University Press, 1931), xi.
+#+ATTR_HTML: :class bigquote
+A. E. Housman, /Saturae of Juvenal/ (Cambridge: Cambridge University Press, 1931), xi.

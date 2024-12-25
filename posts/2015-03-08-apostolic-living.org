@@ -2,9 +2,10 @@
 #+filetags: quotes religion
 #+title: Apostolic Living
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 We profess to be strangers and pilgrims, seeking after a country of our own, yet we settle down in the most un-stranger-like fashion, exactly as if we were quite at home and meant to stay as long as we could. I don't wonder apostolic miracles have died. Apostolic living certainly has.
-
 #+end_quote
 
---- Amy Carmichael, /Side by Side/
+#+ATTR_HTML: :class bigquote
+Amy Carmichael, /Side by Side/

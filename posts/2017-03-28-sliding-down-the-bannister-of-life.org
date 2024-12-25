@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: Sliding Down the Banister of Life
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 As you slide down the banister of life, may the splinters never point your way.
 #+end_quote
 
---- Micah Wakefield
+#+ATTR_HTML: :class bigquote
+Micah Wakefield

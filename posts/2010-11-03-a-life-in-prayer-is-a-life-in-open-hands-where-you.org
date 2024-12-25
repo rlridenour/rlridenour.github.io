@@ -2,8 +2,10 @@
 #+filetags: quotes religion prayer
 #+title: Perfection in Weakness
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 A life in prayer is a life in open hands where you are not ashamed of your weakness but realize that it is more perfect for you to be led by the other than to seek to hold everything in your own hand.
 #+end_quote
 
---- Henri Nouwen
+#+ATTR_HTML: :class bigquote
+Henri Nouwen

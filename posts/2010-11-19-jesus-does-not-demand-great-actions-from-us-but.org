@@ -2,8 +2,10 @@
 #+filetags: quotes religion
 #+title: Surrender
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Jesus does not demand great actions from us but simply surrender and gratitude.
 #+end_quote
 
---- St. Therese of Lisieux (1873-1897)
+#+ATTR_HTML: :class bigquote
+St. Therese of Lisieux (1873-1897)

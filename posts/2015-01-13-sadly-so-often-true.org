@@ -2,10 +2,10 @@
 #+filetags: quotes
 #+title: Sadly So Often True
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
-
 The only good argument against Christianity is Christians.
-
 #+end_quote
 
---- G. K. Chesterton
+#+ATTR_HTML: :class bigquote
+G. K. Chesterton

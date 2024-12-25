@@ -2,8 +2,11 @@
 #+filetags: quotes religion
 #+title: Even Preachers
 
+
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Nowhere is the grace of God more evident than in the fact that some preachers will be saved.
 #+end_quote
 
---- Karl Barth
+#+ATTR_HTML: :class bigquote
+Karl Barth

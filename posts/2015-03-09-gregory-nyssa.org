@@ -2,8 +2,10 @@
 #+filetags: quotes religion
 #+title: Wonder and Concepts
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Concepts create idols; only wonder comprehends anything. People kill one another over idols. Wonder makes us fall to our knees.
 #+end_quote
 
---- Gregory of Nyssa
+#+ATTR_HTML: :class bigquote
+Gregory of Nyssa

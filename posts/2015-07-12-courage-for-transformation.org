@@ -2,9 +2,10 @@
 #+filetags: religion quotes
 #+title: Courage for Transformation
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 "What kind of courage does it take for us to be the people of God who want to see this world transformed?"
-
 #+end_quote
 
---- Mike Bumgarner
+#+ATTR_HTML: :class bigquote
+Mike Bumgarner

@@ -2,21 +2,16 @@
 #+filetags: quotes
 #+title: Stay Awake
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
-
-
 Disciple: "Is there anything I can do to make myself enlightened?"
-
 
 Teacher: "As little as you can do to make the sun rise in the morning."
 
-
 Disciple: "Then of what use are the spiritual exercises you prescribe?"
 
-
 Teacher: "To make sure you are not asleep when the sun begins to rise."
-
-
 #+end_quote
 
---- Anthony de Mello, /One Minute Wisdom/
+#+ATTR_HTML: :class bigquote
+Anthony de Mello, /One Minute Wisdom/

@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: What Are You Afraid Of?
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 I can't understand why people are frightened of new ideas. I'm frightened of the old ones.
 #+end_quote
 
---- John Cage
+#+ATTR_HTML: :class bigquote
+John Cage

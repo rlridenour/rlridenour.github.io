@@ -2,10 +2,12 @@
 #+filetags: quotes
 #+title: Mistaken Priorities
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Man’s sensitivity to little things and insensitivity to the greatest things are marks of a strange disorder.
 #+end_quote
 
---- Pascal
+#+ATTR_HTML: :class bigquote
+Pascal
 
 

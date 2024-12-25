@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: No Innocence
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 I once sent a dozen of my friends a telegram saying 'flee at once - all is discovered.' They all left town immediately.
 #+end_quote
 
---- Mark Twain
+#+ATTR_HTML: :class bigquote
+Mark Twain

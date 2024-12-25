@@ -4,10 +4,12 @@
 
 I thought this was fitting, since classes start tomorrow:
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Prayer holds together the shattered fragments of the creation. It makes history possible.
 #+end_quote
 
---- Jacques Ellul
+#+ATTR_HTML: :class bigquote
+Jacques Ellul
 
 

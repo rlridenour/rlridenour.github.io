@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: De Unamuno on Arguments
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 A lot of good arguments are spoiled by some fool who knows what he is talking about.
 #+end_quote
 
---- Miguel De Unamuno
+#+ATTR_HTML: :class bigquote
+Miguel De Unamuno

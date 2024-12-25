@@ -2,8 +2,10 @@
 #+filetags: religion
 #+title: Merton on Scripture
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 There is, in a word, nothing comfortable about the Bible -- until we manage to get so used to it that we make it comfortable for ourselves. But then we are perhaps too used to it and too at home in it. Let us not be too sure we know the Bible ... just because we have learned not to have problems with it. Have we perhaps learned ... not to really pay attention to it? Have we ceased to question the book and be questioned by it?
 #+end_quote
 
---- Thomas Merton, from /Opening the Bible/
+#+ATTR_HTML: :class bigquote
+Thomas Merton, from /Opening the Bible/

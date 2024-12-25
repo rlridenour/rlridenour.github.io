@@ -2,9 +2,10 @@
 #+filetags: quotes religion
 #+title: Who is the Sparrow?
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 If you're going to care about the fall of the sparrow you can't pick and choose who's going to be the sparrow. It's everybody.
-
 #+end_quote
 
---- Madeleine L'Engle
+#+ATTR_HTML: :class bigquote
+Madeleine L'Engle

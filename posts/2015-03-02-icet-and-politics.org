@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: Ice-T and Politics
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 People ask me, "Ice, why don’t you get into politics?" I’m like, "I got out of crime!"
 #+end_quote
 
---- Ice-T
+#+ATTR_HTML: :class bigquote
+Ice-T

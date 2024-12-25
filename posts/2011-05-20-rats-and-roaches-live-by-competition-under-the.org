@@ -2,10 +2,12 @@
 #+filetags: quotes
 #+title: A New Law
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Rats and roaches live by competition under the laws of supply and demand; it is the privilege of human beings to live under the laws of justice and mercy.
 #+end_quote
 
---- Wendell Berry
+#+ATTR_HTML: :class bigquote
+Wendell Berry
 
 

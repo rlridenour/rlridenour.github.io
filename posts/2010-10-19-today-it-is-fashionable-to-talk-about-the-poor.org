@@ -2,8 +2,10 @@
 #+filetags: quotes religion
 #+title: Talk or Talk About
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Today it is fashionable to talk about the poor. Unfortunately, it is not fashionable to talk with them.
 #+end_quote
 
---- Mother Teresa
+#+ATTR_HTML: :class bigquote
+Mother Teresa

@@ -2,8 +2,10 @@
 #+filetags: quotes philosophy
 #+title: Epictetus on Learning
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 What is the first business of him who philosophizes? To throw away self-conceit. For it is impossible for anyone to begin to learn that which he thinks that he already knows.
 #+end_quote
 
---- Epictetus, /Discourses/, Book II, Chapter 17.
+#+ATTR_HTML: :class bigquote
+Epictetus, /Discourses/, Book II, Chapter 17.

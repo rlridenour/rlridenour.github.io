@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: The Day is Short
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 The day is short, and the night so long. Why do you work so hard to get what you don't even want?
 #+end_quote
 
---- Garrison Keillor
+#+ATTR_HTML: :class bigquote
+Garrison Keillor

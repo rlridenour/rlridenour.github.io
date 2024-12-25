@@ -2,9 +2,10 @@
 #+filetags: quotes
 #+title: Dont Be Afraid
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Here is the world. Beautiful and terrible things will happen. Don't be afraid.
 #+end_quote
 
-
---- Frederick Buechner
+#+ATTR_HTML: :class bigquote
+Frederick Buechner

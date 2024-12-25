@@ -2,11 +2,13 @@
 #+filetags: quotes
 #+title: A Living Mystery
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 To be a witness does not consist in engaging in propaganda or even in stirring people up, but in being a living mystery; it means to live in such a way that one's life would not make sense if God did not exist.
 #+end_quote
 
---- Emmanuel Célestin Suhard
+#+ATTR_HTML: :class bigquote
+Emmanuel Célestin Suhard
 
 
 

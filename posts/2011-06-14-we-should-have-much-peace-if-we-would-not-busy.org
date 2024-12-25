@@ -2,11 +2,13 @@
 #+filetags: quotes
 #+title: Exactly
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
-	We should have much peace if we would not busy ourselves with the sayings and doings of others.
+We should have much peace if we would not busy ourselves with the sayings and doings of others.
 #+end_quote
 
---- Thomas à Kempis
+#+ATTR_HTML: :class bigquote
+Thomas à Kempis
 
 There's no need to point the irony of posting this.
 

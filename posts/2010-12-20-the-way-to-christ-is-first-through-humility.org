@@ -2,11 +2,13 @@
 #+filetags: quotes
 #+title: Augustine on Humility
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 	The way to Christ is first through humility, second through humility, third through humility.
 #+end_quote
 
---- Augustine of Hippo
+#+ATTR_HTML: :class bigquote
+Augustine of Hippo
 
 
 

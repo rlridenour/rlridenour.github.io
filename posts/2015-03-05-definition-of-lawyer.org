@@ -2,9 +2,10 @@
 #+filetags: quotes
 #+title: Definition of Lawyer
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Lawyer (n.) One skilled in the circumvention of the law.
-
 #+end_quote
 
---- Ambrose Bierce
+#+ATTR_HTML: :class bigquote
+Ambrose Bierce

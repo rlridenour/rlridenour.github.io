@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: Triumph Over Democracy
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 In the Soviet Union, capitalism triumphed over communism; in this country, capitalism triumphed over democracy.
 #+end_quote
 
---- Fran Lebowitz
+#+ATTR_HTML: :class bigquote
+Fran Lebowitz

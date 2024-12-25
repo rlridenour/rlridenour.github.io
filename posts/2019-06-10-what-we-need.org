@@ -1,9 +1,11 @@
 #+title: What We Need
 #+date: <2019-06-10>
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 People can be entertained on devices 24 hours a day; they do not need a church for that. They need a church for silence, reverence, community, ancient wisdom, the opportunity to be of service, the real presence of God.
 #+end_quote
 
---- ”[[https://www.americamagazine.org/faith/2019/05/02/why-evangelical-megachurches-are-embracing-some-catholic-traditions][Why Evangelical Megachurches Are Embracing (Some) Catholic Traditions]]” by Anna Keating.
+#+ATTR_HTML: :class bigquote
+”[[https://www.americamagazine.org/faith/2019/05/02/why-evangelical-megachurches-are-embracing-some-catholic-traditions][Why Evangelical Megachurches Are Embracing (Some) Catholic Traditions]]” by Anna Keating.
 

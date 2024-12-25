@@ -2,6 +2,7 @@
 #+filetags: prayer religion
 #+title: Prayer of St. Thomas
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Grant me, O Lord my God,\\
 a mind to know you,\\
@@ -11,4 +12,5 @@ faithful perseverance in waiting for you,\\
 and a hope of finally embracing you.
 #+end_quote
 
---- St. Thomas Aquinas
+#+ATTR_HTML: :class bigquote
+St. Thomas Aquinas

@@ -1,9 +1,11 @@
 #+title: Questions and Answers
 #+date: <2019-02-20>
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 My faith doesn't give me all the answers; it gives me a way to ask the questions.  
 #+end_quote
  
---- Marion Pritchard
+#+ATTR_HTML: :class bigquote
+Marion Pritchard
 

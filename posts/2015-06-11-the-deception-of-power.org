@@ -2,8 +2,10 @@
 #+filetags: quotes
 #+title: The Deception of Power
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 We have, I fear, confused power with greatness.
 #+end_quote
 
---- Stewart Udall
+#+ATTR_HTML: :class bigquote
+Stewart Udall

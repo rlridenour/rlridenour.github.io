@@ -2,8 +2,10 @@
 #+filetags: religion
 #+title: God in Our Lives
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 Once upon a time, the story goes, a preacher ran through the streets of the city shouting, 'We must put God into our lives. We must put God into our lives.' And hearing him, the old monastic rose up in the city plaza to say, 'No, sir, you are wrong. You see, God is already in our lives. Our task is simply to recognize that.'
 #+end_quote
 
---- Joan Chittister
+#+ATTR_HTML: :class bigquote
+Joan Chittister

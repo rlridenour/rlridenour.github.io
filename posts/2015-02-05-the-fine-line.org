@@ -2,9 +2,11 @@
 #+filetags: quotes
 #+title: The Fine Line
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 There's a fine line between genius and insanity. I have erased this line.
 
 #+end_quote
 
---- Oscar Levant
+#+ATTR_HTML: :class bigquote
+Oscar Levant

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 24, 2024 -->
+<!-- Dec 25, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Search and Replace with Regular Expressions</title>
@@ -9,6 +9,7 @@
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
 <link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
 <script>
@@ -78,7 +79,7 @@ For example, imagine that I have a list of students that I copied from a databas
 </p>
 
 
-<pre class="example" id="orgd6ec7b9">
+<pre class="example" id="org45a5f33">
 Search: ^(w*) (w*)n
 Replace: $2, $1n
 </pre>
@@ -89,7 +90,7 @@ This search finds every line consisting of just two words separated by a space. 
 </p>
 
 
-<pre class="example" id="org8d0ce6a">
+<pre class="example" id="org371b35a">
 George Washington
 John Adams
 Thomas Jefferson
@@ -101,7 +102,7 @@ to
 </p>
 
 
-<pre class="example" id="orgfb785ce">
+<pre class="example" id="org7a85661">
 Washington, George
 Adams, John
 Jefferson, Thomas
@@ -117,7 +118,7 @@ The primary difference in Emacs is in referencing the strings to be searched for
 </p>
 
 
-<pre class="example" id="orgdb1a41a">
+<pre class="example" id="org04059af">
 Search: ^\(\w+\) \(\w+\)
 Replace: \2, \1
 </pre>
@@ -125,7 +126,7 @@ Replace: \2, \1
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 24, 2024.<br>
+  Last updated on Dec 25, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

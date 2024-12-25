@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 24, 2024 -->
+<!-- Dec 25, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Open Dired From Shell</title>
@@ -9,6 +9,7 @@
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
 <link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
 <script>
@@ -62,7 +63,7 @@ I got this from <a href="http://datko.net/2013/07/11/open-emacs-dired-buffer-fro
 Add this to your shell rc file (in my case, .zshrc):
 </p>
 
-<pre class="example" id="org83de26d">
+<pre class="example" id="orgc075dee">
 # open a dired window for the current directory
 dired() {
     emacsclient -e "(dired \"$PWD\")"
@@ -78,7 +79,7 @@ buffer of that directory opens in the current Emacs frame.
 Just out of curiosity, I wondered what typing &ldquo;`emacsclient -c .`&rdquo; would do. It opens a dired buffer in a new frame. I have a shell script called &ldquo;ec&rdquo; that starts a new emacs client, but it&rsquo;s easy to do it with a zsh alias:
 </p>
 
-<pre class="example" id="org4ddb565">
+<pre class="example" id="org594e1b3">
 alias ec="emacsclient -c -a ''"
 </pre>
 
@@ -89,7 +90,7 @@ This starts a server if there is not one already, then opens a new client. So, t
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 24, 2024.<br>
+  Last updated on Dec 25, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

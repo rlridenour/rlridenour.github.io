@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Dec 24, 2024 -->
+<!-- Dec 25, 2024 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Arguments in HTML</title>
@@ -11,6 +11,7 @@
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
 <link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
 <script>
@@ -156,7 +157,7 @@ Sometimes, the last premise is significantly shorter than the others, and the un
 That can be fixed with some non-breaking spaces. It looks ugly, but it does take care of the problem.
 </p>
 
-<pre class="example" id="org0877922">
+<pre class="example" id="org1ce2ba7">
 &lt;ol&gt;
   &lt;li&gt;
     P &amp;#8835; Q
@@ -207,7 +208,7 @@ It is very easy to make lists in Markdown. Unfortunately, we have the same probl
 Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldmark rendering engine that Hugo uses allows attributes and classes in Markdown, there is another, far simpler, option. First, make sure that your site config.toml page has &ldquo;unsafe = true&rdquo; and &ldquo;block = true&rdquo; in the markup section. Mine looks like this:
 </p>
 
-<pre class="example" id="org4b74ea6">
+<pre class="example" id="org9d74507">
 [markup]
   [markup.goldmark]
   [markup.goldmark.parser]
@@ -224,7 +225,7 @@ Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldma
 Now, add a new class to your stylesheet. I called it &ldquo;arg&rdquo; and styled it like this:
 </p>
 
-<pre class="example" id="org03a95da">
+<pre class="example" id="org0b487cc">
 .arg li:last-child {
   list-style: none;
 }
@@ -242,7 +243,7 @@ margin: 0px;
 The first part removes the number at the line with the conclusion, and the second part underlines the last premise. Finally, I decided to tighten up the lines. Now, when you write your post, just use a normal Markdown ordered list with the class after the last item:
 </p>
 
-<pre class="example" id="org506682d">
+<pre class="example" id="org68a3258">
 1. First premise
 2. Second premise
 3. Conclusion
@@ -264,7 +265,7 @@ When published, that code produces this:
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 24, 2024.<br>
+  Last updated on Dec 25, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

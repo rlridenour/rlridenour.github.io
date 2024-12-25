@@ -148,8 +148,7 @@ blockquote.bigquote {
     border-left: none;
     font-style: italic;
     position: relative;
-    /* width: 500px; */
-    width: 35rem;
+    width: 500px;
     margin: auto;
     margin-top: 2rem;
     /* margin-left: 150px; */
@@ -180,7 +179,7 @@ cite.bigquote {
     text-align: right;
     border-left: none;
     font-style: normal;
-    width: 35rem;
+    width: 500px;
     padding-right: 3rem;
     margin: auto;
     margin-top: 1rem;
@@ -247,8 +246,8 @@ img {
 
 
 #footnotes {
- font-size: clamp(0.875rem, 0.231vw + 0.815rem, 1rem);
-line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);
+    font-size: clamp(0.875rem, 0.231vw + 0.815rem, 1rem);
+    line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);
 }
 
 

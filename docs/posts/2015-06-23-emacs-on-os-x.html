@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 24, 2024 -->
+<!-- Dec 25, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs on OS X</title>
@@ -9,6 +9,7 @@
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
 <link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
 <script>
@@ -53,9 +54,9 @@
 <header>
 <h1 class="title">Emacs on OS X</h1>
 <p class="subtitle" role="doc-subtitle">Jun 23, 2015</p>
-</header><section id="outline-container-org108667d" class="outline-2">
-<h2 id="org108667d">Homebrew</h2>
-<div class="outline-text-2" id="text-org108667d">
+</header><section id="outline-container-orgb3b90eb" class="outline-2">
+<h2 id="orgb3b90eb">Homebrew</h2>
+<div class="outline-text-2" id="text-orgb3b90eb">
 <p>
 I install Emacs with <a href="http://brew.sh">Homebrew</a>. After installing Homebrew, just type the following in Terminal:
 </p>
@@ -73,9 +74,9 @@ This makes upgrading very easy, `brew upgrade` updates everything that you&rsquo
 </p>
 </div>
 </section>
-<section id="outline-container-org8cc25f6" class="outline-2">
-<h2 id="org8cc25f6">Prelude</h2>
-<div class="outline-text-2" id="text-org8cc25f6">
+<section id="outline-container-orgdec46c1" class="outline-2">
+<h2 id="orgdec46c1">Prelude</h2>
+<div class="outline-text-2" id="text-orgdec46c1">
 <p>
 I use <a href="http://batsov.com/prelude/">Emacs Prelude</a>, a starter kit by Bozhidar Batsov. There are many Emacs users that advocate setting up your own configuration from scratch, and I&rsquo;ve done that many times. I keep coming back to Prelude, though, it just makes the initial work so much easier. Prelude includes a personal directory for individual configuration files. I keep all of those files in a git repository located in Dropbox with symbolic links in the Prelude personal directory. That way, I can use Github for version control, but have all machines in sync with no effort.
 </p>
@@ -85,7 +86,7 @@ There are two important files in my personal directory. The first is an emacs-li
 </p>
 
 
-<pre class="example" id="org03e1f0a">
+<pre class="example" id="org6827132">
 ;;Load emacs personal settings via org
 (prelude-require-package 'org)
 (org-babel-load-file
@@ -97,9 +98,9 @@ This file loads an org-mode file that contains the actual configuration. If you&
 </p>
 </div>
 </section>
-<section id="outline-container-org7657701" class="outline-2">
-<h2 id="org7657701">Starting Emacs</h2>
-<div class="outline-text-2" id="text-org7657701">
+<section id="outline-container-org82897cd" class="outline-2">
+<h2 id="org82897cd">Starting Emacs</h2>
+<div class="outline-text-2" id="text-org82897cd">
 <p>
 I like to start Emacs using the daemon, which keeps an Emacs server running in the background, then connect to that server with Emacs Client. This makes opening Emacs nearly instantaneous.
 </p>
@@ -133,7 +134,7 @@ There are parts of this that I really didn&rsquo;t need to do, but too much is b
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 24, 2024.<br>
+  Last updated on Dec 25, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

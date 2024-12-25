@@ -179,7 +179,7 @@ cite.bigquote {
     text-align: right;
     border-left: none;
     font-style: normal;
-    width: 500px;
+    max-width: 500px;
     padding-right: 3rem;
     margin: auto;
     margin-top: 1rem;
@@ -197,7 +197,7 @@ p.bigquote {
     text-align: right;
     border-left: none;
     font-style: normal;
-    width: 35rem;
+    max-width: 500px;
     padding-right: 3rem;
     margin: auto;
     margin-top: 1rem;

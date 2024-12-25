@@ -157,7 +157,7 @@ Sometimes, the last premise is significantly shorter than the others, and the un
 That can be fixed with some non-breaking spaces. It looks ugly, but it does take care of the problem.
 </p>
 
-<pre class="example" id="org9ff31d7">
+<pre class="example" id="orgb09c89a">
 &lt;ol&gt;
   &lt;li&gt;
     P &amp;#8835; Q
@@ -208,7 +208,7 @@ It is very easy to make lists in Markdown. Unfortunately, we have the same probl
 Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldmark rendering engine that Hugo uses allows attributes and classes in Markdown, there is another, far simpler, option. First, make sure that your site config.toml page has &ldquo;unsafe = true&rdquo; and &ldquo;block = true&rdquo; in the markup section. Mine looks like this:
 </p>
 
-<pre class="example" id="orgcbbfeaa">
+<pre class="example" id="org7cf5030">
 [markup]
   [markup.goldmark]
   [markup.goldmark.parser]
@@ -225,7 +225,7 @@ Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldma
 Now, add a new class to your stylesheet. I called it &ldquo;arg&rdquo; and styled it like this:
 </p>
 
-<pre class="example" id="org54ff9c5">
+<pre class="example" id="org6a13c8c">
 .arg li:last-child {
   list-style: none;
 }
@@ -243,7 +243,7 @@ margin: 0px;
 The first part removes the number at the line with the conclusion, and the second part underlines the last premise. Finally, I decided to tighten up the lines. Now, when you write your post, just use a normal Markdown ordered list with the class after the last item:
 </p>
 
-<pre class="example" id="org8cc38e1">
+<pre class="example" id="org0a35ec5">
 1. First premise
 2. Second premise
 3. Conclusion

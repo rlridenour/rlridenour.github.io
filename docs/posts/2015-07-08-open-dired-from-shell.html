@@ -63,7 +63,7 @@ I got this from <a href="http://datko.net/2013/07/11/open-emacs-dired-buffer-fro
 Add this to your shell rc file (in my case, .zshrc):
 </p>
 
-<pre class="example" id="orgc075dee">
+<pre class="example" id="org685ff12">
 # open a dired window for the current directory
 dired() {
     emacsclient -e "(dired \"$PWD\")"
@@ -79,7 +79,7 @@ buffer of that directory opens in the current Emacs frame.
 Just out of curiosity, I wondered what typing &ldquo;`emacsclient -c .`&rdquo; would do. It opens a dired buffer in a new frame. I have a shell script called &ldquo;ec&rdquo; that starts a new emacs client, but it&rsquo;s easy to do it with a zsh alias:
 </p>
 
-<pre class="example" id="org594e1b3">
+<pre class="example" id="orgcf6c788">
 alias ec="emacsclient -c -a ''"
 </pre>
 

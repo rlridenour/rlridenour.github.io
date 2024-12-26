@@ -60,7 +60,7 @@ line-height: clamp(1.575rem, -0.416vw + 1.908rem, 1.8rem);
 .title {
     font-size: 2rem;
     line-height: 2.5rem;
-    padding: 4rem 0 2rem 0;
+    padding: 2rem 0 2rem 0;
 }
 
 span.subtitle {

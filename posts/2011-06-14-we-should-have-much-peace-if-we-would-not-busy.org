@@ -10,6 +10,6 @@ We should have much peace if we would not busy ourselves with the sayings and do
 #+ATTR_HTML: :class bigquote
 Thomas à Kempis
 
-There's no need to point the irony of posting this.
+There's no need to point out the irony of posting this.
 
 

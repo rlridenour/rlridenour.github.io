@@ -9,7 +9,8 @@
 There is no god and that’s the simple truth. If every trace of any single religion died out and nothing were passed on, it would never be created exactly that way again. There might be some other nonsense in its place, but not that exact nonsense. If all of science were wiped out, it would still be true and someone would find a way to figure it all out again.
 #+end_quote
 
---- Penn Jillette, [[http://books.google.com/books?id=KsI3sswEg14C&printsec=frontcover&dq=god+no+penn+jillette&hl=en&sa=X&ei=bHXrTuSJNYnt0gHoqrikCQ&ved=0CDcQ6AEwAA#v=onepage&q=%22that%20exact%20nonsense%22&f=false][/God, No!: Signs You May Already Be an Atheist and Other Magical Tales/]] 
+#+ATTR_HTML: :class source
+Penn Jillette[fn:3]
 
 
 There is a lot to think about here. Keep in mind that I haven't read the book, but have only seen this single paragraph. Here are my initial thoughts in no particular order.
@@ -30,3 +31,4 @@ So, in the end, Jillette's argument begs the question. That is, he hasn't given 
 
 [fn:1] Interestingly, Peirce also thought that the method would produce belief in God. I'm teaching American philosophy next semester, so I'll likely have a post on Peirce's "Neglected Argument."
 [fn:2] An example is Hertz's early experiment to determine the speed of radio waves.
+[fn:3]  [[http://books.google.com/books?id=KsI3sswEg14C&printsec=frontcover&dq=god+no+penn+jillette&hl=en&sa=X&ei=bHXrTuSJNYnt0gHoqrikCQ&ved=0CDcQ6AEwAA#v=onepage&q=%22that%20exact%20nonsense%22&f=false][/God, No!: Signs You May Already Be an Atheist and Other Magical Tales/]]  

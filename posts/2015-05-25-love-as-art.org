@@ -8,4 +8,4 @@ We will make love an art and we will love like artists.
 #+end_quote
 
 #+ATTR_HTML: :class bigquote
---- Marianne Williamson
+Marianne Williamson

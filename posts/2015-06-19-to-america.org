@@ -20,4 +20,5 @@ Strong, willing sinews in your wings?\\
 Or tightening chains about your feet?
 #+end_quote
 
---- From /Fifty Years & Other Poems/ (1917)
+#+ATTR_HTML: :class source
+From /Fifty Years & Other Poems/ (1917)

@@ -8,4 +8,8 @@ The ethical and moral issues that face people in the U.S. have a great deal to d
 #+end_quote
 
 #+ATTR_HTML: :class bigquote
-Episcopal Presiding Bishop Katharine Jefferts Schori, /Chicago Tribune/, December 2, 2010
+Episcopal Presiding Bishop Katharine Jefferts Schori[fn:1] 
+
+* Footnotes
+
+[fn:1] /Chicago Tribune/, December 2, 2010 

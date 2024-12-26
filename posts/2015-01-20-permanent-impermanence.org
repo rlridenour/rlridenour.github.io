@@ -7,7 +7,8 @@
 As I wrote recently, everything in existence is permanently impermanent. 
 #+end_quote
 
---- [[http://minimalmac.com/post/14973202531/the-only-standard-is-impermanence Minimal Mac][Patrick Rhone]]
+#+ATTR_HTML: :class source
+[[http://minimalmac.com/post/14973202531/the-only-standard-is-impermanence Minimal Mac][Patrick Rhone]]
 
 I detect shades of Heraclitus here.
 

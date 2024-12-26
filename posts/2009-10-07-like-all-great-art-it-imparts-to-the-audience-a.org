@@ -8,4 +8,8 @@ Like all great art, it imparts to the audience a profound sense of empathy and b
 #+end_quote
 
 #+ATTR_HTML: :class bigquote
---- Yoni Brenner, referring to Brahms' *Symphony No. 2* ([[http://www.newyorker.com/humor/2009/10/12/091012sh_shouts_brenner?currentPage=all][/The New Yorker/]])
+Yoni Brenner, referring to Brahms' *Symphony No. 2*[fn:1]
+
+* Footnotes
+
+[fn:1]  [[http://www.newyorker.com/humor/2009/10/12/091012sh_shouts_brenner?currentPage=all][/The New Yorker/]] 

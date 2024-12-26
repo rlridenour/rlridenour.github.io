@@ -9,7 +9,8 @@ why he did not choose philosophy as a profession:
 When you realize that you that you can't have more than a five second conversation with your dad before you're lost, you find another line of work.
 #+end_quote
 
---- Hugh Dancy
+#+ATTR_HTML: :class source
+Hugh Dancy
 
 
 

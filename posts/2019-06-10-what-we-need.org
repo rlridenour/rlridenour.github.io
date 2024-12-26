@@ -7,5 +7,8 @@ People can be entertained on devices 24 hours a day; they do not need a church f
 #+end_quote
 
 #+ATTR_HTML: :class bigquote
-”[[https://www.americamagazine.org/faith/2019/05/02/why-evangelical-megachurches-are-embracing-some-catholic-traditions][Why Evangelical Megachurches Are Embracing (Some) Catholic Traditions]]” by Anna Keating.
+Anna Keating[fn:1]
 
+* Footnotes
+
+[fn:1] ”[[https://www.americamagazine.org/faith/2019/05/02/why-evangelical-megachurches-are-embracing-some-catholic-traditions][Why Evangelical Megachurches Are Embracing (Some) Catholic Traditions]]” 

@@ -8,4 +8,8 @@ What has given the South her identity are those beliefs and qualities which she 
 #+end_quote
 
 #+ATTR_HTML: :class bigquote
-Flannery O’Connor, “The Catholic Novelist in the Protestant South,” in /Mystery and Manners: Occasional Prose/, eds. Robert Fitzgerald and Sally Fitzgerald (New York: Farrar, Straus, and Giroux, 1969), 209.
+Flannery O’Connor[fn:1]
+
+* Footnotes
+
+[fn:1] “The Catholic Novelist in the Protestant South,” in /Mystery and Manners: Occasional Prose/, eds. Robert Fitzgerald and Sally Fitzgerald (New York: Farrar, Straus, and Giroux, 1969), 209. 

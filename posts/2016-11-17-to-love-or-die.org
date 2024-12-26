@@ -28,4 +28,5 @@ Negation and despair,\\
 Show an affirming flame.
 #+end_verse
 
---- From "September 1, 1939" by W.H. Auden
+#+ATTR_HTML: :class source
+From "September 1, 1939" by W.H. Auden

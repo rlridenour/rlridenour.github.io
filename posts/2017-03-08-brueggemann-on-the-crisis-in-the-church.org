@@ -12,5 +12,5 @@ Walter Brueggemann, /A Way Other Than Our Own: Devotions for Lent/
 
 
 #+begin_tagline
-Tagged: quotes religion
+Tagged: [[file:../tags/quotes.org][Quotes]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

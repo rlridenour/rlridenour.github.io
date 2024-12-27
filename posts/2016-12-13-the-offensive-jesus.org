@@ -39,5 +39,5 @@ was but the first stop on the journey to the cross.
 
 
 #+begin_tagline
-Tagged: prayer religion
+Tagged: [[file:../tags/prayer.org][Prayer]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

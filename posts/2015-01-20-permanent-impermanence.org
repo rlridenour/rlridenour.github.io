@@ -28,5 +28,5 @@ This is why people hate analytic philosophers.
 
 
 #+begin_tagline
-Tagged: metaphysics quotes
+Tagged: [[file:../tags/philosophy.org][Philosophy]] [[file:../tags/quotes.org][Quotes]]
 #+end_tagline

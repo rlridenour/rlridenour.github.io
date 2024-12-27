@@ -14,5 +14,5 @@ Now, just type "reload" and you're all set.
 
 
 #+begin_tagline
-Tagged: zsh
+Tagged: [[file:../tags/shell.org][Shell]]
 #+end_tagline

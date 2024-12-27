@@ -11,5 +11,5 @@ Anyone who doubts that should read a bit about Elizabeth Anscombe.
 
 
 #+begin_tagline
-Tagged: philosophy
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

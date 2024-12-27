@@ -98,5 +98,5 @@ I'm not quite satisfied with the superscript number in the footnote, but I haven
 
 
 #+begin_tagline
-Tagged: hugo org
+Tagged: [[file:../tags/org.org][Org]]
 #+end_tagline

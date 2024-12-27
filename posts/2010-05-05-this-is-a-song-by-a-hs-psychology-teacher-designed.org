@@ -11,5 +11,5 @@ This is a song by a HS Psychology teacher designed to help students learn about 
 
 
 #+begin_tagline
-Tagged: teaching critical-thinking
+Tagged: [[file:../tags/teaching.org][Teaching]] [[file:../tags/critical-thinking.org][Critical-Thinking]]
 #+end_tagline

@@ -9,5 +9,5 @@ The second story, in the [[http://www.washingtonpost.com/wp-dyn/content/article/
 
 
 #+begin_tagline
-Tagged: technology army
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

@@ -6,5 +6,5 @@ Interesting [[http://www.thebigdaddyweave.com/2009/10/burning-bibles-baptist-sty
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

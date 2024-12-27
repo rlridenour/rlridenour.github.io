@@ -7,5 +7,5 @@ Back to the blog after a very long break. Geographers from Kansas State Universi
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

@@ -10,5 +10,5 @@ The site is still found at [[https://randyridenour.net][randyridenour.net]].
 
 
 #+begin_tagline
-Tagged: 
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

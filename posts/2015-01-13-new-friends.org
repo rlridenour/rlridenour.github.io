@@ -8,5 +8,5 @@ After telling us this, one turned to me and said, "You bring the topic this even
 
 
 #+begin_tagline
-Tagged: misc
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

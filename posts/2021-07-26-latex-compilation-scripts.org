@@ -68,5 +68,5 @@ These functions first export the org file to \(\LaTeX\), then compile the corres
 
 
 #+begin_tagline
-Tagged: latex emacs org
+Tagged: [[file:../tags/latex.org][Latex]] [[file:../tags/emacs.org][Emacs]] [[file:../tags/org.org][Org]]
 #+end_tagline

@@ -34,5 +34,5 @@ of thinking that I would have done better.
 
 
 #+begin_tagline
-Tagged: prayer religion
+Tagged: [[file:../tags/prayer.org][Prayer]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

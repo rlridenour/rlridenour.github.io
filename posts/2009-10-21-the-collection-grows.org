@@ -13,5 +13,5 @@ The collection grows...
 
 
 #+begin_tagline
-Tagged: aesthetics
+Tagged: [[file:../tags/aesthetics.org][Aesthetics]]
 #+end_tagline

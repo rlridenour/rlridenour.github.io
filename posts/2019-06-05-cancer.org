@@ -12,5 +12,5 @@ The results were good – I do not now need to have the bladder removed, and I h
 
 
 #+begin_tagline
-Tagged: cancer
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

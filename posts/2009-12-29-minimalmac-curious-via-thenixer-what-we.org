@@ -6,5 +6,5 @@ Here's a [[http://minimalmac.com/post/305714868/curious-via-thenixer-what-we-bel
 
 
 #+begin_tagline
-Tagged: mac
+Tagged: [[file:../tags/mac.org][Mac]]
 #+end_tagline

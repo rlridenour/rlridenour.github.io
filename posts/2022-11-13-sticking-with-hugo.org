@@ -6,5 +6,5 @@ I have been toying with the idea of blogging entirely with Emacs and Org Mode, b
 
 
 #+begin_tagline
-Tagged: org
+Tagged: [[file:../tags/org.org][Org]]
 #+end_tagline

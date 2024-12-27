@@ -7,5 +7,5 @@ A first edition of Descartes' /Principles of Philosophy/ will be up for [[http:/
 
 
 #+begin_tagline
-Tagged: philosophy
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

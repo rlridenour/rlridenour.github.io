@@ -10,5 +10,5 @@ Ouch...
 
 
 #+begin_tagline
-Tagged: ethics religion politics
+Tagged: [[file:../tags/ethics.org][Ethics]] [[file:../tags/religion.org][Religion]] [[file:../tags/politics.org][Politics]]
 #+end_tagline

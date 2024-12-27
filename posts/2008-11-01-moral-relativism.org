@@ -24,5 +24,5 @@ Moral relativists are committed to the claim that moral truths are dependent on 
 
 
 #+begin_tagline
-Tagged: ethics
+Tagged: [[file:../tags/ethics.org][Ethics]]
 #+end_tagline

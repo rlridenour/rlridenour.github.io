@@ -6,5 +6,5 @@ A conference on the work of Dietrich von Hildebrand is scheduled for May 27-29, 
 
 
 #+begin_tagline
-Tagged: philosophy
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

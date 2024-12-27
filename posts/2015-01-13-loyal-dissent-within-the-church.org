@@ -12,5 +12,5 @@ Ronald E. Osborn, /Death Before the Fall: Biblical Literalism and the Problem of
 
 
 #+begin_tagline
-Tagged: quotes
+Tagged: [[file:../tags/quotes.org][Quotes]]
 #+end_tagline

@@ -6,5 +6,5 @@ This is a [[http://www.ethicsdaily.com/news.php?viewStory=16900][nice article]] 
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

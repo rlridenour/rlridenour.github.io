@@ -100,5 +100,5 @@ So, we come to this place, this evening, to ask God to change our hearts. We com
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

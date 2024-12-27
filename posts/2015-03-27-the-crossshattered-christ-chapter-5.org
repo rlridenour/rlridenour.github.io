@@ -9,5 +9,5 @@ It is telling that the cry from the cross, "My God, my God, why have you forsake
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

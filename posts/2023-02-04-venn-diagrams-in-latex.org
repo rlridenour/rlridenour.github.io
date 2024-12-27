@@ -114,5 +114,5 @@ Both have enough detail that I can remember what to change to make a particular 
 
 
 #+begin_tagline
-Tagged: latex logic
+Tagged: [[file:../tags/latex.org][Latex]] [[file:../tags/logic.org][Logic]]
 #+end_tagline

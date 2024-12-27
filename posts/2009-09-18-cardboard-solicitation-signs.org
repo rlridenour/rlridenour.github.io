@@ -6,5 +6,5 @@
 
 
 #+begin_tagline
-Tagged: humor
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

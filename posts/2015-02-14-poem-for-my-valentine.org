@@ -23,5 +23,5 @@ that is you.
 
 
 #+begin_tagline
-Tagged: poetry
+Tagged: [[file:../tags/poetry.org][Poetry]]
 #+end_tagline

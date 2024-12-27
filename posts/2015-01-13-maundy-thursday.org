@@ -20,5 +20,5 @@ the things that you have had the grace to offer.\\
 
 
 #+begin_tagline
-Tagged: prayer
+Tagged: [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

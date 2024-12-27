@@ -6,5 +6,5 @@ Nietzsche would like [[http://www.npr.org/blogs/13.7/2010/09/29/130221453/how-to
 
 
 #+begin_tagline
-Tagged: philosophy
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

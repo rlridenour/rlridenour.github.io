@@ -20,5 +20,5 @@ The law in no way restricts the free speech rights of anyone. Churches are alway
 
 
 #+begin_tagline
-Tagged: religion politics
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/politics.org][Politics]]
 #+end_tagline

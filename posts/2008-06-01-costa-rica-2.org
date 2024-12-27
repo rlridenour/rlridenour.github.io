@@ -11,5 +11,5 @@ Things could be changing, both for us and the rest of the world, though. In this
 
 
 #+begin_tagline
-Tagged: family
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

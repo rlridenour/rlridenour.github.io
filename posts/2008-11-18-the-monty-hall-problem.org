@@ -11,5 +11,5 @@ By the way, if you can remember “1/2” then you should be able to get some ex
 
 
 #+begin_tagline
-Tagged: critical-thinking
+Tagged: [[file:../tags/critical-thinking.org][Critical-Thinking]]
 #+end_tagline

@@ -10,5 +10,5 @@ Everything seems to be working fine.
 
 
 #+begin_tagline
-Tagged: hugo 
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

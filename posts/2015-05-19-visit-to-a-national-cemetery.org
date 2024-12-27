@@ -27,5 +27,5 @@ if anything at all.
 
 
 #+begin_tagline
-Tagged: poetry
+Tagged: [[file:../tags/poetry.org][Poetry]]
 #+end_tagline

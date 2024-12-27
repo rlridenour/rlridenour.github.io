@@ -20,5 +20,5 @@ to turn it into the one that we want.
 
 
 #+begin_tagline
-Tagged: prayer
+Tagged: [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

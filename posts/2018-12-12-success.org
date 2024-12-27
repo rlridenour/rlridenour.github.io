@@ -12,5 +12,5 @@ That's definitely a victory in freshman philosophy.
 
 
 #+begin_tagline
-Tagged: philosophy
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

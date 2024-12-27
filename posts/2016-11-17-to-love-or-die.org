@@ -33,5 +33,5 @@ From "September 1, 1939" by W.H. Auden
 
 
 #+begin_tagline
-Tagged: poetry
+Tagged: [[file:../tags/poetry.org][Poetry]]
 #+end_tagline

@@ -22,5 +22,5 @@ We tend to think of ministry as something that one person does for another, in o
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

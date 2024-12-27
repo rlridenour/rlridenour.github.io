@@ -6,5 +6,5 @@ A [[http://qgf.in/rz9PHe][poetic answer]] to that perennial question from those 
 
 
 #+begin_tagline
-Tagged: teaching humor
+Tagged: [[file:../tags/teaching.org][Teaching]]
 #+end_tagline

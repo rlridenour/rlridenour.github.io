@@ -25,5 +25,5 @@ and everything started working fine. I still have no idea why, but it may help s
 
 
 #+begin_tagline
-Tagged: emacs latex
+Tagged: [[file:../tags/emacs.org][Emacs]] [[file:../tags/latex.org][Latex]]
 #+end_tagline

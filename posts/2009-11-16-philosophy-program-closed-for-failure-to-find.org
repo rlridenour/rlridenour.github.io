@@ -8,5 +8,5 @@ Very funny, in an uncomfortable sort of way.
 
 
 #+begin_tagline
-Tagged: philosophy
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

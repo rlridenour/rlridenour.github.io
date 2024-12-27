@@ -48,5 +48,5 @@ In the end, then, it is both one person's being right and facts about context th
 
 
 #+begin_tagline
-Tagged: critical-thinking
+Tagged: [[file:../tags/critical-thinking.org][Critical-Thinking]]
 #+end_tagline

@@ -18,5 +18,5 @@ for the light is coming.
 
 
 #+begin_tagline
-Tagged: prayer religion
+Tagged: [[file:../tags/prayer.org][Prayer]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

@@ -19,5 +19,5 @@ for a seat at the heavenly banquet.
 
 
 #+begin_tagline
-Tagged: prayer religion
+Tagged: [[file:../tags/prayer.org][Prayer]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

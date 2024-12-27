@@ -27,5 +27,5 @@ As God's creation, the world is filled with examples of beauty and grace, but in
 
 
 #+begin_tagline
-Tagged: education
+Tagged: [[file:../tags/teaching.org][Teaching]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

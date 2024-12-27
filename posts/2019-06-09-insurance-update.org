@@ -12,5 +12,5 @@ UPDATE: I gave the Aetna representative the number for our AFLAC policy – she 
 
 
 #+begin_tagline
-Tagged: cancer health-care
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

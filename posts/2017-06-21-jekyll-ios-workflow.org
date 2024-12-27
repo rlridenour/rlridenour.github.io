@@ -23,5 +23,5 @@ Now, I'm one step closer to being able to use the iPad as a desktop replacement.
 
 
 #+begin_tagline
-Tagged: ios jekyll
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

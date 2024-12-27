@@ -10,5 +10,5 @@ I began teaching the thought of the 12th century philosopher Abelard in medieval
 
 
 #+begin_tagline
-Tagged: philosophy
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

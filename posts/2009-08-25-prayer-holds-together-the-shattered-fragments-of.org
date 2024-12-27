@@ -16,5 +16,5 @@ Jacques Ellul
 
 
 #+begin_tagline
-Tagged: religion quotes
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/quotes.org][Quotes]]
 #+end_tagline

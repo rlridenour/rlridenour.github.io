@@ -12,5 +12,5 @@ Could it be that the force of the problem of evil is a matter of one's attitude?
 
 
 #+begin_tagline
-Tagged: philosophy religion
+Tagged: [[file:../tags/philosophy.org][Philosophy]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

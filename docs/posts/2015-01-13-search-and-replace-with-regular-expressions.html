@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 26, 2024 -->
+<!-- Dec 27, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Search and Replace with Regular Expressions</title>
@@ -45,6 +45,7 @@
     <ul>
       <li><a href="/posts/">Blog</a></li>
       <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
       <li><a href="/index.xml">RSS</a></li>
     </ul>
   </nav>
@@ -79,7 +80,7 @@ For example, imagine that I have a list of students that I copied from a databas
 </p>
 
 
-<pre class="example" id="orgfc25afc">
+<pre class="example" id="org15c64c5">
 Search: ^(w*) (w*)n
 Replace: $2, $1n
 </pre>
@@ -90,7 +91,7 @@ This search finds every line consisting of just two words separated by a space. 
 </p>
 
 
-<pre class="example" id="orga9a1a7a">
+<pre class="example" id="org7d33479">
 George Washington
 John Adams
 Thomas Jefferson
@@ -102,7 +103,7 @@ to
 </p>
 
 
-<pre class="example" id="org2aaadd5">
+<pre class="example" id="org6154f89">
 Washington, George
 Adams, John
 Jefferson, Thomas
@@ -118,15 +119,15 @@ The primary difference in Emacs is in referencing the strings to be searched for
 </p>
 
 
-<pre class="example" id="org54e790f">
+<pre class="example" id="orga3e5404">
 Search: ^\(\w+\) \(\w+\)
 Replace: \2, \1
 </pre>
 
 
-<div class="tagline" id="orgf3029f0">
+<div class="tagline" id="orgf7c471d">
 <p>
-Tagged: emacs
+Tagged: <a href="../tags/emacs.html">Emacs</a>
 </p>
 
 </div>
@@ -134,7 +135,7 @@ Tagged: emacs
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 26, 2024.<br>
+  Last updated on Dec 27, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

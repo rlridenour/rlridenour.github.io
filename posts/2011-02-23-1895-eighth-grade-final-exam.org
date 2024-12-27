@@ -7,5 +7,5 @@ On the NY Times site, Stephen Dubner posted a [[http://nyti.ms/fiMAnz][final exa
 
 
 #+begin_tagline
-Tagged: teaching
+Tagged: [[file:../tags/teaching.org][Teaching]]
 #+end_tagline

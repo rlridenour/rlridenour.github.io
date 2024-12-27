@@ -99,5 +99,5 @@ Existentialism does not, in itself, require adherence to any normative moral pri
 
 
 #+begin_tagline
-Tagged: philosophy, existentialism
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

@@ -7,5 +7,5 @@ Dale Tuggy has a new [[http://plato.stanford.edu/entries/trinity/][article]] in 
 
 
 #+begin_tagline
-Tagged: philosophy religion
+Tagged: [[file:../tags/philosophy.org][Philosophy]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

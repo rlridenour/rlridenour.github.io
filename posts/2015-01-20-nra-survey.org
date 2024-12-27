@@ -16,5 +16,5 @@ I will be curious to see what percentage of respondents the NRA reports as suppo
 
 
 #+begin_tagline
-Tagged: critical thinking
+Tagged: [[file:../tags/critical-thinking.org][Critical-Thinking]]
 #+end_tagline

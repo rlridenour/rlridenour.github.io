@@ -35,5 +35,5 @@ and yours are the hands by which He is to bless us now.
 
 
 #+begin_tagline
-Tagged: ethics
+Tagged: [[file:../tags/ethics.org][Ethics]]
 #+end_tagline

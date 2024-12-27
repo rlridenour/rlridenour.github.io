@@ -22,5 +22,5 @@ to the joy of new life that you offer.\\
 
 
 #+begin_tagline
-Tagged: prayer
+Tagged: [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

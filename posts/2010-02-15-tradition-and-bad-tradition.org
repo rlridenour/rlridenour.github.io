@@ -18,5 +18,5 @@ For philosophers, that means we shouldn't stop teaching Plato and Aristotle. For
 
 
 #+begin_tagline
-Tagged: religion philosophy
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

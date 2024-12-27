@@ -13,5 +13,5 @@ So may we never forget that we, the church, comprise Mary’s home. A home, more
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

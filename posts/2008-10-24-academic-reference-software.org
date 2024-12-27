@@ -8,5 +8,5 @@ The good news is that [[http://www.thirdstreetsoftware.com/site/introduction.htm
 
 
 #+begin_tagline
-Tagged: utilities
+Tagged: [[file:../tags/teaching.org][Teaching]]
 #+end_tagline

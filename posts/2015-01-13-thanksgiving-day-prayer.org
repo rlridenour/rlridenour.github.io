@@ -25,5 +25,5 @@ if we would just open our eyes to you.
 
 
 #+begin_tagline
-Tagged: prayer
+Tagged: [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

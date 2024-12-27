@@ -6,5 +6,5 @@ In Philosophy of Mind today, I claimed that the ability to respond to the enviro
 
 
 #+begin_tagline
-Tagged: mind
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

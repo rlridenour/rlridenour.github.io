@@ -12,5 +12,5 @@ Finally, I remembered that I had required GNU ls in my Emacs settings, and had n
 
 
 #+begin_tagline
-Tagged: emacs
+Tagged: [[file:../tags/emacs.org][Emacs]]
 #+end_tagline

@@ -6,5 +6,5 @@ From [[http://happydays.blogs.nytimes.com/2009/10/28/kierkegaard-on-the-couch/][
 
 
 #+begin_tagline
-Tagged: philosophy humor
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

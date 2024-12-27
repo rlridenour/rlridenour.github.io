@@ -10,5 +10,5 @@
 
 
 #+begin_tagline
-Tagged: aesthetics political
+Tagged: [[file:../tags/aesthetics.org][Aesthetics]] [[file:../tags/politics.org][Politics]]
 #+end_tagline

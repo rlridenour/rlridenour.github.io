@@ -51,5 +51,5 @@ Ed. also contains formatting tools for bibliographies. It's built on [[https://g
 
 
 #+begin_tagline
-Tagged: jekyll poetry
+Tagged: [[file:../tags/poetry.org][Poetry]]
 #+end_tagline

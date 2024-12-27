@@ -25,5 +25,5 @@ From /Fifty Years & Other Poems/ (1917)
 
 
 #+begin_tagline
-Tagged: poetry
+Tagged: [[file:../tags/poetry.org][Poetry]]
 #+end_tagline

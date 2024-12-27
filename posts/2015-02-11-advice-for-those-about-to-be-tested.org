@@ -12,5 +12,5 @@ Hugh of Saint Victor, d. Feb. 11, 1141
 
 
 #+begin_tagline
-Tagged: quotes teaching education
+Tagged: [[file:../tags/quotes.org][Quotes]] [[file:../tags/teaching.org][Teaching]]
 #+end_tagline

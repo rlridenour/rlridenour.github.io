@@ -6,5 +6,5 @@ The temperature in Norman just before 5 PM is 106. The high today in Baghdad was
 
 
 #+begin_tagline
-Tagged: misc
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

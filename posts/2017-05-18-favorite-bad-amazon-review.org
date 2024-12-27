@@ -12,5 +12,5 @@ I hope that person eventually found what they needed.
 
 
 #+begin_tagline
-Tagged: misc
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

@@ -9,5 +9,5 @@ I guess that’s another way of pointing out that not a single Democrat voted to
 
 
 #+begin_tagline
-Tagged: political
+Tagged: [[file:../tags/politics.org][Politics]]
 #+end_tagline

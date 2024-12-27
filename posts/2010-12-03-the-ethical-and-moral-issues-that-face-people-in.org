@@ -16,5 +16,5 @@ Episcopal Presiding Bishop Katharine Jefferts Schori[fn:1]
 
 
 #+begin_tagline
-Tagged: quotes ethics
+Tagged: [[file:../tags/quotes.org][Quotes]] [[file:../tags/ethics.org][Ethics]]
 #+end_tagline

@@ -12,5 +12,5 @@ John Dewey
 
 
 #+begin_tagline
-Tagged: quotes philosophy
+Tagged: [[file:../tags/quotes.org][Quotes]] [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

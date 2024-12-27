@@ -31,5 +31,5 @@ That, however, is neither tolerance nor relativism. Instead, it is simply a thin
 
 
 #+begin_tagline
-Tagged: ethics
+Tagged: [[file:../tags/org.org][Org]] [[file:../tags/ethics.org][Ethics]]
 #+end_tagline

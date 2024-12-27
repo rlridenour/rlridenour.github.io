@@ -21,5 +21,5 @@ and give us to grace to listen.
 
 
 #+begin_tagline
-Tagged: prayer religion army
+Tagged: [[file:../tags/prayer.org][Prayer]] [[file:../tags/religion.org][Religion]] [[file:../tags/army.org][Army]]
 #+end_tagline

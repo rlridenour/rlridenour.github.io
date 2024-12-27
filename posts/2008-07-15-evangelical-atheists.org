@@ -6,5 +6,5 @@ There is a very interesting article titled "[[http://www.axess.se/english/2008/0
 
 
 #+begin_tagline
-Tagged: philosophy religion
+Tagged: [[file:../tags/philosophy.org][Philosophy]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

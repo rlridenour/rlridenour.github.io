@@ -6,5 +6,5 @@
 
 
 #+begin_tagline
-Tagged: ethics
+Tagged: [[file:../tags/ethics.org][Ethics]]
 #+end_tagline

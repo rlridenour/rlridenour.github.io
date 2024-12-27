@@ -6,5 +6,5 @@ Speaking of interesting, free resources, [[https://www.duolingo.com/][DuoLingo]]
 
 
 #+begin_tagline
-Tagged: education
+Tagged: [[file:../tags/teaching.org][Teaching]]
 #+end_tagline

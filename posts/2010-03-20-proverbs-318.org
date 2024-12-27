@@ -8,5 +8,5 @@ According to /Sojourners/, 25% of U.S. adults polled attributed this quote to ei
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

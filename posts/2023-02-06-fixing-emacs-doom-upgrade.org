@@ -9,5 +9,5 @@ I had this problem on another machine a few weeks ago, researched it, fixed it, 
 
 
 #+begin_tagline
-Tagged: emacs 
+Tagged: [[file:../tags/emacs.org][Emacs]] 
 #+end_tagline

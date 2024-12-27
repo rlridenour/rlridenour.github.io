@@ -34,5 +34,5 @@ $$
 
 
 #+begin_tagline
-Tagged: jekyll
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

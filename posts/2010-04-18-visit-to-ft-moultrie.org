@@ -8,5 +8,5 @@ It's a moving experience to see a century of history and heroism from one spot o
 
 
 #+begin_tagline
-Tagged: army
+Tagged: [[file:../tags/army.org][Army]]
 #+end_tagline

@@ -12,5 +12,5 @@ Howard Thurman, /Jesus and the Disinherited/, p.11.
 
 
 #+begin_tagline
-Tagged: quotes
+Tagged: [[file:../tags/quotes.org][Quotes]]
 #+end_tagline

@@ -27,5 +27,5 @@ This will put a space equal to the width of an upper-case "M" between each list 
 
 
 #+begin_tagline
-Tagged: org latex
+Tagged: [[file:../tags/org.org][Org]] [[file:../tags/latex.org][Latex]]
 #+end_tagline

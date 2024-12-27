@@ -35,5 +35,5 @@ So, in the end, Jillette's argument begs the question. That is, he hasn't given 
 
 
 #+begin_tagline
-Tagged: science religion philosophy
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

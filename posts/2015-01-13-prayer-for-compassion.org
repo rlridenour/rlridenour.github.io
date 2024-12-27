@@ -40,5 +40,5 @@ Open our hearts that we may love.
 
 
 #+begin_tagline
-Tagged: prayer
+Tagged: [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

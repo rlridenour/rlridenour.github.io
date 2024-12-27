@@ -39,5 +39,5 @@ So, yesterday's sermon on entitlement by Mitch Randall at [NorthHaven Church](ht
 
 
 #+begin_tagline
-Tagged: prayer
+Tagged: [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

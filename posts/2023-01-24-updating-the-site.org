@@ -127,5 +127,5 @@ I have a few more things to do, like create "About" and tag pages, and adjust th
 
 
 #+begin_tagline
-Tagged: hugo emacs org
+Tagged: [[file:../tags/emacs.org][Emacs]] [[file:../tags/org.org][Org]]
 #+end_tagline

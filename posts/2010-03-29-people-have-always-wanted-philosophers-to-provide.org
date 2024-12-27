@@ -12,5 +12,5 @@ People have always wanted philosophers to provide digestible wisdom, yet it is a
 
 
 #+begin_tagline
-Tagged: quotes philosophy
+Tagged: [[file:../tags/quotes.org][Quotes]] [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

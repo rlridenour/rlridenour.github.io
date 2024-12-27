@@ -12,5 +12,5 @@ I received an interesting "package" in campus mail yesterday. It's a coconut wit
 
 
 #+begin_tagline
-Tagged: teaching
+Tagged: [[file:../tags/teaching.org][Teaching]]
 #+end_tagline

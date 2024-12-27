@@ -12,5 +12,5 @@ There is a tragic flaw in our precious Constitution, and I don’t know what can
 
 
 #+begin_tagline
-Tagged: quotes
+Tagged: [[file:../tags/quotes.org][Quotes]]
 #+end_tagline

@@ -7,5 +7,5 @@ There’s an interesting piece in the [[https://www.nytimes.com/2009/02/18/educ
 
 
 #+begin_tagline
-Tagged: critical-thinking
+Tagged: [[file:../tags/critical-thinking.org][Critical-Thinking]]
 #+end_tagline

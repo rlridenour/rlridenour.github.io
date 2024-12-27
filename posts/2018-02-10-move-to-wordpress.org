@@ -8,5 +8,5 @@ I'm trying to use the iPad for more things now. I liked using both Jekyll and Hu
 
 
 #+begin_tagline
-Tagged: blog
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

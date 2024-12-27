@@ -13,5 +13,5 @@ I don't quite know what to say about this video, except that it's not likely the
 
 
 #+begin_tagline
-Tagged: philosophy
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

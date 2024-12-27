@@ -20,5 +20,5 @@ Maybe the gun case is not close enough to be a good analogy. Maybe we should ins
 
 
 #+begin_tagline
-Tagged: religion ethics
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/ethics.org][Ethics]]
 #+end_tagline

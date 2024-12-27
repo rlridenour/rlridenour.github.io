@@ -36,5 +36,5 @@ In whose name we pray.\\
 
 
 #+begin_tagline
-Tagged: prayer
+Tagged: [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

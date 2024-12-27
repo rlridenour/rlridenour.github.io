@@ -22,5 +22,5 @@ Many people use either [[https://www.travis-ci.org][Travis CI]] or [[http://www.
 
 
 #+begin_tagline
-Tagged: 
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

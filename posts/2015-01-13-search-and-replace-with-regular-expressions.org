@@ -53,5 +53,5 @@ Replace: \2, \1
 
 
 #+begin_tagline
-Tagged: emacs
+Tagged: [[file:../tags/emacs.org][Emacs]]
 #+end_tagline

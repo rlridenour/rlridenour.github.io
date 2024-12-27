@@ -32,5 +32,5 @@ To live fully as citizens of your kingdom.\\
 
 
 #+begin_tagline
-Tagged: prayer
+Tagged: [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

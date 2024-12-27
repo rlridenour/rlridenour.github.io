@@ -6,5 +6,5 @@ A colleague sent me this [[http://eternal-earthbound-pets.com/][link]]. Just whe
 
 
 #+begin_tagline
-Tagged: religion humor
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

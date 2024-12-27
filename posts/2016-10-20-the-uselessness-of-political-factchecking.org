@@ -14,5 +14,5 @@ Now, I'm seeing many claims that only 5.7% of Clinton Foundation donations go to
 
 
 #+begin_tagline
-Tagged: politics critical-thinking
+Tagged: [[file:../tags/politics.org][Politics]] [[file:../tags/critical-thinking.org][Critical-Thinking]]
 #+end_tagline

@@ -13,5 +13,5 @@ UPDATE: Success! I like writing with [[http://omz-software.com/editorial/][Edito
 
 
 #+begin_tagline
-Tagged: jekyll ios
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

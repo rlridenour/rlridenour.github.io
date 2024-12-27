@@ -10,5 +10,5 @@ Is pastoral counseling good treatment for the depression itself? No, but then ag
 
 
 #+begin_tagline
-Tagged: critical-thinking religion
+Tagged: [[file:../tags/critical-thinking.org][Critical-Thinking]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

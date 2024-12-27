@@ -29,5 +29,5 @@ fixed everything.
 
 
 #+begin_tagline
-Tagged: emacs osx 
+Tagged: [[file:../tags/emacs.org][Emacs]]
 #+end_tagline

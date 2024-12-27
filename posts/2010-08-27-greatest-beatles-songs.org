@@ -6,5 +6,5 @@ Rolling Stone's [[http://www.rollingstone.com/music/photos/28431/194023][ranking
 
 
 #+begin_tagline
-Tagged: music
+Tagged: [[file:../tags/music.org][Music]]
 #+end_tagline

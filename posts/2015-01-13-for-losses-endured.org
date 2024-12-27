@@ -9,5 +9,5 @@ Searching for the promised land.
 
 
 #+begin_tagline
-Tagged: poetry
+Tagged: [[file:../tags/poetry.org][Poetry]]
 #+end_tagline

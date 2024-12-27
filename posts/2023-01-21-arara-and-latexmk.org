@@ -99,5 +99,5 @@ Since the options that I want are in my latexmkrc file, there's nothing else I n
 
 
 #+begin_tagline
-Tagged: latex
+Tagged: [[file:../tags/latex.org][Latex]]
 #+end_tagline

@@ -10,5 +10,5 @@ From a briefing given by an Army Chaplain about the new Inter-service Chaplain C
 
 
 #+begin_tagline
-Tagged: army
+Tagged: [[file:../tags/army.org][Army]]
 #+end_tagline

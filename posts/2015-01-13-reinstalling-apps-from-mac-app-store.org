@@ -18,5 +18,5 @@ Lesson: Launchpad sees apps on external drives, so disconnect any external drive
 
 
 #+begin_tagline
-Tagged: mac
+Tagged: [[file:../tags/org.org][Org]] [[file:../tags/mac.org][Mac]]
 #+end_tagline

@@ -18,5 +18,5 @@ Now, I'm not defending the spending of the Clinton Foundation.[fn:2] I have no i
 
 
 #+begin_tagline
-Tagged: politics critical-thinking
+Tagged: [[file:../tags/politics.org][Politics]] [[file:../tags/critical-thinking.org][Critical-Thinking]]
 #+end_tagline

@@ -46,5 +46,5 @@ This day, Ash Wednesday, is the day on which the church is faced with the truth.
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

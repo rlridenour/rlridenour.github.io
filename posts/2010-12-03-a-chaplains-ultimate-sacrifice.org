@@ -6,5 +6,5 @@ From the [[http://articles.latimes.com/2010/dec/02/nation/la-na-chaplain-2010120
 
 
 #+begin_tagline
-Tagged: army
+Tagged: [[file:../tags/army.org][Army]]
 #+end_tagline

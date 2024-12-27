@@ -6,5 +6,5 @@ Al Staggs will be in chapel today at OBU presenting his Bonhoeffer monologue. I 
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

@@ -174,5 +174,5 @@ When published, that code produces this:
 
 
 #+begin_tagline
-Tagged: 
+Tagged: [[file:../tags/org.org][Org]]
 #+end_tagline

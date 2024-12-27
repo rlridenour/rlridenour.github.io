@@ -10,5 +10,5 @@ Another change blindness demonstration. I have to admit that this one fooled me.
 
 
 #+begin_tagline
-Tagged: critical-thinking
+Tagged: [[file:../tags/critical-thinking.org][Critical-Thinking]]
 #+end_tagline

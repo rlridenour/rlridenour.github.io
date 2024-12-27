@@ -8,5 +8,5 @@ It appears that Mill was right — it is better to be a dissatisfied Socrates th
 
 
 #+begin_tagline
-Tagged: philosophy
+Tagged: [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

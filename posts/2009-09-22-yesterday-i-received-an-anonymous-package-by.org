@@ -15,5 +15,5 @@ What should I do to get even? Maybe we'll have to reinstate those daily presenta
 
 
 #+begin_tagline
-Tagged: aesthetics
+Tagged: [[file:../tags/aesthetics.org][Aesthetics]]
 #+end_tagline

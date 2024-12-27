@@ -13,5 +13,5 @@ Another figurine arrived today. Evidently, the collection needed a little gender
 
 
 #+begin_tagline
-Tagged: aesthetics
+Tagged: [[file:../tags/aesthetics.org][Aesthetics]]
 #+end_tagline

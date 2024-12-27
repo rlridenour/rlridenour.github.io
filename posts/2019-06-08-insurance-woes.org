@@ -8,5 +8,5 @@ I have often wondered how people with no insurance survive a serious illness. No
 
 
 #+begin_tagline
-Tagged: cancer health-care
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

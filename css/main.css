@@ -20,8 +20,8 @@ html {
 
 
 body {
-font-size: clamp(1rem, 0.231vw + 0.94rem, 1.125rem);
-line-height: clamp(1.575rem, -0.416vw + 1.908rem, 1.8rem);
+    font-size: clamp(1rem, 0.231vw + 0.94rem, 1.125rem);
+    line-height: clamp(1.575rem, -0.416vw + 1.908rem, 1.8rem);
     background-color: var(--light);
     margin: 0;
     max-width: 800px;
@@ -69,7 +69,7 @@ span.subtitle {
 
 .footer {
     font-size: clamp(0.875rem, 0.231vw + 0.815rem, 1rem);
-line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);
+    line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);
     text-align: center;
     padding:40px 0px 0px 0px;
 }
@@ -254,9 +254,11 @@ img {
 }
 
 .tagline {
- font-size: clamp(0.875rem, 0.231vw + 0.815rem, 1rem);
-line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);
-color: var(--less-light);
+    margin-top: 2rem; 
+    text-align: right;
+    font-size: clamp(0.875rem, 0.231vw + 0.815rem, 1rem);
+    line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);
+    color: var(--less-light);
 }
 
 

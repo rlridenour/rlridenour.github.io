@@ -40,5 +40,5 @@ Now, the site is up, and it just needs some more content. We'll see how long tha
 
 
 #+begin_tagline
-Tagged: jekyll
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

@@ -27,5 +27,5 @@ This starts a server if there is not one already, then opens a new client. So, t
 
 
 #+begin_tagline
-Tagged: emacs zsh
+Tagged: [[file:../tags/emacs.org][Emacs]] [[file:../tags/shell.org][Shell]]
 #+end_tagline

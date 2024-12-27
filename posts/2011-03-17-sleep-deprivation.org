@@ -24,5 +24,5 @@ Sleep deprivation doesn't appear to be the best strategy to achieve a fulfilling
 
 
 #+begin_tagline
-Tagged: teaching
+Tagged: [[file:../tags/teaching.org][Teaching]]
 #+end_tagline

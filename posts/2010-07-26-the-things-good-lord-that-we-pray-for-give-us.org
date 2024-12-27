@@ -13,5 +13,5 @@ Thomas More
 
 
 #+begin_tagline
-Tagged: quotes religion
+Tagged: [[file:../tags/quotes.org][Quotes]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

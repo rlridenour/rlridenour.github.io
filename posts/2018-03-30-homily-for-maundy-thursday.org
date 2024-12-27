@@ -16,5 +16,5 @@ From this phrase, 'A new commandment,' or in Latin, /mandatum novum/, we get the
 
 
 #+begin_tagline
-Tagged: sermons
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

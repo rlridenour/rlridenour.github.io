@@ -9,5 +9,5 @@ Like most Emacs users, I tend to use Org Mode as much as I can. Hugo has native 
 
 
 #+begin_tagline
-Tagged: emacs hugo
+Tagged: [[file:../tags/emacs.org][Emacs]]
 #+end_tagline

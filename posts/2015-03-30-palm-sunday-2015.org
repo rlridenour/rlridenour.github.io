@@ -31,5 +31,5 @@ and not the messiah that we need.
 
 
 #+begin_tagline
-Tagged: prayer religion
+Tagged: [[file:../tags/prayer.org][Prayer]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

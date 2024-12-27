@@ -12,5 +12,5 @@ We've tried to do similar things to liberals. It just has never worked, it never
 
 
 #+begin_tagline
-Tagged: critical-thinking politics
+Tagged: [[file:../tags/critical-thinking.org][Critical-Thinking]] [[file:../tags/politics.org][Politics]]
 #+end_tagline

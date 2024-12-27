@@ -47,5 +47,5 @@ we pray.\\
 
 
 #+begin_tagline
-Tagged: religion prayer
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

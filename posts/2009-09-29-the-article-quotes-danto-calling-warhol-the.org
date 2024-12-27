@@ -6,5 +6,5 @@
 
 
 #+begin_tagline
-Tagged: quotes aesthetics
+Tagged: [[file:../tags/quotes.org][Quotes]] [[file:../tags/aesthetics.org][Aesthetics]]
 #+end_tagline

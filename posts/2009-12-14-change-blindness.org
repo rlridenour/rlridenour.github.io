@@ -6,5 +6,5 @@ A great [[http://www.boingboing.net/2009/12/14/change-blindness-exp.html][experi
 
 
 #+begin_tagline
-Tagged: philosophy critical-thinking
+Tagged: [[file:../tags/philosophy.org][Philosophy]] [[file:../tags/critical-thinking.org][Critical-Thinking]]
 #+end_tagline

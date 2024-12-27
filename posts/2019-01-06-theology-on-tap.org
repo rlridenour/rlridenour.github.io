@@ -26,5 +26,5 @@ Our next meeting is June 13, at 6:30 p.m.
 
 
 #+begin_tagline
-Tagged: books
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

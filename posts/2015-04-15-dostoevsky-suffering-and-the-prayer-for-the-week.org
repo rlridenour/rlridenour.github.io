@@ -23,5 +23,5 @@ reconciling love.
 
 
 #+begin_tagline
-Tagged: prayer religion philosophy
+Tagged: [[file:../tags/prayer.org][Prayer]] [[file:../tags/religion.org][Religion]] [[file:../tags/philosophy.org][Philosophy]]
 #+end_tagline

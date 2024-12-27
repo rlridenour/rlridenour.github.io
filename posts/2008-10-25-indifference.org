@@ -6,5 +6,5 @@ I passed a church this morning that had this statement on the sign: "Indifferenc
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

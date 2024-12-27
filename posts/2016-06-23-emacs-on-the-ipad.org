@@ -14,5 +14,5 @@ So, the good news is that I'm now writing this in Emacs on the iPad. The bad new
 
 
 #+begin_tagline
-Tagged: emacs
+Tagged: [[file:../tags/emacs.org][Emacs]]
 #+end_tagline

@@ -12,5 +12,5 @@ Now, may the slanting rays of the sun light the path before us, as the love of G
 
 
 #+begin_tagline
-Tagged: prayer
+Tagged: [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

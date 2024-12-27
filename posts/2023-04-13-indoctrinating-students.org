@@ -13,5 +13,5 @@ And if ‘indoctrinating’ students truly existed, I would have classes with 10
 
 
 #+begin_tagline
-Tagged: quotes, education
+Tagged: [[file:../tags/quotes.org][Quotes]] [[file:../tags/teaching.org][Teaching]]
 #+end_tagline

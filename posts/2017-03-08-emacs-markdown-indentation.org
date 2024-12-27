@@ -6,5 +6,5 @@ Beginning today, for some reason, I could not indent Markdown list items in Emac
 
 
 #+begin_tagline
-Tagged: emacs markdown
+Tagged: [[file:../tags/emacs.org][Emacs]]
 #+end_tagline

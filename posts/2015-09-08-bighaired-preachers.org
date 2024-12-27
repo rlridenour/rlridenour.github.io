@@ -12,5 +12,5 @@ Fox Mulder, The X-Files
 
 
 #+begin_tagline
-Tagged: quotes
+Tagged: [[file:../tags/quotes.org][Quotes]]
 #+end_tagline

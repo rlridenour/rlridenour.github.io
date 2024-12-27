@@ -81,5 +81,5 @@ They both have some other useful things that might also be helpful. I'm grateful
 
 
 #+begin_tagline
-Tagged: hugo emacs 
+Tagged: [[file:../tags/emacs.org][Emacs]] 
 #+end_tagline

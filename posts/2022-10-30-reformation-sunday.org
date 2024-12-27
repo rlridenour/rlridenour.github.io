@@ -6,5 +6,5 @@ We had our annual Reformation Sunday gathering at the local German restaurant. M
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

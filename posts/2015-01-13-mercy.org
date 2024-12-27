@@ -60,5 +60,5 @@ For more information on Restorative Justice, see [[http://www.restorativejustice
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

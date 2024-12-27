@@ -24,5 +24,5 @@ Kimberly Amadeo provides a clear explanation of these methods, along with the re
 
 
 #+begin_tagline
-Tagged: politics economics
+Tagged: [[file:../tags/politics.org][Politics]]
 #+end_tagline

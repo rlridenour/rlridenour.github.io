@@ -6,5 +6,5 @@ Go vote!
 
 
 #+begin_tagline
-Tagged: politics
+Tagged: [[file:../tags/politics.org][Politics]]
 #+end_tagline

@@ -12,5 +12,5 @@ I'm back at the Chaplains' School for the first time in seven years. One of my c
 
 
 #+begin_tagline
-Tagged: army
+Tagged: [[file:../tags/army.org][Army]]
 #+end_tagline

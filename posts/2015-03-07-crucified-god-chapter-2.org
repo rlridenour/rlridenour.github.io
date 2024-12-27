@@ -14,5 +14,5 @@ It's not that I have nothing to say, it's rather that what I have to say seems i
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

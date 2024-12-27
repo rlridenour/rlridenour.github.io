@@ -12,5 +12,5 @@ This does not mean that the church should not be developing creative ways of car
 
 
 #+begin_tagline
-Tagged: religion ethics
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/ethics.org][Ethics]]
 #+end_tagline

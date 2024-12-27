@@ -8,5 +8,5 @@ From Ethics Daily.
 
 
 #+begin_tagline
-Tagged: religion politics
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/politics.org][Politics]]
 #+end_tagline

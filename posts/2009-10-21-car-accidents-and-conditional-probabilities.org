@@ -16,5 +16,5 @@ Another way to look at it is to use Bayes' Theorem, but we'll save that for anot
 
 
 #+begin_tagline
-Tagged: critical-thinking
+Tagged: [[file:../tags/critical-thinking.org][Critical-Thinking]]
 #+end_tagline

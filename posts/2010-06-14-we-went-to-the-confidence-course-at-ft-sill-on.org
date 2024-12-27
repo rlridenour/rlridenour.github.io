@@ -12,5 +12,5 @@ We went to the Confidence Course at Ft. Sill on Saturday. I came back with a bla
 
 
 #+begin_tagline
-Tagged: army
+Tagged: [[file:../tags/army.org][Army]]
 #+end_tagline

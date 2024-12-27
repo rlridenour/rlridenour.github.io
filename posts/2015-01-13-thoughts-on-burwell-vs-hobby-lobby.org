@@ -14,5 +14,5 @@ In any case, this is just one of the problems with linking health-coverage and e
 
 
 #+begin_tagline
-Tagged: religion political
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/politics.org][Politics]]
 #+end_tagline

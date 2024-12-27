@@ -6,5 +6,5 @@ We are leaving tomorrow for a week in Costa Rica. We're all looking forward to a
 
 
 #+begin_tagline
-Tagged: family
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

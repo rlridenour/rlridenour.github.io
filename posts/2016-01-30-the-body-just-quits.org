@@ -6,5 +6,5 @@ We left Accra, Ghana at 2300 last Saturday night. After thirty hours of travelin
 
 
 #+begin_tagline
-Tagged: misc
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

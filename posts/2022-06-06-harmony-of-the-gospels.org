@@ -114,5 +114,5 @@ This is a schedule for a study of the Gospels in our Sunday School Class at Nort
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

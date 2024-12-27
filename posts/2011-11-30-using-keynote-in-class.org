@@ -13,5 +13,5 @@ Even so, I am extremely pleased with Keynote for iOS and the companion Remote ap
 
 
 #+begin_tagline
-Tagged: teaching
+Tagged: [[file:../tags/teaching.org][Teaching]]
 #+end_tagline

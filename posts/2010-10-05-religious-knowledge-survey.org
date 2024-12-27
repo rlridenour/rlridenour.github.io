@@ -8,5 +8,5 @@ For those who would like to test their own knowledge, the Pew Forum on Religion 
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

@@ -25,5 +25,5 @@ Note that the Bible and the Church for the first 1600 years of its existence def
 
 
 #+begin_tagline
-Tagged: religion politics
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/politics.org][Politics]]
 #+end_tagline

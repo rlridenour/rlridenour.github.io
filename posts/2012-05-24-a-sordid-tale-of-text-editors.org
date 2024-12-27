@@ -31,3 +31,4 @@ UPDATE: It's 2024 now, and I've been using Emacs for over a decade. I still like
 [fn:1] Never underestimate the power of the obvious.
 
 [fn:2] See Dr. Drang's excellent explanation [[http://www.leancrew.com/all-this/2008/07/why-vi/][here]].
+

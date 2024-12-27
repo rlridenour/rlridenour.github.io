@@ -13,5 +13,5 @@ I switched from latexmk to [[https://mirrors.concertpass.com/tex-archive/support
 
 
 #+begin_tagline
-Tagged: 
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

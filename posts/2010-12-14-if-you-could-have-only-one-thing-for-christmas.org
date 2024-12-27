@@ -12,5 +12,5 @@ When her mother pointed out that the salutation was missing an "N", she simply a
 
 
 #+begin_tagline
-Tagged: humor
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

@@ -7,5 +7,5 @@ It works extremely well. I had to remap the key definitions since =C-c j= was al
 
 
 #+begin_tagline
-Tagged: emacs jekyll
+Tagged: [[file:../tags/emacs.org][Emacs]]
 #+end_tagline

@@ -7,5 +7,5 @@ The dog just swallowed a whole avocado pit. I feel an expensive vet bill in my f
 
 
 #+begin_tagline
-Tagged: family
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

@@ -52,5 +52,5 @@ It sounds interesting, and I'll have to keep an eye on it. I saw [[http://www.we
 
 
 #+begin_tagline
-Tagged: jekyll
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

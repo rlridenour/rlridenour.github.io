@@ -168,5 +168,5 @@ I'm very happy with how things have turned out, and this should be enough to hel
 
 
 #+begin_tagline
-Tagged: emacs org blog
+Tagged: [[file:../tags/emacs.org][Emacs]] [[file:../tags/org.org][Org]]
 #+end_tagline

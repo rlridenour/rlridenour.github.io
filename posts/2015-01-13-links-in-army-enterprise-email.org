@@ -26,5 +26,5 @@ It only took two months to figure that out. It might be better if I'd simply lea
 
 
 #+begin_tagline
-Tagged: army
+Tagged: [[file:../tags/army.org][Army]]
 #+end_tagline

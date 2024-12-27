@@ -8,5 +8,5 @@ I tend to find most political issues to be difficult and intricate, requiring co
 
 
 #+begin_tagline
-Tagged: politics religion
+Tagged: [[file:../tags/politics.org][Politics]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

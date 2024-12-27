@@ -14,5 +14,5 @@ May God continue to make beautiful things out of all of us.
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

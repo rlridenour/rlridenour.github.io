@@ -72,5 +72,5 @@ Ten principles of just peacemaking:[fn:1]
 
 
 #+begin_tagline
-Tagged: ethics political
+Tagged: [[file:../tags/ethics.org][Ethics]] [[file:../tags/politics.org][Politics]]
 #+end_tagline

@@ -11,5 +11,5 @@ cp (find . -name '<name>') <target folder>
 
 
 #+begin_tagline
-Tagged: fish
+Tagged: [[file:../tags/shell.org][Shell]]
 #+end_tagline

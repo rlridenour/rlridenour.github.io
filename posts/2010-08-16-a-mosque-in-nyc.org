@@ -10,5 +10,5 @@ It is relevant to consider the setting for the proposed Mosque. This is not a Mo
 
 
 #+begin_tagline
-Tagged: religion politics
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/Politics.Org][Politics]]
 #+end_tagline

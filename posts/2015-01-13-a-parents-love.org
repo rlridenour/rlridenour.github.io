@@ -44,5 +44,5 @@ with more than just my lips.\\
 
 
 #+begin_tagline
-Tagged: ethics politics religion
+Tagged: [[file:../tags/ethics.org][Ethics]] [[file:../tags/politics.org][Politics]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

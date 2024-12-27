@@ -11,5 +11,5 @@ We've been able to work with the Methodists and the Episcopalians. The Baptists.
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

@@ -6,5 +6,5 @@ Rousseau's /Social Contract/ opens with "Man is born to be free, and everywhere 
 
 
 #+begin_tagline
-Tagged: technology
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

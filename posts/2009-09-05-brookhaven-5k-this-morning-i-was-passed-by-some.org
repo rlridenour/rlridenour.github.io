@@ -7,5 +7,5 @@ Brookhaven 5K this morning. I was passed by some ten year old kids.
 
 
 #+begin_tagline
-Tagged: misc
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

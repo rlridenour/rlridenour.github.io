@@ -14,5 +14,5 @@ I'm glad to see that we've gone for the "sure-bet" in the Existentialism course 
 
 
 #+begin_tagline
-Tagged: quotes religion
+Tagged: [[file:../tags/quotes.org][Quotes]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

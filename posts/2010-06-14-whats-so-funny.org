@@ -8,5 +8,5 @@ You should see my podcast list.
 
 
 #+begin_tagline
-Tagged: misc
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

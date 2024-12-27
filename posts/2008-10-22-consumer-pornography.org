@@ -10,5 +10,5 @@ The glossy lifestyle magazines which are such a feature of weekend papers are co
 
 
 #+begin_tagline
-Tagged: quotes
+Tagged: [[file:../tags/quotes.org][Quotes]]
 #+end_tagline

@@ -6,5 +6,5 @@ From /Slate/, [[http://www.slate.com/id/2255105/][interesting book]] about treat
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

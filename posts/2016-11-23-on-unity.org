@@ -39,5 +39,5 @@ When we exclude, we show pride, impatience, and hardness of spirit, not the humi
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

@@ -8,5 +8,5 @@ The 11th Commandment of Election Season: thou shalt not put thy faith in polls, 
 
 
 #+begin_tagline
-Tagged: quotes politics
+Tagged: [[file:../tags/quotes.org][Quotes]] [[file:../tags/politics.org][Politics]]
 #+end_tagline

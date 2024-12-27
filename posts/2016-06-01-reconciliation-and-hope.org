@@ -26,5 +26,5 @@ The events of the past eight years proved that progress requires more than simpl
 
 
 #+begin_tagline
-Tagged: ethics
+Tagged: [[file:../tags/ethics.org][Ethics]]
 #+end_tagline

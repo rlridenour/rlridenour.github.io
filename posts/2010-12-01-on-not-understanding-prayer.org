@@ -6,5 +6,5 @@ From [[http://www.ethicsdaily.com/news.php?viewStory=17082][EthicsDaily.com]]
 
 
 #+begin_tagline
-Tagged: religion prayer
+Tagged: [[file:../tags/religion.org][Religion]] [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

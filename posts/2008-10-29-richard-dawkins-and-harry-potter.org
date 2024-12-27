@@ -8,5 +8,5 @@ I never thought I would see Richard Dawkins taking the same position as conserva
 
 
 #+begin_tagline
-Tagged: misc
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

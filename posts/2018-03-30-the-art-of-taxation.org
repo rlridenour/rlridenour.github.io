@@ -13,5 +13,5 @@ Attributed to Jean-Baptiste Colbert, Finance Minister to Louis XIV
 
 
 #+begin_tagline
-Tagged: quotes
+Tagged: [[file:../tags/quotes.org][Quotes]]
 #+end_tagline

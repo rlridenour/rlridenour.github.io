@@ -10,5 +10,5 @@ You can see the results [[https://github.com/rlridenour/prelude/blob/master/pers
 
 
 #+begin_tagline
-Tagged: emacs
+Tagged: [[file:../tags/emacs.org][Emacs]]
 #+end_tagline

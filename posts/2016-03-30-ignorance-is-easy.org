@@ -14,5 +14,5 @@ Ignorance may not be bliss, but it's certainly less work.
 
 
 #+begin_tagline
-Tagged: quotes
+Tagged: [[file:../tags/quotes.org][Quotes]]
 #+end_tagline

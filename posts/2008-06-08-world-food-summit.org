@@ -16,5 +16,5 @@ There are other things that are likely to be playing a role in the increased foo
 
 
 #+begin_tagline
-Tagged: ethics political
+Tagged: [[file:../tags/ethics.org][Ethics]] [[file:../tags/politics.org][Politics]]
 #+end_tagline

@@ -112,5 +112,5 @@ Ox-hugo works amazingly well for producing well-formed Hugo Goldmark markdown fr
 
 
 #+begin_tagline
-Tagged: emacs hugo org
+Tagged: [[file:../tags/emacs.org][Emacs]]
 #+end_tagline

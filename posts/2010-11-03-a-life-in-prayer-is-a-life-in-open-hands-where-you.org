@@ -12,5 +12,5 @@ Henri Nouwen
 
 
 #+begin_tagline
-Tagged: quotes religion prayer
+Tagged: [[file:../tags/quotes.org][Quotes]] [[file:../tags/religion.org][Religion]] [[file:../tags/prayer.org][Prayer]]
 #+end_tagline

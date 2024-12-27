@@ -10,5 +10,5 @@ This same point was made by National Security Advisor Stephen Hadley in an [[htt
 
 
 #+begin_tagline
-Tagged: political religion
+Tagged: [[file:../tags/politics.org][Politics]] [[file:../tags/religion.org][Religion]]
 #+end_tagline

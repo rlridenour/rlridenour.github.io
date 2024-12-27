@@ -16,5 +16,5 @@ A. E. Housman[fn:1]
 
 
 #+begin_tagline
-Tagged: quotes
+Tagged: [[file:../tags/quotes.org][Quotes]]
 #+end_tagline

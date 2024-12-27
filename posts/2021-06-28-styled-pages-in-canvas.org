@@ -138,5 +138,5 @@ Everything is tied together with a very simple Emacs function:
 
 
 #+begin_tagline
-Tagged: 
+Tagged: [[file:../tags/teaching.org][Teaching]]
 #+end_tagline

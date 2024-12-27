@@ -10,5 +10,5 @@ He is the most published humanities scholar in the world, having published well 
 
 
 #+begin_tagline
-Tagged: religion
+Tagged: [[file:../tags/religion.org][Religion]]
 #+end_tagline

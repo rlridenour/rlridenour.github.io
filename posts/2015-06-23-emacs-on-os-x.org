@@ -48,5 +48,5 @@ There are parts of this that I really didn't need to do, but too much is better 
 
 
 #+begin_tagline
-Tagged: emacs osx
+Tagged: [[file:../tags/emacs.org][Emacs]]
 #+end_tagline

@@ -102,5 +102,5 @@ which produces this:
 
 
 #+begin_tagline
-Tagged: latex logic teaching
+Tagged: [[file:../tags/latex.org][Latex]] [[file:../tags/logic.org][Logic]] [[file:../tags/teaching.org][Teaching]]
 #+end_tagline

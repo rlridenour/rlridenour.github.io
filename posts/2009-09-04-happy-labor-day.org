@@ -7,5 +7,5 @@ One of the many lasting consequences of the labor movement of the late 19th cent
 
 
 #+begin_tagline
-Tagged: misc
+Tagged: [[file:../tags/misc.org][Misc]]
 #+end_tagline

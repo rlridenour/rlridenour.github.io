@@ -111,3 +111,8 @@ This is a schedule for a study of the Gospels in our Sunday School Class at Nort
 | 3/10  | The Resurrection Morning                                            | Matthew 28:1-10, Mark 16:1-11, Luke 24:1-12, John 20:1-18       |
 | 3/17  | The Walk to Emmaus                                                  | Mark 16:12-13, Luke 24:13-35                                    |
 | 3/24  | Jesus Appears to Ten Disciples                                      | Mark 16:14, Luke 24:36-49, John 20:19-25                        |
+
+
+#+begin_tagline
+Tagged: religion
+#+end_tagline

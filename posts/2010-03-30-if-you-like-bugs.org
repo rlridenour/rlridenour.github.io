@@ -3,3 +3,8 @@
 #+title: If You Like Bugs...
 
 Here are some [[https://www.dailymail.co.uk/sciencetech/article-1260946/The-stunning-pictures-sleeping-insects-covered-early-morning-dew.html][very cool pictures]] of insects covered with droplets of dew.
+
+
+#+begin_tagline
+Tagged: misc
+#+end_tagline

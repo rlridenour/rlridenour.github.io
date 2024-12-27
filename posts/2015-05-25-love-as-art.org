@@ -9,3 +9,8 @@ We will make love an art and we will love like artists.
 
 #+ATTR_HTML: :class bigquote
 Marianne Williamson
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

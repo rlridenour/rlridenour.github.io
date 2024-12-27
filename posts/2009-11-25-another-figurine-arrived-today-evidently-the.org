@@ -10,3 +10,8 @@ Another figurine arrived today. Evidently, the collection needed a little gender
 #+end_center
 
 
+
+
+#+begin_tagline
+Tagged: aesthetics
+#+end_tagline

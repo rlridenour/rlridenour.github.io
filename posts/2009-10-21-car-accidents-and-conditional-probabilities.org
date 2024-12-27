@@ -13,3 +13,8 @@ On the assumptions I made above concerning the relative frequencies of trips and
     
 Another way to look at it is to use Bayes' Theorem, but we'll save that for another time.
     
+
+
+#+begin_tagline
+Tagged: critical-thinking
+#+end_tagline

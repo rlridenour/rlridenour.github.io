@@ -22,3 +22,8 @@ Or tightening chains about your feet?
 
 #+ATTR_HTML: :class source
 From /Fifty Years & Other Poems/ (1917)
+
+
+#+begin_tagline
+Tagged: poetry
+#+end_tagline

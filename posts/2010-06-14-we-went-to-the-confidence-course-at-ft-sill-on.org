@@ -9,3 +9,8 @@ We went to the Confidence Course at Ft. Sill on Saturday. I came back with a bla
 #+ATTR_HTML: :width 100% :height
 [[../images/posts/confidence-course.png]]
 #+end_center
+
+
+#+begin_tagline
+Tagged: army
+#+end_tagline

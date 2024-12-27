@@ -9,3 +9,8 @@ I can't understand why people are frightened of new ideas. I'm frightened of the
 
 #+ATTR_HTML: :class bigquote
 John Cage
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

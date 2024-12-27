@@ -5,3 +5,8 @@
 [[http://lab.arc90.com/experiments/readability/][Readability]]
 
 Highly recommended if you read many articles on the internet.
+
+
+#+begin_tagline
+Tagged: misc
+#+end_tagline

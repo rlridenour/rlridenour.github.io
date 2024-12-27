@@ -7,3 +7,8 @@ Today, we learn that 298 people were killed when Malaysian Airlines Flight 117 w
 For all who live in fear, we pray.
 
 Christ have mercy.
+
+
+#+begin_tagline
+Tagged: misc
+#+end_tagline

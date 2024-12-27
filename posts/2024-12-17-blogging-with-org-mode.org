@@ -165,3 +165,8 @@ Finally, posts have these header lines:
 #+end_src
 
 I'm very happy with how things have turned out, and this should be enough to help others do the same. I've been converting old posts to the new format and still have some 250 to go. That's giving me plenty of opportunities to develop my regex skills. The source for the site can be found on Github [[https://github.com/rlridenour/rlridenour.github.io][here]].
+
+
+#+begin_tagline
+Tagged: emacs org blog
+#+end_tagline

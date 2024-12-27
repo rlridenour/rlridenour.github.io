@@ -41,3 +41,8 @@ but not just for us.
 
 
 # ![Embrace](images/2016/embrace.jpg)
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

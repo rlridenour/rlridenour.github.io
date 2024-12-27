@@ -33,3 +33,8 @@ not hand-to-hand,\\
 but hand-in-hand.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

@@ -22,3 +22,8 @@ in our darkness.\\
 Lord Jesus come quickly,\\
 \\
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

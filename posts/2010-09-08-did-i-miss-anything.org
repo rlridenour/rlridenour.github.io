@@ -3,3 +3,8 @@
 #+title: Did I Miss Anything?
 
 A [[http://qgf.in/rz9PHe][poetic answer]] to that perennial question from those who were absent from class.
+
+
+#+begin_tagline
+Tagged: teaching humor
+#+end_tagline

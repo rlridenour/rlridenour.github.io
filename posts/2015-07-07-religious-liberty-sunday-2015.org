@@ -25,3 +25,8 @@ but the cross.
 
 In his name,\\
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

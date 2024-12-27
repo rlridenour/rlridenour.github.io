@@ -8,3 +8,8 @@ Anyone who doubts that should read a bit about Elizabeth Anscombe.
 
 
 
+
+
+#+begin_tagline
+Tagged: philosophy
+#+end_tagline

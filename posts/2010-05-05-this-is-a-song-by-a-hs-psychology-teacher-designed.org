@@ -8,3 +8,8 @@ This is a song by a HS Psychology teacher designed to help students learn about 
 #+begin_center
 [[yt:3RsbmjNLQkc][Cognitive biases song.]]
 #+end_center
+
+
+#+begin_tagline
+Tagged: teaching critical-thinking
+#+end_tagline

@@ -99,3 +99,8 @@ which produces this:
 
 [fn:1] Apple's Pages now allows users to [[https://support.apple.com/en-us/HT207569][add formulas]] with LaTeX. It's looking like a good solution for those who like more traditional word processors.
  
+
+
+#+begin_tagline
+Tagged: latex logic teaching
+#+end_tagline

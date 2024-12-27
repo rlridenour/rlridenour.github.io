@@ -9,3 +9,8 @@ They have the same feeble, literal grasp of the Bible as all those big-haired pr
 
 #+ATTR_HTML: :class bigquote
 Fox Mulder, The X-Files
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

@@ -3,3 +3,8 @@
 #+filetags: politics
 
 Go vote!
+
+
+#+begin_tagline
+Tagged: politics
+#+end_tagline

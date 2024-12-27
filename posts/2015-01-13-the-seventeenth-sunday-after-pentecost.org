@@ -26,3 +26,8 @@ believe as I do,\\
 and speak as I do?
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

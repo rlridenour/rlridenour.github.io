@@ -1,0 +1,22 @@
+#+title: Tagged: Ethics
+#+setupfile: ./org-templates/post.org
+
+- [[file:../posts/2008-11-01-moral-relativism.org][Moral Relativism]]
+- [[file:../posts/2010-06-10-pizza-dude-ethics.org][Pizza Dude Ethics]]
+- [[file:../posts/2011-12-07-the-rights-of-women-in-afghanistan.org][The Rights of Women in Afghanistan]]
+- [[file:../posts/2015-01-13-talking-about-suicide.org][Talking About Suicide]]
+- [[file:../posts/2015-01-20-relativism-and-the-rights-of-women-in-afghanistan.org][Relativism and the Rights of Women in Afghanistan]]
+- [[file:../posts/2016-06-01-indifference.org][Indifference]]
+- [[file:../posts/2016-06-01-reconciliation-and-hope.org][Reconciliation and Hope]]
+- [[file:../posts/2008-06-08-world-food-summit.org][World Food Summit]]
+- [[file:../posts/2017-11-30-ethics-of-war-handout.org][Ethics of War Handout]]
+- [[file:../posts/2015-01-13-a-parents-love.org][A Parents Love]]
+- [[file:../posts/2008-10-08-concern-for-the-middle-class-and-matthew-25.org][Concern for the Middle Class and Matthew 25]]
+- [[file:../posts/2008-11-07-reconciliation-and-hope.org][Reconciliation and Hope]]
+- [[file:../posts/2010-12-03-the-ethical-and-moral-issues-that-face-people-in.org][Ethics Without Borders]]
+- [[file:../posts/2008-05-18-millennium-development-goals.org][Millennium Development Goals]]
+- [[file:../posts/2015-07-07-guns-cakes-and-gay-weddings.org][Guns, Cakes, and Gay Weddings]]
+- [[file:../posts/2016-07-31-should-the-church-bear-the-welfare-burden.org][Should the Church Bear the Welfare Burden?]]
+
+
+

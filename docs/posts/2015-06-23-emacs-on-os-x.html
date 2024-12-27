@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 25, 2024 -->
+<!-- Dec 26, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs on OS X</title>
@@ -54,9 +54,9 @@
 <header>
 <h1 class="title">Emacs on OS X</h1>
 <p class="subtitle" role="doc-subtitle">Jun 23, 2015</p>
-</header><section id="outline-container-org91cb384" class="outline-2">
-<h2 id="org91cb384">Homebrew</h2>
-<div class="outline-text-2" id="text-org91cb384">
+</header><section id="outline-container-org5ed6cb7" class="outline-2">
+<h2 id="org5ed6cb7">Homebrew</h2>
+<div class="outline-text-2" id="text-org5ed6cb7">
 <p>
 I install Emacs with <a href="http://brew.sh">Homebrew</a>. After installing Homebrew, just type the following in Terminal:
 </p>
@@ -74,9 +74,9 @@ This makes upgrading very easy, `brew upgrade` updates everything that you&rsquo
 </p>
 </div>
 </section>
-<section id="outline-container-orgae43c8c" class="outline-2">
-<h2 id="orgae43c8c">Prelude</h2>
-<div class="outline-text-2" id="text-orgae43c8c">
+<section id="outline-container-org0577ada" class="outline-2">
+<h2 id="org0577ada">Prelude</h2>
+<div class="outline-text-2" id="text-org0577ada">
 <p>
 I use <a href="http://batsov.com/prelude/">Emacs Prelude</a>, a starter kit by Bozhidar Batsov. There are many Emacs users that advocate setting up your own configuration from scratch, and I&rsquo;ve done that many times. I keep coming back to Prelude, though, it just makes the initial work so much easier. Prelude includes a personal directory for individual configuration files. I keep all of those files in a git repository located in Dropbox with symbolic links in the Prelude personal directory. That way, I can use Github for version control, but have all machines in sync with no effort.
 </p>
@@ -86,7 +86,7 @@ There are two important files in my personal directory. The first is an emacs-li
 </p>
 
 
-<pre class="example" id="orgccef487">
+<pre class="example" id="org41c5df1">
 ;;Load emacs personal settings via org
 (prelude-require-package 'org)
 (org-babel-load-file
@@ -98,9 +98,9 @@ This file loads an org-mode file that contains the actual configuration. If you&
 </p>
 </div>
 </section>
-<section id="outline-container-org276bf9e" class="outline-2">
-<h2 id="org276bf9e">Starting Emacs</h2>
-<div class="outline-text-2" id="text-org276bf9e">
+<section id="outline-container-orgc5570bc" class="outline-2">
+<h2 id="orgc5570bc">Starting Emacs</h2>
+<div class="outline-text-2" id="text-orgc5570bc">
 <p>
 I like to start Emacs using the daemon, which keeps an Emacs server running in the background, then connect to that server with Emacs Client. This makes opening Emacs nearly instantaneous.
 </p>
@@ -128,13 +128,21 @@ This worked well, but I usually use Alfred to start applications, not the termin
 <p>
 There are parts of this that I really didn&rsquo;t need to do, but too much is better than not enough, I suppose.
 </p>
+
+
+<div class="tagline" id="orgeabdef2">
+<p>
+Tagged: emacs osx
+</p>
+
+</div>
 </div>
 </section>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 25, 2024.<br>
+  Last updated on Dec 26, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

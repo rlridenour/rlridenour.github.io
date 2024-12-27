@@ -1,0 +1,18 @@
+#+title: Tagged: Critical-Thinking
+#+setupfile: ./org-templates/post.org
+
+- [[file:../posts/2015-01-20-nra-survey.org][NRA Survey]]
+- [[file:../posts/2008-11-18-the-monty-hall-problem.org][The Monty Hall Problem]]
+- [[file:../posts/2009-02-19-expectations-and-grades.org][Expectations and Grades]]
+- [[file:../posts/2009-10-21-car-accidents-and-conditional-probabilities.org][Car Accidents and Conditional Probabilities]]
+- [[file:../posts/2009-12-14-another-change-blindness-demonstration-i-have-to.org][Change Blindness]]
+- [[file:../posts/2017-01-09-disagreement-and-being-wrong.org][Disagreement and Being Wrong]]
+- [[file:../posts/2016-12-03-the-rise-of-fake-news.org][The Rise of Fake News]]
+- [[file:../posts/2015-08-13-go-to-your-pastor-for-depression.org][Go to Your Pastor for Depression?]]
+- [[file:../posts/2008-06-02-climate-change-and-objectivity.org][Climate Change and Objectivity]]
+- [[file:../posts/2016-10-20-the-uselessness-of-political-factchecking.org][The Uselessness of Political Fact-Checking]]
+- [[file:../posts/2016-10-21-the-clinton-foundation.org][Confirmation Bias and the Clinton Foundation]]
+- [[file:../posts/2010-05-05-this-is-a-song-by-a-hs-psychology-teacher-designed.org][Cognitive Biases Song]]
+
+
+

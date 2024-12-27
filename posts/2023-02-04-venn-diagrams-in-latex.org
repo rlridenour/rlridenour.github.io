@@ -111,3 +111,8 @@ Both have enough detail that I can remember what to change to make a particular 
 
 
 
+
+
+#+begin_tagline
+Tagged: latex logic
+#+end_tagline

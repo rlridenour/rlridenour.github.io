@@ -18,3 +18,8 @@ our thoughts and prayers\\
 are with them today.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

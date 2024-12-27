@@ -9,3 +9,8 @@ There is, in a word, nothing comfortable about the Bible -- until we manage to g
 
 #+ATTR_HTML: :class bigquote
 Thomas Merton, from /Opening the Bible/
+
+
+#+begin_tagline
+Tagged: religion
+#+end_tagline

@@ -9,3 +9,8 @@ Concepts create idols; only wonder comprehends anything. People kill one another
 
 #+ATTR_HTML: :class bigquote
 Gregory of Nyssa
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

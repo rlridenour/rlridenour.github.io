@@ -109,3 +109,8 @@ produces this:
 
 Ox-hugo works amazingly well for producing well-formed Hugo Goldmark markdown from an Org mode source file. Since I write nearly everything in Org mode, this enables me to easily use the same material for posts, handouts, and other formats.
 
+
+
+#+begin_tagline
+Tagged: emacs hugo org
+#+end_tagline

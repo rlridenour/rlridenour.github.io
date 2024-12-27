@@ -46,3 +46,8 @@ that served the empire\\
 more than it did your Kingdom.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

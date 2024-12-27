@@ -9,3 +9,8 @@ Anyone who has begun to think, places some portion of the world in jeopardy.
 
 #+ATTR_HTML: :class bigquote
 John Dewey
+
+
+#+begin_tagline
+Tagged: quotes philosophy
+#+end_tagline

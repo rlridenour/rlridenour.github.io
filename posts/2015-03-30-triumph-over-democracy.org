@@ -9,3 +9,8 @@ In the Soviet Union, capitalism triumphed over communism; in this country, capit
 
 #+ATTR_HTML: :class bigquote
 Fran Lebowitz
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

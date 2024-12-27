@@ -9,3 +9,8 @@ Here is the world. Beautiful and terrible things will happen. Don't be afraid.
 
 #+ATTR_HTML: :class bigquote
 Frederick Buechner
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

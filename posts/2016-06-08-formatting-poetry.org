@@ -48,3 +48,8 @@ Ed. sets poetry as an unordered list, with each line as a list item. List style 
 #+end_example
 
 Ed. also contains formatting tools for bibliographies. It's built on [[https://github.com/poole/lanyon][Lanyon]], the theme that I use, so it was easy for me to just add the CSS that I wanted to my existing site.
+
+
+#+begin_tagline
+Tagged: jekyll poetry
+#+end_tagline

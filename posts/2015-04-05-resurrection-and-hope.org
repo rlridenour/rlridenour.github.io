@@ -9,3 +9,8 @@ Believing in the resurrection does not just mean assenting to a dogma and noting
 
 #+ATTR_HTML: :class bigquote
 Jürgen Moltmann
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

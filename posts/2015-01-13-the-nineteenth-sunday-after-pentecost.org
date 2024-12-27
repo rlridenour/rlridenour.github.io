@@ -27,3 +27,8 @@ can make something beautiful\\
 when it's used by the master.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

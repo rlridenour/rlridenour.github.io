@@ -20,3 +20,8 @@ and cleanse me of the sin\\
 of being just enough.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

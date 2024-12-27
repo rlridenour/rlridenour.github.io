@@ -7,3 +7,8 @@ From a briefing given by an Army Chaplain about the new Inter-service Chaplain C
 #+begin_quote
 "We didn't foresee the challenges that we would have with a building shared by the three services. Each service has its own customs, traditions, and even language. For example, we had to order three different signs for the restrooms - one that said 'Latrine' for the Army, 'Head' for the Navy, and 'Powder Room' for the Air Force."
 #+end_quote
+
+
+#+begin_tagline
+Tagged: army
+#+end_tagline

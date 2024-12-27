@@ -9,3 +9,8 @@
 
 #+ATTR_HTML: :class bigquote
 Mike Bumgarner
+
+
+#+begin_tagline
+Tagged: religion quotes
+#+end_tagline

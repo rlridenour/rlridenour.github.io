@@ -23,3 +23,8 @@ The solution was to select "Options" for the message, and forward it /as an atta
 Just copy the link, paste it in, and delete the word "blocked" before pressing the enter key.
 
 It only took two months to figure that out. It might be better if I'd simply learn the new Enterprise address.
+
+
+#+begin_tagline
+Tagged: army
+#+end_tagline

@@ -95,3 +95,8 @@ I'm not quite satisfied with the superscript number in the footnote, but I haven
 
 
 [fn:1] Like this. 
+
+
+#+begin_tagline
+Tagged: hugo org
+#+end_tagline

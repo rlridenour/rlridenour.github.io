@@ -14,3 +14,8 @@ Early this morning, Donald Trump delivered his acceptance speech after winning t
 
 These are interesting times indeed.
 
+
+
+#+begin_tagline
+Tagged: politics
+#+end_tagline

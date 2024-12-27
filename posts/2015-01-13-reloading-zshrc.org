@@ -11,3 +11,8 @@ alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 #+end_example
 
 Now, just type "reload" and you're all set.
+
+
+#+begin_tagline
+Tagged: zsh
+#+end_tagline

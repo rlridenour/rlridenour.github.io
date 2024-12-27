@@ -9,3 +9,8 @@ I believe in Christianity as I believe that the sun has risen: not only because 
 
 #+ATTR_HTML: :class bigquote
 C.S. Lewis
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

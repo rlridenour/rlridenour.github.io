@@ -9,3 +9,8 @@ Today it is fashionable to talk about the poor. Unfortunately, it is not fashion
 
 #+ATTR_HTML: :class bigquote
 Mother Teresa
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

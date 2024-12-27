@@ -14,3 +14,8 @@ and a hope of finally embracing you.
 
 #+ATTR_HTML: :class bigquote
 St. Thomas Aquinas
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

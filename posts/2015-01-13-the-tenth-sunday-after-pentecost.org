@@ -9,3 +9,8 @@ Open my mind that I may dream of what it could be,\\
 Open my hands that I may, with you, make it so.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

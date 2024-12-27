@@ -10,3 +10,8 @@ There's a fine line between genius and insanity. I have erased this line.
 
 #+ATTR_HTML: :class bigquote
 Oscar Levant
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

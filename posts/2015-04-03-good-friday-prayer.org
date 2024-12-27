@@ -24,3 +24,8 @@ there is no beauty\\
 of the cross.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

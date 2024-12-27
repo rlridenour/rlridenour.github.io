@@ -14,3 +14,8 @@ Jean Vanier
 
 
 
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

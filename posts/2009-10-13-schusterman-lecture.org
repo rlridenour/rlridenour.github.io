@@ -7,3 +7,8 @@ Monday, October 19, is the Ninth Annual Schusterman Lecture in Jewish History an
 Dr. Neusner is the Distinguished Service Professor of the History and Theology of Judaism and Senior Fellow at the Institute of Advanced Theology at Bard College. He is also a member of the Institute for Advanced Study at Princeton and a life member of Clare Hall at Cambridge University. The lectures are free and open to the public.
 
 He is the most published humanities scholar in the world, having published well over a thousand books and articles, including a twenty-two volume translation and commentary of the Babylonian Talmud.
+
+
+#+begin_tagline
+Tagged: religion
+#+end_tagline

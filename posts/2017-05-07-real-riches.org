@@ -9,3 +9,8 @@ A propensity to hope and joy is real riches; one to fear and sorrow, real povert
 
 #+ATTR_HTML: :class bigquote
 David Hume, /Essays, Moral, Political, and Literary/, Part I, Essay 18
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

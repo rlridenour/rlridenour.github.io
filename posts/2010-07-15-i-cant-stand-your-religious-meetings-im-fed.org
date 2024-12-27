@@ -20,3 +20,8 @@ That's what I want. That's all I want.
 
 #+ATTR_HTML: :class bigquote
 Amos 5:21-24 (/The Message/)
+
+
+#+begin_tagline
+Tagged: religion
+#+end_tagline

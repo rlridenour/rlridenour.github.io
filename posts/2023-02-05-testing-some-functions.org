@@ -7,3 +7,8 @@
 I'm testing some a couple of new functions. One is to add a tag to a post by selecting from a list of tags used on the site, like [[file:2023-02-04-venn-diagrams-in-latex.org][this]]. Another is for inserting links to other pages on the site using ~org-insert-link~. The last updates the last modified date when a post is published.
 
 Everything seems to be working fine.
+
+
+#+begin_tagline
+Tagged: hugo 
+#+end_tagline

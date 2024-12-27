@@ -9,3 +9,8 @@ The only alternative to tradition is bad tradition.
 
 #+ATTR_HTML: :class bigquote
 Jaroslav Pelikan
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

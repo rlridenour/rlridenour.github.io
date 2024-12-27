@@ -62,3 +62,8 @@ function publish
  git push
 end
 #+end_example
+
+
+#+begin_tagline
+Tagged: jekyll
+#+end_tagline

@@ -21,3 +21,8 @@ So, for any moral claim, that claim then there is at least one conceptual scheme
 Why should a claim that something is not objectively true bother someone who rejects objective truth?
 
 Moral relativists are committed to the claim that moral truths are dependent on conceptual schemes, but if that claim is itself dependent on one’s conceptual scheme, then there is a conceptual scheme in which moral relativism is false. So, there is at least one conceptual scheme in which it is true that moral claims are true in every conceptual scheme. The only way that can be true is if moral truths are in fact true in every conceptual scheme. So, moral relativism is false.
+
+
+#+begin_tagline
+Tagged: ethics
+#+end_tagline

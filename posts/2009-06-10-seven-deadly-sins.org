@@ -4,3 +4,8 @@
 
 Back to the blog after a very long break. Geographers from Kansas State University have mapped out the [[http://flowingdata.com/2009/05/12/maps-of-the-seven-deadly-sins/][distribution of the seven deadly sins]] (lust, gluttony, greed, sloth, wrath, envy and pride) across the United States. Interestingly, Oklahoma appears to be in good shape except for wrath.
     
+
+
+#+begin_tagline
+Tagged: religion
+#+end_tagline

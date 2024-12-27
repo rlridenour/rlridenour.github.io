@@ -9,3 +9,8 @@ Rarely do we find men who willingly engage in hard, solid thinking. There is an 
 
 #+ATTR_HTML: :class bigquote
 Martin Luther King, Jr.
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

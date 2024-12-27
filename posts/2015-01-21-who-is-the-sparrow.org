@@ -9,3 +9,8 @@ If you're going to care about the fall of the sparrow you can't pick and choose 
 
 #+ATTR_HTML: :class bigquote
 Madeleine L'Engle
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

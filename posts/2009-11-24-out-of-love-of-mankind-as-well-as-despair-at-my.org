@@ -9,3 +9,8 @@ Out of love of mankind, as well as despair at my embarrassing situation, seeing 
 
 #+ATTR_HTML: :class bigquote
 Kierkegaard, /Concluding Unscientific Postscript/
+
+
+#+begin_tagline
+Tagged: quotes philosophy
+#+end_tagline

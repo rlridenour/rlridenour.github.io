@@ -9,3 +9,8 @@ We profess to be strangers and pilgrims, seeking after a country of our own, yet
 
 #+ATTR_HTML: :class bigquote
 Amy Carmichael, /Side by Side/
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

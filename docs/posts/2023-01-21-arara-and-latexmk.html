@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 25, 2024 -->
+<!-- Dec 26, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Arara and Latexmk</title>
@@ -64,9 +64,9 @@ Compiling LaTeX documents can be a chore, especially if the document has a table
 <li>Run pdflatex to put that bibliographic data into the document</li>
 <li>Run pdflatex again to fix any page numbers that need to change because of the new material.</li>
 </ol>
-<section id="outline-container-org82b9646" class="outline-2">
-<h2 id="org82b9646">Latexmk</h2>
-<div class="outline-text-2" id="text-org82b9646">
+<section id="outline-container-org4650968" class="outline-2">
+<h2 id="org4650968">Latexmk</h2>
+<div class="outline-text-2" id="text-org4650968">
 <p>
 Using Latexmk is a great way to automate all of this. Latexmk will do all of these steps as needed, you just need to tell what engine to use (pdfLaTeX, LuaLatex, XeLaTeX) and whether to run Bibtex or Biber. A pdfLaTeX document named &ldquo;sample.tex&rdquo; containing bibliographic references would be compiled from the command line like this:
 </p>
@@ -130,9 +130,9 @@ Since I use Emacs, I could just add latexmk to the list of TeX commands and comp
 </p>
 </div>
 </section>
-<section id="outline-container-org32dd3d6" class="outline-2">
-<h2 id="org32dd3d6">Arara</h2>
-<div class="outline-text-2" id="text-org32dd3d6">
+<section id="outline-container-org31be646" class="outline-2">
+<h2 id="org31be646">Arara</h2>
+<div class="outline-text-2" id="text-org31be646">
 <p>
 Here&rsquo;s where Arara shines. Arara is another way to compile tex files. Unlike latexmk, arara does not do anything automatically. Running
 </p>
@@ -172,9 +172,9 @@ The problem (and I admit it&rsquo;s a minor one) is that I lose the automation o
 </p>
 </div>
 </section>
-<section id="outline-container-org70db3ca" class="outline-2">
-<h2 id="org70db3ca">Solution</h2>
-<div class="outline-text-2" id="text-org70db3ca">
+<section id="outline-container-orge9bac9f" class="outline-2">
+<h2 id="orge9bac9f">Solution</h2>
+<div class="outline-text-2" id="text-orge9bac9f">
 <p>
 Fortunately, arara can be told to compile with latexmk, and the engine and any options can be specified in the file. This compiles with latexmk using pdflatex:
 </p>
@@ -187,13 +187,21 @@ Fortunately, arara can be told to compile with latexmk, and the engine and any o
 <p>
 Since the options that I want are in my latexmkrc file, there&rsquo;s nothing else I need to do. Changing &ldquo;pdflatex&rdquo; to &ldquo;lualatex&rdquo; would make it compile with lualatex instead as many times as necessary to produce the final document.
 </p>
+
+
+<div class="tagline" id="org3be52ec">
+<p>
+Tagged: latex
+</p>
+
+</div>
 </div>
 </section>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 25, 2024.<br>
+  Last updated on Dec 26, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

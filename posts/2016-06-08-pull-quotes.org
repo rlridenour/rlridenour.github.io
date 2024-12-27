@@ -27,3 +27,8 @@ I just learned that Kramdown makes it easy to specify classes and attributes. So
 
 
 It is easy to add quotation marks automatically, using the "before" and "after" class selectors. I decided not to do this for the sake of flexibility.
+
+
+#+begin_tagline
+Tagged: jekyll
+#+end_tagline

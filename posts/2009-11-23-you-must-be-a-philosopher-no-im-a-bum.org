@@ -9,3 +9,8 @@
 
 #+ATTR_HTML: :class bigquote
 From /Barney Miller/
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

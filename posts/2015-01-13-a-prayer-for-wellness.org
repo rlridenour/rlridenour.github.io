@@ -19,3 +19,8 @@ to the joy of new life that you offer.\\
 
 /Amen/
 
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

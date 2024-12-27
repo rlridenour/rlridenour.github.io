@@ -10,3 +10,8 @@ When I first started using the Remote app with Keynote for iOS, the two worked s
     
 Even so, I am extremely pleased with Keynote for iOS and the companion Remote app. I simply carry in the iPad and the adapter cable, plug it in to the projector cable, and begin the presentation. No boot-up time and not heavy laptop. It's quick, easy, and it just works, assuming you pay AT&amp;T for the privilege of using your phone as a personal hotspot.
     
+
+
+#+begin_tagline
+Tagged: teaching
+#+end_tagline

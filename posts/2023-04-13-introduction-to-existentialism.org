@@ -96,3 +96,8 @@ Because we have a tendency to conform to the leveled-down roles and identities o
 We are free and responsible for who we are and what we do. No moral absolutes, utilitarian calculations, or natural laws that can explain, justify, or rationalize our actions. As Sartre writes, when it comes to human actions, "there are no excuses behind us nor justifications before us."
 
 Existentialism does not, in itself, require adherence to any normative moral principle. Yet the argument that existentialism is an amoral philosophy is undeserved. Existentialism centers around the most fundamental of moral questions: ‘ What should I do?' and 'How should I live?' Moreover, in acknowledging our fundamental freedom, existentialists recognize that we are not free from taking responsibility for our actions or from cultivating the ideal of freedom for others. To this end, existentialism offers a clear vision of what a valuable or praiseworthy way of life is. It is a life that faces up to the inescapable freedom and vulnerability of the human situation, and takes responsibility for the fact that our actions have consequences and impact the lives of others.
+
+
+#+begin_tagline
+Tagged: philosophy, existentialism
+#+end_tagline

@@ -10,3 +10,8 @@ Instead of telling our vulnerable stories, we seek safety in abstractions, speak
 
 #+ATTR_HTML: :class source
 Parker Palmer
+
+
+#+begin_tagline
+Tagged: quotes philosophy
+#+end_tagline

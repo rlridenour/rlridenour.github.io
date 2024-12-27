@@ -7,3 +7,8 @@
 #+begin_quote
 "These are by general consent two of the best documentaries ever made. But because they reflect the ideology of a monstrous movement, they pose a classic question of the contest between art and morality: Is there such a thing as pure art, or does all art make a political statement?"
 #+end_quote
+
+
+#+begin_tagline
+Tagged: aesthetics political
+#+end_tagline

@@ -3,3 +3,8 @@
 #+title: Testing Jekyll
 
 I'm moving everything to Jekyll. This is a quick test post.
+
+
+#+begin_tagline
+Tagged: jekyll
+#+end_tagline

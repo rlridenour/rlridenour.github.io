@@ -9,3 +9,8 @@ And perhaps the great day will come when a people, distinguished by wars and vic
 
 #+ATTR_HTML: :class source
 Friedrich Nietzsche, /The Wanderer and His Shadow/, 284.
+
+
+#+begin_tagline
+Tagged: quotes philosophy
+#+end_tagline

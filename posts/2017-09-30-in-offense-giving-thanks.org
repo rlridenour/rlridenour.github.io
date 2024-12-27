@@ -19,3 +19,8 @@ the empire,\\
 or you?
 
 Lord, have mercy.
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

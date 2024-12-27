@@ -9,3 +9,8 @@ Therefore I beg you, reader, not to rejoice too greatly if you have read much, b
 
 #+ATTR_HTML: :class bigquote
 Hugh of Saint Victor, d. Feb. 11, 1141
+
+
+#+begin_tagline
+Tagged: quotes teaching education
+#+end_tagline

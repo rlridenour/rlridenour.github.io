@@ -19,3 +19,8 @@ makes wine from water\\
 and beauty from ashes,
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

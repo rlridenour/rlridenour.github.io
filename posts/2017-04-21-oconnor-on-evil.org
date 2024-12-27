@@ -13,3 +13,8 @@ Flannery O’Connor[fn:1]
 * Footnotes
 
 [fn:1] “The Catholic Novelist in the Protestant South,” in /Mystery and Manners: Occasional Prose/, eds. Robert Fitzgerald and Sally Fitzgerald (New York: Farrar, Straus, and Giroux, 1969), 209. 
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

@@ -26,3 +26,8 @@ xcode-select --install
 #+end_src
 
 fixed everything.
+
+
+#+begin_tagline
+Tagged: emacs osx 
+#+end_tagline

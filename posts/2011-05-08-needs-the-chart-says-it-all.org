@@ -9,3 +9,8 @@ The chart says it all.
 [[../images/posts/needs.png]]
 #+end_center
 
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

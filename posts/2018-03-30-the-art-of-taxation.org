@@ -10,3 +10,8 @@ The art of taxation consists in so plucking the goose as to obtain the largest p
 #+ATTR_HTML: :class bigquote
 Attributed to Jean-Baptiste Colbert, Finance Minister to Louis XIV
 
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

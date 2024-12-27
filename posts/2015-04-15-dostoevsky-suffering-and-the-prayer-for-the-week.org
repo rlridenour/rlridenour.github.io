@@ -20,3 +20,8 @@ reconciling love.
 /Amen/
 
 [fn:1] My favorite novel, in case there is still anyone who knows me that doesn't realize it.
+
+
+#+begin_tagline
+Tagged: prayer religion philosophy
+#+end_tagline

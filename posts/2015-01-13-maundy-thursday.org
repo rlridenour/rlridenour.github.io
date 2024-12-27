@@ -17,3 +17,8 @@ the things that you have had the grace to offer.\\
 \\
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

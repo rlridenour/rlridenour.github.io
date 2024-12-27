@@ -30,3 +30,8 @@ Show an affirming flame.
 
 #+ATTR_HTML: :class source
 From "September 1, 1939" by W.H. Auden
+
+
+#+begin_tagline
+Tagged: poetry
+#+end_tagline

@@ -22,3 +22,8 @@ may it shine in us,\\
 may it shine through us.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

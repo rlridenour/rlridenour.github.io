@@ -9,3 +9,8 @@ Weaseling out of things is what separates us from the animals. Well, except the 
 
 #+ATTR_HTML: :class bigquote
 Homer Simpson
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

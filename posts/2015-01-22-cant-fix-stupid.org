@@ -9,3 +9,8 @@ You can't fix stupid with duct tape, but you can sure muffle the sound.
 
 #+ATTR_HTML: :class bigquote
 Soldier, Round Rock, TX
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

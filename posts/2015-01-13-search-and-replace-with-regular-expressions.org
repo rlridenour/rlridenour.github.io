@@ -50,3 +50,8 @@ The primary difference in Emacs is in referencing the strings to be searched for
 Search: ^\(\w+\) \(\w+\)
 Replace: \2, \1
 #+end_example
+
+
+#+begin_tagline
+Tagged: emacs
+#+end_tagline

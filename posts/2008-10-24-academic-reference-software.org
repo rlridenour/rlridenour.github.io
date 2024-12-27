@@ -5,3 +5,8 @@
 If you have writing projects that require footnotes, endnotes, bibliographies, or other kinds of references, you should consider getting some kind of reference manager software. Short papers with a few references are easy enough to manage with a word processor alone, but significant projects can easily be overwhelming. There is enough pain in academic writing that one does not need the extra suffering caused by having to make sure that every work cited is included in the bibliography, that the entries are all in alphabetical order, and that the notes and bibliography entries are all in the right format. A reference manager can do all of this automatically. Unfortunately, they're generally very expensive.
 
 The good news is that [[http://www.thirdstreetsoftware.com/site/introduction.html" title="The Academic Reference Manager for Mac OS X][Third Street Software]] just released an undergraduate edition of its reference manager software, Sente. The individual library size is limited to 250 entries, but that should be sufficient for most student writing. It's also Mac OS X only, but now you have one more way to convince you parents that you really need that new Mac notebook: "I know it seems more expensive now, but I promise that it will save you money in the long run...." Good luck, let me know if it works.
+
+
+#+begin_tagline
+Tagged: utilities
+#+end_tagline

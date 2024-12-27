@@ -9,3 +9,8 @@ Faith which does not doubt is dead faith.
 
 #+ATTR_HTML: :class bigquote
 Miguel de Unamuno
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

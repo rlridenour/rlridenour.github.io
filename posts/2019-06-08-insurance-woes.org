@@ -5,3 +5,8 @@
 
 I have often wondered how people with no insurance survive a serious illness. Now, I'm beginning to wonder how people who do have insurance can survive a serious illness. Last week, I had a small surgical procedure to determine if the bladder needed to be removed or not. Yesterday, I got an email from Aetna saying there was a response on a new claim. When I opened the site, there was a flag by the claim saying that additional information was required. When I clicked on that link, there was no description of an requested information, just a statement that, of the $19,768.45 billed by the provider, Aetna would pay $0, and I would pay the remaining $19,768.45. Why have I been paying ever more expensive premiums?
 
+
+
+#+begin_tagline
+Tagged: cancer health-care
+#+end_tagline

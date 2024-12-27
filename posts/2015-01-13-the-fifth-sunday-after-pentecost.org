@@ -51,3 +51,8 @@ unique and beautiful\\
 for your good pleasure.\\
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

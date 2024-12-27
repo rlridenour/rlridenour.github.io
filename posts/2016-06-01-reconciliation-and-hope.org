@@ -23,3 +23,8 @@ If nothing else, this week’s election is a sign of hope.
 #+end_quote
 
 The events of the past eight years proved that progress requires more than simply hope.
+
+
+#+begin_tagline
+Tagged: ethics
+#+end_tagline

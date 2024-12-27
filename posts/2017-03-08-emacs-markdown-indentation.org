@@ -3,3 +3,8 @@
 #+title: Emacs Markdown Indentation
 
 Beginning today, for some reason, I could not indent Markdown list items in Emacs. Disabling aggressive-indent-mode fixed the problem.
+
+
+#+begin_tagline
+Tagged: emacs markdown
+#+end_tagline

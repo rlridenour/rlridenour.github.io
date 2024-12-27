@@ -37,3 +37,8 @@ I added Disqus commenting, which  just a matter of copying some code from Disqus
 *** Finished
 
 Now, the site is up, and it just needs some more content. We'll see how long that takes.
+
+
+#+begin_tagline
+Tagged: jekyll
+#+end_tagline

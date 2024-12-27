@@ -3,3 +3,8 @@
 #+title: Kierkegaard on the Couch
 
 From [[http://happydays.blogs.nytimes.com/2009/10/28/kierkegaard-on-the-couch/][/The New York Times/]], I especially like the little Sisyphus figure pushing the giant happy face up the hill.
+
+
+#+begin_tagline
+Tagged: philosophy humor
+#+end_tagline

@@ -15,3 +15,8 @@ the darkness will pass,\\
 for the light is coming.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

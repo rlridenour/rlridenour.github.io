@@ -3,3 +3,8 @@
 #+title: Brief Habits as the Key to Living Forever
 
 Nietzsche would like [[http://www.npr.org/blogs/13.7/2010/09/29/130221453/how-to-live-forever-or-why-habits-are-a-curse?ft=1&amp;f=114424647][this]].
+
+
+#+begin_tagline
+Tagged: philosophy
+#+end_tagline

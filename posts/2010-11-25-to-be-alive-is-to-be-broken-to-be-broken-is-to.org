@@ -9,3 +9,8 @@ To be alive is to be broken; to be broken is to stand in need of grace.
 
 #+ATTR_HTML: :class bigquote
 Brennan Manning
+
+
+#+begin_tagline
+Tagged: religion
+#+end_tagline

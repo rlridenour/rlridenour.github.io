@@ -31,3 +31,8 @@ Free me from the arrogant presumption\\
 of thinking that I would have done better.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

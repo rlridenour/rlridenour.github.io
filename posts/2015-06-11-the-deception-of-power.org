@@ -9,3 +9,8 @@ We have, I fear, confused power with greatness.
 
 #+ATTR_HTML: :class bigquote
 Stewart Udall
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

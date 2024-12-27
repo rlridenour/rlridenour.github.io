@@ -3,3 +3,8 @@
 #+title: Another One for the Brothers
 
 Sheri finished /The Brothers Karamazov/ yesterday. Pancakes are on the menu for breakfast this morning.
+
+
+#+begin_tagline
+Tagged: misc
+#+end_tagline

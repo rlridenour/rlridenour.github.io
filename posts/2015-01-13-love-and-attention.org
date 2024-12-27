@@ -28,3 +28,8 @@ when it is spent in love.
 
 
 [fn:1] /Journal of Personality and Social Psychology/, vol. 27, no. 1, 100-108.
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

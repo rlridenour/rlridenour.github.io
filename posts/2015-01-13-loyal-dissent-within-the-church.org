@@ -9,3 +9,8 @@ What if Christian colleges and universities --- even those affiliated with tradi
 
 #+ATTR_HTML: :class bigquote
 Ronald E. Osborn, /Death Before the Fall: Biblical Literalism and the Problem of Animal Suffering/
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

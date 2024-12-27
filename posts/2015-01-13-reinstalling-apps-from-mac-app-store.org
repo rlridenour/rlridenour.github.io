@@ -15,3 +15,8 @@ Then, I began searching the internet, which revealed some frustrated App Store c
 For some reason, I decided to go back to Launchpad and saw the BBEdit icon there. I clicked it and BBEdit started right up, though without my usual color scheme since I had deleted the application support folder. So, where was the file? On a whim, I disconnected my backup drive, opened the App Store, and BBEdit was finally gone with the option to install. I Pressed the install button, and BBEdit was automatically installed.
 
 Lesson: Launchpad sees apps on external drives, so disconnect any external drives to install a deleted app to your main drive. Then, reinstalling /should/ be the quick and easy process that it's supposed to be.
+
+
+#+begin_tagline
+Tagged: mac
+#+end_tagline

@@ -22,3 +22,8 @@ and for the beauty that we would see\\
 if we would just open our eyes to you.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

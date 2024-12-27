@@ -3,3 +3,8 @@
 #+filetags: family
 
 We are leaving tomorrow for a week in Costa Rica. We're all looking forward to a wonderful trip. Costa Rica should be quite a bit different than anywhere I've been recently. I'll post some pictures when we get back.
+
+
+#+begin_tagline
+Tagged: family
+#+end_tagline

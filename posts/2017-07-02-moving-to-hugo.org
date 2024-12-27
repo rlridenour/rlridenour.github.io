@@ -19,3 +19,8 @@ Many people use either [[https://www.travis-ci.org][Travis CI]] or [[http://www.
 [fn:1] There was a bit more to it. Finding what to search for and replace was a bit of a hassle. The Hugo build-error messages weren't particularly helpful. I debugged by moving the files out of the post directory, then replacing some until I could find a file that failed to build. Then, it was easy to see what part of the meta-data was causing the problem, and fix it with a global search and replace. If the site is fairly large, it's easily worth it to learn a bit about regular expressions and invest some time in becoming comfortable with a good text editor that can do a multi-file search and replace.
 
 [fn:2] Build time with Hugo is now 1.3 seconds, compared to 38.7 seconds for Jekyll.
+
+
+#+begin_tagline
+Tagged: 
+#+end_tagline

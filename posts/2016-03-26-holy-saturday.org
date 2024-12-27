@@ -29,3 +29,8 @@ what Sunday\\
 will bring.
 
 Amen
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

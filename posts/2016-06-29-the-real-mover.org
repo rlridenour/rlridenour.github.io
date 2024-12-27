@@ -9,3 +9,8 @@ It is not the horse that draws the cart, but the oats.
 
 #+ATTR_HTML: :class bigquote
 Russian proverb
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

@@ -16,3 +16,8 @@ Mike Bumgarner
 
 
 
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

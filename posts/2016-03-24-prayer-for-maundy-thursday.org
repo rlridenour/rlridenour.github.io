@@ -26,3 +26,8 @@ Not my will, but yours be done.
 /Amen/
 
 
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

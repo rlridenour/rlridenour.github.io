@@ -29,3 +29,8 @@ In the name of the one\\
 who sees the beauty in us all,
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

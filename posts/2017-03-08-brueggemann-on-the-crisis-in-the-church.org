@@ -9,3 +9,8 @@ For I believe the crisis in the U.S. church has almost nothing to do with being 
 
 #+ATTR_HTML: :class bigquote
 Walter Brueggemann, /A Way Other Than Our Own: Devotions for Lent/
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

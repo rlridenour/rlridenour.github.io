@@ -9,3 +9,8 @@ This is one of those posts that serve only to remind me of something in the futu
 =wrong type argument: stringp, nil=
 
 Finally, I remembered that I had required GNU ls in my Emacs settings, and had not installed it on the machine in question. A quick "brew install coreutils" to install the GNU Command Line Tools with Homebrew did the trick.
+
+
+#+begin_tagline
+Tagged: emacs
+#+end_tagline

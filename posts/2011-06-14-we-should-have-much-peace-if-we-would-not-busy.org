@@ -13,3 +13,8 @@ Thomas à Kempis
 There's no need to point out the irony of posting this.
 
 
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

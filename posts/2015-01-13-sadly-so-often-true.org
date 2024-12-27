@@ -9,3 +9,8 @@ The only good argument against Christianity is Christians.
 
 #+ATTR_HTML: :class bigquote
 G. K. Chesterton
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

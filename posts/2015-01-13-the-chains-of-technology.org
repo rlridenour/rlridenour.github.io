@@ -3,3 +3,8 @@
 #+title: The Chains of Technology
 
 Rousseau's /Social Contract/ opens with "Man is born to be free, and everywhere he is in chains." It's amazing that he could recognize that without ever seeing a group of people with their smartphones.
+
+
+#+begin_tagline
+Tagged: technology
+#+end_tagline

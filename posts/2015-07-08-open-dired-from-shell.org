@@ -24,3 +24,8 @@ alias ec="emacsclient -c -a ''"
 #+END_EXAMPLE
 
 This starts a server if there is not one already, then opens a new client. So, typing `ec .` should then open a Dired buffer in a new frame.
+
+
+#+begin_tagline
+Tagged: emacs zsh
+#+end_tagline

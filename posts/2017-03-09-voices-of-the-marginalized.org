@@ -7,3 +7,8 @@ I began teaching the thought of the 12th century philosopher Abelard in medieval
 /How many other brilliant voices have been marginalized over the years?/
 
 /What wisdom have we missed by silencing them?/
+
+
+#+begin_tagline
+Tagged: philosophy
+#+end_tagline

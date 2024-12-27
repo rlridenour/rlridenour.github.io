@@ -3,3 +3,8 @@
 #+title: Messianic Delusions
 
 From /Slate/, [[http://www.slate.com/id/2255105/][interesting book]] about treating three men who each believed they were Jesus.
+
+
+#+begin_tagline
+Tagged: religion
+#+end_tagline

@@ -9,3 +9,8 @@ Let your religion be less of a theory and more of a love affair.
 
 #+ATTR_HTML: :class bigquote
 G.K. Chesterton
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

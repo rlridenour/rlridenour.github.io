@@ -29,3 +29,8 @@ the difference between\\
 and merely "praying that...."
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

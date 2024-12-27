@@ -9,3 +9,8 @@ I'm back at the Chaplains' School for the first time in seven years. One of my c
 #+ATTR_HTML: :width 100% :height
 [[../images/posts/army-run.png]]
 #+end_center
+
+
+#+begin_tagline
+Tagged: army
+#+end_tagline

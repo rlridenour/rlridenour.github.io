@@ -27,3 +27,8 @@ Barefoot,\\
 with joy,\\
 in the fields\\
 of the Lord.
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

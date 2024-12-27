@@ -32,3 +32,8 @@ Help us to listen,\\
 Help us to hear.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

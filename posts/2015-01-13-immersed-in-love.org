@@ -30,3 +30,8 @@ indeed, all things become new\\
 when immersed in the ocean of your love.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

@@ -9,3 +9,8 @@ The day is short, and the night so long. Why do you work so hard to get what you
 
 #+ATTR_HTML: :class bigquote
 Garrison Keillor
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

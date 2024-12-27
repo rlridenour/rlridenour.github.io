@@ -33,3 +33,8 @@ Of our Lord Jesus Christ,\\
 In whose name we pray.\\
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

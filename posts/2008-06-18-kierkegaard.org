@@ -11,3 +11,8 @@ Don't read Kierkegaard in the bathroom; you can't concentrate on either job.
 
 #+ATTR_HTML: :class bigquote
 Riley Ross
+
+
+#+begin_tagline
+Tagged: philosophy quotes
+#+end_tagline

@@ -29,3 +29,8 @@ And your love compel us\\
 To live fully as citizens of your kingdom.\\
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

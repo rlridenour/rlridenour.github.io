@@ -7,3 +7,8 @@ Another change blindness demonstration. I have to admit that this one fooled me.
 #+begin_center
 [[yt:voAntzB7EwE][Change Blindness]]
 #+end_center
+
+
+#+begin_tagline
+Tagged: critical-thinking
+#+end_tagline

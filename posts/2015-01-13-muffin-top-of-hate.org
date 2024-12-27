@@ -9,3 +9,8 @@ So calm down and smile and loosen up your judgy pants because I can see your muf
 
 #+ATTR_HTML: :class bigquote
 Autumn Raines Lockett
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

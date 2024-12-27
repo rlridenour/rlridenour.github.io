@@ -9,3 +9,8 @@ In biblical texts, victims are innocent and collective violence is to blame. ln 
 
 #+ATTR_HTML: :class bigquote
 René Girard, /The One by Whom Scandal Comes/, 35
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

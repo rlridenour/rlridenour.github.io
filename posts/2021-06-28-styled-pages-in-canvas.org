@@ -135,3 +135,8 @@ Everything is tied together with a very simple Emacs function:
   (shell-command "canvas")
 )
 #+end_src
+
+
+#+begin_tagline
+Tagged: 
+#+end_tagline

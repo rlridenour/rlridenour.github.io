@@ -10,3 +10,8 @@ I don't quite know what to say about this video, except that it's not likely the
 #+end_center
 
 # <iframe width="500" height="281" src="https://www.youtube.com/embed/n5OSxKlM3iQ" frameborder="0" allowfullscreen></iframe>
+
+
+#+begin_tagline
+Tagged: philosophy
+#+end_tagline

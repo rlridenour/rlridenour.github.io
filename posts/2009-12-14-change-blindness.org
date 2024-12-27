@@ -3,3 +3,8 @@
 #+title: Change Blindness
 
 A great [[http://www.boingboing.net/2009/12/14/change-blindness-exp.html][experiment]] that shows how little we tend to perceive.
+
+
+#+begin_tagline
+Tagged: philosophy critical-thinking
+#+end_tagline

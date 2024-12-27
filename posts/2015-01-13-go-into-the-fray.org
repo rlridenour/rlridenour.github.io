@@ -9,3 +9,8 @@ A philosopher who is not taking part in discussions is like a boxer who never go
 
 #+ATTR_HTML: :class bigquote
 Ludwig Wittgenstein
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

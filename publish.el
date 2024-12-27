@@ -132,7 +132,7 @@ publishing directory. Returns output file name."
          :base-extension "org"
          :exclude ,(regexp-opt '("README.org" "draft"))
          :index-filename "index.org"
-         :recursive t
+         :recursive nil
          :publishing-function org-html-publish-to-html
          :publishing-directory "./docs/"
          :html-link-home "/"
@@ -142,6 +142,21 @@ publishing directory. Returns output file name."
          :html-head ,me/website-html-head
          :html-preamble me/website-html-preamble
          :html-postamble me/website-html-postamble)
+        ("tags"
+         :base-directory "tags"
+         :base-extension "org"
+         :exclude ,(regexp-opt '("README.org" "draft"))
+         :index-filename "index.org"
+         :recursive nil
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "./docs/tags/"
+         :html-link-home "/"
+         :html-link-up "/"
+         :html-head-include-scripts t
+         :html-head-include-default-style nil
+         :html-head ,me/website-html-head
+         :html-preamble me/website-html-preamble
+         :html-postamble me/website-html-postamble)	
         ("css"
          :base-directory "./css"
          :base-extension "css"
@@ -180,7 +195,7 @@ publishing directory. Returns output file name."
          :exclude ".*"
          :include ("index.org")
          :table-of-contents nil)
-        ("all" :components ("posts" "pages" "css" "images" "assets" "rss" "cname"))))
+        ("all" :components ("posts" "pages" "tags" "css" "images" "assets" "rss" "cname"))))
 
 (provide 'publish)
 ;;; publish.el ends here

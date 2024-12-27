@@ -19,3 +19,8 @@ something greater than\\
 even their own lives.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: religion prayer
+#+end_tagline

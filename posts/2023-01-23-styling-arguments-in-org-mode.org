@@ -57,3 +57,8 @@ which produces this:
 1. First premise
 2. Second premise
 3. Conclusion
+
+
+#+begin_tagline
+Tagged: org
+#+end_tagline

@@ -5,3 +5,8 @@
 [[http://www.ethicsdaily.com/news.php?viewStory=16508][Advice for Christian Politicians]]
 
 From Ethics Daily.
+
+
+#+begin_tagline
+Tagged: religion politics
+#+end_tagline

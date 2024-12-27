@@ -3,3 +3,8 @@
 #+title: Tolerance
 
 I just finished my paper on the problems with tolerance. Of course, it was a day later than the conference deadline. Now to see how tolerant the conference organizers are.
+
+
+#+begin_tagline
+Tagged: philosophy
+#+end_tagline

@@ -24,3 +24,8 @@ These global options can be overridden for individual lists by putting something
 #+end_src
 
 This will put a space equal to the width of an upper-case "M" between each list item. 
+
+
+#+begin_tagline
+Tagged: org latex
+#+end_tagline

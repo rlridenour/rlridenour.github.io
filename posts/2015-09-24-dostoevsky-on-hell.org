@@ -9,3 +9,8 @@ Fathers and teachers, I ask myself: "What is hell?" And I answer thus: "The suff
 
 #+ATTR_HTML: :class bigquote
 Fyodor Dostoevsky
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

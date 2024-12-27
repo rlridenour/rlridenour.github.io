@@ -9,3 +9,8 @@ The Bible is very easy to understand. But we as Christians are a bunch of schemi
 
 #+ATTR_HTML: :class bigquote
 S‌øren Kierkegaard
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

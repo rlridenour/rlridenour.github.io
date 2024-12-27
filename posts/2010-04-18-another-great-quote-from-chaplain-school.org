@@ -8,3 +8,8 @@ From the leader of a Mosque in Columbia, speaking about partnering with other gr
 #+begin_quote
 We've been able to work with the Methodists and the Episcopalians. The Baptists..., well, we have to be patient with the Baptists.
 #+end_quote
+
+
+#+begin_tagline
+Tagged: religion
+#+end_tagline

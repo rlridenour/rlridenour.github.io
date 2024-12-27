@@ -60,7 +60,7 @@ line-height: clamp(1.575rem, -0.416vw + 1.908rem, 1.8rem);
 .title {
     font-size: 2rem;
     line-height: 2.5rem;
-    padding: 2rem 0 2rem 0;
+    padding: 4rem 0 2rem 0;
 }
 
 span.subtitle {
@@ -110,6 +110,8 @@ pre code {
     display: block;
     overflow-x: auto;
 }
+
+
 
 blockquote {
     padding: 0 0 0 2rem;
@@ -249,6 +251,12 @@ img {
 #footnotes {
     font-size: clamp(0.875rem, 0.231vw + 0.815rem, 1rem);
     line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);
+}
+
+.tagline {
+ font-size: clamp(0.875rem, 0.231vw + 0.815rem, 1rem);
+line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);
+color: var(--less-light);
 }
 
 

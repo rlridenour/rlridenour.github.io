@@ -5,3 +5,8 @@
 [[http://www.ethicsdaily.com][EthicsDaily.com]] has an interesting story about a recent Pew Forum survey on religious knowledge in the United States. Jews, Mormons, and atheists/agnostics appear to know more about world religions than American Christians.
 
 For those who would like to test their own knowledge, the Pew Forum on Religion and Public Life has provided a [[http://features.pewforum.org/quiz/us-religious-knowledge/][short version of the survey]] that you can take online.
+
+
+#+begin_tagline
+Tagged: religion
+#+end_tagline

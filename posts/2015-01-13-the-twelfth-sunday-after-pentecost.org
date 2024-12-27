@@ -25,3 +25,8 @@ in the caring.
 /Amen/
 
 
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

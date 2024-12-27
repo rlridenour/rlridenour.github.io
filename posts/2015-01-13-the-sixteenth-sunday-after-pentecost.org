@@ -41,3 +41,8 @@ into a sanctuary of your grace.
 /Amen/
 
 
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

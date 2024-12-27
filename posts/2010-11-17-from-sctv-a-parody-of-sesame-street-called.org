@@ -10,3 +10,8 @@ From SCTV: a parody of Sesame Street called "Philosophy Street."
 #+end_center
 
 
+
+
+#+begin_tagline
+Tagged: philosophy humor
+#+end_tagline

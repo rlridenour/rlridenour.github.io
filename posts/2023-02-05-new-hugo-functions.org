@@ -78,3 +78,8 @@ Look at this post from [[https://lucidmanager.org/productivity/create-websites-w
 
 
 They both have some other useful things that might also be helpful. I'm grateful to others who solve problems they have and post the code online. I know just enough Emacs-lisp to figure out what is going on, and modify something to my own particular use-case, but not enough to be able to start from scratch.
+
+
+#+begin_tagline
+Tagged: hugo emacs 
+#+end_tagline

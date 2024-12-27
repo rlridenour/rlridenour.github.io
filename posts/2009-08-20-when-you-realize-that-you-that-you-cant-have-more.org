@@ -15,3 +15,8 @@ Hugh Dancy
 
 
 
+
+
+#+begin_tagline
+Tagged: quotes philosophy
+#+end_tagline

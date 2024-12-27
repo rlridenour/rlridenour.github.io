@@ -30,3 +30,8 @@ Give us the courage\\
 to do the same.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

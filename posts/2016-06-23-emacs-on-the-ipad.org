@@ -11,3 +11,8 @@ I'm sure that most people wouldn't be troubled at all by either of these problem
 A few days ago, I noticed that [[http://www.digitalocean.com][Digital Ocean]] has a remote server plan with 20 GB of solid state storage for five dollars a month. It only has 512 MB of memory, but that seems to be plenty for Emacs and Vim. I signed up, started a machine, and installed Ubuntu. I installed Emacs, Vim, Pandoc, and LaTeX. I changed the shell to the fish shell, and moved all of my configuration files. Since the configuration files are all on Github, moving them to the machine was simple.
 
 So, the good news is that I'm now writing this in Emacs on the iPad. The bad news is, since I had given up being able to use the iPad to write, I traded in my larger iPad for an iPad mini. Now, I really will be looking longingly at those iPad Pros I see at Starbucks.
+
+
+#+begin_tagline
+Tagged: emacs
+#+end_tagline

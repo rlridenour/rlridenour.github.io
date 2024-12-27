@@ -282,3 +282,8 @@ Unfortunately, this won't scale the text at the nodes, which will make the label
 #+BEGIN_EXAMPLE tex
 \begin{tikzpicture}[thick,scale=2, every node/.style={transform shape}]
 #+END_EXAMPLE
+
+
+#+begin_tagline
+Tagged: latex logic
+#+end_tagline

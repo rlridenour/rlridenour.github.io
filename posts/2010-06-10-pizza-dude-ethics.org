@@ -3,3 +3,8 @@
 #+title: Pizza Dude Ethics
 
 [[http://thisibelieve.org/essay/23/][A great essay.]]
+
+
+#+begin_tagline
+Tagged: ethics
+#+end_tagline

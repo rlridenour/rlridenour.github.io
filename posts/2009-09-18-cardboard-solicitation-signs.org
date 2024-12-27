@@ -3,3 +3,8 @@
 #+title: Cardboard Solicitation Signs
 
 [[http://freakonomics.blogs.nytimes.com/2009/09/18/freak-shots-how-effective-is-your-cardboard-sign/][Here]]. I especially like the one that reads, "Ninja's killed my family --- Need money for Kung-Fu lessons."
+
+
+#+begin_tagline
+Tagged: humor
+#+end_tagline

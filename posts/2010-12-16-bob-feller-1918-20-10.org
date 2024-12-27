@@ -11,3 +11,8 @@ I knew then, and I know today, that winning World War II was the most important 
 #+end_quote
 
 
+
+
+#+begin_tagline
+Tagged: misc quote
+#+end_tagline

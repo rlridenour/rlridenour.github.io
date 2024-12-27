@@ -34,3 +34,8 @@ for we know which side\\
 you are on.\\
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

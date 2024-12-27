@@ -37,3 +37,8 @@ Open our eyes that we may see.\\
 Open our hearts that we may love.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

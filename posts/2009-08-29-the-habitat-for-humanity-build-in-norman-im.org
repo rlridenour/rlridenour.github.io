@@ -10,3 +10,8 @@ The Habitat for Humanity build in Norman. I'm getting lots of advice from David 
 #+end_center
 
 
+
+
+#+begin_tagline
+Tagged: church
+#+end_tagline

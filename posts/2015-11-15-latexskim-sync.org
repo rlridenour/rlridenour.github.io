@@ -22,3 +22,8 @@ After seeing that some others had used a slightly different configuration, I cha
 
 
 and everything started working fine. I still have no idea why, but it may help someone else.
+
+
+#+begin_tagline
+Tagged: emacs latex
+#+end_tagline

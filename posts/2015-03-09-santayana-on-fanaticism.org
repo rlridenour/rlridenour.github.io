@@ -10,3 +10,8 @@ Fanaticism consists in redoubling your efforts when you have forgotten your aim.
 
 #+ATTR_HTML: :class bigquote
 George Santayana, /Reason in Common Sense/, Vol. I
+
+
+#+begin_tagline
+Tagged: quotes philosophy
+#+end_tagline

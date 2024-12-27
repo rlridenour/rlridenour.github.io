@@ -9,3 +9,8 @@ Too often the price exacted by society for security and respectability is that t
 
 #+ATTR_HTML: :class bigquote
 Howard Thurman, /Jesus and the Disinherited/, p.11.
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

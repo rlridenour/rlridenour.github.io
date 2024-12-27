@@ -4,3 +4,8 @@
 #+setupfile: ../org-templates/post.org
 
 Final exams have been graded and final grades have been turned in. Unfortunately, there's only a few short weeks to prepare for the next semester.
+
+
+#+begin_tagline
+Tagged: teaching
+#+end_tagline

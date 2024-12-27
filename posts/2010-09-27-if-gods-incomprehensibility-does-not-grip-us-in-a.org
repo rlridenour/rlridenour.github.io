@@ -9,3 +9,8 @@ If God's incomprehensibility does not grip us in a word, if it does not draw us 
 
 #+ATTR_HTML: :class bigquote
 Karl Rahner
+
+
+#+begin_tagline
+Tagged: religion
+#+end_tagline

@@ -41,3 +41,8 @@ help me to honor your words\\
 with more than just my lips.\\
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: ethics politics religion
+#+end_tagline

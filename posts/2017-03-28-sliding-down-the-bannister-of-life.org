@@ -9,3 +9,8 @@ As you slide down the banister of life, may the splinters never point your way.
 
 #+ATTR_HTML: :class bigquote
 Micah Wakefield
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

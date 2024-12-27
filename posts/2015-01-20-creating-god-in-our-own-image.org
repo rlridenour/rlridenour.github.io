@@ -9,3 +9,8 @@ You can safely assume that you've created God in your own image when it turns ou
 
 #+ATTR_HTML: :class bigquote
 Anne Lamott, /Speech delivered in Washington D.C./
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

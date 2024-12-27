@@ -9,3 +9,8 @@ I received an interesting "package" in campus mail yesterday. It's a coconut wit
 [[../images/posts/coconut.jpeg]]
 #+end_center
 
+
+
+#+begin_tagline
+Tagged: teaching
+#+end_tagline

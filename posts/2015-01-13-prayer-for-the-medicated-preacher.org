@@ -27,3 +27,8 @@ but is\\
 much appreciated.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

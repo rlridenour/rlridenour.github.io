@@ -8,3 +8,8 @@ I needed to copy certain files from a bunch of subfolders to another folder. Thi
 cp (find . -name '<name>') <target folder>
 #+end_src
 
+
+
+#+begin_tagline
+Tagged: fish
+#+end_tagline

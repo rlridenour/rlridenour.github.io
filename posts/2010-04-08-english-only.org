@@ -3,3 +3,8 @@
 #+title: English Only
 
 [[http://leiterreports.typepad.com/blog/2010/04/englishonly-please.html][From Brian Leiter's site.]]
+
+
+#+begin_tagline
+Tagged: misc
+#+end_tagline

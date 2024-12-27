@@ -9,3 +9,8 @@ People have always wanted philosophers to provide digestible wisdom, yet it is a
 
 #+ATTR_HTML: :class bigquote
 [[http://www.moreintelligentlife.com/content/ideas/anthony-gottlieb/what-do-philosophers-believe][Anthony Gottlieb]]
+
+
+#+begin_tagline
+Tagged: quotes philosophy
+#+end_tagline

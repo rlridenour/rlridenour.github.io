@@ -13,3 +13,8 @@ From this phrase, 'A new commandment,' or in Latin, /mandatum novum/, we get the
 
 /Amen/
 
+
+
+#+begin_tagline
+Tagged: sermons
+#+end_tagline

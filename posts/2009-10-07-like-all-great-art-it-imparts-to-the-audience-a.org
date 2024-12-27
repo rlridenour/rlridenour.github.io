@@ -13,3 +13,8 @@ Yoni Brenner, referring to Brahms' *Symphony No. 2*[fn:1]
 * Footnotes
 
 [fn:1]  [[http://www.newyorker.com/humor/2009/10/12/091012sh_shouts_brenner?currentPage=all][/The New Yorker/]] 
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

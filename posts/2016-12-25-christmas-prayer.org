@@ -26,3 +26,8 @@ and what I can be,\\
 by your grace.\\
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

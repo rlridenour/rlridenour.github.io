@@ -9,3 +9,8 @@ There is a tragic flaw in our precious Constitution, and I don’t know what can
 
 #+ATTR_HTML: :class bigquote
 [[http://inthesetimes.com/article/cold_turkey][Kurt Vonnegut]]
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

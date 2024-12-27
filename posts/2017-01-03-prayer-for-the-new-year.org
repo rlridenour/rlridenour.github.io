@@ -19,3 +19,8 @@ Or my own country\\
 with the Kingdom of God.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

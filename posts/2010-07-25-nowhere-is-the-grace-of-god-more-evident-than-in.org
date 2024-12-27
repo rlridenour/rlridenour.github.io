@@ -10,3 +10,8 @@ Nowhere is the grace of God more evident than in the fact that some preachers wi
 
 #+ATTR_HTML: :class bigquote
 Karl Barth
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

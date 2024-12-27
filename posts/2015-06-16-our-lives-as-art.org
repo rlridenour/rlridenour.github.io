@@ -30,3 +30,8 @@ help us to create something beautiful\\
 with you.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer religion
+#+end_tagline

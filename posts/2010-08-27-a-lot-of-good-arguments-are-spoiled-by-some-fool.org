@@ -9,3 +9,8 @@ A lot of good arguments are spoiled by some fool who knows what he is talking ab
 
 #+ATTR_HTML: :class bigquote
 Miguel De Unamuno
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

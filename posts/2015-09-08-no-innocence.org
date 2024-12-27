@@ -9,3 +9,8 @@ I once sent a dozen of my friends a telegram saying 'flee at once - all is disco
 
 #+ATTR_HTML: :class bigquote
 Mark Twain
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

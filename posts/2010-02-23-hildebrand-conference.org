@@ -3,3 +3,8 @@
 #+title: Hildebrand Conference
 
 A conference on the work of Dietrich von Hildebrand is scheduled for May 27-29, 2010 in Rome. There is a student essay contest, and five winners receive lodging, meals, and money for travel expenses to the conference in Rome. The conference website is [[http://www.hildebrandlegacy.org][www.hildebrandlegacy.org]].
+
+
+#+begin_tagline
+Tagged: philosophy
+#+end_tagline

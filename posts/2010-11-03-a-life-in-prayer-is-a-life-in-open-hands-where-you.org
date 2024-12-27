@@ -9,3 +9,8 @@ A life in prayer is a life in open hands where you are not ashamed of your weakn
 
 #+ATTR_HTML: :class bigquote
 Henri Nouwen
+
+
+#+begin_tagline
+Tagged: quotes religion prayer
+#+end_tagline

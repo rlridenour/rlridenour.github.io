@@ -49,3 +49,8 @@ It sounds interesting, and I'll have to keep an eye on it. I saw [[http://www.we
 [fn:1] What can I say... I'm an academic.
 
 [fn:2] It's only one dollar per month, so the cost is insignificant. I certainly like free, but I'm leery of depending on something when I can't figure out how the people responsible are managing to pay their bills.
+
+
+#+begin_tagline
+Tagged: jekyll
+#+end_tagline

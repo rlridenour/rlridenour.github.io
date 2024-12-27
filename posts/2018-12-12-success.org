@@ -9,3 +9,8 @@ Somewhere in the semester I realized that everything we have gone over in class 
 #+end_quote
 
 That's definitely a victory in freshman philosophy.
+
+
+#+begin_tagline
+Tagged: philosophy
+#+end_tagline

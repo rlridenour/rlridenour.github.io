@@ -15,3 +15,8 @@ Teacher: "To make sure you are not asleep when the sun begins to rise."
 
 #+ATTR_HTML: :class bigquote
 Anthony de Mello, /One Minute Wisdom/
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

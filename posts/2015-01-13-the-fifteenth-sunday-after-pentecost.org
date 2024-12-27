@@ -18,3 +18,8 @@ Give us the strength to face the flames\\
 Like the three in Babylon,\\
 Who dared not promise to show what God would do for them,\\
 But promised instead to show what they would do for God.
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

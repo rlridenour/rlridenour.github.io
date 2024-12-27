@@ -10,3 +10,8 @@ The collection grows...
 #+end_center
 
 
+
+
+#+begin_tagline
+Tagged: aesthetics
+#+end_tagline

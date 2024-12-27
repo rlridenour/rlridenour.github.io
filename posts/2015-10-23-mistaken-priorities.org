@@ -11,3 +11,8 @@ Man’s sensitivity to little things and insensitivity to the greatest things ar
 Pascal
 
 
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

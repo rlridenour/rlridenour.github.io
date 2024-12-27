@@ -10,3 +10,8 @@ Peace is not merely the absence of war; it is also the overcoming of injustice a
 #+ATTR_HTML: :class bigquote
 Jürgen Moltmann, /The Power of the Powerless/
 
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

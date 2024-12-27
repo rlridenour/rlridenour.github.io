@@ -49,3 +49,8 @@ and not the King\\
 as I want him to be.
 
 /Amen/
+
+
+#+begin_tagline
+Tagged: prayer
+#+end_tagline

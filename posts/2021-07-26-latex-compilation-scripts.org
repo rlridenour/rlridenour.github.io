@@ -65,3 +65,8 @@ The first compiles with an asynchronous shell command, so that you can immediate
 #+end_src
 
 These functions first export the org file to \(\LaTeX\), then compile the corresponding TeX files. All in all, a morning's worth of work to save a few keystrokes. I run them using [[https://github.com/jerrypnz/major-mode-hydra.el][major mode hydras]].
+
+
+#+begin_tagline
+Tagged: latex emacs org
+#+end_tagline

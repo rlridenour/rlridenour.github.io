@@ -10,3 +10,8 @@ This is where a tremendous decision takes place: whether we Christians have enou
 
 #+ATTR_HTML: :class source
 Dietrich Bonhoeffer, /DBW/, Vol. 11, 446.
+
+
+#+begin_tagline
+Tagged: religion quotes
+#+end_tagline

@@ -10,3 +10,8 @@ labor for.
 
 #+ATTR_HTML: :class bigquote
 Thomas More
+
+
+#+begin_tagline
+Tagged: quotes religion
+#+end_tagline

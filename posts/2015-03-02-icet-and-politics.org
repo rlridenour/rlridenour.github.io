@@ -9,3 +9,8 @@ People ask me, "Ice, why don’t you get into politics?" I’m like, "I got out 
 
 #+ATTR_HTML: :class bigquote
 Ice-T
+
+
+#+begin_tagline
+Tagged: quotes
+#+end_tagline

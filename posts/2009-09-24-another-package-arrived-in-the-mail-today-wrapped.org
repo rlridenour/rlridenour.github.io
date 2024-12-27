@@ -21,3 +21,8 @@ I hope that sale at the dollar store ends soon.
 [[../images/posts/another-package.jpg]]
 #+end_center
 
+
+
+#+begin_tagline
+Tagged: aesthetics
+#+end_tagline

@@ -3,3 +3,8 @@
 #+title: Starting Young
 
 Here's a [[http://minimalmac.com/post/305714868/curious-via-thenixer-what-we-believe-in][mac geek]] got a much earlier start than I did.
+
+
+#+begin_tagline
+Tagged: mac
+#+end_tagline

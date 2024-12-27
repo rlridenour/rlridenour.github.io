@@ -25,3 +25,8 @@ Adding this to my Doom Emacs config solved the problem:
 
 Now, when I run ~counsel-buffer-or-recentf~, Emacs abbreviates enough of the file paths to make each line fit into the frame. How much is abbreviated depends on how large the frame is. No matter how narrow the frame, though, I can still see the filename.
 
+
+
+#+begin_tagline
+Tagged: emacs
+#+end_tagline

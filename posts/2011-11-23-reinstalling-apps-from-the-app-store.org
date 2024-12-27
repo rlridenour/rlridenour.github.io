@@ -16,3 +16,8 @@ For some reason, I decided to go back to Launchpad and saw the BBEdit icon there
     
 Lesson: Launchpad sees apps on external drives, so disconnect any external drives to install a deleted app to your main drive. Then, reinstalling /should/ be the quick and easy process that it’s supposed to be.
     
+
+
+#+begin_tagline
+Tagged: mac
+#+end_tagline

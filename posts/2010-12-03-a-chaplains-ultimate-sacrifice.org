@@ -3,3 +3,8 @@
 #+title: A Chaplain's Ultimate Sacrifice
 
 From the [[http://articles.latimes.com/2010/dec/02/nation/la-na-chaplain-20101202][Los Angeles Times]], a story about Chaplain (Captain) Dale Goetz, the first Chaplain since the Vietnam War to be killed in Combat. Remember to pray for Chaplains and their Chaplain Assistants, as they continue to minister to those who serve.
+
+
+#+begin_tagline
+Tagged: army
+#+end_tagline

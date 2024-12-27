@@ -7,3 +7,8 @@ I've been tempted to do this for years, but have just now transitioned from Hugo
 
 The site is still found at [[https://randyridenour.net][randyridenour.net]].
 
+
+
+#+begin_tagline
+Tagged: 
+#+end_tagline

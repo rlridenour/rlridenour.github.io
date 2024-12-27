@@ -9,3 +9,8 @@ What is the first business of him who philosophizes? To throw away self-conceit.
 
 #+ATTR_HTML: :class bigquote
 Epictetus, /Discourses/, Book II, Chapter 17.
+
+
+#+begin_tagline
+Tagged: quotes philosophy
+#+end_tagline

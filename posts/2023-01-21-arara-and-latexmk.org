@@ -96,3 +96,8 @@ Fortunately, arara can be told to compile with latexmk, and the engine and any o
 #+end_src
 
 Since the options that I want are in my latexmkrc file, there's nothing else I need to do. Changing "pdflatex" to "lualatex" would make it compile with lualatex instead as many times as necessary to produce the final document.
+
+
+#+begin_tagline
+Tagged: latex
+#+end_tagline

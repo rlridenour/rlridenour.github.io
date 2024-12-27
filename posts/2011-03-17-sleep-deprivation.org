@@ -21,3 +21,8 @@ Many of the effects we suffer are invisible. Insufficient sleep, for example, de
 
 Sleep deprivation doesn't appear to be the best strategy to achieve a fulfilling educational experience. I have some grading to do, but I think I'll take a nap instead.
 
+
+
+#+begin_tagline
+Tagged: teaching
+#+end_tagline

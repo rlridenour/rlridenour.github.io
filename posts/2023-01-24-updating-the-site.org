@@ -124,3 +124,8 @@ Finally, set some keybindings to make it all easy.
 #+end_src
 
 I have a few more things to do, like create "About" and tag pages, and adjust the footnote styling. Unfortunately, I need to get ready for the new semester which begins on Thursday.
+
+
+#+begin_tagline
+Tagged: hugo emacs org
+#+end_tagline

@@ -6,9 +6,6 @@ As I said a few days ago, I switch my Emacs config files to Kieran Healy's Start
 
 This afternoon, I found Mike McFarland's [[http://thrownforaloop.com/posts/emacs-configuration/][Emacs configuration]] online. He uses Prelude with a personal configuration in Org-mode. I have switched back, and brought in much of Kieran's LaTeX configuration.
 
-You can see the results [[https://github.com/rlridenour/prelude/blob/master/personal/settings.org][here]], although it's not now as literate as I hope it will be.
-
-
 #+begin_tagline
 Tagged: [[file:../tags/emacs.org][Emacs]]
 #+end_tagline

@@ -5,7 +5,7 @@
 
 
 
-My [[https://randyridenour.net/posts/2019-01-08-arguments-html/][method]] of formatting philosophical arguments in HTML works fine when writing web pages on my own site, but not so well when I don't have access to the site's CSS, or so I thought. I tell students to format arguments in what is usually called "standard form" --- a list with numbered premises and a line separating the premises from the conclusion. So, it should look like this:
+My [[file:2019-01-08-arguments-html.org][method]] of formatting philosophical arguments in HTML works fine when writing web pages on my own site, but not so well when I don't have access to the site's CSS, or so I thought. I tell students to format arguments in what is usually called "standard form" --- a list with numbered premises and a line separating the premises from the conclusion. So, it should look like this:
 
 #+ATTR_HTML: :class arg
 1. First premise
@@ -22,7 +22,7 @@ This is simple to do in LaTeX with this:
 \end{enumerate}
 #+end_src
 
-As I explained [[https://randyridenour.net/posts/arguments-in-html/][earlier]], it's also easy to in HTML by declaring a CSS class. Unfortunately, I see nowhere in Canvas, the learning management system used by our university, to put an external style sheet. So, my options seemed to be, first, to put the premises in a list and the conclusion on a separate line following the list. That would produce something like this:
+As I explained [[file:2019-01-08-arguments-html.org][earlier]], it's also easy to in HTML by declaring a CSS class. Unfortunately, I see nowhere in Canvas, the learning management system used by our university, to put an external style sheet. So, my options seemed to be, first, to put the premises in a list and the conclusion on a separate line following the list. That would produce something like this:
 
 #+begin_src html
 <ol>

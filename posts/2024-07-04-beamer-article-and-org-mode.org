@@ -64,4 +64,4 @@ Simple enough, and only took four days....
 
 * Footnotes
 
-[fn:1] I sketched out the process I use in [[https://randyridenour.net/posts/2020-06-01-beamer-presentations-with-org-mode/][this post]] from 2020. I've changed a few things since then, but the basic strategy is the same.
+[fn:1] I sketched out the process I use in [[file:2020-06-01-beamer-presentations-with-org-mode.org][this post]] from 2020. I've changed a few things since then, but the basic strategy is the same.

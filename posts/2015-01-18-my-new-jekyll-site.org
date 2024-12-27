@@ -16,7 +16,7 @@ The first step is to install [[http://jekyllrb.com ][Jekyll]]. Since it's a Ruby
 
 *** Configure the Site
 
-Configuring the site is simple. There are a few items to add to the _config.yml file in the root directory of the site, mostly standard things like the site title and base URL. Then, just run `jekyll server` from the root directory of the site, browse to http://localhost:4000, and you should see your new site.
+Configuring the site is simple. There are a few items to add to the _config.yml file in the root directory of the site, mostly standard things like the site title and base URL. Then, just run `jekyll server` from the root directory of the site, browse to =http://localhost:4000=, and you should see your new site.
 
 *** Deployment
 

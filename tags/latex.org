@@ -1,10 +1,10 @@
 #+title: Tagged: LaTeX
-#+setupfile: ./org-templates/post.org
+#+setupfile: ../org-templates/post.org
 
-- [[file:../posts/2015-11-15-latexskim-sync.org][LaTeX-Skim Sync]]
-- [[file:../posts/2023-01-21-arara-and-latexmk.org][Arara and Latexmk]]
-- [[file:../posts/2021-07-26-latex-compilation-scripts.org][LaTeX Compilation Scripts]]
-- [[file:../posts/2016-04-11-venn-diagrams-with-latex-and-tikz.org][Venn Diagrams with LaTeX and TikZ]]
-- [[file:../posts/2023-02-04-venn-diagrams-in-latex.org][Venn Diagrams in LaTeX]]
-- [[file:../posts/2018-02-10-truth-tables-in-latex.org][Truth Tables in LaTeX]]
-- [[file:../posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.org][List Spacing in Org Mode with Enumitem]]
+- [[file:.../posts/2015-11-15-latexskim-sync.org][LaTeX-Skim Sync]]
+- [[file:.../posts/2023-01-21-arara-and-latexmk.org][Arara and Latexmk]]
+- [[file:.../posts/2021-07-26-latex-compilation-scripts.org][LaTeX Compilation Scripts]]
+- [[file:.../posts/2016-04-11-venn-diagrams-with-latex-and-tikz.org][Venn Diagrams with LaTeX and TikZ]]
+- [[file:.../posts/2023-02-04-venn-diagrams-in-latex.org][Venn Diagrams in LaTeX]]
+- [[file:.../posts/2018-02-10-truth-tables-in-latex.org][Truth Tables in LaTeX]]
+- [[file:.../posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.org][List Spacing in Org Mode with Enumitem]]

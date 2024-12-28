@@ -1,10 +1,8 @@
 #+title: Tagged: Music
-#+setupfile: ./org-templates/post.org
+#+setupfile: ../org-templates/post.org
 
-- [[file:../posts/2010-08-27-greatest-beatles-songs.org][Greatest Beatles Songs?]]
-- [[file:../posts/2016-09-22-the-ballad-of-mitch-randall.org][The Ballad of Mitch Randall]]
-- [[file:../posts/2018-10-06-my-oklahoma-home.org][My Oklahoma Home]]
-- [[file:../posts/2009-10-25-the-monads.org][The Monads]]
-- [[file:../posts/2018-12-24-a-gift-for-us.org][A Gift for Us]]
-
-
+- [[file:.../posts/2010-08-27-greatest-beatles-songs.org][Greatest Beatles Songs?]]
+- [[file:.../posts/2016-09-22-the-ballad-of-mitch-randall.org][The Ballad of Mitch Randall]]
+- [[file:.../posts/2018-10-06-my-oklahoma-home.org][My Oklahoma Home]]
+- [[file:.../posts/2009-10-25-the-monads.org][The Monads]]
+- [[file:.../posts/2018-12-24-a-gift-for-us.org][A Gift for Us]]

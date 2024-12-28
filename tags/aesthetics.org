@@ -1,5 +1,5 @@
 #+title: Tagged: Aesthetics
-#+setupfile: ./org-templates/post.org
+#+setupfile: ../org-templates/post.org
 
 - [[file:../posts/2009-09-22-yesterday-i-received-an-anonymous-package-by.org][Not So Precious Moments]]
 - [[file:../posts/2009-09-24-another-package-arrived-in-the-mail-today-wrapped.org][More Figurines]]
@@ -8,3 +8,4 @@
 - [[file:../posts/2009-11-25-another-figurine-arrived-today-evidently-the.org][Diversity of Figurines]]
 - [[file:../posts/2009-08-28-triumph-of-the-will.org][Triumph of the Will]]
 - [[file:../posts/2009-09-29-the-article-quotes-danto-calling-warhol-the.org][Danto on Warhol]]
+

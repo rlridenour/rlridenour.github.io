@@ -1,5 +1,5 @@
 #+title: Tags
-#+setupfile: ./org-templates/post.org
+#+setupfile: ../org-templates/post.org
 
 - [[file:./aesthetics.org][Aesthetics]]
 - [[file:./army.org][Army]]
@@ -20,6 +20,3 @@
 - [[file:./religion.org][Religion]]
 - [[file:./shell.org][Shell]]
 - [[file:./teaching.org][Teaching]]
-
-
-

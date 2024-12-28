@@ -1,5 +1,5 @@
 #+title: Tagged: Emacs
-#+setupfile: ./org-templates/post.org
+#+setupfile: ../org-templates/post.org
 
 - [[file:../posts/2023-02-06-fixing-emacs-doom-upgrade.org][Fixing Emacs Doom Upgrade]]
 - [[file:../posts/2015-01-13-search-and-replace-with-regular-expressions.org][Search and Replace with Regular Expressions]]
@@ -20,5 +20,3 @@
 - [[file:../posts/2023-02-05-new-hugo-functions.org][New Hugo Functions]]
 - [[file:../posts/2023-01-24-updating-the-site.org][Updating the Site]]
 - [[file:../posts/2021-07-26-latex-compilation-scripts.org][LaTeX Compilation Scripts]]
-
-

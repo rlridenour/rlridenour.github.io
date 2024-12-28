@@ -1,5 +1,5 @@
 #+title: Tagged: Ethics
-#+setupfile: ./org-templates/post.org
+#+setupfile: ../org-templates/post.org
 
 - [[file:../posts/2008-11-01-moral-relativism.org][Moral Relativism]]
 - [[file:../posts/2010-06-10-pizza-dude-ethics.org][Pizza Dude Ethics]]
@@ -17,6 +17,3 @@
 - [[file:../posts/2008-05-18-millennium-development-goals.org][Millennium Development Goals]]
 - [[file:../posts/2015-07-07-guns-cakes-and-gay-weddings.org][Guns, Cakes, and Gay Weddings]]
 - [[file:../posts/2016-07-31-should-the-church-bear-the-welfare-burden.org][Should the Church Bear the Welfare Burden?]]
-
-
-

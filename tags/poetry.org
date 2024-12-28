@@ -1,12 +1,10 @@
 #+title: Tagged: Poetry
-#+setupfile: ./org-templates/post.org
+#+setupfile: ../org-templates/post.org
 
-- [[file:../posts/2015-01-13-a-christmas-poem.org][A Christmas Poem]]
-- [[file:../posts/2015-01-13-for-losses-endured.org][For Losses Endured]]
-- [[file:../posts/2015-01-13-for-sheri.org][For Sheri]]
-- [[file:../posts/2015-02-14-poem-for-my-valentine.org][Poem for my Valentine]]
-- [[file:../posts/2015-05-19-visit-to-a-national-cemetery.org][Visit to a National Cemetery]]
-- [[file:../posts/2015-06-19-to-america.org][To America]]
-- [[file:../posts/2016-11-17-to-love-or-die.org][To Love or Die]]
-
-
+- [[file:.../posts/2015-01-13-a-christmas-poem.org][A Christmas Poem]]
+- [[file:.../posts/2015-01-13-for-losses-endured.org][For Losses Endured]]
+- [[file:.../posts/2015-01-13-for-sheri.org][For Sheri]]
+- [[file:.../posts/2015-02-14-poem-for-my-valentine.org][Poem for my Valentine]]
+- [[file:.../posts/2015-05-19-visit-to-a-national-cemetery.org][Visit to a National Cemetery]]
+- [[file:.../posts/2015-06-19-to-america.org][To America]]
+- [[file:.../posts/2016-11-17-to-love-or-die.org][To Love or Die]]

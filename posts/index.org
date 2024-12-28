@@ -42,6 +42,7 @@
 - [[file:2019-08-01-free-shows-in-the-hospital.org][Free Shows in the Hospital]]
 - [[file:2019-06-16-prayer-for-trinity-sunday-2.org][Prayer for Trinity Sunday]]
 - [[file:2019-06-10-what-we-need.org][What We Need]]
+- [[file:2019-06-09-insurance-update.org][Insurance Update]]
 - [[file:2019-06-08-insurance-woes.org][Insurance Woes]]
 - [[file:2019-06-05-cancer.org][Cancer]]
 - [[file:2019-02-20-questions-and-answers.org][Questions and Answers]]
@@ -505,4 +506,3 @@
 - [[file:2008-05-19-international-aid-and-religious-freedom.org][International Aid and Religious Freedom]]
 - [[file:2008-05-18-millennium-development-goals.org][Millennium Development Goals]]
 - [[file:2024-12-22-style-test.org][Style Test]]
-- [[file:2019-06-09-insurance-update.org][Insurance Update]]

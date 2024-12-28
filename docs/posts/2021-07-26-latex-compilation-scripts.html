@@ -90,9 +90,9 @@
 </header><p>
 I&rsquo;m trying to automate \(\LaTeX\) compilation from Emacs as much as I can. Here are the shell scripts and Emacs functions that I&rsquo;m using.
 </p>
-<section id="outline-container-org66c6dec" class="outline-2">
-<h2 id="org66c6dec">Shell Scripts</h2>
-<div class="outline-text-2" id="text-org66c6dec">
+<section id="outline-container-org887d586" class="outline-2">
+<h2 id="org887d586">Shell Scripts</h2>
+<div class="outline-text-2" id="text-org887d586">
 <p>
 Here are some very simple scripts for compiling \(\LaTeX\) files with arara and the fish shell. The first, called &ldquo;mkt&rdquo; for &ldquo;make TeX&rdquo;, runs arara on the source file, then opens the resulting PDF.
 </p>
@@ -121,16 +121,16 @@ The second, called &ldquo;mktc&rdquo; for &ldquo;make TeX continuously&rdquo;, r
 </div>
 </div>
 </section>
-<section id="outline-container-orgab32d11" class="outline-2">
-<h2 id="orgab32d11">Emacs</h2>
-<div class="outline-text-2" id="text-orgab32d11">
+<section id="outline-container-org62bbcee" class="outline-2">
+<h2 id="org62bbcee">Emacs</h2>
+<div class="outline-text-2" id="text-org62bbcee">
 <p>
 Here are some functions to use in Emacs to run the scripts.
 </p>
 </div>
-<div id="outline-container-orgd6d6729" class="outline-3">
-<h3 id="orgd6d6729">Auctex</h3>
-<div class="outline-text-3" id="text-orgd6d6729">
+<div id="outline-container-org5bef8a4" class="outline-3">
+<h3 id="org5bef8a4">Auctex</h3>
+<div class="outline-text-3" id="text-org5bef8a4">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/tex-mkt</span> ()
   <span class="org-doc">"Compile with arara."</span>
@@ -149,9 +149,9 @@ The first compiles with an asynchronous shell command, so that you can immediate
 </p>
 </div>
 </div>
-<div id="outline-container-org1ab44d9" class="outline-3">
-<h3 id="org1ab44d9">Org Mode</h3>
-<div class="outline-text-3" id="text-org1ab44d9">
+<div id="outline-container-orgff71d7a" class="outline-3">
+<h3 id="orgff71d7a">Org Mode</h3>
+<div class="outline-text-3" id="text-orgff71d7a">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span class="org-keyword">defun</span> <span class="org-function-name">rlr/org-mkt</span> ()
@@ -173,7 +173,7 @@ These functions first export the org file to \(\LaTeX\), then compile the corres
 </p>
 
 
-<div class="tagline" id="orge26385a">
+<div class="tagline" id="org52b2fc2">
 <p>
 Tagged: <a href="../tags/latex.html">Latex</a> <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a>
 </p>

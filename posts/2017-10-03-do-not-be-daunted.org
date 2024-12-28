@@ -20,12 +20,12 @@ Walk humbly, now."[fn:1]
 #+end_quote
 
 
+#+begin_tagline
+Tagged: [[file:../tags/prayer.org][Prayer]] [[file:../tags/religion.org][Religion]]
+#+end_tagline
+
 
 * Footnotes
 
 [fn:1] Rabbi Rami M. Shapiro, /Wisdom of the Jewish Sages: A Modern Reading of Pirke Avot/, p. 41.
 
-
-#+begin_tagline
-Tagged: [[file:../tags/prayer.org][Prayer]] [[file:../tags/religion.org][Religion]]
-#+end_tagline

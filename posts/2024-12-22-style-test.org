@@ -118,6 +118,10 @@ Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus ve
 [[yt:voAntzB7EwE][Change Blindness]]
 #+end_center
 
+#+begin_tagline
+Tagged: misc
+#+end_tagline
+
 * Footnotes
 
 [fn:1] This is some footnote text.
@@ -125,6 +129,3 @@ Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus ve
 [fn:2] Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
 
 
-#+begin_tagline
-Tagged: misc
-#+end_tagline

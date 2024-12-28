@@ -52,6 +52,10 @@ In the fictional case of Valjean and the actual case of Anderson, meeting the de
 
 For more information on Restorative Justice, see [[http://www.restorativejustice.org][Restorative Justice Online]].
 
+#+begin_tagline
+Tagged: [[file:../tags/religion.org][Religion]]
+#+end_tagline
+
 * Footnotes
 
 [fn:1] Victor Hugo, /Les Misérables/, tr. Norman Denny (New York: Penguin, 2012), 110-111.
@@ -59,6 +63,3 @@ For more information on Restorative Justice, see [[http://www.restorativejustice
 [fn:2] Here are stories from the [[http://www.washingtonpost.com/news/post-nation/wp/2014/05/05/missouri-man-sent-to-prison-13-years-later-than-intended-is-released/][Washington Post]] and the [[http://www.theguardian.com/world/2014/may/05/missouri-man-imprisoned-13-year-delay][Guardian]].
 
 
-#+begin_tagline
-Tagged: [[file:../tags/religion.org][Religion]]
-#+end_tagline

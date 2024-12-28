@@ -61,6 +61,10 @@ Here's the simple tcolorbox commands that go in the header:
 
 Simple enough, and only took four days....
 
+#+begin_tagline
+Tagged: 
+#+end_tagline
+
 
 * Footnotes
 

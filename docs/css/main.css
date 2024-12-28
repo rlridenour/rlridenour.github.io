@@ -253,6 +253,16 @@ img {
     line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);
 }
 
+h2.footnotes {
+    visibility: hidden;
+    margin-top: 2rem;
+}
+
+#text-footnotes {
+    border-top-style: solid;
+    border-width: 2px;
+}
+
 .tagline {
     margin-top: 2rem; 
     text-align: right;

@@ -26,6 +26,10 @@ So, Sublime Text 2, I think I'm in love, but you need to know how fickle I am. I
 
 UPDATE: It's 2024 now, and I've been using Emacs for over a decade. I still like to try out new editors, but I'm no longer searching for a new love.
 
+#+begin_tagline
+Tagged: 
+#+end_tagline
+
 * Footnotes
 
 [fn:1] Never underestimate the power of the obvious.

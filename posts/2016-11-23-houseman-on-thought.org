@@ -10,11 +10,12 @@ Three minutes' thought would suffice to find this out; but thought is irksome an
 #+ATTR_HTML: :class bigquote
 A. E. Housman[fn:1]
 
-* Footnotes
-
-[fn:1] /Saturae of Juvenal/ (Cambridge: Cambridge University Press, 1931), xi. 
-
 
 #+begin_tagline
 Tagged: [[file:../tags/quotes.org][Quotes]]
 #+end_tagline
+
+* Footnotes
+
+[fn:1] /Saturae of Juvenal/ (Cambridge: Cambridge University Press, 1931), xi. 
+

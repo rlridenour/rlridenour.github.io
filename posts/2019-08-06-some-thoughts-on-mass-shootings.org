@@ -21,6 +21,10 @@ Mass shootings are a complex problem, but not irreducibly complex. We shouldn’
 
 May God forgive me, if I ever demand my rights at the possible expense of another human being’s life.
 
+#+begin_tagline
+Tagged: 
+#+end_tagline
+
 * Footnotes
 
 [fn:4] That doesn’t mean that a member of the public with a gun will not occasionally act to prevent, or minimize, some tragedy. That will have to be weighed against members of the public misidentifying a target or harm done by negligent discharges, a particular problem that we had in Iraq.

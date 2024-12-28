@@ -91,6 +91,9 @@ which produces this:
 #+end_center
 
 
+#+begin_tagline
+Tagged: [[file:../tags/latex.org][Latex]] [[file:../tags/logic.org][Logic]] [[file:../tags/teaching.org][Teaching]]
+#+end_tagline
 
 
 
@@ -101,6 +104,3 @@ which produces this:
  
 
 
-#+begin_tagline
-Tagged: [[file:../tags/latex.org][Latex]] [[file:../tags/logic.org][Logic]] [[file:../tags/teaching.org][Teaching]]
-#+end_tagline

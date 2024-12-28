@@ -1,8 +1,8 @@
 #+title: Tagged: Org
 #+setupfile: ../org-templates/post.org
 
-- [[file:.../posts/2022-11-13-sticking-with-hugo.org][Sticking with Hugo]]
-- [[file:.../posts/2023-01-23-styling-arguments-in-org-mode.org][Styling Arguments in Org Mode]]
-- [[file:.../posts/2021-07-14-workflow-with-hugo-and-org-mode.org][Workflow with Hugo and Org Mode]]
-- [[file:.../posts/2024-12-17-blogging-with-org-mode.org][Blogging with Org Mode]]
-- [[file:.../posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.org][List Spacing in Org Mode with Enumitem]]
+- [[file:../posts/2022-11-13-sticking-with-hugo.org][Sticking with Hugo]]
+- [[file:../posts/2023-01-23-styling-arguments-in-org-mode.org][Styling Arguments in Org Mode]]
+- [[file:../posts/2021-07-14-workflow-with-hugo-and-org-mode.org][Workflow with Hugo and Org Mode]]
+- [[file:../posts/2024-12-17-blogging-with-org-mode.org][Blogging with Org Mode]]
+- [[file:../posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.org][List Spacing in Org Mode with Enumitem]]

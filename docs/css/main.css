@@ -261,10 +261,11 @@ h2.footnotes {
 #text-footnotes {
     border-top-style: solid;
     border-width: 2px;
+    padding-top: 1rem;
 }
 
 .tagline {
-    margin-top: 2rem; 
+    margin-top: 2rem;
     text-align: right;
     font-size: clamp(0.875rem, 0.231vw + 0.815rem, 1rem);
     line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);

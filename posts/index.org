@@ -1,6 +1,5 @@
 #+TITLE: Blog Index
 
-- [[file:2024-12-22-style-test.org][Style Test]]
 - [[file:2024-12-17-end-semester.org][End of the Semester]]
 - [[file:2024-12-17-blogging-with-org-mode.org][Blogging with Org Mode]]
 - [[file:2024-12-05-moving-site.org][Moving the Site]]
@@ -505,4 +504,5 @@
 - [[file:2008-05-22-vacation.org][Vacation]]
 - [[file:2008-05-19-international-aid-and-religious-freedom.org][International Aid and Religious Freedom]]
 - [[file:2008-05-18-millennium-development-goals.org][Millennium Development Goals]]
+- [[file:2024-12-22-style-test.org][Style Test]]
 - [[file:2019-06-09-insurance-update.org][Insurance Update]]

@@ -1,6 +1,6 @@
 #+TITLE: Style Test
-#+date: <2024-12-22 Sun>
-#+filetags: 
+#+date: <2008-01-01 Sun>
+#+filetags:  blog
 #+setupfile: ../org-templates/post.org
 
 This is a test page for trying out CSS styles.
@@ -119,7 +119,7 @@ Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus ve
 #+end_center
 
 #+begin_tagline
-Tagged: misc
+Tagged: [[file:../tags/blog.org][Blog]]
 #+end_tagline
 
 * Footnotes

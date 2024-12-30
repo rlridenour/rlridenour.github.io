@@ -5,16 +5,16 @@
 
 I have finished converting the old Hugo blog to the new org-publish format. It was quite a bit of work, but I tried to automate as much as possible. I wrote about the initial setup [[file:./2024-12-17-blogging-with-org-mode.org][here]]. One minor change has been to remove the "home" and "up" links that org-publish inserts at the upper-right. This just requires a simple change to the =org-publish-project-alist=:
 
-#+begin_example emacs-lisp
+#+begin_src emacs-lisp
  :html-link-home ""
  :html-link-up ""
-#+end_example
+#+end_src
 
 Just make sure to change them wherever they occur in the alist.
 
-A bigger issue was displaying post tags and creating tag pages. Tag and category pages in Hugo were fairly simple. Every time the site was built, Hugo would create the tag pages reflecting any new tags. Unfortunately, I could find no way to automatically do this with org-publish. My first thought was to simply forego tagging. There is a blog archive page with links to every post. A search on that page can find whatever you need, /if/ you know what to search for. It's not a good way to simply browse an area of interest, however.
+A bigger issue was displaying post tags and creating tag pages. Tag and category pages in Hugo were fairly simple. Every time the site was built, Hugo would create the tag pages reflecting any new tags. Unfortunately, I could find no way to automatically do this with org-publish. My first thought was to simply forego tagging since there is a blog archive page with links to every post. A search on that page can find whatever you need, /if/ you happened to know what you needed to search for. It's not a good way to simply browse an area of interest, however.
 
-On the other hand, making tags manually was never going to work for me either. That would require manually adding tags to the post, being sure to use the same names for tags across posts. Otherwise, I'd end up with some posts tagged "org" and others tagged "org-mode". Then, I'd have to create a new tag page if needed, make a link from the post to the tag page, then a link from the tag page back to the tagged post. There's no chance I could, or would, consistently make that happen. Fortunately, though, this is Emacs, and everything is scriptable.
+On the other hand, making tags manually was never going to work for me either. That would require manually adding tags to the post, being sure to use the same names for tags across posts. Otherwise, I'd end up with some posts tagged "org" and others tagged "org-mode". Then, I'd have to create a new tag page if needed, make a link from the post to the tag page, then another link from the tag page back to the tagged post. There's no chance I could, or would, consistently make that happen. Fortunately, though, because this is Emacs, everything is scriptable.
 
 Keep in mind that I'm a philosopher, not a coder. Here are my steps to solving a problem:
 
@@ -22,10 +22,11 @@ Keep in mind that I'm a philosopher, not a coder. Here are my steps to solving a
 2. Find someone who has posted something close to what I want.
 3. Make changes to their code to make it do what I want.
 4. Keep hacking at it until it works.
+5. Realize that what I thought I wanted wasn't really what I wanted, so return to step 1 and repeat until satisfied.
 
-So, the result is likely to be sloppy and inefficient, but it generally works. I started with this post from [[https://christiantietze.de/posts/2022/07/emacs-blogging-insert-tag-yaml-frontmatter-posts/][Christian Tietze]], who solved my first problem of consistently using tags across the site. From him, I got these three functions:
+So, the result is likely to be sloppy and inefficient, but it generally works in the end. I started with this post from [[https://christiantietze.de/posts/2022/07/emacs-blogging-insert-tag-yaml-frontmatter-posts/][Christian Tietze]], who solved my first problem of consistently using tags across the site. From him, I got these three functions:
 
-#+begin_example emacs-lisp
+#+begin_src emacs-lisp
   (defun orgblog-all-tag-lines ()
     "Get filetag lines from all posts."
     (let ((post-dir orgblog-posts-directory)
@@ -42,13 +43,13 @@ So, the result is likely to be sloppy and inefficient, but it generally works. I
     "Select and insert a tag from tags in the blog."
     (defvar newtag)
     (setq newtag (completing-read "Tag: " (orgblog-all-tags))))
-#+end_example
+#+end_src
 
-The first uses =ripgrep= to get all of the filetag lines from the headers in the posts directory. The second splits those lines into a list of separate words and deletes the duplicates. The third displays the list and allows the user to select a tag to be assigned to a variable. The only things I believe I've changed here are variable names. I also explicitly search the posts directory rather than the current directory since I write posts initially in a drafts directory. Since the tags are separated by a space in each filetag line, I can use the default value for =split-string=. If the desired tag is not on the list, just hit return and the new tag get assigned to the variable.
+The first uses =ripgrep= to get all of the filetag lines from the headers in the posts directory. The second splits those lines into a list of separate words and deletes the duplicates. The third displays the list and allows the user to select a tag to be assigned to a variable. The only things I believe I've changed here are variable names. I also explicitly search the posts directory rather than the current directory since I write posts initially in a drafts directory. Since the tags are separated by a space in each filetag line, I can use the default value for =split-string=. If the desired tag is not on the list, just hit =return= and the new tag gets assigned to the variable.
 
-At this point, I had to venture on my own into unknown waters. First, I needed to insert the new tag into the post. There's no real reason to keep the filetag lines, except that I might find a better way to use them in the future. So, I add the new tag to the end of the filetag line. I need to display it in the published post, though, so each post has a line at the end[fn:1] that begins with "Tagged: ". This function handles that:
+At this point, I had to venture on my own into unknown waters. First, I needed to insert the new tag into the post. There's no real reason to keep the filetag lines, except that I might find a better way to use them in the future. So, I add the new tag to the end of the filetag line. I need to display it in the published post, though, so each post has a line at the end[fn:1] that begins with "Tagged:". This function handles that:
 
-#+begin_example emacs-lisp
+#+begin_src emacs-lisp
   (defun insert-post-tag ()
     (orgblog-select-tag)
     (beginning-of-buffer)
@@ -59,7 +60,7 @@ At this point, I had to venture on my own into unknown waters. First, I needed t
     (search-forward "Tagged:")
     (end-of-line)
     (insert (concat " [[file:../tags/" newtag ".org][" (s-titleized-words newtag) "]]")))
-#+end_example
+#+end_src
 
 Note that I use Sveen Magnars' [[https://github.com/magnars/s.el][s.el]] library to capitalize the tag names for display. The next thing to do is to add the tagged post to the tag page. To do that, I use this function:
 

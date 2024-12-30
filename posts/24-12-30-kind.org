@@ -8,9 +8,9 @@
 Be kind, for everyone you meet is fighting a hard battle. 
 #+end_quote
 
-John Watson
-#+ATTR_HTML: :class bigquote
 
+#+ATTR_HTML: :class bigquote
+John Watson
 
 
 #+begin_tagline

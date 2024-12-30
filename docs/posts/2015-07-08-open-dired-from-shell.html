@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 29, 2024 -->
+<!-- Dec 30, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Open Dired From Shell</title>
@@ -60,7 +60,7 @@ I got this from <a href="http://datko.net/2013/07/11/open-emacs-dired-buffer-fro
 Add this to your shell rc file (in my case, .zshrc):
 </p>
 
-<pre class="example" id="orgc6a79ba">
+<pre class="example" id="org2a58f8e">
 # open a dired window for the current directory
 dired() {
     emacsclient -e "(dired \"$PWD\")"
@@ -76,7 +76,7 @@ buffer of that directory opens in the current Emacs frame.
 Just out of curiosity, I wondered what typing &ldquo;`emacsclient -c .`&rdquo; would do. It opens a dired buffer in a new frame. I have a shell script called &ldquo;ec&rdquo; that starts a new emacs client, but it&rsquo;s easy to do it with a zsh alias:
 </p>
 
-<pre class="example" id="org5136c50">
+<pre class="example" id="org6a6e22c">
 alias ec="emacsclient -c -a ''"
 </pre>
 
@@ -85,7 +85,7 @@ This starts a server if there is not one already, then opens a new client. So, t
 </p>
 
 
-<div class="tagline" id="org08b3f82">
+<div class="tagline" id="org0ee9e28">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/shell.html">Shell</a>
 </p>
@@ -95,7 +95,7 @@ Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/shell.html">Shel
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 29, 2024.<br>
+  Last updated on Dec 30, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

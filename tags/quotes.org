@@ -88,3 +88,4 @@
 - [[file:../posts/2015-07-12-strength-enough.org][Strength Enough?]]
 
 - [[file:../posts/2019-06-10-what-we-need.org][What We Need]]
+- [[file:../posts/24-12-30-kind.org][Be Kind]]

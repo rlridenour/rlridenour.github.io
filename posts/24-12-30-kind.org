@@ -1,0 +1,18 @@
+#+TITLE: Be Kind
+#+date: <2024-12-30 Mon>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+Be kind, for everyone you meet is fighting a hard battle. 
+#+end_quote
+
+John Watson
+#+ATTR_HTML: :class bigquote
+
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

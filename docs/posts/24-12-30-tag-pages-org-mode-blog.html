@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Dec 30, 2024 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Making Tag Pages in an Org Mode Blog</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Making Tag Pages in an Org Mode Blog
+<br />
+<span class="subtitle">Dec 30, 2024</span>
+</h1>
+<p>
+I have finished converting the old Hugo blog to the new org-publish format. It was quite a bit of work, but I tried to automate as much as possible. I wrote about the initial setup <a href="./2024-12-17-blogging-with-org-mode.html">here</a>. One minor change has been to remove the &ldquo;home&rdquo; and &ldquo;up&rdquo; links that org-publish inserts at the upper-right. This just requires a simple change to the <code>org-publish-project-alist</code>:
+</p>
+
+<pre class="example" id="org52355df">
+:html-link-home ""
+:html-link-up ""
+</pre>
+
+<p>
+Just make sure to change them wherever they occur in the alist.
+</p>
+
+<p>
+A bigger issue was displaying post tags and creating tag pages. Tag and category pages in Hugo were fairly simple. Every time the site was built, Hugo would create the tag pages reflecting any new tags. Unfortunately, I could find no way to automatically do this with org-publish. My first thought was to simply forego tagging. There is a blog archive page with links to every post. A search on that page can find whatever you need, <i>if</i> you know what to search for. It&rsquo;s not a good way to simply browse an area of interest, however.
+</p>
+
+<p>
+On the other hand, making tags manually was never going to work for me either. That would require manually adding tags to the post, being sure to use the same names for tags across posts. Otherwise, I&rsquo;d end up with some posts tagged &ldquo;org&rdquo; and others tagged &ldquo;org-mode&rdquo;. Then, I&rsquo;d have to create a new tag page if needed, make a link from the post to the tag page, then a link from the tag page back to the tagged post. There&rsquo;s no chance I could, or would, consistently make that happen. Fortunately, though, this is Emacs, and everything is scriptable.
+</p>
+
+<p>
+Keep in mind that I&rsquo;m a philosopher, not a coder. Here are my steps to solving a problem:
+</p>
+
+<ol class="org-ol">
+<li>Figure out what I want.</li>
+<li>Find someone who has posted something close to what I want.</li>
+<li>Make changes to their code to make it do what I want.</li>
+<li>Keep hacking at it until it works.</li>
+</ol>
+
+<p>
+So, the result is likely to be sloppy and inefficient, but it generally works. I started with this post from <a href="https://christiantietze.de/posts/2022/07/emacs-blogging-insert-tag-yaml-frontmatter-posts/">Christian Tietze</a>, who solved my first problem of consistently using tags across the site. From him, I got these three functions:
+</p>
+
+<pre class="example" id="org547596d">
+(defun orgblog-all-tag-lines ()
+  "Get filetag lines from all posts."
+  (let ((post-dir orgblog-posts-directory)
+	  (regex "^#\\+filetags:\\s([a-zA-Z]+)"))
+    (shell-command-to-string
+     (concat "rg --context 0 --no-filename --no-heading --replace \"\\$1\" -- " (shell-quote-argument regex) " " post-dir))))
+
+(defun orgblog-all-tags ()
+  "Return a list of unique tags from all posts."
+  (delete-dups
+   (split-string (orgblog-all-tag-lines) nil t)))
+
+(defun orgblog-select-tag ()
+  "Select and insert a tag from tags in the blog."
+  (defvar newtag)
+  (setq newtag (completing-read "Tag: " (orgblog-all-tags))))
+</pre>
+
+<p>
+The first uses <code>ripgrep</code> to get all of the filetag lines from the headers in the posts directory. The second splits those lines into a list of separate words and deletes the duplicates. The third displays the list and allows the user to select a tag to be assigned to a variable. The only things I believe I&rsquo;ve changed here are variable names. I also explicitly search the posts directory rather than the current directory since I write posts initially in a drafts directory. Since the tags are separated by a space in each filetag line, I can use the default value for <code>split-string</code>. If the desired tag is not on the list, just hit return and the new tag get assigned to the variable.
+</p>
+
+<p>
+At this point, I had to venture on my own into unknown waters. First, I needed to insert the new tag into the post. There&rsquo;s no real reason to keep the filetag lines, except that I might find a better way to use them in the future. So, I add the new tag to the end of the filetag line. I need to display it in the published post, though, so each post has a line at the end<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> that begins with &ldquo;Tagged: &rdquo;. This function handles that:
+</p>
+
+<pre class="example" id="orgfb640f1">
+(defun insert-post-tag ()
+  (orgblog-select-tag)
+  (beginning-of-buffer)
+  (search-forward "#+filetags" nil 1)
+  (end-of-line)
+  (insert (concat " " newtag))
+  (beginning-of-buffer)
+  (search-forward "Tagged:")
+  (end-of-line)
+  (insert (concat " [[file:../tags/" newtag ".org][" (s-titleized-words newtag) "]]")))
+</pre>
+
+<p>
+Note that I use Sveen Magnars&rsquo; <a href="https://github.com/magnars/s.el">s.el</a> library to capitalize the tag names for display. The next thing to do is to add the tagged post to the tag page. To do that, I use this function:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">add-post-to-tagfile</span> ()
+  (<span class="org-keyword">defvar</span> <span class="org-variable-name">tagfile</span>)
+  (<span class="org-keyword">defvar</span> <span class="org-variable-name">post-filename</span>)
+  (<span class="org-keyword">defvar</span> <span class="org-variable-name">post-title</span>)
+  (<span class="org-keyword">setq</span> tagfile (concat <span class="org-string">"../tags/"</span> newtag <span class="org-string">".org"</span>))
+  (<span class="org-keyword">setq</span> post-filename (f-filename (f-this-file)))
+  (<span class="org-keyword">progn</span>
+    (beginning-of-buffer)
+    (search-forward <span class="org-string">"#+title: "</span> nil 1)
+    (<span class="org-keyword">setq</span> post-title (buffer-substring (point) (line-end-position))))
+  (<span class="org-keyword">when</span>
+      (not (file-exists-p tagfile))
+    (f-append-text (concat <span class="org-string">"#+title: Tagged: "</span> (s-titleized-words newtag) <span class="org-string">"\n#+setupfile: ../org-templates/post.org\n"</span>) 'utf-8 tagfile))
+  (f-append-text (concat <span class="org-string">"\n- [[file:../posts/"</span> post-filename <span class="org-string">"]["</span> post-title <span class="org-string">"]]"</span>) 'utf-8 tagfile))
+</pre>
+</div>
+
+<p>
+To create the links, we&rsquo;ll need the filename and title of the post. We&rsquo;ll also need the filename for the tag page. Note that this function uses both the <a href="https://github.com/magnars/s.el">s.el</a> and Johan Andersson&rsquo;s <a href="https://github.com/rejeep/f.el">f.el</a> libraries. In short, here&rsquo;s what the function does:
+</p>
+
+<ol class="org-ol">
+<li>Create the filename for the tag page in the tags directory.</li>
+<li>Get the filename for the post.</li>
+<li>Extract the post title from header title-line.</li>
+<li>Create the file for the tag page if necessary.</li>
+<li>Add a link to the post at the bottom of the tag page.</li>
+</ol>
+
+<p>
+The final thing is to put all of functions together into one interactive function:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">orgblog-add-tag</span> ()
+  (<span class="org-keyword">interactive</span>)
+  (orgblog-select-tag)
+  (insert-post-tag)
+  (add-post-to-tagfile)
+  (save-buffer))
+</pre>
+</div>
+
+
+<p>
+The only thing left to do manually is to add a new tag page to the index page of the tags directory. I&rsquo;m sure I could automate that with some effort, but at this stage I hardly ever use any new tags, so I&rsquo;m not convinced that it would be worth the effort.
+</p>
+
+<p>
+The only minor glitch in the system is that, for some reason, I have to press <code>return</code> twice to select the tag. I&rsquo;m not sure why. Eventually it will bother me enough to figure it out.
+</p>
+
+
+
+<div class="tagline" id="org2d1ff8f">
+<p>
+Tagged:  <a href="../tags/org.html">Org</a> <a href="../tags/blog.html">Blog</a>
+</p>
+
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes</h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+I did discover that it needs to be before the footnote section, or it won&rsquo;t be displayed. 
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Dec 30, 2024.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

@@ -2,3 +2,4 @@
 #+setupfile: ../org-templates/post.org
 
 - [[file:../posts/2024-12-22-style-test.org][Style Test]]
+- [[file:../posts/24-12-30-tag-pages-org-mode-blog.org][Tag Pages in Org Mode Blog]]

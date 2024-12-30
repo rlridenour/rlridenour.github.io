@@ -1,6 +1,6 @@
 #+title: Truth Tables in LaTeX
 #+date: <2018-02-10>
-#+filetags: latex logic teaching
+#+filetags: LaTeX logic teaching
 
 
 Typesetting truth tables has never been easy. LaTeX is the gold standard for displaying logic and mathematics, but tables are awkward to edit at best. Tables are much simpler in Microsoft Word, but displaying formulas is a horrible experience.[fn:1]
@@ -92,7 +92,7 @@ which produces this:
 
 
 #+begin_tagline
-Tagged: [[file:../tags/latex.org][Latex]] [[file:../tags/logic.org][Logic]] [[file:../tags/teaching.org][Teaching]]
+Tagged: [[file:../tags/LaTeX.org][LaTeX]] [[file:../tags/logic.org][Logic]] [[file:../tags/teaching.org][Teaching]]
 #+end_tagline
 
 

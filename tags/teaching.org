@@ -11,3 +11,5 @@
 - [[file:../posts/2010-05-05-this-is-a-song-by-a-hs-psychology-teacher-designed.org][Cognitive Biases Song]]
 - [[file:../posts/2010-09-08-did-i-miss-anything.org][Did I Miss Anything?]]
 - [[file:../posts/2008-10-24-academic-reference-software.org][Academic Reference Software]]
+
+- [[file:../posts/2023-12-31-converting-org-files-to-canvas-quizzes.org][Converting Org Files to Canvas Quizzes]]

@@ -86,3 +86,5 @@
 - [[file:../posts/2009-08-25-prayer-holds-together-the-shattered-fragments-of.org][Ellul on Prayer]]
 - [[file:../posts/2015-07-12-courage-for-transformation.org][Courage for Transformation]]
 - [[file:../posts/2015-07-12-strength-enough.org][Strength Enough?]]
+
+- [[file:../posts/2019-06-10-what-we-need.org][What We Need]]

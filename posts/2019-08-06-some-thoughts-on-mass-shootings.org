@@ -1,5 +1,8 @@
 #+title: Some Thoughts on Mass Shootings
 #+date: <2019-08-06>
+#+filetags:  politics
+#+setupfile: ../org-templates/post.org
+
 
 ** The Second Amendment
 
@@ -22,7 +25,7 @@ Mass shootings are a complex problem, but not irreducibly complex. We shouldn’
 May God forgive me, if I ever demand my rights at the possible expense of another human being’s life.
 
 #+begin_tagline
-Tagged: 
+Tagged:  [[file:../tags/politics.org][Politics]]
 #+end_tagline
 
 * Footnotes

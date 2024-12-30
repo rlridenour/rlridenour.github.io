@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 28, 2024 -->
+<!-- Dec 29, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>LaTeX Compilation Scripts</title>
@@ -32,45 +32,9 @@
      }
 // @license-end
 </script>
-<script>
-  window.MathJax = {
-    tex: {
-      ams: {
-        multlineWidth: '85%'
-      },
-      tags: 'ams',
-      tagSide: 'right',
-      tagIndent: '.8em'
-    },
-    chtml: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    svg: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    output: {
-      font: 'mathjax-modern',
-      displayOverflow: 'overflow'
-    }
-  };
-</script>
-
-<script
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
 </head>
 <body>
-<div id="org-div-home-and-up">
- <a accesskey="h" href="/"> UP </a>
- |
- <a accesskey="H" href="/"> HOME </a>
-</div><header id="top" class="status">
+<header id="top" class="status">
 <div class="banner">
   <h2><a href="/">Randy Ridenour</a></h2>
   <nav class="navbar">
@@ -88,13 +52,13 @@
 <h1 class="title">LaTeX Compilation Scripts</h1>
 <p class="subtitle" role="doc-subtitle">Jun 09, 2022</p>
 </header><p>
-I&rsquo;m trying to automate \(\LaTeX\) compilation from Emacs as much as I can. Here are the shell scripts and Emacs functions that I&rsquo;m using.
+I&rsquo;m trying to automate LaTeX compilation from Emacs as much as I can. Here are the shell scripts and Emacs functions that I&rsquo;m using.
 </p>
-<section id="outline-container-org0a5714d" class="outline-2">
-<h2 id="org0a5714d">Shell Scripts</h2>
-<div class="outline-text-2" id="text-org0a5714d">
+<section id="outline-container-org5f0f4a4" class="outline-2">
+<h2 id="org5f0f4a4">Shell Scripts</h2>
+<div class="outline-text-2" id="text-org5f0f4a4">
 <p>
-Here are some very simple scripts for compiling \(\LaTeX\) files with arara and the fish shell. The first, called &ldquo;mkt&rdquo; for &ldquo;make TeX&rdquo;, runs arara on the source file, then opens the resulting PDF.
+Here are some very simple scripts for compiling LaTeX files with arara and the fish shell. The first, called &ldquo;mkt&rdquo; for &ldquo;make TeX&rdquo;, runs arara on the source file, then opens the resulting PDF.
 </p>
 
 <div class="org-src-container">
@@ -121,16 +85,16 @@ The second, called &ldquo;mktc&rdquo; for &ldquo;make TeX continuously&rdquo;, r
 </div>
 </div>
 </section>
-<section id="outline-container-orgdf5bf7a" class="outline-2">
-<h2 id="orgdf5bf7a">Emacs</h2>
-<div class="outline-text-2" id="text-orgdf5bf7a">
+<section id="outline-container-org0e0e4fd" class="outline-2">
+<h2 id="org0e0e4fd">Emacs</h2>
+<div class="outline-text-2" id="text-org0e0e4fd">
 <p>
 Here are some functions to use in Emacs to run the scripts.
 </p>
 </div>
-<div id="outline-container-org14f4e9c" class="outline-3">
-<h3 id="org14f4e9c">Auctex</h3>
-<div class="outline-text-3" id="text-org14f4e9c">
+<div id="outline-container-org089bf85" class="outline-3">
+<h3 id="org089bf85">Auctex</h3>
+<div class="outline-text-3" id="text-org089bf85">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/tex-mkt</span> ()
   <span class="org-doc">"Compile with arara."</span>
@@ -149,9 +113,9 @@ The first compiles with an asynchronous shell command, so that you can immediate
 </p>
 </div>
 </div>
-<div id="outline-container-orgc3e88c7" class="outline-3">
-<h3 id="orgc3e88c7">Org Mode</h3>
-<div class="outline-text-3" id="text-orgc3e88c7">
+<div id="outline-container-org611b4e8" class="outline-3">
+<h3 id="org611b4e8">Org Mode</h3>
+<div class="outline-text-3" id="text-org611b4e8">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span class="org-keyword">defun</span> <span class="org-function-name">rlr/org-mkt</span> ()
@@ -169,13 +133,13 @@ The first compiles with an asynchronous shell command, so that you can immediate
 </div>
 
 <p>
-These functions first export the org file to \(\LaTeX\), then compile the corresponding TeX files. All in all, a morning&rsquo;s worth of work to save a few keystrokes. I run them using <a href="https://github.com/jerrypnz/major-mode-hydra.el">major mode hydras</a>.
+These functions first export the org file to LaTeX, then compile the corresponding TeX files. All in all, a morning&rsquo;s worth of work to save a few keystrokes. I run them using <a href="https://github.com/jerrypnz/major-mode-hydra.el">major mode hydras</a>.
 </p>
 
 
-<div class="tagline" id="org43f897e">
+<div class="tagline" id="orgd6f496b">
 <p>
-Tagged: <a href="../tags/latex.html">Latex</a> <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a>
+Tagged: <a href="../tags/LaTeX.html">LaTeX</a> <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a>
 </p>
 
 </div>
@@ -186,7 +150,7 @@ Tagged: <a href="../tags/latex.html">Latex</a> <a href="../tags/emacs.html">Emac
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 28, 2024.<br>
+  Last updated on Dec 29, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

@@ -1,5 +1,5 @@
 #+date: <2015-11-15>
-#+filetags: emacs latex
+#+filetags: emacs LaTeX
 #+title: LaTeX-Skim Sync
 
 I recently started using John Wiegley's [use-package](https://github.com/jwiegley/use-package ) for my Emacs init files. For Auctex, I used
@@ -25,5 +25,5 @@ and everything started working fine. I still have no idea why, but it may help s
 
 
 #+begin_tagline
-Tagged: [[file:../tags/emacs.org][Emacs]] [[file:../tags/latex.org][Latex]]
+Tagged: [[file:../tags/emacs.org][Emacs]] [[file:../tags/LaTeX.org][latex]]
 #+end_tagline

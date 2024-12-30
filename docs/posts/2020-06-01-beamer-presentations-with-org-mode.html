@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 28, 2024 -->
+<!-- Dec 29, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beamer Presentations with Org Mode</title>
@@ -66,11 +66,7 @@
 </script>
 </head>
 <body>
-<div id="org-div-home-and-up">
- <a accesskey="h" href="/"> UP </a>
- |
- <a accesskey="H" href="/"> HOME </a>
-</div><header id="top" class="status">
+<header id="top" class="status">
 <div class="banner">
   <h2><a href="/">Randy Ridenour</a></h2>
   <nav class="navbar">
@@ -90,17 +86,17 @@
 </header><p>
 When we moved all courses online for the semester because of the COVID-19 pandemic, I found myself having to make many more presentation slide-decks than I normally do, especially when I normally don&rsquo;t do any at all. Keynote produces some beautiful slides, but it requires using the mouse more than I like. I wanted something that I could use to make slides with just a few keystrokes. I settled on exporting an Org mode document to Beamer slides. This is an explanation of the challenges that I had and the solutions that I found.
 </p>
-<section id="outline-container-orgbe92c06" class="outline-2">
-<h2 id="orgbe92c06">Beamer</h2>
-<div class="outline-text-2" id="text-orgbe92c06">
+<section id="outline-container-orgd3d6393" class="outline-2">
+<h2 id="orgd3d6393">Beamer</h2>
+<div class="outline-text-2" id="text-orgd3d6393">
 <p>
 The Beamer class is a tool used to produce presentations with LaTeX. It provides the same advantages for presentations that standard LaTeX provides for other document types, including elegant mathematical formulas, transportability between computing platforms, and the ability focus on content when writing. There are disadvantages, though. Writing LaTeX can be cumbersome, since it is not a simple markup language. After gaining a certain proficiency, it is possible to write it fairly easily. Even so, it is never as simple as using something like Markdown.
 </p>
 </div>
 </section>
-<section id="outline-container-org393df10" class="outline-2">
-<h2 id="org393df10">Solution</h2>
-<div class="outline-text-2" id="text-org393df10">
+<section id="outline-container-org620b5d6" class="outline-2">
+<h2 id="org620b5d6">Solution</h2>
+<div class="outline-text-2" id="text-org620b5d6">
 <p>
 The solution that I found was Org mode, a very powerful system that includes a simple markup language and the ability to export to LaTeX. Producing the slide deck was easy, and there were many great examples online. Producing an article was also easy, again with great examples. Producing both a slide presentation and an article, using the same contents file should have been easy, since the official guide to Beamer explains how to do that in LaTeX. Unfortunately, I couldn&rsquo;t find much guidance on how to do this with Org Mode. The only article I could find was this on the official <a href="https://orgmode.org/worg/exporters/beamer/beamer-dual-format.html">Org mode site</a>. It seemed too complicated to me, and I was tempted to just go back to directly writing LaTeX. I decided to try anyway, but I quickly ran into a series of problems:
 </p>
@@ -116,9 +112,9 @@ This was enough to make me want to scrap the project, especially when I looked a
 </p>
 </div>
 </section>
-<section id="outline-container-org9d618a1" class="outline-2">
-<h2 id="org9d618a1">Details</h2>
-<div class="outline-text-2" id="text-org9d618a1">
+<section id="outline-container-orgaef171d" class="outline-2">
+<h2 id="orgaef171d">Details</h2>
+<div class="outline-text-2" id="text-orgaef171d">
 <p>
 I&rsquo;ll spare any reader the record of attempts, mistakes, other attempts, more mistakes, etc., and just get to the final workflow. I wrote a small script (in my case a function in Fish) that creates three files. One for the presentation, one for the article, and one for shared content. After creating the files, it opens a Dired buffer of the relevant folder in Emacs.
 </p>
@@ -146,14 +142,14 @@ end
 So, entering &ldquo;lecture kant&rdquo; in the shell will open a Dired buffer containg the files kant.org, kant-beamer.org, and kant-notes.org.
 </p>
 </div>
-<div id="outline-container-org12b3e30" class="outline-3">
-<h3 id="org12b3e30">Contents File</h3>
-<div class="outline-text-3" id="text-org12b3e30">
+<div id="outline-container-org468c5c4" class="outline-3">
+<h3 id="org468c5c4">Contents File</h3>
+<div class="outline-text-3" id="text-org468c5c4">
 <p>
 The contents file is a standard org file. Initially, I had it containing nothing in the header, except for possibly one line containing `#+startup: beamer`, which makes it easier to insert some Beamer-specific commands. After getting tired of entering the same data twice in the other files, I wondered if shared header information could just be placed in the contents file. Occasionally things work exactly how hoped they would, so no the function adds the following lines at the top of the contents file:
 </p>
 
-<pre class="example" id="org9a4b335">
+<pre class="example" id="org3750f90">
 #+startup: beamer
 #+TITLE:
 #+AUTHOR: Dr. Ridenour
@@ -164,7 +160,7 @@ The contents file is a standard org file. Initially, I had it containing nothing
 You will need to decide what heading level will designate a slide. Don&rsquo;t worry, you&rsquo;ll still be able to use that heading level in the article, as I&rsquo;ll explain later. I use h3, so slides begin with a line like this in the contents file:
 </p>
 
-<pre class="example" id="org441174c">
+<pre class="example" id="org37e2c66">
 *** Slide Title
 </pre>
 
@@ -173,7 +169,7 @@ To add notes, you need to structurally separate the note content, which should o
 </p>
 
 
-<pre class="example" id="org0f95864">
+<pre class="example" id="org54ed81c">
 *** Notes :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
@@ -185,15 +181,15 @@ Any text that follows will only appear in the article, not in the presentation. 
 </p>
 </div>
 </div>
-<div id="outline-container-org84b58bd" class="outline-3">
-<h3 id="org84b58bd">Presentation File</h3>
-<div class="outline-text-3" id="text-org84b58bd">
+<div id="outline-container-org5d8e757" class="outline-3">
+<h3 id="org5d8e757">Presentation File</h3>
+<div class="outline-text-3" id="text-org5d8e757">
 <p>
-The magic happens with two small files. The first is the presentation file. At the top, put your preferred Beamer export header, but be sure to include <code>#+LaTeX_CLASS_options: [ignorenonframetext]</code> and <code>#+OPTIONS: toc:nil</code> . The latter is to ensure that Beamer export doesn&rsquo;t make the contents slide before the presentation title slide. Then, make the title page like this:
+The magic happens with two small files. The first is the presentation file. At the top, put your preferred Beamer export header, but be sure to include <code>#+latex_CLASS_options: [ignorenonframetext]</code> and <code>#+OPTIONS: toc:nil</code> . The latter is to ensure that Beamer export doesn&rsquo;t make the contents slide before the presentation title slide. Then, make the title page like this:
 </p>
 
 
-<pre class="example" id="org956d028">
+<pre class="example" id="org5595282">
 ***
 \maketitle 
 </pre>
@@ -203,7 +199,7 @@ The magic happens with two small files. The first is the presentation file. At t
 If you want a table of contents slide, you can do the same thing except use `\tableofcontents`. Finally, include the contents file with this line:
 </p>
 
-<pre class="example" id="org90ce390">
+<pre class="example" id="org1eb52f0">
 #+include: "contents.org" :minlevel 1 
 </pre>
 
@@ -212,18 +208,18 @@ I keep the header information in two files in Dropbox. The Fish function adds th
 </p>
 </div>
 </div>
-<div id="outline-container-orga2bcd3c" class="outline-3">
-<h3 id="orga2bcd3c">Article File</h3>
-<div class="outline-text-3" id="text-orga2bcd3c">
+<div id="outline-container-org2e8e0a1" class="outline-3">
+<h3 id="org2e8e0a1">Article File</h3>
+<div class="outline-text-3" id="text-org2e8e0a1">
 <p>
-For the article, use your preferred header with all of the packages declared, but be sure to add this line: <code>#+LaTeX_HEADER: \usepackage{beamerarticle}</code>. After the export header lines, include the contents file, again using `#+include: &ldquo;contents.org&rdquo; :minlevel 1`. When exporting, be sure to export with the one of the Beamer-specific exports. Otherwise, things just won&rsquo;t look right.
+For the article, use your preferred header with all of the packages declared, but be sure to add this line: <code>#+latex_HEADER: \usepackage{beamerarticle}</code>. After the export header lines, include the contents file, again using `#+include: &ldquo;contents.org&rdquo; :minlevel 1`. When exporting, be sure to export with the one of the Beamer-specific exports. Otherwise, things just won&rsquo;t look right.
 </p>
 </div>
 </div>
 </section>
-<section id="outline-container-org89a22fe" class="outline-2">
-<h2 id="org89a22fe">Conclusion</h2>
-<div class="outline-text-2" id="text-org89a22fe">
+<section id="outline-container-org9114518" class="outline-2">
+<h2 id="org9114518">Conclusion</h2>
+<div class="outline-text-2" id="text-org9114518">
 <p>
 There is one remaining problem that I have: the verse environment won&rsquo;t work in beamerarticle. That&rsquo;s a relatively small problem, though. I&rsquo;m certainly not an Org mode expert, so if anyone has questions or suggestions, please let me know. I hope this saves at least one person some time.
 </p>
@@ -237,7 +233,7 @@ A sample can be found on <a href="https://github.com/rlridenour/beamer-sample">G
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 28, 2024.<br>
+  Last updated on Dec 29, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

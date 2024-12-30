@@ -8,3 +8,5 @@
 - [[file:../posts/2023-02-04-venn-diagrams-in-latex.org][Venn Diagrams in LaTeX]]
 - [[file:../posts/2018-02-10-truth-tables-in-latex.org][Truth Tables in LaTeX]]
 - [[file:../posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.org][List Spacing in Org Mode with Enumitem]]
+
+- [[file:../posts/2024-07-04-beamer-article-and-org-mode.org][Beamer Article and Org Mode]]

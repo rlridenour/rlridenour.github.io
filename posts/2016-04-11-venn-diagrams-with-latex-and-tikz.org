@@ -1,5 +1,5 @@
 #+date: <2016-04-11>
-#+filetags: latex logic
+#+filetags: LaTeX logic
 #+title: Venn Diagrams with LaTeX and TikZ
 
 I spent the weekend working on Venn diagrams in LaTeX using TikZ to use when teaching categorical logic. I thought it was a much better use of my time than mowing the lawn, and one never knows when a good Venn diagram will be needed.
@@ -285,5 +285,5 @@ Unfortunately, this won't scale the text at the nodes, which will make the label
 
 
 #+begin_tagline
-Tagged: [[file:../tags/latex.org][Latex]] [[file:../tags/logic.org][Logic]]
+Tagged: [[file:../tags/LaTeX.org][LaTeX]] [[file:../tags/logic.org][Logic]]
 #+end_tagline

@@ -3,7 +3,7 @@
 #+date: <2021-07-21>
 #+mathjax: true
 
-I switched from latexmk to [[https://mirrors.concertpass.com/tex-archive/support/arara/doc/arara-quickstart.pdf][arara]] for compiling \(\LaTeX\) files. I like being able to embed the compilation steps into the document. That way, I can run the same command to compile, but use PDFLaTeX on some and LuaLaTeX on others. Org mode's export to PDF uses latexmk, though. I think I managed to set it to arara with this:
+I switched from latexmk to [[https://mirrors.concertpass.com/tex-archive/support/arara/doc/arara-quickstart.pdf][arara]] for compiling LaTeX files. I like being able to embed the compilation steps into the document. That way, I can run the same command to compile, but use PDFLaTeX on some and LuaLaTeX on others. Org mode's export to PDF uses latexmk, though. I think I managed to set it to arara with this:
 
 #+begin_src emacs-lisp
 (setq org-latex-pdf-process '("arara %f"))

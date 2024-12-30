@@ -1,5 +1,7 @@
 #+title: What We Need
 #+date: <2019-06-10>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
 
 #+ATTR_HTML: :class bigquote
 #+begin_quote
@@ -10,7 +12,7 @@ People can be entertained on devices 24 hours a day; they do not need a church f
 Anna Keating[fn:1]
 
 #+begin_tagline
-Tagged: 
+Tagged:  [[file:../tags/quotes.org][Quotes]]
 #+end_tagline
 
 * Footnotes

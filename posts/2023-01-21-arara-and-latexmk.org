@@ -1,5 +1,5 @@
 #+TITLE: Arara and Latexmk
-#+filetags: latex
+#+filetags: LaTeX
 #+date: <2023-01-21 Sat>
 #+mathjax: false
 
@@ -12,7 +12,7 @@ Compiling LaTeX documents can be a chore, especially if the document has a table
 
 ** Latexmk
 
-Using Latexmk is a great way to automate all of this. Latexmk will do all of these steps as needed, you just need to tell what engine to use (pdfLaTeX, LuaLatex, XeLaTeX) and whether to run Bibtex or Biber. A pdfLaTeX document named "sample.tex" containing bibliographic references would be compiled from the command line like this:
+Using Latexmk is a great way to automate all of this. Latexmk will do all of these steps as needed, you just need to tell what engine to use (pdflatex, lualatex, xelatex) and whether to run Bibtex or Biber. A pdfLaTeX document named "sample.tex" containing bibliographic references would be compiled from the command line like this:
 
 #+begin_src shell
 latexmk -pdflatex -bibtex sample.tex
@@ -99,5 +99,5 @@ Since the options that I want are in my latexmkrc file, there's nothing else I n
 
 
 #+begin_tagline
-Tagged: [[file:../tags/latex.org][Latex]]
+Tagged: [[file:../tags/LaTeX.org][LaTeX]]
 #+end_tagline

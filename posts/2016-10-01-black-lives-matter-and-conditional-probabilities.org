@@ -1,6 +1,6 @@
 #+title: Race, Police Shooting, and Probability
 #+date: <2016-10-01>
-#+tags: critical-thinking politics
+#+tags: 
 
 
 I just read a Facebook comment by someone who was apparently downplaying the Black Lives Matter movement by pointing out that the police shoot more white Americans than black Americans. 
@@ -30,10 +30,12 @@ All lives do indeed, objectively, equally matter. Unfortunately, though, we must
 I am not accusing the police of being racist, and I have not endeavored to show that anyone has been unjustly shot. I am simply showing that, even though more white Americans are killed by police, black Americans are more likely to be killed by police. There are many possible explanations for this, ranging from racial bias in the police force to high rates of violent crime in predominately African-American communities. There are significant studies that conclude that the former is more likely than the latter to be the correct explanation, but that will have to wait for another post.
 
 #+begin_tagline
-Tagged: 
+Tagged:  [[file:../tags/critical-thinking.org][Critical Thinking]] [[file:../tags/politics.org][Politics]]
 #+end_tagline
 
 
 * Footnotes
 
 [fn:1] Wesley Lowery, [[https://www.washingtonpost.com/news/post-nation/wp/2016/07/11/arent-more-white-people-than-black-people-killed-by-police-yes-but-no/?utm_term=.6664411d9967&wpisrc=nl_most&wpmm=1][/The Washington Post/]], July 11, 2016.
+ critical-thinking
+ politics

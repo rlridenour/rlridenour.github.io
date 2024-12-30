@@ -6,3 +6,6 @@
 - [[file:../posts/2021-07-14-workflow-with-hugo-and-org-mode.org][Workflow with Hugo and Org Mode]]
 - [[file:../posts/2024-12-17-blogging-with-org-mode.org][Blogging with Org Mode]]
 - [[file:../posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.org][List Spacing in Org Mode with Enumitem]]
+
+- [[file:../posts/2023-12-31-converting-org-files-to-canvas-quizzes.org][Converting Org Files to Canvas Quizzes]]
+- [[file:../posts/2024-07-04-beamer-article-and-org-mode.org][Beamer Article and Org Mode]]

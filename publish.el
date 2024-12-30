@@ -120,8 +120,8 @@ publishing directory. Returns output file name."
          ;; :sitemap-format-entry me/org-sitemap-format-entry
          ;; :sitemap-style list
          :sitemap-sort-files anti-chronologically
-         :html-link-home "/"
-         :html-link-up "/"
+         :html-link-home ""
+         :html-link-up ""
          :html-head-include-scripts t
          :html-head-include-default-style nil
          :html-head ,me/website-html-head
@@ -135,8 +135,8 @@ publishing directory. Returns output file name."
          :recursive nil
          :publishing-function org-html-publish-to-html
          :publishing-directory "./docs/"
-         :html-link-home "/"
-         :html-link-up "/"
+         :html-link-home ""
+         :html-link-up ""
          :html-head-include-scripts t
          :html-head-include-default-style nil
          :html-head ,me/website-html-head
@@ -150,8 +150,8 @@ publishing directory. Returns output file name."
          :recursive nil
          :publishing-function org-html-publish-to-html
          :publishing-directory "./docs/tags/"
-         :html-link-home "/"
-         :html-link-up "/"
+         :html-link-home ""
+         :html-link-up ""
          :html-head-include-scripts t
          :html-head-include-default-style nil
          :html-head ,me/website-html-head

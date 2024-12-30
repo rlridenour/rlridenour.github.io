@@ -9,7 +9,7 @@ Org mode is particularly useful for its ability to easily export to many other f
 
 We often put arguments in what is called "standard form." The premises are written on numbered lines, with a line underneath the last premise. The conclusion is then written beneath the line. In LaTeX, this is easily done with this code:
 
-#+begin_src latex
+#+begin_src LaTeX
 \begin{enumerate}
 \item First Premise
 \item \underline{Last Premise}

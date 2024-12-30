@@ -1,15 +1,15 @@
 #+TITLE: Venn Diagrams in LaTeX
 #+draft: false
-#+filetags: latex logic
+#+filetags: LaTeX logic
 #+date: <2023-02-04 Sat>
 #+mathjax: 
 
-I wrote a 2017 post describing how I code Venn diagrams in LaTeX with TikZ. Venn diagrams in categorical logic tend to be different from their standard uses in mathematics. There are a few LaTeX packages for Venn diagrams, but, for some reason, I didn't think they could be used to produce the diagrams I needed for my critical thinking course. I should have looked at them a bit more carefully, it turns out that making the diagrams using the =venndiagram= [[https://mirror.math.princeton.edu/pub/CTAN/macros/latex/contrib/venndiagram/venndiagram.pdf][package]] is much easier than my method.
+I wrote a 2017 post describing how I code Venn diagrams in LaTeX with TikZ. Venn diagrams in categorical logic tend to be different from their standard uses in mathematics. There are a few LaTeX packages for Venn diagrams, but, for some reason, I didn't think they could be used to produce the diagrams I needed for my critical thinking course. I should have looked at them a bit more carefully, it turns out that making the diagrams using the =venndiagram= [[https://mirror.math.princeton.edu/pub/CTAN/macros/LaTeX/contrib/venndiagram/venndiagram.pdf][package]] is much easier than my method.
 
 =Venndiagram=, like my method, uses TikZ to make the diagram. The advantage, though, is that we don't have to dig into the details of TikZ for everything, that is already done for us. For example, here is the code for the diagram for an A-sentence using my previous method.
 
 
-#+begin_src latex
+#+begin_src LaTeX
 \begin{tikzpicture}[thick,scale=1, every node/.style={transform shape}]
   \begin{scope}
     \begin{scope}[even odd rule]
@@ -26,7 +26,7 @@ I wrote a 2017 post describing how I code Venn diagrams in LaTeX with TikZ. Venn
 
 Here is the code for the  same diagram with the =venndiagram= package.
 
-#+begin_src latex
+#+begin_src LaTeX
 \begin{venndiagram2sets}
   [tikzoptions={scale=1,thick}, showframe=false]
   \fillANotB
@@ -41,7 +41,7 @@ It produces this:
 
 Here's the code for Disamis (IAI-3):
 
-#+begin_src latex
+#+begin_src LaTeX
 \begin{venndiagram3sets}
   [
   tikzoptions={scale=1,thick},
@@ -65,7 +65,7 @@ There was no way that I could remember my all of the details of my original meth
 
 Now, I just use this snippet for a 2-circle diagram:
 
-#+begin_src latex
+#+begin_src LaTeX
 \begin{venndiagram2sets}
   [
   tikzoptions={scale=1,thick},
@@ -81,7 +81,7 @@ Now, I just use this snippet for a 2-circle diagram:
 
 I use this for a 3-circle diagram:
 
-#+begin_src latex
+#+begin_src LaTeX
 \begin{venndiagram3sets}
   [
   tikzoptions={scale=1,thick},
@@ -114,5 +114,5 @@ Both have enough detail that I can remember what to change to make a particular 
 
 
 #+begin_tagline
-Tagged: [[file:../tags/latex.org][Latex]] [[file:../tags/logic.org][Logic]]
+Tagged: [[file:../tags/LaTeX.org][LaTeX]] [[file:../tags/logic.org][Logic]]
 #+end_tagline

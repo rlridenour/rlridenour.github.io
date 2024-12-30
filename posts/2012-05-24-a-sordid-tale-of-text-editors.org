@@ -1,7 +1,10 @@
 #+date: <2012-05-24>
 #+title: A Sordid Tale of Text Editors
+#+filetags:  misc
+#+setupfile: ../org-templates/post.org
 
-For years now, It seems like I have been searching for the perfect text editor. Evidently, there are those who believe that there is one single perfect text editor for everyone. If you need evidence, just search the Internet for &#8220;Vim vs. Emacs.&#8221; My experience, though, leads to me believe that, when it comes to text editors, like many other tools, perfection is relative to the individual. What tool is needed depends on how the individual writer works and thinks.
+
+For years now, It seems like I have been searching for the perfect text editor. Evidently, there are those who believe that there is one single perfect text editor for everyone. If you need evidence, just search the Internet for "Vim vs. Emacs." My experience, though, leads to me believe that, when it comes to text editors, like many other tools, perfection is relative to the individual. What tool is needed depends on how the individual writer works and thinks.
 
 I used word processors (beginning with WordPerfect 5.1, which I still think is the best, it's been all downhill for word processors ever since) until I started writing LaTeX documents. I began with TeXShop, which comes bundled with [[http://www.tug.org/mactex/2011/][MacTeX]]. TeXShop is an excellent resource for writing LaTeX. It's free, powerful, and I recommend it with no reservations at all.
 
@@ -27,7 +30,7 @@ So, Sublime Text 2, I think I'm in love, but you need to know how fickle I am. I
 UPDATE: It's 2024 now, and I've been using Emacs for over a decade. I still like to try out new editors, but I'm no longer searching for a new love.
 
 #+begin_tagline
-Tagged: 
+Tagged:  [[file:../tags/misc.org][Misc]]
 #+end_tagline
 
 * Footnotes

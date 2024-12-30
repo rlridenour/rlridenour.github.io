@@ -22,3 +22,5 @@
 - [[file:../posts/2010-12-16-bob-feller-1918-20-10.org][Bob Feller (1918-2010)]]
 - [[file:../posts/2015-01-13-the-chains-of-technology.org][The Chains of Technology]]
 - [[file:../posts/2008-12-12-todays-news.org][Todays News]]
+
+- [[file:../posts/2012-05-24-a-sordid-tale-of-text-editors.org][A Sordid Tale of Text Editors]]

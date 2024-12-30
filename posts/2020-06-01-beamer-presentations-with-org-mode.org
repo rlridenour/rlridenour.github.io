@@ -70,7 +70,7 @@ Any text that follows will only appear in the article, not in the presentation. 
 
 *** Presentation File
 
-The magic happens with two small files. The first is the presentation file. At the top, put your preferred Beamer export header, but be sure to include =#+LaTeX_CLASS_options: [ignorenonframetext]= and =#+OPTIONS: toc:nil= . The latter is to ensure that Beamer export doesn't make the contents slide before the presentation title slide. Then, make the title page like this:
+The magic happens with two small files. The first is the presentation file. At the top, put your preferred Beamer export header, but be sure to include =#+latex_CLASS_options: [ignorenonframetext]= and =#+OPTIONS: toc:nil= . The latter is to ensure that Beamer export doesn't make the contents slide before the presentation title slide. Then, make the title page like this:
 
 
 #+begin_example org
@@ -89,7 +89,7 @@ I keep the header information in two files in Dropbox. The Fish function adds th
 
 *** Article File
 
-For the article, use your preferred header with all of the packages declared, but be sure to add this line: =#+LaTeX_HEADER: \usepackage{beamerarticle}=. After the export header lines, include the contents file, again using `#+include: "contents.org" :minlevel 1`. When exporting, be sure to export with the one of the Beamer-specific exports. Otherwise, things just won't look right.
+For the article, use your preferred header with all of the packages declared, but be sure to add this line: =#+latex_HEADER: \usepackage{beamerarticle}=. After the export header lines, include the contents file, again using `#+include: "contents.org" :minlevel 1`. When exporting, be sure to export with the one of the Beamer-specific exports. Otherwise, things just won't look right.
 
 ** Conclusion
 

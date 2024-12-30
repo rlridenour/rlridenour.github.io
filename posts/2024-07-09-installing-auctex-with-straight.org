@@ -1,6 +1,6 @@
 #+TITLE: Installing Auctex with Straight
 #+draft: false
-#+tags[]: emacs latex 
+#+tags[]: emacs LaTeX 
 #+date: [2024-07-09 Tue]
 #+lastmod: 2024-08-01T11:11:13
 #+mathjax: 

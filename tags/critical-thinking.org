@@ -13,3 +13,5 @@
 - [[file:../posts/2016-10-20-the-uselessness-of-political-factchecking.org][The Uselessness of Political Fact-Checking]]
 - [[file:../posts/2016-10-21-the-clinton-foundation.org][Confirmation Bias and the Clinton Foundation]]
 - [[file:../posts/2010-05-05-this-is-a-song-by-a-hs-psychology-teacher-designed.org][Cognitive Biases Song]]
+
+- [[file:../posts/2016-10-01-black-lives-matter-and-conditional-probabilities.org][Race, Police Shooting, and Probability]]

@@ -1,9 +1,6 @@
 #+TITLE: Beamer Article and Org Mode
-#+draft: false
-#+tags[]: org latex 
+#+filetags:  org latex
 #+date: <2024-07-04 Thu>
-#+lastmod: 2024-07-05T09:52:46
-#+mathjax: 
 #+setupfile: ../org-templates/post.org
 
 I generate LaTeX Beamer lecture slides and handouts from a single Org mode data file.[fn:1] The handouts include the information on the slides plus some extra explanation. I like to draw a box around the slide information so that students can easily differentiate the slides from the notes. I have scripts that export the Org file, generate the LaTeX files, then create the PDF's. Everything seemed to work well so far, or at least I hadn't noticed anything that wasn't working. I'm teaching a course this summer that covers the same material in one day that I usually cover in three days during a regular semester. Ordinarily, I structure the presentation using only sections and slides, but stitching three of them together required adding subsections to keep everything clear. Adding subsections shouldn't have been a problem, it's just a matter of changing one line in the Org header from
@@ -62,7 +59,7 @@ Here's the simple tcolorbox commands that go in the header:
 Simple enough, and only took four days....
 
 #+begin_tagline
-Tagged: 
+Tagged:  [[file:../tags/org.org][Org]] [[file:../tags/latex.org][LaTeX]]
 #+end_tagline
 
 

@@ -7,13 +7,16 @@
     --light: #fff;
     --lesslight: #efefef;
     --dark: #282828;
-    --moredark: #000;
-    --link: #0047AB;
+    --moredark: #0f0f0f;
+    --lessdark: #424242;
+    --link: #004d9a;
+    --visited: #400080;
+    --title: #800000;
     /* font-size: 16px; */
 }
 
 html {
-    border-top: 5px solid var(--dark);
+    /* border-top: 5px solid var(--dark); */
     font-family: system-ui, sans-serif;
     color: var(--dark);
 }
@@ -50,21 +53,28 @@ body {
 }
 
 .banner a:link {
-    text-decoration: none;
+	color: var(--moredark);
+	text-decoration: none;
 }
 
 .banner a:hover {
+    color: var(--dark);
     text-decoration: underline;
 }
 
+.banner a:visited {
+}
+
 .title {
+    color: var(--moredark);
     font-size: 2rem;
     line-height: 2.5rem;
     padding: 4rem 0 2rem 0;
 }
 
 span.subtitle {
-    font-size: 1.25rem;
+    color: var(--lessdark);
+    font-size: 0.95rem;
 }
 
 .footer {
@@ -76,7 +86,7 @@ span.subtitle {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
-    /* color: #313131; */
+    color: #000;
     letter-spacing: -.025rem;
 }
 
@@ -214,10 +224,15 @@ p.bigquote:before {
 a {
     outline: none;
     color: var(--dark);
+    text-decoration: underline;
+    text-decoration-thickness: .04em;
+    text-underline-offset: 2.5px;
 }
 
+
 a:hover {
-    text-decoration-color: var(--link);
+    color: var(--link);
+    text-decoration: underline;
 }
 
 img {

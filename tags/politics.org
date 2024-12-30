@@ -19,3 +19,6 @@
 - [[file:../posts/2010-08-16-a-mosque-in-nyc.org][A Mosque in NYC]]
 - [[file:../posts/2017-03-14-usury-in-oklahoma-.org][Usury in Oklahoma]]
 - [[file:../posts/2017-05-04-thoughts-on-the-johnson-amendment.org][Thoughts on Trump and the Johnson Amendment]]
+
+- [[file:../posts/2016-10-01-black-lives-matter-and-conditional-probabilities.org][Race, Police Shooting, and Probability]]
+- [[file:../posts/2019-08-06-some-thoughts-on-mass-shootings.org][Some Thoughts on Mass Shootings]]

@@ -6,9 +6,9 @@
     color-scheme: light dark;
     --light: #fff;
     --lesslight: #efefef;
-    --dark: #282828;
-    --moredark: #0f0f0f;
-    --lessdark: #424242;
+    --dark: #222222;
+    --moredark: #000000;
+    --lessdark: #484848;
     --link: #004d9a;
     --visited: #400080;
     --title: #800000;
@@ -41,6 +41,21 @@ body {
     color: var(--moredark);
 }
 
+.banner h2 {
+font-weight: 600;
+}
+
+.banner a:link {
+	color: var(--moredark);
+	text-decoration: none;
+	
+}
+
+.banner a:hover {
+    color: var(--dark);
+    text-decoration: underline;
+}
+
 .navbar ul {
     list-style-type: none;
     margin: 0;
@@ -50,19 +65,6 @@ body {
 .navbar li {
     display: inline-block;
     margin: 5px;
-}
-
-.banner a:link {
-	color: var(--moredark);
-	text-decoration: none;
-}
-
-.banner a:hover {
-    color: var(--dark);
-    text-decoration: underline;
-}
-
-.banner a:visited {
 }
 
 .title {

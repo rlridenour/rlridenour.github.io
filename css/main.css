@@ -6,9 +6,9 @@
     color-scheme: light dark;
     --light: #fff;
     --lesslight: #efefef;
-    --dark: #282828;
-    --moredark: #0f0f0f;
-    --lessdark: #424242;
+    --dark: #222222;
+    --moredark: #000000;
+    --lessdark: #484848;
     --link: #004d9a;
     --visited: #400080;
     --title: #800000;
@@ -41,15 +41,8 @@ body {
     color: var(--moredark);
 }
 
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar li {
-    display: inline-block;
-    margin: 5px;
+.banner h2 {
+font-weight: 600;
 }
 
 .banner a:link {
@@ -63,7 +56,15 @@ body {
     text-decoration: underline;
 }
 
-.banner a:visited {
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline-block;
+    margin: 5px;
 }
 
 .title {

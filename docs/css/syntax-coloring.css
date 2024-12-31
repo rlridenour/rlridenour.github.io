@@ -1,22 +1,17 @@
-/******************************
- * Org defaults
- ***
- * Source: org-plus-contrib/ox-html.el
- ******************************/
 
 
 pre {
   border: 1px solid #ccc;
   box-shadow: 3px 3px 3px #eee;
-  padding: 8pt;
+  padding: 0.5rem;
   font-family: monospace;
-  overflow: auto;
-  margin: 1.2em;
+  overflow-x: auto;
+      margin: 0.5rem 0 0.5rem 0;
 }
+
 pre.src {
   position: relative;
-  overflow: auto;
-  padding-top: 1.2em;
+  overflow-x: auto;
 }
 pre.src:before {
   display: none;
@@ -123,9 +118,4 @@ pre.src-nxml:before { content: 'XML'; }
 pre.src-conf:before { content: 'Configuration File'; }
 
 
-/******************************
- * Syntax highlighting
- ***
- * Source: https://github.com/fniessen/org-html-themes/blob/master/styles/bigblow/css/htmlize.css
- ******************************/
 

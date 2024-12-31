@@ -71,12 +71,20 @@ font-weight: 600;
     color: var(--moredark);
     font-size: 2rem;
     line-height: 2.5rem;
+    text-align: center;
     padding: 4rem 0 2rem 0;
+}
+
+.subtitle {
+    text-align: center;
 }
 
 span.subtitle {
     color: var(--lessdark);
     font-size: 0.95rem;
+    text-align: center;
+    margin-top: 0
+		
 }
 
 .footer {
@@ -103,25 +111,27 @@ li + li {
 
 
 pre code {
+    display: block;
     background-color: var(--lesslight);
     margin: 0.5rem 0 0.5rem 0;
     padding: 0.5em;
-    overflow: auto;
+    overflow-x: auto;
 }
 
 code {
     background-color: var(--lesslight);
+    overflow-x: auto;
 }
 
 pre, pre:hover {
-    white-space: pre-wrap;
-    word-break: break-all;
-}
-
-pre code {
     display: block;
+    background-color: var(--lesslight);
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.5em;
     overflow-x: auto;
 }
+
+
 
 
 
@@ -264,7 +274,10 @@ img {
     font-weight: bold;
 }
 
-
+.footpara { display: inline; }
+.footdef  { margin-bottom: 1rem; }
+a.footnum {text-decoration: none;}
+a.footref {text-decoration: none;}
 #footnotes {
     font-size: clamp(0.875rem, 0.231vw + 0.815rem, 1rem);
     line-height: clamp(1.5rem, -0.3vw + 1.74rem, 1.662rem);

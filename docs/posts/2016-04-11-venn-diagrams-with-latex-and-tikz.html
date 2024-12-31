@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 30, 2024 -->
+<!-- Dec 31, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Venn Diagrams with LaTeX and TikZ</title>
@@ -87,15 +87,15 @@
 </header><p>
 I spent the weekend working on Venn diagrams in LaTeX using TikZ to use when teaching categorical logic. I thought it was a much better use of my time than mowing the lawn, and one never knows when a good Venn diagram will be needed.
 </p>
-<section id="outline-container-orgb7e59f3" class="outline-2">
-<h2 id="orgb7e59f3">The Initial Diagram</h2>
-<div class="outline-text-2" id="text-orgb7e59f3">
+<section id="outline-container-orgcafe9b9" class="outline-2">
+<h2 id="orgcafe9b9">The Initial Diagram</h2>
+<div class="outline-text-2" id="text-orgcafe9b9">
 <p>
 First, add the following to the preamble:
 </p>
 
 
-<pre class="example" id="orga9bf1dc">
+<pre class="example" id="orgce06945">
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
 </pre>
@@ -104,7 +104,7 @@ First, add the following to the preamble:
 The next step is to define the three circles in the body of the document. This only needs to to be done once; they can be called repeatedly in the same document. I named them in a way that I could remember which was the subject term, middle term, and predicate term:
 </p>
 
-<pre class="example" id="orgd1184ea">
+<pre class="example" id="org97493c0">
 \def\sub{(0,0) circle (1.5cm)}
 \def\mid{(-60:2cm) circle (1.5cm)}
 \def\pred{(0:2cm) circle (1.5cm)}
@@ -115,7 +115,7 @@ The next step is to define the three circles in the body of the document. This o
 Once the circles have been defined, they can be drawn and labeled. I prefer to use a heavier line than the default, that can be called as an option to <code>tikzpicture</code>.
 </p>
 
-<pre class="example" id="org0d0739a">
+<pre class="example" id="orgb7722ed">
 \begin{tikzpicture}[thick]
 
   \begin{scope}
@@ -143,25 +143,25 @@ This produces the following:
 
 <div class="org-center">
 
-<figure id="org5b71fde">
+<figure id="org9dd3432">
 <img src="../images/posts/venn-labels.png" alt="venn-labels.png" width="75%">
 
 </figure>
 </div>
 </div>
 </section>
-<section id="outline-container-org5a77ef2" class="outline-2">
-<h2 id="org5a77ef2">Shading</h2>
-<div class="outline-text-2" id="text-org5a77ef2">
+<section id="outline-container-org43a93eb" class="outline-2">
+<h2 id="org43a93eb">Shading</h2>
+<div class="outline-text-2" id="text-org43a93eb">
 </div>
-<div id="outline-container-org3e09bfe" class="outline-3">
-<h3 id="org3e09bfe">Universal Negations</h3>
-<div class="outline-text-3" id="text-org3e09bfe">
+<div id="outline-container-org6f995c3" class="outline-3">
+<h3 id="org6f995c3">Universal Negations</h3>
+<div class="outline-text-3" id="text-org6f995c3">
 <p>
 Shading is simple with TikZ, and, in most cases, relatively intuitive. To shade an entire circle, use the &ldquo;\fill&rdquo; command. For example, &ldquo;\fill &sub;&rdquo; fills the entire subject circle. To fill the intersection of the subject and predicate circles, we need to tell TikZ to ignore everything that is outside the predicate circle, then fill the subject circle. This is done with the &ldquo;\clip&rdquo; command. This code shades the intersection of <b>S</b> and <b>P</b>:
 </p>
 
-<pre class="example" id="orgc98153c">
+<pre class="example" id="org236937a">
 \begin{tikzpicture}[thick]
   \begin{scope}
     \begin{scope} %Shade intersection of S and P
@@ -181,14 +181,14 @@ Shading is simple with TikZ, and, in most cases, relatively intuitive. To shade 
 </pre>
 </div>
 </div>
-<div id="outline-container-org5a2eee3" class="outline-3">
-<h3 id="org5a2eee3">Universal Affirmations</h3>
-<div class="outline-text-3" id="text-org5a2eee3">
+<div id="outline-container-orgef1ccb5" class="outline-3">
+<h3 id="orgef1ccb5">Universal Affirmations</h3>
+<div class="outline-text-3" id="text-orgef1ccb5">
 <p>
 Shading everything that is one circle, but not in another is a bit trickier. It involves using something called the &ldquo;even odd rule&rdquo; in TikZ. Since I don&rsquo;t quite understand how the rule works, this involved a bit of trial-and-error on my part. If there is a more efficient way, then please leave a comment. This code shades the portion of the subject circle that is not in the predicate circle:
 </p>
 
-<pre class="example" id="orga66f52f">
+<pre class="example" id="orgee06817">
 \begin{tikzpicture}[thick]
   \begin{scope}[even odd rule]% Shade S without P
     \clip \pred (-1.5,-1.5) rectangle (1.5,1.5);
@@ -210,7 +210,7 @@ Shading everything that is one circle, but not in another is a bit trickier. It 
 To shade <b>S</b> without <b>M</b>:
 </p>
 
-<pre class="example" id="org08331ba">
+<pre class="example" id="org586aedd">
 \begin{scope}[even odd rule]% Shade *S* without M
   \clip \mid (-1.5,-1.5) rectangle (1.5,1.5);
   \fill[gray] \sub;
@@ -222,7 +222,7 @@ To shade <b>S</b> without <b>M</b>:
 <b>M</b> without <b>S</b>:
 </p>
 
-<pre class="example" id="org5620891">
+<pre class="example" id="org8996c73">
 \begin{scope}[even odd rule]% Shade M without S
   \clip \sub (-0.5,-3.3) rectangle (2.5,0);
   \fill[gray] \mid;
@@ -234,7 +234,7 @@ To shade <b>S</b> without <b>M</b>:
 <b>M</b> without <b>P</b>:
 </p>
 
-<pre class="example" id="orgeecd055">
+<pre class="example" id="org07f582c">
 \begin{scope}[even odd rule]% Shade M without P
   \clip \pred (-0.5,-3.3) rectangle (2.5,0);
   \fill[gray] \mid;
@@ -245,7 +245,7 @@ To shade <b>S</b> without <b>M</b>:
 <b>P</b> without <b>M</b>:
 </p>
 
-<pre class="example" id="orgdb8f80c">
+<pre class="example" id="org7ed8c33">
 \begin{scope}[even odd rule]% Shade P without M
   \clip \mid (-0,-1.5) rectangle (3.5,1.5);
   \fill[gray] \pred;
@@ -257,7 +257,7 @@ To shade <b>S</b> without <b>M</b>:
 Finally, to shade <b>P</b> without <b>S</b>:
 </p>
 
-<pre class="example" id="orgcfb8151">
+<pre class="example" id="org4a80e5d">
 \begin{scope}[even odd rule]% Shade P without S
   \clip \sub (0,-1.5) rectangle (3.5,1.5);
   \fill[gray] \pred;
@@ -266,15 +266,15 @@ Finally, to shade <b>P</b> without <b>S</b>:
 </div>
 </div>
 </section>
-<section id="outline-container-orga1da602" class="outline-2">
-<h2 id="orga1da602">Particulars</h2>
-<div class="outline-text-2" id="text-orga1da602">
+<section id="outline-container-org7440799" class="outline-2">
+<h2 id="org7440799">Particulars</h2>
+<div class="outline-text-2" id="text-org7440799">
 <p>
 <b><b>I</b></b> and <b><b>O</b></b> sentences require an ``x&rsquo;&rsquo; to be placed in some region of the diagram. To do that, just draw a node at the desired location. Here are the locations of the seven sections in the diagram:
 </p>
 
 
-<pre class="example" id="orgddecc8b">
+<pre class="example" id="org05c5375">
 \draw (-0.5,0.3) node {1};
 \draw (1,0.3) node {2};
 \draw (2.5,0.3) node {3};
@@ -287,28 +287,28 @@ Finally, to shade <b>P</b> without <b>S</b>:
 
 <div class="org-center">
 
-<figure id="org9a96714">
+<figure id="org69a701d">
 <img src="../images/posts/venn-sections.png" alt="venn-sections.png" width="75%">
 
 </figure>
 </div>
 </div>
 </section>
-<section id="outline-container-org966e7f7" class="outline-2">
-<h2 id="org966e7f7">Examples</h2>
-<div class="outline-text-2" id="text-org966e7f7">
+<section id="outline-container-orgba5f6a7" class="outline-2">
+<h2 id="orgba5f6a7">Examples</h2>
+<div class="outline-text-2" id="text-orgba5f6a7">
 <p>
 Here are some examples to show how full arguments are diagrammed.
 </p>
 </div>
-<div id="outline-container-org8e0839a" class="outline-3">
-<h3 id="org8e0839a">Celarent (EAE-1)</h3>
-<div class="outline-text-3" id="text-org8e0839a">
+<div id="outline-container-org0940092" class="outline-3">
+<h3 id="org0940092">Celarent (EAE-1)</h3>
+<div class="outline-text-3" id="text-org0940092">
 <p>
 Celarent is a classic first-figure argument that uses both a universal negation and a universal affirmation.
 </p>
 
-<pre class="example" id="orga018a16">
+<pre class="example" id="org41f7419">
 \begin{tikzpicture}[thick]
 
 \begin{scope}
@@ -341,16 +341,16 @@ This produces the following:
 
 <div class="org-center">
 
-<figure id="orgc381a28">
+<figure id="org88da779">
 <img src="../images/posts/venn-celarent.png" alt="venn-celarent.png" width="75%">
 
 </figure>
 </div>
 </div>
 </div>
-<div id="outline-container-orgefea8e3" class="outline-3">
-<h3 id="orgefea8e3">Disamis (IAI-3)</h3>
-<div class="outline-text-3" id="text-orgefea8e3">
+<div id="outline-container-orga614018" class="outline-3">
+<h3 id="orga614018">Disamis (IAI-3)</h3>
+<div class="outline-text-3" id="text-orga614018">
 <p>
 Disamis is a good example of a universal affirmation with a particular affirmation.
 </p>
@@ -358,7 +358,7 @@ Disamis is a good example of a universal affirmation with a particular affirmati
 
 <div class="org-center">
 
-<figure id="orgf86c569">
+<figure id="org3240607">
 <img src="../images/posts/venn-disamis.png" alt="venn-disamis.png" width="75%">
 
 </figure>
@@ -369,7 +369,7 @@ Disamis is a good example of a universal affirmation with a particular affirmati
 It was made with this code:
 </p>
 
-<pre class="example" id="orge822cdc">
+<pre class="example" id="org79cac03">
 \begin{tikzpicture}[thick]
 
   \begin{scope}
@@ -398,14 +398,14 @@ It was made with this code:
 </div>
 </div>
 </section>
-<section id="outline-container-org2e74ed9" class="outline-2">
-<h2 id="org2e74ed9">Scaling</h2>
-<div class="outline-text-2" id="text-org2e74ed9">
+<section id="outline-container-org958dfe5" class="outline-2">
+<h2 id="org958dfe5">Scaling</h2>
+<div class="outline-text-2" id="text-org958dfe5">
 <p>
 TikZ graphics can be scaled easily with an option to the tikzpicture environment. This doubles the size of the picture:
 </p>
 
-<pre class="example" id="org48cbacd">
+<pre class="example" id="org4a39476">
 \begin{tikzpicture}[thick,scale=2]
 </pre>
 
@@ -413,7 +413,7 @@ TikZ graphics can be scaled easily with an option to the tikzpicture environment
 This reduces the size by half:
 </p>
 
-<pre class="example" id="orga32652a">
+<pre class="example" id="org9a97b4b">
 \begin{tikzpicture}[thick,scale=.5]
 </pre>
 
@@ -421,12 +421,12 @@ This reduces the size by half:
 Unfortunately, this won&rsquo;t scale the text at the nodes, which will make the labels look ridiculously out of proportion. This can be fixed by adding an option to also scale the nodes. So, this produces a double-size image with proper labels:
 </p>
 
-<pre class="example" id="orgc9d5418">
+<pre class="example" id="org81996f4">
 \begin{tikzpicture}[thick,scale=2, every node/.style={transform shape}]
 </pre>
 
 
-<div class="tagline" id="orgce6859a">
+<div class="tagline" id="org755c1d2">
 <p>
 Tagged: <a href="../tags/LaTeX.html">LaTeX</a> <a href="../tags/logic.html">Logic</a>
 </p>
@@ -438,7 +438,7 @@ Tagged: <a href="../tags/LaTeX.html">LaTeX</a> <a href="../tags/logic.html">Logi
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 30, 2024.<br>
+  Last updated on Dec 31, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

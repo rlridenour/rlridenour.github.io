@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 30, 2024 -->
+<!-- Dec 31, 2024 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>My New Jekyll Site</title>
@@ -55,75 +55,75 @@
 </header><p>
 Jekyll was remarkably simple, much more than I expected. A competent person should be able to deploy a new Jekyll site in minutes. I, in usual fashion, took six hours. Here is a record of what I did, both what worked and what did not.
 </p>
-<section id="outline-container-orga13e6e6" class="outline-2">
-<h2 id="orga13e6e6">The Steps, Both True and Errant</h2>
-<div class="outline-text-2" id="text-orga13e6e6">
+<section id="outline-container-orgf183337" class="outline-2">
+<h2 id="orgf183337">The Steps, Both True and Errant</h2>
+<div class="outline-text-2" id="text-orgf183337">
 </div>
-<div id="outline-container-org9396702" class="outline-3">
-<h3 id="org9396702">Install Jekyll</h3>
-<div class="outline-text-3" id="text-org9396702">
+<div id="outline-container-orgf5da6b2" class="outline-3">
+<h3 id="orgf5da6b2">Install Jekyll</h3>
+<div class="outline-text-3" id="text-orgf5da6b2">
 <p>
 The first step is to install <a href="http://jekyllrb.com ">Jekyll</a>. Since it&rsquo;s a Ruby Gem, it&rsquo;s very easy to install. I then built the default site, but it wasn&rsquo;t quite the style I wanted. I saw this article by <a href="http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/">Barry Clark</a>, which led me to <a href="https://github.com/barryclark/jekyll-now%20">Jekyll Now</a>, which was a full-fledged starter site, but still not the style that I wanted. <a href="http://jekyllbootstrap.com ">Jekyll Bootstrap</a> is good for those who like Twitter Bootstrap, but I didn&rsquo;t need anything like that. Then, I saw something titled &ldquo;How I Created a Beautiful and Minimal Blog Using Jekyll, Github Pages, and poole&rdquo; by <a href="http://joshualande.com/jekyll-github-pages-poole/%20">Joshua Lande</a>. That seemed to be exactly what I wanted.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd176413" class="outline-3">
-<h3 id="orgd176413">Poole and Lanyon</h3>
-<div class="outline-text-3" id="text-orgd176413">
+<div id="outline-container-org4c56147" class="outline-3">
+<h3 id="org4c56147">Poole and Lanyon</h3>
+<div class="outline-text-3" id="text-org4c56147">
 <p>
 <a href="http://getpoole.com">Poole</a> provided a very nice minimalist site. When I went to the Poole site, I saw two themes. I really liked Lanyon, but couldn&rsquo;t figure out how to install a theme on top of Poole. After an embarrassing amount of time, I realized that the theme, Lanyon, already contained Poole. So, installing it was just a matter of downloading it.
 </p>
 </div>
 </div>
-<div id="outline-container-org291a423" class="outline-3">
-<h3 id="org291a423">Configure the Site</h3>
-<div class="outline-text-3" id="text-org291a423">
+<div id="outline-container-org32cdb25" class="outline-3">
+<h3 id="org32cdb25">Configure the Site</h3>
+<div class="outline-text-3" id="text-org32cdb25">
 <p>
 Configuring the site is simple. There are a few items to add to the _config.yml file in the root directory of the site, mostly standard things like the site title and base URL. Then, just run `jekyll server` from the root directory of the site, browse to <code>http://localhost:4000</code>, and you should see your new site.
 </p>
 </div>
 </div>
-<div id="outline-container-org7d17baa" class="outline-3">
-<h3 id="org7d17baa">Deployment</h3>
-<div class="outline-text-3" id="text-org7d17baa">
+<div id="outline-container-orge12b91b" class="outline-3">
+<h3 id="orge12b91b">Deployment</h3>
+<div class="outline-text-3" id="text-orge12b91b">
 <p>
 Deploying a Jekyll site is pretty easy; how it&rsquo;s done depends on where it&rsquo;s hosted. Github, besides having the best price (free!), it&rsquo;s also the easiest way to serve up a Jekyll site. Just name the repository &lt;username&gt;.github.io, and Github builds it and serves it automatically. After downloading and configuring Lanyon, I created a Git repository, and started to push that to Github, and&#x2026; decided that this was a waste of time. Since Lanyon is hosted on Github, I forked Lanyon, changed the repository name, and cloned it. Then, I updated config.yml, browsed to rlridenour.github.io, and saw my home page.
 </p>
 </div>
 </div>
-<div id="outline-container-org5aa5c94" class="outline-3">
-<h3 id="org5aa5c94">Styling the Site</h3>
-<div class="outline-text-3" id="text-org5aa5c94">
+<div id="outline-container-org9b1b188" class="outline-3">
+<h3 id="org9b1b188">Styling the Site</h3>
+<div class="outline-text-3" id="text-org9b1b188">
 <p>
 This cost met some time, but only because of some poor initial choices on my part. Lanyon is built on Poole, and there were three CSS files, one each for Poole, Lanyon, and one called syntax.css. Some things that I wanted changed were in the Poole css file, others were in the Lanyon file. So, I proceeded to change things in both files. Then, it struck me that any update to either Poole or Lanyon would create a host of problems trying to figure out what needed to be changed again. So, I scrapped everything, started over, and just copied what the items I wanted to change to a new css file, then loaded that file last. Later, I moved them all to an SCSS directory, since Jekyll uses both SASS and CoffeeScript, and changed the config file to minimize the CSS file. At this point, my SCSS files are just the original CSS files with the extension changed.
 </p>
 </div>
 </div>
-<div id="outline-container-org14b11ed" class="outline-3">
-<h3 id="org14b11ed">Archive and Tag Pages</h3>
-<div class="outline-text-3" id="text-org14b11ed">
+<div id="outline-container-org7c782ef" class="outline-3">
+<h3 id="org7c782ef">Archive and Tag Pages</h3>
+<div class="outline-text-3" id="text-org7c782ef">
 <p>
 I blatantly copied <a href="http://joshualande.com/jekyll-github-pages-poole/%20">Joshua Lande&rsquo;s</a> archive page and <a href="http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html%20">Michael Lanyon&rsquo;s</a> tag page. I don&rsquo;t know if I&rsquo;ll add any search function, the tag page is probably a better way to find content.
 </p>
 </div>
 </div>
-<div id="outline-container-org9e2c1dd" class="outline-3">
-<h3 id="org9e2c1dd">Final Details</h3>
-<div class="outline-text-3" id="text-org9e2c1dd">
+<div id="outline-container-org605360c" class="outline-3">
+<h3 id="org605360c">Final Details</h3>
+<div class="outline-text-3" id="text-org605360c">
 <p>
 I added Disqus commenting, which  just a matter of copying some code from Disqus and copying it to the post layout file. I also added a reference to the MathJax script to the head.
 </p>
 </div>
 </div>
-<div id="outline-container-orgaf5119f" class="outline-3">
-<h3 id="orgaf5119f">Finished</h3>
-<div class="outline-text-3" id="text-orgaf5119f">
+<div id="outline-container-orgf7e8a06" class="outline-3">
+<h3 id="orgf7e8a06">Finished</h3>
+<div class="outline-text-3" id="text-orgf7e8a06">
 <p>
 Now, the site is up, and it just needs some more content. We&rsquo;ll see how long that takes.
 </p>
 
 
-<div class="tagline" id="org0b4cdb3">
+<div class="tagline" id="org9b17fd9">
 <p>
 Tagged: <a href="../tags/misc.html">Misc</a>
 </p>
@@ -136,7 +136,7 @@ Tagged: <a href="../tags/misc.html">Misc</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 30, 2024.<br>
+  Last updated on Dec 31, 2024.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

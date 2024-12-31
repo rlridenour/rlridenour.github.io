@@ -111,8 +111,8 @@ li + li {
 
 
 pre code {
-    display: block;
-    background-color: var(--lesslight);
+    /* display: block; */
+    /* background-color: var(--lesslight); */
     margin: 0.5rem 0 0.5rem 0;
     padding: 0.5em;
     overflow-x: auto;
@@ -124,13 +124,16 @@ code {
 }
 
 pre, pre:hover {
-    display: block;
-    background-color: var(--lesslight);
+    /* display: block; */
+    /* background-color: var(--lesslight); */
     margin: 0.5rem 0 0.5rem 0;
     padding: 0.5em;
     overflow-x: auto;
 }
 
+pre.src {
+overflow-x: auto;
+}
 
 
 

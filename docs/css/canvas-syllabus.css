@@ -4,12 +4,17 @@
 }
 
 
+.banner p {
+    margin: 0;
+}
+
 #coursetitle {
-    text-color: #005826;
+    color: #005826;
 }
 
 
 h2 {
-    text-color: #005826;
+    color: #005826;
 }
+
 

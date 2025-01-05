@@ -28,3 +28,12 @@ footer p {
     font-size: 0.85em;
     margin: 0;
 }
+
+footer:after {
+content: <hr>
+	 <center>
+  <p>
+    "OBU exists to equip the next generation of Future Shapers to live all of life, all for Jesus."
+  </p>
+</center>
+}

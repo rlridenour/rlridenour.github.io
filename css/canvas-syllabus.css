@@ -4,7 +4,6 @@
     margin-bottom: 2em;
 }
 
-
 .banner p {
     margin: 0;
 }
@@ -13,9 +12,18 @@
     color: #005826;
 }
 
-
 h2 {
     color: #005826;
 }
 
+.footnote-definition {
+    display: block;
+}
 
+.footnote-body {
+    display: inline-block;
+}
+
+.footer p {
+    margin: 0;
+}

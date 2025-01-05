@@ -1,0 +1,10 @@
+#+TITLE: Stay Warm!
+#+date: <2025-01-05 Sun>
+#+filetags:  misc
+#+setupfile: ../org-templates/post.org
+
+A huge winter storm stretching from Kansas to the Atlantic coast begins today. Homelessness is an every-increasing condition in the country --- praying that everyone can stay warm and safe.
+
+#+begin_tagline
+Tagged:  [[file:../tags/misc.org][Misc]]
+#+end_tagline

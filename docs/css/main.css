@@ -17,7 +17,7 @@
 
 html {
     /* border-top: 5px solid var(--dark); */
-    font-family: system-ui, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     color: var(--dark);
 }
 

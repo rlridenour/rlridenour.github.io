@@ -30,10 +30,10 @@ footer p {
 }
 
 footer:after {
-content: <hr>
+content: "<hr>
 	 <center>
   <p>
-    "OBU exists to equip the next generation of Future Shapers to live all of life, all for Jesus."
+    OBU exists to equip the next generation of Future Shapers to live all of life, all for Jesus.
   </p>
-</center>
+  </center>;"
 }

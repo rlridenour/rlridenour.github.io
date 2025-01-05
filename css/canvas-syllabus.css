@@ -24,12 +24,16 @@ h2 {
     display: inline-block;
 }
 
+footer {
+    top-margin: 4em;
+}
+
 footer p {
-    font-size: 0.85em;
+    font-size: 0.60em;
     margin: 0;
 }
 
 .obu-tagline {
-    font-size: 0.85em;
+    font-size: 0.60em;
     text-align: center;
 }

@@ -1,7 +1,3 @@
-title {
-    visibility: hidden;
-}
-
 .banner {
     font-size: 1.2em;
     text-align: center;
@@ -42,3 +38,13 @@ footer p {
     font-size: 0.80em;
     text-align: center;
     }
+
+#postamble {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#postamble p {
+    font-size: 0.80em;
+    margin: 0;
+}

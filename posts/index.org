@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:rss.org][Randy Ridenour]]
 - [[file:25-01-05-stay-warm.org][Stay Warm!]]
 - [[file:24-12-30-kind.org][Be Kind]]
 - [[file:24-12-30-tag-pages-org-mode-blog.org][Making Tag Pages in an Org Mode Blog]]

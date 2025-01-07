@@ -35,8 +35,8 @@
 (defvar this-date-format "%b %d, %Y")
 
 (setq org-html-divs '((preamble "header" "top")
-                      (content "main" "content")
-                      (postamble "footer" "postamble"))
+		      (content "main" "content")
+		      (postamble "footer" "postamble"))
       org-html-container-element "section"
       org-html-metadata-timestamp-format this-date-format
       org-html-checkbox-type 'html
@@ -57,9 +57,9 @@
   "PLIST: An entry."
   (if (org-export-get-date plist this-date-format)
       (plist-put plist
-                 :subtitle (format "%s"
-                                   (org-export-get-date plist this-date-format)
-                                   (car (plist-get plist :author)))))
+		 :subtitle (format "%s"
+				   (org-export-get-date plist this-date-format)
+				   (car (plist-get plist :author)))))
   ;; Preamble
   (with-temp-buffer
     (insert-file-contents "../html-templates/preamble.html") (buffer-string)))
@@ -69,13 +69,13 @@
 (defun me/website-html-postamble (plist)
   "PLIST."
   (concat (format
-           (with-temp-buffer
-             (insert-file-contents "../html-templates/postamble.html") (buffer-string))
-           (format-time-string this-date-format (plist-get plist :time)) (plist-get plist :creator))))
+	   (with-temp-buffer
+	     (insert-file-contents "../html-templates/postamble.html") (buffer-string))
+	   (format-time-string this-date-format (plist-get plist :time)) (plist-get plist :creator))))
 
 (defvar site-attachments
   (regexp-opt '("jpg" "jpeg" "gif" "png" "svg"
-                "ico" "cur" "css" "js" "woff" "html" "pdf"))
+		"ico" "cur" "css" "js" "woff" "html" "pdf"))
   "File types that are published as static files.")
 
 
@@ -86,15 +86,15 @@ ENTRY: file-name
 STYLE:
 PROJECT: `posts in this case."
   (cond ((not (directory-name-p entry))
-         (format "*[[file:%s][%s]]*
-                 #+HTML: <p class='pubdate'>by %s on %s.</p>"
-                 entry
-                 (org-publish-find-title entry project)
-                 (car (org-publish-find-property entry :author project))
-                 (format-time-string this-date-format
-                                     (org-publish-find-date entry project))))
-        ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
-        (t entry)))
+	 (format "*[[file:%s][%s]]*
+		 #+HTML: <p class='pubdate'>by %s on %s.</p>"
+		 entry
+		 (org-publish-find-title entry project)
+		 (car (org-publish-find-property entry :author project))
+		 (format-time-string this-date-format
+				     (org-publish-find-date entry project))))
+	((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
+	(t entry)))
 
 
 (defun me/org-reveal-publish-to-html (plist filename pub-dir)
@@ -105,95 +105,146 @@ publishing directory. Returns output file name."
   (let ((org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/"))
     (org-publish-org-to 'reveal filename ".html" plist pub-dir)))
 
+;; Added the following three functions to test RSS.
+
+(defun posts-rss-feed (title list)
+  "Generate a sitemap of posts that is exported as a RSS feed.
+TITLE is the title of the RSS feed.  LIST is an internal
+representation for the files to include.  PROJECT is the current
+project."
+  (concat
+   "#+TITLE: " title "\n\n"
+   (org-list-to-subtree list)))
+
+
+(defun format-posts-rss-feed-entry (entry _style project)
+  "Format ENTRY for the posts RSS feed in PROJECT."
+  (let* (
+	 (title (org-publish-find-title entry project))
+	 (link (concat (file-name-sans-extension entry) ".html"))
+	 (pubdate (format-time-string (car org-time-stamp-formats)
+				      (org-publish-find-date entry project))))
+    (message pubdate)
+    (format "%s
+:properties:
+:rss_permalink: %s
+:pubdate: %s
+:end:\n"
+	    title
+	    link
+	    pubdate)))
+
+(defun publish-posts-rss-feed (plist filename dir)
+  "Publish PLIST to RSS when FILENAME is rss.org.
+DIR is the location of the output."
+  (if (equal "rss.org" (file-name-nondirectory filename))
+      (org-rss-publish-to-rss plist filename dir)))
+
 (setq org-publish-project-alist
       `(("posts"
-         :base-directory "posts"
-         :base-extension "org"
-         :recursive t
-         :publishing-function org-html-publish-to-html
-         :publishing-directory "./docs/posts/"
-         :exclude ,(regexp-opt '("README.org" "draft"))
-         :auto-sitemap t
-         :sitemap-filename "index.org"
-         :sitemap-title "Blog Index"
-         ;; :sitemap-format-entry me/org-sitemap-format-entry
-         ;; :sitemap-style list
-         :sitemap-sort-files anti-chronologically
-         :html-link-home ""
-         :html-link-up ""
-         :html-head-include-scripts t
-         :html-head-include-default-style nil
-         :html-head ,me/website-html-head
-         :html-preamble me/website-html-preamble
-         :html-postamble me/website-html-postamble)
-        ("pages"
-         :base-directory "pages"
-         :base-extension "org"
-         :exclude ,(regexp-opt '("README.org" "draft"))
-         :index-filename "index.org"
-         :recursive nil
-         :publishing-function org-html-publish-to-html
-         :publishing-directory "./docs/"
-         :html-link-home ""
-         :html-link-up ""
-         :html-head-include-scripts t
-         :html-head-include-default-style nil
-         :html-head ,me/website-html-head
-         :html-preamble me/website-html-preamble
-         :html-postamble me/website-html-postamble)
-        ("tags"
-         :base-directory "tags"
-         :base-extension "org"
-         :exclude ,(regexp-opt '("README.org" "draft"))
-         :index-filename "index.org"
-         :recursive nil
-         :publishing-function org-html-publish-to-html
-         :publishing-directory "./docs/tags/"
-         :html-link-home ""
-         :html-link-up ""
-         :html-head-include-scripts t
-         :html-head-include-default-style nil
-         :html-head ,me/website-html-head
-         :html-preamble me/website-html-preamble
-         :html-postamble me/website-html-postamble)	
-        ("css"
-         :base-directory "./css"
-         :base-extension "css"
-         :publishing-directory "./docs/css"
-         :publishing-function org-publish-attachment
-         :recursive t)
-        ("images"
-         :base-directory "./images"
-         :base-extension ,site-attachments
-         :publishing-directory "./docs/images"
-         :publishing-function org-publish-attachment
-         :recursive t)
-        ("assets"
-         :base-directory "./assets"
-         :base-extension ,site-attachments
-         :publishing-directory "./docs/assets"
-         :publishing-function org-publish-attachment
-         :recursive t)
-        ("cname"
-         :base-directory "./cname"
-         ;; :base-extension ,site-attachments
-         :publishing-directory "./docs"
-         :publishing-function org-publish-attachment
+	 :base-directory "posts"
+	 :base-extension "org"
+	 :recursive t
+	 :publishing-function org-html-publish-to-html
+	 :publishing-directory "./docs/posts/"
+	 :exclude ,(regexp-opt '("README.org" "draft"))
+	 :auto-sitemap t
+	 :sitemap-filename "index.org"
+	 :sitemap-title "Blog Index"
+	 ;; :sitemap-format-entry me/org-sitemap-format-entry
+	 ;; :sitemap-style list
+	 :sitemap-sort-files anti-chronologically
+	 :html-link-home ""
+	 :html-link-up ""
+	 :html-head-include-scripts t
+	 :html-head-include-default-style nil
+	 :html-head ,me/website-html-head
+	 :html-preamble me/website-html-preamble
+	 :html-postamble me/website-html-postamble)
+	("pages"
+	 :base-directory "pages"
+	 :base-extension "org"
+	 :exclude ,(regexp-opt '("README.org" "draft"))
+	 :index-filename "index.org"
+	 :recursive nil
+	 :publishing-function org-html-publish-to-html
+	 :publishing-directory "./docs/"
+	 :html-link-home ""
+	 :html-link-up ""
+	 :html-head-include-scripts t
+	 :html-head-include-default-style nil
+	 :html-head ,me/website-html-head
+	 :html-preamble me/website-html-preamble
+	 :html-postamble me/website-html-postamble)
+	("tags"
+	 :base-directory "tags"
+	 :base-extension "org"
+	 :exclude ,(regexp-opt '("README.org" "draft"))
+	 :index-filename "index.org"
+	 :recursive nil
+	 :publishing-function org-html-publish-to-html
+	 :publishing-directory "./docs/tags/"
+	 :html-link-home ""
+	 :html-link-up ""
+	 :html-head-include-scripts t
+	 :html-head-include-default-style nil
+	 :html-head ,me/website-html-head
+	 :html-preamble me/website-html-preamble
+	 :html-postamble me/website-html-postamble)
+	("css"
+	 :base-directory "./css"
+	 :base-extension "css"
+	 :publishing-directory "./docs/css"
+	 :publishing-function org-publish-attachment
+	 :recursive t)
+	("images"
+	 :base-directory "./images"
+	 :base-extension ,site-attachments
+	 :publishing-directory "./docs/images"
+	 :publishing-function org-publish-attachment
+	 :recursive t)
+	("assets"
+	 :base-directory "./assets"
+	 :base-extension ,site-attachments
+	 :publishing-directory "./docs/assets"
+	 :publishing-function org-publish-attachment
+	 :recursive t)
+	("cname"
+	 :base-directory "./cname"
+	 ;; :base-extension ,site-attachments
+	 :publishing-directory "./docs"
+	 :publishing-function org-publish-attachment
 	 :include ("CNAME")
-         :recursive nil)
-        ("rss"
-         :base-directory "posts"
-         :base-extension "org"
-         :html-link-home "https://randyridenour.net/"
-         :html-link-use-abs-url t
+	 :recursive nil)
+	;; ("rss"
+	;;  :base-directory "posts"
+	;;  :base-extension "org"
+	;;  :html-link-home "https://randyridenour.net/"
+	;;  :html-link-use-abs-url t
+	;;  :rss-extension "xml"
+	;;  :publishing-directory "./docs"
+	;;  :publishing-function (org-rss-publish-to-rss)
+	;;  :section-number nil
+	;;  :exclude ".*"
+	;;  :include ("index.org")
+	;;  :table-of-contents nil)
+	("rss"
+	 :publishing-directory "./docs"
+	 :base-directory "posts"
+	 :base-extension "org"
+	 :exclude ".*"
+	 :publishing-function publish-posts-rss-feed
 	 :rss-extension "xml"
-         :publishing-directory "./docs"
-         :publishing-function (org-rss-publish-to-rss)
-         :section-number nil
-         :exclude ".*"
-         :include ("index.org")
-         :table-of-contents nil)
-        ("all" :components ("posts" "pages" "tags" "css" "images" "assets" "rss" "cname"))))
+	 :html-link-use-abs-url t
+	 :html-link-org-files-as-html t
+	 :auto-sitemap t
+	 :sitemap-function posts-rss-feed
+	 :sitemap-title "Randy Ridenour"
+	 :sitemap-filename "rss.org"
+	 :sitemap-style list
+	 :sitemap-sort-files anti-chronologically
+	 :sitemap-format-entry format-posts-rss-feed-entry)
+	("all" :components ("posts" "pages" "tags" "css" "images" "assets" "rss" "cname"))))
 
 (provide 'publish)
 ;;; publish.el ends here

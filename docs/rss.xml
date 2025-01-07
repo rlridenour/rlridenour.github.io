@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title>Randy Ridenour</title>
+  <atom:link href="./rss.xml" rel="self" type="application/rss+xml" />
+  <link></link>
+  <description><![CDATA[]]></description>
+  <language>en</language>
+  <pubDate>Tue, 07 Jan 2025 05:46:39 -0600</pubDate>
+  <lastBuildDate>Tue, 07 Jan 2025 05:46:39 -0600</lastBuildDate>
+  <generator>Emacs 29.4 Org-mode 9.8-pre</generator>
+  <webMaster>rlridenour@fastmail.com (Randy Ridenour)</webMaster>
+  <image>
+    <url>https://orgmode.org/img/org-mode-unicorn-logo.png</url>
+    <title>Randy Ridenour</title>
+    <link></link>
+  </image>
+
+</channel>
+</rss>

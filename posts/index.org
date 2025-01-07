@@ -1,7 +1,6 @@
 #+TITLE: Blog Index
 
-- [[file:25-01-07-rss-test.org][RSS Test]]
-- [[file:25-01-07-still-testing-feed.org][Still Testing the Feed]]
+- [[file:25-01-07-creating-rss-feed.org][Creating an RSS Feed]]
 - [[file:25-01-05-stay-warm.org][Stay Warm!]]
 - [[file:24-12-30-kind.org][Be Kind]]
 - [[file:24-12-30-tag-pages-org-mode-blog.org][Making Tag Pages in an Org Mode Blog]]

@@ -4,7 +4,7 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-01-07T09:47:00-06:00</updated>
+<updated>2025-01-07T14:13:18-06:00</updated>
 <entry>
   <title>Millennium Development Goals</title>
   <author><name>Randy Ridenour</name></author>
@@ -24971,6 +24971,58 @@ Tagged:   <a href="../tags/misc.html">Misc</a>
 </main>]]></content>
   <link href="https://randyridenour.net/posts/25-01-05-stay-warm.html"/>
   <id>https://randyridenour.net/posts/25-01-05-stay-warm.html</id>
+  <updated>2025-01-07T00:00:00-06:00</updated>
+</entry>
+<entry>
+  <title>Creating an RSS Feed</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Jan 07, 2025</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Creating an RSS Feed
+ <br></br> <span class="subtitle">Jan 07, 2025</span>
+</h1>
+ <p>
+I struggled with ox-rss for my blog feed and really could never get it working. It would generate an RSS file, but for some reason, the feed readers wouldn’t get anything. I don’t know enough about XML to fix it, and I had neither the time right now nor the inclination to learn.
+</p>
+
+ <p>
+So, I stumbled across  <a href="https://github.com/emacsmirror/webfeeder">Emacs Webfeeder</a>, which creates a feed from the HTML files. After adding it with use-package, I removed the RSS component of my  <code>publish.el</code> file, and changed by blog build function to this:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">orgblog-build</span> ()
+  ( <span class="org-keyword">interactive</span>)
+  ( <span class="org-keyword">progn</span>
+    (find-file  <span class="org-string">"~/sites/orgblog/publish.el"</span>)
+    (eval-buffer)
+    (org-publish-all)
+    (webfeeder-build  <span class="org-string">"atom.xml"</span>
+                        <span class="org-string">"./docs"</span>
+                        <span class="org-string">"https://randyridenour.net/"</span>
+                       ( <span class="org-keyword">let</span> ((default-directory (expand-file-name  <span class="org-string">"./docs"</span>)))
+                         (remove  <span class="org-string">"posts/index.html"</span>
+                                 (directory-files-recursively  <span class="org-string">"posts"</span>
+                                                               <span class="org-string">".*\\.html$"</span>)))
+                        <span class="org-builtin">:title</span>  <span class="org-string">"Randy Ridenour"</span>
+                        <span class="org-builtin">:description</span>  <span class="org-string">"Blog posts by Randy Ridenour"</span>)
+    (kill-buffer))
+  (message  <span class="org-string">"Build complete!"</span>))
+</pre>
+</div>
+
+
+ <p>
+After building the site, Webfeeder generated an  <code>atom.rss</code> file, and everything works fine. That was the last critical component of my endeavor to blog with Emacs only.
+</p>
+
+ <div class="tagline" id="org4beac02">
+ <p>
+Tagged:   <a href="../tags/blog.html">Blog</a>  <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/25-01-07-creating-rss-feed.html"/>
+  <id>https://randyridenour.net/posts/25-01-07-creating-rss-feed.html</id>
   <updated>2025-01-07T00:00:00-06:00</updated>
 </entry>
 <entry>

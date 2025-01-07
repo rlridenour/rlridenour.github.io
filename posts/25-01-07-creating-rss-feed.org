@@ -1,0 +1,35 @@
+#+TITLE: Creating an RSS Feed
+#+date: <2025-01-07 Tue>
+#+filetags:  blog emacs
+#+setupfile: ../org-templates/post.org
+
+I struggled with ox-rss for my blog feed and really could never get it working. It would generate an RSS file, but for some reason, the feed readers wouldn't get anything. I don't know enough about XML to fix it, and I had neither the time right now nor the inclination to learn.
+
+So, I stumbled across [[https://github.com/emacsmirror/webfeeder][Emacs Webfeeder]], which creates a feed from the HTML files. After adding it with use-package, I removed the RSS component of my =publish.el= file, and changed by blog build function to this:
+
+#+begin_src emacs-lisp
+  (defun orgblog-build ()
+    (interactive)
+    (progn
+      (find-file "~/sites/orgblog/publish.el")
+      (eval-buffer)
+      (org-publish-all)
+      (webfeeder-build "atom.xml"
+		       "./docs"
+		       "https://randyridenour.net/"
+		       (let ((default-directory (expand-file-name "./docs")))
+			 (remove "posts/index.html"
+				 (directory-files-recursively "posts"
+							      ".*\\.html$")))
+		       :title "Randy Ridenour"
+		       :description "Blog posts by Randy Ridenour")
+      (kill-buffer))
+    (message "Build complete!"))
+#+end_src
+
+
+After building the site, Webfeeder generated an =atom.rss= file, and everything works fine. That was the last critical component of my endeavor to blog with Emacs only.
+
+#+begin_tagline
+Tagged:  [[file:../tags/blog.org][Blog]] [[file:../tags/emacs.org][Emacs]]
+#+end_tagline

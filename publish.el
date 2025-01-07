@@ -185,9 +185,8 @@ publishing directory. Returns output file name."
          :base-directory "posts"
          :base-extension "org"
          :html-link-home "https://randyridenour.net/"
-         :rss-link-home "http://randyridenour.net/"
          :html-link-use-abs-url t
-         :rss-extension "xml"
+	 :rss-extension "xml"
          :publishing-directory "./docs"
          :publishing-function (org-rss-publish-to-rss)
          :section-number nil

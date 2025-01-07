@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Dec 31, 2024 -->
+<!-- Jan 07, 2025 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Arguments in HTML</title>
@@ -13,7 +13,6 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
-<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -155,7 +154,7 @@ Sometimes, the last premise is significantly shorter than the others, and the un
 That can be fixed with some non-breaking spaces. It looks ugly, but it does take care of the problem.
 </p>
 
-<pre class="example" id="orgcd0033b">
+<pre class="example" id="org2ba0539">
 &lt;ol&gt;
   &lt;li&gt;
     P &amp;#8835; Q
@@ -206,7 +205,7 @@ It is very easy to make lists in Markdown. Unfortunately, we have the same probl
 Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldmark rendering engine that Hugo uses allows attributes and classes in Markdown, there is another, far simpler, option. First, make sure that your site config.toml page has &ldquo;unsafe = true&rdquo; and &ldquo;block = true&rdquo; in the markup section. Mine looks like this:
 </p>
 
-<pre class="example" id="org9d2ca8e">
+<pre class="example" id="org7d151b2">
 [markup]
   [markup.goldmark]
   [markup.goldmark.parser]
@@ -223,7 +222,7 @@ Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldma
 Now, add a new class to your stylesheet. I called it &ldquo;arg&rdquo; and styled it like this:
 </p>
 
-<pre class="example" id="org4953bc3">
+<pre class="example" id="org8de9a32">
 .arg li:last-child {
   list-style: none;
 }
@@ -241,7 +240,7 @@ margin: 0px;
 The first part removes the number at the line with the conclusion, and the second part underlines the last premise. Finally, I decided to tighten up the lines. Now, when you write your post, just use a normal Markdown ordered list with the class after the last item:
 </p>
 
-<pre class="example" id="orgc648032">
+<pre class="example" id="org5f020c2">
 1. First premise
 2. Second premise
 3. Conclusion
@@ -260,7 +259,7 @@ When published, that code produces this:
 
 
 
-<div class="tagline" id="orge14697a">
+<div class="tagline" id="org51797b6">
 <p>
 Tagged: <a href="../tags/org.html">Org</a>
 </p>
@@ -272,7 +271,7 @@ Tagged: <a href="../tags/org.html">Org</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 31, 2024.<br>
+  Last updated on Jan 07, 2025.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

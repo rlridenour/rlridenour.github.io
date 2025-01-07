@@ -105,40 +105,6 @@ publishing directory. Returns output file name."
   (let ((org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/"))
     (org-publish-org-to 'reveal filename ".html" plist pub-dir)))
 
-;; Added the following three functions to test RSS.
-
-(defun posts-rss-feed (title list)
-  "Generate a sitemap of posts that is exported as a RSS feed.
-TITLE is the title of the RSS feed.  LIST is an internal
-representation for the files to include.  PROJECT is the current
-project."
-  (concat
-   "#+TITLE: " title "\n\n"
-   (org-list-to-subtree list)))
-
-
-(defun format-posts-rss-feed-entry (entry _style project)
-  "Format ENTRY for the posts RSS feed in PROJECT."
-  (let* (
-	 (title (org-publish-find-title entry project))
-	 (link (concat (file-name-sans-extension entry) ".html"))
-	 (pubdate (format-time-string (car org-time-stamp-formats)
-				      (org-publish-find-date entry project))))
-    (message pubdate)
-    (format "%s
-:properties:
-:rss_permalink: %s
-:pubdate: %s
-:end:\n"
-	    title
-	    link
-	    pubdate)))
-
-(defun publish-posts-rss-feed (plist filename dir)
-  "Publish PLIST to RSS when FILENAME is rss.org.
-DIR is the location of the output."
-  (if (equal "rss.org" (file-name-nondirectory filename))
-      (org-rss-publish-to-rss plist filename dir)))
 
 (setq org-publish-project-alist
       `(("posts"
@@ -216,35 +182,7 @@ DIR is the location of the output."
 	 :publishing-function org-publish-attachment
 	 :include ("CNAME")
 	 :recursive nil)
-	;; ("rss"
-	;;  :base-directory "posts"
-	;;  :base-extension "org"
-	;;  :html-link-home "https://randyridenour.net/"
-	;;  :html-link-use-abs-url t
-	;;  :rss-extension "xml"
-	;;  :publishing-directory "./docs"
-	;;  :publishing-function (org-rss-publish-to-rss)
-	;;  :section-number nil
-	;;  :exclude ".*"
-	;;  :include ("index.org")
-	;;  :table-of-contents nil)
-	("rss"
-	 :publishing-directory "./docs"
-	 :base-directory "posts"
-	 :base-extension "org"
-	 :exclude ".*"
-	 :publishing-function publish-posts-rss-feed
-	 :rss-extension "xml"
-	 :html-link-use-abs-url t
-	 :html-link-org-files-as-html t
-	 :auto-sitemap t
-	 :sitemap-function posts-rss-feed
-	 :sitemap-title "Randy Ridenour"
-	 :sitemap-filename "rss.org"
-	 :sitemap-style list
-	 :sitemap-sort-files anti-chronologically
-	 :sitemap-format-entry format-posts-rss-feed-entry)
-	("all" :components ("posts" "pages" "tags" "css" "images" "assets" "rss" "cname"))))
+	("all" :components ("posts" "pages" "tags" "css" "images" "assets" "cname"))))
 
 (provide 'publish)
 ;;; publish.el ends here

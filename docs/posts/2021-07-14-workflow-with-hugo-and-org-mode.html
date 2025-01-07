@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Dec 31, 2024 -->
+<!-- Jan 07, 2025 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Workflow with Hugo and Org Mode</title>
@@ -11,7 +11,6 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
-<link rel='stylesheet' href='/css/syntax-coloring.css' type='text/css'/>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -55,9 +54,9 @@
 </header><p>
 Setting up the <a href="https://github.com/kaushalmodi/ox-hugo">Ox-hugo</a> package to use Org mode with Hugo was much easier than I expected. Here is how I configured it, the workflow for posting with Doom Emacs, and some things to keep in mind.
 </p>
-<section id="outline-container-org86bdaee" class="outline-2">
-<h2 id="org86bdaee">Installation and configuration</h2>
-<div class="outline-text-2" id="text-org86bdaee">
+<section id="outline-container-org87eb1f8" class="outline-2">
+<h2 id="org87eb1f8">Installation and configuration</h2>
+<div class="outline-text-2" id="text-org87eb1f8">
 <p>
 I&rsquo;m back to using Doom Emacs, so adding Ox-hugo required nothing more than adding the <code>+hugo</code> flag to <code>:lang org</code> in the init.el file. Look for <code>org</code> in init.el, and change it to <code>(org +hugo)</code>. Ox-hugo has excellent <a href="https://ox-hugo.scripter.co/">documentation</a>, and I configured it almost exactly the way that was suggested. I was skeptical that having a single Org file that contained every blog post was a good idea, but after two days, it seems to be the way to go. I have a file called &ldquo;blog.org&rdquo; in a directory named &ldquo;content-org&rdquo; in my hugo project directory. This file has the following settings at the top:
 </p>
@@ -115,9 +114,9 @@ Here is the template:
 </div>
 </div>
 </section>
-<section id="outline-container-orgec98cf4" class="outline-2">
-<h2 id="orgec98cf4">Workflow</h2>
-<div class="outline-text-2" id="text-orgec98cf4">
+<section id="outline-container-org932f28a" class="outline-2">
+<h2 id="org932f28a">Workflow</h2>
+<div class="outline-text-2" id="text-org932f28a">
 <p>
 <code>C-c n n</code> in Doom opens a hydra for Org-capture. Selecting &ldquo;h&rdquo; prompts for a post title in the minibuffer. Enter the title, press the return key, and a new Org-mode window opens with the file settings from the capture template. Enter the desired text, then press <code>C-c C-c</code> to close the window. The post is filed in the site&rsquo;s Org content file under the Blog Ideas section. When ready, move the cursor to a point in the post, and use org-refile to put it in the category that you would like.
 </p>
@@ -150,9 +149,9 @@ When the draft is finished, change the <code>TODO</code> flag in the post title 
 </p>
 </div>
 </section>
-<section id="outline-container-org6ac53bb" class="outline-2">
-<h2 id="org6ac53bb">Miscellaneous discoveries</h2>
-<div class="outline-text-2" id="text-org6ac53bb">
+<section id="outline-container-orga0101f5" class="outline-2">
+<h2 id="orga0101f5">Miscellaneous discoveries</h2>
+<div class="outline-text-2" id="text-orga0101f5">
 <p>
 So far, I&rsquo;ve found two things to keep in mind. First, headings in the Markdown files will be one level above the headings in the Org file. So, an H2 in the Org file is the post title, sections of the post have a H3 heading. The three stars in the Org file become two octothorpes in the Markdown file.
 </p>
@@ -189,16 +188,16 @@ produces this:
 </ol>
 </div>
 </section>
-<section id="outline-container-org7852046" class="outline-2">
-<h2 id="org7852046">Conclusion</h2>
-<div class="outline-text-2" id="text-org7852046">
+<section id="outline-container-org35749c0" class="outline-2">
+<h2 id="org35749c0">Conclusion</h2>
+<div class="outline-text-2" id="text-org35749c0">
 <p>
 Ox-hugo works amazingly well for producing well-formed Hugo Goldmark markdown from an Org mode source file. Since I write nearly everything in Org mode, this enables me to easily use the same material for posts, handouts, and other formats.
 </p>
 
 
 
-<div class="tagline" id="org7a6a731">
+<div class="tagline" id="orgbd35640">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -210,7 +209,7 @@ Tagged: <a href="../tags/emacs.html">Emacs</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 31, 2024.<br>
+  Last updated on Jan 07, 2025.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

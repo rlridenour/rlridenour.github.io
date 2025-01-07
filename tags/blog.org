@@ -3,3 +3,4 @@
 
 - [[file:../posts/2024-12-22-style-test.org][Style Test]]
 - [[file:../posts/24-12-30-tag-pages-org-mode-blog.org][Tag Pages in Org Mode Blog]]
+- [[file:../posts/25-01-07-rss-test.org][RSS Test]]

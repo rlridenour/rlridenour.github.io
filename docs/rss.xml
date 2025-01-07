@@ -7,7 +7,7 @@
 <generator>Emacs webfeeder.el</generator>
 <link>https://randyridenour.net/</link>
 <atom:link href="https://randyridenour.net/rss.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Tue, 07 Jan 2025 08:52:38 -0600</lastBuildDate>
+<lastBuildDate>Tue, 07 Jan 2025 09:04:00 -0600</lastBuildDate>
 <item>
   <title>Millennium Development Goals</title>
   <description><![CDATA[<main id="content" class="content"> <header> <h1 class="title">Millennium Development Goals</h1>
@@ -23956,6 +23956,26 @@ Tagged:   <a href="../tags/misc.html">Misc</a>
 </main>]]></description>
   <link>https://randyridenour.net/posts/25-01-05-stay-warm.html</link>
   <guid isPermaLink="false">https://randyridenour.net/posts/25-01-05-stay-warm.html</guid>
+  <pubDate>Tue, 07 Jan 2025 00:00:00 -0600</pubDate>
+</item>
+<item>
+  <title>RSS Test</title>
+  <description><![CDATA[<main id="content" class="content"> <h1 class="title">RSS Test
+ <br></br> <span class="subtitle">Jan 07, 2025</span>
+</h1>
+ <p>
+Testing the RSS feed.
+</p>
+
+ <div class="tagline" id="org91dd34e">
+ <p>
+Tagged:   <a href="../tags/blog.html">Blog</a>
+</p>
+
+</div>
+</main>]]></description>
+  <link>https://randyridenour.net/posts/25-01-07-rss-test.html</link>
+  <guid isPermaLink="false">https://randyridenour.net/posts/25-01-07-rss-test.html</guid>
   <pubDate>Tue, 07 Jan 2025 00:00:00 -0600</pubDate>
 </item>
 </channel>

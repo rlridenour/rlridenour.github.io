@@ -1,6 +1,7 @@
 #+TITLE: Blog Index
 
 - [[file:25-01-07-rss-test.org][RSS Test]]
+- [[file:25-01-07-still-testing-feed.org][Still Testing the Feed]]
 - [[file:25-01-05-stay-warm.org][Stay Warm!]]
 - [[file:24-12-30-kind.org][Be Kind]]
 - [[file:24-12-30-tag-pages-org-mode-blog.org][Making Tag Pages in an Org Mode Blog]]
@@ -458,7 +459,7 @@
 - [[file:2009-12-14-change-blindness.org][Change Blindness]]
 - [[file:2009-12-03-readability.org][Readability]]
 - [[file:2009-12-01-weaseling-out-of-things-is-what-separates-us-from.org][Weasels]]
-- [[file:2009-11-24-out-of-love-of-mankind-as-well-as-despair-at-my.org][Kierkegaards Mission]]
+- [[file:2009-11-24-out-of-love-of-mankind-as-well-as-despair-at-my.org][Kierkegaard's Mission]]
 - [[file:2009-11-25-another-figurine-arrived-today-evidently-the.org][Diversity of Figurines]]
 - [[file:2009-11-23-you-must-be-a-philosopher-no-im-a-bum.org][Philosophers and Bums]]
 - [[file:2009-11-16-philosophy-program-closed-for-failure-to-find.org][Weve Got Questions!]]

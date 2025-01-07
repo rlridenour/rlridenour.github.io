@@ -1,6 +1,6 @@
 #+date: <2009-11-24>
 #+filetags: quotes philosophy
-#+title: Kierkegaards Mission
+#+title: Kierkegaard's Mission
 
 #+ATTR_HTML: :class bigquote
 #+begin_quote

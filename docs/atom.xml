@@ -4,7 +4,7 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-01-07T09:36:18-06:00</updated>
+<updated>2025-01-07T09:47:00-06:00</updated>
 <entry>
   <title>Millennium Development Goals</title>
   <author><name>Randy Ridenour</name></author>
@@ -1402,10 +1402,10 @@ Tagged:  <a href="../tags/quotes.html">Quotes</a>
   <updated>2025-01-07T00:00:00-06:00</updated>
 </entry>
 <entry>
-  <title>Kierkegaards Mission</title>
+  <title>Kierkegaard&apos;s Mission</title>
   <author><name>Randy Ridenour</name></author>
   <summary>Nov 24, 2009</summary>
-  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">Kierkegaards Mission</h1>
+  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">Kierkegaard’s Mission</h1>
  <p class="subtitle" role="doc-subtitle">Nov 24, 2009</p>
 </header> <blockquote class="bigquote">
  <p>
@@ -1418,7 +1418,7 @@ Kierkegaard,  <i>Concluding Unscientific Postscript</i>
 </p>
 
 
- <div class="tagline" id="orga96b82b">
+ <div class="tagline" id="org03a42bc">
  <p>
 Tagged:  <a href="../tags/quotes.html">Quotes</a>  <a href="../tags/philosophy.html">Philosophy</a>
 </p>
@@ -24993,6 +24993,28 @@ Tagged:   <a href="../tags/blog.html">Blog</a>
 </main>]]></content>
   <link href="https://randyridenour.net/posts/25-01-07-rss-test.html"/>
   <id>https://randyridenour.net/posts/25-01-07-rss-test.html</id>
+  <updated>2025-01-07T00:00:00-06:00</updated>
+</entry>
+<entry>
+  <title>Still Testing the Feed</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Jan 07, 2025</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Still Testing the Feed
+ <br></br> <span class="subtitle">Jan 07, 2025</span>
+</h1>
+ <p>
+I changed to Atom.
+</p>
+
+ <div class="tagline" id="org5b64690">
+ <p>
+Tagged: 
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/25-01-07-still-testing-feed.html"/>
+  <id>https://randyridenour.net/posts/25-01-07-still-testing-feed.html</id>
   <updated>2025-01-07T00:00:00-06:00</updated>
 </entry>
 </feed>

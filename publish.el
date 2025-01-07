@@ -32,7 +32,7 @@
       org-export-with-smart-quotes t
       org-export-with-toc nil)
 
-(defvar this-date-format "%b %d, %Y")
+(defvar this-date-format "%b %d, %Y %H:%M")
 
 (setq org-html-divs '((preamble "header" "top")
 		      (content "main" "content")

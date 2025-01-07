@@ -51,9 +51,9 @@
 <header>
 <h1 class="title">Emacs on OS X</h1>
 <p class="subtitle" role="doc-subtitle">Jun 23, 2015</p>
-</header><section id="outline-container-orgd9ca50e" class="outline-2">
-<h2 id="orgd9ca50e">Homebrew</h2>
-<div class="outline-text-2" id="text-orgd9ca50e">
+</header><section id="outline-container-orgff02941" class="outline-2">
+<h2 id="orgff02941">Homebrew</h2>
+<div class="outline-text-2" id="text-orgff02941">
 <p>
 I install Emacs with <a href="http://brew.sh">Homebrew</a>. After installing Homebrew, just type the following in Terminal:
 </p>
@@ -71,9 +71,9 @@ This makes upgrading very easy, `brew upgrade` updates everything that you&rsquo
 </p>
 </div>
 </section>
-<section id="outline-container-orgfa87f26" class="outline-2">
-<h2 id="orgfa87f26">Prelude</h2>
-<div class="outline-text-2" id="text-orgfa87f26">
+<section id="outline-container-orgc15014e" class="outline-2">
+<h2 id="orgc15014e">Prelude</h2>
+<div class="outline-text-2" id="text-orgc15014e">
 <p>
 I use <a href="http://batsov.com/prelude/">Emacs Prelude</a>, a starter kit by Bozhidar Batsov. There are many Emacs users that advocate setting up your own configuration from scratch, and I&rsquo;ve done that many times. I keep coming back to Prelude, though, it just makes the initial work so much easier. Prelude includes a personal directory for individual configuration files. I keep all of those files in a git repository located in Dropbox with symbolic links in the Prelude personal directory. That way, I can use Github for version control, but have all machines in sync with no effort.
 </p>
@@ -83,7 +83,7 @@ There are two important files in my personal directory. The first is an emacs-li
 </p>
 
 
-<pre class="example" id="org9815bdd">
+<pre class="example" id="orgc3b4d02">
 ;;Load emacs personal settings via org
 (prelude-require-package 'org)
 (org-babel-load-file
@@ -95,9 +95,9 @@ This file loads an org-mode file that contains the actual configuration.
 </p>
 </div>
 </section>
-<section id="outline-container-org5e05c63" class="outline-2">
-<h2 id="org5e05c63">Starting Emacs</h2>
-<div class="outline-text-2" id="text-org5e05c63">
+<section id="outline-container-orgd71dd6c" class="outline-2">
+<h2 id="orgd71dd6c">Starting Emacs</h2>
+<div class="outline-text-2" id="text-orgd71dd6c">
 <p>
 I like to start Emacs using the daemon, which keeps an Emacs server running in the background, then connect to that server with Emacs Client. This makes opening Emacs nearly instantaneous.
 </p>
@@ -127,7 +127,7 @@ There are parts of this that I really didn&rsquo;t need to do, but too much is b
 </p>
 
 
-<div class="tagline" id="orgfe0589e">
+<div class="tagline" id="orgc1b50bd">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a>
 </p>

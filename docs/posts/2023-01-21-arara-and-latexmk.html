@@ -61,9 +61,9 @@ Compiling LaTeX documents can be a chore, especially if the document has a table
 <li>Run pdflatex to put that bibliographic data into the document</li>
 <li>Run pdflatex again to fix any page numbers that need to change because of the new material.</li>
 </ol>
-<section id="outline-container-orgf77d1bb" class="outline-2">
-<h2 id="orgf77d1bb">Latexmk</h2>
-<div class="outline-text-2" id="text-orgf77d1bb">
+<section id="outline-container-orgf102be7" class="outline-2">
+<h2 id="orgf102be7">Latexmk</h2>
+<div class="outline-text-2" id="text-orgf102be7">
 <p>
 Using Latexmk is a great way to automate all of this. Latexmk will do all of these steps as needed, you just need to tell what engine to use (pdflatex, lualatex, xelatex) and whether to run Bibtex or Biber. A pdfLaTeX document named &ldquo;sample.tex&rdquo; containing bibliographic references would be compiled from the command line like this:
 </p>
@@ -127,9 +127,9 @@ Since I use Emacs, I could just add latexmk to the list of TeX commands and comp
 </p>
 </div>
 </section>
-<section id="outline-container-org4f3c97e" class="outline-2">
-<h2 id="org4f3c97e">Arara</h2>
-<div class="outline-text-2" id="text-org4f3c97e">
+<section id="outline-container-org24f4be0" class="outline-2">
+<h2 id="org24f4be0">Arara</h2>
+<div class="outline-text-2" id="text-org24f4be0">
 <p>
 Here&rsquo;s where Arara shines. Arara is another way to compile tex files. Unlike latexmk, arara does not do anything automatically. Running
 </p>
@@ -169,9 +169,9 @@ The problem (and I admit it&rsquo;s a minor one) is that I lose the automation o
 </p>
 </div>
 </section>
-<section id="outline-container-org8832bdb" class="outline-2">
-<h2 id="org8832bdb">Solution</h2>
-<div class="outline-text-2" id="text-org8832bdb">
+<section id="outline-container-org5143f40" class="outline-2">
+<h2 id="org5143f40">Solution</h2>
+<div class="outline-text-2" id="text-org5143f40">
 <p>
 Fortunately, arara can be told to compile with latexmk, and the engine and any options can be specified in the file. This compiles with latexmk using pdflatex:
 </p>
@@ -186,7 +186,7 @@ Since the options that I want are in my latexmkrc file, there&rsquo;s nothing el
 </p>
 
 
-<div class="tagline" id="orgc1431dd">
+<div class="tagline" id="orgd34a60d">
 <p>
 Tagged: <a href="../tags/LaTeX.html">LaTeX</a>
 </p>

@@ -5,3 +5,4 @@
 - [[file:../posts/24-12-30-tag-pages-org-mode-blog.org][Tag Pages in Org Mode Blog]]
 
 - [[file:../posts/25-01-07-creating-rss-feed.org][Creating an RSS Feed]]
+- [[file:../posts/25-01-07-updating-time-stamp.org][Updating the Time Stamp]]

@@ -4,7 +4,7 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-01-07T14:13:18-06:00</updated>
+<updated>2025-01-07T14:30:24-06:00</updated>
 <entry>
   <title>Millennium Development Goals</title>
   <author><name>Randy Ridenour</name></author>
@@ -25067,6 +25067,28 @@ Tagged:
 </main>]]></content>
   <link href="https://randyridenour.net/posts/25-01-07-still-testing-feed.html"/>
   <id>https://randyridenour.net/posts/25-01-07-still-testing-feed.html</id>
+  <updated>2025-01-07T00:00:00-06:00</updated>
+</entry>
+<entry>
+  <title>Updating the Time Stamp</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Jan 07, 2025</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Updating the Time Stamp
+ <br></br> <span class="subtitle">Jan 07, 2025</span>
+</h1>
+ <p>
+I updated the time stamp so that the feed doesn’t look I only post at midnight. Time stamps are easy to adjust using this  <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Time-Parsing.html">Elisp guide</a>.
+</p>
+
+ <div class="tagline" id="org2c5b851">
+ <p>
+Tagged:   <a href="../tags/emacs.html">Emacs</a>  <a href="../tags/blog.html">Blog</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/25-01-07-updating-time-stamp.html"/>
+  <id>https://randyridenour.net/posts/25-01-07-updating-time-stamp.html</id>
   <updated>2025-01-07T00:00:00-06:00</updated>
 </entry>
 </feed>

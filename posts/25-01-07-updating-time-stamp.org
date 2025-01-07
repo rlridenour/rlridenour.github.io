@@ -1,0 +1,10 @@
+#+TITLE: Updating the Time Stamp
+#+date: <2025-01-07 Tue 14:24>
+#+filetags:  emacs blog
+#+setupfile: ../org-templates/post.org
+
+I updated the time stamp so that the feed doesn't look I only post at midnight. Time stamps are easy to adjust using this [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Time-Parsing.html][Elisp guide]].
+
+#+begin_tagline
+Tagged:  [[file:../tags/emacs.org][Emacs]] [[file:../tags/blog.org][Blog]]
+#+end_tagline

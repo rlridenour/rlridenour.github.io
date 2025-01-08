@@ -1,0 +1,12 @@
+#+TITLE: Back to School
+#+date: <2025-01-08 Wed 05:07>
+#+filetags:  teaching
+#+setupfile: ../org-templates/post.org
+
+Today is the first day of the spring semester. We used to have a separate term in January that I never taught, so the Christmas break seemed especially short this year. 
+
+One wonderful thing about teaching is that every semester is a new beginning, another opportunity to finally get everything right.
+
+#+begin_tagline
+Tagged:  [[file:../tags/teaching.org][Teaching]]
+#+end_tagline

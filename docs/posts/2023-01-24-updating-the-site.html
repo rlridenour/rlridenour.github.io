@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Jan 07, 2025 -->
+<!-- Jan 08, 2025 05:11 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Updating the Site</title>
@@ -50,7 +50,7 @@
 <main id="content" class="content">
 <header>
 <h1 class="title">Updating the Site</h1>
-<p class="subtitle" role="doc-subtitle">Jan 24, 2023</p>
+<p class="subtitle" role="doc-subtitle">Jan 24, 2023 00:00</p>
 </header><p>
 I&rsquo;ve had trouble getting verified as an educator with GitLab. After getting some notification from them that the &ldquo;ultimate&rdquo; status was being downgraded on my site project (not that it really would have mattered for this, since it&rsquo;s a public repository), I decided to move it to GitHub, where I&rsquo;ve had it before. I had moved it to GitLab because GitLab would do the Hugo build for me after I pushed the updated content to them. In the past, GitHub would build a Jekyll site, but any others needed to be built locally. So, I was pleasantly surprised to see that I could set up a Hugo build on GitHub now. Unfortunately, I couldn&rsquo;t get it to work reliably. What did work exceptionally well is to connect the repository to <a href="https://www.netlify.com">Netlify</a>, and let them handle serving the site. I followed the <a href="https://gohugo.io/hosting-and-deployment/hosting-on-netlify/">instructions</a> in the Hugo documentation, and everything went very smoothly. Netlify automatically detected that the repository was a Hugo site. Their instructions for pointing the domain&rsquo;s name servers to Netlify were clear and simple to follow. It&rsquo;s important to note that the site&rsquo;s theme <i>must</i> be installed as a git submodule. It won&rsquo;t work as a simple git clone. The instructions for most Hugo themes that I see specify installing as a submodule, so you likely already have that done.
 </p>
@@ -58,9 +58,9 @@ I&rsquo;ve had trouble getting verified as an educator with GitLab. After gettin
 <p>
 This seemed to be a good opportunity to update the site&rsquo;s theme. I had started with another theme and rewrote it into my own, but lately I&rsquo;ve been happier letting other people do as much of the configuration work as possible, which explains my move back to <a href="https://github.com/doomemacs/doomemacs">Doom Emacs</a>. I picked the <a href="https://github.com/WingLim/hugo-tania">Hugo Tania</a> theme, since it has nice built-in search and tag support.
 </p>
-<section id="outline-container-org0d40c92" class="outline-2">
-<h2 id="org0d40c92">Hugo and Org Mode</h2>
-<div class="outline-text-2" id="text-org0d40c92">
+<section id="outline-container-orga1473f5" class="outline-2">
+<h2 id="orga1473f5">Hugo and Org Mode</h2>
+<div class="outline-text-2" id="text-orga1473f5">
 <p>
 I do most of my writing in Org mode in Emacs. Markdown is the most commonly used simple markup language, and Hugo has always had excellent native support for it. I remember its native support for Org mode to be missing some important things, although I can&rsquo;t really remember what they were. So, I was using <a href="https://ox-hugo.scripter.co">ox-hugo</a> to convert the Org files to Markdown. Evidently, Hugo&rsquo;s parser for Org mode is much more robust than it was, because I haven&rsquo;t had a problem with it parsing native Org files. So, I removed the ox-hugo package and now my posts are written in Org mode and not converted to Markdown. To do so, simply put the Hugo front-matter at the beginning in typical Org fashion. For instance, the front-matter for this post looks like this:
 </p>
@@ -204,7 +204,7 @@ I have a few more things to do, like create &ldquo;About&rdquo; and tag pages, a
 </p>
 
 
-<div class="tagline" id="orgaffb9e4">
+<div class="tagline" id="orgc417985">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a>
 </p>
@@ -216,7 +216,7 @@ Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Jan 07, 2025.<br>
+  Last updated on Jan 08, 2025 05:11.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

@@ -4,3 +4,5 @@
 - [[file:../posts/2016-04-11-venn-diagrams-with-latex-and-tikz.org][Venn Diagrams with LaTeX and TikZ]]
 - [[file:../posts/2023-02-04-venn-diagrams-in-latex.org][Venn Diagrams in LaTeX]]
 - [[file:../posts/2018-02-10-truth-tables-in-latex.org][Truth Tables in LaTeX]]
+
+- [[file:../posts/25-01-12-dot-operators-for-logical-and.org][Dot Operators for Logical And]]

@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Jan 12, 2025 13:03 -->
+<!-- Jan 12, 2025 13:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tagged: Teaching</title>
+<title>Dot Operators for Logical And</title>
 <meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
@@ -50,27 +50,45 @@
 </div>
 </header>
 <main id="content" class="content">
-<h1 class="title">Tagged: Teaching</h1>
-<ul class="org-ul">
-<li><a href="../posts/2009-08-20-online-education-more-effective-than-classroom.html">Online education more effective than classroom?</a></li>
-<li><a href="../posts/2011-02-23-1895-eighth-grade-final-exam.html">1895 Eighth Grade Final Exam</a></li>
-<li><a href="../posts/2011-03-17-sleep-deprivation.html">Sleep Deprivation</a></li>
-<li><a href="../posts/2011-03-30-i-received-an-interesting-package-in-campus-mail.html">The Coconut</a></li>
-<li><a href="../posts/2011-11-30-using-keynote-in-class.html">Using Keynote in Class</a></li>
-<li><a href="../posts/2015-01-13-explain-everything.html">Explain Everything</a></li>
-<li><a href="../posts/2024-12-17-end-semester.html">End of the Semester</a></li>
-<li><a href="../posts/2010-05-05-this-is-a-song-by-a-hs-psychology-teacher-designed.html">Cognitive Biases Song</a></li>
-<li><a href="../posts/2010-09-08-did-i-miss-anything.html">Did I Miss Anything?</a></li>
-<li><a href="../posts/2008-10-24-academic-reference-software.html">Academic Reference Software</a></li>
+<h1 class="title">Dot Operators for Logical And
+<br />
+<span class="subtitle">Jan 12, 2025 12:59</span>
+</h1>
+<p>
+My logic textbook this semester uses a dot for &ldquo;and&rdquo; instead of an ampersand. Unfortunately, the center dot in LaTeX is too small to be easily legible. I managed to increase the size of the LaTeX cdot by using the bm package and renewing the command to  <code>\bm{\cdot}</code>. In some cases, such as social media and the web, it&rsquo;s easier to use a unicode symbol. Here are the obvious options:
+</p>
 
-<li><a href="../posts/2023-12-31-converting-org-files-to-canvas-quizzes.html">Converting Org Files to Canvas Quizzes</a></li>
-<li><a href="../posts/25-01-08-back-school.html">Back to School</a></li>
-</ul>
+<dl class="org-dl">
+<dt>Dot Operator ()</dt><dd>(A ⋅ B)</dd>
+<dt>Bullet Operator</dt><dd>(A ∙ B)</dd>
+<dt>Bullet</dt><dd>(A • B)</dd>
+</dl>
+
+<p>
+The bullet seems slightly more legible. Here&rsquo;s how it looks in a more complex formula:
+</p>
+
+<div class="org-center">
+<p>
+∼[A • (B ∨ C)] ⊃ (B • ∼D)
+</p>
+</div>
+
+<p>
+I don&rsquo;t see any downside to using the bullet.
+</p>
+
+<div class="tagline" id="org1b0e284">
+<p>
+Tagged:  <a href="../tags/logic.html">Logic</a>
+</p>
+
+</div>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Jan 12, 2025 13:03.<br>
+  Last updated on Jan 12, 2025 13:18.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

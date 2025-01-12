@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:25-01-12-dot-operators-for-logical-and.org][Dot Operators for Logical And]]
 - [[file:25-01-08-back-school.org][Back to School]]
 - [[file:25-01-07-updating-time-stamp.org][Updating the Time Stamp]]
 - [[file:25-01-07-creating-rss-feed.org][Creating an RSS Feed]]

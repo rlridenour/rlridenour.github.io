@@ -1,0 +1,22 @@
+#+TITLE: Dot Operators for Logical And
+#+date: <2025-01-12 Sun 12:59>
+#+filetags:  logic
+#+setupfile: ../org-templates/post.org
+
+My logic textbook this semester uses a dot for "and" instead of an ampersand. Unfortunately, the center dot in LaTeX is too small to be easily legible. I managed to increase the size of the LaTeX cdot by using the bm package and renewing the command to  =\bm{\cdot}=. In some cases, such as social media and the web, it's easier to use a unicode symbol. Here are the obvious options:
+
+- Dot Operator () :: (A ⋅ B)
+- Bullet Operator :: (A ∙ B)
+- Bullet :: (A • B)
+
+The bullet seems slightly more legible. Here's how it looks in a more complex formula:
+
+#+begin_center
+∼[A • (B ∨ C)] ⊃ (B • ∼D)
+#+end_center
+
+I don't see any downside to using the bullet.
+
+#+begin_tagline
+Tagged:  [[file:../tags/logic.org][Logic]]
+#+end_tagline

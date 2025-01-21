@@ -1,0 +1,12 @@
+#+TITLE: Replicating Emacs Everywhere with Keyboard Maestro
+#+date: <2025-01-20 Mon 18:16>
+#+filetags: 
+#+setupfile: ../org-templates/post.org
+
+I've always loved the idea of Tecosaur's [[https://github.com/tecosaur/emacs-everywhere][Emacs Everywhere]], but when I looked at the code it seemed like quite a bit of overhead for someone who just uses one operating system. I tried to pull out just the portions relating to the Mac, but couldn't make it work. I've been running [[https://www.keyboardmaestro.com/main/][Keyboard Maestro]] for a long time now thinking that maybe someday I would use it to automate something. Since I couldn't bring myself to watch the inauguration today, it seemed like a good idea to finally use it.
+
+
+
+#+begin_tagline
+Tagged: 
+#+end_tagline

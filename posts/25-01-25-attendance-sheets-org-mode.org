@@ -1,0 +1,37 @@
+#+TITLE: Attendance Sheets in Org Mode
+#+date: <2025-01-25 Sat 07:17>
+#+filetags:  org teaching
+#+setupfile: ../org-templates/post.org
+
+This is another one of those days when I realized that I have been doing things the hard way. For years, I have been generating attendance sign-in sheets with Org Mode wonderful table editor. I would split the names into two columns and add a signature column after each. To ensure there was enough room for the signature, I would then stretch the signature column by adding phantom text to one of the rows like this (the names are from [[https://1000randomnames.com][1000randomnames.com]]):
+
+#+begin_src org
+  | Miley Malone | \phantom{xxxxxxxxxx} | Ruben Espinosa | \phantom{xxxxxxxxxx} |
+#+end_src
+
+Then, to make sure there was enough vertical space, I would add some extra blank rows between each row, having to adjust several times to make everything fit. It worked fine once completed, but it was certainly a pain in the neck. After seeing Matt Maguire's post, [[https://www.teachmaths.org/20250117_orgmode-tables/][Exporting Org Mode Tables to LaTeX]], I realized there had to be a better way. 
+
+Using the LaTeX [[https://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/tabularray/tabularray.pdf][tabularray]] package, I can simply do this:
+
+
+#+begin_src org
+,#+ATTR_LATEX: :environment tblr :align hline{3-Z}={solid},row{2-Z}={f,12mm},colspec={XXXX}
+| Name           | Signature |                | Signature |
+| Miley Malone   |           | Ruben Espinosa |           |
+| Braylee Brandt |           | Naomi Warren   |           |
+| Abel Bullock   |           | Winnie Weaver  |           |
+| Tucker Sexton  |           | Ellen Hayden   |           |
+| Leroy Skinner  |           | Damir Phillips |           |
+#+end_src
+
+Here is what the values of =align= do:
+
+- Ordinarily, =hline= puts a border line on the top and bottom of every row. I don't want them on the first row, so =hline{3-Z}={solid}= omits the first two lines.
+- =row{2-Z}={f,12mm}= aligns the text to the bottom of the row and sets the row height to 12mm for all of the rows except for the first.
+- =colspec={XXXX}= widens the row to the length of the line. Since the signature columns are blank, I don't really need to specify particular column widths. 
+
+Now, instead of inserting and deleting rows and setting horizontal lines manually, I can just adjust the row height as needed by changing one number. See the excellent tabularray documentation for other settings.
+
+#+begin_tagline
+Tagged:  [[file:../tags/org.org][Org]] [[file:../tags/teaching.org][Teaching]]
+#+end_tagline

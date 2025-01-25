@@ -4,7 +4,65 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-01-20T20:11:45-06:00</updated>
+<updated>2025-01-25T11:38:00-06:00</updated>
+<entry>
+  <title>Attendance Sheets in Org Mode</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Jan 25, 2025 07:17</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Attendance Sheets in Org Mode
+ <br></br> <span class="subtitle">Jan 25, 2025 07:17</span>
+</h1>
+ <p>
+This is another one of those days when I realized that I have been doing things the hard way. For years, I have been generating attendance sign-in sheets with Org Mode wonderful table editor. I would split the names into two columns and add a signature column after each. To ensure there was enough room for the signature, I would then stretch the signature column by adding phantom text to one of the rows like this (the names are from  <a href="https://1000randomnames.com">1000randomnames.com</a>):
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <span class="org-org-table">| Miley Malone | </span> <span class="org-org-table"> <span class="org-org-latex-and-related">\phantom{</span></span> <span class="org-org-table">xxxxxxxxxx} | Ruben Espinosa | </span> <span class="org-org-table"> <span class="org-org-latex-and-related">\phantom{</span></span> <span class="org-org-table">xxxxxxxxxx} |</span>
+</pre>
+</div>
+
+ <p>
+Then, to make sure there was enough vertical space, I would add some extra blank rows between each row, having to adjust several times to make everything fit. It worked fine once completed, but it was certainly a pain in the neck. After seeing Matt Maguire’s post,  <a href="https://www.teachmaths.org/20250117_orgmode-tables/">Exporting Org Mode Tables to LaTeX</a>, I realized there had to be a better way. 
+</p>
+
+ <p>
+Using the LaTeX  <a href="https://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/tabularray/tabularray.pdf">tabularray</a> package, I can simply do this:
+</p>
+
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <span class="org-org-meta-line">#+ATTR_LATEX: :environment tblr :align hline{3-Z}={solid},row{2-Z}={f,12mm},colspec={XXXX}</span>
+ <span class="org-org-table">| Name           | Signature |                | Signature |</span>
+ <span class="org-org-table">| Miley Malone   |           | Ruben Espinosa |           |</span>
+ <span class="org-org-table">| Braylee Brandt |           | Naomi Warren   |           |</span>
+ <span class="org-org-table">| Abel Bullock   |           | Winnie Weaver  |           |</span>
+ <span class="org-org-table">| Tucker Sexton  |           | Ellen Hayden   |           |</span>
+ <span class="org-org-table">| Leroy Skinner  |           | Damir Phillips |           |</span>
+</pre>
+</div>
+
+ <p>
+Here is what the values of  <code>align</code> do:
+</p>
+
+ <ul class="org-ul"> <li>Ordinarily,  <code>hline</code> puts a border line on the top and bottom of every row. I don’t want them on the first row, so  <code>hline{3-Z}={solid}</code> omits the first two lines.</li>
+ <li> <code>row{2-Z}={f,12mm}</code> aligns the text to the bottom of the row and sets the row height to 12mm for all of the rows except for the first.</li>
+ <li> <code>colspec={XXXX}</code> widens the row to the length of the line. Since the signature columns are blank, I don’t really need to specify particular column widths.</li>
+</ul> <p>
+Now, instead of inserting and deleting rows and setting horizontal lines manually, I can just adjust the row height as needed by changing one number. See the excellent tabularray documentation for other settings.
+</p>
+
+ <div class="tagline" id="org22e384b">
+ <p>
+Tagged:   <a href="../tags/org.html">Org</a>  <a href="../tags/teaching.html">Teaching</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/25-01-25-attendance-sheets-org-mode.html"/>
+  <id>https://randyridenour.net/posts/25-01-25-attendance-sheets-org-mode.html</id>
+  <updated>2025-01-25T11:37:00-06:00</updated>
+</entry>
 <entry>
   <title>Dot Operators for Logical And</title>
   <author><name>Randy Ridenour</name></author>

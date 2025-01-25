@@ -13,16 +13,22 @@ Then, to make sure there was enough vertical space, I would add some extra blank
 
 Using the LaTeX [[https://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/tabularray/tabularray.pdf][tabularray]] package, I can simply do this:
 
-
 #+begin_src org
 ,#+ATTR_LATEX: :environment tblr :align hline{3-Z}={solid},row{2-Z}={f,12mm},colspec={XXXX}
-| Name           | Signature |                | Signature |
-| Miley Malone   |           | Ruben Espinosa |           |
-| Braylee Brandt |           | Naomi Warren   |           |
-| Abel Bullock   |           | Winnie Weaver  |           |
-| Tucker Sexton  |           | Ellen Hayden   |           |
-| Leroy Skinner  |           | Damir Phillips |           |
+| *Name*         | *Signature* | *Name*         | *Signature* |
+| Miley Malone   |             | Ruben Espinosa |             |
+| Braylee Brandt |             | Naomi Warren   |             |
+| Abel Bullock   |             | Winnie Weaver  |             |
+| Tucker Sexton  |             | Ellen Hayden   |             |
+| Leroy Skinner  |             | Damir Phillips |             |
 #+end_src
+
+to produce:
+
+#+begin_center
+#+ATTR_HTML: :width 100% :height
+[[../images/posts/tblr-attendance.png]]
+#+end_center
 
 Here is what the values of =align= do:
 

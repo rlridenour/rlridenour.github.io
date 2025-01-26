@@ -1,0 +1,15 @@
+#+TITLE: Who We Ignore
+#+date: <2025-01-26 Sun 05:31>
+#+filetags:  quote
+#+setupfile: ../org-templates/post.org
+
+#+begin_quote
+Two evenings spent at La Scala, Milan, one of them standing up, the other sitting down. On the first evening, I was continuously conscious of the existence of the spectators who were seated. On the second evening, I was completely unconscious of the existence of the spectators who were standing up (and of those who were seated also).
+#+end_quote
+
+#+ATTR_HTML: :class source
+Simone Weil, quoted in W.H. Auden, /A Certain World/, 1970
+
+#+begin_tagline
+Tagged:  [[file:../tags/quote.org][Quote]]
+#+end_tagline

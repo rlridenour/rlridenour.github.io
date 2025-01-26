@@ -1,4 +1,0 @@
-#+title: Tagged: Quote
-#+setupfile: ../org-templates/post.org
-
-- [[file:../posts/25-01-26-who-ignore.org][Who We Ignore]]

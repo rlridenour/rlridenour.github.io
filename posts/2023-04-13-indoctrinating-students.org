@@ -1,6 +1,6 @@
 #+TITLE: Indoctrinating Students
 #+draft: false
-#+filetags: quotes, education
+#+filetags: quotes education
 #+date: <2023-04-13 Thu>
 #+lastmod: 2023-04-13T14:07:26
 #+mathjax: 

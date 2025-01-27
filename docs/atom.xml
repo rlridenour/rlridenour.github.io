@@ -4,7 +4,7 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-01-26T18:10:25-06:00</updated>
+<updated>2025-01-26T18:33:20-06:00</updated>
 <entry>
   <title>Replicating Emacs Everywhere with Keyboard Maestro</title>
   <author><name>Randy Ridenour</name></author>
@@ -115,19 +115,24 @@ So, in short, here is what happens when I press the hot key that calls the macro
  <li>Open an Emacs buffer containing the copied text, if any.</li>
  <li>Kill the Emacs buffer and paste its contents back into the previous front window.</li>
 </ol> <p>
-Here’s a picture of the entire macro:
+People seem to think that Emacs should only be used by ancient programmer wizards, and that those of us who are less technically minded should stick with something more modern and pre-packaged. I’ve found, though, that writing very useful Emacs functions is as simple as stringing commands together. What Emacs does is let even humanities professors like me do things they could never imagine doing with another editor.
+</p>
+
+ <p>
+For those who are interested, here’s a picture of the entire macro:
 </p>
 
  <div class="org-center">
 
- <div id="org37bb5e3" class="figure">
+ <div id="orgadb0cc4" class="figure">
  <p> <img src="../images/posts/emacs-notepad.png" alt="emacs-notepad.png" width="100%"></img></p>
 </div>
 </div>
 
 
 
- <div class="tagline" id="org07e26ad">
+
+ <div class="tagline" id="org563781c">
  <p>
 Tagged:   <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -147,7 +152,7 @@ There’s a link to download the macro at the end of the  <a href="https://forum
 </div></main>]]></content>
   <link href="https://randyridenour.net/posts/25-01-20-replicating-emacs-everywhere-with-keyboard-maestro.html"/>
   <id>https://randyridenour.net/posts/25-01-20-replicating-emacs-everywhere-with-keyboard-maestro.html</id>
-  <updated>2025-01-26T18:10:00-06:00</updated>
+  <updated>2025-01-26T18:33:00-06:00</updated>
 </entry>
 <entry>
   <title>Indoctrinating Students</title>

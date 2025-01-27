@@ -79,12 +79,15 @@ So, in short, here is what happens when I press the hot key that calls the macro
 2. Open an Emacs buffer containing the copied text, if any.
 3. Kill the Emacs buffer and paste its contents back into the previous front window.
 
-Here's a picture of the entire macro:
+People seem to think that Emacs should only be used by ancient programmer wizards, and that those of us who are less technically minded should stick with something more modern and pre-packaged. I've found, though, that writing very useful Emacs functions is as simple as stringing commands together. What Emacs does is let even humanities professors like me do things they could never imagine doing with another editor.
+
+For those who are interested, here's a picture of the entire macro:
 
 #+begin_center
 #+ATTR_HTML: :width 100% :height
 [[../images/posts/emacs-notepad.png]]
 #+end_center
+
 
 
 

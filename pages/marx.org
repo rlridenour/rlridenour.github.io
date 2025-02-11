@@ -1,0 +1,246 @@
+#+title: Marx Handout
+#+filetags: 
+#+setupfile: ./org-templates/post.org
+
+* Life and Works
+
+** Life
+
+- Born 1818 in Trier, Prussia
+- Studied law, philosophy, history, English, and Italian 1835-1841
+- PhD in 1841, hoped to teach.
+- Became journalist
+- Lived in exile, last 34 years of his life in London
+- Studied economics in British Museum 1n 1850
+- Died 1883
+
+
+** Important Works
+
+- /1844 Manuscripts/
+- "Theses on Feuerbach" (1845)
+- /On the German Ideology/ (1846)
+- /The Communist Manifesto/ (1848)
+- /A Contribution to a Critique of Political Economy/ (1859)
+- "Critique of the Gotha Programme" (1875)
+- /Capital/ (1867)
+- Collected Works
+  - German collected works estimated 114 volumes.
+  - English: 50 volumes
+
+
+** Enlightenment political thought`
+
+- Science as the basis for political theorizing.
+  - rather than tradition, religion, revelation, etc
+- Individual freedom is the core political value — realized through a doctrine of individual rights.
+  - Move away from natural law to natural rights, the rights of individuals to realize their own ends through politics.
+
+** /On the German Ideology/
+
+- Premises of Historical Materialism
+  + Human beings are essentially productive
+  + Satisfaction of needs creates new needs, both social and material.
+  + Forms of society develop corresponding to the development of forces of production.
+
+
+** 1859 Preface to /Critique/
+
+- Productive forces tend to develop over time.
+- Productive forces - means of production plus knowledge.
+- Primacy thesis
+  - Economic structure explained by the level of development of productive forces
+  - Superstructure (history, politics, religion, etc.) explained by economic structure
+- Revolution occurs when an economic structure is no longer able to continue to develop the forces of production.
+
+
+*** Alienation
+
+- "Contribution of Hegel’s Critique of Right: Introduction" (1843)
+- Ludwig Feuerbach, /The Essence of Christianity/ (1841): humans created God in their image.
+- Raise powers to infinite level, transfer them to abstract object.
+- Alienation, keeps us from enjoying our own powers.
+- Marx: "Religion is the opiate of the masses."
+- Types of alienation, /1844 Manuscripts/
+- From products of labor
+  - They create a product that they neither own nor control, indeed, which comes to dominate them. 
+- From productive activity
+  - In particular, they are forced to work in ways which are mentally and/or physically debilitating. 
+- From other individuals
+  - Contemporary economic relations socialize individuals to view others as merely means to their own particular ends. 
+- From our own human nature
+  - The human capacities for community and for free, conscious, and creative, work are both frustrated by contemporary capitalist relations.
+
+
+* Economics
+
+
+** Commodities
+
+- Useful external object produced for exchange on the market
+- Necessary conditions
+  - Existence of a market where exchange can occur
+  - Social division of labor where different people produce different products
+
+
+** Value
+
+- Commodities have use value and exchange value
+- Use value is just how useful something is to you, and that varies from person to person.
+- Exchange value is a relation between commodities: how many apples is one orange worth?
+
+
+*** Labor theory of value
+
+- What makes one thing worth so much of another thing?
+  - The labor required to produce the commodity
+- Socially necessary labor - labor exerted at the average level of intensity and productivity for that activity.
+- Value of the commodity is produced by the amount of socially necessary labor required to produce it.
+- If two objects can be compared as equivalent, there must be a third thing of equal magnitude in both.
+- The third thing must be labor.
+
+*** Puzzle
+
+- I have 4 oranges, $3 each.
+- You have 12 apples, $1 each.
+- We trade 1 orange for 3 apples.
+- Both start with $12 of value.
+- End with $12 of value.
+- How do we make profit?
+
+
+*** Answer
+
+
+
+- Capitalism requires making profit.
+  - Purchase commodities, convert into other commodities
+  - Sell at  higher price.
+- How can capitalism generate profit?
+- By exploiting the worker ("exploitation" not in a moral sense.)
+
+** Labor
+
+- Labor is a commodity, bought and sold on the market.
+- Like every other commodity, it has an exchange value and use value.
+
+*** Necessary Labor
+
+- Necessary labor
+  - Capitalist purchases the workers' labor power for the day.
+  - Labor power has an exchange value — labor required to produce the commodity.
+    - Labor necessary for the goods required for a worker's survival for the day, which is less than one day's labor!
+      - Example: how many loaves of bread does a worker need to stay alive for the day? How long does it take for a baker to bake those loaves of bread?
+  - This is called necessary labor, any labor beyond that is surplus labor.
+
+
+*** Surplus labor
+
+- Capitalist gets 1 day's labor, but pays for less than 1 day's labor.
+- The difference is surplus labor.
+  - Surplus labor produces surplus value.
+  - Surplus value produces profit.
+
+
+*** Wages
+
+- Since profit is produced by surplus value, decreased wages results in increased profit.
+- So, there is a tendency in capitalism for wages to fall.
+  - Wages will fall to the subsistence level, but not below. Why?
+    - There is never full employment in the economy. 
+
+*** Predicted consequences
+
+- Profit is the result of the labor performed beyond that necessary to create the value of the wages.
+- As labor becomes more mechanized, rates of profit should fall.
+- /Capital/ v. 3 predicts that profit rate will fall, which leads to the downfall of capitalism.
+- It follows that labor intensive industries should have higher rates of profit, empirically false.
+- Labor theory of value largely discredited.
+
+*** Morality
+
+- Capitalism is good in that it generates wealth.
+- All profit is from the exploitation of the worker
+- Marx says this is "by no means an injustice" in /Capital/.
+  - The worker agreed to work for the wage that the capitalist offered.
+- Is communism just or does it transcend justice?
+- /Critique of the Gotha Programme/ - from each according to their ability, to each according to their need.
+  - This requires the superabundance generated by capitalism.
+
+
+*** Why Capitalism Will Fail
+
+- Capitalism is unsustainable.
+- Since wages are driven to the subsistence level, capitalists find themselves without consumers who can buy their products.
+- So, there will be a final revolution, resulting in communism.
+  - Classless society, with maximal freedom.
+
+
+* Objections
+
+- Failure of communist states.
+  - Marx: they did not have period of capitalist growth.
+- False predictions: no revolution occurred.
+  - Marx failed to foresee
+    + New industries and extent of government intervention.
+    + Government spending to avoid liquidity crisis.
+- Will profit rates inevitably fall? Empirical question, with no clear answer. As profit rates fall, new industries are created. It is possible that technology will increase productivity to the extent that the rate of increased productivity exceeds the rate of displaced labor.
+- Awareness of exploitation
+  - Exploitation rate can increase even if wages stay the same or increase.
+  - No subjective awareness of social crisis
+- Information problem
+  - Information problem — how can we know when enough has been produced?
+- Superabundance impossible
+  - Superabundance necessary for the communist state, but it is impossible.
+  - We will always have to make decisions about resource allocation.
+  - If no superabundance, then will we act unselfishly?
+
+
+* Strengths
+
+** Marx's critique of markets
+
+- Markets are biased to the status quo
+- Injustice in, then injustice out
+- Failure of Marx's positive theory doesn't negate Marx's negative criticism.
+
+** Marx on freedom
+
+
+- Commitment to freedom
+- Freedom = power to quit
+- Marx: working class is one that has to sell labor power to survive.
+- Monopoly of means of production gives capitalists power.
+- Not about distribution of wealth, about distribution of power.
+- Unjust world is when one class has power to control another class.
+
+* Neo-Marxism
+
+
+- Criticism of traditional property rights.
+- Concentration of economic power---increased rich/poor gap.
+- Influence of money in politics.
+- Capitalism does not necessarily involve the harmony of interests between worker and capitalist.
+- Struggle for better wages and conditions vs. desire for more profit
+
+
+*** Influence of Marx
+
+- Immediately, very little
+  - 11 people present at his funeral
+    - Star in a tiny constellation of radical exiles and failed revolutionaries
+    - Unknown outside it.
+  - Books were failures
+    - Manifesto disappeared immediately and out of print for 24 years
+    - Capital ignored when vol 1 published in 1867
+      - Sold 1,000 copies in four years.
+    - Theses on Feurbach not discovered until 1888.
+    - 1844 manuscripts not published in English until 1959.
+- Lenin 1917 saved Marx from the dustbin.
+- Became one of the most important thinkers of all time.
+
+
+
+
+
+

@@ -89,5 +89,4 @@
 - [[file:../posts/2019-06-10-what-we-need.org][What We Need]]
 - [[file:../posts/24-12-30-kind.org][Be Kind]]
 - [[file:../posts/25-01-26-who-ignore.org][Who We Ignore]]
-
-- [[file:../posts/25-01-26-who-ignore.org][Who We Ignore]]
+- [[file:../posts/25-02-10-preachereternal-obligation.org][The Preacher's Eternal Obligation]]

@@ -13,5 +13,5 @@ Otis Moss, Jr., quoting Dr. Howard Thurman
 
 
 #+begin_tagline
-Tagged:  [[file:../tags/quote.org][Quote]]s
+Tagged:  [[file:../tags/quotes.org][Quotes]]
 #+end_tagline

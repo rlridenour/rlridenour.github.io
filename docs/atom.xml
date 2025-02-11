@@ -4,7 +4,7 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-02-10T18:51:33-06:00</updated>
+<updated>2025-02-10T18:55:27-06:00</updated>
 <entry>
   <title>The Preacher&apos;s Eternal Obligation</title>
   <author><name>Randy Ridenour</name></author>
@@ -23,16 +23,16 @@ Otis Moss, Jr., quoting Dr. Howard Thurman
 </p>
 
 
- <div class="tagline" id="org733865b">
+ <div class="tagline" id="org1c991bb">
  <p>
-Tagged:   <a href="../tags/quote.html">Quote</a>s
+Tagged:   <a href="../tags/quotes.html">Quotes</a>
 </p>
 
 </div>
 </main>]]></content>
   <link href="https://randyridenour.net/posts/25-02-10-preachereternal-obligation.html"/>
   <id>https://randyridenour.net/posts/25-02-10-preachereternal-obligation.html</id>
-  <updated>2025-02-10T18:51:00-06:00</updated>
+  <updated>2025-02-10T18:55:00-06:00</updated>
 </entry>
 <entry>
   <title>Replicating Emacs Everywhere with Keyboard Maestro</title>

@@ -1,0 +1,17 @@
+#+TITLE: The Preacher's Eternal Obligation
+#+date: <2025-02-10 Mon 18:44>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+You are never under obligation to preach a great sermon, but you are eternally obligated to grapple with great ideas. And if you grapple with great ideas, you might, occasionally in a lifetime, preach a great sermon.
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+Otis Moss, Jr., quoting Dr. Howard Thurman
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quote.org][Quote]]s
+#+end_tagline

@@ -6,7 +6,7 @@
 <!-- Feb 12, 2025 04:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Home</title>
+<title>Duplicate Org Beamer Title Slides</title>
 <meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
@@ -50,18 +50,35 @@
 </div>
 </header>
 <main id="content" class="content">
-<section id="outline-container-org2f96a00" class="outline-2">
-<h2 id="org2f96a00">Recent Posts</h2>
-<div class="outline-text-2" id="text-org2f96a00">
-<ul class="org-ul">
-<li><a href="../posts/25-02-12-duplicate-org-beamer-title-slides.html">Duplicate Org Beamer Title Slides</a></li>
-<li><a href="../posts/25-02-10-preachereternal-obligation.html">The Preacher&rsquo;s Eternal Obligation</a></li>
-<li><a href="../posts/25-01-26-who-ignore.html">Who We Ignore</a></li>
-<li><a href="../posts/25-01-25-attendance-sheets-org-mode.html">Attendance Sheets in Org Mode</a></li>
-<li><a href="../posts/25-01-20-replicating-emacs-everywhere-with-keyboard-maestro.html">Replicating Emacs Everywhere with Keyboard Maestro</a></li>
-</ul>
+<h1 class="title">Duplicate Org Beamer Title Slides
+<br />
+<span class="subtitle">Feb 12, 2025 04:08</span>
+</h1>
+<p>
+I recently noticed two problems with my LaTeX Beamer lecture slides that I create using Org mode. First, I suddenly had duplicate title slides. My template began with this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-level-3">*** </span>
+<span class="org-org-latex-and-related">\maketitle</span>
+</pre>
 </div>
-</section>
+
+<p>
+Deleting that fixed the problem. I guess it just automatically inserts a title slide now. Second, my section and subsection slides weren&rsquo;t being created. Looking at the <code>*.tex</code> file showed that the sections were using the <code>section*</code> variant. Telling the org file to number the sections fixed the problem. Here&rsquo;s the line to use:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-meta-line">#+OPTIONS: num:t</span>
+</pre>
+</div>
+
+<div class="tagline" id="org1579626">
+<p>
+Tagged:  <a href="../tags/org.html">Org</a> <a href="../tags/LaTeX.html">LaTeX</a>
+</p>
+
+</div>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>

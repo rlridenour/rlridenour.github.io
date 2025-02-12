@@ -10,3 +10,4 @@
 - [[file:../posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.org][List Spacing in Org Mode with Enumitem]]
 
 - [[file:../posts/2024-07-04-beamer-article-and-org-mode.org][Beamer Article and Org Mode]]
+- [[file:../posts/25-02-12-duplicate-org-beamer-title-slides.org][Duplicate Org Beamer Title Slides]]

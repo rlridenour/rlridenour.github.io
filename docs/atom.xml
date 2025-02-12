@@ -4,7 +4,44 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-02-11T06:58:07-06:00</updated>
+<updated>2025-02-12T04:18:19-06:00</updated>
+<entry>
+  <title>Duplicate Org Beamer Title Slides</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Feb 12, 2025 04:08</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Duplicate Org Beamer Title Slides
+ <br></br> <span class="subtitle">Feb 12, 2025 04:08</span>
+</h1>
+ <p>
+I recently noticed two problems with my LaTeX Beamer lecture slides that I create using Org mode. First, I suddenly had duplicate title slides. My template began with this:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <span class="org-org-level-3">*** </span>
+ <span class="org-org-latex-and-related">\maketitle</span>
+</pre>
+</div>
+
+ <p>
+Deleting that fixed the problem. I guess it just automatically inserts a title slide now. Second, my section and subsection slides weren’t being created. Looking at the  <code>*.tex</code> file showed that the sections were using the  <code>section*</code> variant. Telling the org file to number the sections fixed the problem. Here’s the line to use:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <span class="org-org-meta-line">#+OPTIONS: num:t</span>
+</pre>
+</div>
+
+ <div class="tagline" id="org1579626">
+ <p>
+Tagged:   <a href="../tags/org.html">Org</a>  <a href="../tags/LaTeX.html">LaTeX</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/25-02-12-duplicate-org-beamer-title-slides.html"/>
+  <id>https://randyridenour.net/posts/25-02-12-duplicate-org-beamer-title-slides.html</id>
+  <updated>2025-02-12T04:18:00-06:00</updated>
+</entry>
 <entry>
   <title>Bob Feller (1918-2010)</title>
   <author><name>Randy Ridenour</name></author>

@@ -1,0 +1,21 @@
+#+TITLE: Duplicate Org Beamer Title Slides
+#+date: <2025-02-12 Wed 04:08>
+#+filetags:  org LaTeX
+#+setupfile: ../org-templates/post.org
+
+I recently noticed two problems with my LaTeX Beamer lecture slides that I create using Org mode. First, I suddenly had duplicate title slides. My template began with this:
+
+#+begin_src org
+,*** 
+\maketitle
+#+end_src
+
+Deleting that fixed the problem. I guess it just automatically inserts a title slide now. Second, my section and subsection slides weren't being created. Looking at the =*.tex= file showed that the sections were using the =section*= variant. Telling the org file to number the sections fixed the problem. Here's the line to use:
+
+#+begin_src org
+,#+OPTIONS: num:t
+#+end_src
+
+#+begin_tagline
+Tagged:  [[file:../tags/org.org][Org]] [[file:../tags/LaTeX.org][LaTeX]]
+#+end_tagline

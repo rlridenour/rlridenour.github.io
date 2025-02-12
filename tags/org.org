@@ -11,3 +11,4 @@
 - [[file:../posts/2024-07-04-beamer-article-and-org-mode.org][Beamer Article and Org Mode]]
 - [[file:../posts/24-12-30-tag-pages-org-mode-blog.org][Tag Pages in Org Mode Blog]]
 - [[file:../posts/25-01-25-attendance-sheets-org-mode.org][Attendance Sheets in Org Mode]]
+- [[file:../posts/25-02-12-duplicate-org-beamer-title-slides.org][Duplicate Org Beamer Title Slides]]

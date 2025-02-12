@@ -16,6 +16,13 @@ Deleting that fixed the problem. I guess it just automatically inserts a title s
 ,#+OPTIONS: num:t
 #+end_src
 
+Modifying my [[https://github.com/rlridenour/beamer-themes][Beamer theme]] also fixed the problem. Evidently, it's pretty simple to specify what should be done with the starred sections in this way:
+
+#+begin_src latex
+\AtBeginSection[<text for starred sections>]{<text for unstarred sections}
+#+end_src 
+
+
 #+begin_tagline
 Tagged:  [[file:../tags/org.org][Org]] [[file:../tags/LaTeX.org][LaTeX]]
 #+end_tagline

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Feb 12, 2025 04:34 -->
+<!-- Feb 12, 2025 05:49 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Duplicate Org Beamer Title Slides</title>
@@ -73,7 +73,17 @@ Deleting that fixed the problem. I guess it just automatically inserts a title s
 </pre>
 </div>
 
-<div class="tagline" id="org3ac7f2a">
+<p>
+Modifying my <a href="https://github.com/rlridenour/beamer-themes">Beamer theme</a> also fixed the problem. Evidently, it&rsquo;s pretty simple to specify what should be done with the starred sections in this way:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><span class="org-font-latex-sedate">\AtBeginSection</span>[&lt;text for starred sections&gt;]{&lt;text for unstarred sections}
+</pre>
+</div>
+
+
+<div class="tagline" id="orge9a16ea">
 <p>
 Tagged:  <a href="../tags/org.html">Org</a> <a href="../tags/LaTeX.html">LaTeX</a>
 </p>
@@ -83,7 +93,7 @@ Tagged:  <a href="../tags/org.html">Org</a> <a href="../tags/LaTeX.html">LaTeX</
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Feb 12, 2025 04:34.<br>
+  Last updated on Feb 12, 2025 05:49.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

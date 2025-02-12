@@ -294,6 +294,18 @@ h2.footnotes {
     padding-top: 1rem;
 }
 
+
+/* Outline elements for testing layout */
+/* * { */
+/*   outline: 2px solid red; */
+/* } */
+
+form {
+    max-width: 226px;
+    margin: auto;
+}
+
+
 .tagline {
     margin-top: 2rem;
     text-align: right;

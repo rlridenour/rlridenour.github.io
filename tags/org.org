@@ -6,9 +6,8 @@
 - [[file:../posts/2021-07-14-workflow-with-hugo-and-org-mode.org][Workflow with Hugo and Org Mode]]
 - [[file:../posts/2024-12-17-blogging-with-org-mode.org][Blogging with Org Mode]]
 - [[file:../posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.org][List Spacing in Org Mode with Enumitem]]
-
 - [[file:../posts/2023-12-31-converting-org-files-to-canvas-quizzes.org][Converting Org Files to Canvas Quizzes]]
 - [[file:../posts/2024-07-04-beamer-article-and-org-mode.org][Beamer Article and Org Mode]]
-- [[file:../posts/24-12-30-tag-pages-org-mode-blog.org][Tag Pages in Org Mode Blog]]
-- [[file:../posts/25-01-25-attendance-sheets-org-mode.org][Attendance Sheets in Org Mode]]
-- [[file:../posts/25-02-12-duplicate-org-beamer-title-slides.org][Duplicate Org Beamer Title Slides]]
+- [[file:~/sites/orgblog/posts/2024-12-30-tag-pages-org-mode-blog.org][Tag Pages in Org Mode Blog]]
+- [[file:../posts/2025-01-25-attendance-sheets-org-mode.org][Attendance Sheets in Org Mode]]
+- [[file:../posts/2025-02-12-duplicate-org-beamer-title-slides.org][Duplicate Org Beamer Title Slides]]

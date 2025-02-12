@@ -20,7 +20,6 @@
 - [[file:../posts/2023-02-05-new-hugo-functions.org][New Hugo Functions]]
 - [[file:../posts/2023-01-24-updating-the-site.org][Updating the Site]]
 - [[file:../posts/2021-07-26-latex-compilation-scripts.org][LaTeX Compilation Scripts]]
-
-- [[file:../posts/25-01-07-creating-rss-feed.org][Creating an RSS Feed]]
-- [[file:../posts/25-01-07-updating-time-stamp.org][Updating the Time Stamp]]
-- [[file:../posts/25-01-20-replicating-emacs-everywhere-with-keyboard-maestro.org][Replicating Emacs Everywhere with Keyboard Maestro]]
+- [[file:../posts/2025-01-07-creating-rss-feed.org][Creating an RSS Feed]]
+- [[file:../posts/2025-01-07-updating-time-stamp.org][Updating the Time Stamp]]
+- [[file:../posts/2025-01-20-replicating-emacs-everywhere-with-keyboard-maestro.org][Replicating Emacs Everywhere with Keyboard Maestro]]

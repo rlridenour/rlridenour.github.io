@@ -6,7 +6,7 @@
 <!-- Feb 12, 2025 04:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tagged: Teaching</title>
+<title>Duplicate Org Beamer Title Slides</title>
 <meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
@@ -50,23 +50,35 @@
 </div>
 </header>
 <main id="content" class="content">
-<h1 class="title">Tagged: Teaching</h1>
-<ul class="org-ul">
-<li><a href="../posts/2009-08-20-online-education-more-effective-than-classroom.html">Online education more effective than classroom?</a></li>
-<li><a href="../posts/2011-02-23-1895-eighth-grade-final-exam.html">1895 Eighth Grade Final Exam</a></li>
-<li><a href="../posts/2011-03-17-sleep-deprivation.html">Sleep Deprivation</a></li>
-<li><a href="../posts/2011-03-30-i-received-an-interesting-package-in-campus-mail.html">The Coconut</a></li>
-<li><a href="../posts/2011-11-30-using-keynote-in-class.html">Using Keynote in Class</a></li>
-<li><a href="../posts/2015-01-13-explain-everything.html">Explain Everything</a></li>
-<li><a href="../posts/2024-12-17-end-semester.html">End of the Semester</a></li>
-<li><a href="../posts/2010-05-05-this-is-a-song-by-a-hs-psychology-teacher-designed.html">Cognitive Biases Song</a></li>
-<li><a href="../posts/2010-09-08-did-i-miss-anything.html">Did I Miss Anything?</a></li>
-<li><a href="../posts/2008-10-24-academic-reference-software.html">Academic Reference Software</a></li>
+<h1 class="title">Duplicate Org Beamer Title Slides
+<br />
+<span class="subtitle">Feb 12, 2025 04:08</span>
+</h1>
+<p>
+I recently noticed two problems with my LaTeX Beamer lecture slides that I create using Org mode. First, I suddenly had duplicate title slides. My template began with this:
+</p>
 
-<li><a href="../posts/2023-12-31-converting-org-files-to-canvas-quizzes.html">Converting Org Files to Canvas Quizzes</a></li>
-<li><a href="../posts/2025-01-08-back-school.html">Back to School</a></li>
-<li><a href="../posts/2025-01-25-attendance-sheets-org-mode.html">Attendance Sheets in Org Mode</a></li>
-</ul>
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-level-3">*** </span>
+<span class="org-org-latex-and-related">\maketitle</span>
+</pre>
+</div>
+
+<p>
+Deleting that fixed the problem. I guess it just automatically inserts a title slide now. Second, my section and subsection slides weren&rsquo;t being created. Looking at the <code>*.tex</code> file showed that the sections were using the <code>section*</code> variant. Telling the org file to number the sections fixed the problem. Here&rsquo;s the line to use:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-meta-line">#+OPTIONS: num:t</span>
+</pre>
+</div>
+
+<div class="tagline" id="org3ac7f2a">
+<p>
+Tagged:  <a href="../tags/org.html">Org</a> <a href="../tags/LaTeX.html">LaTeX</a>
+</p>
+
+</div>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>

@@ -13,5 +13,5 @@
 - [[file:../posts/2008-10-24-academic-reference-software.org][Academic Reference Software]]
 
 - [[file:../posts/2023-12-31-converting-org-files-to-canvas-quizzes.org][Converting Org Files to Canvas Quizzes]]
-- [[file:../posts/25-01-08-back-school.org][Back to School]]
-- [[file:../posts/25-01-25-attendance-sheets-org-mode.org][Attendance Sheets in Org Mode]]
+- [[file:../posts/2025-01-08-back-school.org][Back to School]]
+- [[file:../posts/2025-01-25-attendance-sheets-org-mode.org][Attendance Sheets in Org Mode]]

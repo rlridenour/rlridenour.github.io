@@ -1,6 +1,6 @@
 #+TITLE: List Spacing in Org Mode with Enumitem
 #+draft: false
-#+filetags: org LaTeX
+#+filetags: org latex
 #+date: <2023-02-01 Wed>
 #+mathjax: 
 
@@ -27,5 +27,5 @@ This will put a space equal to the width of an upper-case "M" between each list 
 
 
 #+begin_tagline
-Tagged: [[file:../tags/org.org][Org]] [[file:../tags/LaTeX.org][LaTeX]]
+Tagged: [[File:../tags/org.org][Org]] [[File:../tags/LaTeX.org][Latex]]
 #+end_tagline

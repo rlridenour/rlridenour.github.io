@@ -1,5 +1,5 @@
 #+TITLE: LaTeX Compilation Scripts
-#+filetags: LaTeX emacs org
+#+filetags: latex emacs org
 #+date: <2022-06-09>
 #+mathjax: true
 
@@ -68,5 +68,5 @@ These functions first export the org file to LaTeX, then compile the correspondi
 
 
 #+begin_tagline
-Tagged: [[file:../tags/LaTeX.org][LaTeX]] [[file:../tags/emacs.org][Emacs]] [[file:../tags/org.org][Org]]
+Tagged: [[File:../tags/LaTeX.org][Latex]] [[File:../tags/emacs.org][Emacs]] [[file:../tags/org.org][Org]]
 #+end_tagline

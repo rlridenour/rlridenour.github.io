@@ -59,7 +59,7 @@ Here's the simple tcolorbox commands that go in the header:
 Simple enough, and only took four days....
 
 #+begin_tagline
-Tagged:  [[file:../tags/org.org][Org]] [[file:../tags/latex.org][LaTeX]]
+Tagged:  [[File:../tags/org.org][Org]] [[File:../tags/latex.org][Latex]]
 #+end_tagline
 
 

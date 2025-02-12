@@ -1,5 +1,5 @@
 #+TITLE: Arara and Latexmk
-#+filetags: LaTeX
+#+filetags: latex
 #+date: <2023-01-21 Sat>
 #+mathjax: false
 
@@ -99,5 +99,5 @@ Since the options that I want are in my latexmkrc file, there's nothing else I n
 
 
 #+begin_tagline
-Tagged: [[file:../tags/LaTeX.org][LaTeX]]
+Tagged: [[File:../tags/LaTeX.org][Latex]]
 #+end_tagline

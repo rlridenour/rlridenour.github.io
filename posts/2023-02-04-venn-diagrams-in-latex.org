@@ -1,6 +1,6 @@
 #+TITLE: Venn Diagrams in LaTeX
 #+draft: false
-#+filetags: LaTeX logic
+#+filetags: latex logic
 #+date: <2023-02-04 Sat>
 #+mathjax: 
 
@@ -114,5 +114,5 @@ Both have enough detail that I can remember what to change to make a particular 
 
 
 #+begin_tagline
-Tagged: [[file:../tags/LaTeX.org][LaTeX]] [[file:../tags/logic.org][Logic]]
+Tagged: [[File:../tags/LaTeX.org][Latex]] [[file:../tags/logic.org][Logic]]
 #+end_tagline

@@ -1,6 +1,6 @@
 #+TITLE: Duplicate Org Beamer Title Slides
 #+date: <2025-02-12 Wed 04:08>
-#+filetags:  org LaTeX
+#+filetags:  org latex
 #+setupfile: ../org-templates/post.org
 
 I recently noticed two problems with my LaTeX Beamer lecture slides that I create using Org mode. First, I suddenly had duplicate title slides. My template began with this:
@@ -24,5 +24,5 @@ Modifying my [[https://github.com/rlridenour/beamer-themes][Beamer theme]] also 
 
 
 #+begin_tagline
-Tagged:  [[file:../tags/org.org][Org]] [[file:../tags/LaTeX.org][LaTeX]]
+Tagged:  [[File:../tags/org.org][Org]] [[File:../tags/LaTeX.org][Latex]]
 #+end_tagline

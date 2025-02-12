@@ -4,7 +4,1077 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-02-12T05:50:01-06:00</updated>
+<updated>2025-02-12T06:11:26-06:00</updated>
+<entry>
+  <title>LaTeX-Skim Sync</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Nov 15, 2015 00:00</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">LaTeX-Skim Sync</h1>
+ <p class="subtitle" role="doc-subtitle">Nov 15, 2015 00:00</p>
+</header> <p>
+I recently started using John Wiegley’s [use-package]( <a href="https://github.com/jwiegley/use-package">https://github.com/jwiegley/use-package</a> ) for my Emacs init files. For Auctex, I used
+</p>
+
+
+ <pre class="example" id="org60d138d">
+(use-package tex
+    :ensure auctex)
+</pre>
+
+ <p>
+and everything worked except for sync with Skim on OS X.  <code>C-c v</code> would not launch the Skim, even though I was confident that the Skim was set to be the default viewer. Instead, no viewer would launch, and I’d see “View command: dvi2tty -q -w 132” in the minibuffer.
+</p>
+
+ <p>
+After seeing that some others had used a slightly different configuration, I changed mine to
+</p>
+
+
+ <pre class="example" id="org2d1ac02">
+(use-package tex-site
+    :ensure auctex)
+</pre>
+
+
+ <p>
+and everything started working fine. I still have no idea why, but it may help someone else.
+</p>
+
+
+ <div class="tagline" id="org80d3379">
+ <p>
+Tagged:  <a href="../tags/emacs.html">Emacs</a>  <a href="../tags/LaTeX.html">Latex</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2015-11-15-latexskim-sync.html"/>
+  <id>https://randyridenour.net/posts/2015-11-15-latexskim-sync.html</id>
+  <updated>2025-02-12T06:11:00-06:00</updated>
+</entry>
+<entry>
+  <title>Venn Diagrams with LaTeX and TikZ</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Apr 11, 2016 00:00</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">Venn Diagrams with LaTeX and TikZ</h1>
+ <p class="subtitle" role="doc-subtitle">Apr 11, 2016 00:00</p>
+</header> <p>
+I spent the weekend working on Venn diagrams in LaTeX using TikZ to use when teaching categorical logic. I thought it was a much better use of my time than mowing the lawn, and one never knows when a good Venn diagram will be needed.
+</p>
+ <section id="outline-container-org2f1aee1" class="outline-2"> <h2 id="org2f1aee1">The Initial Diagram</h2>
+ <div class="outline-text-2" id="text-org2f1aee1">
+ <p>
+First, add the following to the preamble:
+</p>
+
+
+ <pre class="example" id="org7b09e07">
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds}
+</pre>
+
+ <p>
+The next step is to define the three circles in the body of the document. This only needs to to be done once; they can be called repeatedly in the same document. I named them in a way that I could remember which was the subject term, middle term, and predicate term:
+</p>
+
+ <pre class="example" id="org0f541f9">
+\def\sub{(0,0) circle (1.5cm)}
+\def\mid{(-60:2cm) circle (1.5cm)}
+\def\pred{(0:2cm) circle (1.5cm)}
+</pre>
+
+
+ <p>
+Once the circles have been defined, they can be drawn and labeled. I prefer to use a heavier line than the default, that can be called as an option to  <code>tikzpicture</code>.
+</p>
+
+ <pre class="example" id="org19d08cd">
+\begin{tikzpicture}[thick]
+
+  \begin{scope}
+
+    % Draw the circles
+    \draw \sub;
+    \draw \pred;
+    \draw \mid;
+
+    % Label the circles
+    \draw (-2,-0) node {$S$};
+    \draw (1,-4) node {$M$};
+    \draw (4,0) node {$P$};
+
+  \end{scope}
+
+\end{tikzpicture}
+</pre>
+
+ <p>
+This produces the following:
+</p>
+
+
+
+ <div class="org-center">
+
+ <figure id="org8f1bed1"> <img src="../images/posts/venn-labels.png" alt="venn-labels.png" width="75%"></img></figure></div>
+</div>
+</section> <section id="outline-container-org8f2f6e4" class="outline-2"> <h2 id="org8f2f6e4">Shading</h2>
+ <div class="outline-text-2" id="text-org8f2f6e4">
+</div>
+ <div id="outline-container-org465fa62" class="outline-3">
+ <h3 id="org465fa62">Universal Negations</h3>
+ <div class="outline-text-3" id="text-org465fa62">
+ <p>
+Shading is simple with TikZ, and, in most cases, relatively intuitive. To shade an entire circle, use the “\fill” command. For example, “\fill ⊂” fills the entire subject circle. To fill the intersection of the subject and predicate circles, we need to tell TikZ to ignore everything that is outside the predicate circle, then fill the subject circle. This is done with the “\clip” command. This code shades the intersection of  <b>S</b> and  <b>P</b>:
+</p>
+
+ <pre class="example" id="orgff6a5b8">
+\begin{tikzpicture}[thick]
+  \begin{scope}
+    \begin{scope} %Shade intersection of S and P
+      \clip \pred;
+      \fill[gray] \sub;
+    \end{scope}
+
+    \draw \sub;
+    \draw \pred;
+    \draw \mid;
+
+    \draw (-2,-0) node {$S$};
+    \draw (1,-4) node {$M$};
+    \draw (4,0) node {$P$};
+  \end{scope}
+\end{tikzpicture}
+</pre>
+</div>
+</div>
+ <div id="outline-container-org77df694" class="outline-3">
+ <h3 id="org77df694">Universal Affirmations</h3>
+ <div class="outline-text-3" id="text-org77df694">
+ <p>
+Shading everything that is one circle, but not in another is a bit trickier. It involves using something called the “even odd rule” in TikZ. Since I don’t quite understand how the rule works, this involved a bit of trial-and-error on my part. If there is a more efficient way, then please leave a comment. This code shades the portion of the subject circle that is not in the predicate circle:
+</p>
+
+ <pre class="example" id="orga1f22d8">
+\begin{tikzpicture}[thick]
+  \begin{scope}[even odd rule]% Shade S without P
+    \clip \pred (-1.5,-1.5) rectangle (1.5,1.5);
+    \fill[gray] \sub;
+  \end{scope}
+
+  \draw \sub;
+  \draw \pred;
+  \draw \mid;
+
+  \draw (-2,-0) node {$S$};
+  \draw (1,-4) node {$M$};
+  \draw (4,0) node {$P$};
+\end{tikzpicture}
+</pre>
+
+
+ <p>
+To shade  <b>S</b> without  <b>M</b>:
+</p>
+
+ <pre class="example" id="org507feea">
+\begin{scope}[even odd rule]% Shade *S* without M
+  \clip \mid (-1.5,-1.5) rectangle (1.5,1.5);
+  \fill[gray] \sub;
+\end{scope}
+</pre>
+
+
+ <p>
+ <b>M</b> without  <b>S</b>:
+</p>
+
+ <pre class="example" id="orgf70983d">
+\begin{scope}[even odd rule]% Shade M without S
+  \clip \sub (-0.5,-3.3) rectangle (2.5,0);
+  \fill[gray] \mid;
+\end{scope}
+</pre>
+
+
+ <p>
+ <b>M</b> without  <b>P</b>:
+</p>
+
+ <pre class="example" id="org0219f74">
+\begin{scope}[even odd rule]% Shade M without P
+  \clip \pred (-0.5,-3.3) rectangle (2.5,0);
+  \fill[gray] \mid;
+\end{scope}
+</pre>
+
+ <p>
+ <b>P</b> without  <b>M</b>:
+</p>
+
+ <pre class="example" id="org490975f">
+\begin{scope}[even odd rule]% Shade P without M
+  \clip \mid (-0,-1.5) rectangle (3.5,1.5);
+  \fill[gray] \pred;
+\end{scope}
+</pre>
+
+
+ <p>
+Finally, to shade  <b>P</b> without  <b>S</b>:
+</p>
+
+ <pre class="example" id="orga7cb16e">
+\begin{scope}[even odd rule]% Shade P without S
+  \clip \sub (0,-1.5) rectangle (3.5,1.5);
+  \fill[gray] \pred;
+\end{scope}
+</pre>
+</div>
+</div>
+</section> <section id="outline-container-orgc17b7f2" class="outline-2"> <h2 id="orgc17b7f2">Particulars</h2>
+ <div class="outline-text-2" id="text-orgc17b7f2">
+ <p>
+ <b> <b>I</b></b> and  <b> <b>O</b></b> sentences require an ``x’’ to be placed in some region of the diagram. To do that, just draw a node at the desired location. Here are the locations of the seven sections in the diagram:
+</p>
+
+
+ <pre class="example" id="orgabd98cc">
+\draw (-0.5,0.3) node {1};
+\draw (1,0.3) node {2};
+\draw (2.5,0.3) node {3};
+\draw (0.2,-0.9) node {4};
+\draw (1,-0.6) node {5};
+\draw (1.8,-0.9) node {6};
+\draw (1,-2) node {7};
+</pre>
+
+
+ <div class="org-center">
+
+ <figure id="org5052ec7"> <img src="../images/posts/venn-sections.png" alt="venn-sections.png" width="75%"></img></figure></div>
+</div>
+</section> <section id="outline-container-org26f2983" class="outline-2"> <h2 id="org26f2983">Examples</h2>
+ <div class="outline-text-2" id="text-org26f2983">
+ <p>
+Here are some examples to show how full arguments are diagrammed.
+</p>
+</div>
+ <div id="outline-container-org3286b09" class="outline-3">
+ <h3 id="org3286b09">Celarent (EAE-1)</h3>
+ <div class="outline-text-3" id="text-org3286b09">
+ <p>
+Celarent is a classic first-figure argument that uses both a universal negation and a universal affirmation.
+</p>
+
+ <pre class="example" id="orgd5ce2a2">
+\begin{tikzpicture}[thick]
+
+\begin{scope}
+    \draw (-2,-0) node {$A$};
+    \draw (1,-4) node {$B$};
+    \draw (4,0) node {$C$};
+
+\begin{scope}[even odd rule]% Shade S without M
+	    \clip \mid (-1.5,-1.5) rectangle (1.5,1.5);
+	\fill[gray] \sub;
+	\end{scope}
+
+\begin{scope} %Shade intersection of M and P
+  \clip \pred;
+  \fill[gray] \mid;
+\end{scope}
+
+\draw \sub;
+\draw \pred;
+\draw \mid;
+\end{scope}
+
+\end{tikzpicture}
+</pre>
+
+ <p>
+This produces the following:
+</p>
+
+
+ <div class="org-center">
+
+ <figure id="org08de4ac"> <img src="../images/posts/venn-celarent.png" alt="venn-celarent.png" width="75%"></img></figure></div>
+</div>
+</div>
+ <div id="outline-container-org8dcc0e9" class="outline-3">
+ <h3 id="org8dcc0e9">Disamis (IAI-3)</h3>
+ <div class="outline-text-3" id="text-org8dcc0e9">
+ <p>
+Disamis is a good example of a universal affirmation with a particular affirmation.
+</p>
+
+
+ <div class="org-center">
+
+ <figure id="org553da40"> <img src="../images/posts/venn-disamis.png" alt="venn-disamis.png" width="75%"></img></figure></div>
+
+
+ <p>
+It was made with this code:
+</p>
+
+ <pre class="example" id="org1221db6">
+\begin{tikzpicture}[thick]
+
+  \begin{scope}
+    \draw (-2,-0) node {$A$};
+    \draw (1,-4) node {$B$};
+    \draw (4,0) node {$C$};
+
+    \begin{scope}[even odd rule]% Shade M without S
+      \clip \sub (-0.5,-3.3) rectangle (2.5,0);
+      \fill[gray] \mid;
+    \end{scope}
+
+    \draw (1,-.6) node {X};
+
+    \draw \sub;
+    \draw \pred;
+    \draw \mid;
+  \end{scope}
+
+\end{tikzpicture}
+
+  \caption{Disamis}
+  \label{fig:disamis}
+\end{figure}
+</pre>
+</div>
+</div>
+</section> <section id="outline-container-org8bf7c73" class="outline-2"> <h2 id="org8bf7c73">Scaling</h2>
+ <div class="outline-text-2" id="text-org8bf7c73">
+ <p>
+TikZ graphics can be scaled easily with an option to the tikzpicture environment. This doubles the size of the picture:
+</p>
+
+ <pre class="example" id="org5b2d959">
+\begin{tikzpicture}[thick,scale=2]
+</pre>
+
+ <p>
+This reduces the size by half:
+</p>
+
+ <pre class="example" id="org7aadef4">
+\begin{tikzpicture}[thick,scale=.5]
+</pre>
+
+ <p>
+Unfortunately, this won’t scale the text at the nodes, which will make the labels look ridiculously out of proportion. This can be fixed by adding an option to also scale the nodes. So, this produces a double-size image with proper labels:
+</p>
+
+ <pre class="example" id="orga1a1a72">
+\begin{tikzpicture}[thick,scale=2, every node/.style={transform shape}]
+</pre>
+
+
+ <div class="tagline" id="org0387c1f">
+ <p>
+Tagged:  <a href="../tags/LaTeX.html">Latex</a>  <a href="../tags/logic.html">Logic</a>
+</p>
+
+</div>
+</div>
+</section></main>]]></content>
+  <link href="https://randyridenour.net/posts/2016-04-11-venn-diagrams-with-latex-and-tikz.html"/>
+  <id>https://randyridenour.net/posts/2016-04-11-venn-diagrams-with-latex-and-tikz.html</id>
+  <updated>2025-02-12T06:11:00-06:00</updated>
+</entry>
+<entry>
+  <title>Truth Tables in LaTeX</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Feb 10, 2018 00:00</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">Truth Tables in LaTeX</h1>
+ <p class="subtitle" role="doc-subtitle">Feb 10, 2018 00:00</p>
+</header> <p>
+Typesetting truth tables has never been easy. LaTeX is the gold standard for displaying logic and mathematics, but tables are awkward to edit at best. Tables are much simpler in Microsoft Word, but displaying formulas is a horrible experience. <sup> <a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
+Here is my current workflow.
+</p>
+
+ <p>
+The text that I’m using this semester is  <a href="https://global.oup.com/ushe/product/introduction-to-formal-logic-with-philosophical-applications-9780199386482?cc=us&lang=en&">Introduction to Formal Logic with Philosophical Applications</a> by Russell Marcus. Instead of arrows and the ampersand, it uses the horseshoe, triple bar, and dot. So, I add the following lines to my LaTeX preamble to simplify entering the symbols. <sup> <a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup></p>
+
+
+ <div class="org-src-container">
+ <pre class="src src-latex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\newcommand</span></span>{ <span class="org-font-latex-sedate"> <span class="org-function-name">\lneg</span></span>}{ <span class="org-font-latex-sedate"> <span class="org-function-name">\mathord</span></span> <span class="org-function-name">{</span> <span class="org-font-latex-sedate"> <span class="org-function-name">\sim</span></span> <span class="org-function-name">}</span>}
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\renewcommand</span></span>{ <span class="org-font-latex-sedate"> <span class="org-function-name">\land</span></span>}{ <span class="org-font-latex-sedate"> <span class="org-function-name">\bullet</span></span>}
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\newcommand</span></span>{ <span class="org-font-latex-sedate"> <span class="org-function-name">\lif</span></span>}{ <span class="org-font-latex-sedate"> <span class="org-function-name">\supset</span></span>}
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\newcommand</span></span>{ <span class="org-font-latex-sedate"> <span class="org-function-name">\liff</span></span>}{ <span class="org-font-latex-sedate"> <span class="org-function-name">\equiv</span></span>}
+</pre>
+</div>
+
+
+ <p>
+Then, I enter the truth table in either Excel or Numbers. For example, this would be a simple one line table determining the truth value of a formula for a given valuation:
+</p>
+
+ <div class="org-center">
+
+ <figure id="orga8e12fa"> <img src="../images/posts/20180210-numbers-truth-table1.png" alt="20180210-numbers-truth-table1.png" width="100%"></img></figure></div>
+
+ <p>
+Copy the cells that you want included in the truth table. Go to  <a href="http://www.tablesgenerator.com">Tables Generator</a> and select “LaTeX Tables” from the top menu bar. Below the top menu bar is a drop-down menu bar. Click on “File” then “Paste table data…” and paste the table data. Table Generator will generate a nicely formatted LaTeX table; be sure to uncheck “Escape special TeX symbols” and select the option to remove all borders.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-latex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">table</span>}[]
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">tabular</span>}{cccccccc}
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\hline</span></span>
+P  <span class="org-font-latex-warning">&</span> Q  <span class="org-font-latex-warning">&</span> R  <span class="org-font-latex-warning">&</span> P  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate">\lif</span>  <span class="org-font-latex-warning">&</span> ( <span class="org-font-latex-sedate">\lneg</span> Q  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate">\land</span>  <span class="org-font-latex-warning">&</span> R)  <span class="org-font-latex-warning">\\</span>
+1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 0     <span class="org-font-latex-warning">&</span> 0         <span class="org-font-latex-warning">&</span> 0      <span class="org-font-latex-warning">&</span> 1   <span class="org-font-latex-warning">\\</span>
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">tabular</span>}
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">table</span>}
+</pre>
+</div>
+
+ <p>
+I delete the first and last line, leaving just the table data and the lines declaring the tabular environment: 
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-latex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">tabular</span>}{cccccccc}
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\hline</span></span>
+P  <span class="org-font-latex-warning">&</span> Q  <span class="org-font-latex-warning">&</span> R  <span class="org-font-latex-warning">&</span> P  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate">\lif</span>  <span class="org-font-latex-warning">&</span> ( <span class="org-font-latex-sedate">\lneg</span> Q  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate">\land</span>  <span class="org-font-latex-warning">&</span> R)  <span class="org-font-latex-warning">\\</span>
+1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 0     <span class="org-font-latex-warning">&</span> 0         <span class="org-font-latex-warning">&</span> 0      <span class="org-font-latex-warning">&</span> 1   <span class="org-font-latex-warning">\\</span>
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">tabular</span>}
+</pre>
+</div>
+
+
+ <p>
+At this point, typesetting will fail because the symbols need to be in math mode. So, I’ve found two options. The first is to put all the commands for the symbols in math mode: 
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-latex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">tabular</span>}{cccccccc}
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\hline</span></span>
+P  <span class="org-font-latex-warning">&</span> Q  <span class="org-font-latex-warning">&</span> R  <span class="org-font-latex-warning">&</span> P  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\(\lif\)</span></span>  <span class="org-font-latex-warning">&</span> ( <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\(\lneg\)</span></span> Q  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\(\land\)</span></span>  <span class="org-font-latex-warning">&</span> R)  <span class="org-font-latex-warning">\\</span>
+1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 0     <span class="org-font-latex-warning">&</span> 0         <span class="org-font-latex-warning">&</span> 0      <span class="org-font-latex-warning">&</span> 1   <span class="org-font-latex-warning">\\</span>
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">tabular</span>}
+</pre>
+</div>
+
+ <p>
+The second option is to change “tabular” to “array” and put the entire table into math mode:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-latex"> <span class="org-font-latex-math">\[</span>
+ <span class="org-font-latex-math">  </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\begin</span></span></span> <span class="org-font-latex-math">{</span> <span class="org-font-latex-math"> <span class="org-function-name">array</span></span> <span class="org-font-latex-math">}{cccccccc}</span>
+ <span class="org-font-latex-math">    </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\hline</span></span></span>
+ <span class="org-font-latex-math">    P </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> Q </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> R </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> P </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\lif</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> (</span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\lneg</span></span> <span class="org-font-latex-math"> Q </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\land</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> R) </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">\\</span></span>
+ <span class="org-font-latex-math">    1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0    </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0        </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0     </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1  </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">\\</span></span>
+ <span class="org-font-latex-math">    </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\end</span></span></span> <span class="org-font-latex-math">{</span> <span class="org-font-latex-math"> <span class="org-function-name">array</span></span> <span class="org-font-latex-math">}</span>
+ <span class="org-font-latex-math">  \]</span>
+</pre>
+</div>
+
+
+
+ <p>
+Arrays are centered on the page. If you would prefer them printed at the left margin, add “fleqn” to the document class options:  <code>\documentclass[fleqn]{article}</code>. Since the array is in math mode, the letters will be italicized. I use the newtxmath font package, and it has a “frenchmath” option that sets the math font to non-italic. Other math fonts may have a similar option. Finally, whichever option is used, we need to add two lines. Adding a vertical line character to the table or array formatting options will place a vertical line between the valuation section and the rest of the truth table. Adding the booktabs package to the preamble will allow us to separate the sentence letters from the rest of the truth table with a “|” and, if desired, add a border line under the first row of the table.. This gives us the final version, 
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-latex"> <span class="org-font-latex-math">\[</span>
+ <span class="org-font-latex-math">  </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\begin</span></span></span> <span class="org-font-latex-math">{</span> <span class="org-font-latex-math"> <span class="org-function-name">array</span></span> <span class="org-font-latex-math">}{cc|cccccc}</span>
+ <span class="org-font-latex-math">    </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\hline</span></span></span>
+ <span class="org-font-latex-math">    P </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> Q </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> R </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> P </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\lif</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> (</span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\lneg</span></span> <span class="org-font-latex-math"> Q </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\land</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> R) </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">\\</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\midrule</span></span>
+ <span class="org-font-latex-math">    1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0    </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0        </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0     </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1  </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">\\</span></span> <span class="org-font-latex-math"> </span>
+ <span class="org-font-latex-math">    </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\end</span></span></span> <span class="org-font-latex-math">{</span> <span class="org-font-latex-math"> <span class="org-function-name">array</span></span> <span class="org-font-latex-math">}</span>
+ <span class="org-font-latex-math">  \]</span>
+</pre>
+</div>
+
+ <p>
+which produces this: 
+</p>
+
+ <div class="org-center">
+
+ <figure id="org397b520"> <img src="../images/posts/20180210-truth-table.png" alt="20180210-truth-table.png" width="50%"></img></figure></div>
+
+
+ <div class="tagline" id="org34952cd">
+ <p>
+Tagged:  <a href="../tags/LaTeX.html">Latex</a>  <a href="../tags/logic.html">Logic</a>  <a href="../tags/teaching.html">Teaching</a>
+</p>
+
+</div>
+ <div id="footnotes">
+ <h2 class="footnotes">Footnotes</h2>
+ <div id="text-footnotes">
+
+ <div class="footdef"> <sup> <a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"> <p class="footpara">
+Apple’s Pages now allows users to  <a href="https://support.apple.com/en-us/HT207569">add formulas</a> with LaTeX. It’s looking like a good solution for those who like more traditional word processors.
+</p></div></div>
+
+ <div class="footdef"> <sup> <a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"> <p class="footpara">
+The AMS LaTeX packages already include a command called “∨” for entering the vee or wedge.
+</p></div></div>
+
+
+</div>
+</div></main>]]></content>
+  <link href="https://randyridenour.net/posts/2018-02-10-truth-tables-in-latex.html"/>
+  <id>https://randyridenour.net/posts/2018-02-10-truth-tables-in-latex.html</id>
+  <updated>2025-02-12T06:11:00-06:00</updated>
+</entry>
+<entry>
+  <title>LaTeX Compilation Scripts</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Jun 09, 2022 00:00</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">LaTeX Compilation Scripts</h1>
+ <p class="subtitle" role="doc-subtitle">Jun 09, 2022 00:00</p>
+</header> <p>
+I’m trying to automate LaTeX compilation from Emacs as much as I can. Here are the shell scripts and Emacs functions that I’m using.
+</p>
+ <section id="outline-container-orgfb45534" class="outline-2"> <h2 id="orgfb45534">Shell Scripts</h2>
+ <div class="outline-text-2" id="text-orgfb45534">
+ <p>
+Here are some very simple scripts for compiling LaTeX files with arara and the fish shell. The first, called “mkt” for “make TeX”, runs arara on the source file, then opens the resulting PDF.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-nil">function mkt 
+  arara $argv 
+  set output_file (string replace -r tex\$ pdf $argv) 
+  open -g $output_file 
+end
+</pre>
+</div>
+
+ <p>
+The second, called “mktc” for “make TeX continuously”, runs arara, opens the PDF, watches for changes, and runs arara whenever the file is saved.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-fish"> <span class="org-keyword">function</span>  <span class="org-function-name">mktc</span>
+   <span class="org-builtin">arara</span>  <span class="org-string">$</span> <span class="org-variable-name">argv</span>
+   <span class="org-keyword">set</span>  <span class="org-variable-name">output_file</span> ( <span class="org-builtin">string</span> replace -r tex <span class="org-negation-char">\</span>$ pdf  <span class="org-string">$</span> <span class="org-variable-name">argv</span>)
+   <span class="org-builtin">open</span> -g  <span class="org-string">$</span> <span class="org-variable-name">output_file</span>
+   <span class="org-builtin">fswatch</span> -o  <span class="org-string">$</span> <span class="org-variable-name">argv</span>  <span class="org-negation-char">|</span>  <span class="org-builtin">xargs</span> -n1 -I{} arara  <span class="org-string">$</span> <span class="org-variable-name">argv</span>
+ <span class="org-keyword">end</span>
+</pre>
+</div>
+</div>
+</section> <section id="outline-container-orgde48fbe" class="outline-2"> <h2 id="orgde48fbe">Emacs</h2>
+ <div class="outline-text-2" id="text-orgde48fbe">
+ <p>
+Here are some functions to use in Emacs to run the scripts.
+</p>
+</div>
+ <div id="outline-container-org2025d7c" class="outline-3">
+ <h3 id="org2025d7c">Auctex</h3>
+ <div class="outline-text-3" id="text-org2025d7c">
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">rlr/tex-mkt</span> ()
+   <span class="org-doc">"Compile with arara."</span>
+  ( <span class="org-keyword">interactive</span>)
+  (async-shell-command (concat  <span class="org-string">"mkt "</span> (buffer-file-name))))
+
+( <span class="org-keyword">defun</span>  <span class="org-function-name">rlr/tex-mktc</span> ()
+   <span class="org-doc">"Compile continuously with arara."</span>
+  ( <span class="org-keyword">interactive</span>)
+  (start-process-shell-command (concat  <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat  <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat  <span class="org-string">"mktc "</span> (buffer-file-name))))
+</pre>
+</div>
+
+ <p>
+The first compiles with an asynchronous shell command, so that you can immediately return to editing the file while arara runs. I decided to use  <code>start-process-shell-command</code> instead of  <code>async-shell-command</code> for  <code>mktc</code>, since  <code>mkt</code> runs once and stops, while  <code>mktc</code> keeps running in the background. When  <code>rlr/tex-mktc</code> is called, a process is started that has the same name as the file with “mktc-” prepended it to it. The process is shown in a buffer that has the same name. That way, several files can be compiled at the same time.
+</p>
+</div>
+</div>
+ <div id="outline-container-orgd0842d0" class="outline-3">
+ <h3 id="orgd0842d0">Org Mode</h3>
+ <div class="outline-text-3" id="text-orgd0842d0">
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp">
+( <span class="org-keyword">defun</span>  <span class="org-function-name">rlr/org-mkt</span> ()
+   <span class="org-doc">"Make PDF with Arara."</span>
+  ( <span class="org-keyword">interactive</span>)
+  (org-latex-export-to-latex)
+  (async-shell-command (concat  <span class="org-string">"mkt "</span> (file-name-sans-extension (buffer-file-name)) <span class="org-string">".tex"</span>)))
+
+( <span class="org-keyword">defun</span>  <span class="org-function-name">rlr/org-mktc</span> ()
+   <span class="org-doc">"Compile continuously with arara."</span>
+  ( <span class="org-keyword">interactive</span>)
+  (org-latex-export-to-latex)
+  (start-process-shell-command (concat  <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat  <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat  <span class="org-string">"mktc "</span> (file-name-sans-extension (buffer-file-name)) <span class="org-string">".tex"</span>)))
+</pre>
+</div>
+
+ <p>
+These functions first export the org file to LaTeX, then compile the corresponding TeX files. All in all, a morning’s worth of work to save a few keystrokes. I run them using  <a href="https://github.com/jerrypnz/major-mode-hydra.el">major mode hydras</a>.
+</p>
+
+
+ <div class="tagline" id="org6ebf88b">
+ <p>
+Tagged:  <a href="../tags/LaTeX.html">Latex</a>  <a href="../tags/emacs.html">Emacs</a>  <a href="../tags/org.html">Org</a>
+</p>
+
+</div>
+</div>
+</div>
+</section></main>]]></content>
+  <link href="https://randyridenour.net/posts/2021-07-26-latex-compilation-scripts.html"/>
+  <id>https://randyridenour.net/posts/2021-07-26-latex-compilation-scripts.html</id>
+  <updated>2025-02-12T06:11:00-06:00</updated>
+</entry>
+<entry>
+  <title>Arara and Latexmk</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Jan 21, 2023 00:00</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">Arara and Latexmk</h1>
+ <p class="subtitle" role="doc-subtitle">Jan 21, 2023 00:00</p>
+</header> <p>
+Compiling LaTeX documents can be a chore, especially if the document has a table of contents, bibliographic references, cross-references, or labels. Getting the final output an be up to a four-step process:
+</p>
+
+ <ol class="org-ol"> <li>Run pdflatex to to create the labels, table of contents, and undefined bibliographic references.</li>
+ <li>Run bibtex or biber to get the relevant bibliographic data from the bib files.</li>
+ <li>Run pdflatex to put that bibliographic data into the document</li>
+ <li>Run pdflatex again to fix any page numbers that need to change because of the new material.</li>
+</ol> <section id="outline-container-orgf102be7" class="outline-2"> <h2 id="orgf102be7">Latexmk</h2>
+ <div class="outline-text-2" id="text-orgf102be7">
+ <p>
+Using Latexmk is a great way to automate all of this. Latexmk will do all of these steps as needed, you just need to tell what engine to use (pdflatex, lualatex, xelatex) and whether to run Bibtex or Biber. A pdfLaTeX document named “sample.tex” containing bibliographic references would be compiled from the command line like this:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-shell">latexmk -pdflatex -bibtex sample.tex
+</pre>
+</div>
+
+ <p>
+There are many other options that can be used, making the command to compile even longer. Fortunately, these options can all be set in a latexmkrc file.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-shell"> <span class="org-comment-delimiter"># </span> <span class="org-comment">LaTeXmk configuration file</span>
+
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">Usage example</span>
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">latexmk file.tex</span>
+
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">Main command line options</span>
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">-pdflatex : compile with pdflatex</span>
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">-lualatex : compile with lualatex</span>
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">-pv       : run file previewer</span>
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">-pvc      : run file previewer and continually recompile on change</span>
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">-c        :</span>
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">-C        :clean up auxiliary and output files</span>
+
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">Use bibtex if a .bib file exists</span>
+$ <span class="org-variable-name">bibtex_use</span> = 1;
+
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">Define commands to compile with pdfsync support and nonstopmode</span>
+$ <span class="org-variable-name">pdflatex</span> =  <span class="org-string">'pdflatex -synctex=1 --interaction=nonstopmode %O %S'</span>;
+
+$ <span class="org-variable-name">lualatex</span> =  <span class="org-string">'lualatex -synctex=1 --interaction=nonstopmode %O %S'</span>;
+
+ <span class="org-comment-delimiter"># </span> <span class="org-comment">Also remove pdfsync files on clean</span>
+$ <span class="org-variable-name">clean_ext</span> =  <span class="org-string">'%R.synctex.gz'</span>;
+</pre>
+</div>
+
+ <p>
+If you always use the same engine to compile, then you can add a line like this to your latexmkrc:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-shell">$ <span class="org-variable-name">pdf_mode</span> = n
+</pre>
+</div>
+
+ <p>
+where n=1 for pdflatex, 4 for lualatex, and 5 for xelatex. The compile command then becomes simply
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-shell">latexmk sample.tex
+</pre>
+</div>
+
+ <p>
+Since I use Emacs, I could just add latexmk to the list of TeX commands and compile documents with a simple keystroke. The problem is that I don’t do the smart thing and use just one engine. I like to use pdflatex sometimes and lualatex for other documents. It would be nice if I could specify the compiling steps within the document.
+</p>
+</div>
+</section> <section id="outline-container-org24f4be0" class="outline-2"> <h2 id="org24f4be0">Arara</h2>
+ <div class="outline-text-2" id="text-org24f4be0">
+ <p>
+Here’s where Arara shines. Arara is another way to compile tex files. Unlike latexmk, arara does not do anything automatically. Running
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-shell">arara sample.tex
+</pre>
+</div>
+
+ <p>
+doesn’t do anything without some special instructions within the file. To compile the file with pdflatex, I would put this as the first line:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-nil">% arara: pdflatex: { interaction: nonstopmode, synctex: yes }
+</pre>
+</div>
+
+ <p>
+Then, running arara on the file would compile once with pdflatex. If I had a bibliography and wanted to use lualatex, I would put this at the top of the file:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-nil">% arara: lualatex: { interaction: nonstopmode, synctex: yes }
+% arara: biber
+% arara: lualatex: { interaction: nonstopmode, synctex: yes }
+% arara: lualatex: { interaction: nonstopmode, synctex: yes }
+</pre>
+</div>
+
+ <p>
+This would get all of the steps that I described above. So, I could compile any file with the same command, and have it compile exactly the way I wanted with the engine that I specified.
+</p>
+
+ <p>
+The problem (and I admit it’s a minor one) is that I lose the automation of latexmk. Latexmk does all of the steps automatically, and only  <i>if</i> they are needed. Arara does them all every time. Latexmk is smart, but not easily flexible. Arara is very flexible, but not very smart.
+</p>
+</div>
+</section> <section id="outline-container-org5143f40" class="outline-2"> <h2 id="org5143f40">Solution</h2>
+ <div class="outline-text-2" id="text-org5143f40">
+ <p>
+Fortunately, arara can be told to compile with latexmk, and the engine and any options can be specified in the file. This compiles with latexmk using pdflatex:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-nil">% arara: latexmk: { engine: pdflatex }
+</pre>
+</div>
+
+ <p>
+Since the options that I want are in my latexmkrc file, there’s nothing else I need to do. Changing “pdflatex” to “lualatex” would make it compile with lualatex instead as many times as necessary to produce the final document.
+</p>
+
+
+ <div class="tagline" id="org064a21b">
+ <p>
+Tagged:  <a href="../tags/LaTeX.html">Latex</a>
+</p>
+
+</div>
+</div>
+</section></main>]]></content>
+  <link href="https://randyridenour.net/posts/2023-01-21-arara-and-latexmk.html"/>
+  <id>https://randyridenour.net/posts/2023-01-21-arara-and-latexmk.html</id>
+  <updated>2025-02-12T06:11:00-06:00</updated>
+</entry>
+<entry>
+  <title>List Spacing in Org Mode with Enumitem</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Feb 01, 2023 00:00</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">List Spacing in Org Mode with Enumitem</h1>
+ <p class="subtitle" role="doc-subtitle">Feb 01, 2023 00:00</p>
+</header> <p>
+I like to use the LaTeX package enumitem to eliminate the spacing in lists. To do this globally, add the following to the Org mode headers:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <span class="org-org-meta-line">#+LaTeX_HEADER: \usepackage{enumitem}</span>
+ <span class="org-org-meta-line">#+LaTeX_HEADER: \setlist{nosep}</span>
+</pre>
+</div>
+
+ <p>
+If you also don’t want your lists to be indented, use 
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <span class="org-org-meta-line">#+LaTeX_HEADER: \setlist{nosep,wide}</span>
+</pre>
+</div>
+
+ <p>
+These global options can be overridden for individual lists by putting something like this immediately before the list begins:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <span class="org-org-meta-line">#+ATTR_LaTeX: :options [itemsep=1em]</span>
+</pre>
+</div>
+
+ <p>
+This will put a space equal to the width of an upper-case “M” between each list item. 
+</p>
+
+
+ <div class="tagline" id="org3d6d36c">
+ <p>
+Tagged:  <a href="../tags/org.html">Org</a>  <a href="../tags/LaTeX.html">Latex</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.html"/>
+  <id>https://randyridenour.net/posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.html</id>
+  <updated>2025-02-12T06:11:00-06:00</updated>
+</entry>
+<entry>
+  <title>Venn Diagrams in LaTeX</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Feb 04, 2023 00:00</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">Venn Diagrams in LaTeX</h1>
+ <p class="subtitle" role="doc-subtitle">Feb 04, 2023 00:00</p>
+</header> <p>
+I wrote a 2017 post describing how I code Venn diagrams in LaTeX with TikZ. Venn diagrams in categorical logic tend to be different from their standard uses in mathematics. There are a few LaTeX packages for Venn diagrams, but, for some reason, I didn’t think they could be used to produce the diagrams I needed for my critical thinking course. I should have looked at them a bit more carefully, it turns out that making the diagrams using the  <code>venndiagram</code>  <a href="https://mirror.math.princeton.edu/pub/CTAN/macros/LaTeX/contrib/venndiagram/venndiagram.pdf">package</a> is much easier than my method.
+</p>
+
+ <p>
+ <code>Venndiagram</code>, like my method, uses TikZ to make the diagram. The advantage, though, is that we don’t have to dig into the details of TikZ for everything, that is already done for us. For example, here is the code for the diagram for an A-sentence using my previous method.
+</p>
+
+
+ <div class="org-src-container">
+ <pre class="src src-LaTeX"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">tikzpicture</span>}[thick,scale=1, every node/.style={transform shape}]
+   <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">scope</span>}
+     <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">scope</span>}[even odd rule]
+       <span class="org-font-latex-sedate">\clip</span>  <span class="org-font-latex-sedate">\pred</span> (-1.5,-1.5) rectangle (1.5,1.5);
+       <span class="org-font-latex-sedate">\fill</span>[gray]  <span class="org-font-latex-sedate">\sub</span>;
+     <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">scope</span>}
+     <span class="org-font-latex-sedate">\draw</span> (-2,-0) node { <span class="org-font-latex-math">$A$</span>};
+     <span class="org-font-latex-sedate">\draw</span> (4,0) node { <span class="org-font-latex-math">$B$</span>};
+     <span class="org-font-latex-sedate">\draw</span>  <span class="org-font-latex-sedate">\sub</span>;
+     <span class="org-font-latex-sedate">\draw</span>  <span class="org-font-latex-sedate">\pred</span>;
+   <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">scope</span>}
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">tikzpicture</span>}
+</pre>
+</div>
+
+ <p>
+Here is the code for the  same diagram with the  <code>venndiagram</code> package.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-LaTeX"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">venndiagram2sets</span>}
+  [tikzoptions={scale=1,thick}, showframe=false]
+   <span class="org-font-latex-sedate">\fillANotB</span>
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">venndiagram2sets</span>}
+</pre>
+</div>
+
+ <p>
+It produces this:
+</p>
+
+
+ <figure id="orga371cea"> <img src="../images/posts/a-sentence.png" alt="a-sentence.png" width="400"></img> <figcaption> <span class="figure-number">Figure 1: </span>Venn diagram of an A-sentence in categorical logic.</figcaption></figure> <p>
+Here’s the code for Disamis (IAI-3):
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-LaTeX"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">venndiagram3sets</span>}
+  [
+  tikzoptions={scale=1,thick},
+  showframe=false,
+  labelOnlyB={x},
+  labelABC={x}
+  ]
+   <span class="org-font-latex-sedate">\fillCNotA</span>
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">venndiagram3sets</span>}
+</pre>
+</div>
+
+ <p>
+The resulting diagram looks like this:
+</p>
+
+
+ <figure id="org70d816f"> <img src="../images/posts/disamis.png" alt="disamis.png" width="400px"></img> <figcaption> <span class="figure-number">Figure 2: </span>Venn diagram of Disamis in categorical logic.</figcaption></figure> <p>
+There was no way that I could remember my all of the details of my original method, so I had an 84-line snippet that I inserted for each diagram. I would then comment and uncomment various lines to produce the diagram I needed.
+</p>
+
+ <p>
+Now, I just use this snippet for a 2-circle diagram:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-LaTeX"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">venndiagram2sets</span>}
+  [
+  tikzoptions={scale=1,thick},
+  showframe=false,
+  labelA=S,
+  labelB=P,
+  labelOnlyA={x},
+  labelAB={x}
+  ]
+   <span class="org-font-latex-sedate">\fillANotB</span>
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">venndiagram2sets</span>}
+</pre>
+</div>
+
+ <p>
+I use this for a 3-circle diagram:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-LaTeX"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">venndiagram3sets</span>}
+  [
+  tikzoptions={scale=1,thick},
+  showframe=false,
+  labelA=S,  <span class="org-comment">%label circle A with "S"</span>
+  labelB=P,  <span class="org-comment">%label circle B with "P"</span>
+  labelC=M,  <span class="org-comment">%label circle M with "M"</span>
+  labelOnlyA={x},  <span class="org-comment">%puts an "x" in the region belonging only to A</span>
+  labelOnlyBC={x},  <span class="org-comment">%puts an "x" in intersection of B and C.</span>
+  labelABC={x}  <span class="org-comment">%puts an "x" in the the intersection of A, B, and C.</span>
+  ]
+   <span class="org-font-latex-sedate">\fillANotB</span>  <span class="org-comment">%fills the region belonging only to B</span>
+   <span class="org-font-latex-sedate">\fillBCapC</span>  <span class="org-comment">%fills the intersection of B and C.</span>
+   <span class="org-comment">% To put an x on the lines, uncomment the following:</span>
+   <span class="org-comment">% </span> <span class="org-font-latex-sedate"> <span class="org-comment">\setpostvennhook</span></span> <span class="org-comment"> % places an "x" in other locations of the diagram.</span>
+   <span class="org-comment">% {</span>
+   <span class="org-comment">% </span> <span class="org-font-latex-sedate"> <span class="org-comment">\node</span></span> <span class="org-comment">[above = 1.6cm of labelC] {X};</span>
+   <span class="org-comment">% </span> <span class="org-font-latex-sedate"> <span class="org-comment">\node</span></span> <span class="org-comment">[above left = 1.4cm and .25cm of labelC, rotate=45] {X};</span>
+   <span class="org-comment">% }</span>
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">venndiagram3sets</span>}
+</pre>
+</div>
+
+ <p>
+Both have enough detail that I can remember what to change to make a particular diagram. I’ve added some extra comments to explain what everything does. I Include the  <code>scale=1</code> only so that I can remember what to do when I want to change the size of the diagram. The only tricky part is when I have to place an x on the border of a particular circle, that requires a little bit of TikZ fiddling, hence the commented lines at the end of the snippet.
+</p>
+
+
+
+
+
+
+
+
+ <div class="tagline" id="org55d7ad1">
+ <p>
+Tagged:  <a href="../tags/LaTeX.html">Latex</a>  <a href="../tags/logic.html">Logic</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2023-02-04-venn-diagrams-in-latex.html"/>
+  <id>https://randyridenour.net/posts/2023-02-04-venn-diagrams-in-latex.html</id>
+  <updated>2025-02-12T06:11:00-06:00</updated>
+</entry>
+<entry>
+  <title>Beamer Article and Org Mode</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Jul 04, 2024 00:00</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Beamer Article and Org Mode
+ <br></br> <span class="subtitle">Jul 04, 2024 00:00</span>
+</h1>
+ <p>
+I generate LaTeX Beamer lecture slides and handouts from a single Org mode data file. <sup> <a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> The handouts include the information on the slides plus some extra explanation. I like to draw a box around the slide information so that students can easily differentiate the slides from the notes. I have scripts that export the Org file, generate the LaTeX files, then create the PDF’s. Everything seemed to work well so far, or at least I hadn’t noticed anything that wasn’t working. I’m teaching a course this summer that covers the same material in one day that I usually cover in three days during a regular semester. Ordinarily, I structure the presentation using only sections and slides, but stitching three of them together required adding subsections to keep everything clear. Adding subsections shouldn’t have been a problem, it’s just a matter of changing one line in the Org header from
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <span class="org-org-meta-line">#+OPTIONS: H:3</span>
+</pre>
+</div>
+
+ <p>
+to
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <span class="org-org-meta-line">#+OPTIONS: H:2</span>
+</pre>
+</div>
+
+ <p>
+Unfortunately, this messed up the nice boxes around the slide material on the handouts. Suddenly, the boxes had completely disappeared. I didn’t understand why until I started looking at the LaTeX files. It turned out that I had been using tcolorbox to draw boxes around every block environment. Once I made the change, the slides were in a frame environment on the handouts, as they should have been. Easy fix, or so I thought — just change “block” to “frame” in the tcolorbox command. That brought the boxes back, but only around the slide titles, not around the slide contents.
+</p>
+
+ <p>
+After many completely unproductive Internet searches, I stumbled on the problem. Org Beamer exports a slide to this LaTeX code:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-tex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">frame</span>}[label]{Slide Title}
+  Slide contents
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">frame</span>}
+</pre>
+</div>
+
+ <p>
+This is fine for everything except my lecture handouts. I found that a small change to the LaTeX file completely fixed everything, though. All I needed to do was to change the frame environment to look like this:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-tex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">frame</span>}[label]
+   <span class="org-font-latex-sedate">\frametitle</span>{Slide Title}
+  Slide contents
+ <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">frame</span>}
+</pre>
+</div>
+
+ <p>
+Now, the problem was getting Org mode to export the subtree to look like that. After many, many more unproductive Internet searches, I learned that new Org exports could be made from pre-existing ones using org-export-define-derived-backend. Unfortunately, I couldn’t get it to work. Finally, it struck me that since I only needed to use frametitle for the handouts, a simple search and replace might be best. Adding this function to my compilation script worked:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-lisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">rlr/create-frametitle</span> ()
+   <span class="org-doc">"Convert title to frametitle."</span>
+  (interactive)
+  (goto-char 1)
+  ( <span class="org-keyword">while</span> ( <span class="org-keyword">ignore-errors</span>
+             (re-search-forward  <span class="org-string">"begin{frame}.*]"</span>))
+    (insert  <span class="org-string">"\n \\frametitle"</span>))
+  )
+</pre>
+</div>
+
+ <p>
+This finds a line containing “begin{frame}”, moves the point after the closing bracket of the label, inserts a new line then puts “\frametitle” before the slide title.
+</p>
+
+ <p>
+Here’s the simple tcolorbox commands that go in the header:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <span class="org-org-meta-line">#+LaTeX_HEADER: \usepackage{tcolorbox}</span>
+ <span class="org-org-meta-line">#+LaTeX_HEADER: \mode<article>{\setbeamertemplate{frame begin}{\begin{tcolorbox}[colback=white, colframe=gray,]} \setbeamertemplate{frame end}{\end{tcolorbox}}}</span>
+</pre>
+</div>
+
+ <p>
+Simple enough, and only took four days….
+</p>
+
+ <div class="tagline" id="org8ab10e9">
+ <p>
+Tagged:   <a href="../tags/org.html">Org</a>  <a href="../tags/latex.html">Latex</a>
+</p>
+
+</div>
+ <div id="footnotes">
+ <h2 class="footnotes">Footnotes</h2>
+ <div id="text-footnotes">
+
+ <div class="footdef"> <sup> <a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"> <p class="footpara">
+I sketched out the process I use in  <a href="2020-06-01-beamer-presentations-with-org-mode.html">this post</a> from 2020. I’ve changed a few things since then, but the basic strategy is the same.
+</p></div></div>
+
+
+</div>
+</div></main>]]></content>
+  <link href="https://randyridenour.net/posts/2024-07-04-beamer-article-and-org-mode.html"/>
+  <id>https://randyridenour.net/posts/2024-07-04-beamer-article-and-org-mode.html</id>
+  <updated>2025-02-12T06:11:00-06:00</updated>
+</entry>
 <entry>
   <title>Duplicate Org Beamer Title Slides</title>
   <author><name>Randy Ridenour</name></author>
@@ -41,16 +1111,16 @@ Modifying my  <a href="https://github.com/rlridenour/beamer-themes">Beamer theme
 </div>
 
 
- <div class="tagline" id="orge9a16ea">
+ <div class="tagline" id="org33e27b1">
  <p>
-Tagged:   <a href="../tags/org.html">Org</a>  <a href="../tags/LaTeX.html">LaTeX</a>
+Tagged:   <a href="../tags/org.html">Org</a>  <a href="../tags/LaTeX.html">Latex</a>
 </p>
 
 </div>
 </main>]]></content>
   <link href="https://randyridenour.net/posts/2025-02-12-duplicate-org-beamer-title-slides.html"/>
   <id>https://randyridenour.net/posts/2025-02-12-duplicate-org-beamer-title-slides.html</id>
-  <updated>2025-02-12T05:49:00-06:00</updated>
+  <updated>2025-02-12T06:11:00-06:00</updated>
 </entry>
 <entry>
   <title>Be Kind</title>
@@ -6048,341 +7118,6 @@ Tagged:  <a href="../tags/prayer.html">Prayer</a>  <a href="../tags/religion.htm
   <updated>2025-01-08T05:12:00-06:00</updated>
 </entry>
 <entry>
-  <title>Venn Diagrams with LaTeX and TikZ</title>
-  <author><name>Randy Ridenour</name></author>
-  <summary>Apr 11, 2016 00:00</summary>
-  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">Venn Diagrams with LaTeX and TikZ</h1>
- <p class="subtitle" role="doc-subtitle">Apr 11, 2016 00:00</p>
-</header> <p>
-I spent the weekend working on Venn diagrams in LaTeX using TikZ to use when teaching categorical logic. I thought it was a much better use of my time than mowing the lawn, and one never knows when a good Venn diagram will be needed.
-</p>
- <section id="outline-container-org807cf3b" class="outline-2"> <h2 id="org807cf3b">The Initial Diagram</h2>
- <div class="outline-text-2" id="text-org807cf3b">
- <p>
-First, add the following to the preamble:
-</p>
-
-
- <pre class="example" id="orgebc419f">
-\usepackage{tikz}
-\usetikzlibrary{shapes,backgrounds}
-</pre>
-
- <p>
-The next step is to define the three circles in the body of the document. This only needs to to be done once; they can be called repeatedly in the same document. I named them in a way that I could remember which was the subject term, middle term, and predicate term:
-</p>
-
- <pre class="example" id="orge240680">
-\def\sub{(0,0) circle (1.5cm)}
-\def\mid{(-60:2cm) circle (1.5cm)}
-\def\pred{(0:2cm) circle (1.5cm)}
-</pre>
-
-
- <p>
-Once the circles have been defined, they can be drawn and labeled. I prefer to use a heavier line than the default, that can be called as an option to  <code>tikzpicture</code>.
-</p>
-
- <pre class="example" id="orgd9c9a1e">
-\begin{tikzpicture}[thick]
-
-  \begin{scope}
-
-    % Draw the circles
-    \draw \sub;
-    \draw \pred;
-    \draw \mid;
-
-    % Label the circles
-    \draw (-2,-0) node {$S$};
-    \draw (1,-4) node {$M$};
-    \draw (4,0) node {$P$};
-
-  \end{scope}
-
-\end{tikzpicture}
-</pre>
-
- <p>
-This produces the following:
-</p>
-
-
-
- <div class="org-center">
-
- <figure id="orgd96e16b"> <img src="../images/posts/venn-labels.png" alt="venn-labels.png" width="75%"></img></figure></div>
-</div>
-</section> <section id="outline-container-orgc20e5cb" class="outline-2"> <h2 id="orgc20e5cb">Shading</h2>
- <div class="outline-text-2" id="text-orgc20e5cb">
-</div>
- <div id="outline-container-orgdd818f2" class="outline-3">
- <h3 id="orgdd818f2">Universal Negations</h3>
- <div class="outline-text-3" id="text-orgdd818f2">
- <p>
-Shading is simple with TikZ, and, in most cases, relatively intuitive. To shade an entire circle, use the “\fill” command. For example, “\fill ⊂” fills the entire subject circle. To fill the intersection of the subject and predicate circles, we need to tell TikZ to ignore everything that is outside the predicate circle, then fill the subject circle. This is done with the “\clip” command. This code shades the intersection of  <b>S</b> and  <b>P</b>:
-</p>
-
- <pre class="example" id="org8376af8">
-\begin{tikzpicture}[thick]
-  \begin{scope}
-    \begin{scope} %Shade intersection of S and P
-      \clip \pred;
-      \fill[gray] \sub;
-    \end{scope}
-
-    \draw \sub;
-    \draw \pred;
-    \draw \mid;
-
-    \draw (-2,-0) node {$S$};
-    \draw (1,-4) node {$M$};
-    \draw (4,0) node {$P$};
-  \end{scope}
-\end{tikzpicture}
-</pre>
-</div>
-</div>
- <div id="outline-container-orgfd49dc8" class="outline-3">
- <h3 id="orgfd49dc8">Universal Affirmations</h3>
- <div class="outline-text-3" id="text-orgfd49dc8">
- <p>
-Shading everything that is one circle, but not in another is a bit trickier. It involves using something called the “even odd rule” in TikZ. Since I don’t quite understand how the rule works, this involved a bit of trial-and-error on my part. If there is a more efficient way, then please leave a comment. This code shades the portion of the subject circle that is not in the predicate circle:
-</p>
-
- <pre class="example" id="org9746143">
-\begin{tikzpicture}[thick]
-  \begin{scope}[even odd rule]% Shade S without P
-    \clip \pred (-1.5,-1.5) rectangle (1.5,1.5);
-    \fill[gray] \sub;
-  \end{scope}
-
-  \draw \sub;
-  \draw \pred;
-  \draw \mid;
-
-  \draw (-2,-0) node {$S$};
-  \draw (1,-4) node {$M$};
-  \draw (4,0) node {$P$};
-\end{tikzpicture}
-</pre>
-
-
- <p>
-To shade  <b>S</b> without  <b>M</b>:
-</p>
-
- <pre class="example" id="org8c16fb3">
-\begin{scope}[even odd rule]% Shade *S* without M
-  \clip \mid (-1.5,-1.5) rectangle (1.5,1.5);
-  \fill[gray] \sub;
-\end{scope}
-</pre>
-
-
- <p>
- <b>M</b> without  <b>S</b>:
-</p>
-
- <pre class="example" id="org94eb5df">
-\begin{scope}[even odd rule]% Shade M without S
-  \clip \sub (-0.5,-3.3) rectangle (2.5,0);
-  \fill[gray] \mid;
-\end{scope}
-</pre>
-
-
- <p>
- <b>M</b> without  <b>P</b>:
-</p>
-
- <pre class="example" id="org5e4d5f8">
-\begin{scope}[even odd rule]% Shade M without P
-  \clip \pred (-0.5,-3.3) rectangle (2.5,0);
-  \fill[gray] \mid;
-\end{scope}
-</pre>
-
- <p>
- <b>P</b> without  <b>M</b>:
-</p>
-
- <pre class="example" id="org821675c">
-\begin{scope}[even odd rule]% Shade P without M
-  \clip \mid (-0,-1.5) rectangle (3.5,1.5);
-  \fill[gray] \pred;
-\end{scope}
-</pre>
-
-
- <p>
-Finally, to shade  <b>P</b> without  <b>S</b>:
-</p>
-
- <pre class="example" id="orga9e7473">
-\begin{scope}[even odd rule]% Shade P without S
-  \clip \sub (0,-1.5) rectangle (3.5,1.5);
-  \fill[gray] \pred;
-\end{scope}
-</pre>
-</div>
-</div>
-</section> <section id="outline-container-orgb963907" class="outline-2"> <h2 id="orgb963907">Particulars</h2>
- <div class="outline-text-2" id="text-orgb963907">
- <p>
- <b> <b>I</b></b> and  <b> <b>O</b></b> sentences require an ``x’’ to be placed in some region of the diagram. To do that, just draw a node at the desired location. Here are the locations of the seven sections in the diagram:
-</p>
-
-
- <pre class="example" id="orgfce0e67">
-\draw (-0.5,0.3) node {1};
-\draw (1,0.3) node {2};
-\draw (2.5,0.3) node {3};
-\draw (0.2,-0.9) node {4};
-\draw (1,-0.6) node {5};
-\draw (1.8,-0.9) node {6};
-\draw (1,-2) node {7};
-</pre>
-
-
- <div class="org-center">
-
- <figure id="orgb921b30"> <img src="../images/posts/venn-sections.png" alt="venn-sections.png" width="75%"></img></figure></div>
-</div>
-</section> <section id="outline-container-orgbe7be85" class="outline-2"> <h2 id="orgbe7be85">Examples</h2>
- <div class="outline-text-2" id="text-orgbe7be85">
- <p>
-Here are some examples to show how full arguments are diagrammed.
-</p>
-</div>
- <div id="outline-container-orgf334062" class="outline-3">
- <h3 id="orgf334062">Celarent (EAE-1)</h3>
- <div class="outline-text-3" id="text-orgf334062">
- <p>
-Celarent is a classic first-figure argument that uses both a universal negation and a universal affirmation.
-</p>
-
- <pre class="example" id="orgbd5750b">
-\begin{tikzpicture}[thick]
-
-\begin{scope}
-    \draw (-2,-0) node {$A$};
-    \draw (1,-4) node {$B$};
-    \draw (4,0) node {$C$};
-
-\begin{scope}[even odd rule]% Shade S without M
-	    \clip \mid (-1.5,-1.5) rectangle (1.5,1.5);
-	\fill[gray] \sub;
-	\end{scope}
-
-\begin{scope} %Shade intersection of M and P
-  \clip \pred;
-  \fill[gray] \mid;
-\end{scope}
-
-\draw \sub;
-\draw \pred;
-\draw \mid;
-\end{scope}
-
-\end{tikzpicture}
-</pre>
-
- <p>
-This produces the following:
-</p>
-
-
- <div class="org-center">
-
- <figure id="orge774f4d"> <img src="../images/posts/venn-celarent.png" alt="venn-celarent.png" width="75%"></img></figure></div>
-</div>
-</div>
- <div id="outline-container-orgffb6e23" class="outline-3">
- <h3 id="orgffb6e23">Disamis (IAI-3)</h3>
- <div class="outline-text-3" id="text-orgffb6e23">
- <p>
-Disamis is a good example of a universal affirmation with a particular affirmation.
-</p>
-
-
- <div class="org-center">
-
- <figure id="org28ba80b"> <img src="../images/posts/venn-disamis.png" alt="venn-disamis.png" width="75%"></img></figure></div>
-
-
- <p>
-It was made with this code:
-</p>
-
- <pre class="example" id="org2dcf910">
-\begin{tikzpicture}[thick]
-
-  \begin{scope}
-    \draw (-2,-0) node {$A$};
-    \draw (1,-4) node {$B$};
-    \draw (4,0) node {$C$};
-
-    \begin{scope}[even odd rule]% Shade M without S
-      \clip \sub (-0.5,-3.3) rectangle (2.5,0);
-      \fill[gray] \mid;
-    \end{scope}
-
-    \draw (1,-.6) node {X};
-
-    \draw \sub;
-    \draw \pred;
-    \draw \mid;
-  \end{scope}
-
-\end{tikzpicture}
-
-  \caption{Disamis}
-  \label{fig:disamis}
-\end{figure}
-</pre>
-</div>
-</div>
-</section> <section id="outline-container-orge21cce0" class="outline-2"> <h2 id="orge21cce0">Scaling</h2>
- <div class="outline-text-2" id="text-orge21cce0">
- <p>
-TikZ graphics can be scaled easily with an option to the tikzpicture environment. This doubles the size of the picture:
-</p>
-
- <pre class="example" id="orgc0443f9">
-\begin{tikzpicture}[thick,scale=2]
-</pre>
-
- <p>
-This reduces the size by half:
-</p>
-
- <pre class="example" id="org6f0383b">
-\begin{tikzpicture}[thick,scale=.5]
-</pre>
-
- <p>
-Unfortunately, this won’t scale the text at the nodes, which will make the labels look ridiculously out of proportion. This can be fixed by adding an option to also scale the nodes. So, this produces a double-size image with proper labels:
-</p>
-
- <pre class="example" id="orgbcdfa7e">
-\begin{tikzpicture}[thick,scale=2, every node/.style={transform shape}]
-</pre>
-
-
- <div class="tagline" id="org1f134b8">
- <p>
-Tagged:  <a href="../tags/LaTeX.html">LaTeX</a>  <a href="../tags/logic.html">Logic</a>
-</p>
-
-</div>
-</div>
-</section></main>]]></content>
-  <link href="https://randyridenour.net/posts/2016-04-11-venn-diagrams-with-latex-and-tikz.html"/>
-  <id>https://randyridenour.net/posts/2016-04-11-venn-diagrams-with-latex-and-tikz.html</id>
-  <updated>2025-01-08T05:12:00-06:00</updated>
-</entry>
-<entry>
   <title>Prayer for a Busy Week</title>
   <author><name>Randy Ridenour</name></author>
   <summary>Apr 24, 2016 00:00</summary>
@@ -8575,146 +9310,6 @@ Tagged:  <a href="../tags/misc.html">Misc</a>
   <updated>2025-01-08T05:12:00-06:00</updated>
 </entry>
 <entry>
-  <title>Truth Tables in LaTeX</title>
-  <author><name>Randy Ridenour</name></author>
-  <summary>Feb 10, 2018 00:00</summary>
-  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">Truth Tables in LaTeX</h1>
- <p class="subtitle" role="doc-subtitle">Feb 10, 2018 00:00</p>
-</header> <p>
-Typesetting truth tables has never been easy. LaTeX is the gold standard for displaying logic and mathematics, but tables are awkward to edit at best. Tables are much simpler in Microsoft Word, but displaying formulas is a horrible experience. <sup> <a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
-Here is my current workflow.
-</p>
-
- <p>
-The text that I’m using this semester is  <a href="https://global.oup.com/ushe/product/introduction-to-formal-logic-with-philosophical-applications-9780199386482?cc=us&lang=en&">Introduction to Formal Logic with Philosophical Applications</a> by Russell Marcus. Instead of arrows and the ampersand, it uses the horseshoe, triple bar, and dot. So, I add the following lines to my LaTeX preamble to simplify entering the symbols. <sup> <a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup></p>
-
-
- <div class="org-src-container">
- <pre class="src src-latex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\newcommand</span></span>{ <span class="org-font-latex-sedate"> <span class="org-function-name">\lneg</span></span>}{ <span class="org-font-latex-sedate"> <span class="org-function-name">\mathord</span></span> <span class="org-function-name">{</span> <span class="org-font-latex-sedate"> <span class="org-function-name">\sim</span></span> <span class="org-function-name">}</span>}
- <span class="org-font-latex-sedate"> <span class="org-keyword">\renewcommand</span></span>{ <span class="org-font-latex-sedate"> <span class="org-function-name">\land</span></span>}{ <span class="org-font-latex-sedate"> <span class="org-function-name">\bullet</span></span>}
- <span class="org-font-latex-sedate"> <span class="org-keyword">\newcommand</span></span>{ <span class="org-font-latex-sedate"> <span class="org-function-name">\lif</span></span>}{ <span class="org-font-latex-sedate"> <span class="org-function-name">\supset</span></span>}
- <span class="org-font-latex-sedate"> <span class="org-keyword">\newcommand</span></span>{ <span class="org-font-latex-sedate"> <span class="org-function-name">\liff</span></span>}{ <span class="org-font-latex-sedate"> <span class="org-function-name">\equiv</span></span>}
-</pre>
-</div>
-
-
- <p>
-Then, I enter the truth table in either Excel or Numbers. For example, this would be a simple one line table determining the truth value of a formula for a given valuation:
-</p>
-
- <div class="org-center">
-
- <figure id="org9915b3b"> <img src="../images/posts/20180210-numbers-truth-table1.png" alt="20180210-numbers-truth-table1.png" width="100%"></img></figure></div>
-
- <p>
-Copy the cells that you want included in the truth table. Go to  <a href="http://www.tablesgenerator.com">Tables Generator</a> and select “LaTeX Tables” from the top menu bar. Below the top menu bar is a drop-down menu bar. Click on “File” then “Paste table data…” and paste the table data. Table Generator will generate a nicely formatted LaTeX table; be sure to uncheck “Escape special TeX symbols” and select the option to remove all borders.
-</p>
-
- <div class="org-src-container">
- <pre class="src src-latex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">table</span>}[]
- <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">tabular</span>}{cccccccc}
- <span class="org-font-latex-sedate"> <span class="org-keyword">\hline</span></span>
-P  <span class="org-font-latex-warning">&</span> Q  <span class="org-font-latex-warning">&</span> R  <span class="org-font-latex-warning">&</span> P  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate">\lif</span>  <span class="org-font-latex-warning">&</span> ( <span class="org-font-latex-sedate">\lneg</span> Q  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate">\land</span>  <span class="org-font-latex-warning">&</span> R)  <span class="org-font-latex-warning">\\</span>
-1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 0     <span class="org-font-latex-warning">&</span> 0         <span class="org-font-latex-warning">&</span> 0      <span class="org-font-latex-warning">&</span> 1   <span class="org-font-latex-warning">\\</span>
- <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">tabular</span>}
- <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">table</span>}
-</pre>
-</div>
-
- <p>
-I delete the first and last line, leaving just the table data and the lines declaring the tabular environment: 
-</p>
-
- <div class="org-src-container">
- <pre class="src src-latex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">tabular</span>}{cccccccc}
- <span class="org-font-latex-sedate"> <span class="org-keyword">\hline</span></span>
-P  <span class="org-font-latex-warning">&</span> Q  <span class="org-font-latex-warning">&</span> R  <span class="org-font-latex-warning">&</span> P  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate">\lif</span>  <span class="org-font-latex-warning">&</span> ( <span class="org-font-latex-sedate">\lneg</span> Q  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate">\land</span>  <span class="org-font-latex-warning">&</span> R)  <span class="org-font-latex-warning">\\</span>
-1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 0     <span class="org-font-latex-warning">&</span> 0         <span class="org-font-latex-warning">&</span> 0      <span class="org-font-latex-warning">&</span> 1   <span class="org-font-latex-warning">\\</span>
- <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">tabular</span>}
-</pre>
-</div>
-
-
- <p>
-At this point, typesetting will fail because the symbols need to be in math mode. So, I’ve found two options. The first is to put all the commands for the symbols in math mode: 
-</p>
-
- <div class="org-src-container">
- <pre class="src src-latex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">tabular</span>}{cccccccc}
- <span class="org-font-latex-sedate"> <span class="org-keyword">\hline</span></span>
-P  <span class="org-font-latex-warning">&</span> Q  <span class="org-font-latex-warning">&</span> R  <span class="org-font-latex-warning">&</span> P  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\(\lif\)</span></span>  <span class="org-font-latex-warning">&</span> ( <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\(\lneg\)</span></span> Q  <span class="org-font-latex-warning">&</span>  <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\(\land\)</span></span>  <span class="org-font-latex-warning">&</span> R)  <span class="org-font-latex-warning">\\</span>
-1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 1  <span class="org-font-latex-warning">&</span> 0     <span class="org-font-latex-warning">&</span> 0         <span class="org-font-latex-warning">&</span> 0      <span class="org-font-latex-warning">&</span> 1   <span class="org-font-latex-warning">\\</span>
- <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">tabular</span>}
-</pre>
-</div>
-
- <p>
-The second option is to change “tabular” to “array” and put the entire table into math mode:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-latex"> <span class="org-font-latex-math">\[</span>
- <span class="org-font-latex-math">  </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\begin</span></span></span> <span class="org-font-latex-math">{</span> <span class="org-font-latex-math"> <span class="org-function-name">array</span></span> <span class="org-font-latex-math">}{cccccccc}</span>
- <span class="org-font-latex-math">    </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\hline</span></span></span>
- <span class="org-font-latex-math">    P </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> Q </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> R </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> P </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\lif</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> (</span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\lneg</span></span> <span class="org-font-latex-math"> Q </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\land</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> R) </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">\\</span></span>
- <span class="org-font-latex-math">    1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0    </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0        </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0     </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1  </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">\\</span></span>
- <span class="org-font-latex-math">    </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\end</span></span></span> <span class="org-font-latex-math">{</span> <span class="org-font-latex-math"> <span class="org-function-name">array</span></span> <span class="org-font-latex-math">}</span>
- <span class="org-font-latex-math">  \]</span>
-</pre>
-</div>
-
-
-
- <p>
-Arrays are centered on the page. If you would prefer them printed at the left margin, add “fleqn” to the document class options:  <code>\documentclass[fleqn]{article}</code>. Since the array is in math mode, the letters will be italicized. I use the newtxmath font package, and it has a “frenchmath” option that sets the math font to non-italic. Other math fonts may have a similar option. Finally, whichever option is used, we need to add two lines. Adding a vertical line character to the table or array formatting options will place a vertical line between the valuation section and the rest of the truth table. Adding the booktabs package to the preamble will allow us to separate the sentence letters from the rest of the truth table with a “|” and, if desired, add a border line under the first row of the table.. This gives us the final version, 
-</p>
-
- <div class="org-src-container">
- <pre class="src src-latex"> <span class="org-font-latex-math">\[</span>
- <span class="org-font-latex-math">  </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\begin</span></span></span> <span class="org-font-latex-math">{</span> <span class="org-font-latex-math"> <span class="org-function-name">array</span></span> <span class="org-font-latex-math">}{cc|cccccc}</span>
- <span class="org-font-latex-math">    </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\hline</span></span></span>
- <span class="org-font-latex-math">    P </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> Q </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> R </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> P </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\lif</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> (</span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\lneg</span></span> <span class="org-font-latex-math"> Q </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\land</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> R) </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">\\</span></span> <span class="org-font-latex-math"> </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math">\midrule</span></span>
- <span class="org-font-latex-math">    1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1 </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0    </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0        </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 0     </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">&</span></span> <span class="org-font-latex-math"> 1  </span> <span class="org-font-latex-math"> <span class="org-font-latex-warning">\\</span></span> <span class="org-font-latex-math"> </span>
- <span class="org-font-latex-math">    </span> <span class="org-font-latex-sedate"> <span class="org-font-latex-math"> <span class="org-keyword">\end</span></span></span> <span class="org-font-latex-math">{</span> <span class="org-font-latex-math"> <span class="org-function-name">array</span></span> <span class="org-font-latex-math">}</span>
- <span class="org-font-latex-math">  \]</span>
-</pre>
-</div>
-
- <p>
-which produces this: 
-</p>
-
- <div class="org-center">
-
- <figure id="org9e2e00d"> <img src="../images/posts/20180210-truth-table.png" alt="20180210-truth-table.png" width="50%"></img></figure></div>
-
-
- <div class="tagline" id="orgb401ec1">
- <p>
-Tagged:  <a href="../tags/LaTeX.html">LaTeX</a>  <a href="../tags/logic.html">Logic</a>  <a href="../tags/teaching.html">Teaching</a>
-</p>
-
-</div>
- <div id="footnotes">
- <h2 class="footnotes">Footnotes</h2>
- <div id="text-footnotes">
-
- <div class="footdef"> <sup> <a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"> <p class="footpara">
-Apple’s Pages now allows users to  <a href="https://support.apple.com/en-us/HT207569">add formulas</a> with LaTeX. It’s looking like a good solution for those who like more traditional word processors.
-</p></div></div>
-
- <div class="footdef"> <sup> <a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"> <p class="footpara">
-The AMS LaTeX packages already include a command called “∨” for entering the vee or wedge.
-</p></div></div>
-
-
-</div>
-</div></main>]]></content>
-  <link href="https://randyridenour.net/posts/2018-02-10-truth-tables-in-latex.html"/>
-  <id>https://randyridenour.net/posts/2018-02-10-truth-tables-in-latex.html</id>
-  <updated>2025-01-08T05:12:00-06:00</updated>
-</entry>
-<entry>
   <title>Benediction</title>
   <author><name>Randy Ridenour</name></author>
   <summary>Feb 19, 2018 00:00</summary>
@@ -10371,113 +10966,6 @@ Tagged:  <a href="../tags/philosophy.html">Philosophy</a>
 </section></main>]]></content>
   <link href="https://randyridenour.net/posts/2023-04-13-introduction-to-existentialism.html"/>
   <id>https://randyridenour.net/posts/2023-04-13-introduction-to-existentialism.html</id>
-  <updated>2025-01-08T05:12:00-06:00</updated>
-</entry>
-<entry>
-  <title>Beamer Article and Org Mode</title>
-  <author><name>Randy Ridenour</name></author>
-  <summary>Jul 04, 2024 00:00</summary>
-  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Beamer Article and Org Mode
- <br></br> <span class="subtitle">Jul 04, 2024 00:00</span>
-</h1>
- <p>
-I generate LaTeX Beamer lecture slides and handouts from a single Org mode data file. <sup> <a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> The handouts include the information on the slides plus some extra explanation. I like to draw a box around the slide information so that students can easily differentiate the slides from the notes. I have scripts that export the Org file, generate the LaTeX files, then create the PDF’s. Everything seemed to work well so far, or at least I hadn’t noticed anything that wasn’t working. I’m teaching a course this summer that covers the same material in one day that I usually cover in three days during a regular semester. Ordinarily, I structure the presentation using only sections and slides, but stitching three of them together required adding subsections to keep everything clear. Adding subsections shouldn’t have been a problem, it’s just a matter of changing one line in the Org header from
-</p>
-
- <div class="org-src-container">
- <pre class="src src-org"> <span class="org-org-meta-line">#+OPTIONS: H:3</span>
-</pre>
-</div>
-
- <p>
-to
-</p>
-
- <div class="org-src-container">
- <pre class="src src-org"> <span class="org-org-meta-line">#+OPTIONS: H:2</span>
-</pre>
-</div>
-
- <p>
-Unfortunately, this messed up the nice boxes around the slide material on the handouts. Suddenly, the boxes had completely disappeared. I didn’t understand why until I started looking at the LaTeX files. It turned out that I had been using tcolorbox to draw boxes around every block environment. Once I made the change, the slides were in a frame environment on the handouts, as they should have been. Easy fix, or so I thought — just change “block” to “frame” in the tcolorbox command. That brought the boxes back, but only around the slide titles, not around the slide contents.
-</p>
-
- <p>
-After many completely unproductive Internet searches, I stumbled on the problem. Org Beamer exports a slide to this LaTeX code:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-tex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">frame</span>}[label]{Slide Title}
-  Slide contents
- <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">frame</span>}
-</pre>
-</div>
-
- <p>
-This is fine for everything except my lecture handouts. I found that a small change to the LaTeX file completely fixed everything, though. All I needed to do was to change the frame environment to look like this:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-tex"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">frame</span>}[label]
-   <span class="org-font-latex-sedate">\frametitle</span>{Slide Title}
-  Slide contents
- <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">frame</span>}
-</pre>
-</div>
-
- <p>
-Now, the problem was getting Org mode to export the subtree to look like that. After many, many more unproductive Internet searches, I learned that new Org exports could be made from pre-existing ones using org-export-define-derived-backend. Unfortunately, I couldn’t get it to work. Finally, it struck me that since I only needed to use frametitle for the handouts, a simple search and replace might be best. Adding this function to my compilation script worked:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-lisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">rlr/create-frametitle</span> ()
-   <span class="org-doc">"Convert title to frametitle."</span>
-  (interactive)
-  (goto-char 1)
-  ( <span class="org-keyword">while</span> ( <span class="org-keyword">ignore-errors</span>
-             (re-search-forward  <span class="org-string">"begin{frame}.*]"</span>))
-    (insert  <span class="org-string">"\n \\frametitle"</span>))
-  )
-</pre>
-</div>
-
- <p>
-This finds a line containing “begin{frame}”, moves the point after the closing bracket of the label, inserts a new line then puts “\frametitle” before the slide title.
-</p>
-
- <p>
-Here’s the simple tcolorbox commands that go in the header:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-org"> <span class="org-org-meta-line">#+LaTeX_HEADER: \usepackage{tcolorbox}</span>
- <span class="org-org-meta-line">#+LaTeX_HEADER: \mode<article>{\setbeamertemplate{frame begin}{\begin{tcolorbox}[colback=white, colframe=gray,]} \setbeamertemplate{frame end}{\end{tcolorbox}}}</span>
-</pre>
-</div>
-
- <p>
-Simple enough, and only took four days….
-</p>
-
- <div class="tagline" id="org53f1436">
- <p>
-Tagged:   <a href="../tags/org.html">Org</a>  <a href="../tags/latex.html">LaTeX</a>
-</p>
-
-</div>
- <div id="footnotes">
- <h2 class="footnotes">Footnotes</h2>
- <div id="text-footnotes">
-
- <div class="footdef"> <sup> <a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"> <p class="footpara">
-I sketched out the process I use in  <a href="2020-06-01-beamer-presentations-with-org-mode.html">this post</a> from 2020. I’ve changed a few things since then, but the basic strategy is the same.
-</p></div></div>
-
-
-</div>
-</div></main>]]></content>
-  <link href="https://randyridenour.net/posts/2024-07-04-beamer-article-and-org-mode.html"/>
-  <id>https://randyridenour.net/posts/2024-07-04-beamer-article-and-org-mode.html</id>
   <updated>2025-01-08T05:12:00-06:00</updated>
 </entry>
 <entry>
@@ -18268,53 +18756,6 @@ Tagged:  <a href="../tags/prayer.html">Prayer</a>  <a href="../tags/religion.htm
   <updated>2025-01-08T05:11:00-06:00</updated>
 </entry>
 <entry>
-  <title>LaTeX-Skim Sync</title>
-  <author><name>Randy Ridenour</name></author>
-  <summary>Nov 15, 2015 00:00</summary>
-  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">LaTeX-Skim Sync</h1>
- <p class="subtitle" role="doc-subtitle">Nov 15, 2015 00:00</p>
-</header> <p>
-I recently started using John Wiegley’s [use-package]( <a href="https://github.com/jwiegley/use-package">https://github.com/jwiegley/use-package</a> ) for my Emacs init files. For Auctex, I used
-</p>
-
-
- <pre class="example" id="org6b4d77c">
-(use-package tex
-    :ensure auctex)
-</pre>
-
- <p>
-and everything worked except for sync with Skim on OS X.  <code>C-c v</code> would not launch the Skim, even though I was confident that the Skim was set to be the default viewer. Instead, no viewer would launch, and I’d see “View command: dvi2tty -q -w 132” in the minibuffer.
-</p>
-
- <p>
-After seeing that some others had used a slightly different configuration, I changed mine to
-</p>
-
-
- <pre class="example" id="org5ee3e6a">
-(use-package tex-site
-    :ensure auctex)
-</pre>
-
-
- <p>
-and everything started working fine. I still have no idea why, but it may help someone else.
-</p>
-
-
- <div class="tagline" id="org8698c54">
- <p>
-Tagged:  <a href="../tags/emacs.html">Emacs</a>  <a href="../tags/LaTeX.html">latex</a>
-</p>
-
-</div>
-</main>]]></content>
-  <link href="https://randyridenour.net/posts/2015-11-15-latexskim-sync.html"/>
-  <id>https://randyridenour.net/posts/2015-11-15-latexskim-sync.html</id>
-  <updated>2025-01-08T05:11:00-06:00</updated>
-</entry>
-<entry>
   <title>Prayer for My Pettiness</title>
   <author><name>Randy Ridenour</name></author>
   <summary>Nov 22, 2015 00:00</summary>
@@ -23879,108 +24320,6 @@ Tagged:  <a href="../tags/misc.html">Misc</a>
   <updated>2025-01-08T05:11:00-06:00</updated>
 </entry>
 <entry>
-  <title>LaTeX Compilation Scripts</title>
-  <author><name>Randy Ridenour</name></author>
-  <summary>Jun 09, 2022 00:00</summary>
-  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">LaTeX Compilation Scripts</h1>
- <p class="subtitle" role="doc-subtitle">Jun 09, 2022 00:00</p>
-</header> <p>
-I’m trying to automate LaTeX compilation from Emacs as much as I can. Here are the shell scripts and Emacs functions that I’m using.
-</p>
- <section id="outline-container-orgdef17e8" class="outline-2"> <h2 id="orgdef17e8">Shell Scripts</h2>
- <div class="outline-text-2" id="text-orgdef17e8">
- <p>
-Here are some very simple scripts for compiling LaTeX files with arara and the fish shell. The first, called “mkt” for “make TeX”, runs arara on the source file, then opens the resulting PDF.
-</p>
-
- <div class="org-src-container">
- <pre class="src src-nil">function mkt 
-  arara $argv 
-  set output_file (string replace -r tex\$ pdf $argv) 
-  open -g $output_file 
-end
-</pre>
-</div>
-
- <p>
-The second, called “mktc” for “make TeX continuously”, runs arara, opens the PDF, watches for changes, and runs arara whenever the file is saved.
-</p>
-
- <div class="org-src-container">
- <pre class="src src-fish"> <span class="org-keyword">function</span>  <span class="org-function-name">mktc</span>
-   <span class="org-builtin">arara</span>  <span class="org-string">$</span> <span class="org-variable-name">argv</span>
-   <span class="org-keyword">set</span>  <span class="org-variable-name">output_file</span> ( <span class="org-builtin">string</span> replace -r tex <span class="org-negation-char">\</span>$ pdf  <span class="org-string">$</span> <span class="org-variable-name">argv</span>)
-   <span class="org-builtin">open</span> -g  <span class="org-string">$</span> <span class="org-variable-name">output_file</span>
-   <span class="org-builtin">fswatch</span> -o  <span class="org-string">$</span> <span class="org-variable-name">argv</span>  <span class="org-negation-char">|</span>  <span class="org-builtin">xargs</span> -n1 -I{} arara  <span class="org-string">$</span> <span class="org-variable-name">argv</span>
- <span class="org-keyword">end</span>
-</pre>
-</div>
-</div>
-</section> <section id="outline-container-orgbfdb9fd" class="outline-2"> <h2 id="orgbfdb9fd">Emacs</h2>
- <div class="outline-text-2" id="text-orgbfdb9fd">
- <p>
-Here are some functions to use in Emacs to run the scripts.
-</p>
-</div>
- <div id="outline-container-org055b259" class="outline-3">
- <h3 id="org055b259">Auctex</h3>
- <div class="outline-text-3" id="text-org055b259">
- <div class="org-src-container">
- <pre class="src src-emacs-lisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">rlr/tex-mkt</span> ()
-   <span class="org-doc">"Compile with arara."</span>
-  ( <span class="org-keyword">interactive</span>)
-  (async-shell-command (concat  <span class="org-string">"mkt "</span> (buffer-file-name))))
-
-( <span class="org-keyword">defun</span>  <span class="org-function-name">rlr/tex-mktc</span> ()
-   <span class="org-doc">"Compile continuously with arara."</span>
-  ( <span class="org-keyword">interactive</span>)
-  (start-process-shell-command (concat  <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat  <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat  <span class="org-string">"mktc "</span> (buffer-file-name))))
-</pre>
-</div>
-
- <p>
-The first compiles with an asynchronous shell command, so that you can immediately return to editing the file while arara runs. I decided to use  <code>start-process-shell-command</code> instead of  <code>async-shell-command</code> for  <code>mktc</code>, since  <code>mkt</code> runs once and stops, while  <code>mktc</code> keeps running in the background. When  <code>rlr/tex-mktc</code> is called, a process is started that has the same name as the file with “mktc-” prepended it to it. The process is shown in a buffer that has the same name. That way, several files can be compiled at the same time.
-</p>
-</div>
-</div>
- <div id="outline-container-org36c1ce7" class="outline-3">
- <h3 id="org36c1ce7">Org Mode</h3>
- <div class="outline-text-3" id="text-org36c1ce7">
- <div class="org-src-container">
- <pre class="src src-emacs-lisp">
-( <span class="org-keyword">defun</span>  <span class="org-function-name">rlr/org-mkt</span> ()
-   <span class="org-doc">"Make PDF with Arara."</span>
-  ( <span class="org-keyword">interactive</span>)
-  (org-latex-export-to-latex)
-  (async-shell-command (concat  <span class="org-string">"mkt "</span> (file-name-sans-extension (buffer-file-name)) <span class="org-string">".tex"</span>)))
-
-( <span class="org-keyword">defun</span>  <span class="org-function-name">rlr/org-mktc</span> ()
-   <span class="org-doc">"Compile continuously with arara."</span>
-  ( <span class="org-keyword">interactive</span>)
-  (org-latex-export-to-latex)
-  (start-process-shell-command (concat  <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat  <span class="org-string">"mktc-"</span> (buffer-file-name)) (concat  <span class="org-string">"mktc "</span> (file-name-sans-extension (buffer-file-name)) <span class="org-string">".tex"</span>)))
-</pre>
-</div>
-
- <p>
-These functions first export the org file to LaTeX, then compile the corresponding TeX files. All in all, a morning’s worth of work to save a few keystrokes. I run them using  <a href="https://github.com/jerrypnz/major-mode-hydra.el">major mode hydras</a>.
-</p>
-
-
- <div class="tagline" id="orgceeafa8">
- <p>
-Tagged:  <a href="../tags/LaTeX.html">LaTeX</a>  <a href="../tags/emacs.html">Emacs</a>  <a href="../tags/org.html">Org</a>
-</p>
-
-</div>
-</div>
-</div>
-</section></main>]]></content>
-  <link href="https://randyridenour.net/posts/2021-07-26-latex-compilation-scripts.html"/>
-  <id>https://randyridenour.net/posts/2021-07-26-latex-compilation-scripts.html</id>
-  <updated>2025-01-08T05:11:00-06:00</updated>
-</entry>
-<entry>
   <title>Reformation Sunday</title>
   <author><name>Randy Ridenour</name></author>
   <summary>Oct 30, 2022 00:00</summary>
@@ -24022,152 +24361,6 @@ Tagged:  <a href="../tags/org.html">Org</a>
 </main>]]></content>
   <link href="https://randyridenour.net/posts/2022-11-13-sticking-with-hugo.html"/>
   <id>https://randyridenour.net/posts/2022-11-13-sticking-with-hugo.html</id>
-  <updated>2025-01-08T05:11:00-06:00</updated>
-</entry>
-<entry>
-  <title>Arara and Latexmk</title>
-  <author><name>Randy Ridenour</name></author>
-  <summary>Jan 21, 2023 00:00</summary>
-  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">Arara and Latexmk</h1>
- <p class="subtitle" role="doc-subtitle">Jan 21, 2023 00:00</p>
-</header> <p>
-Compiling LaTeX documents can be a chore, especially if the document has a table of contents, bibliographic references, cross-references, or labels. Getting the final output an be up to a four-step process:
-</p>
-
- <ol class="org-ol"> <li>Run pdflatex to to create the labels, table of contents, and undefined bibliographic references.</li>
- <li>Run bibtex or biber to get the relevant bibliographic data from the bib files.</li>
- <li>Run pdflatex to put that bibliographic data into the document</li>
- <li>Run pdflatex again to fix any page numbers that need to change because of the new material.</li>
-</ol> <section id="outline-container-org4aec3d5" class="outline-2"> <h2 id="org4aec3d5">Latexmk</h2>
- <div class="outline-text-2" id="text-org4aec3d5">
- <p>
-Using Latexmk is a great way to automate all of this. Latexmk will do all of these steps as needed, you just need to tell what engine to use (pdflatex, lualatex, xelatex) and whether to run Bibtex or Biber. A pdfLaTeX document named “sample.tex” containing bibliographic references would be compiled from the command line like this:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-shell">latexmk -pdflatex -bibtex sample.tex
-</pre>
-</div>
-
- <p>
-There are many other options that can be used, making the command to compile even longer. Fortunately, these options can all be set in a latexmkrc file.
-</p>
-
- <div class="org-src-container">
- <pre class="src src-shell"> <span class="org-comment-delimiter"># </span> <span class="org-comment">LaTeXmk configuration file</span>
-
- <span class="org-comment-delimiter"># </span> <span class="org-comment">Usage example</span>
- <span class="org-comment-delimiter"># </span> <span class="org-comment">latexmk file.tex</span>
-
- <span class="org-comment-delimiter"># </span> <span class="org-comment">Main command line options</span>
- <span class="org-comment-delimiter"># </span> <span class="org-comment">-pdflatex : compile with pdflatex</span>
- <span class="org-comment-delimiter"># </span> <span class="org-comment">-lualatex : compile with lualatex</span>
- <span class="org-comment-delimiter"># </span> <span class="org-comment">-pv       : run file previewer</span>
- <span class="org-comment-delimiter"># </span> <span class="org-comment">-pvc      : run file previewer and continually recompile on change</span>
- <span class="org-comment-delimiter"># </span> <span class="org-comment">-c        :</span>
- <span class="org-comment-delimiter"># </span> <span class="org-comment">-C        :clean up auxiliary and output files</span>
-
- <span class="org-comment-delimiter"># </span> <span class="org-comment">Use bibtex if a .bib file exists</span>
-$ <span class="org-variable-name">bibtex_use</span> = 1;
-
- <span class="org-comment-delimiter"># </span> <span class="org-comment">Define commands to compile with pdfsync support and nonstopmode</span>
-$ <span class="org-variable-name">pdflatex</span> =  <span class="org-string">'pdflatex -synctex=1 --interaction=nonstopmode %O %S'</span>;
-
-$ <span class="org-variable-name">lualatex</span> =  <span class="org-string">'lualatex -synctex=1 --interaction=nonstopmode %O %S'</span>;
-
- <span class="org-comment-delimiter"># </span> <span class="org-comment">Also remove pdfsync files on clean</span>
-$ <span class="org-variable-name">clean_ext</span> =  <span class="org-string">'%R.synctex.gz'</span>;
-</pre>
-</div>
-
- <p>
-If you always use the same engine to compile, then you can add a line like this to your latexmkrc:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-shell">$ <span class="org-variable-name">pdf_mode</span> = n
-</pre>
-</div>
-
- <p>
-where n=1 for pdflatex, 4 for lualatex, and 5 for xelatex. The compile command then becomes simply
-</p>
-
- <div class="org-src-container">
- <pre class="src src-shell">latexmk sample.tex
-</pre>
-</div>
-
- <p>
-Since I use Emacs, I could just add latexmk to the list of TeX commands and compile documents with a simple keystroke. The problem is that I don’t do the smart thing and use just one engine. I like to use pdflatex sometimes and lualatex for other documents. It would be nice if I could specify the compiling steps within the document.
-</p>
-</div>
-</section> <section id="outline-container-org6e729cd" class="outline-2"> <h2 id="org6e729cd">Arara</h2>
- <div class="outline-text-2" id="text-org6e729cd">
- <p>
-Here’s where Arara shines. Arara is another way to compile tex files. Unlike latexmk, arara does not do anything automatically. Running
-</p>
-
- <div class="org-src-container">
- <pre class="src src-shell">arara sample.tex
-</pre>
-</div>
-
- <p>
-doesn’t do anything without some special instructions within the file. To compile the file with pdflatex, I would put this as the first line:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-nil">% arara: pdflatex: { interaction: nonstopmode, synctex: yes }
-</pre>
-</div>
-
- <p>
-Then, running arara on the file would compile once with pdflatex. If I had a bibliography and wanted to use lualatex, I would put this at the top of the file:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-nil">% arara: lualatex: { interaction: nonstopmode, synctex: yes }
-% arara: biber
-% arara: lualatex: { interaction: nonstopmode, synctex: yes }
-% arara: lualatex: { interaction: nonstopmode, synctex: yes }
-</pre>
-</div>
-
- <p>
-This would get all of the steps that I described above. So, I could compile any file with the same command, and have it compile exactly the way I wanted with the engine that I specified.
-</p>
-
- <p>
-The problem (and I admit it’s a minor one) is that I lose the automation of latexmk. Latexmk does all of the steps automatically, and only  <i>if</i> they are needed. Arara does them all every time. Latexmk is smart, but not easily flexible. Arara is very flexible, but not very smart.
-</p>
-</div>
-</section> <section id="outline-container-orgfeb7cc5" class="outline-2"> <h2 id="orgfeb7cc5">Solution</h2>
- <div class="outline-text-2" id="text-orgfeb7cc5">
- <p>
-Fortunately, arara can be told to compile with latexmk, and the engine and any options can be specified in the file. This compiles with latexmk using pdflatex:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-nil">% arara: latexmk: { engine: pdflatex }
-</pre>
-</div>
-
- <p>
-Since the options that I want are in my latexmkrc file, there’s nothing else I need to do. Changing “pdflatex” to “lualatex” would make it compile with lualatex instead as many times as necessary to produce the final document.
-</p>
-
-
- <div class="tagline" id="org4780c12">
- <p>
-Tagged:  <a href="../tags/LaTeX.html">LaTeX</a>
-</p>
-
-</div>
-</div>
-</section></main>]]></content>
-  <link href="https://randyridenour.net/posts/2023-01-21-arara-and-latexmk.html"/>
-  <id>https://randyridenour.net/posts/2023-01-21-arara-and-latexmk.html</id>
   <updated>2025-01-08T05:11:00-06:00</updated>
 </entry>
 <entry>
@@ -24424,199 +24617,6 @@ Tagged:  <a href="../tags/emacs.html">Emacs</a>  <a href="../tags/org.html">Org<
 </section></main>]]></content>
   <link href="https://randyridenour.net/posts/2023-01-24-updating-the-site.html"/>
   <id>https://randyridenour.net/posts/2023-01-24-updating-the-site.html</id>
-  <updated>2025-01-08T05:11:00-06:00</updated>
-</entry>
-<entry>
-  <title>List Spacing in Org Mode with Enumitem</title>
-  <author><name>Randy Ridenour</name></author>
-  <summary>Feb 01, 2023 00:00</summary>
-  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">List Spacing in Org Mode with Enumitem</h1>
- <p class="subtitle" role="doc-subtitle">Feb 01, 2023 00:00</p>
-</header> <p>
-I like to use the LaTeX package enumitem to eliminate the spacing in lists. To do this globally, add the following to the Org mode headers:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-org"> <span class="org-org-meta-line">#+LaTeX_HEADER: \usepackage{enumitem}</span>
- <span class="org-org-meta-line">#+LaTeX_HEADER: \setlist{nosep}</span>
-</pre>
-</div>
-
- <p>
-If you also don’t want your lists to be indented, use 
-</p>
-
- <div class="org-src-container">
- <pre class="src src-org"> <span class="org-org-meta-line">#+LaTeX_HEADER: \setlist{nosep,wide}</span>
-</pre>
-</div>
-
- <p>
-These global options can be overridden for individual lists by putting something like this immediately before the list begins:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-org"> <span class="org-org-meta-line">#+ATTR_LaTeX: :options [itemsep=1em]</span>
-</pre>
-</div>
-
- <p>
-This will put a space equal to the width of an upper-case “M” between each list item. 
-</p>
-
-
- <div class="tagline" id="org5fa35e8">
- <p>
-Tagged:  <a href="../tags/org.html">Org</a>  <a href="../tags/LaTeX.html">LaTeX</a>
-</p>
-
-</div>
-</main>]]></content>
-  <link href="https://randyridenour.net/posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.html"/>
-  <id>https://randyridenour.net/posts/2023-02-01-list-spacing-in-org-mode-with-enumitem.html</id>
-  <updated>2025-01-08T05:11:00-06:00</updated>
-</entry>
-<entry>
-  <title>Venn Diagrams in LaTeX</title>
-  <author><name>Randy Ridenour</name></author>
-  <summary>Feb 04, 2023 00:00</summary>
-  <content type="html"><![CDATA[<main id="content" class="content"> <header> <h1 class="title">Venn Diagrams in LaTeX</h1>
- <p class="subtitle" role="doc-subtitle">Feb 04, 2023 00:00</p>
-</header> <p>
-I wrote a 2017 post describing how I code Venn diagrams in LaTeX with TikZ. Venn diagrams in categorical logic tend to be different from their standard uses in mathematics. There are a few LaTeX packages for Venn diagrams, but, for some reason, I didn’t think they could be used to produce the diagrams I needed for my critical thinking course. I should have looked at them a bit more carefully, it turns out that making the diagrams using the  <code>venndiagram</code>  <a href="https://mirror.math.princeton.edu/pub/CTAN/macros/LaTeX/contrib/venndiagram/venndiagram.pdf">package</a> is much easier than my method.
-</p>
-
- <p>
- <code>Venndiagram</code>, like my method, uses TikZ to make the diagram. The advantage, though, is that we don’t have to dig into the details of TikZ for everything, that is already done for us. For example, here is the code for the diagram for an A-sentence using my previous method.
-</p>
-
-
- <div class="org-src-container">
- <pre class="src src-LaTeX"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">tikzpicture</span>}[thick,scale=1, every node/.style={transform shape}]
-   <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">scope</span>}
-     <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">scope</span>}[even odd rule]
-       <span class="org-font-latex-sedate">\clip</span>  <span class="org-font-latex-sedate">\pred</span> (-1.5,-1.5) rectangle (1.5,1.5);
-       <span class="org-font-latex-sedate">\fill</span>[gray]  <span class="org-font-latex-sedate">\sub</span>;
-     <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">scope</span>}
-     <span class="org-font-latex-sedate">\draw</span> (-2,-0) node { <span class="org-font-latex-math">$A$</span>};
-     <span class="org-font-latex-sedate">\draw</span> (4,0) node { <span class="org-font-latex-math">$B$</span>};
-     <span class="org-font-latex-sedate">\draw</span>  <span class="org-font-latex-sedate">\sub</span>;
-     <span class="org-font-latex-sedate">\draw</span>  <span class="org-font-latex-sedate">\pred</span>;
-   <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">scope</span>}
- <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">tikzpicture</span>}
-</pre>
-</div>
-
- <p>
-Here is the code for the  same diagram with the  <code>venndiagram</code> package.
-</p>
-
- <div class="org-src-container">
- <pre class="src src-LaTeX"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">venndiagram2sets</span>}
-  [tikzoptions={scale=1,thick}, showframe=false]
-   <span class="org-font-latex-sedate">\fillANotB</span>
- <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">venndiagram2sets</span>}
-</pre>
-</div>
-
- <p>
-It produces this:
-</p>
-
-
- <figure id="orgce87ebe"> <img src="../images/posts/a-sentence.png" alt="a-sentence.png" width="400"></img> <figcaption> <span class="figure-number">Figure 1: </span>Venn diagram of an A-sentence in categorical logic.</figcaption></figure> <p>
-Here’s the code for Disamis (IAI-3):
-</p>
-
- <div class="org-src-container">
- <pre class="src src-LaTeX"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">venndiagram3sets</span>}
-  [
-  tikzoptions={scale=1,thick},
-  showframe=false,
-  labelOnlyB={x},
-  labelABC={x}
-  ]
-   <span class="org-font-latex-sedate">\fillCNotA</span>
- <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">venndiagram3sets</span>}
-</pre>
-</div>
-
- <p>
-The resulting diagram looks like this:
-</p>
-
-
- <figure id="org679c95a"> <img src="../images/posts/disamis.png" alt="disamis.png" width="400px"></img> <figcaption> <span class="figure-number">Figure 2: </span>Venn diagram of Disamis in categorical logic.</figcaption></figure> <p>
-There was no way that I could remember my all of the details of my original method, so I had an 84-line snippet that I inserted for each diagram. I would then comment and uncomment various lines to produce the diagram I needed.
-</p>
-
- <p>
-Now, I just use this snippet for a 2-circle diagram:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-LaTeX"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">venndiagram2sets</span>}
-  [
-  tikzoptions={scale=1,thick},
-  showframe=false,
-  labelA=S,
-  labelB=P,
-  labelOnlyA={x},
-  labelAB={x}
-  ]
-   <span class="org-font-latex-sedate">\fillANotB</span>
- <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">venndiagram2sets</span>}
-</pre>
-</div>
-
- <p>
-I use this for a 3-circle diagram:
-</p>
-
- <div class="org-src-container">
- <pre class="src src-LaTeX"> <span class="org-font-latex-sedate"> <span class="org-keyword">\begin</span></span>{ <span class="org-function-name">venndiagram3sets</span>}
-  [
-  tikzoptions={scale=1,thick},
-  showframe=false,
-  labelA=S,  <span class="org-comment">%label circle A with "S"</span>
-  labelB=P,  <span class="org-comment">%label circle B with "P"</span>
-  labelC=M,  <span class="org-comment">%label circle M with "M"</span>
-  labelOnlyA={x},  <span class="org-comment">%puts an "x" in the region belonging only to A</span>
-  labelOnlyBC={x},  <span class="org-comment">%puts an "x" in intersection of B and C.</span>
-  labelABC={x}  <span class="org-comment">%puts an "x" in the the intersection of A, B, and C.</span>
-  ]
-   <span class="org-font-latex-sedate">\fillANotB</span>  <span class="org-comment">%fills the region belonging only to B</span>
-   <span class="org-font-latex-sedate">\fillBCapC</span>  <span class="org-comment">%fills the intersection of B and C.</span>
-   <span class="org-comment">% To put an x on the lines, uncomment the following:</span>
-   <span class="org-comment">% </span> <span class="org-font-latex-sedate"> <span class="org-comment">\setpostvennhook</span></span> <span class="org-comment"> % places an "x" in other locations of the diagram.</span>
-   <span class="org-comment">% {</span>
-   <span class="org-comment">% </span> <span class="org-font-latex-sedate"> <span class="org-comment">\node</span></span> <span class="org-comment">[above = 1.6cm of labelC] {X};</span>
-   <span class="org-comment">% </span> <span class="org-font-latex-sedate"> <span class="org-comment">\node</span></span> <span class="org-comment">[above left = 1.4cm and .25cm of labelC, rotate=45] {X};</span>
-   <span class="org-comment">% }</span>
- <span class="org-font-latex-sedate"> <span class="org-keyword">\end</span></span>{ <span class="org-function-name">venndiagram3sets</span>}
-</pre>
-</div>
-
- <p>
-Both have enough detail that I can remember what to change to make a particular diagram. I’ve added some extra comments to explain what everything does. I Include the  <code>scale=1</code> only so that I can remember what to do when I want to change the size of the diagram. The only tricky part is when I have to place an x on the border of a particular circle, that requires a little bit of TikZ fiddling, hence the commented lines at the end of the snippet.
-</p>
-
-
-
-
-
-
-
-
- <div class="tagline" id="org9a31f01">
- <p>
-Tagged:  <a href="../tags/LaTeX.html">LaTeX</a>  <a href="../tags/logic.html">Logic</a>
-</p>
-
-</div>
-</main>]]></content>
-  <link href="https://randyridenour.net/posts/2023-02-04-venn-diagrams-in-latex.html"/>
-  <id>https://randyridenour.net/posts/2023-02-04-venn-diagrams-in-latex.html</id>
   <updated>2025-01-08T05:11:00-06:00</updated>
 </entry>
 <entry>

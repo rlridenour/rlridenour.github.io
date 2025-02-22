@@ -5,7 +5,7 @@
 
 My logic textbook this semester uses a dot for "and" instead of an ampersand. Unfortunately, the center dot in LaTeX is too small to be easily legible. I managed to increase the size of the LaTeX cdot by using the bm package and renewing the command to  =\bm{\cdot}=. In some cases, such as social media and the web, it's easier to use a unicode symbol. Here are the obvious options:
 
-- Dot Operator () :: (A ⋅ B)
+- Dot Operator :: (A ⋅ B)
 - Bullet Operator :: (A ∙ B)
 - Bullet :: (A • B)
 

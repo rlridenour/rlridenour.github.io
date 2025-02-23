@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-02-23-hope-has-two-daughters.org][Hope Has Two Daughters]]
 - [[file:2025-02-12-duplicate-org-beamer-title-slides.org][Duplicate Org Beamer Title Slides]]
 - [[file:2025-02-10-preachereternal-obligation.org][The Preacher's Eternal Obligation]]
 - [[file:2025-01-26-who-ignore.org][Who We Ignore]]

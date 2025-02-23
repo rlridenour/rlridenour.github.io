@@ -1,0 +1,18 @@
+#+TITLE: Hope Has Two Daughters
+#+date: <2025-02-23 Sun 05:14>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+Hope has two beautiful daughters; their names are Anger and Courage. Anger at the way things are, and Courage to see that they do not remain as they are.
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+Unknown
+
+This is often attributed to Augustine, but I think that's unlikely to be true, since no one apparently knows where in the Augustinian corpus it is found.
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

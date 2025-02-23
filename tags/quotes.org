@@ -90,3 +90,5 @@
 - [[file:~/sites/orgblog/posts/2024-12-30-kind.org][Be Kind]]
 - [[file:~/sites/orgblog/posts/2025-01-26-who-ignore.org][Who We Ignore]]
 - [[file:~/sites/orgblog/posts/2025-02-10-preachereternal-obligation.org][The Preacher's Eternal Obligation]]
+
+- [[file:../posts/2025-02-23-hope-has-two-daughters.org][Hope Has Two Daughters]]

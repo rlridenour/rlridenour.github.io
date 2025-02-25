@@ -1,0 +1,12 @@
+#+TITLE: Unlocking File: Invalid Argument Warning
+#+date: <2025-02-25 Tue 07:48>
+#+filetags: 
+#+setupfile: ../org-templates/post.org
+
+Unlocking file: Invalid argument
+
+The solution was to delete the file with the #.
+
+#+begin_tagline
+Tagged: 
+#+end_tagline

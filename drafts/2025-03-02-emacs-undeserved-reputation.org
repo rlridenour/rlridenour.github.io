@@ -1,0 +1,20 @@
+#+TITLE: Emacs' Undeserved Reputation
+#+date: <2025-03-02 Sun 18:19>
+#+filetags: 
+#+setupfile: ../org-templates/post.org
+
+In a post titled "[[https://irreal.org/blog/?p=12813][Is Emacs Hard to Configure]]" on his blog Irreal, JCS  discusses the oft-heard complaint that Emacs is difficult to configure. He objects, rightly so in my opinion, saying that many non-programmers also use Emacs. The post on Irreal was prompted by [[https://www.reddit.com/r/emacs/comments/1ixfhja/my_emacs_config/][this discussion]] on Reddit. User precompute claimed that Emacs is not hard to configure, /so long as you understand Elisp/. Several responded that the need to understand Elisp is exactly the problem. I am one of those non-programmers who use Emacs, and somehow even I manage to use it to do my work.
+
+I admit that I wouldn't have been able to do some of the more complex things in my config file without the help of the many generous people in the Emacs community who constantly share their knowledge with others. This means that for any configuration problem you might have, it's very likely that someone has already explained in detail how to solve it. It probably is easier to set the font in other text editors; in VSCode, for example, open the settings, select the font menu, and type in the font family in one text field and the font size in another. That is admittedly simpler than what I have in my Emacs config, but a quick search for "Emacs set font" reveals pages and pages of results, each explaining how it's done. That means a new user can learn how to set the font in nearly the same time as it takes to do it in any other editor.
+
+I admit that my claiming that Emacs being only slightly more difficult to configure than other text editors does not amount to a good case that someone should consider using Emacs. The power of Emacs, in my opinion, is that you can, with a little Elisp, make it do nearly /anything/ that you want to do with text. 
+
+
+
+
+
+
+
+#+begin_tagline
+Tagged: 
+#+end_tagline

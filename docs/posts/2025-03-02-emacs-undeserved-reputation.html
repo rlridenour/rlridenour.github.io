@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Mar 04, 2025 18:48 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs' Undeserved Reputation</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/atom.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Emacs&rsquo; Undeserved Reputation
+<br />
+<span class="subtitle">Mar 02, 2025 18:19</span>
+</h1>
+<p>
+In a post titled &ldquo;<a href="https://irreal.org/blog/?p=12813">Is Emacs Hard to Configure</a>&rdquo; on his blog Irreal, JCS  discusses the oft-heard complaint that Emacs is difficult to configure. He objects, rightly so in my opinion, saying that many non-programmers also use Emacs. The post on Irreal was prompted by <a href="https://www.reddit.com/r/emacs/comments/1ixfhja/my_emacs_config/">this discussion</a> on Reddit. User precompute claimed that Emacs is not hard to configure, <i>so long as you understand Elisp</i>. Several responded that the need to understand Elisp is exactly the problem. I am one of those non-programmers who use Emacs, and somehow even I manage to use it to do my work.
+</p>
+
+<p>
+I admit that I wouldn&rsquo;t have been able to do some of the more complex things in my config file without the help of the many generous people in the Emacs community who constantly share their knowledge with others. This means that for any configuration problem you might have, it&rsquo;s very likely that someone has already explained in detail how to solve it. It probably is easier to set the font in other text editors; in VSCode, for example, open the settings, select the font menu, and type in the font family in one text field and the font size in another. That is admittedly simpler than what I have in my Emacs config, but a quick search for &ldquo;Emacs set font&rdquo; reveals pages and pages of results, each explaining how it&rsquo;s done. That means a new user can learn how to set the font in nearly the same time as it takes to do it in any other editor. 
+</p>
+
+<p>
+I admit that my claiming that Emacs being only slightly more difficult to configure than other text editors does not amount to a good case that someone should consider using Emacs. The power of Emacs, in my opinion, is that you can, with a little Elisp, make it do nearly <i>anything</i> that you want to do with text. How much Elisp? The answer is very little, actually. Whenever I find myself repeatedly using the same series of commands, I create a command that does the same thing with a single command. This only requires learning to write simple functions. For a very simple example, I often would delete a window, then balance the remaining windows in the frame. This is just two commands, but there&rsquo;s no reason why I have to execute both myself. I can simply string them together into a custom command like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">delete-window-balance</span> ()
+    <span class="org-doc">"Delete window and rebalance the remaining ones."</span>
+    (<span class="org-keyword">interactive</span>)
+    (delete-window)
+    (balance-windows))
+</pre>
+</div>
+
+<p>
+I have other examples that are more complex, but they&rsquo;re still just instances of taking ordinary Emacs commands and combining into a workflow that meets the needs of the particular user. This is ridiculously simple in Emacs, but I suspect it would be much more difficult in another editor.
+</p>
+
+<div class="tagline" id="org208be47">
+<p>
+Tagged:  <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Mar 04, 2025 18:48.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

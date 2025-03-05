@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-03-02-emacs-undeserved-reputation.org][Emacs' Undeserved Reputation]]
 - [[file:2025-02-23-hope-has-two-daughters.org][Hope Has Two Daughters]]
 - [[file:2025-02-12-duplicate-org-beamer-title-slides.org][Duplicate Org Beamer Title Slides]]
 - [[file:2025-02-10-preachereternal-obligation.org][The Preacher's Eternal Obligation]]

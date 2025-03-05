@@ -4,7 +4,50 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-02-23T05:22:28-06:00</updated>
+<updated>2025-03-04T18:49:06-06:00</updated>
+<entry>
+  <title>Emacs&apos; Undeserved Reputation</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Mar 02, 2025 18:19</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Emacs’ Undeserved Reputation
+ <br></br> <span class="subtitle">Mar 02, 2025 18:19</span>
+</h1>
+ <p>
+In a post titled “ <a href="https://irreal.org/blog/?p=12813">Is Emacs Hard to Configure</a>” on his blog Irreal, JCS  discusses the oft-heard complaint that Emacs is difficult to configure. He objects, rightly so in my opinion, saying that many non-programmers also use Emacs. The post on Irreal was prompted by  <a href="https://www.reddit.com/r/emacs/comments/1ixfhja/my_emacs_config/">this discussion</a> on Reddit. User precompute claimed that Emacs is not hard to configure,  <i>so long as you understand Elisp</i>. Several responded that the need to understand Elisp is exactly the problem. I am one of those non-programmers who use Emacs, and somehow even I manage to use it to do my work.
+</p>
+
+ <p>
+I admit that I wouldn’t have been able to do some of the more complex things in my config file without the help of the many generous people in the Emacs community who constantly share their knowledge with others. This means that for any configuration problem you might have, it’s very likely that someone has already explained in detail how to solve it. It probably is easier to set the font in other text editors; in VSCode, for example, open the settings, select the font menu, and type in the font family in one text field and the font size in another. That is admittedly simpler than what I have in my Emacs config, but a quick search for “Emacs set font” reveals pages and pages of results, each explaining how it’s done. That means a new user can learn how to set the font in nearly the same time as it takes to do it in any other editor. 
+</p>
+
+ <p>
+I admit that my claiming that Emacs being only slightly more difficult to configure than other text editors does not amount to a good case that someone should consider using Emacs. The power of Emacs, in my opinion, is that you can, with a little Elisp, make it do nearly  <i>anything</i> that you want to do with text. How much Elisp? The answer is very little, actually. Whenever I find myself repeatedly using the same series of commands, I create a command that does the same thing with a single command. This only requires learning to write simple functions. For a very simple example, I often would delete a window, then balance the remaining windows in the frame. This is just two commands, but there’s no reason why I have to execute both myself. I can simply string them together into a custom command like this:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp">( <span class="org-keyword">defun</span>  <span class="org-function-name">delete-window-balance</span> ()
+     <span class="org-doc">"Delete window and rebalance the remaining ones."</span>
+    ( <span class="org-keyword">interactive</span>)
+    (delete-window)
+    (balance-windows))
+</pre>
+</div>
+
+ <p>
+I have other examples that are more complex, but they’re still just instances of taking ordinary Emacs commands and combining into a workflow that meets the needs of the particular user. This is ridiculously simple in Emacs, but I suspect it would be much more difficult in another editor.
+</p>
+
+ <div class="tagline" id="org208be47">
+ <p>
+Tagged:   <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2025-03-02-emacs-undeserved-reputation.html"/>
+  <id>https://randyridenour.net/posts/2025-03-02-emacs-undeserved-reputation.html</id>
+  <updated>2025-03-04T18:48:00-06:00</updated>
+</entry>
 <entry>
   <title>Hope Has Two Daughters</title>
   <author><name>Randy Ridenour</name></author>

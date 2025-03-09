@@ -25,3 +25,4 @@
 - [[file:../posts/2025-01-20-replicating-emacs-everywhere-with-keyboard-maestro.org][Replicating Emacs Everywhere with Keyboard Maestro]]
 
 - [[file:../posts/2025-03-02-emacs-undeserved-reputation.org][Emacs' Undeserved Reputation]]
+- [[file:../posts/2025-03-09-elfeed-test.org][Elfeed Test]]

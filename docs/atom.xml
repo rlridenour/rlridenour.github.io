@@ -4,7 +4,29 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-03-04T18:49:06-06:00</updated>
+<updated>2025-03-09T18:48:30-05:00</updated>
+<entry>
+  <title>Elfeed Test</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Mar 09, 2025 18:46</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Elfeed Test
+ <br></br> <span class="subtitle">Mar 09, 2025 18:46</span>
+</h1>
+ <p>
+I need a new post to test Elfeed.
+</p>
+
+ <div class="tagline" id="orgc39dcfa">
+ <p>
+Tagged:   <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2025-03-09-elfeed-test.html"/>
+  <id>https://randyridenour.net/posts/2025-03-09-elfeed-test.html</id>
+  <updated>2025-03-09T18:48:00-05:00</updated>
+</entry>
 <entry>
   <title>Emacs&apos; Undeserved Reputation</title>
   <author><name>Randy Ridenour</name></author>

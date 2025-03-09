@@ -1,0 +1,10 @@
+#+TITLE: Elfeed Test
+#+date: <2025-03-09 Sun 18:46>
+#+filetags:  emacs
+#+setupfile: ../org-templates/post.org
+
+I need a new post to test Elfeed.
+
+#+begin_tagline
+Tagged:  [[file:../tags/emacs.org][Emacs]]
+#+end_tagline

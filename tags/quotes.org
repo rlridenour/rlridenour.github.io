@@ -92,3 +92,4 @@
 - [[file:~/sites/orgblog/posts/2025-02-10-preachereternal-obligation.org][The Preacher's Eternal Obligation]]
 
 - [[file:../posts/2025-02-23-hope-has-two-daughters.org][Hope Has Two Daughters]]
+- [[file:../posts/2025-03-09-gregory-nyssa.org][Gregory of Nyssa]]

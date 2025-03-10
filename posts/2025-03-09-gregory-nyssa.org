@@ -1,0 +1,17 @@
+#+TITLE: Gregory of Nyssa
+#+date: <2025-03-09 Sun 19:13>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+Concepts create idols; only wonder comprehends anything. People kill one another over idols. Wonder makes us fall to our knees.
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+Gregory of Nyssa
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

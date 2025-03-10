@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-03-09-gregory-nyssa.org][Gregory of Nyssa]]
 - [[file:2025-03-09-elfeed-test.org][Elfeed Test]]
 - [[file:2025-03-02-emacs-undeserved-reputation.org][Emacs' Undeserved Reputation]]
 - [[file:2025-02-23-hope-has-two-daughters.org][Hope Has Two Daughters]]

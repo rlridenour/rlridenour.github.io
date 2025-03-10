@@ -1,0 +1,17 @@
+#+TITLE: Gambian Proverb
+#+date: <2025-03-10 Mon 07:11>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+Not to know is bad, not to want to know is worse.
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+Gambian Proverb
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

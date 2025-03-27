@@ -1,0 +1,17 @@
+#+TITLE: Flannery O'Connor on Grace
+#+date: <2025-03-27 Thu 18:46>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+All human nature vigorously resists grace because grace changes us and the change is painful.
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+Flannery O'Connor
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

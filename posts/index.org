@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-03-27-flannery-oconnor-grace.org][Flannery O'Connor on Grace]]
 - [[file:2025-03-10-gambian-proverb.org][Gambian Proverb]]
 - [[file:2025-03-09-gregory-nyssa.org][Gregory of Nyssa]]
 - [[file:2025-03-09-elfeed-test.org][Elfeed Test]]

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Jan 08, 2025 05:11 -->
+<!-- Mar 29, 2025 13:15 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Search and Replace with Regular Expressions</title>
@@ -11,6 +11,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<link href='/pagefind/pagefind-ui.css' rel='stylesheet'>
+<script src='/pagefind/pagefind-ui.js'></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: '#search', showSubResults: true });
+    });
+</script>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -76,7 +83,7 @@ For example, imagine that I have a list of students that I copied from a databas
 </p>
 
 
-<pre class="example" id="orgb3518f0">
+<pre class="example" id="orgd73d2bb">
 Search: ^(w*) (w*)n
 Replace: $2, $1n
 </pre>
@@ -87,7 +94,7 @@ This search finds every line consisting of just two words separated by a space. 
 </p>
 
 
-<pre class="example" id="orge71a397">
+<pre class="example" id="org21ef814">
 George Washington
 John Adams
 Thomas Jefferson
@@ -99,7 +106,7 @@ to
 </p>
 
 
-<pre class="example" id="orgdeee33b">
+<pre class="example" id="org8a389b7">
 Washington, George
 Adams, John
 Jefferson, Thomas
@@ -115,13 +122,13 @@ The primary difference in Emacs is in referencing the strings to be searched for
 </p>
 
 
-<pre class="example" id="org89e01d0">
+<pre class="example" id="orge028134">
 Search: ^\(\w+\) \(\w+\)
 Replace: \2, \1
 </pre>
 
 
-<div class="tagline" id="orga31c521">
+<div class="tagline" id="org21e0aa7">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -131,8 +138,8 @@ Tagged: <a href="../tags/emacs.html">Emacs</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Jan 08, 2025 05:11.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 29, 2025 13:15.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

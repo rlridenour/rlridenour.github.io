@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Jan 07, 2025 -->
+<!-- Mar 29, 2025 13:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Org, Diary, and Dashboard</title>
@@ -13,6 +13,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<link href='/pagefind/pagefind-ui.css' rel='stylesheet'>
+<script src='/pagefind/pagefind-ui.js'></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: '#search', showSubResults: true });
+    });
+</script>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -52,7 +59,7 @@
 <main id="content" class="content">
 <h1 class="title">Org, Diary, and Dashboard
 <br />
-<span class="subtitle">Jan 24, 2024</span>
+<span class="subtitle">Jan 24, 2024 00:00</span>
 </h1>
 <p>
 When I&rsquo;m not in class, most of my time is spent at my desk, with stacks of books, writing in Emacs. I also have a tendency to lose track of time when I&rsquo;m focused on a problem. So, it would be nice to have something in Emacs to remind me of the start times of meetings and classes. That sent me down a two-day rabbit hole exploring the Emacs diary and getting deeper into Org mode.
@@ -67,9 +74,9 @@ I won&rsquo;t bother detailing all of the options that I tried, but here are the
 <li>I then explored using the diary. The <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Format-of-Diary-File.html">diary file</a> has an extremely simple format; simple appointments are made just by listing the date, time, and appointment title on a line. Complex appointments are made by using special <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Special-Diary-Entries.html">sexp entries</a>, which allowed me to create the appointments for my courses. It is also very easy to display these appointments in org-agenda, which very conveniently marks the current time with a line across the agenda, providing a nice visual representation of the relative time before my next appointment. I didn&rsquo;t quite like how the appointments were displayed in emphasized text, but everything else worked great. A reminder pops up in the minibuffer several minutes before the appointment. The pop-up reminder soon disappears, but the modeline continues to list, and update, the number of minutes until the appointment.</li>
 <li>Finally, as I researched how to form complex sexp appointments, I saw that Org mode is able to use the sexp appointment format. So, it was back to Org mode. Here is what I used in the end.</li>
 </ol>
-<section id="outline-container-org19aba46" class="outline-2">
-<h2 id="org19aba46">Init Settings</h2>
-<div class="outline-text-2" id="text-org19aba46">
+<section id="outline-container-org427d238" class="outline-2">
+<h2 id="org427d238">Init Settings</h2>
+<div class="outline-text-2" id="text-org427d238">
 <p>
 I created an agenda display for just the current day:
 </p>
@@ -77,9 +84,9 @@ I created an agenda display for just the current day:
 <div class="org-src-container">
 <pre class="src src-lisp">(setq org-agenda-custom-commands
     '((<span class="org-string">"d"</span> <span class="org-string">"Agenda for today"</span> agenda <span class="org-string">""</span>
-        ((org-agenda-overriding-header <span class="org-string">"Today's agenda"</span>)
-         (org-agenda-span 'day)
-        ))))
+          ((org-agenda-overriding-header <span class="org-string">"Today's agenda"</span>)
+           (org-agenda-span 'day)
+          ))))
 </pre>
 </div>
 
@@ -143,9 +150,9 @@ I don&rsquo;t need to see the time grid, just the current time and the appointme
 </div>
 </div>
 </section>
-<section id="outline-container-orgfb37851" class="outline-2">
-<h2 id="orgfb37851">The Agenda File</h2>
-<div class="outline-text-2" id="text-orgfb37851">
+<section id="outline-container-org6d78b3e" class="outline-2">
+<h2 id="org6d78b3e">The Agenda File</h2>
+<div class="outline-text-2" id="text-org6d78b3e">
 <p>
 I have two separate agenda files, one for tasks and another for events. Here&rsquo;s how the event file is currently structured with an example or two in each category.
 </p>
@@ -209,7 +216,7 @@ Finally, I added an org-capture template for easily creating simple appointments
 
 <div class="org-src-container">
 <pre class="src src-lisp">(<span class="org-string">"e"</span> <span class="org-string">"Event"</span> entry (file+headline <span class="org-string">"path to events.org"</span> <span class="org-string">"Future"</span>)
-           <span class="org-string">"** %? %T"</span>)
+             <span class="org-string">"** %? %T"</span>)
 </pre>
 </div>
 
@@ -226,8 +233,8 @@ There are many examples that can be found online, but few were of the type that 
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Jan 07, 2025.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 29, 2025 13:16.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

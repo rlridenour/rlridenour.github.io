@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Jan 08, 2025 05:12 -->
+<!-- Mar 29, 2025 13:16 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs on OS X</title>
@@ -11,6 +11,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<link href='/pagefind/pagefind-ui.css' rel='stylesheet'>
+<script src='/pagefind/pagefind-ui.js'></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: '#search', showSubResults: true });
+    });
+</script>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -51,9 +58,9 @@
 <header>
 <h1 class="title">Emacs on OS X</h1>
 <p class="subtitle" role="doc-subtitle">Jun 23, 2015 00:00</p>
-</header><section id="outline-container-org3cab046" class="outline-2">
-<h2 id="org3cab046">Homebrew</h2>
-<div class="outline-text-2" id="text-org3cab046">
+</header><section id="outline-container-org570f50f" class="outline-2">
+<h2 id="org570f50f">Homebrew</h2>
+<div class="outline-text-2" id="text-org570f50f">
 <p>
 I install Emacs with <a href="http://brew.sh">Homebrew</a>. After installing Homebrew, just type the following in Terminal:
 </p>
@@ -71,9 +78,9 @@ This makes upgrading very easy, `brew upgrade` updates everything that you&rsquo
 </p>
 </div>
 </section>
-<section id="outline-container-org750e158" class="outline-2">
-<h2 id="org750e158">Prelude</h2>
-<div class="outline-text-2" id="text-org750e158">
+<section id="outline-container-org9da6d48" class="outline-2">
+<h2 id="org9da6d48">Prelude</h2>
+<div class="outline-text-2" id="text-org9da6d48">
 <p>
 I use <a href="http://batsov.com/prelude/">Emacs Prelude</a>, a starter kit by Bozhidar Batsov. There are many Emacs users that advocate setting up your own configuration from scratch, and I&rsquo;ve done that many times. I keep coming back to Prelude, though, it just makes the initial work so much easier. Prelude includes a personal directory for individual configuration files. I keep all of those files in a git repository located in Dropbox with symbolic links in the Prelude personal directory. That way, I can use Github for version control, but have all machines in sync with no effort.
 </p>
@@ -83,7 +90,7 @@ There are two important files in my personal directory. The first is an emacs-li
 </p>
 
 
-<pre class="example" id="orgbb404cd">
+<pre class="example" id="org2e2fb89">
 ;;Load emacs personal settings via org
 (prelude-require-package 'org)
 (org-babel-load-file
@@ -95,9 +102,9 @@ This file loads an org-mode file that contains the actual configuration.
 </p>
 </div>
 </section>
-<section id="outline-container-orgebb64a2" class="outline-2">
-<h2 id="orgebb64a2">Starting Emacs</h2>
-<div class="outline-text-2" id="text-orgebb64a2">
+<section id="outline-container-org6f0f3cc" class="outline-2">
+<h2 id="org6f0f3cc">Starting Emacs</h2>
+<div class="outline-text-2" id="text-org6f0f3cc">
 <p>
 I like to start Emacs using the daemon, which keeps an Emacs server running in the background, then connect to that server with Emacs Client. This makes opening Emacs nearly instantaneous.
 </p>
@@ -127,7 +134,7 @@ There are parts of this that I really didn&rsquo;t need to do, but too much is b
 </p>
 
 
-<div class="tagline" id="org4f9a333">
+<div class="tagline" id="org0cd6cfd">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -139,8 +146,8 @@ Tagged: <a href="../tags/emacs.html">Emacs</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Jan 08, 2025 05:12.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 29, 2025 13:16.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

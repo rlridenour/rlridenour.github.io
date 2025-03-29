@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Feb 12, 2025 04:34 -->
+<!-- Mar 29, 2025 13:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Attendance Sheets in Org Mode</title>
@@ -13,6 +13,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<link href='/pagefind/pagefind-ui.css' rel='stylesheet'>
+<script src='/pagefind/pagefind-ui.js'></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: '#search', showSubResults: true });
+    });
+</script>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -73,7 +80,7 @@ Using the LaTeX <a href="https://mirror.aarnet.edu.au/pub/CTAN/macros/latex/cont
 
 <div class="org-src-container">
 <pre class="src src-org"><span class="org-org-meta-line">#+ATTR_LATEX: :environment tblr :align hline{3-Z}={solid},row{2-Z}={f,12mm},colspec={XXXX}</span>
-<span class="org-org-table">| </span><span class="org-org-table"><span class="org-bold">*Name*</span></span><span class="org-org-table">         | </span><span class="org-org-table"><span class="org-bold">*Signature*</span></span><span class="org-org-table"> | </span><span class="org-org-table"><span class="org-bold">*Name*</span></span><span class="org-org-table">         | </span><span class="org-org-table"><span class="org-bold">*Signature*</span></span><span class="org-org-table"> |</span>
+<span class="org-org-table">| </span><span class="org-org-table"><span class="org-bold">Name</span></span><span class="org-org-table">         | </span><span class="org-org-table"><span class="org-bold">Signature</span></span><span class="org-org-table"> | </span><span class="org-org-table"><span class="org-bold">Name</span></span><span class="org-org-table">         | </span><span class="org-org-table"><span class="org-bold">Signature</span></span><span class="org-org-table"> |</span>
 <span class="org-org-table">| Miley Malone   |             | Ruben Espinosa |             |</span>
 <span class="org-org-table">| Braylee Brandt |             | Naomi Warren   |             |</span>
 <span class="org-org-table">| Abel Bullock   |             | Winnie Weaver  |             |</span>
@@ -88,7 +95,7 @@ to produce:
 
 <div class="org-center">
 
-<div id="org6e9cf68" class="figure">
+<div id="orgce062d6" class="figure">
 <p><img src="../images/posts/tblr-attendance.png" alt="tblr-attendance.png" width="100%" />
 </p>
 </div>
@@ -108,7 +115,7 @@ Here is what the values of <code>align</code> do:
 Now, instead of inserting and deleting rows and setting horizontal lines manually, I can just adjust the row height as needed by changing one number. See the excellent tabularray documentation for other settings.
 </p>
 
-<div class="tagline" id="org349db9b">
+<div class="tagline" id="orgb1a3343">
 <p>
 Tagged:  <a href="../tags/org.html">Org</a> <a href="../tags/teaching.html">Teaching</a>
 </p>
@@ -118,8 +125,8 @@ Tagged:  <a href="../tags/org.html">Org</a> <a href="../tags/teaching.html">Teac
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Feb 12, 2025 04:34.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 29, 2025 13:15.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

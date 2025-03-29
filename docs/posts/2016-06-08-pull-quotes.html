@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Jan 08, 2025 05:11 -->
+<!-- Mar 29, 2025 13:16 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pull Quotes</title>
@@ -11,6 +11,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<link href='/pagefind/pagefind-ui.css' rel='stylesheet'>
+<script src='/pagefind/pagefind-ui.js'></script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: '#search', showSubResults: true });
+    });
+</script>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -56,7 +63,7 @@ Here is my attempt at pull quotes in the Lanyon/Poole theme for Jekyll:
 </p>
 
 
-<pre class="example" id="org5536c86">
+<pre class="example" id="org070fbd0">
 .pquote {
     float: right;
     width: 15rem;
@@ -73,7 +80,7 @@ Here is my attempt at pull quotes in the Lanyon/Poole theme for Jekyll:
 I just learned that Kramdown makes it easy to specify classes and attributes. So, this produces the pull quote:
 </p>
 
-<pre class="example" id="org42ba5ef">
+<pre class="example" id="orgec55207">
 &gt; This is some quoted text.
 {:.pquote}
 </pre>
@@ -84,7 +91,7 @@ It is easy to add quotation marks automatically, using the &ldquo;before&rdquo; 
 </p>
 
 
-<div class="tagline" id="org0844e97">
+<div class="tagline" id="org575cef9">
 <p>
 Tagged: <a href="../tags/misc.html">Misc</a>
 </p>
@@ -94,8 +101,8 @@ Tagged: <a href="../tags/misc.html">Misc</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Jan 08, 2025 05:11.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 29, 2025 13:16.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

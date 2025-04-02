@@ -95,3 +95,4 @@
 - [[file:../posts/2025-03-09-gregory-nyssa.org][Gregory of Nyssa]]
 - [[file:../posts/2025-03-10-gambian-proverb.org][Gambian Proverb]]
 - [[file:../posts/2025-03-27-flannery-oconnor-grace.org][Flannery O'Connor on Grace]]
+- [[file:../posts/2025-04-02-reading-dangerous.org][Reading is Dangerous]]

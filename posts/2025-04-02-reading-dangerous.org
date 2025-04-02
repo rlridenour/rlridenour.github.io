@@ -1,0 +1,20 @@
+#+TITLE: Reading is Dangerous
+#+date: <2025-04-02 Wed 05:23>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+When her daughter announced that she intended to learn to read, Rum Godden wrote this letter to her:
+
+#+begin_quote
+    You see, when you learn to read you will be born again into another world and it is a pity to be born again so
+    young. I should put off reading, if I were you. As soon as you learn to read you will not see anything again quite
+    as it is. It will all the time be altered by what you have read and you will never be quite alone again. I should
+    stay by yourself a bit longer if I were you. 
+#+end_quote
+
+#+ATTR_HTML: :class source
+Rume Godden, /Rungli-Rungliot/ (1943)
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

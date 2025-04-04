@@ -5,8 +5,8 @@
 
 #+ATTR_HTML: :class bigquote
 #+begin_quote
-"My country, right or wrong," is a thing that no true patriot would think of saying. . . . It is like saying, "My
-mother, drunk or sober".
+'My country, right or wrong,' is a thing that no true patriot would think of saying. . . . It is like saying, 'My
+mother, drunk or sober'.
 #+end_quote
 
 #+ATTR_HTML: :class bigquote

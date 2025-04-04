@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-04-04-true-patriot.org][No True Patriot]]
 - [[file:2025-04-02-reading-dangerous.org][Reading is Dangerous]]
 - [[file:2025-03-27-flannery-oconnor-grace.org][Flannery O'Connor on Grace]]
 - [[file:2025-03-10-gambian-proverb.org][Gambian Proverb]]

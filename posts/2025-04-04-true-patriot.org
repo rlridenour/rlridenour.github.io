@@ -10,7 +10,7 @@ mother, drunk or sober'.
 #+end_quote
 
 #+ATTR_HTML: :class bigquote
-G. K. Chesterton 
+G K Chesterton
 
 
 #+begin_tagline

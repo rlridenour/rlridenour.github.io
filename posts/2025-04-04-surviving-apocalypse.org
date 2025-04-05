@@ -5,7 +5,9 @@
 
 [[https://www.nytimes.com/2025/04/02/opinion/poland-democracy-us.html?emc=edit_th_20250403][Aleksandra Gliszczynska-Grabias]] on how Poland survived a right-wing populist government: 
 
+#+begin_quote
 But those who were in the forefront of this fight, they really had to create for themselves kind of a support network, not to feel helplessness and hopelessness with every new development happening. 
+#+end_quote
 
 May you find your community.
 

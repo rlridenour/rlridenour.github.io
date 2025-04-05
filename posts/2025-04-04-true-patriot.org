@@ -9,9 +9,11 @@
 mother, drunk or sober'.
 #+end_quote
 
-#+ATTR_HTML: :class bigquote
-G K Chesterton
-
+#+begin_export html
+<p class="bigquote">
+G. K. Chesterton
+</p>
+#+end_export
 
 #+begin_tagline
 Tagged:  [[file:../tags/quotes.org][Quotes]]

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Mar 29, 2025 13:16 -->
+<!-- Apr 08, 2025 19:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Replicating Emacs Everywhere with Keyboard Maestro</title>
@@ -13,13 +13,6 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
-<link href='/pagefind/pagefind-ui.css' rel='stylesheet'>
-<script src='/pagefind/pagefind-ui.js'></script>
-<script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ element: '#search', showSubResults: true });
-    });
-</script>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -68,9 +61,9 @@ I&rsquo;ve always loved the idea of Tecosaur&rsquo;s <a href="https://github.com
 <p>
 As always, I&rsquo;ll start with this disclaimer: I am an amateur elisp hack. I borrow and steal from others, cobbling things together that never initially work, then fiddle with them until they finally do what I had intended. With that out of the way, here&rsquo;s what I put together. 
 </p>
-<section id="outline-container-orgc7e1acd" class="outline-2">
-<h2 id="orgc7e1acd">Notepad Mode</h2>
-<div class="outline-text-2" id="text-orgc7e1acd">
+<section id="outline-container-org85582e5" class="outline-2">
+<h2 id="org85582e5">Notepad Mode</h2>
+<div class="outline-text-2" id="text-org85582e5">
 <p>
 I wanted to use <code>C-c C-c</code> to easily quit and return to the initial application. The easiest way for me to do this was to create a new mode. Since I write everything with Org mode, it makes sense to just use it with a different name. I also defined a new keymap that calls a function that is defined below.
 </p>
@@ -128,9 +121,9 @@ Beep.app is one line of AppleScript:
 </div>
 </div>
 </section>
-<section id="outline-container-org8149ffc" class="outline-2">
-<h2 id="org8149ffc">Keyboard Maestro</h2>
-<div class="outline-text-2" id="text-org8149ffc">
+<section id="outline-container-orgdb769d9" class="outline-2">
+<h2 id="orgdb769d9">Keyboard Maestro</h2>
+<div class="outline-text-2" id="text-orgdb769d9">
 <p>
 The piece that puts it all together is a Keyboard Maestro macro. It builds on a macro that I found by <a href="https://forum.keyboardmaestro.com/u/cdthomer/summary">Chris Thomerson</a> on <a href="https://forum.keyboardmaestro.com/t/going-back-to-previous-application-window/17963/6">this thread</a> in the Keyboard Maestro forum.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> His macro has two action groups. The first saves the current front application and window to variables before minimizing the front window. The second executes an AppleScript that activates the application named by the variable, then unminimizes the window and brings it to the front.
 </p>
@@ -179,7 +172,7 @@ For those who are interested, here&rsquo;s a picture of the entire macro:
 
 <div class="org-center">
 
-<div id="org0bd1214" class="figure">
+<div id="org9f85869" class="figure">
 <p><img src="../images/posts/emacs-notepad.png" alt="emacs-notepad.png" width="100%" />
 </p>
 </div>
@@ -188,7 +181,7 @@ For those who are interested, here&rsquo;s a picture of the entire macro:
 
 
 
-<div class="tagline" id="orgbd745c8">
+<div class="tagline" id="orgd524c79">
 <p>
 Tagged:  <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -210,7 +203,7 @@ There&rsquo;s a link to download the macro at the end of the <a href="https://fo
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 29, 2025 13:16.<br>
+  Last updated on Apr 08, 2025 19:52.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

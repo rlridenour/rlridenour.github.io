@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Mar 29, 2025 13:16 -->
+<!-- Apr 08, 2025 19:52 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>My New Jekyll Site</title>
@@ -11,13 +11,6 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
 <link rel='stylesheet' href='/css/main.css' type='text/css'/>
-<link href='/pagefind/pagefind-ui.css' rel='stylesheet'>
-<script src='/pagefind/pagefind-ui.js'></script>
-<script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ element: '#search', showSubResults: true });
-    });
-</script>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -61,75 +54,75 @@
 </header><p>
 Jekyll was remarkably simple, much more than I expected. A competent person should be able to deploy a new Jekyll site in minutes. I, in usual fashion, took six hours. Here is a record of what I did, both what worked and what did not.
 </p>
-<section id="outline-container-org7dc3336" class="outline-2">
-<h2 id="org7dc3336">The Steps, Both True and Errant</h2>
-<div class="outline-text-2" id="text-org7dc3336">
+<section id="outline-container-orgf8b4cdf" class="outline-2">
+<h2 id="orgf8b4cdf">The Steps, Both True and Errant</h2>
+<div class="outline-text-2" id="text-orgf8b4cdf">
 </div>
-<div id="outline-container-org61c2fd7" class="outline-3">
-<h3 id="org61c2fd7">Install Jekyll</h3>
-<div class="outline-text-3" id="text-org61c2fd7">
+<div id="outline-container-org5ba1d1b" class="outline-3">
+<h3 id="org5ba1d1b">Install Jekyll</h3>
+<div class="outline-text-3" id="text-org5ba1d1b">
 <p>
 The first step is to install <a href="http://jekyllrb.com ">Jekyll</a>. Since it&rsquo;s a Ruby Gem, it&rsquo;s very easy to install. I then built the default site, but it wasn&rsquo;t quite the style I wanted. I saw this article by <a href="http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/">Barry Clark</a>, which led me to <a href="https://github.com/barryclark/jekyll-now%20">Jekyll Now</a>, which was a full-fledged starter site, but still not the style that I wanted. <a href="http://jekyllbootstrap.com ">Jekyll Bootstrap</a> is good for those who like Twitter Bootstrap, but I didn&rsquo;t need anything like that. Then, I saw something titled &ldquo;How I Created a Beautiful and Minimal Blog Using Jekyll, Github Pages, and poole&rdquo; by <a href="http://joshualande.com/jekyll-github-pages-poole/%20">Joshua Lande</a>. That seemed to be exactly what I wanted.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd689c1b" class="outline-3">
-<h3 id="orgd689c1b">Poole and Lanyon</h3>
-<div class="outline-text-3" id="text-orgd689c1b">
+<div id="outline-container-org595680b" class="outline-3">
+<h3 id="org595680b">Poole and Lanyon</h3>
+<div class="outline-text-3" id="text-org595680b">
 <p>
 <a href="http://getpoole.com">Poole</a> provided a very nice minimalist site. When I went to the Poole site, I saw two themes. I really liked Lanyon, but couldn&rsquo;t figure out how to install a theme on top of Poole. After an embarrassing amount of time, I realized that the theme, Lanyon, already contained Poole. So, installing it was just a matter of downloading it.
 </p>
 </div>
 </div>
-<div id="outline-container-orga043da8" class="outline-3">
-<h3 id="orga043da8">Configure the Site</h3>
-<div class="outline-text-3" id="text-orga043da8">
+<div id="outline-container-orgd78db8f" class="outline-3">
+<h3 id="orgd78db8f">Configure the Site</h3>
+<div class="outline-text-3" id="text-orgd78db8f">
 <p>
 Configuring the site is simple. There are a few items to add to the _config.yml file in the root directory of the site, mostly standard things like the site title and base URL. Then, just run `jekyll server` from the root directory of the site, browse to <code>http://localhost:4000</code>, and you should see your new site.
 </p>
 </div>
 </div>
-<div id="outline-container-orga907f7b" class="outline-3">
-<h3 id="orga907f7b">Deployment</h3>
-<div class="outline-text-3" id="text-orga907f7b">
+<div id="outline-container-org7f78574" class="outline-3">
+<h3 id="org7f78574">Deployment</h3>
+<div class="outline-text-3" id="text-org7f78574">
 <p>
 Deploying a Jekyll site is pretty easy; how it&rsquo;s done depends on where it&rsquo;s hosted. Github, besides having the best price (free!), it&rsquo;s also the easiest way to serve up a Jekyll site. Just name the repository &lt;username&gt;.github.io, and Github builds it and serves it automatically. After downloading and configuring Lanyon, I created a Git repository, and started to push that to Github, and&#x2026; decided that this was a waste of time. Since Lanyon is hosted on Github, I forked Lanyon, changed the repository name, and cloned it. Then, I updated config.yml, browsed to rlridenour.github.io, and saw my home page.
 </p>
 </div>
 </div>
-<div id="outline-container-org6705d81" class="outline-3">
-<h3 id="org6705d81">Styling the Site</h3>
-<div class="outline-text-3" id="text-org6705d81">
+<div id="outline-container-org4f7af9e" class="outline-3">
+<h3 id="org4f7af9e">Styling the Site</h3>
+<div class="outline-text-3" id="text-org4f7af9e">
 <p>
 This cost met some time, but only because of some poor initial choices on my part. Lanyon is built on Poole, and there were three CSS files, one each for Poole, Lanyon, and one called syntax.css. Some things that I wanted changed were in the Poole css file, others were in the Lanyon file. So, I proceeded to change things in both files. Then, it struck me that any update to either Poole or Lanyon would create a host of problems trying to figure out what needed to be changed again. So, I scrapped everything, started over, and just copied what the items I wanted to change to a new css file, then loaded that file last. Later, I moved them all to an SCSS directory, since Jekyll uses both SASS and CoffeeScript, and changed the config file to minimize the CSS file. At this point, my SCSS files are just the original CSS files with the extension changed.
 </p>
 </div>
 </div>
-<div id="outline-container-org1c404cf" class="outline-3">
-<h3 id="org1c404cf">Archive and Tag Pages</h3>
-<div class="outline-text-3" id="text-org1c404cf">
+<div id="outline-container-orga55e4fe" class="outline-3">
+<h3 id="orga55e4fe">Archive and Tag Pages</h3>
+<div class="outline-text-3" id="text-orga55e4fe">
 <p>
 I blatantly copied <a href="http://joshualande.com/jekyll-github-pages-poole/%20">Joshua Lande&rsquo;s</a> archive page and <a href="http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html%20">Michael Lanyon&rsquo;s</a> tag page. I don&rsquo;t know if I&rsquo;ll add any search function, the tag page is probably a better way to find content.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf41daf8" class="outline-3">
-<h3 id="orgf41daf8">Final Details</h3>
-<div class="outline-text-3" id="text-orgf41daf8">
+<div id="outline-container-org7d11ae4" class="outline-3">
+<h3 id="org7d11ae4">Final Details</h3>
+<div class="outline-text-3" id="text-org7d11ae4">
 <p>
 I added Disqus commenting, which  just a matter of copying some code from Disqus and copying it to the post layout file. I also added a reference to the MathJax script to the head.
 </p>
 </div>
 </div>
-<div id="outline-container-org3a33a85" class="outline-3">
-<h3 id="org3a33a85">Finished</h3>
-<div class="outline-text-3" id="text-org3a33a85">
+<div id="outline-container-org8e486b8" class="outline-3">
+<h3 id="org8e486b8">Finished</h3>
+<div class="outline-text-3" id="text-org8e486b8">
 <p>
 Now, the site is up, and it just needs some more content. We&rsquo;ll see how long that takes.
 </p>
 
 
-<div class="tagline" id="org31b68f8">
+<div class="tagline" id="org0233173">
 <p>
 Tagged: <a href="../tags/misc.html">Misc</a>
 </p>
@@ -142,7 +135,7 @@ Tagged: <a href="../tags/misc.html">Misc</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 29, 2025 13:16.<br>
+  Last updated on Apr 08, 2025 19:52.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

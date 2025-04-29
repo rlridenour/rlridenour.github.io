@@ -1,0 +1,21 @@
+#+TITLE: Rabbi Lustig on Pope Francis
+#+date: <2025-04-29 Tue 05:51>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+Rabbi M. Bruce Lustig writing about a conversation with Pope Francis:
+
+#+begin_quote
+It was quite the experience to have a private audience with the pope.
+
+I began to tell him: “I am Rabbi Lustig, the child of a Holocaust survivor. I grew up in Nashville, Tennessee.” Francis interrupted and said, “Bruce, may I call you that, I know who you are, you would not be here if I did not know. Now, tell me, what keeps you up at night?”
+I said “hate speech,” and for the next hour, we came up with strategies to end hate speech. He listened to me, challenged my views and agreed with me that God spoke the world into being, so speech has the power to create or destroy worlds.
+I left our audience with a critical lesson learned at the feet of an important teacher. There is only one voice that matters in the end: your own.
+#+end_quote
+
+#+ATTR_HTML: :class source
+[[https://www.washingtonpost.com/opinions/2025/04/28/francis-vance-ordo-amoris-women-priests/?carta-url=https%3A%2F%2Fs2.washingtonpost.com%2Fcar-ln-tr%2F424fdb8%2F6810a3267f8d4e1ed0f71525%2F596a35569bbc0f0e09e8239c%2F31%2F64%2F6810a3267f8d4e1ed0f71525][The Washington Post]] (April 28, 2025)
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

@@ -1,0 +1,17 @@
+#+TITLE: Listening to Those Who Left
+#+date: <2025-05-01 Thu 15:52>
+#+filetags:  quotes religion
+#+setupfile: ../org-templates/post.org
+
+It's important to listen to the voices of those who have left the church. Here is one of those voices:
+
+#+begin_quote
+I consider myself one of those who have left the American evangelical church, unable to recognize as legitimate a belief system that doesn’t worship Jesus’ example to help the poor, the sick and the hungry. A church system that doesn’t recognize Jesus’ love and empathy, but rather worships money and power for money’s and power’s sake.
+#+end_quote
+
+#+ATTR_HTML: :class source
+[[https://www.washingtonpost.com/opinions/2025/04/30/african-spirituality-in-sinners/?carta-url=https%3A%2F%2Fs2.washingtonpost.com%2Fcar-ln-tr%2F4257637%2F6813462add86c91e54cfe1b1%2F596a35569bbc0f0e09e8239c%2F34%2F64%2F6813462add86c91e54cfe1b1][Karen Attiah]]
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]] [[file:../tags/religion.org][Religion]]
+#+end_tagline

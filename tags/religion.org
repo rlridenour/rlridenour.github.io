@@ -75,3 +75,5 @@
 - [[file:../posts/2015-07-12-strength-enough.org][Strength Enough?]]
 - [[file:../posts/2015-01-20-penn-jillette-on-science-and-religion.org][Penn Jillette on Science and Religion]]
 - [[file:../posts/2018-03-30-homily-for-maundy-thursday.org][Homily for Maundy Thursday]]
+
+- [[file:../posts/2025-05-01-listening-those-who-left.org][Listening to Those Who Left]]

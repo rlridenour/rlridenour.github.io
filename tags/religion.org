@@ -77,3 +77,4 @@
 - [[file:../posts/2018-03-30-homily-for-maundy-thursday.org][Homily for Maundy Thursday]]
 
 - [[file:../posts/2025-05-01-listening-those-who-left.org][Listening to Those Who Left]]
+- [[file:../posts/2025-05-03-christian-right-religious-right.org][Christian Right or Religious Right?]]

@@ -23,3 +23,4 @@
 - [[file:../posts/2016-10-01-black-lives-matter-and-conditional-probabilities.org][Race, Police Shooting, and Probability]]
 - [[file:../posts/2019-08-06-some-thoughts-on-mass-shootings.org][Some Thoughts on Mass Shootings]]
 - [[file:../posts/2025-04-04-surviving-apocalypse.org][Surviving the Apocalypse]]
+- [[file:../posts/2025-05-03-christian-right-religious-right.org][Christian Right or Religious Right?]]

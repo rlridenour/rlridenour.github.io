@@ -1,0 +1,17 @@
+#+TITLE: The Art of Life
+#+date: <2025-05-12 Mon 05:13>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+Life is the art of drawing sufficient conclusions from insufficient premises.  
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+Samuel Butler
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

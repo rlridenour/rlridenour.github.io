@@ -101,3 +101,4 @@
 - [[file:../posts/2025-05-01-listening-those-who-left.org][Listening to Those Who Left]]
 - [[file:../posts/2025-05-03-christian-right-religious-right.org][Christian Right or Religious Right?]]
 - [[file:../posts/2025-05-12-art-life.org][The Art of Life]]
+- [[file:../posts/2025-05-13-christianity-partisan-politics.org][Christianity and Partisan Politics]]

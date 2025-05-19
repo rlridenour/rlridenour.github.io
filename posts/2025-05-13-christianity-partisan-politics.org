@@ -8,7 +8,7 @@ But Christians should as a rule be skeptical of versions of the faith that are i
 #+end_quote
 
 #+ATTR_HTML: :class source
-Elizabeth Bruenig in [[https://www.theatlantic.com/ideas/archive/2025/05/anti-christian-bias-task-force/682755/][The Atlantic]]
+Elizabeth Bruenig in /[[https://www.theatlantic.com/ideas/archive/2025/05/anti-christian-bias-task-force/682755/][The Atlantic ]]/
 
 #+begin_tagline
 Tagged:  [[file:../tags/quotes.org][Quotes]]

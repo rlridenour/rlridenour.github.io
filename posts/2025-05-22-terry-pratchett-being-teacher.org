@@ -1,0 +1,29 @@
+#+TITLE: Terry Pratchett on Being a Teacher
+#+date: <2025-05-22 Thu 06:44>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+I found this on the [[https://www.facebook.com/groups/583028159792079][Laughing Librarian]] Facebook page, so I don't know have the specific source, but it's too good not to share.
+
+#+begin_quote
+
+"You sound a very educated man for a barbarian," said Rincewind.
+
+"I didn't start out a barbarian. I used to be a school teacher. But I decided to give it all up and make a living by the sword."
+
+"After being a teacher all your life?"
+
+"It did mean a change of perspective, yes."
+
+"But ... well... surely ... the privation, the terrible hazards, the daily risk of death..."
+
+Mr Saveloy brightened up. "Oh, you've been a teacher, have you?"
+#+end_quote
+
+
+#+ATTR_HTML: :class source
+Terry Pratchett
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

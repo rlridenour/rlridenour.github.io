@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-05-22-terry-pratchett-being-teacher.org][Terry Pratchett on Being a Teacher]]
 - [[file:2025-05-13-christianity-partisan-politics.org][Christianity and Partisan Politics]]
 - [[file:2025-05-12-art-life.org][The Art of Life]]
 - [[file:2025-05-03-christian-right-religious-right.org][Christian Right or Religious Right?]]

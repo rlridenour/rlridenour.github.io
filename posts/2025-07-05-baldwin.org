@@ -1,0 +1,17 @@
+#+TITLE: Baldwin
+#+date: <2025-07-05 Sat 09:33>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+You think your pain and your heartbreak are unprecedented in the history of the world, but then you read.
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+James Baldwin
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

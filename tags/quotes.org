@@ -105,3 +105,4 @@
 - [[file:../posts/2025-05-22-terry-pratchett-being-teacher.org][Terry Pratchett on Being a Teacher]]
 - [[file:../posts/2025-07-05-baldwin.org][Baldwin]]
 - [[file:../posts/2025-07-10-christian-witness-time-war.org][Christian Witness in Time of War]]
+- [[file:../posts/2025-07-10-doubt-defense.org][Doubt and Defense]]

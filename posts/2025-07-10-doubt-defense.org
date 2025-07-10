@@ -1,0 +1,17 @@
+#+TITLE: Doubt and Defense
+#+date: <2025-07-10 Thu 08:10>
+#+filetags:  quotes religion
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+We are sometimes most pious in the ways we doubt our beliefs, and most blasphemous in the ways we defend them.
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+[[https://www.chronicle.com/article/were-the-1980s-a-golden-age-of-religious-art?][Phil Christman]]
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]] [[file:../tags/religion.org][Religion]]
+#+end_tagline

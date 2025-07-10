@@ -1,0 +1,15 @@
+#+TITLE: Christian Witness in Time of War
+#+date: <2025-07-10 Thu 06:57>
+#+filetags:  religion quotes
+#+setupfile: ../org-templates/post.org
+
+#+begin_quote
+Christianity demands more than private values or partisan identity. It requires a public witness. And in a time of war, that witness includes a refusal to allow the state to define righteousness on its terms. When we do that, we are not practicing discipleship—we are participating in civil religion. A Christianity that affirms the state’s wars is not Christianity. It is idolatry.
+#+end_quote
+
+#+ATTR_HTML: :class source
+[[https://www.christiancentury.org/features/church-cannot-bless-war][Stanley Hauerwas and C. Andrew Doyle]]
+
+#+begin_tagline
+Tagged:  [[file:../tags/religion.org][Religion]] [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

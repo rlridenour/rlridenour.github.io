@@ -1,0 +1,18 @@
+#+TITLE: On Moral Imagination
+#+date: <2025-07-14 Mon 05:27>
+#+filetags:  ethics
+#+setupfile: ../org-templates/post.org
+
+Jennifer Finney Boylan, in [[https://www.washingtonpost.com/opinions/2025/07/13/superman-fd-christopher-reeve-father-jor-el/?carta-url=https%3A%2F%2Fs2.washingtonpost.com%2Fcar-ln-tr%2F439ab12%2F6874d524d2a65e78271600dc%2F596a35569bbc0f0e09e8239c%2F29%2F64%2F6874d524d2a65e78271600dc][The Washington Post]]:
+
+#+begin_quote
+It’s moral imagination that has provided me with some solace, these past six months, as I try to understand the sense of fear that people like me appear to trigger in others.
+
+It’s moral imagination that I have tried to ask others to have, when they set about trying to erase people such as me from the public sphere.
+
+If we are ever to build a more perfect nation, surely this project will begin by opening our hearts to each other, by using our imaginations to understand that there is more than one way of being human, more than one way of being in the world.
+#+end_quote
+
+#+begin_tagline
+Tagged:  [[file:../tags/ethics.org][Ethics]]
+#+end_tagline

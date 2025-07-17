@@ -1,0 +1,17 @@
+#+TITLE: The Modern Social Condition
+#+date: <2025-07-17 Thu 05:21>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+Never in our history have we known more people less.
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+[[https://mastodon.social/@rands/114863439834897283][Rands Schwag]]
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

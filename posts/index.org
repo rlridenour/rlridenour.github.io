@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-07-17-modern-social-condition.org][The Modern Social Condition]]
 - [[file:2025-07-14-moral-imagination.org][On Moral Imagination]]
 - [[file:2025-07-10-doubt-defense.org][Doubt and Defense]]
 - [[file:2025-07-10-christian-witness-time-war.org][Christian Witness in Time of War]]

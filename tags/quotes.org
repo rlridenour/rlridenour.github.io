@@ -107,3 +107,4 @@
 - [[file:../posts/2025-07-10-christian-witness-time-war.org][Christian Witness in Time of War]]
 - [[file:../posts/2025-07-10-doubt-defense.org][Doubt and Defense]]
 - [[file:../posts/2025-07-17-modern-social-condition.org][The Modern Social Condition]]
+- [[file:../posts/2025-07-19-tragic-human-condition.org][The Tragic Human Condition]]

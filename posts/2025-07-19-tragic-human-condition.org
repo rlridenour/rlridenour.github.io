@@ -1,0 +1,17 @@
+#+TITLE: The Tragic Human Condition
+#+date: <2025-07-19 Sat 17:27>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+Human beings, who are almost unique in having the ability to learn from the experience of others, are also remarkable for their apparent disinclination to do so
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+Douglas Adams
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

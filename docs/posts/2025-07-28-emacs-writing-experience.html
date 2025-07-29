@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Jul 28, 2025 20:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs Writing Experience</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/atom.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Emacs Writing Experience
+<br />
+<span class="subtitle">Jul 28, 2025 13:44</span>
+</h1>
+<p>
+I&rsquo;ve enjoyed reading the posts in this month&rsquo;s <a href="https://gregnewman.io/blog/emacs-carnival-2025-07-writing-experience/">Emacs Carnival</a> on the topic of &ldquo;Writing Experience.&rdquo; It&rsquo;s given me an opportunity to reflect not only on how I use Emacs to write, but also on why I continue to use Emacs despite the many alternatives that are available. I don&rsquo;t consider myself to be the typical Emacs user, if there is such a person. I&rsquo;m certainly not a coder; anything I learned in my single FORTRAN class thirty-five years ago is long gone by now.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> I am a philosophy professor at a small liberal arts university, which means that I live in a Microsoft world. It&rsquo;s very likely that I am the only Emacs user on campus. I&rsquo;m also a retired Army Reserve chaplain. I&rsquo;m sure that Emacs users are a minority in technical fields, but they are almost non-existent in the humanities. One can only imagine how few Emacs users there are in ministry.
+</p>
+
+<p>
+Everything that I produced during my undergraduate and graduate studies, including my dissertation,  was written with a word processor, either WordPerfect 5.1 or MS Word 6.0. As I began working more with formal logic, I began to be more aware of the power and beautiful output of LaTeX, and that led me to look for the best way to edit LaTeX files. In 2012, I wrote a blog post about my journey in search of the perfect writing tool, titled &ldquo;<a href="https://randyridenour.net/posts/2012-05-24-a-sordid-tale-of-text-editors.html">A Sordid Tale of Text Editors</a>.&rdquo; What I now find particularly interesting about that post are the three reasons why I rejected Emacs at the time:
+</p>
+
+<ol class="org-ol">
+<li>The complex, arcane key combinations,</li>
+<li>The inability to use Textexpander snippets in Gnu Emacs, and</li>
+<li>The pain of configuring Emacs for amateurs.</li>
+</ol>
+
+<p>
+The second no longer applies — at the time, Emacs just wasn&rsquo;t a well-behaved Mac app, but that has changed over the years. The first and third, though, are still common reasons that people cite for giving up Emacs. Shortly after I wrote that, however, I gave Emacs another try, and over a decade later, I&rsquo;m still using it. More that that, though, I can&rsquo;t imagine an alternative.
+</p>
+
+<p>
+The mistake that I made in my earlier flirtation with Emacs was, in my opinion, treating it as just another text editor. Every other text editor that I tried demanded that I conform it its way of editing. When I realized that Emacs, with a bit of configuration work, was quite willing to conform to the way that I wanted to work, the search was over. Don&rsquo;t like the keybindings, change them! The initialization files may look complicated at first, but Lisp is very straightforward and remarkably easy to follow, even for a philosopher. When I got stuck, I found the community to be remarkably gracious and helpful.
+</p>
+
+<p>
+I do write some papers for presentation and possible publication, but our primary responsibility as faculty at my institution is teaching. So, most of my writing is for lecture notes, presentation slides, and handouts. Given our heavy teaching load (normally four courses per semester), it helps to be able to produce these as efficiently as possible. With Emacs, I&rsquo;m able to write one document and, from that, produce a PDF of notes for me, slides to show in class, and and HTML handout to post in the learning management system. In short, a function creates four files: one that exports a notes PDF for me, one that exports to a LaTeX Beamer document, one that exports to HTML for posting, and a data file used by the other three. The Org headers are automatically inserted into each file, and two Yasnippet snippets make it easy to specify text that appears only in the presenter&rsquo;s notes in the presentation and more detailed notes that appear in the lecture notes. The HTML handout includes everything in the lecture notes. (The code is in the <a href="https://github.com/rlridenour/emacs-elpaca-config?tab=readme-ov-file#teaching">teaching</a> section of my configuration file.)
+</p>
+
+<p>
+I use many packages, but there are some that are particularly useful for my everyday writing. 
+</p>
+
+<ul class="org-ul">
+<li><a href="https://github.com/minad/jinx">Jinx</a> for spell checking.</li>
+<li>I&rsquo;ve already mentioned <a href="https://github.com/joaotavora/yasnippet">Yasnippet</a>. I also find <a href="https://github.com/Kungsgeten/yankpad">Yankpad</a> can be useful for inserting snippets that are used only occasionally.</li>
+<li><a href="https://github.com/aaronjensen/emacs-orgonomic">Orgonomic</a> helps me quickly enter lists and headings in Org mode.</li>
+<li><a href="https://github.com/oantolin/math-delimiters">Math-Delimiters</a> for quickly entering LaTeX math mode.</li>
+<li><a href="https://github.com/emacs-citar/citar">Citar</a> makes citations simple.</li>
+</ul>
+
+<p>
+Finally, I should point out that I can&rsquo;t use Emacs for everything. Although everything begins in Org mode, some of it must, unfortunately, end up in Microsoft Word. I have a collaborative book project with a colleague who only uses Word, and most publishers in the humanities, including my particular fields of philosophy and religion, expect Word documents. I still continue to find ways to keep as much as possible within Emacs.
+</p>
+
+<p>
+In the end, the best thing about the Emacs writing experience is that there is no such thing as <i>the</i> Emacs writing experience. Emacs provides a canvas and tools from which each user crafts their own editor. Simple or complex, modal or non-modal, Emacs can provide the writing experience you want, not merely something that just approximates it.
+</p>
+
+<div class="tagline" id="org5ef106b">
+<p>
+Tagged:  <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes</h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+The only thing that remains is a vague recollection of the pain of counting columns when debugging a program. 
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Jul 28, 2025 20:11.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

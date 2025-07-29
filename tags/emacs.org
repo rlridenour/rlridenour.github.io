@@ -26,3 +26,4 @@
 
 - [[file:../posts/2025-03-02-emacs-undeserved-reputation.org][Emacs' Undeserved Reputation]]
 - [[file:../posts/2025-03-09-elfeed-test.org][Elfeed Test]]
+- [[file:../posts/2025-07-28-emacs-writing-experience.org][Emacs Writing Experience]]

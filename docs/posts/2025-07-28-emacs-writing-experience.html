@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Jul 28, 2025 20:11 -->
+<!-- Jul 29, 2025 07:05 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Writing Experience</title>
@@ -55,11 +55,11 @@
 <span class="subtitle">Jul 28, 2025 13:44</span>
 </h1>
 <p>
-I&rsquo;ve enjoyed reading the posts in this month&rsquo;s <a href="https://gregnewman.io/blog/emacs-carnival-2025-07-writing-experience/">Emacs Carnival</a> on the topic of &ldquo;Writing Experience.&rdquo; It&rsquo;s given me an opportunity to reflect not only on how I use Emacs to write, but also on why I continue to use Emacs despite the many alternatives that are available. I don&rsquo;t consider myself to be the typical Emacs user, if there is such a person. I&rsquo;m certainly not a coder; anything I learned in my single FORTRAN class thirty-five years ago is long gone by now.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> I am a philosophy professor at a small liberal arts university, which means that I live in a Microsoft world. It&rsquo;s very likely that I am the only Emacs user on campus. I&rsquo;m also a retired Army Reserve chaplain. I&rsquo;m sure that Emacs users are a minority in technical fields, but they are almost non-existent in the humanities. One can only imagine how few Emacs users there are in ministry.
+I&rsquo;ve enjoyed reading the posts in this month&rsquo;s <a href="https://gregnewman.io/blog/emacs-carnival-2025-07-writing-experience/">Emacs Carnival</a> on the topic of &ldquo;Writing Experience.&rdquo; It&rsquo;s given me an opportunity to reflect not only on how I use Emacs to write, but also on why I continue to use Emacs despite the many alternatives that are available. I don&rsquo;t consider myself to be the typical Emacs user, if there is such a person. I&rsquo;m certainly not a coder; anything I learned in my single FORTRAN class thirty-five years ago is long gone by now.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> Instead, I&rsquo;m a philosophy professor at a small liberal arts university, which means that I live in a Microsoft world. It&rsquo;s very likely that I am the only Emacs user on campus. I&rsquo;m also a retired Army Reserve chaplain. I&rsquo;m sure that Emacs users are a minority in technical fields, but they are almost non-existent in the humanities. One can only imagine how few Emacs users there are in ministry.
 </p>
 
 <p>
-Everything that I produced during my undergraduate and graduate studies, including my dissertation,  was written with a word processor, either WordPerfect 5.1 or MS Word 6.0. As I began working more with formal logic, I began to be more aware of the power and beautiful output of LaTeX, and that led me to look for the best way to edit LaTeX files. In 2012, I wrote a blog post about my journey in search of the perfect writing tool, titled &ldquo;<a href="https://randyridenour.net/posts/2012-05-24-a-sordid-tale-of-text-editors.html">A Sordid Tale of Text Editors</a>.&rdquo; What I now find particularly interesting about that post are the three reasons why I rejected Emacs at the time:
+Everything that I produced during my undergraduate and graduate studies, including my dissertation,  was written with a word processor, either WordPerfect 5.1 or MS Word 6.0. As I began working more with formal logic, I began to be aware of the power and beautiful output of LaTeX, and that led me to look for the best way to edit LaTeX files. It turns out that there&rsquo;s no agreement on the internet for the best way to do anything, so my search let me down many paths.  In 2012, I wrote a blog post about my experience, titled &ldquo;<a href="https://randyridenour.net/posts/2012-05-24-a-sordid-tale-of-text-editors.html">A Sordid Tale of Text Editors</a>.&rdquo; It documents a journey from TextMate to Vim, a brief interlude with Emacs, then back to TextMate, then to Sublime Text 2.<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup> What I now find particularly interesting about that post are the three reasons why I rejected Emacs at the time:
 </p>
 
 <ol class="org-ol">
@@ -73,11 +73,11 @@ The second no longer applies — at the time, Emacs just wasn&rsquo;t a well-beh
 </p>
 
 <p>
-The mistake that I made in my earlier flirtation with Emacs was, in my opinion, treating it as just another text editor. Every other text editor that I tried demanded that I conform it its way of editing. When I realized that Emacs, with a bit of configuration work, was quite willing to conform to the way that I wanted to work, the search was over. Don&rsquo;t like the keybindings, change them! The initialization files may look complicated at first, but Lisp is very straightforward and remarkably easy to follow, even for a philosopher. When I got stuck, I found the community to be remarkably gracious and helpful.
+The mistake that I made in my earlier flirtation with Emacs was, in my opinion, treating it as just another text editor. Every other text editor that I tried demanded that I conform to  its way of editing. When I realized that Emacs, with a bit of configuration work, was quite willing to conform to the way that I wanted to work, the search was over. Don&rsquo;t like the keybindings? Then change them! Prefer modal editing? Emacs can do that. Do you want a file tree window to the side as with VSCode? Emacs can do that, too. The initialization files may look complicated at first, but Lisp is very straightforward and remarkably easy to follow, even for a philosopher like me. When I got stuck, I found the community to be remarkably gracious and helpful.
 </p>
 
 <p>
-I do write some papers for presentation and possible publication, but our primary responsibility as faculty at my institution is teaching. So, most of my writing is for lecture notes, presentation slides, and handouts. Given our heavy teaching load (normally four courses per semester), it helps to be able to produce these as efficiently as possible. With Emacs, I&rsquo;m able to write one document and, from that, produce a PDF of notes for me, slides to show in class, and and HTML handout to post in the learning management system. In short, a function creates four files: one that exports a notes PDF for me, one that exports to a LaTeX Beamer document, one that exports to HTML for posting, and a data file used by the other three. The Org headers are automatically inserted into each file, and two Yasnippet snippets make it easy to specify text that appears only in the presenter&rsquo;s notes in the presentation and more detailed notes that appear in the lecture notes. The HTML handout includes everything in the lecture notes. (The code is in the <a href="https://github.com/rlridenour/emacs-elpaca-config?tab=readme-ov-file#teaching">teaching</a> section of my configuration file.)
+I do write some papers for presentation and possible publication, but our primary responsibility as faculty at my institution is teaching. So, most of my writing is for lecture notes, presentation slides, and handouts. Given our heavy teaching load (normally four courses per semester), it helps to be able to produce these as efficiently as possible. With Emacs, I&rsquo;m able to write one document and, from that, produce a PDF of notes for me, slides to show in class, and and HTML handout to post in the learning management system. In short, a function creates four files: one that exports a notes PDF for me, one that exports to a LaTeX Beamer document, one that exports to HTML for posting, and a data file used by the other three. The Org headers are automatically inserted into each file, and the only file that I actually edit is the data file. Two Yasnippet snippets make it easy to specify text that appears only in the presenter&rsquo;s notes in the slides and more detailed notes that appear in the lecture notes. The HTML handout includes everything in the lecture notes. An export function generates the HTML and copies it to the clipboard for pasting to the LMS. (The code for everything is in the <a href="https://github.com/rlridenour/emacs-elpaca-config?tab=readme-ov-file#teaching">teaching</a> section of my configuration file.)
 </p>
 
 <p>
@@ -93,14 +93,14 @@ I use many packages, but there are some that are particularly useful for my ever
 </ul>
 
 <p>
-Finally, I should point out that I can&rsquo;t use Emacs for everything. Although everything begins in Org mode, some of it must, unfortunately, end up in Microsoft Word. I have a collaborative book project with a colleague who only uses Word, and most publishers in the humanities, including my particular fields of philosophy and religion, expect Word documents. I still continue to find ways to keep as much as possible within Emacs.
+Finally, I should point out that I can&rsquo;t use Emacs for everything. Although everything begins in Org mode, some of it must, unfortunately, end up in Microsoft Word. I have a collaborative book project with a colleague who only uses Word, and most publishers in the humanities, including those in my particular fields of philosophy and religion, expect Word documents. That&rsquo;s no problem, provided that I am the sole author. Any changes can be made to the original Org document, with a final export to a docx file. If I&rsquo;m collaborating with someone else, then eventually I just have to start working in Word.
 </p>
 
 <p>
-In the end, the best thing about the Emacs writing experience is that there is no such thing as <i>the</i> Emacs writing experience. Emacs provides a canvas and tools from which each user crafts their own editor. Simple or complex, modal or non-modal, Emacs can provide the writing experience you want, not merely something that just approximates it.
+In the end, the best thing about the Emacs writing experience is that there is no such thing as <i>the</i> Emacs writing experience. Emacs provides a canvas and tools from which each user crafts their own editing environment. Simple or complex, modal or non-modal, Emacs can provide the writing experience you want, not merely something that just approximates it. That&rsquo;s why I&rsquo;m still using it.
 </p>
 
-<div class="tagline" id="org5ef106b">
+<div class="tagline" id="org74c2a4e">
 <p>
 Tagged:  <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -114,13 +114,17 @@ Tagged:  <a href="../tags/emacs.html">Emacs</a>
 The only thing that remains is a vague recollection of the pain of counting columns when debugging a program. 
 </p></div></div>
 
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+The list is actually much longer than that and it includes some editors whose names I can&rsquo;t even remember now.
+</p></div></div>
+
 
 </div>
 </div></main>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Jul 28, 2025 20:11.<br>
+  Last updated on Jul 29, 2025 07:05.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

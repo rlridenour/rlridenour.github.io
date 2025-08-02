@@ -1,0 +1,17 @@
+#+TITLE: Keynes on Capitalism
+#+date: <2025-08-02 Sat 05:37>
+#+filetags:  quotes economics
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+Capitalism is the extraordinary belief that the nastiest of men for the nastiest of motives will somehow work together for the benefit of all.
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+John Maynard Keynes
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]] [[file:../tags/economics.org][Economics]]
+#+end_tagline

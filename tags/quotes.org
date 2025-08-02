@@ -108,3 +108,5 @@
 - [[file:../posts/2025-07-10-doubt-defense.org][Doubt and Defense]]
 - [[file:../posts/2025-07-17-modern-social-condition.org][The Modern Social Condition]]
 - [[file:../posts/2025-07-19-tragic-human-condition.org][The Tragic Human Condition]]
+- [[file:../posts/2025-08-02-john-gray-science.org][John Gray on Science]]
+- [[file:../posts/2025-08-02-keynes-capitalism.org][Keynes on Capitalism]]

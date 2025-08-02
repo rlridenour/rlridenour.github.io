@@ -1,5 +1,7 @@
 #+TITLE: Blog Index
 
+- [[file:2025-08-02-keynes-capitalism.org][Keynes on Capitalism]]
+- [[file:2025-08-02-john-gray-science.org][John Gray on Science]]
 - [[file:2025-07-28-emacs-writing-experience.org][Emacs Writing Experience]]
 - [[file:2025-07-19-tragic-human-condition.org][The Tragic Human Condition]]
 - [[file:2025-07-17-modern-social-condition.org][The Modern Social Condition]]

@@ -1,0 +1,4 @@
+#+title: Tagged: Science
+#+setupfile: ../org-templates/post.org
+
+- [[file:../posts/2025-08-02-john-gray-science.org][John Gray on Science]]

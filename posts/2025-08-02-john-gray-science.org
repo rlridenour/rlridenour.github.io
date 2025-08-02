@@ -1,0 +1,16 @@
+#+TITLE: John Gray on Science
+#+date: <2025-08-02 Sat 05:28>
+#+filetags:  quotes science
+#+setupfile: ../org-templates/post.org
+
+#+begin_quote
+Science increases human power --- and magnifies the flaws in human nature. It enables us to live longer and have higher living standards than in the past. At the same time it allows us to wreak destruction --- on each other and the Earth --- on a larger scale than ever before.
+#+end_quote
+
+#+ATTR_HTML: :class source
+John Gray
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]] [[file:../tags/science.org][Science]]
+#+end_tagline

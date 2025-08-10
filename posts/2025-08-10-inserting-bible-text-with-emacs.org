@@ -1,0 +1,60 @@
+#+TITLE: Inserting Bible Passages With Emacs
+#+date: <2025-08-10 Sun 15:23>
+#+filetags:  emacs
+#+setupfile: ../org-templates/post.org
+
+Much of my writing requires quoting biblical passages, which always involved opening another application, searching for the passage, copying and pasting, then cleaning up the pasted text. Here is a function that I now use to automate the process in Emacs. My preferred translation is the New Revised Standard Version, which is available online using the [[https://bible.oremus.org][oremus Bible Browser]]. They have a convenient API which is documented [[https://bible.oremus.org/api.html][here]]. The function asks for a passage reference, formats the inputted string properly for the API, retrieves the passage, strips the HTML, then inserts the resulting plain text. The passage can either be an entire chapter or selected verses from a chapter. If preferred, The book name can be abbreviated using the standard abbreviations. 
+
+Here is the function:
+
+#+begin_src emacs-lisp
+  (defun nrsv-insert-passage ()
+    (interactive)
+    (setq oremus-passage (read-string "Passage: "))
+    (setq oremus-passage (s-replace " " "%20" oremus-passage))
+    (setq oremus-link (concat "https://bible.oremus.org/?version=NRSV&passage=" oremus-passage "&vnum=NO&fnote=NO&omithidden=YES"))
+    (switch-to-buffer (url-retrieve-synchronously oremus-link))
+    (beginning-of-buffer)
+    (search-forward "passageref\">")
+    (kill-region (point) 1)
+    (search-forward "</div><!-- class=\"bibletext\" -->")
+    (beginning-of-line)
+    (kill-region (point) (point-max))
+    (beginning-of-buffer)
+    (while (re-search-forward "<p>" nil t)
+      (replace-match "\n"))
+    (beginning-of-buffer)
+    (while (re-search-forward "<!.+?->" nil t)
+      (replace-match ""))
+    (beginning-of-buffer)
+    (while (re-search-forward "<.+?>" nil t)
+      (replace-match ""))
+    (beginning-of-buffer)
+    (while (re-search-forward "&nbsp;" nil t)
+      (replace-match " "))
+    (beginning-of-buffer)
+    (while (re-search-forward "&#147;" nil t)
+      (replace-match "\""))
+    (beginning-of-buffer)
+    (while (re-search-forward "&#148;" nil t)
+      (replace-match "\""))
+    (beginning-of-buffer)
+    (while (re-search-forward "&#145;" nil t)
+      (replace-match "\'"))
+    (beginning-of-buffer)
+    (while (re-search-forward "&#146;" nil t)
+      (replace-match "\'"))
+    (beginning-of-buffer)
+    (while (re-search-forward "&#151;" nil t)
+      (replace-match "---"))
+    (delete-extra-blank-lines)
+    (clipboard-kill-ring-save (point-min) (point-max))
+    (kill-buffer)
+    (yank))
+#+end_src
+
+If another translation is preferred, there are other sites that also have API's. I have to add my usual disclaimer --- I really don't know what I'm doing; I just keep messing with it until I get the result I wanted. Surely, there are more elegant ways of solving the problem, and I'd welcome hearing about them. This is definitely the sort of thing that will be useful to only a handful of people in the world, if that. It is, however, an example of how useful Emacs can be, even for those of us non-programming types.
+
+#+begin_tagline
+Tagged:  [[file:../tags/emacs.org][Emacs]]
+#+end_tagline

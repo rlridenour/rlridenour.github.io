@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-08-10-inserting-bible-text-with-emacs.org][Inserting Bible Passages With Emacs]]
 - [[file:2025-08-02-keynes-capitalism.org][Keynes on Capitalism]]
 - [[file:2025-08-02-john-gray-science.org][John Gray on Science]]
 - [[file:2025-07-28-emacs-writing-experience.org][Emacs Writing Experience]]

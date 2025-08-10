@@ -4,7 +4,84 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-08-02T05:40:00-05:00</updated>
+<updated>2025-08-10T16:34:05-05:00</updated>
+<entry>
+  <title>Inserting Bible Passages With Emacs</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Aug 10, 2025 15:23</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Inserting Bible Passages With Emacs
+ <br></br> <span class="subtitle">Aug 10, 2025 15:23</span>
+</h1>
+ <p>
+Much of my writing requires quoting biblical passages, which always involved opening another application, searching for the passage, copying and pasting, then cleaning up the pasted text. Here is a function that I now use to automate the process in Emacs. My preferred translation is the New Revised Standard Version, which is available online using the  <a href="https://bible.oremus.org">oremus Bible Browser</a>. They have a convenient API which is documented  <a href="https://bible.oremus.org/api.html">here</a>. The function asks for a passage reference, formats the inputted string properly for the API, retrieves the passage, strips the HTML, then inserts the resulting plain text. The passage can either be an entire chapter or selected verses from a chapter. If preferred, The book name can be abbreviated using the standard abbreviations. 
+</p>
+
+ <p>
+Here is the function:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <code>( <span class="org-keyword">defun</span>  <span class="org-function-name">nrsv-insert-passage</span> ()
+  ( <span class="org-keyword">interactive</span>)
+  ( <span class="org-keyword">setq</span> oremus-passage (read-string  <span class="org-string">"Passage: "</span>))
+  ( <span class="org-keyword">setq</span> oremus-passage (s-replace  <span class="org-string">" "</span>  <span class="org-string">"%20"</span> oremus-passage))
+  ( <span class="org-keyword">setq</span> oremus-link (concat  <span class="org-string">"https://bible.oremus.org/?version=NRSV&passage="</span> oremus-passage  <span class="org-string">"&vnum=NO&fnote=NO&omithidden=YES"</span>))
+  (switch-to-buffer (url-retrieve-synchronously oremus-link))
+  (beginning-of-buffer)
+  (search-forward  <span class="org-string">"passageref\">"</span>)
+  (kill-region (point) 1)
+  (search-forward  <span class="org-string">"</div><!-- class=\"bibletext\" -->"</span>)
+  (beginning-of-line)
+  (kill-region (point) (point-max))
+  (beginning-of-buffer)
+  ( <span class="org-keyword">while</span> (re-search-forward  <span class="org-string">"<p>"</span> nil t)
+    (replace-match  <span class="org-string">"\n"</span>))
+  (beginning-of-buffer)
+  ( <span class="org-keyword">while</span> (re-search-forward  <span class="org-string">"<!.+?->"</span> nil t)
+    (replace-match  <span class="org-string">""</span>))
+  (beginning-of-buffer)
+  ( <span class="org-keyword">while</span> (re-search-forward  <span class="org-string">"<.+?>"</span> nil t)
+    (replace-match  <span class="org-string">""</span>))
+  (beginning-of-buffer)
+  ( <span class="org-keyword">while</span> (re-search-forward  <span class="org-string">"&nbsp;"</span> nil t)
+    (replace-match  <span class="org-string">" "</span>))
+  (beginning-of-buffer)
+  ( <span class="org-keyword">while</span> (re-search-forward  <span class="org-string">"&#147;"</span> nil t)
+    (replace-match  <span class="org-string">"\""</span>))
+  (beginning-of-buffer)
+  ( <span class="org-keyword">while</span> (re-search-forward  <span class="org-string">"&#148;"</span> nil t)
+    (replace-match  <span class="org-string">"\""</span>))
+  (beginning-of-buffer)
+  ( <span class="org-keyword">while</span> (re-search-forward  <span class="org-string">"&#145;"</span> nil t)
+    (replace-match  <span class="org-string">"</span> <span class="org-string"> <span class="org-warning">\</span></span> <span class="org-string">'"</span>))
+  (beginning-of-buffer)
+  ( <span class="org-keyword">while</span> (re-search-forward  <span class="org-string">"&#146;"</span> nil t)
+    (replace-match  <span class="org-string">"</span> <span class="org-string"> <span class="org-warning">\</span></span> <span class="org-string">'"</span>))
+  (beginning-of-buffer)
+  ( <span class="org-keyword">while</span> (re-search-forward  <span class="org-string">"&#151;"</span> nil t)
+    (replace-match  <span class="org-string">"---"</span>))
+  (delete-extra-blank-lines)
+  (clipboard-kill-ring-save (point-min) (point-max))
+  (kill-buffer)
+  (yank))
+</code></pre>
+</div>
+
+ <p>
+If another translation is preferred, there are other sites that also have API’s. I have to add my usual disclaimer — I really don’t know what I’m doing; I just keep messing with it until I get the result I wanted. Surely, there are more elegant ways of solving the problem, and I’d welcome hearing about them. This is definitely the sort of thing that will be useful to only a handful of people in the world, if that. It is, however, an example of how useful Emacs can be, even for those of us non-programming types.
+</p>
+
+ <div class="tagline" id="org14d9983">
+ <p>
+Tagged:   <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2025-08-10-inserting-bible-text-with-emacs.html"/>
+  <id>https://randyridenour.net/posts/2025-08-10-inserting-bible-text-with-emacs.html</id>
+  <updated>2025-08-10T16:33:00-05:00</updated>
+</entry>
 <entry>
   <title>John Gray on Science</title>
   <author><name>Randy Ridenour</name></author>

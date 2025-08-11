@@ -28,3 +28,4 @@
 - [[file:../posts/2025-03-09-elfeed-test.org][Elfeed Test]]
 - [[file:../posts/2025-07-28-emacs-writing-experience.org][Emacs Writing Experience]]
 - [[file:../posts/2025-08-10-inserting-bible-text-with-emacs.org][Inserting Bible Text With Emacs]]
+- [[file:../posts/2025-08-10-emacs-elevator-pitch.org][My Emacs Elevator Pitch]]

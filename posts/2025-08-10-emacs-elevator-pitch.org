@@ -1,0 +1,19 @@
+#+TITLE: My Emacs Elevator Pitch
+#+date: <2025-08-10 Sun 17:07>
+#+filetags:  emacs
+#+setupfile: ../org-templates/post.org
+
+This is my post for this month's [[https://www.emacswiki.org/emacs/Carnival][Emacs Carnival]], "Your Elevator Pitch for Emacs." 
+
+It's very simple. There is one thing that I have /never/ heard an Emacs user say:
+
+#+begin_quote
+I'm forced to use Emacs for this particular task, but I sure wish I could use something else.
+#+end_quote
+
+Why would you not want to at least /try/ something that its users love that much?
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/emacs.org][Emacs]]
+#+end_tagline

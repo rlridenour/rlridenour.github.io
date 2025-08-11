@@ -4,7 +4,44 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-08-10T16:34:05-05:00</updated>
+<updated>2025-08-10T19:15:08-05:00</updated>
+<entry>
+  <title>My Emacs Elevator Pitch</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Aug 10, 2025 17:07</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">My Emacs Elevator Pitch
+ <br></br> <span class="subtitle">Aug 10, 2025 17:07</span>
+</h1>
+ <p>
+This is my post for this month’s  <a href="https://www.emacswiki.org/emacs/Carnival">Emacs Carnival</a>, “Your Elevator Pitch for Emacs.” 
+</p>
+
+ <p>
+It’s very simple. There is one thing that I have  <i>never</i> heard an Emacs user say:
+</p>
+
+ <blockquote>
+ <p>
+I’m forced to use Emacs for this particular task, but I sure wish I could use something else.
+</p>
+</blockquote>
+
+ <p>
+Why would you not want to at least  <i>try</i> something that its users love that much?
+</p>
+
+
+ <div class="tagline" id="org2d2873a">
+ <p>
+Tagged:   <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2025-08-10-emacs-elevator-pitch.html"/>
+  <id>https://randyridenour.net/posts/2025-08-10-emacs-elevator-pitch.html</id>
+  <updated>2025-08-10T19:15:00-05:00</updated>
+</entry>
 <entry>
   <title>Inserting Bible Passages With Emacs</title>
   <author><name>Randy Ridenour</name></author>

@@ -1,0 +1,71 @@
+#+TITLE: A Franciscan Blessing
+#+date: <2025-08-17 Sun 19:36>
+#+filetags:  religion
+#+setupfile: ../org-templates/post.org
+
+This is often called "A Franciscan Blessing."
+
+#+begin_quote
+May God bless you with discomfort,\\
+at easy answers, half-truths,\\
+and superficial relationships\\
+so that you may live\\
+deep within your heart.
+
+May God bless you with anger\\
+at injustice, oppression,\\
+and exploitation of people,\\
+so that you may work for\\
+justice, freedom and peace.
+
+May God bless you with tears,\\
+to shed for those who suffer pain,\\
+rejection, hunger, and war,\\
+so that you may reach out your hand\\
+to comfort them and\\
+to turn their pain to joy.
+
+And may God bless you\\
+with enough foolishness\\
+to believe that you can\\
+make a difference in the world,\\
+so that you can do\\
+what others claim cannot be done,\\
+to bring justice and kindness\\
+to all our children and the poor.
+
+Amen
+#+end_quote
+
+[[https://www.thesacredbraid.com/2016/07/22/a-non-traditional-blessing/][Dan Miller]] traced it to Sister Ruth Fox, OSB, who was kind of enough to share with him her original version:
+
+#+begin_quote
+*A Non-traditional Blessing*
+
+May God bless you with discontent with easy answers, half-truths, superficial relationships, so that you will live from deep within your heart.
+
+May God bless you with anger at injustice, oppression, abuse, and exploitation of people, so that you will work for justice, equality, and  peace.
+
+May God bless you with tears to shed for those who suffer from pain, rejection, starvation and war, so that you will reach out your hand to comfort  them and to change their pain to joy.
+
+May God bless you with the foolishness to think you can make a difference in this world, so that you will do the things which others tell you cannot be done.
+
+If you have the courage to accept these blessings, then God will also bless you with:
+
+happiness—because you will know that you have made life better for others
+
+inner peace—because you will have worked to secure an outer peace for others
+
+laughter—because your heart will be light
+
+faithful friends—because they will recognize your worth as a person.
+
+These blessings are yours—not for the asking, but for the giving—from One who wants to be your companion, our God, who lives and reigns, forever and ever. Amen.
+#+end_quote 
+
+#+ATTR_HTML: :class source
+Sister Ruth Fox, OSB
+
+#+begin_tagline
+Tagged:  [[file:../tags/religion.org][Religion]]
+#+end_tagline

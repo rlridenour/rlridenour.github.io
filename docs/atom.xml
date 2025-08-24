@@ -4,7 +4,129 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-08-17T19:57:39-05:00</updated>
+<updated>2025-08-24T07:48:04-05:00</updated>
+<entry>
+  <title>Creating Attendance Sheets with Org Mode</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Aug 23, 2025 18:03</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Creating Attendance Sheets with Org Mode
+ <br></br> <span class="subtitle">Aug 23, 2025 18:03</span>
+</h1>
+ <p>
+I do not like taking attendance in class. Unfortunately, despite having paid very much to take the course, many students need the extra motivation to attend class. My Introduction to Philosophy classes average 35 students which makes calling every student by name more time-consuming than I would like. If I could remember names, I could take attendance quickly, but unfortunately, names have always been a problem for me. <sup> <a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> The best thing for me to do is to pass around a sign-in sheet.
+</p>
+
+ <p>
+Even though I’ve written almost everything in Org mode for over a decade now, I have always done these attendance sheets in a word processor. The problem is that the number of students enrolled would vary from semester to semester, and fitting everything into one page required adjusting column widths, row heights, etc., and it always  <i>seemed</i> easier to do this in a word processor. This was only because I’ve never really done much with LaTeX tables. Finally, last semester, I decided to figure out how to make them in Org. It won’t be surprising to Emacs users that, in the end, it was far easier than using the word processor.
+</p>
+
+ <p>
+Just declare the  <a href="https://ctan.org/pkg/tabularray?lang=en">tabularray</a> package in the LaTeX header like this:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <code> <span class="org-org-meta-line">#+LaTeX_HEADER: \usepackage{tabularray}</span>
+</code></pre>
+</div>
+
+ <p>
+In the body, insert the table formatting codes <sup> <a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup> and the Org table. Here’s a sample with names from  <a href="https://1000randomnames.com">1000randomnames.com</a>:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-org"> <code> <span class="org-org-meta-line">#+ATTR_LATEX: :environment tblr :align hline{3-Z}={solid},row{2-Z}={f,10mm},colspec={XXXX}</span>
+ <span class="org-org-table">| </span> <span class="org-org-table"> <span class="org-bold">Name</span></span> <span class="org-org-table">             | </span> <span class="org-org-table"> <span class="org-bold">Signature</span></span> <span class="org-org-table"> | </span> <span class="org-org-table"> <span class="org-bold">Name</span></span> <span class="org-org-table">           | </span> <span class="org-org-table"> <span class="org-bold">Signature</span></span> <span class="org-org-table"> |</span> <span class="org-org-table-row">
+</span> <span class="org-org-table">| Branch, Kassidy  |           | Graves, Amaya  |           |</span> <span class="org-org-table-row">
+</span> <span class="org-org-table">| Duffy, Keenan    |           | Gentry, Micah |           |</span> <span class="org-org-table-row">
+</span> <span class="org-org-table">| Fischer, Addisyn |           | Kaur, Amelie   |           |</span>
+</code></pre>
+</div>
+
+ <p>
+Creating the table was still a slight pain. It involved pasting a column of names, then inserting the pipe character at the beginning of every line in the top half of the column, two pipe characters at the end of each line, then killing the bottom half of the column and inserting it as a rectangle at the right side of the top half. It wasn’t difficult using  <code>query-replace-regexp</code> and a couple of rectangle operations, but even the slightly tedious task that will be repeated indefinitely is worth automating.
+</p>
+
+ <p>
+There were two parts that were tricky for me. The first was splitting the list at the correct row. If there were 34 students, then I needed two groups of 17 with the second group starting at row 18, but a class of 35 students required one group of 18 and another of 17 with the second group starting at row 19. I wanted the left column to be the larger for aesthetic reasons, and didn’t want to manually determine where to split the list. I solved it by first counting the lines in the list, then adding the remainder of a division by 2. This resulted in 34 for the class of 34, since dividing an even number has a remainder of 0, and 36 for the class of 35. I then divided that result in 2 and added 1, giving me the 18 and 19 respectively that I needed.
+</p>
+
+ <p>
+The second tricky part was the pasting the lines from the second half to the ends of the lines in the first half. The fortunate thing about using an editor as old as Emacs is that almost every conceivable question has been asked and answered online. That was fortunate for me, because I’m not sure I would have ever figured it out.  You’ll see a few lines in the code below that split the last item in the kill-ring at line-breaks, and insert each resulting sub-string at the end of each line.
+</p>
+
+ <p>
+The rest is just inserting the characters to make it an Org table, killing an extra line, putting the columns in order, and inserting the LaTeX headers with a snippet. Here’s the result, with the usual disclaimer about my being an incompetent amateur and so on:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-elisp"> <code>( <span class="org-keyword">defun</span>  <span class="org-function-name">create-roll-sheet</span> ()
+  ( <span class="org-keyword">interactive</span>)
+   <span class="org-comment-delimiter">;; </span> <span class="org-comment">Append signature cells to each line.
+</span>  (goto-char (point-min))
+  (replace-regexp  <span class="org-string">"$"</span>  <span class="org-string">" |  | "</span>)
+   <span class="org-comment-delimiter">;; </span> <span class="org-comment">kill bottom half of buffer and move to top
+</span>  ( <span class="org-keyword">setq</span> lines (count-lines (point-min) (point-max)))
+  ( <span class="org-keyword">setq</span> lines (+ lines (% lines 2) ))
+  ( <span class="org-keyword">setq</span> midpoint (+ (/ lines 2) 1))
+  (goto-line midpoint)
+  (kill-region (point) (point-max))
+  (beginning-of-buffer)
+   <span class="org-comment-delimiter">;; </span> <span class="org-comment">Append each line from kill-ring to remaining lines.
+</span>  ( <span class="org-keyword">dolist</span> (cur-line-to-insert (split-string (current-kill 0)  <span class="org-string">"\n"</span>))
+    ( <span class="org-keyword">if</span> (eobp)
+        (newline)
+      (move-end-of-line nil))
+    (insert cur-line-to-insert)
+    (forward-line))
+   <span class="org-comment-delimiter">;; </span> <span class="org-comment">Prepend pipe character to each line and kill last line.
+</span>  (goto-char (point-min))
+  (replace-regexp  <span class="org-string">"^"</span>  <span class="org-string">"| "</span>)
+  (kill-whole-line)
+   <span class="org-comment-delimiter">;; </span> <span class="org-comment">insert LaTeX table format and header lines
+</span>  (goto-char (point-min))
+  (insert  <span class="org-string">"#+ATTR_LATEX: :environment tblr :align hline{3-Z}={solid},row{2-Z}={f,10mm},colspec={XXXX}\n| *Name*              | *Signature* | *Name*              | *Signature* | \n"</span>)
+   <span class="org-comment-delimiter">;; </span> <span class="org-comment">Clean up table.
+</span>  (org-ctrl-c-ctrl-c)
+   <span class="org-comment-delimiter">;; </span> <span class="org-comment">Insert LaTeX header.
+</span>  (goto-char (point-min))
+  (yas-expand-snippet (yas-lookup-snippet  <span class="org-string">"roll-sheet"</span>)))
+</code></pre>
+</div>
+
+ <p>
+It’s 31 lines of code, but it wasn’t difficult. In fact, it took longer to write this blog post than to write the function. 
+</p>
+
+ <p>
+To be honest, this is something that I only have to do maybe twice a semester. So, why bother? It’s fun and I get a sense of satisfaction from doing it, and that’s reason enough in itself. Still, there is good reason to automate something that you only rarely have to do. I think there are two kinds of tasks that deserve to be automated. The first is something involving several steps that you have to do constantly. The second is something involving several steps that you only do rarely, but since it’s done only rarely, it’s difficult to remember how it was accomplished previously. This task probably fits into neither category, but I still learned something about Elisp that I’m sure will be useful when have a problem that does.
+</p>
+
+
+ <div class="tagline" id="orgedcf82a">
+ <p>
+Tagged:   <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+ <div id="footnotes">
+ <h2 class="footnotes">Footnotes</h2>
+ <div id="text-footnotes">
+
+ <div class="footdef"> <sup> <a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"> <p class="footpara">
+I blame this on too many head injuries in the Army. I woke up in an ambulance after one airborne jump and couldn’t even remember landing. There was another incident with a sledgehammer — it was one of those things that seemed like a good idea at the time.
+</p></div></div>
+
+ <div class="footdef"> <sup> <a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"> <p class="footpara">
+ <code>hline{3-Z}={solid}</code> draws horizontal lines above and below every row from row three until the end,  <code>row{2-Z}={f,10mm}</code> sets the row height and aligns text at the foot of the row ,  <code>colspec={XXXX}</code> makes the columns expandable to stretch across the document.
+</p></div></div>
+
+
+</div>
+</div></main>]]></content>
+  <link href="https://randyridenour.net/posts/2025-08-23-creating-attendance-sheets-with-org-mode.html"/>
+  <id>https://randyridenour.net/posts/2025-08-23-creating-attendance-sheets-with-org-mode.html</id>
+  <updated>2025-08-24T07:47:00-05:00</updated>
+</entry>
 <entry>
   <title>A Franciscan Blessing</title>
   <author><name>Randy Ridenour</name></author>

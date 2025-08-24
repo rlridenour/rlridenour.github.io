@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-08-23-creating-attendance-sheets-with-org-mode.org][Creating Attendance Sheets with Org Mode]]
 - [[file:2025-08-17-franciscan-blessing.org][A Franciscan Blessing]]
 - [[file:2025-08-10-emacs-elevator-pitch.org][My Emacs Elevator Pitch]]
 - [[file:2025-08-10-inserting-bible-text-with-emacs.org][Inserting Bible Passages With Emacs]]

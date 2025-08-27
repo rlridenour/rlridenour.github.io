@@ -1,0 +1,21 @@
+#+TITLE: How Autocrats Destroy Truth
+#+date: <2025-08-27 Wed 05:30>
+#+filetags:  politics
+#+setupfile: ../org-templates/post.org
+
+
+I've often wondered why the administration continues to make claims that are laughably and provably false, such as Trump's claim that one of his prominent critics, Gov. Wes Moore of Maryland called him "the greatest president of my lifetime."
+
+Anne Applebaum writing for [[https://www.theatlantic.com/magazine/archive/2024/06/china-russia-republican-party-relations/678271/][/The Atlantic/]]:
+
+#+begin_quote
+This tactic—the so-called fire hose of falsehoods—ultimately produces not outrage but nihilism. Given so many explanations, how can you know what actually happened? What if you just can’t know? If you don’t know what happened, you’re not likely to join a great movement for democracy, or to listen when anyone speaks about positive political change. Instead, you are not going to participate in any politics at all.
+#+end_quote
+
+The country is gathering into large groups --- the gullible true believers who believe everything and the cynical skeptics who believe nothing. Those in the former group obviously serve the interests of the powers that be by their unreflective support. Those in the latter also serve the interests of the ruling powers with their despairing malaise.  It's in the interests of the autocrats to ensure that, if you can't be one of the gullibile, you at least become a nihilist.
+
+Seek the truth, hold on to hope, keep the faith.
+
+#+begin_tagline
+Tagged:  [[file:../tags/politics.org][Politics]]
+#+end_tagline

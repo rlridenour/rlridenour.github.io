@@ -24,3 +24,4 @@
 - [[file:../posts/2019-08-06-some-thoughts-on-mass-shootings.org][Some Thoughts on Mass Shootings]]
 - [[file:../posts/2025-04-04-surviving-apocalypse.org][Surviving the Apocalypse]]
 - [[file:../posts/2025-05-03-christian-right-religious-right.org][Christian Right or Religious Right?]]
+- [[file:../posts/2025-08-27-how-autocrats-destroy-truth.org][How Autocrats Destroy Truth]]

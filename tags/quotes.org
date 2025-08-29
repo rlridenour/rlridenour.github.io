@@ -110,3 +110,4 @@
 - [[file:../posts/2025-07-19-tragic-human-condition.org][The Tragic Human Condition]]
 - [[file:../posts/2025-08-02-john-gray-science.org][John Gray on Science]]
 - [[file:../posts/2025-08-02-keynes-capitalism.org][Keynes on Capitalism]]
+- [[file:../posts/2025-08-29-easy-solutions.org][Easy Solutions]]

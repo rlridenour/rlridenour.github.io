@@ -1,0 +1,17 @@
+#+TITLE: Easy Solutions
+#+date: <2025-08-29 Fri 05:44>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+There is always an easy solution to every human problem – neat, plausible and wrong. 
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+H. L. Mencken, from /Prejudices: Second Series/, 1920
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

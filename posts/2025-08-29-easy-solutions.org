@@ -9,7 +9,7 @@ There is always an easy solution to every human problem – neat, plausible and 
 #+end_quote
 
 #+ATTR_HTML: :class bigquote
-H L Mencken, /Prejudices: Second Series/, 1920
+​H. L. Mencken, /Prejudices: Second Series/, 1920
 
 
 #+begin_tagline

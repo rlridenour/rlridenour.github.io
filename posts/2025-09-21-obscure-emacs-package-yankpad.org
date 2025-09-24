@@ -1,0 +1,38 @@
+#+TITLE: An Obscure Emacs Package: Yankpad
+#+date: <2025-09-21 Sun 15:32>
+#+filetags:  teaching emacs
+#+setupfile: ../org-templates/post.org
+
+I've really enjoyed participating in the [[https://www.emacswiki.org/emacs/Carnival][Emacs Carnival]] that's been going on since June this year. I'm particularly excited about reading the posts on this month's topic, [[https://goritskov.com/posts/obscure_packages.html]["Obscure Packages."]] There are some people who keep their initialization files lean and simple, but I've never been one of those. I don't really care about Emacs startup time --- as far as I'm concerned, finding oneself obseessing over a few fractions of a second is a good sign that it's time to begin some kind of mindfulness practice. Even more, I've found that adding packages is one of the best ways to leverage the work of others as I continue to make Emacs work for me, so I'm always on the lookout for packages that others have found useful.
+
+My choice is [[https://github.com/Kungsgeten/yankpad][Yankpad]] by Erik Sjöstrand ([[https://github.com/Kungsgeten][Kungsgeten]] on Github). I don't remember when I first found Yankpad, but I've been using it for years. I don't really recall seeing it mentioned anywhere, even though I've found it to be incredibly useful. Yankpad is a simple, but surprisingly powerful, package for inserting snippets. If you've been using Emacs for any time at all, you're probably already using [[https://github.com/joaotavora/yasnippet][YASnippet]] or [[https://github.com/minad/tempel][Tempel]], so why recommend another one? First, Sjöstrand never intended Yankpad to be a replacement for something like YASnippet. In fact, if YASnippet is installed, then Yankpad can use some of its features like tab stops and the ability to execute Elisp. The difference between YASnippet and Yankpad is primarily in how snippets are written and organized. 
+
+In Yankpad, all snippets are items in one or more Org files. Creating a snippet, then, is as simple as adding some text to =yankpad.org=. Top-level headings are snippet categories, and a snippet is the body text under a lowest-level heading in the category.  =M-x yankpad-insert=, which I have bound to =<f6>=, displays the names of the category's snippets in the minibuffer for selection. Since a snippet is nothing more than a bit of text in an Org file, there's no reason not to make one even if it's only going to be used a few times. It's hardly more effort than saving some text to a register. The difference, though, is that the Yankpad snippet has a meaningful name, not just a single letter.
+
+The real value of Yankpad, however, are the snippet categories. In YASnippet, the snippets are categorized by major-mode, so Org buffers have access to the Org mode snippets, LaTeX buffers use the LaTeX snippets, and so on. Yankpad can also use major-mode categories, but, more importantly for me, they can be organized by context or situation. Like Sjöstrand, I teach, and the bane of a professor's existence is writing grading comments. It's something that I don't have to do very often, so I don't really want to clutter up YASnippet with items that are only occasionally used. There's also no need to see all of the snippets for my symbolic logic class when I'm grading epistemology papers. So, I have a separate category for a course that has comments pertaining only to that course, and a general "grading" category that includes comments that are not course-specific. The Yankpad file looks something like this:
+
+#+begin_src org
+,* Grading
+
+,** Proofread
+
+- Read through carefully for grammar and spelling errors.
+
+,* Intro
+:PROPERTIES:
+:INCLUDE:  Grading
+:END:
+
+,** Dualism
+
+- In the section on the nature of self, you should discuss dualism, materialism, etc.
+#+end_src
+
+After selecting the Intro category, =<f6>= displays snippets from both the intro and the grading categories for selection, since I've defined the intro category to include the grading category. Categories can also be project-specific for those who use Projectile or Project.el. Yankpad can do many more things than I've described; if your snippet needs are simple, it may be all that you need. It won't replace YASnippet for me, mainly because of the ability to use =yasnippet-expand-snippet= in Elisp functions. Neither will YASnippet replace Yankpad, however. I've found Yankpad to be very beneficial for making my grading workflow more efficient, now if someone would only develop something to motivate me to actually start grading.
+
+
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/teaching.org][Teaching]] [[file:../tags/emacs.org][Emacs]]
+#+end_tagline

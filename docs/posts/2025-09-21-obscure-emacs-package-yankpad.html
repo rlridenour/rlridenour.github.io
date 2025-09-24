@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Sep 24, 2025 05:56 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>An Obscure Emacs Package: Yankpad</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/atom.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">An Obscure Emacs Package: Yankpad
+<br />
+<span class="subtitle">Sep 21, 2025 15:32</span>
+</h1>
+<p>
+I&rsquo;ve really enjoyed participating in the <a href="https://www.emacswiki.org/emacs/Carnival">Emacs Carnival</a> that&rsquo;s been going on since June this year. I&rsquo;m particularly excited about reading the posts on this month&rsquo;s topic, <a href="https://goritskov.com/posts/obscure_packages.html">&ldquo;Obscure Packages.&rdquo;</a> There are some people who keep their initialization files lean and simple, but I&rsquo;ve never been one of those. I don&rsquo;t really care about Emacs startup time &mdash; as far as I&rsquo;m concerned, finding oneself obseessing over a few fractions of a second is a good sign that it&rsquo;s time to begin some kind of mindfulness practice. Even more, I&rsquo;ve found that adding packages is one of the best ways to leverage the work of others as I continue to make Emacs work for me, so I&rsquo;m always on the lookout for packages that others have found useful.
+</p>
+
+<p>
+My choice is <a href="https://github.com/Kungsgeten/yankpad">Yankpad</a> by Erik Sjöstrand (<a href="https://github.com/Kungsgeten">Kungsgeten</a> on Github). I don&rsquo;t remember when I first found Yankpad, but I&rsquo;ve been using it for years. I don&rsquo;t really recall seeing it mentioned anywhere, even though I&rsquo;ve found it to be incredibly useful. Yankpad is a simple, but surprisingly powerful, package for inserting snippets. If you&rsquo;ve been using Emacs for any time at all, you&rsquo;re probably already using <a href="https://github.com/joaotavora/yasnippet">YASnippet</a> or <a href="https://github.com/minad/tempel">Tempel</a>, so why recommend another one? First, Sjöstrand never intended Yankpad to be a replacement for something like YASnippet. In fact, if YASnippet is installed, then Yankpad can use some of its features like tab stops and the ability to execute Elisp. The difference between YASnippet and Yankpad is primarily in how snippets are written and organized. 
+</p>
+
+<p>
+In Yankpad, all snippets are items in one or more Org files. Creating a snippet, then, is as simple as adding some text to <code>yankpad.org</code>. Top-level headings are snippet categories, and a snippet is the body text under a lowest-level heading in the category.  <code>M-x yankpad-insert</code>, which I have bound to <code>&lt;f6&gt;</code>, displays the names of the category&rsquo;s snippets in the minibuffer for selection. Since a snippet is nothing more than a bit of text in an Org file, there&rsquo;s no reason not to make one even if it&rsquo;s only going to be used a few times. It&rsquo;s hardly more effort than saving some text to a register. The difference, though, is that the Yankpad snippet has a meaningful name, not just a single letter.
+</p>
+
+<p>
+The real value of Yankpad, however, are the snippet categories. In YASnippet, the snippets are categorized by major-mode, so Org buffers have access to the Org mode snippets, LaTeX buffers use the LaTeX snippets, and so on. Yankpad can also use major-mode categories, but, more importantly for me, they can be organized by context or situation. Like Sjöstrand, I teach, and the bane of a professor&rsquo;s existence is writing grading comments. It&rsquo;s something that I don&rsquo;t have to do very often, so I don&rsquo;t really want to clutter up YASnippet with items that are only occasionally used. There&rsquo;s also no need to see all of the snippets for my symbolic logic class when I&rsquo;m grading epistemology papers. So, I have a separate category for a course that has comments pertaining only to that course, and a general &ldquo;grading&rdquo; category that includes comments that are not course-specific. The Yankpad file looks something like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code><span class="org-org-level-1">* Grading</span>
+
+<span class="org-org-level-2">** Proofread</span>
+
+- Read through carefully for grammar and spelling errors.
+
+<span class="org-org-level-1">* Intro</span>
+<span class="org-org-drawer">:PROPERTIES:</span>
+<span class="org-org-special-keyword">:INCLUDE:</span>  <span class="org-org-property-value">Grading</span>
+<span class="org-org-drawer">:END:</span>
+
+<span class="org-org-level-2">** Dualism</span>
+
+- In the section on the nature of self, you should discuss dualism, materialism, etc.
+</code></pre>
+</div>
+
+<p>
+After selecting the Intro category, <code>&lt;f6&gt;</code> displays snippets from both the intro and the grading categories for selection, since I&rsquo;ve defined the intro category to include the grading category. Categories can also be project-specific for those who use Projectile or Project.el. Yankpad can do many more things than I&rsquo;ve described; if your snippet needs are simple, it may be all that you need. It won&rsquo;t replace YASnippet for me, mainly because of the ability to use <code>yasnippet-expand-snippet</code> in Elisp functions. Neither will YASnippet replace Yankpad, however. I&rsquo;ve found Yankpad to be very beneficial for making my grading workflow more efficient, now if someone would only develop something to motivate me to actually start grading.
+</p>
+
+
+
+
+<div class="tagline" id="orga3f3e5b">
+<p>
+Tagged:  <a href="../tags/teaching.html">Teaching</a> <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Sep 24, 2025 05:56.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

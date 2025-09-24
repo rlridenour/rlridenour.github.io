@@ -30,3 +30,4 @@
 - [[file:../posts/2025-08-10-inserting-bible-text-with-emacs.org][Inserting Bible Text With Emacs]]
 - [[file:../posts/2025-08-10-emacs-elevator-pitch.org][My Emacs Elevator Pitch]]
 - [[file:../posts/2025-08-23-creating-attendance-sheets-with-org-mode.org][Creating Attendance Sheets with Org Mode]]
+- [[file:../posts/2025-09-21-obscure-emacs-package-yankpad.org][An Obscure Emacs Package: Yankpad]]

@@ -1,0 +1,16 @@
+#+TITLE: Anne Frank on Hunger
+#+date: <2025-10-16 Thu 15:53>
+#+filetags:  quotes ethics
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+Hunger is not a problem. It is an obscenity. How wonderful it is that nobody need wait a single moment before starting to improve the world.
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+[[https://baptistnews.com/article/the-early-church-would-be-shocked-weve-stopped-feeding-the-hungry/][Anne Frank]]
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]] [[file:../tags/ethics.org][Ethics]]
+#+end_tagline

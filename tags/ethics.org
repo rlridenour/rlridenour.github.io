@@ -19,3 +19,4 @@
 - [[file:../posts/2016-07-31-should-the-church-bear-the-welfare-burden.org][Should the Church Bear the Welfare Burden?]]
 
 - [[file:../posts/2025-07-14-moral-imagination.org][On Moral Imagination]]
+- [[file:../posts/2025-10-16-anne-frank-hunger.org][Anne Frank on Hunger]]

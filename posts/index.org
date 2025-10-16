@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-10-16-anne-frank-hunger.org][Anne Frank on Hunger]]
 - [[file:2025-09-21-obscure-emacs-package-yankpad.org][An Obscure Emacs Package: Yankpad]]
 - [[file:2025-08-29-easy-solutions.org][Easy Solutions]]
 - [[file:2025-08-27-how-autocrats-destroy-truth.org][How Autocrats Destroy Truth]]

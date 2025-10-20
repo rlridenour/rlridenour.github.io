@@ -4,7 +4,7 @@
 #+setupfile: ../org-templates/post.org
 
 
-Emacs Dashboard is a very elegant start page for Emacs that displays projects, recent files, agenda items, etc. It's very customizable
+Emacs Dashboard is a very elegant start page for Emacs that displays projects, recent files, agenda items, etc. It's very customizable, but not quite in the way that I would like. I do like having a dashboard as my starting page, but I want 
 
 
 #+begin_src emacs-lisp

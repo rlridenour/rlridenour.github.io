@@ -1,0 +1,18 @@
+#+TITLE: Political Parties and the Church
+#+date: <2025-10-20 Mon 05:34>
+#+filetags:  religion politics
+#+setupfile: ../org-templates/post.org
+
+In his Baptist News Global piece, "[[https://baptistnews.com/article/heres-what-the-churches-of-christ-and-maga-have-in-common/][Here’s what the Churches of Christ and MAGA have in common]]," Richard T. Hughes writes:
+
+#+begin_quote
+The problem would be just as acute had Churches of Christ been captured by Democratic as opposed to Republican interests since both parties — indeed, all political parties — are wed to the right-side-up interests of power, wealth and control. Disciples of Jesus, however, pledge allegiance to the upside-down kingdom of God where they serve the least of these, place the interests of others above their own, and stand in solidarity with oppressed and marginalized people.
+#+end_quote
+
+Hughes is speaking about the Churches of Christ, but it is true of all Christian denominations. It is tempting to align ourselves with a political party in order to use that party as a tool of the gospel, but the inevitable consequence is that the resulting perversion of the gospel instead becomes a tool that the party uses to maintain power.
+
+We have but one Lord and one King, Jesus Christ.
+
+#+begin_tagline
+Tagged:  [[file:../tags/religion.org][Religion]] [[file:../tags/politics.org][Politics]]
+#+end_tagline

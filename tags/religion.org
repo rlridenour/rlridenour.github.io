@@ -81,3 +81,4 @@
 - [[file:../posts/2025-07-10-christian-witness-time-war.org][Christian Witness in Time of War]]
 - [[file:../posts/2025-07-10-doubt-defense.org][Doubt and Defense]]
 - [[file:../posts/2025-08-17-franciscan-blessing.org][A Franciscan Blessing]]
+- [[file:../posts/2025-10-20-political-parties-church.org][Political Parties and the Church]]

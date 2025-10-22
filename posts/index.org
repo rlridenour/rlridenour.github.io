@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-10-05-simple-emacs-dashboard.org][A Simple Emacs Dashboard]]
 - [[file:2025-10-20-political-parties-church.org][Political Parties and the Church]]
 - [[file:2025-10-16-anne-frank-hunger.org][Anne Frank on Hunger]]
 - [[file:2025-09-21-obscure-emacs-package-yankpad.org][An Obscure Emacs Package: Yankpad]]

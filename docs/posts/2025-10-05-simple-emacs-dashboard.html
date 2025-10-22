@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Oct 22, 2025 05:28 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Simple Emacs Dashboard</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/atom.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">A Simple Emacs Dashboard
+<br />
+<span class="subtitle">(October 22, 2025)</span>
+</h1>
+<p>
+<a href="https://github.com/emacs-dashboard/emacs-dashboard">Emacs Dashboard</a> is an elegant start page for Emacs that displays projects, recent files, agenda items, etc. It&rsquo;s very customizable, but not quite in the way that I would like. I do like having a dashboard as my starting page, but I want something that displays the usual agenda view, not just a list of events. This is mainly because I like having a visual representation of the relation between the current time and my next appointment. I first define a function that opens the agenda for today and deletes other windows in the frame. This is assigned to <code>s-d</code> to quickly clear the screen of anything displayed and show the agenda. To display it without deleting other windows, just use the standard <code>C-c a d</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">agenda-home</span> ()
+  (<span class="org-keyword">interactive</span>)
+  (org-agenda-list 1)
+  (delete-other-windows))
+</code></pre>
+</div>
+
+<p>
+Then, I make sure that new frames displayed this when created.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code>(add-hook 'server-after-make-frame-hook #'agenda-home)
+</code></pre>
+</div>
+
+<p>
+This function refreshes the agenda. It&rsquo;s run every minute. That&rsquo;s really overkill, but 34 years in the Army made me anal about accurate times.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">refresh-agenda-periodic-function</span> ()
+  <span class="org-doc">"Recompute the Org Agenda buffer(s) periodically."</span>
+  (<span class="org-keyword">ignore-errors</span>
+    (<span class="org-keyword">when</span> (get-buffer <span class="org-string">"*Org Agenda*"</span>)
+          (<span class="org-keyword">with-selected-window</span> (get-buffer-window <span class="org-string">"*Org Agenda*"</span>)
+            (org-agenda-redo-all)))))
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">Refresh agenda every minute.
+</span>(run-with-timer 60 60 'refresh-agenda-periodic-function)
+</code></pre>
+</div>
+
+<p>
+The line used to designate the current time is a bit too long by default. I didn&rsquo;t like how it wrapped when narrowing the window.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">setq</span> org-agenda-current-time-string <span class="org-string">"now - - - - - - -"</span>)
+</code></pre>
+</div>
+
+<p>
+Then change the color to something more noticeable.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code>(custom-set-faces
+ '(org-agenda-current-time ((t (<span class="org-builtin">:foreground</span> <span class="org-string">"red"</span>)))))
+</code></pre>
+</div>
+
+<p>
+Now, to make the dashboard links. For that, I use an org file that just contains a table. Each cell contains a link to a directory, file, runs some Elisp, etc. After inserting the file contents, then activate all of the links, that is, make them &ldquo;clickable.&rdquo;
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/agenda-links</span> ()
+  (end-of-buffer)
+  (insert-file-contents <span class="org-string">"/Path to Org Directory/agenda-links.org"</span>)
+  (<span class="org-keyword">while</span> (org-activate-links (point-max))
+    (goto-char (match-end 0)))
+  (beginning-of-buffer))
+
+(add-hook 'org-agenda-finalize-hook #'rlr/agenda-links)
+</code></pre>
+</div>
+
+<p>
+I don&rsquo;t like using the mouse, so make sure that pressing enter will work when the point is on the link.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">setq</span> org-return-follows-link t)
+</code></pre>
+</div>
+
+<p>
+This avoids having to confirm that the links that run Elisp are safe. I name them all with my initials to make it easy.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">setopt</span> org-link-elisp-skip-confirm-regexp <span class="org-string">"rlr.*"</span>)
+</code></pre>
+</div>
+
+<p>
+The result is this:
+</p>
+
+<div class="org-center">
+
+<div id="orge5d45c3" class="figure">
+<p><img src="../images/posts/2025-agenda-screenshot.png" alt="2025-agenda-screenshot.png" width="100%" />
+</p>
+</div>
+</div>
+
+<div class="tagline" id="org491658a">
+<p>
+Tagged:  <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Oct 22, 2025 05:28.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+</div>
+</footer>
+</body>
+</html>

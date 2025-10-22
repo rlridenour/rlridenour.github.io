@@ -4,7 +4,127 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-10-20T05:47:40-05:00</updated>
+<updated>2025-10-22T05:28:39-05:00</updated>
+<entry>
+  <title>A Simple Emacs Dashboard</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>(October 22, 2025)</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">A Simple Emacs Dashboard
+ <br></br> <span class="subtitle">(October 22, 2025)</span>
+</h1>
+ <p>
+ <a href="https://github.com/emacs-dashboard/emacs-dashboard">Emacs Dashboard</a> is an elegant start page for Emacs that displays projects, recent files, agenda items, etc. It’s very customizable, but not quite in the way that I would like. I do like having a dashboard as my starting page, but I want something that displays the usual agenda view, not just a list of events. This is mainly because I like having a visual representation of the relation between the current time and my next appointment. I first define a function that opens the agenda for today and deletes other windows in the frame. This is assigned to  <code>s-d</code> to quickly clear the screen of anything displayed and show the agenda. To display it without deleting other windows, just use the standard  <code>C-c a d</code>
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <code>( <span class="org-keyword">defun</span>  <span class="org-function-name">agenda-home</span> ()
+  ( <span class="org-keyword">interactive</span>)
+  (org-agenda-list 1)
+  (delete-other-windows))
+</code></pre>
+</div>
+
+ <p>
+Then, I make sure that new frames displayed this when created.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <code>(add-hook 'server-after-make-frame-hook #'agenda-home)
+</code></pre>
+</div>
+
+ <p>
+This function refreshes the agenda. It’s run every minute. That’s really overkill, but 34 years in the Army made me anal about accurate times.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <code>( <span class="org-keyword">defun</span>  <span class="org-function-name">refresh-agenda-periodic-function</span> ()
+   <span class="org-doc">"Recompute the Org Agenda buffer(s) periodically."</span>
+  ( <span class="org-keyword">ignore-errors</span>
+    ( <span class="org-keyword">when</span> (get-buffer  <span class="org-string">"*Org Agenda*"</span>)
+          ( <span class="org-keyword">with-selected-window</span> (get-buffer-window  <span class="org-string">"*Org Agenda*"</span>)
+            (org-agenda-redo-all)))))
+
+ <span class="org-comment-delimiter">;; </span> <span class="org-comment">Refresh agenda every minute.
+</span>(run-with-timer 60 60 'refresh-agenda-periodic-function)
+</code></pre>
+</div>
+
+ <p>
+The line used to designate the current time is a bit too long by default. I didn’t like how it wrapped when narrowing the window.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <code>( <span class="org-keyword">setq</span> org-agenda-current-time-string  <span class="org-string">"now - - - - - - -"</span>)
+</code></pre>
+</div>
+
+ <p>
+Then change the color to something more noticeable.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <code>(custom-set-faces
+ '(org-agenda-current-time ((t ( <span class="org-builtin">:foreground</span>  <span class="org-string">"red"</span>)))))
+</code></pre>
+</div>
+
+ <p>
+Now, to make the dashboard links. For that, I use an org file that just contains a table. Each cell contains a link to a directory, file, runs some Elisp, etc. After inserting the file contents, then activate all of the links, that is, make them “clickable.”
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <code>( <span class="org-keyword">defun</span>  <span class="org-function-name">rlr/agenda-links</span> ()
+  (end-of-buffer)
+  (insert-file-contents  <span class="org-string">"/Path to Org Directory/agenda-links.org"</span>)
+  ( <span class="org-keyword">while</span> (org-activate-links (point-max))
+    (goto-char (match-end 0)))
+  (beginning-of-buffer))
+
+(add-hook 'org-agenda-finalize-hook #'rlr/agenda-links)
+</code></pre>
+</div>
+
+ <p>
+I don’t like using the mouse, so make sure that pressing enter will work when the point is on the link.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <code>( <span class="org-keyword">setq</span> org-return-follows-link t)
+</code></pre>
+</div>
+
+ <p>
+This avoids having to confirm that the links that run Elisp are safe. I name them all with my initials to make it easy.
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <code>( <span class="org-keyword">setopt</span> org-link-elisp-skip-confirm-regexp  <span class="org-string">"rlr.*"</span>)
+</code></pre>
+</div>
+
+ <p>
+The result is this:
+</p>
+
+ <div class="org-center">
+
+ <div id="orge5d45c3" class="figure">
+ <p> <img src="../images/posts/2025-agenda-screenshot.png" alt="2025-agenda-screenshot.png" width="100%"></img></p>
+</div>
+</div>
+
+ <div class="tagline" id="org491658a">
+ <p>
+Tagged:   <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2025-10-05-simple-emacs-dashboard.html"/>
+  <id>https://randyridenour.net/posts/2025-10-05-simple-emacs-dashboard.html</id>
+  <updated>2025-10-22T05:28:00-05:00</updated>
+</entry>
 <entry>
   <title>Political Parties and the Church</title>
   <author><name>Randy Ridenour</name></author>

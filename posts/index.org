@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2025-10-23-genuine-american-exceptionalism.org][Genuine American Exceptionalism]]
 - [[file:2025-10-05-simple-emacs-dashboard.org][A Simple Emacs Dashboard]]
 - [[file:2025-10-20-political-parties-church.org][Political Parties and the Church]]
 - [[file:2025-10-16-anne-frank-hunger.org][Anne Frank on Hunger]]

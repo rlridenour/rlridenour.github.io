@@ -1,0 +1,16 @@
+#+TITLE: Genuine American Exceptionalism
+#+date: <2025-10-23 Thu 05:49>
+#+filetags:  politics
+#+setupfile: ../org-templates/post.org
+
+
+#+begin_quote
+The United States isn’t exceptional because of our common cultural heritage; we’re exceptional because we’ve been able to cohere despite faiths, traditions and languages that set us apart, and sometimes against one another. The drafters of the Constitution tried to create that cohesion by building a government that could transcend our divisions.
+#+end_quote
+
+#+ATTR_HTML: :class source
+[[https://www.nytimes.com/2025/10/21/opinion/trump-diversity-culture-founders.html][Leighton Woodhouse]]
+
+#+begin_tagline
+Tagged:  [[file:../tags/politics.org][Politics]]
+#+end_tagline

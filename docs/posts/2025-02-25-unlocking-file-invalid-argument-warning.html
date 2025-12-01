@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Dec 01, 2025 05:22 -->
+<!-- Nov 28, 2025 05:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Home</title>
+<title>Unlocking File: Invalid Argument Warning</title>
 <meta name="author" content="Randy Ridenour" />
 <meta name="generator" content="Org Mode" />
 <link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
@@ -50,23 +50,29 @@
 </div>
 </header>
 <main id="content" class="content">
-<section id="outline-container-orgd76d28d" class="outline-2">
-<h2 id="orgd76d28d">Recent Posts</h2>
-<div class="outline-text-2" id="text-orgd76d28d">
-<ul class="org-ul">
-<li><a href="../posts/2025-12-01-seeing-christ.html">Seeing Christ</a></li>
-<li><a href="../posts/2025-02-25-unlocking-file-invalid-argument-warning.html">Unlocking File: Invalid Argument Warning</a></li>
-<li><a href="../posts/2025-10-23-genuine-american-exceptionalism.html">Genuine American Exceptionalism</a></li>
-<li><a href="../posts/2025-10-05-simple-emacs-dashboard.html">A Simple Emacs Dashboard</a></li>
-<li><a href="../posts/2025-10-20-political-parties-church.html">Political Parties and the Church</a></li>
-</ul>
+<h1 class="title">Unlocking File: Invalid Argument Warning
+<br />
+<span class="subtitle">Nov 28, 2025 05:41</span>
+</h1>
+<p>
+This is one of those posts to remind me of a solution to a rarely occurring problem.
+</p>
+
+<p>
+Emacs has a feature called <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Interlocking.html#:~:text=Emacs%20removes%20the%20lock%20when,benefits%20that%20this%20feature%20provides.">interlocking</a> to prevent two different users from modifying the same file. If, like me, you regularly use two different machines, this may occasionally present a problem. Most of the time, Emacs behaves nicely and gives the user some options to either steal the lock, proceed with the edit, or quit. Recently, though, I had a file that I needed to edit that Emacs simply wouldn&rsquo;t let me open. Every time I tried, I just got this warning: <code>Unlocking file: Invalid argument</code>. I suspect this might have had something to do with a system crash that prevented Emacs from saving the file and clearing its locked status. Eventually, I stumbled on a solution: delete the lockfile, which is a file in the directory that contains a &ldquo;#&rdquo; in the filename.
+</p>
+
+<div class="tagline" id="org07dcce1">
+<p>
+Tagged:  <a href="../tags/emacs.html">Emacs</a>
+</p>
+
 </div>
-</section>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Dec 01, 2025 05:22.<br>
+  Last updated on Nov 28, 2025 05:42.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>

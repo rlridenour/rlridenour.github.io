@@ -82,3 +82,4 @@
 - [[file:../posts/2025-07-10-doubt-defense.org][Doubt and Defense]]
 - [[file:../posts/2025-08-17-franciscan-blessing.org][A Franciscan Blessing]]
 - [[file:../posts/2025-10-20-political-parties-church.org][Political Parties and the Church]]
+- [[file:../posts/2025-12-01-seeing-christ.org][Seeing Christ]]

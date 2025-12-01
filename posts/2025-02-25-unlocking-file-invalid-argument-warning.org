@@ -1,0 +1,12 @@
+#+TITLE: Unlocking File: Invalid Argument Warning
+#+date: <2025-11-28 Fri 05:41>
+#+filetags:  emacs
+#+setupfile: ../org-templates/post.org
+
+This is one of those posts to remind me of a solution to a rarely occurring problem.
+
+Emacs has a feature called [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Interlocking.html#:~:text=Emacs%20removes%20the%20lock%20when,benefits%20that%20this%20feature%20provides.][interlocking]] to prevent two different users from modifying the same file. If, like me, you regularly use two different machines, this may occasionally present a problem. Most of the time, Emacs behaves nicely and gives the user some options to either steal the lock, proceed with the edit, or quit. Recently, though, I had a file that I needed to edit that Emacs simply wouldn't let me open. Every time I tried, I just got this warning: =Unlocking file: Invalid argument=. I suspect this might have had something to do with a system crash that prevented Emacs from saving the file and clearing its locked status. Eventually, I stumbled on a solution: delete the lockfile, which is a file in the directory that contains a "#" in the filename.
+
+#+begin_tagline
+Tagged:  [[file:../tags/emacs.org][Emacs]]
+#+end_tagline

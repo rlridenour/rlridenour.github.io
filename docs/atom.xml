@@ -4,7 +4,62 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2025-10-23T05:52:21-05:00</updated>
+<updated>2025-12-01T05:22:16-06:00</updated>
+<entry>
+  <title>Seeing Christ</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Dec 01, 2025 05:21</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Seeing Christ
+ <br></br> <span class="subtitle">Dec 01, 2025 05:21</span>
+</h1>
+ <blockquote class="bigquote">
+ <p>
+Those who cannot see Christ in the poor are atheists indeed.
+</p>
+</blockquote>
+
+ <p class="bigquote">
+Dorothy Day
+</p>
+
+
+ <div class="tagline" id="org374a683">
+ <p>
+Tagged:   <a href="../tags/religion.html">Religion</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2025-12-01-seeing-christ.html"/>
+  <id>https://randyridenour.net/posts/2025-12-01-seeing-christ.html</id>
+  <updated>2025-12-01T05:22:00-06:00</updated>
+</entry>
+<entry>
+  <title>Unlocking File: Invalid Argument Warning</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Nov 28, 2025 05:41</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Unlocking File: Invalid Argument Warning
+ <br></br> <span class="subtitle">Nov 28, 2025 05:41</span>
+</h1>
+ <p>
+This is one of those posts to remind me of a solution to a rarely occurring problem.
+</p>
+
+ <p>
+Emacs has a feature called  <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Interlocking.html#:~:text=Emacs%20removes%20the%20lock%20when,benefits%20that%20this%20feature%20provides.">interlocking</a> to prevent two different users from modifying the same file. If, like me, you regularly use two different machines, this may occasionally present a problem. Most of the time, Emacs behaves nicely and gives the user some options to either steal the lock, proceed with the edit, or quit. Recently, though, I had a file that I needed to edit that Emacs simply wouldn’t let me open. Every time I tried, I just got this warning:  <code>Unlocking file: Invalid argument</code>. I suspect this might have had something to do with a system crash that prevented Emacs from saving the file and clearing its locked status. Eventually, I stumbled on a solution: delete the lockfile, which is a file in the directory that contains a “#” in the filename.
+</p>
+
+ <div class="tagline" id="org07dcce1">
+ <p>
+Tagged:   <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2025-02-25-unlocking-file-invalid-argument-warning.html"/>
+  <id>https://randyridenour.net/posts/2025-02-25-unlocking-file-invalid-argument-warning.html</id>
+  <updated>2025-11-28T05:42:00-06:00</updated>
+</entry>
 <entry>
   <title>Genuine American Exceptionalism</title>
   <author><name>Randy Ridenour</name></author>

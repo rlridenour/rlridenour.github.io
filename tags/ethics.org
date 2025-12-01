@@ -20,3 +20,4 @@
 
 - [[file:../posts/2025-07-14-moral-imagination.org][On Moral Imagination]]
 - [[file:../posts/2025-10-16-anne-frank-hunger.org][Anne Frank on Hunger]]
+- [[file:../posts/2025-11-14-frankl-selfactualization.org][Frankl on Self-Actualization]]

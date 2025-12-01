@@ -1,6 +1,6 @@
 #+TITLE: Frankl on Self-Actualization
 #+date: <2025-11-14 Fri 14:45>
-#+filetags: 
+#+filetags:  ethics
 #+setupfile: ../org-templates/post.org
 
 #+begin_quote
@@ -11,5 +11,5 @@ By declaring that man is responsible and must actualize the potential meaning of
 Frankl, Viktor E., /Man's Search for Meaning/
 
 #+begin_tagline
-Tagged: 
+Tagged:  [[file:../tags/ethics.org][Ethics]]
 #+end_tagline

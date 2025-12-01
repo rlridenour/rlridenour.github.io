@@ -1,0 +1,17 @@
+#+TITLE: Seeing Christ
+#+date: <2025-12-01 Mon 05:21>
+#+filetags:  religion
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+Those who cannot see Christ in the poor are atheists indeed.
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+Dorothy Day
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/religion.org][Religion]]
+#+end_tagline

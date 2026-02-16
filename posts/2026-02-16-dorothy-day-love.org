@@ -1,0 +1,17 @@
+#+TITLE: Dorothy Day on Love
+#+date: <2026-02-16 Mon 06:18>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+I really only love God as much as I love the person I love the least.  
+#+end_quote
+
+#+ATTR_HTML: :class bigquote
+Dorothy Day
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

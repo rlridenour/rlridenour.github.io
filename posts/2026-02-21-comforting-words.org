@@ -1,0 +1,24 @@
+#+TITLE: Comforting Words
+#+date: <2026-02-21 Sat 06:06>
+#+filetags:  quotes
+#+setupfile: ../org-templates/post.org
+
+From Gabriel Hanotaux, French minister of foreign affairs from 1894 to 1895:
+
+#+begin_quote
+A few precepts to repeat whenever you are in need of comfort,
+
+1. Anything can happen.
+2. Everything is forgotten.
+3. Every difficulty can be overcome.
+4. No one understands anything.
+5. If everyone knew what everyone said about everyone, no one would speak to anyone.
+
+Above all things, never be afraid. The enemy who forces you to retreat is himself afraid of you at that very moment.
+#+end_quote
+
+From [[https://www.futilitycloset.com/2026/02/21/noted-29/][Futility Closet]].
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]]
+#+end_tagline

@@ -3,11 +3,12 @@
 #+filetags:  quotes political
 #+setupfile: ../org-templates/post.org
 
+#+ATTR_HTML: :class bigquote
 #+begin_quote
 The fundamental problem of political philosophy: Why do men fight for their servitude as stubbornly as though it were their salvation?
 #+end_quote
 
-#+ATTR_HTML: :class source
+#+ATTR_HTML: :class bigquote
 Gilles Deleuze
 
 #+begin_tagline

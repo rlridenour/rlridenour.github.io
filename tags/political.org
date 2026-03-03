@@ -1,0 +1,4 @@
+#+title: Tagged: Political
+#+setupfile: ../org-templates/post.org
+
+- [[file:../posts/2026-03-03-fighting-for-servitude.org][Fighting for Servitude]]

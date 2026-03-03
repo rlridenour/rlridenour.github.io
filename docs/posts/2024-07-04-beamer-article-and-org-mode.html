@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Apr 08, 2025 19:52 -->
+<!-- Mar 03, 2026 14:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beamer Article and Org Mode</title>
@@ -33,38 +33,6 @@
      }
 // @license-end
 </script>
-<script>
-  window.MathJax = {
-    tex: {
-      ams: {
-        multlineWidth: '85%'
-      },
-      tags: 'ams',
-      tagSide: 'right',
-      tagIndent: '.8em'
-    },
-    chtml: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    svg: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    output: {
-      font: 'mathjax-modern',
-      displayOverflow: 'overflow'
-    }
-  };
-</script>
-
-<script
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
 </head>
 <body>
 <header id="top" class="status">
@@ -91,8 +59,8 @@ I generate LaTeX Beamer lecture slides and handouts from a single Org mode data 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-meta-line">#+OPTIONS: H:3</span>
-</pre>
+<pre class="src src-org"><code><span class="org-org-meta-line">#+OPTIONS: H:3</span>
+</code></pre>
 </div>
 
 <p>
@@ -100,8 +68,8 @@ to
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-meta-line">#+OPTIONS: H:2</span>
-</pre>
+<pre class="src src-org"><code><span class="org-org-meta-line">#+OPTIONS: H:2</span>
+</code></pre>
 </div>
 
 <p>
@@ -113,10 +81,10 @@ After many completely unproductive Internet searches, I stumbled on the problem.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-tex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">frame</span>}[label]{Slide Title}
+<pre class="src src-tex"><code><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">frame</span>}[label]{Slide Title}
   Slide contents
 <span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">frame</span>}
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -124,11 +92,11 @@ This is fine for everything except my lecture handouts. I found that a small cha
 </p>
 
 <div class="org-src-container">
-<pre class="src src-tex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">frame</span>}[label]
+<pre class="src src-tex"><code><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">frame</span>}[label]
   <span class="org-font-latex-sedate">\frametitle</span>{Slide Title}
   Slide contents
 <span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">frame</span>}
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -136,7 +104,7 @@ Now, the problem was getting Org mode to export the subtree to look like that. A
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/create-frametitle</span> ()
+<pre class="src src-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/create-frametitle</span> ()
   <span class="org-doc">"Convert title to frametitle."</span>
   (interactive)
   (goto-char 1)
@@ -144,7 +112,7 @@ Now, the problem was getting Org mode to export the subtree to look like that. A
                (re-search-forward <span class="org-string">"begin{frame}.*]"</span>))
     (insert <span class="org-string">"\n \\frametitle"</span>))
   )
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -156,16 +124,16 @@ Here&rsquo;s the simple tcolorbox commands that go in the header:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-meta-line">#+LaTeX_HEADER: \usepackage{tcolorbox}</span>
+<pre class="src src-org"><code><span class="org-org-meta-line">#+LaTeX_HEADER: \usepackage{tcolorbox}</span>
 <span class="org-org-meta-line">#+LaTeX_HEADER: \mode&lt;article&gt;{\setbeamertemplate{frame begin}{\begin{tcolorbox}[colback=white, colframe=gray,]} \setbeamertemplate{frame end}{\end{tcolorbox}}}</span>
-</pre>
+</code></pre>
 </div>
 
 <p>
-Simple enough, and only took four days&#x2026;.
+Simple enough, and only took four days&hellip;.
 </p>
 
-<div class="tagline" id="org9783ee0">
+<div class="tagline" id="org1c11bef">
 <p>
 Tagged:  <a href="../tags/org.html">Org</a> <a href="../tags/latex.html">Latex</a>
 </p>
@@ -185,8 +153,8 @@ I sketched out the process I use in <a href="2020-06-01-beamer-presentations-wit
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Apr 08, 2025 19:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 03, 2026 14:52.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

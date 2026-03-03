@@ -1,0 +1,15 @@
+#+TITLE: Fighting for Servitude
+#+date: <2026-03-03 Tue 14:49>
+#+filetags:  quotes political
+#+setupfile: ../org-templates/post.org
+
+#+begin_quote
+The fundamental problem of political philosophy: Why do men fight for their servitude as stubbornly as though it were their salvation?
+#+end_quote
+
+#+ATTR_HTML: :class source
+Gilles Deleuze
+
+#+begin_tagline
+Tagged:  [[file:../tags/quotes.org][Quotes]] [[file:../tags/political.org][Political]]
+#+end_tagline

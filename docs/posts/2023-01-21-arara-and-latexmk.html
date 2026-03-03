@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Apr 08, 2025 19:52 -->
+<!-- Mar 03, 2026 14:52 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Arara and Latexmk</title>
@@ -61,16 +61,16 @@ Compiling LaTeX documents can be a chore, especially if the document has a table
 <li>Run pdflatex to put that bibliographic data into the document</li>
 <li>Run pdflatex again to fix any page numbers that need to change because of the new material.</li>
 </ol>
-<section id="outline-container-org1a56182" class="outline-2">
-<h2 id="org1a56182">Latexmk</h2>
-<div class="outline-text-2" id="text-org1a56182">
+<section id="outline-container-orga5e82eb" class="outline-2">
+<h2 id="orga5e82eb">Latexmk</h2>
+<div class="outline-text-2" id="text-orga5e82eb">
 <p>
 Using Latexmk is a great way to automate all of this. Latexmk will do all of these steps as needed, you just need to tell what engine to use (pdflatex, lualatex, xelatex) and whether to run Bibtex or Biber. A pdfLaTeX document named &ldquo;sample.tex&rdquo; containing bibliographic references would be compiled from the command line like this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">latexmk -pdflatex -bibtex sample.tex
-</pre>
+<pre class="src src-shell"><code>latexmk -pdflatex -bibtex sample.tex
+</code></pre>
 </div>
 
 <p>
@@ -78,30 +78,30 @@ There are many other options that can be used, making the command to compile eve
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span class="org-comment-delimiter"># </span><span class="org-comment">LaTeXmk configuration file</span>
+<pre class="src src-shell"><code><span class="org-comment-delimiter"># </span><span class="org-comment">LaTeXmk configuration file
+</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">Usage example
+</span><span class="org-comment-delimiter"># </span><span class="org-comment">latexmk file.tex
+</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">Main command line options
+</span><span class="org-comment-delimiter"># </span><span class="org-comment">-pdflatex : compile with pdflatex
+</span><span class="org-comment-delimiter"># </span><span class="org-comment">-lualatex : compile with lualatex
+</span><span class="org-comment-delimiter"># </span><span class="org-comment">-pv       : run file previewer
+</span><span class="org-comment-delimiter"># </span><span class="org-comment">-pvc      : run file previewer and continually recompile on change
+</span><span class="org-comment-delimiter"># </span><span class="org-comment">-c        :
+</span><span class="org-comment-delimiter"># </span><span class="org-comment">-C        :clean up auxiliary and output files
+</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">Use bibtex if a .bib file exists
+</span>$<span class="org-variable-name">bibtex_use</span> = 1;
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">Usage example</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">latexmk file.tex</span>
-
-<span class="org-comment-delimiter"># </span><span class="org-comment">Main command line options</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">-pdflatex : compile with pdflatex</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">-lualatex : compile with lualatex</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">-pv       : run file previewer</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">-pvc      : run file previewer and continually recompile on change</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">-c        :</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">-C        :clean up auxiliary and output files</span>
-
-<span class="org-comment-delimiter"># </span><span class="org-comment">Use bibtex if a .bib file exists</span>
-$<span class="org-variable-name">bibtex_use</span> = 1;
-
-<span class="org-comment-delimiter"># </span><span class="org-comment">Define commands to compile with pdfsync support and nonstopmode</span>
-$<span class="org-variable-name">pdflatex</span> = <span class="org-string">'pdflatex -synctex=1 --interaction=nonstopmode %O %S'</span>;
+<span class="org-comment-delimiter"># </span><span class="org-comment">Define commands to compile with pdfsync support and nonstopmode
+</span>$<span class="org-variable-name">pdflatex</span> = <span class="org-string">'pdflatex -synctex=1 --interaction=nonstopmode %O %S'</span>;
 
 $<span class="org-variable-name">lualatex</span> = <span class="org-string">'lualatex -synctex=1 --interaction=nonstopmode %O %S'</span>;
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">Also remove pdfsync files on clean</span>
-$<span class="org-variable-name">clean_ext</span> = <span class="org-string">'%R.synctex.gz'</span>;
-</pre>
+<span class="org-comment-delimiter"># </span><span class="org-comment">Also remove pdfsync files on clean
+</span>$<span class="org-variable-name">clean_ext</span> = <span class="org-string">'%R.synctex.gz'</span>;
+</code></pre>
 </div>
 
 <p>
@@ -109,8 +109,8 @@ If you always use the same engine to compile, then you can add a line like this 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">$<span class="org-variable-name">pdf_mode</span> = n
-</pre>
+<pre class="src src-shell"><code>$<span class="org-variable-name">pdf_mode</span> = n
+</code></pre>
 </div>
 
 <p>
@@ -118,8 +118,8 @@ where n=1 for pdflatex, 4 for lualatex, and 5 for xelatex. The compile command t
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">latexmk sample.tex
-</pre>
+<pre class="src src-shell"><code>latexmk sample.tex
+</code></pre>
 </div>
 
 <p>
@@ -127,16 +127,16 @@ Since I use Emacs, I could just add latexmk to the list of TeX commands and comp
 </p>
 </div>
 </section>
-<section id="outline-container-org72147c4" class="outline-2">
-<h2 id="org72147c4">Arara</h2>
-<div class="outline-text-2" id="text-org72147c4">
+<section id="outline-container-org199f2c9" class="outline-2">
+<h2 id="org199f2c9">Arara</h2>
+<div class="outline-text-2" id="text-org199f2c9">
 <p>
 Here&rsquo;s where Arara shines. Arara is another way to compile tex files. Unlike latexmk, arara does not do anything automatically. Running
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">arara sample.tex
-</pre>
+<pre class="src src-shell"><code>arara sample.tex
+</code></pre>
 </div>
 
 <p>
@@ -144,8 +144,8 @@ doesn&rsquo;t do anything without some special instructions within the file. To 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil">% arara: pdflatex: { interaction: nonstopmode, synctex: yes }
-</pre>
+<pre class="src src-nil"><code>% arara: pdflatex: { interaction: nonstopmode, synctex: yes }
+</code></pre>
 </div>
 
 <p>
@@ -153,11 +153,11 @@ Then, running arara on the file would compile once with pdflatex. If I had a bib
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil">% arara: lualatex: { interaction: nonstopmode, synctex: yes }
+<pre class="src src-nil"><code>% arara: lualatex: { interaction: nonstopmode, synctex: yes }
 % arara: biber
 % arara: lualatex: { interaction: nonstopmode, synctex: yes }
 % arara: lualatex: { interaction: nonstopmode, synctex: yes }
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -169,16 +169,16 @@ The problem (and I admit it&rsquo;s a minor one) is that I lose the automation o
 </p>
 </div>
 </section>
-<section id="outline-container-org08b2ad7" class="outline-2">
-<h2 id="org08b2ad7">Solution</h2>
-<div class="outline-text-2" id="text-org08b2ad7">
+<section id="outline-container-org6c257aa" class="outline-2">
+<h2 id="org6c257aa">Solution</h2>
+<div class="outline-text-2" id="text-org6c257aa">
 <p>
 Fortunately, arara can be told to compile with latexmk, and the engine and any options can be specified in the file. This compiles with latexmk using pdflatex:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil">% arara: latexmk: { engine: pdflatex }
-</pre>
+<pre class="src src-nil"><code>% arara: latexmk: { engine: pdflatex }
+</code></pre>
 </div>
 
 <p>
@@ -186,7 +186,7 @@ Since the options that I want are in my latexmkrc file, there&rsquo;s nothing el
 </p>
 
 
-<div class="tagline" id="org2094d0c">
+<div class="tagline" id="org28e9ecb">
 <p>
 Tagged: <a href="../tags/LaTeX.html">Latex</a>
 </p>
@@ -198,8 +198,8 @@ Tagged: <a href="../tags/LaTeX.html">Latex</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Apr 08, 2025 19:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 03, 2026 14:52.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
 </div>
 </footer>
 </body>

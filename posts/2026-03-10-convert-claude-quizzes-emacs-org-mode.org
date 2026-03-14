@@ -1,0 +1,77 @@
+#+TITLE: Convert Claude Quizzes to Emacs Org Mode
+#+date: <2026-03-10 Tue 19:32>
+#+filetags:  teaching emacs
+#+setupfile: ../org-templates/post.org
+
+Writing quizzes in Canvas is, to put it mildly, a pain in the neck, especially for keyboard-centric users. Every tiny step in the process requires a mouse click, something that quickly becomes irritating. Fortunately, the New York Institute of Technology provides the [[https://www.nyit.edu/its/canvas_exam_converter][Canvas Exam Converter]] which takes a formatted text file and converts to an XML file that Canvas can import. This means that, with a little help from Emacs, writing quizzes that can be quickly imported into Canvas is quick and easy. (See my 2024 post, [[https://randyridenour.net/posts/2023-12-31-converting-org-files-to-canvas-quizzes.html][Converting Org Files to Canvas Quizzes]] for details.)
+
+Coming up with good questions is still a challenge, though. It turns out that Claude is /very/ effective at writing good multiple choice questions from a document. The questions are formatted like this:
+
+#+begin_src text
+**Question 1:** According to Aristotle, which of the following best describes distributive justice?
+
+- A) Restoring equality after a wrong has been committed
+- B) Equality of ratios based on factors like merit, need, or virtue
+- C) Following the laws of society without exception
+- D) Maximizing overall welfare for the greatest number of people
+
+---
+
+**Question 2:** Which of the following is a criticism of the Utilitarian approach to punishment?
+
+- A) It fails to consider the consequences of punishment
+- B) It relies too heavily on retribution
+- C) It can justify punishing the innocent if doing so maximizes good outcomes
+- D) It requires the punishment to exactly fit the crime
+#+end_src
+
+To run my conversion function for sending to NYIT, I first need it in this form:
+
+#+begin_src text
+1. According to Aristotle, which of the following best describes distributive justice?
+     a) Restoring equality after a wrong has been committed
+     b) Equality of ratios based on factors like merit, need, or virtue
+     c) Following the laws of society without exception
+     d) Maximizing overall welfare for the greatest number of people
+2. Which of the following is a criticism of the Utilitarian approach to punishment?
+     a) It fails to consider the consequences of punishment
+     b) It relies too heavily on retribution
+     c) It can justify punishing the innocent if doing so maximizes good outcomes
+     d) It requires the punishment to exactly fit the crime
+#+end_src
+
+For weeks, I've been converting them a series of regex search and replace operations, but why do that every time? One of the main reasons I use Emacs is to avoid repetitive, tedious tasks. Here's the function:
+
+#+begin_src emacs-lisp
+(defun convert-quiz-claude-to-org ()
+  "Convert markdown-style quiz questions from Claude to Org mode format. Operates on the current buffer or active region."
+  (interactive)
+  (let ((start (if (use-region-p) (region-beginning) (point-min)))
+	(end   (if (use-region-p) (region-end)       (point-max)))
+	(question-num 0))
+    (save-excursion
+      ;; Remove '---' separator lines
+      (goto-char start)
+      (while (re-search-forward "^---\n?" end t)
+	(replace-match ""))
+
+      ;; Convert **Question N:** to "N."
+      (goto-char start)
+      (while (re-search-forward "^\\*\\*Question [0-9]+:\\*\\* " end t)
+	(setq question-num (1+ question-num))
+	(replace-match (format "%d. " question-num)))
+
+      ;; Convert "- A)" "- B)" etc. to "     a)"  "     b)" etc.
+      (goto-char start)
+      (while (re-search-forward "^- \\([A-D]\\))" end t)
+	(replace-match (format "     %s)" (downcase (match-string 1)))))
+
+      ;; Remove blank lines
+      (goto-char start)
+      (while (re-search-forward "^[[:blank:]]*\n" end t)
+	(replace-match "")))))
+#+end_src
+
+#+begin_tagline
+Tagged:  [[file:../tags/teaching.org][Teaching]] [[file:../tags/emacs.org][Emacs]]
+#+end_tagline

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Mar 14, 2026 09:55 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Convert Claude Quizzes to Emacs Org Mode</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/atom.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Convert Claude Quizzes to Emacs Org Mode
+<br />
+<span class="subtitle">Mar 10, 2026 19:32</span>
+</h1>
+<p>
+Writing quizzes in Canvas is, to put it mildly, a pain in the neck, especially for keyboard-centric users. Every tiny step in the process requires a mouse click, something that quickly becomes irritating. Fortunately, the New York Institute of Technology provides the <a href="https://www.nyit.edu/its/canvas_exam_converter">Canvas Exam Converter</a> which takes a formatted text file and converts to an XML file that Canvas can import. This means that, with a little help from Emacs, writing quizzes that can be quickly imported into Canvas is quick and easy. (See my 2024 post, <a href="https://randyridenour.net/posts/2023-12-31-converting-org-files-to-canvas-quizzes.html">Converting Org Files to Canvas Quizzes</a> for details.)
+</p>
+
+<p>
+Coming up with good questions is still a challenge, though. It turns out that Claude is <i>very</i> effective at writing good multiple choice questions from a document. The questions are formatted like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-text"><code>**Question 1:** According to Aristotle, which of the following best describes distributive justice?
+
+- A) Restoring equality after a wrong has been committed
+- B) Equality of ratios based on factors like merit, need, or virtue
+- C) Following the laws of society without exception
+- D) Maximizing overall welfare for the greatest number of people
+
+---
+
+**Question 2:** Which of the following is a criticism of the Utilitarian approach to punishment?
+
+- A) It fails to consider the consequences of punishment
+- B) It relies too heavily on retribution
+- C) It can justify punishing the innocent if doing so maximizes good outcomes
+- D) It requires the punishment to exactly fit the crime
+</code></pre>
+</div>
+
+<p>
+To run my conversion function for sending to NYIT, I first need it in this form:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-text"><code>1. According to Aristotle, which of the following best describes distributive justice?
+     a) Restoring equality after a wrong has been committed
+     b) Equality of ratios based on factors like merit, need, or virtue
+     c) Following the laws of society without exception
+     d) Maximizing overall welfare for the greatest number of people
+2. Which of the following is a criticism of the Utilitarian approach to punishment?
+     a) It fails to consider the consequences of punishment
+     b) It relies too heavily on retribution
+     c) It can justify punishing the innocent if doing so maximizes good outcomes
+     d) It requires the punishment to exactly fit the crime
+</code></pre>
+</div>
+
+<p>
+For weeks, I&rsquo;ve been converting them a series of regex search and replace operations, but why do that every time? One of the main reasons I use Emacs is to avoid repetitive, tedious tasks. Here&rsquo;s the function:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">convert-quiz-claude-to-org</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-doc">"Convert markdown-style quiz questions from Claude to Org mode format. Operates on the current buffer or active region."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>start <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-6">(</span>use-region-p<span class="org-rainbow-delimiters-depth-6">)</span> <span class="org-rainbow-delimiters-depth-6">(</span>region-beginning<span class="org-rainbow-delimiters-depth-6">)</span> <span class="org-rainbow-delimiters-depth-6">(</span>point-min<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+          <span class="org-rainbow-delimiters-depth-4">(</span>end   <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-6">(</span>use-region-p<span class="org-rainbow-delimiters-depth-6">)</span> <span class="org-rainbow-delimiters-depth-6">(</span>region-end<span class="org-rainbow-delimiters-depth-6">)</span>       <span class="org-rainbow-delimiters-depth-6">(</span>point-max<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+          <span class="org-rainbow-delimiters-depth-4">(</span>question-num 0<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">save-excursion</span>
+      <span class="org-comment-delimiter">;; </span><span class="org-comment">Remove '</span><span class="org-comment"><span class="org-constant">---</span></span><span class="org-comment">' separator lines
+</span>      <span class="org-rainbow-delimiters-depth-4">(</span>goto-char start<span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-5">(</span>re-search-forward <span class="org-string">"^---\n?"</span> end t<span class="org-rainbow-delimiters-depth-5">)</span>
+          <span class="org-rainbow-delimiters-depth-5">(</span>replace-match <span class="org-string">""</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+
+      <span class="org-comment-delimiter">;; </span><span class="org-comment">Convert **Question N:** to "N."
+</span>      <span class="org-rainbow-delimiters-depth-4">(</span>goto-char start<span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-5">(</span>re-search-forward <span class="org-string">"^\\*\\*Question [0-9]+:\\*\\* "</span> end t<span class="org-rainbow-delimiters-depth-5">)</span>
+          <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">setq</span> question-num <span class="org-rainbow-delimiters-depth-6">(</span>1+ question-num<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+          <span class="org-rainbow-delimiters-depth-5">(</span>replace-match <span class="org-rainbow-delimiters-depth-6">(</span>format <span class="org-string">"%d. "</span> question-num<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+
+      <span class="org-comment-delimiter">;; </span><span class="org-comment">Convert "- A)" "- B)" etc. to "     a)"  "     b)" etc.
+</span>      <span class="org-rainbow-delimiters-depth-4">(</span>goto-char start<span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-5">(</span>re-search-forward <span class="org-string">"^- </span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">[A-D]</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">)"</span> end t<span class="org-rainbow-delimiters-depth-5">)</span>
+          <span class="org-rainbow-delimiters-depth-5">(</span>replace-match <span class="org-rainbow-delimiters-depth-6">(</span>format <span class="org-string">"     %s)"</span> <span class="org-rainbow-delimiters-depth-7">(</span>downcase <span class="org-rainbow-delimiters-depth-8">(</span>match-string 1<span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+
+      <span class="org-comment-delimiter">;; </span><span class="org-comment">Remove blank lines
+</span>      <span class="org-rainbow-delimiters-depth-4">(</span>goto-char start<span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-5">(</span>re-search-forward <span class="org-string">"^[[:blank:]]*\n"</span> end t<span class="org-rainbow-delimiters-depth-5">)</span>
+          <span class="org-rainbow-delimiters-depth-5">(</span>replace-match <span class="org-string">""</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
+</div>
+
+<div class="tagline" id="org6ac3b4c">
+<p>
+Tagged:  <a href="../tags/teaching.html">Teaching</a> <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Mar 14, 2026 09:55.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
+</div>
+</footer>
+</body>
+</html>

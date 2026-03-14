@@ -4,7 +4,146 @@
 <link href="https://randyridenour.net/"/>
 <link href="https://randyridenour.net/atom.xml" rel="self"/>
 <id>https://randyridenour.net/atom.xml</id>
-<updated>2026-03-03T14:55:05-06:00</updated>
+<updated>2026-03-14T09:55:11-05:00</updated>
+<entry>
+  <title>Convert Claude Quizzes to Emacs Org Mode</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Mar 10, 2026 19:32</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Convert Claude Quizzes to Emacs Org Mode
+ <br></br> <span class="subtitle">Mar 10, 2026 19:32</span>
+</h1>
+ <p>
+Writing quizzes in Canvas is, to put it mildly, a pain in the neck, especially for keyboard-centric users. Every tiny step in the process requires a mouse click, something that quickly becomes irritating. Fortunately, the New York Institute of Technology provides the  <a href="https://www.nyit.edu/its/canvas_exam_converter">Canvas Exam Converter</a> which takes a formatted text file and converts to an XML file that Canvas can import. This means that, with a little help from Emacs, writing quizzes that can be quickly imported into Canvas is quick and easy. (See my 2024 post,  <a href="https://randyridenour.net/posts/2023-12-31-converting-org-files-to-canvas-quizzes.html">Converting Org Files to Canvas Quizzes</a> for details.)
+</p>
+
+ <p>
+Coming up with good questions is still a challenge, though. It turns out that Claude is  <i>very</i> effective at writing good multiple choice questions from a document. The questions are formatted like this:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-text"> <code>**Question 1:** According to Aristotle, which of the following best describes distributive justice?
+
+- A) Restoring equality after a wrong has been committed
+- B) Equality of ratios based on factors like merit, need, or virtue
+- C) Following the laws of society without exception
+- D) Maximizing overall welfare for the greatest number of people
+
+---
+
+**Question 2:** Which of the following is a criticism of the Utilitarian approach to punishment?
+
+- A) It fails to consider the consequences of punishment
+- B) It relies too heavily on retribution
+- C) It can justify punishing the innocent if doing so maximizes good outcomes
+- D) It requires the punishment to exactly fit the crime
+</code></pre>
+</div>
+
+ <p>
+To run my conversion function for sending to NYIT, I first need it in this form:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-text"> <code>1. According to Aristotle, which of the following best describes distributive justice?
+     a) Restoring equality after a wrong has been committed
+     b) Equality of ratios based on factors like merit, need, or virtue
+     c) Following the laws of society without exception
+     d) Maximizing overall welfare for the greatest number of people
+2. Which of the following is a criticism of the Utilitarian approach to punishment?
+     a) It fails to consider the consequences of punishment
+     b) It relies too heavily on retribution
+     c) It can justify punishing the innocent if doing so maximizes good outcomes
+     d) It requires the punishment to exactly fit the crime
+</code></pre>
+</div>
+
+ <p>
+For weeks, I’ve been converting them a series of regex search and replace operations, but why do that every time? One of the main reasons I use Emacs is to avoid repetitive, tedious tasks. Here’s the function:
+</p>
+
+ <div class="org-src-container">
+ <pre class="src src-emacs-lisp"> <code> <span class="org-rainbow-delimiters-depth-1">(</span> <span class="org-keyword">defun</span>  <span class="org-function-name">convert-quiz-claude-to-org</span>  <span class="org-rainbow-delimiters-depth-2">()</span>
+   <span class="org-doc">"Convert markdown-style quiz questions from Claude to Org mode format. Operates on the current buffer or active region."</span>
+   <span class="org-rainbow-delimiters-depth-2">(</span> <span class="org-keyword">interactive</span> <span class="org-rainbow-delimiters-depth-2">)</span>
+   <span class="org-rainbow-delimiters-depth-2">(</span> <span class="org-keyword">let</span>  <span class="org-rainbow-delimiters-depth-3">(</span> <span class="org-rainbow-delimiters-depth-4">(</span>start  <span class="org-rainbow-delimiters-depth-5">(</span> <span class="org-keyword">if</span>  <span class="org-rainbow-delimiters-depth-6">(</span>use-region-p <span class="org-rainbow-delimiters-depth-6">)</span>  <span class="org-rainbow-delimiters-depth-6">(</span>region-beginning <span class="org-rainbow-delimiters-depth-6">)</span>  <span class="org-rainbow-delimiters-depth-6">(</span>point-min <span class="org-rainbow-delimiters-depth-6">)</span> <span class="org-rainbow-delimiters-depth-5">)</span> <span class="org-rainbow-delimiters-depth-4">)</span>
+           <span class="org-rainbow-delimiters-depth-4">(</span>end    <span class="org-rainbow-delimiters-depth-5">(</span> <span class="org-keyword">if</span>  <span class="org-rainbow-delimiters-depth-6">(</span>use-region-p <span class="org-rainbow-delimiters-depth-6">)</span>  <span class="org-rainbow-delimiters-depth-6">(</span>region-end <span class="org-rainbow-delimiters-depth-6">)</span>        <span class="org-rainbow-delimiters-depth-6">(</span>point-max <span class="org-rainbow-delimiters-depth-6">)</span> <span class="org-rainbow-delimiters-depth-5">)</span> <span class="org-rainbow-delimiters-depth-4">)</span>
+           <span class="org-rainbow-delimiters-depth-4">(</span>question-num 0 <span class="org-rainbow-delimiters-depth-4">)</span> <span class="org-rainbow-delimiters-depth-3">)</span>
+     <span class="org-rainbow-delimiters-depth-3">(</span> <span class="org-keyword">save-excursion</span>
+       <span class="org-comment-delimiter">;; </span> <span class="org-comment">Remove '</span> <span class="org-comment"> <span class="org-constant">---</span></span> <span class="org-comment">' separator lines
+</span>       <span class="org-rainbow-delimiters-depth-4">(</span>goto-char start <span class="org-rainbow-delimiters-depth-4">)</span>
+       <span class="org-rainbow-delimiters-depth-4">(</span> <span class="org-keyword">while</span>  <span class="org-rainbow-delimiters-depth-5">(</span>re-search-forward  <span class="org-string">"^---\n?"</span> end t <span class="org-rainbow-delimiters-depth-5">)</span>
+           <span class="org-rainbow-delimiters-depth-5">(</span>replace-match  <span class="org-string">""</span> <span class="org-rainbow-delimiters-depth-5">)</span> <span class="org-rainbow-delimiters-depth-4">)</span>
+
+       <span class="org-comment-delimiter">;; </span> <span class="org-comment">Convert **Question N:** to "N."
+</span>       <span class="org-rainbow-delimiters-depth-4">(</span>goto-char start <span class="org-rainbow-delimiters-depth-4">)</span>
+       <span class="org-rainbow-delimiters-depth-4">(</span> <span class="org-keyword">while</span>  <span class="org-rainbow-delimiters-depth-5">(</span>re-search-forward  <span class="org-string">"^\\*\\*Question [0-9]+:\\*\\* "</span> end t <span class="org-rainbow-delimiters-depth-5">)</span>
+           <span class="org-rainbow-delimiters-depth-5">(</span> <span class="org-keyword">setq</span> question-num  <span class="org-rainbow-delimiters-depth-6">(</span>1+ question-num <span class="org-rainbow-delimiters-depth-6">)</span> <span class="org-rainbow-delimiters-depth-5">)</span>
+           <span class="org-rainbow-delimiters-depth-5">(</span>replace-match  <span class="org-rainbow-delimiters-depth-6">(</span>format  <span class="org-string">"%d. "</span> question-num <span class="org-rainbow-delimiters-depth-6">)</span> <span class="org-rainbow-delimiters-depth-5">)</span> <span class="org-rainbow-delimiters-depth-4">)</span>
+
+       <span class="org-comment-delimiter">;; </span> <span class="org-comment">Convert "- A)" "- B)" etc. to "     a)"  "     b)" etc.
+</span>       <span class="org-rainbow-delimiters-depth-4">(</span>goto-char start <span class="org-rainbow-delimiters-depth-4">)</span>
+       <span class="org-rainbow-delimiters-depth-4">(</span> <span class="org-keyword">while</span>  <span class="org-rainbow-delimiters-depth-5">(</span>re-search-forward  <span class="org-string">"^- </span> <span class="org-string"> <span class="org-regexp-grouping-backslash">\\</span></span> <span class="org-string"> <span class="org-regexp-grouping-construct">(</span></span> <span class="org-string">[A-D]</span> <span class="org-string"> <span class="org-regexp-grouping-backslash">\\</span></span> <span class="org-string"> <span class="org-regexp-grouping-construct">)</span></span> <span class="org-string">)"</span> end t <span class="org-rainbow-delimiters-depth-5">)</span>
+           <span class="org-rainbow-delimiters-depth-5">(</span>replace-match  <span class="org-rainbow-delimiters-depth-6">(</span>format  <span class="org-string">"     %s)"</span>  <span class="org-rainbow-delimiters-depth-7">(</span>downcase  <span class="org-rainbow-delimiters-depth-8">(</span>match-string 1 <span class="org-rainbow-delimiters-depth-8">)</span> <span class="org-rainbow-delimiters-depth-7">)</span> <span class="org-rainbow-delimiters-depth-6">)</span> <span class="org-rainbow-delimiters-depth-5">)</span> <span class="org-rainbow-delimiters-depth-4">)</span>
+
+       <span class="org-comment-delimiter">;; </span> <span class="org-comment">Remove blank lines
+</span>       <span class="org-rainbow-delimiters-depth-4">(</span>goto-char start <span class="org-rainbow-delimiters-depth-4">)</span>
+       <span class="org-rainbow-delimiters-depth-4">(</span> <span class="org-keyword">while</span>  <span class="org-rainbow-delimiters-depth-5">(</span>re-search-forward  <span class="org-string">"^[[:blank:]]*\n"</span> end t <span class="org-rainbow-delimiters-depth-5">)</span>
+           <span class="org-rainbow-delimiters-depth-5">(</span>replace-match  <span class="org-string">""</span> <span class="org-rainbow-delimiters-depth-5">)</span> <span class="org-rainbow-delimiters-depth-4">)</span> <span class="org-rainbow-delimiters-depth-3">)</span> <span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
+</div>
+
+ <div class="tagline" id="org6ac3b4c">
+ <p>
+Tagged:   <a href="../tags/teaching.html">Teaching</a>  <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2026-03-10-convert-claude-quizzes-emacs-org-mode.html"/>
+  <id>https://randyridenour.net/posts/2026-03-10-convert-claude-quizzes-emacs-org-mode.html</id>
+  <updated>2026-03-14T09:55:00-05:00</updated>
+</entry>
+<entry>
+  <title>Comforting Words</title>
+  <author><name>Randy Ridenour</name></author>
+  <summary>Feb 21, 2026 06:06</summary>
+  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Comforting Words
+ <br></br> <span class="subtitle">Feb 21, 2026 06:06</span>
+</h1>
+ <p>
+From Gabriel Hanotaux, French minister of foreign affairs from 1894 to 1895:
+</p>
+
+ <blockquote>
+ <p>
+A few precepts to repeat whenever you are in need of comfort,
+</p>
+
+ <ol class="org-ol"> <li>Anything can happen.</li>
+ <li>Everything is forgotten.</li>
+ <li>Every difficulty can be overcome.</li>
+ <li>No one understands anything.</li>
+ <li>If everyone knew what everyone said about everyone, no one would speak to anyone.</li>
+</ol> <p>
+Above all things, never be afraid. The enemy who forces you to retreat is himself afraid of you at that very moment.
+</p>
+</blockquote>
+
+ <p>
+From  <a href="https://www.futilitycloset.com/2026/02/21/noted-29/">Futility Closet</a>.
+</p>
+
+ <div class="tagline" id="orgdb711d7">
+ <p>
+Tagged:   <a href="../tags/quotes.html">Quotes</a>
+</p>
+
+</div>
+</main>]]></content>
+  <link href="https://randyridenour.net/posts/2026-02-21-comforting-words.html"/>
+  <id>https://randyridenour.net/posts/2026-02-21-comforting-words.html</id>
+  <updated>2026-03-14T09:50:00-05:00</updated>
+</entry>
 <entry>
   <title>Fighting for Servitude</title>
   <author><name>Randy Ridenour</name></author>
@@ -22,7 +161,7 @@ The fundamental problem of political philosophy: Why do men fight for their serv
 Gilles Deleuze
 </p>
 
- <div class="tagline" id="orgc44a02e">
+ <div class="tagline" id="orgf779a49">
  <p>
 Tagged:   <a href="../tags/quotes.html">Quotes</a>  <a href="../tags/political.html">Political</a>
 </p>
@@ -31,7 +170,7 @@ Tagged:   <a href="../tags/quotes.html">Quotes</a>  <a href="../tags/political.h
 </main>]]></content>
   <link href="https://randyridenour.net/posts/2026-03-03-fighting-for-servitude.html"/>
   <id>https://randyridenour.net/posts/2026-03-03-fighting-for-servitude.html</id>
-  <updated>2026-03-03T14:55:00-06:00</updated>
+  <updated>2026-03-14T09:50:00-05:00</updated>
 </entry>
 <entry>
   <title>Bob Feller (1918-2010)</title>
@@ -3176,47 +3315,6 @@ Tagged:   <a href="../tags/quotes.html">Quotes</a>
 </main>]]></content>
   <link href="https://randyridenour.net/posts/2026-02-16-dorothy-day-love.html"/>
   <id>https://randyridenour.net/posts/2026-02-16-dorothy-day-love.html</id>
-  <updated>2026-03-03T14:52:00-06:00</updated>
-</entry>
-<entry>
-  <title>Comforting Words</title>
-  <author><name>Randy Ridenour</name></author>
-  <summary>Feb 21, 2026 06:06</summary>
-  <content type="html"><![CDATA[<main id="content" class="content"> <h1 class="title">Comforting Words
- <br></br> <span class="subtitle">Feb 21, 2026 06:06</span>
-</h1>
- <p>
-From Gabriel Hanotaux, French minister of foreign affairs from 1894 to 1895:
-</p>
-
- <blockquote>
- <p>
-A few precepts to repeat whenever you are in need of comfort,
-</p>
-
- <ol class="org-ol"> <li>Anything can happen.</li>
- <li>Everything is forgotten.</li>
- <li>Every difficulty can be overcome.</li>
- <li>No one understands anything.</li>
- <li>If everyone knew what everyone said about everyone, no one would speak to anyone.</li>
-</ol> <p>
-Above all things, never be afraid. The enemy who forces you to retreat is himself afraid of you at that very moment.
-</p>
-</blockquote>
-
- <p>
-From  <a href="https://www.futilitycloset.com/2026/02/21/noted-29/">Futility Closet</a>.
-</p>
-
- <div class="tagline" id="org42e5257">
- <p>
-Tagged:   <a href="../tags/quotes.html">Quotes</a>
-</p>
-
-</div>
-</main>]]></content>
-  <link href="https://randyridenour.net/posts/2026-02-21-comforting-words.html"/>
-  <id>https://randyridenour.net/posts/2026-02-21-comforting-words.html</id>
   <updated>2026-03-03T14:52:00-06:00</updated>
 </entry>
 <entry>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Apr 08, 2025 19:52 -->
+<!-- Mar 16, 2026 19:43 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>New Hugo Functions</title>
@@ -60,48 +60,48 @@ I found some some new functions for automating Hugo in Emacs, that I was able to
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-select-tags</span> ()
-  <span class="org-doc">"Select tags from the hugo org files in the current dir.</span>
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">hugo-select-tags</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-doc">"Select tags from the hugo org files in the current dir.
 
-<span class="org-doc">Note that it only extracts tags from lines like the below:</span>
-<span class="org-doc">#+tags[]: emacs org"</span>
-  (<span class="org-keyword">interactive</span>)
-  <span class="org-comment-delimiter">;; </span><span class="org-comment">Move to end of tag line.</span>
-  (<span class="org-keyword">save-excursion</span>
-    (goto-char 1)
-    (re-search-forward <span class="org-string">"^#\\+tags"</span>)
-    (end-of-line)
+Note that it only extracts tags from lines like the below:
+#+tags[]: emacs org"</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">Move to end of tag line.
+</span>  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">save-excursion</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>goto-char 1<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"^#\\+tags"</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>end-of-line<span class="org-rainbow-delimiters-depth-3">)</span>
 
-    (<span class="org-keyword">let</span> ((files (directory-files-recursively default-directory <span class="org-string">"\\.org$"</span>)))
-      (<span class="org-keyword">let</span> ((source (<span class="org-keyword">with-temp-buffer</span>
-                      (<span class="org-keyword">while</span> files
-                        (<span class="org-keyword">when</span> (file-exists-p (car files))
-                          (insert-file-contents (car files)))
-                        (<span class="org-keyword">pop</span> files))
-                      (buffer-string))))
-        (<span class="org-keyword">save-match-data</span>
-          (<span class="org-keyword">let</span> ((pos 0)
-                matches)
-            (<span class="org-keyword">while</span> (string-match <span class="org-string">"^#\\+[Tt]ags\\[</span><span class="org-string"><span class="org-constant">\\</span></span><span class="org-string">]: </span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">.+?</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">$"</span> source pos)
-              (<span class="org-keyword">push</span> (match-string 1 source) matches)
-              (<span class="org-keyword">setq</span> pos (match-end 0)))
-            (insert
-             (completing-read
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>files <span class="org-rainbow-delimiters-depth-6">(</span>directory-files-recursively default-directory <span class="org-string">"\\.org$"</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-rainbow-delimiters-depth-6">(</span>source <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">with-temp-buffer</span>
+                      <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-keyword">while</span> files
+                        <span class="org-rainbow-delimiters-depth-9">(</span><span class="org-keyword">when</span> <span class="org-rainbow-delimiters-depth-1">(</span>file-exists-p <span class="org-rainbow-delimiters-depth-2">(</span>car files<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+                          <span class="org-rainbow-delimiters-depth-1">(</span>insert-file-contents <span class="org-rainbow-delimiters-depth-2">(</span>car files<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span>
+                        <span class="org-rainbow-delimiters-depth-9">(</span><span class="org-keyword">pop</span> files<span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span>
+                      <span class="org-rainbow-delimiters-depth-8">(</span>buffer-string<span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+        <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">save-match-data</span>
+          <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-rainbow-delimiters-depth-8">(</span>pos 0<span class="org-rainbow-delimiters-depth-8">)</span>
+                matches<span class="org-rainbow-delimiters-depth-7">)</span>
+            <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-8">(</span>string-match <span class="org-string">"^#\\+[Tt]ags\\[</span><span class="org-string"><span class="org-constant">\\</span></span><span class="org-string">]: </span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">.+?</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">$"</span> source pos<span class="org-rainbow-delimiters-depth-8">)</span>
+              <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-keyword">push</span> <span class="org-rainbow-delimiters-depth-9">(</span>match-string 1 source<span class="org-rainbow-delimiters-depth-9">)</span> matches<span class="org-rainbow-delimiters-depth-8">)</span>
+              <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-keyword">setq</span> pos <span class="org-rainbow-delimiters-depth-9">(</span>match-end 0<span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span>
+            <span class="org-rainbow-delimiters-depth-7">(</span>insert
+             <span class="org-rainbow-delimiters-depth-8">(</span>completing-read
               <span class="org-string">"Insert a tag: "</span>
-              (sort
-               (delete-dups
-                (delete <span class="org-string">""</span> (split-string
-                            (replace-regexp-in-string <span class="org-string">"[\"</span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">']"</span> <span class="org-string">" "</span>
-                                                      (replace-regexp-in-string
+              <span class="org-rainbow-delimiters-depth-9">(</span>sort
+               <span class="org-rainbow-delimiters-depth-1">(</span>delete-dups
+                <span class="org-rainbow-delimiters-depth-2">(</span>delete <span class="org-string">""</span> <span class="org-rainbow-delimiters-depth-3">(</span>split-string
+                            <span class="org-rainbow-delimiters-depth-4">(</span>replace-regexp-in-string <span class="org-string">"[\"</span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">']"</span> <span class="org-string">" "</span>
+                                                      <span class="org-rainbow-delimiters-depth-5">(</span>replace-regexp-in-string
                                                        <span class="org-string">"[,()]"</span> <span class="org-string">""</span>
-                                                       (format <span class="org-string">"%s"</span> matches)))
-                            <span class="org-string">" "</span>)))
-               (<span class="org-keyword">lambda</span> (a b)
-                 (string&lt; (downcase a) (downcase b))))))))))
-    (insert <span class="org-string">" "</span>)
-    )
-  )
-</pre>
+                                                       <span class="org-rainbow-delimiters-depth-6">(</span>format <span class="org-string">"%s"</span> matches<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+                            <span class="org-string">" "</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+               <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-2">(</span>a b<span class="org-rainbow-delimiters-depth-2">)</span>
+                 <span class="org-rainbow-delimiters-depth-2">(</span>string&lt; <span class="org-rainbow-delimiters-depth-3">(</span>downcase a<span class="org-rainbow-delimiters-depth-3">)</span> <span class="org-rainbow-delimiters-depth-3">(</span>downcase b<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>insert <span class="org-string">" "</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 
@@ -111,22 +111,22 @@ Look at this post from <a href="https://lucidmanager.org/productivity/create-web
 
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Follow Hugo links</span>
-  (<span class="org-keyword">defun</span> <span class="org-function-name">org-hugo-follow</span> (link)
+<pre class="src src-emacs-lisp"><code><span class="org-comment-delimiter">;; </span><span class="org-comment">Follow Hugo links
+</span>  <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">org-hugo-follow</span> <span class="org-rainbow-delimiters-depth-2">(</span>link<span class="org-rainbow-delimiters-depth-2">)</span>
     <span class="org-doc">"Follow Hugo link shortcodes"</span>
-    (org-link-open-as-file
-     (string-trim <span class="org-string">"{{&lt;/* ref test.org */&gt;}}"</span> <span class="org-string">"{{&lt;/* ref "</span> <span class="org-string">"*/&gt;}}"</span>)))
+    <span class="org-rainbow-delimiters-depth-2">(</span>org-link-open-as-file
+     <span class="org-rainbow-delimiters-depth-3">(</span>string-trim <span class="org-string">"{{&lt;/* ref test.org */&gt;}}"</span> <span class="org-string">"{{&lt;/* ref "</span> <span class="org-string">"*/&gt;}}"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
-  <span class="org-comment-delimiter">;; </span><span class="org-comment">New link type for Org-Hugo internal links</span>
-  (org-link-set-parameters
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">New link type for Org-Hugo internal links
+</span>  <span class="org-rainbow-delimiters-depth-1">(</span>org-link-set-parameters
    <span class="org-string">"hugo"</span>
-   <span class="org-builtin">:complete</span> (<span class="org-keyword">lambda</span> ()
-               (concat <span class="org-string">"{{&lt;/* ref "</span>
-                       (file-name-nondirectory
-                        (read-file-name <span class="org-string">"File: "</span>))
-                       <span class="org-string">" */&gt;}}"</span>))
-   <span class="org-builtin">:follow</span> #'org-hugo-follow)
-</pre>
+   <span class="org-builtin">:complete</span> <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-3">()</span>
+               <span class="org-rainbow-delimiters-depth-3">(</span>concat <span class="org-string">"{{&lt;/* ref "</span>
+                       <span class="org-rainbow-delimiters-depth-4">(</span>file-name-nondirectory
+                        <span class="org-rainbow-delimiters-depth-5">(</span>read-file-name <span class="org-string">"File: "</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+                       <span class="org-string">" */&gt;}}"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+   <span class="org-builtin">:follow</span> #'org-hugo-follow<span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 
@@ -136,7 +136,7 @@ They both have some other useful things that might also be helpful. I&rsquo;m gr
 </p>
 
 
-<div class="tagline" id="org2cc62a2">
+<div class="tagline" id="orge218156">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a> 
 </p>
@@ -146,8 +146,8 @@ Tagged: <a href="../tags/emacs.html">Emacs</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Apr 08, 2025 19:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:43.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

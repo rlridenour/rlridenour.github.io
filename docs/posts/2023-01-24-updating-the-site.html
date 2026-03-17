@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Apr 08, 2025 19:52 -->
+<!-- Mar 16, 2026 19:44 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Updating the Site</title>
@@ -58,19 +58,19 @@ I&rsquo;ve had trouble getting verified as an educator with GitLab. After gettin
 <p>
 This seemed to be a good opportunity to update the site&rsquo;s theme. I had started with another theme and rewrote it into my own, but lately I&rsquo;ve been happier letting other people do as much of the configuration work as possible, which explains my move back to <a href="https://github.com/doomemacs/doomemacs">Doom Emacs</a>. I picked the <a href="https://github.com/WingLim/hugo-tania">Hugo Tania</a> theme, since it has nice built-in search and tag support.
 </p>
-<section id="outline-container-org89933c5" class="outline-2">
-<h2 id="org89933c5">Hugo and Org Mode</h2>
-<div class="outline-text-2" id="text-org89933c5">
+<section id="outline-container-org809b2b2" class="outline-2">
+<h2 id="org809b2b2">Hugo and Org Mode</h2>
+<div class="outline-text-2" id="text-org809b2b2">
 <p>
 I do most of my writing in Org mode in Emacs. Markdown is the most commonly used simple markup language, and Hugo has always had excellent native support for it. I remember its native support for Org mode to be missing some important things, although I can&rsquo;t really remember what they were. So, I was using <a href="https://ox-hugo.scripter.co">ox-hugo</a> to convert the Org files to Markdown. Evidently, Hugo&rsquo;s parser for Org mode is much more robust than it was, because I haven&rsquo;t had a problem with it parsing native Org files. So, I removed the ox-hugo package and now my posts are written in Org mode and not converted to Markdown. To do so, simply put the Hugo front-matter at the beginning in typical Org fashion. For instance, the front-matter for this post looks like this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-document-info-keyword">#+TITLE:</span> <span class="org-org-document-title">Updating the Site</span>
-<span class="org-org-meta-line">#+draft: false</span>
+<pre class="src src-org"><code><span class="org-org-document-info-keyword">#+TITLE:</span> <span class="org-org-document-title">Updating the Site
+</span><span class="org-org-meta-line">#+draft: false</span>
 <span class="org-org-meta-line">#+tags[]: hugo emacs org</span>
 <span class="org-org-document-info-keyword">#+date:</span> <span class="org-org-document-info">2023-01-24T06:41:27</span>
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -83,17 +83,17 @@ First, there is a function that updates the date for the post:
 
 
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-timestamp</span> ()
+<pre class="src src-elisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">hugo-timestamp</span> <span class="org-rainbow-delimiters-depth-2">()</span>
   <span class="org-doc">"Update existing date: timestamp on a Hugo post."</span>
-  (<span class="org-keyword">interactive</span>)
-  (<span class="org-keyword">save-excursion</span> (
-                   goto-char 1)
-                  (re-search-forward <span class="org-string">"^#\\+date:"</span>)
-                  (<span class="org-keyword">let</span> ((beg (point)))
-                    (end-of-line)
-                    (delete-region beg (point)))
-                  (insert (concat <span class="org-string">" "</span> (format-time-string <span class="org-string">"%Y-%m-%dT%H:%M:%S"</span>)))))
-</pre>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">save-excursion</span> <span class="org-rainbow-delimiters-depth-3">(</span>
+                   goto-char 1<span class="org-rainbow-delimiters-depth-3">)</span>
+                  <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"^#\\+date:"</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                  <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>beg <span class="org-rainbow-delimiters-depth-6">(</span>point<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+                    <span class="org-rainbow-delimiters-depth-4">(</span>end-of-line<span class="org-rainbow-delimiters-depth-4">)</span>
+                    <span class="org-rainbow-delimiters-depth-4">(</span>delete-region beg <span class="org-rainbow-delimiters-depth-5">(</span>point<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                  <span class="org-rainbow-delimiters-depth-3">(</span>insert <span class="org-rainbow-delimiters-depth-4">(</span>concat <span class="org-string">" "</span> <span class="org-rainbow-delimiters-depth-5">(</span>format-time-string <span class="org-string">"%Y-%m-%dT%H:%M:%S"</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -101,12 +101,12 @@ This sets some variables that are used later. The hugo-post-template variable co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-directory</span> <span class="org-string">"~/Sites/blog/"</span> <span class="org-doc">"Path to Hugo blog."</span>)
-(<span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-posts-dir</span> <span class="org-string">"content/posts/"</span> <span class="org-doc">"Relative path to posts directory."</span>)
-(<span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-post-ext</span> <span class="org-string">".org"</span>  <span class="org-doc">"File extension of Hugo posts."</span>)
-(<span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-post-template</span> <span class="org-string">"#+TITLE: </span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">%s\n#+draft: true\n#+tags[]: \n#+date: \n#+mathjax: \n\n"</span>
-  <span class="org-doc">"Default template for Hugo posts. %s will be replace by the post title."</span>)
-</pre>
+<pre class="src src-elisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-directory</span> <span class="org-string">"~/Sites/blog/"</span> <span class="org-doc">"Path to Hugo blog."</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-posts-dir</span> <span class="org-string">"content/posts/"</span> <span class="org-doc">"Relative path to posts directory."</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-post-ext</span> <span class="org-string">".org"</span>  <span class="org-doc">"File extension of Hugo posts."</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defvar</span> <span class="org-variable-name">hugo-post-template</span> <span class="org-string">"#+TITLE: </span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">%s\n#+draft: true\n#+tags[]: \n#+date: \n#+mathjax: \n\n"</span>
+  <span class="org-doc">"Default template for Hugo posts. %s will be replace by the post title."</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -114,12 +114,12 @@ These are used to generate the file name:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-make-slug</span> (s) <span class="org-doc">"Turn a string into a slug."</span>
-       (replace-regexp-in-string <span class="org-string">" "</span> <span class="org-string">"-"</span>  (downcase (replace-regexp-in-string <span class="org-string">"[</span><span class="org-string"><span class="org-negation-char">^</span></span><span class="org-string">A-Za-z0-9 ]"</span> <span class="org-string">""</span> s))))
+<pre class="src src-elisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">hugo-make-slug</span> <span class="org-rainbow-delimiters-depth-2">(</span>s<span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-doc">"Turn a string into a slug."</span>
+       <span class="org-rainbow-delimiters-depth-2">(</span>replace-regexp-in-string <span class="org-string">" "</span> <span class="org-string">"-"</span>  <span class="org-rainbow-delimiters-depth-3">(</span>downcase <span class="org-rainbow-delimiters-depth-4">(</span>replace-regexp-in-string <span class="org-string">"[</span><span class="org-string"><span class="org-negation-char">^</span></span><span class="org-string">A-Za-z0-9 ]"</span> <span class="org-string">""</span> s<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
-(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-yaml-escape</span> (s) <span class="org-doc">"Escape a string for YAML."</span>
-       (<span class="org-keyword">if</span> (<span class="org-keyword">or</span> (string-match <span class="org-string">":"</span> s) (string-match <span class="org-string">"\""</span> s)) (concat <span class="org-string">"\""</span> (replace-regexp-in-string <span class="org-string">"\""</span> <span class="org-string">"\\\\\""</span> s) <span class="org-string">"\""</span>) s))
-</pre>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">hugo-yaml-escape</span> <span class="org-rainbow-delimiters-depth-2">(</span>s<span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-doc">"Escape a string for YAML."</span>
+       <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">or</span> <span class="org-rainbow-delimiters-depth-4">(</span>string-match <span class="org-string">":"</span> s<span class="org-rainbow-delimiters-depth-4">)</span> <span class="org-rainbow-delimiters-depth-4">(</span>string-match <span class="org-string">"\""</span> s<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span> <span class="org-rainbow-delimiters-depth-3">(</span>concat <span class="org-string">"\""</span> <span class="org-rainbow-delimiters-depth-4">(</span>replace-regexp-in-string <span class="org-string">"\""</span> <span class="org-string">"\\\\\""</span> s<span class="org-rainbow-delimiters-depth-4">)</span> <span class="org-string">"\""</span><span class="org-rainbow-delimiters-depth-3">)</span> s<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -127,18 +127,18 @@ This creates the file and puts in the front-matter:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-draft-post</span> (title) <span class="org-doc">"Create a new Hugo blog post."</span>
-       (<span class="org-keyword">interactive</span> <span class="org-string">"sPost Title: "</span>)
-       (<span class="org-keyword">let</span> ((draft-file (concat hugo-directory hugo-posts-dir
-                                 (format-time-string <span class="org-string">"%Y-%m-%d-"</span>)
-                                 (hugo-make-slug title)
-                                 hugo-post-ext)))
-         (<span class="org-keyword">if</span> (file-exists-p draft-file)
-             (find-file draft-file)
-           (find-file draft-file)
-           (insert (format hugo-post-template (hugo-yaml-escape title)))
-           (hugo-timestamp))))
-</pre>
+<pre class="src src-elisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">hugo-draft-post</span> <span class="org-rainbow-delimiters-depth-2">(</span>title<span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-doc">"Create a new Hugo blog post."</span>
+       <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span> <span class="org-string">"sPost Title: "</span><span class="org-rainbow-delimiters-depth-2">)</span>
+       <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>draft-file <span class="org-rainbow-delimiters-depth-5">(</span>concat hugo-directory hugo-posts-dir
+                                 <span class="org-rainbow-delimiters-depth-6">(</span>format-time-string <span class="org-string">"%Y-%m-%d-"</span><span class="org-rainbow-delimiters-depth-6">)</span>
+                                 <span class="org-rainbow-delimiters-depth-6">(</span>hugo-make-slug title<span class="org-rainbow-delimiters-depth-6">)</span>
+                                 hugo-post-ext<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+         <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-4">(</span>file-exists-p draft-file<span class="org-rainbow-delimiters-depth-4">)</span>
+             <span class="org-rainbow-delimiters-depth-4">(</span>find-file draft-file<span class="org-rainbow-delimiters-depth-4">)</span>
+           <span class="org-rainbow-delimiters-depth-4">(</span>find-file draft-file<span class="org-rainbow-delimiters-depth-4">)</span>
+           <span class="org-rainbow-delimiters-depth-4">(</span>insert <span class="org-rainbow-delimiters-depth-5">(</span>format hugo-post-template <span class="org-rainbow-delimiters-depth-6">(</span>hugo-yaml-escape title<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+           <span class="org-rainbow-delimiters-depth-4">(</span>hugo-timestamp<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -146,19 +146,19 @@ This sets &ldquo;draft&rdquo; to &ldquo;true&rdquo;, updates the date stamp, and
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-publish-post</span> ()
+<pre class="src src-elisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">hugo-publish-post</span> <span class="org-rainbow-delimiters-depth-2">()</span>
   <span class="org-doc">"Set draft to false and save."</span>
-  (<span class="org-keyword">interactive</span>)
-  (<span class="org-keyword">save-excursion</span> (
-                   goto-char 1)
-                  (re-search-forward <span class="org-string">"^#\\+draft:"</span>)
-                  (<span class="org-keyword">let</span> ((beg (point)))
-                    (end-of-line)
-                    (delete-region beg (point)))
-                  (insert <span class="org-string">" false"</span>)
-                  (hugo-timestamp))
-  (save-buffer))
-</pre>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">save-excursion</span> <span class="org-rainbow-delimiters-depth-3">(</span>
+                   goto-char 1<span class="org-rainbow-delimiters-depth-3">)</span>
+                  <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"^#\\+draft:"</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                  <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>beg <span class="org-rainbow-delimiters-depth-6">(</span>point<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+                    <span class="org-rainbow-delimiters-depth-4">(</span>end-of-line<span class="org-rainbow-delimiters-depth-4">)</span>
+                    <span class="org-rainbow-delimiters-depth-4">(</span>delete-region beg <span class="org-rainbow-delimiters-depth-5">(</span>point<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                  <span class="org-rainbow-delimiters-depth-3">(</span>insert <span class="org-string">" false"</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                  <span class="org-rainbow-delimiters-depth-3">(</span>hugo-timestamp<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>save-buffer<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 
@@ -167,22 +167,22 @@ This commits the changes and pushes them to GitHub, using the current date and t
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defmacro</span> <span class="org-function-name">with-dir</span> (DIR <span class="org-type">&amp;rest</span> FORMS)
+<pre class="src src-elisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defmacro</span> <span class="org-function-name">with-dir</span> <span class="org-rainbow-delimiters-depth-2">(</span>DIR <span class="org-type">&amp;rest</span> FORMS<span class="org-rainbow-delimiters-depth-2">)</span>
   <span class="org-doc">"Execute FORMS in DIR."</span>
-  (<span class="org-keyword">let</span> ((orig-dir (gensym)))
-    `(<span class="org-keyword">progn</span> (<span class="org-keyword">setq</span> ,orig-dir default-directory)
-            (cd ,DIR) ,@FORMS (cd ,orig-dir))))
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>orig-dir <span class="org-rainbow-delimiters-depth-5">(</span>gensym<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    `<span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">progn</span> <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">setq</span> ,orig-dir default-directory<span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-4">(</span>cd ,DIR<span class="org-rainbow-delimiters-depth-4">)</span> ,@FORMS <span class="org-rainbow-delimiters-depth-4">(</span>cd ,orig-dir<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
-(<span class="org-keyword">defun</span> <span class="org-function-name">hugo-deploy</span> ()
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">hugo-deploy</span> <span class="org-rainbow-delimiters-depth-2">()</span>
   <span class="org-doc">"Push changes upstream."</span>
-  (<span class="org-keyword">interactive</span>)
-  (with-dir hugo-directory
-            (shell-command <span class="org-string">"git add ."</span>)
-            (<span class="org-keyword">--&gt;</span> (current-time-string)
-                 (concat <span class="org-string">"git commit -m \""</span> it <span class="org-string">"\""</span>)
-                 (shell-command it))
-            (magit-push-current-to-upstream nil)))
-</pre>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>with-dir hugo-directory
+            <span class="org-rainbow-delimiters-depth-3">(</span>shell-command <span class="org-string">"git add ."</span><span class="org-rainbow-delimiters-depth-3">)</span>
+            <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">--&gt;</span> <span class="org-rainbow-delimiters-depth-4">(</span>current-time-string<span class="org-rainbow-delimiters-depth-4">)</span>
+                 <span class="org-rainbow-delimiters-depth-4">(</span>concat <span class="org-string">"git commit -m \""</span> it <span class="org-string">"\""</span><span class="org-rainbow-delimiters-depth-4">)</span>
+                 <span class="org-rainbow-delimiters-depth-4">(</span>shell-command it<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+            <span class="org-rainbow-delimiters-depth-3">(</span>magit-push-current-to-upstream nil<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -190,13 +190,13 @@ Finally, set some keybindings to make it all easy.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(global-set-key (kbd <span class="org-string">"C-c h n"</span>) 'hugo-draft-post)
-(global-set-key (kbd <span class="org-string">"C-c h p"</span>) 'hugo-publish-post)
-(global-set-key (kbd <span class="org-string">"C-c h t"</span>) 'hugo-timestamp)
-(global-set-key (kbd <span class="org-string">"C-c h O"</span>) (<span class="org-keyword">lambda</span> () (<span class="org-keyword">interactive</span>) (find-file <span class="org-string">"~/Sites/blog/"</span>)))
-(global-set-key (kbd <span class="org-string">"C-c h P"</span>) (<span class="org-keyword">lambda</span> () (<span class="org-keyword">interactive</span>) (find-file <span class="org-string">"~/Sites/blog/content/post/"</span>)))
-(global-set-key (kbd <span class="org-string">"C-c h d"</span>) 'hugo-deploy)
-</pre>
+<pre class="src src-elisp"><code><span class="org-rainbow-delimiters-depth-1">(</span>global-set-key <span class="org-rainbow-delimiters-depth-2">(</span>kbd <span class="org-string">"C-c h n"</span><span class="org-rainbow-delimiters-depth-2">)</span> 'hugo-draft-post<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>global-set-key <span class="org-rainbow-delimiters-depth-2">(</span>kbd <span class="org-string">"C-c h p"</span><span class="org-rainbow-delimiters-depth-2">)</span> 'hugo-publish-post<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>global-set-key <span class="org-rainbow-delimiters-depth-2">(</span>kbd <span class="org-string">"C-c h t"</span><span class="org-rainbow-delimiters-depth-2">)</span> 'hugo-timestamp<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>global-set-key <span class="org-rainbow-delimiters-depth-2">(</span>kbd <span class="org-string">"C-c h O"</span><span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-3">()</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-3">)</span> <span class="org-rainbow-delimiters-depth-3">(</span>find-file <span class="org-string">"~/Sites/blog/"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>global-set-key <span class="org-rainbow-delimiters-depth-2">(</span>kbd <span class="org-string">"C-c h P"</span><span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-3">()</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-3">)</span> <span class="org-rainbow-delimiters-depth-3">(</span>find-file <span class="org-string">"~/Sites/blog/content/post/"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>global-set-key <span class="org-rainbow-delimiters-depth-2">(</span>kbd <span class="org-string">"C-c h d"</span><span class="org-rainbow-delimiters-depth-2">)</span> 'hugo-deploy<span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -204,7 +204,7 @@ I have a few more things to do, like create &ldquo;About&rdquo; and tag pages, a
 </p>
 
 
-<div class="tagline" id="org5f1a69d">
+<div class="tagline" id="orga2fd4ae">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a>
 </p>
@@ -216,8 +216,8 @@ Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Apr 08, 2025 19:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:44.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

@@ -108,81 +108,90 @@ publishing directory. Returns output file name."
 
 (setq org-publish-project-alist
       `(("posts"
-	 :base-directory "posts"
-	 :base-extension "org"
-	 :recursive t
-	 :publishing-function org-html-publish-to-html
-	 :publishing-directory "./docs/posts/"
-	 :exclude ,(regexp-opt '("README.org" "draft"))
-	 :auto-sitemap t
-	 :sitemap-filename "index.org"
-	 :sitemap-title "Blog Index"
-	 ;; :sitemap-format-entry me/org-sitemap-format-entry
-	 ;; :sitemap-style list
-	 :sitemap-sort-files anti-chronologically
-	 :html-link-home ""
-	 :html-link-up ""
-	 :html-head-include-scripts t
-	 :html-head-include-default-style nil
-	 :html-head ,me/website-html-head
-	 :html-preamble me/website-html-preamble
-	 :html-postamble me/website-html-postamble)
-	("pages"
-	 :base-directory "pages"
-	 :base-extension "org"
-	 :exclude ,(regexp-opt '("README.org" "draft"))
-	 :index-filename "index.org"
-	 :recursive nil
-	 :publishing-function org-html-publish-to-html
-	 :publishing-directory "./docs/"
-	 :html-link-home ""
-	 :html-link-up ""
-	 :html-head-include-scripts t
-	 :html-head-include-default-style nil
-	 :html-head ,me/website-html-head
-	 :html-preamble me/website-html-preamble
-	 :html-postamble me/website-html-postamble)
-	("tags"
-	 :base-directory "tags"
-	 :base-extension "org"
-	 :exclude ,(regexp-opt '("README.org" "draft"))
-	 :index-filename "index.org"
-	 :recursive nil
-	 :publishing-function org-html-publish-to-html
-	 :publishing-directory "./docs/tags/"
-	 :html-link-home ""
-	 :html-link-up ""
-	 :html-head-include-scripts t
-	 :html-head-include-default-style nil
-	 :html-head ,me/website-html-head
-	 :html-preamble me/website-html-preamble
-	 :html-postamble me/website-html-postamble)
-	("css"
-	 :base-directory "./css"
-	 :base-extension "css"
-	 :publishing-directory "./docs/css"
-	 :publishing-function org-publish-attachment
-	 :recursive t)
-	("images"
-	 :base-directory "./images"
-	 :base-extension ,site-attachments
-	 :publishing-directory "./docs/images"
-	 :publishing-function org-publish-attachment
-	 :recursive t)
-	("assets"
-	 :base-directory "./assets"
-	 :base-extension ,site-attachments
-	 :publishing-directory "./docs/assets"
-	 :publishing-function org-publish-attachment
-	 :recursive t)
-	("cname"
-	 :base-directory "./cname"
-	 ;; :base-extension ,site-attachments
-	 :publishing-directory "./docs"
-	 :publishing-function org-publish-attachment
-	 :include ("CNAME")
-	 :recursive nil)
-	("all" :components ("posts" "pages" "tags" "css" "images" "assets" "cname"))))
+         :base-directory "posts"
+         :base-extension "org"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "./docs/posts/"
+         :exclude ,(regexp-opt '("README.org" "draft"))
+         :auto-sitemap t
+         :sitemap-filename "index.org"
+         :sitemap-title "Blog Index"
+         ;; :sitemap-format-entry me/org-sitemap-format-entry
+         ;; :sitemap-style list
+         :sitemap-sort-files anti-chronologically
+         :html-link-home ""
+         :html-link-up ""
+         :html-head-include-scripts t
+         :html-head-include-default-style nil
+         :html-head ,me/website-html-head
+         :html-preamble me/website-html-preamble
+         :html-postamble me/website-html-postamble
+
+         :auto-rss t
+         :rss-title "Randy Ridenour"
+         :rss-description "Blog posts by Randy Ridenour."
+         :rss-with-content all
+         :rss-link "https://randyridenour.net/posts/"
+         :rss-root-url "https://randyridenour.net/posts/"
+         :completion-function org-publish-rss
+         )
+        ("pages"
+         :base-directory "pages"
+         :base-extension "org"
+         :exclude ,(regexp-opt '("README.org" "draft"))
+         :index-filename "index.org"
+         :recursive nil
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "./docs/"
+         :html-link-home ""
+         :html-link-up ""
+         :html-head-include-scripts t
+         :html-head-include-default-style nil
+         :html-head ,me/website-html-head
+         :html-preamble me/website-html-preamble
+         :html-postamble me/website-html-postamble)
+        ("tags"
+         :base-directory "tags"
+         :base-extension "org"
+         :exclude ,(regexp-opt '("README.org" "draft"))
+         :index-filename "index.org"
+         :recursive nil
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "./docs/tags/"
+         :html-link-home ""
+         :html-link-up ""
+         :html-head-include-scripts t
+         :html-head-include-default-style nil
+         :html-head ,me/website-html-head
+         :html-preamble me/website-html-preamble
+         :html-postamble me/website-html-postamble)
+        ("css"
+         :base-directory "./css"
+         :base-extension "css"
+         :publishing-directory "./docs/css"
+         :publishing-function org-publish-attachment
+         :recursive t)
+        ("images"
+         :base-directory "./images"
+         :base-extension ,site-attachments
+         :publishing-directory "./docs/images"
+         :publishing-function org-publish-attachment
+         :recursive t)
+        ("assets"
+         :base-directory "./assets"
+         :base-extension ,site-attachments
+         :publishing-directory "./docs/assets"
+         :publishing-function org-publish-attachment
+         :recursive t)
+        ("cname"
+         :base-directory "./cname"
+         ;; :base-extension ,site-attachments
+         :publishing-directory "./docs"
+         :publishing-function org-publish-attachment
+         :include ("CNAME")
+         :recursive nil)
+        ("all" :components ("posts" "pages" "tags" "css" "images" "assets" "cname"))))
 
 (provide 'publish)
 ;;; publish.el ends here

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Apr 08, 2025 19:52 -->
+<!-- Mar 16, 2026 19:44 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Workflow with Hugo and Org Mode</title>
@@ -54,21 +54,21 @@
 </header><p>
 Setting up the <a href="https://github.com/kaushalmodi/ox-hugo">Ox-hugo</a> package to use Org mode with Hugo was much easier than I expected. Here is how I configured it, the workflow for posting with Doom Emacs, and some things to keep in mind.
 </p>
-<section id="outline-container-orgd2c7bef" class="outline-2">
-<h2 id="orgd2c7bef">Installation and configuration</h2>
-<div class="outline-text-2" id="text-orgd2c7bef">
+<section id="outline-container-org0e813c8" class="outline-2">
+<h2 id="org0e813c8">Installation and configuration</h2>
+<div class="outline-text-2" id="text-org0e813c8">
 <p>
 I&rsquo;m back to using Doom Emacs, so adding Ox-hugo required nothing more than adding the <code>+hugo</code> flag to <code>:lang org</code> in the init.el file. Look for <code>org</code> in init.el, and change it to <code>(org +hugo)</code>. Ox-hugo has excellent <a href="https://ox-hugo.scripter.co/">documentation</a>, and I configured it almost exactly the way that was suggested. I was skeptical that having a single Org file that contained every blog post was a good idea, but after two days, it seems to be the way to go. I have a file called &ldquo;blog.org&rdquo; in a directory named &ldquo;content-org&rdquo; in my hugo project directory. This file has the following settings at the top:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-meta-line">#+hugo_base_dir: ~/Sites/blog</span>
+<pre class="src src-org"><code><span class="org-org-meta-line">#+hugo_base_dir: ~/Sites/blog</span>
 <span class="org-org-meta-line">#+seq_todo: TODO DRAFT DONE</span>
 <span class="org-org-meta-line">#+hugo_front_matter_format: yaml</span>
 <span class="org-org-meta-line">#+hugo_weight: auto</span>
 <span class="org-org-meta-line">#+hugo_auto_set_lastmod: t</span>
 <span class="org-org-document-info-keyword">#+author:</span> <span class="org-org-document-info">Randy Ridenour</span>
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -84,39 +84,39 @@ Here is the template:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Populates only the EXPORT_FILE_NAME property in the inserted headline.</span>
-(<span class="org-keyword">with-eval-after-load</span> 'org-capture
-  (<span class="org-keyword">defun</span> <span class="org-function-name">org-hugo-new-subtree-post-capture-template</span> ()
-    <span class="org-doc">"Returns `</span><span class="org-doc"><span class="org-constant">org-capture</span></span><span class="org-doc">' template string for new Hugo post.</span>
-<span class="org-doc">See `</span><span class="org-doc"><span class="org-constant">org-capture-templates</span></span><span class="org-doc">' for more information."</span>
-    (<span class="org-keyword">let*</span> ((title (read-from-minibuffer <span class="org-string">"Post Title: "</span>)) <span class="org-comment-delimiter">;</span><span class="org-comment">Prompt to enter the post title</span>
-           (fname (org-hugo-slug title)))
-      (mapconcat #'identity
-                 `(
-                   ,(concat <span class="org-string">"* TODO "</span> title)
+<pre class="src src-emacs-lisp"><code><span class="org-comment-delimiter">;; </span><span class="org-comment">Populates only the EXPORT_FILE_NAME property in the inserted headline.
+</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">with-eval-after-load</span> 'org-capture
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">defun</span> <span class="org-function-name">org-hugo-new-subtree-post-capture-template</span> <span class="org-rainbow-delimiters-depth-3">()</span>
+    <span class="org-doc">"Returns `</span><span class="org-doc"><span class="org-constant">org-capture</span></span><span class="org-doc">' template string for new Hugo post.
+See `</span><span class="org-doc"><span class="org-constant">org-capture-templates</span></span><span class="org-doc">' for more information."</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">let*</span> <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>title <span class="org-rainbow-delimiters-depth-6">(</span>read-from-minibuffer <span class="org-string">"Post Title: "</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span> <span class="org-comment-delimiter">;</span><span class="org-comment">Prompt to enter the post title
+</span>           <span class="org-rainbow-delimiters-depth-5">(</span>fname <span class="org-rainbow-delimiters-depth-6">(</span>org-hugo-slug title<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span>mapconcat #'identity
+                 `<span class="org-rainbow-delimiters-depth-5">(</span>
+                   ,<span class="org-rainbow-delimiters-depth-6">(</span>concat <span class="org-string">"* TODO "</span> title<span class="org-rainbow-delimiters-depth-6">)</span>
                    <span class="org-string">":PROPERTIES:"</span>
-                   ,(concat <span class="org-string">":EXPORT_FILE_NAME: "</span> (format-time-string <span class="org-string">"%Y%m%d-"</span>) fname)
+                   ,<span class="org-rainbow-delimiters-depth-6">(</span>concat <span class="org-string">":EXPORT_FILE_NAME: "</span> <span class="org-rainbow-delimiters-depth-7">(</span>format-time-string <span class="org-string">"%Y%m%d-"</span><span class="org-rainbow-delimiters-depth-7">)</span> fname<span class="org-rainbow-delimiters-depth-6">)</span>
 <span class="org-string">":EXPORT_HUGO_CUSTOM_FRONT_MATTER: :highlight true :math false"</span>
                    <span class="org-string">":END:"</span>
-                   <span class="org-string">"%?\n"</span>)          <span class="org-comment-delimiter">;</span><span class="org-comment">Place the cursor here finally</span>
-                 <span class="org-string">"\n"</span>)))
+                   <span class="org-string">"%?\n"</span><span class="org-rainbow-delimiters-depth-5">)</span>          <span class="org-comment-delimiter">;</span><span class="org-comment">Place the cursor here finally
+</span>                 <span class="org-string">"\n"</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
 
-  (add-to-list 'org-capture-templates
-               '(<span class="org-string">"h"</span>                <span class="org-comment-delimiter">;</span><span class="org-comment">`</span><span class="org-comment"><span class="org-constant">org-capture</span></span><span class="org-comment">' binding + h</span>
-                 <span class="org-string">"Hugo post"</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>add-to-list 'org-capture-templates
+               '<span class="org-rainbow-delimiters-depth-3">(</span><span class="org-string">"h"</span>                <span class="org-comment-delimiter">;</span><span class="org-comment">`</span><span class="org-comment"><span class="org-constant">org-capture</span></span><span class="org-comment">' binding + h
+</span>                 <span class="org-string">"Hugo post"</span>
                  entry
-                 <span class="org-comment-delimiter">;; </span><span class="org-comment">It is assumed that below file is present in `</span><span class="org-comment"><span class="org-constant">org-directory</span></span><span class="org-comment">'</span>
-                 <span class="org-comment-delimiter">;; </span><span class="org-comment">and that it has a "Blog Ideas" heading. It can even be a</span>
-                 <span class="org-comment-delimiter">;; </span><span class="org-comment">symlink pointing to the actual location of all-posts.org!</span>
-                 (file+olp <span class="org-string">"blog.org"</span> <span class="org-string">"Blog Ideas"</span>)
-                 (<span class="org-keyword">function</span> org-hugo-new-subtree-post-capture-template))))
-</pre>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">It is assumed that below file is present in `</span><span class="org-comment"><span class="org-constant">org-directory</span></span><span class="org-comment">'
+</span>                 <span class="org-comment-delimiter">;; </span><span class="org-comment">and that it has a "Blog Ideas" heading. It can even be a
+</span>                 <span class="org-comment-delimiter">;; </span><span class="org-comment">symlink pointing to the actual location of all-posts.org!
+</span>                 <span class="org-rainbow-delimiters-depth-4">(</span>file+olp <span class="org-string">"blog.org"</span> <span class="org-string">"Blog Ideas"</span><span class="org-rainbow-delimiters-depth-4">)</span>
+                 <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">function</span> org-hugo-new-subtree-post-capture-template<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 </div>
 </section>
-<section id="outline-container-org63ecb40" class="outline-2">
-<h2 id="org63ecb40">Workflow</h2>
-<div class="outline-text-2" id="text-org63ecb40">
+<section id="outline-container-org8c8e9d1" class="outline-2">
+<h2 id="org8c8e9d1">Workflow</h2>
+<div class="outline-text-2" id="text-org8c8e9d1">
 <p>
 <code>C-c n n</code> in Doom opens a hydra for Org-capture. Selecting &ldquo;h&rdquo; prompts for a post title in the minibuffer. Enter the title, press the return key, and a new Org-mode window opens with the file settings from the capture template. Enter the desired text, then press <code>C-c C-c</code> to close the window. The post is filed in the site&rsquo;s Org content file under the Blog Ideas section. When ready, move the cursor to a point in the post, and use org-refile to put it in the category that you would like.
 </p>
@@ -126,9 +126,9 @@ Add a file called &ldquo;dir-locals.el&rdquo; to the root level of the hugo site
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">((<span class="org-string">"content-org/"</span>
-  . ((org-mode . ((eval . (org-hugo-auto-export-mode)))))))
-</pre>
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-string">"content-org/"</span>
+  . <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>org-mode . <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-rainbow-delimiters-depth-6">(</span>eval . <span class="org-rainbow-delimiters-depth-7">(</span>org-hugo-auto-export-mode<span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -136,8 +136,8 @@ Then, as you write your posts, you can preview them at localhost:1313 as you edi
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">hugo server -D --navigateToChanged
-</pre>
+<pre class="src src-bash"><code>hugo server -D --navigateToChanged
+</code></pre>
 </div>
 
 <p>
@@ -149,9 +149,9 @@ When the draft is finished, change the <code>TODO</code> flag in the post title 
 </p>
 </div>
 </section>
-<section id="outline-container-orgaf8ac2f" class="outline-2">
-<h2 id="orgaf8ac2f">Miscellaneous discoveries</h2>
-<div class="outline-text-2" id="text-orgaf8ac2f">
+<section id="outline-container-org39f549b" class="outline-2">
+<h2 id="org39f549b">Miscellaneous discoveries</h2>
+<div class="outline-text-2" id="text-org39f549b">
 <p>
 So far, I&rsquo;ve found two things to keep in mind. First, headings in the Markdown files will be one level above the headings in the Org file. So, an H2 in the Org file is the post title, sections of the post have a H3 heading. The three stars in the Org file become two octothorpes in the Markdown file.
 </p>
@@ -161,8 +161,8 @@ Second, to specify a CSS class, just put this on the line directly preceding the
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-meta-line">#+attr_html: :class classname</span>
-</pre>
+<pre class="src src-org"><code><span class="org-org-meta-line">#+attr_html: :class classname</span>
+</code></pre>
 </div>
 
 <p>
@@ -170,11 +170,11 @@ For example, here&rsquo;s how I use my style for philosophical arguments.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-meta-line">#+attr_html: :class arg</span>
+<pre class="src src-org"><code><span class="org-org-meta-line">#+attr_html: :class arg</span>
 1. First premise
 2. Second premise
 3. Conclusion
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -188,16 +188,16 @@ produces this:
 </ol>
 </div>
 </section>
-<section id="outline-container-org16046e4" class="outline-2">
-<h2 id="org16046e4">Conclusion</h2>
-<div class="outline-text-2" id="text-org16046e4">
+<section id="outline-container-org02a7591" class="outline-2">
+<h2 id="org02a7591">Conclusion</h2>
+<div class="outline-text-2" id="text-org02a7591">
 <p>
 Ox-hugo works amazingly well for producing well-formed Hugo Goldmark markdown from an Org mode source file. Since I write nearly everything in Org mode, this enables me to easily use the same material for posts, handouts, and other formats.
 </p>
 
 
 
-<div class="tagline" id="org6e7285d">
+<div class="tagline" id="org551befd">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -209,8 +209,8 @@ Tagged: <a href="../tags/emacs.html">Emacs</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Apr 08, 2025 19:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:44.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

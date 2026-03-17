@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Mar 03, 2026 14:52 -->
+<!-- Mar 16, 2026 19:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Making Tag Pages in an Org Mode Blog</title>
@@ -93,22 +93,22 @@ So, the result is likely to be sloppy and inefficient, but it generally works in
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">orgblog-all-tag-lines</span> ()
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">orgblog-all-tag-lines</span> <span class="org-rainbow-delimiters-depth-2">()</span>
   <span class="org-doc">"Get filetag lines from all posts."</span>
-  (<span class="org-keyword">let</span> ((post-dir orgblog-posts-directory)
-            (regex <span class="org-string">"^#\\+filetags:\\s([a-zA-Z]+)"</span>))
-    (shell-command-to-string
-     (concat <span class="org-string">"rg --context 0 --no-filename --no-heading --replace \"\\$1\" -- "</span> (shell-quote-argument regex) <span class="org-string">" "</span> post-dir))))
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>post-dir orgblog-posts-directory<span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-4">(</span>regex <span class="org-string">"^#\\+filetags:\\s([a-zA-Z]+)"</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>shell-command-to-string
+     <span class="org-rainbow-delimiters-depth-4">(</span>concat <span class="org-string">"rg --context 0 --no-filename --no-heading --replace \"\\$1\" -- "</span> <span class="org-rainbow-delimiters-depth-5">(</span>shell-quote-argument regex<span class="org-rainbow-delimiters-depth-5">)</span> <span class="org-string">" "</span> post-dir<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
-(<span class="org-keyword">defun</span> <span class="org-function-name">orgblog-all-tags</span> ()
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">orgblog-all-tags</span> <span class="org-rainbow-delimiters-depth-2">()</span>
   <span class="org-doc">"Return a list of unique tags from all posts."</span>
-  (delete-dups
-   (split-string (orgblog-all-tag-lines) nil t)))
+  <span class="org-rainbow-delimiters-depth-2">(</span>delete-dups
+   <span class="org-rainbow-delimiters-depth-3">(</span>split-string <span class="org-rainbow-delimiters-depth-4">(</span>orgblog-all-tag-lines<span class="org-rainbow-delimiters-depth-4">)</span> nil t<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
-(<span class="org-keyword">defun</span> <span class="org-function-name">orgblog-select-tag</span> ()
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">orgblog-select-tag</span> <span class="org-rainbow-delimiters-depth-2">()</span>
   <span class="org-doc">"Select and insert a tag from tags in the blog."</span>
-  (<span class="org-keyword">defvar</span> <span class="org-variable-name">newtag</span>)
-  (<span class="org-keyword">setq</span> newtag (completing-read <span class="org-string">"Tag: "</span> (orgblog-all-tags))))
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">defvar</span> <span class="org-variable-name">newtag</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">setq</span> newtag <span class="org-rainbow-delimiters-depth-3">(</span>completing-read <span class="org-string">"Tag: "</span> <span class="org-rainbow-delimiters-depth-4">(</span>orgblog-all-tags<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -121,16 +121,16 @@ At this point, I had to venture on my own into unknown waters. First, I needed t
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">insert-post-tag</span> ()
-  (orgblog-select-tag)
-  (beginning-of-buffer)
-  (search-forward <span class="org-string">"#+filetags"</span> nil 1)
-  (end-of-line)
-  (insert (concat <span class="org-string">" "</span> newtag))
-  (beginning-of-buffer)
-  (search-forward <span class="org-string">"Tagged:"</span>)
-  (end-of-line)
-  (insert (concat <span class="org-string">" [[file:../tags/"</span> newtag <span class="org-string">".org]["</span> (s-titleized-words newtag) <span class="org-string">"]]"</span>)))
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">insert-post-tag</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>orgblog-select-tag<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>search-forward <span class="org-string">"#+filetags"</span> nil 1<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>end-of-line<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>insert <span class="org-rainbow-delimiters-depth-3">(</span>concat <span class="org-string">" "</span> newtag<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>search-forward <span class="org-string">"Tagged:"</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>end-of-line<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>insert <span class="org-rainbow-delimiters-depth-3">(</span>concat <span class="org-string">" [[file:../tags/"</span> newtag <span class="org-string">".org]["</span> <span class="org-rainbow-delimiters-depth-4">(</span>s-titleized-words newtag<span class="org-rainbow-delimiters-depth-4">)</span> <span class="org-string">"]]"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -139,20 +139,20 @@ Note that I use Sveen Magnars&rsquo; <a href="https://github.com/magnars/s.el">s
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">add-post-to-tagfile</span> ()
-  (<span class="org-keyword">defvar</span> <span class="org-variable-name">tagfile</span>)
-  (<span class="org-keyword">defvar</span> <span class="org-variable-name">post-filename</span>)
-  (<span class="org-keyword">defvar</span> <span class="org-variable-name">post-title</span>)
-  (<span class="org-keyword">setq</span> tagfile (concat <span class="org-string">"../tags/"</span> newtag <span class="org-string">".org"</span>))
-  (<span class="org-keyword">setq</span> post-filename (f-filename (f-this-file)))
-  (<span class="org-keyword">progn</span>
-    (beginning-of-buffer)
-    (search-forward <span class="org-string">"#+title: "</span> nil 1)
-    (<span class="org-keyword">setq</span> post-title (buffer-substring (point) (line-end-position))))
-  (<span class="org-keyword">when</span>
-      (not (file-exists-p tagfile))
-    (f-append-text (concat <span class="org-string">"#+title: Tagged: "</span> (s-titleized-words newtag) <span class="org-string">"\n#+setupfile: ../org-templates/post.org\n"</span>) 'utf-8 tagfile))
-  (f-append-text (concat <span class="org-string">"\n- [[file:../posts/"</span> post-filename <span class="org-string">"]["</span> post-title <span class="org-string">"]]"</span>) 'utf-8 tagfile))
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">add-post-to-tagfile</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">defvar</span> <span class="org-variable-name">tagfile</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">defvar</span> <span class="org-variable-name">post-filename</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">defvar</span> <span class="org-variable-name">post-title</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">setq</span> tagfile <span class="org-rainbow-delimiters-depth-3">(</span>concat <span class="org-string">"../tags/"</span> newtag <span class="org-string">".org"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">setq</span> post-filename <span class="org-rainbow-delimiters-depth-3">(</span>f-filename <span class="org-rainbow-delimiters-depth-4">(</span>f-this-file<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">progn</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>search-forward <span class="org-string">"#+title: "</span> nil 1<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">setq</span> post-title <span class="org-rainbow-delimiters-depth-4">(</span>buffer-substring <span class="org-rainbow-delimiters-depth-5">(</span>point<span class="org-rainbow-delimiters-depth-5">)</span> <span class="org-rainbow-delimiters-depth-5">(</span>line-end-position<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">when</span>
+      <span class="org-rainbow-delimiters-depth-3">(</span>not <span class="org-rainbow-delimiters-depth-4">(</span>file-exists-p tagfile<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>f-append-text <span class="org-rainbow-delimiters-depth-4">(</span>concat <span class="org-string">"#+title: Tagged: "</span> <span class="org-rainbow-delimiters-depth-5">(</span>s-titleized-words newtag<span class="org-rainbow-delimiters-depth-5">)</span> <span class="org-string">"\n#+setupfile: ../org-templates/post.org\n"</span><span class="org-rainbow-delimiters-depth-4">)</span> 'utf-8 tagfile<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>f-append-text <span class="org-rainbow-delimiters-depth-3">(</span>concat <span class="org-string">"\n- [[file:../posts/"</span> post-filename <span class="org-string">"]["</span> post-title <span class="org-string">"]]"</span><span class="org-rainbow-delimiters-depth-3">)</span> 'utf-8 tagfile<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -173,12 +173,12 @@ The final thing is to put all of functions together into one interactive functio
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">orgblog-add-tag</span> ()
-  (<span class="org-keyword">interactive</span>)
-  (orgblog-select-tag)
-  (insert-post-tag)
-  (add-post-to-tagfile)
-  (save-buffer))
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">orgblog-add-tag</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>orgblog-select-tag<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>insert-post-tag<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>add-post-to-tagfile<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>save-buffer<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -193,7 +193,7 @@ The only minor glitch in the system is that, for some reason, I have to press <c
 
 
 
-<div class="tagline" id="org34b5a23">
+<div class="tagline" id="org3b792ec">
 <p>
 Tagged:  <a href="../tags/org.html">Org</a> <a href="../tags/blog.html">Blog</a>
 </p>
@@ -213,8 +213,8 @@ I did discover that it needs to be before the footnote section, or it won&rsquo;
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 03, 2026 14:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:43.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

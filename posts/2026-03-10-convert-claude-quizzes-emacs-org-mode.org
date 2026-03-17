@@ -38,7 +38,7 @@ To run my conversion function for sending to NYIT, I first need it in this form:
      b) It relies too heavily on retribution
      c) It can justify punishing the innocent if doing so maximizes good outcomes
      d) It requires the punishment to exactly fit the crime
-#+end_src
+#+end_src 
 
 For weeks, I've been converting them a series of regex search and replace operations, but why do that every time? One of the main reasons I use Emacs is to avoid repetitive, tedious tasks. Here's the function:
 

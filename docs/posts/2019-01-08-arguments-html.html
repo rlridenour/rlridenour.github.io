@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Apr 08, 2025 19:52 -->
+<!-- Mar 16, 2026 19:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Arguments in HTML</title>
@@ -83,7 +83,7 @@ If one doesn&rsquo;t need to post very many arguments in standard form, then it 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+<pre class="src src-html"><code>&lt;<span class="org-function-name">ol</span>&gt;
   &lt;<span class="org-function-name">li</span>&gt;
     First Premise
   &lt;/<span class="org-function-name">li</span>&gt;
@@ -94,7 +94,7 @@ If one doesn&rsquo;t need to post very many arguments in standard form, then it 
     Conclusion
   &lt;/<span class="org-function-name">li</span>&gt;
 &lt;/<span class="org-function-name">ol</span>&gt;
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -102,7 +102,7 @@ Both methods produce something that looks like this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+<pre class="src src-html"><code>&lt;<span class="org-function-name">ol</span>&gt;
   &lt;<span class="org-function-name">li</span>&gt;
     First Premise
   &lt;/<span class="org-function-name">li</span>&gt;
@@ -112,12 +112,12 @@ Both methods produce something that looks like this:
   &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"list-style:none;"</span>&gt;
     Conclusion
 &lt;/<span class="org-function-name">ol</span>&gt;
-</pre>
+</code></pre>
 </div>
 
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
+<pre class="src src-html"><code>&lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
   &lt;<span class="org-function-name">li</span>&gt;
     First Premise
   &lt;/<span class="org-function-name">li</span>&gt;
@@ -128,7 +128,7 @@ Both methods produce something that looks like this:
     Conclusion
   &lt;/<span class="org-function-name">li</span>&gt;
 &lt;/<span class="org-function-name">ol</span>&gt;
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -136,7 +136,7 @@ Sometimes, the last premise is significantly shorter than the others, and the un
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+<pre class="src src-html"><code>&lt;<span class="org-function-name">ol</span>&gt;
   &lt;<span class="org-function-name">li</span>&gt;
     P &#8835; Q
   &lt;/<span class="org-function-name">li</span>&gt;
@@ -147,14 +147,14 @@ Sometimes, the last premise is significantly shorter than the others, and the un
     Q
   &lt;/<span class="org-function-name">li</span>&gt;
 &lt;/<span class="org-function-name">ol</span>&gt;
-</pre>
+</code></pre>
 </div>
 
 <p>
 That can be fixed with some non-breaking spaces. It looks ugly, but it does take care of the problem.
 </p>
 
-<pre class="example" id="org52fcb2b">
+<pre class="example" id="org413c6fa">
 &lt;ol&gt;
   &lt;li&gt;
     P &amp;#8835; Q
@@ -173,7 +173,7 @@ That produces
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+<pre class="src src-html"><code>&lt;<span class="org-function-name">ol</span>&gt;
   &lt;<span class="org-function-name">li</span>&gt;
     P &#8835; Q
   &lt;/<span class="org-function-name">li</span>&gt;
@@ -184,7 +184,7 @@ That produces
     Q
   &lt;/<span class="org-function-name">li</span>&gt;
 &lt;/<span class="org-function-name">ol</span>&gt;
-</pre>
+</code></pre>
 </div>
 </div>
 </section>
@@ -205,7 +205,7 @@ It is very easy to make lists in Markdown. Unfortunately, we have the same probl
 Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldmark rendering engine that Hugo uses allows attributes and classes in Markdown, there is another, far simpler, option. First, make sure that your site config.toml page has &ldquo;unsafe = true&rdquo; and &ldquo;block = true&rdquo; in the markup section. Mine looks like this:
 </p>
 
-<pre class="example" id="org5c407a5">
+<pre class="example" id="org9eef262">
 [markup]
   [markup.goldmark]
   [markup.goldmark.parser]
@@ -222,7 +222,7 @@ Since raw HTML can be used in Markdown, we could just use HTML. Since the Goldma
 Now, add a new class to your stylesheet. I called it &ldquo;arg&rdquo; and styled it like this:
 </p>
 
-<pre class="example" id="org8408257">
+<pre class="example" id="org0c38849">
 .arg li:last-child {
   list-style: none;
 }
@@ -240,7 +240,7 @@ margin: 0px;
 The first part removes the number at the line with the conclusion, and the second part underlines the last premise. Finally, I decided to tighten up the lines. Now, when you write your post, just use a normal Markdown ordered list with the class after the last item:
 </p>
 
-<pre class="example" id="orgb0b35ba">
+<pre class="example" id="org98c151d">
 1. First premise
 2. Second premise
 3. Conclusion
@@ -259,7 +259,7 @@ When published, that code produces this:
 
 
 
-<div class="tagline" id="org44794f1">
+<div class="tagline" id="orgeedd796">
 <p>
 Tagged: <a href="../tags/org.html">Org</a>
 </p>
@@ -271,8 +271,8 @@ Tagged: <a href="../tags/org.html">Org</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Apr 08, 2025 19:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:43.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

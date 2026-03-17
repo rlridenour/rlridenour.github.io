@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Apr 08, 2025 19:52 -->
+<!-- Mar 16, 2026 19:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Styled Pages in Canvas</title>
@@ -55,7 +55,7 @@
 <span class="subtitle">Jun 29, 2021 00:00</span>
 </h1>
 <p>
-My <a href="2019-01-08-arguments-html.html">method</a> of formatting philosophical arguments in HTML works fine when writing web pages on my own site, but not so well when I don&rsquo;t have access to the site&rsquo;s CSS, or so I thought. I tell students to format arguments in what is usually called &ldquo;standard form&rdquo; &#x2014; a list with numbered premises and a line separating the premises from the conclusion. So, it should look like this:
+My <a href="2019-01-08-arguments-html.html">method</a> of formatting philosophical arguments in HTML works fine when writing web pages on my own site, but not so well when I don&rsquo;t have access to the site&rsquo;s CSS, or so I thought. I tell students to format arguments in what is usually called &ldquo;standard form&rdquo; &mdash; a list with numbered premises and a line separating the premises from the conclusion. So, it should look like this:
 </p>
 
 <ol class="org-ol arg">
@@ -69,12 +69,12 @@ This is simple to do in LaTeX with this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-tex"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">enumerate</span>}
+<pre class="src src-tex"><code><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">enumerate</span>}
 <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> First Premise
 <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> <span class="org-font-latex-sedate"><span class="org-keyword">\underline</span></span>{<span class="org-font-latex-underline">Last Premise</span>}
 <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> [] Conclusion
 <span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">enumerate</span>}
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -82,11 +82,11 @@ As I explained <a href="2019-01-08-arguments-html.html">earlier</a>, it&rsquo;s 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+<pre class="src src-html"><code>&lt;<span class="org-function-name">ol</span>&gt;
     &lt;<span class="org-function-name">li</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
     &lt;<span class="org-function-name">li</span>&gt;&lt;<span class="org-function-name">u</span>&gt;<span class="org-underline">Second premise</span>&lt;/<span class="org-function-name">u</span>&gt;&lt;/<span class="org-function-name">li</span>&gt;
 &lt;/<span class="org-function-name">ol</span>&gt;
-</pre>
+</code></pre>
 </div>
 
 
@@ -100,12 +100,12 @@ The premises are fine, but the conclusion is a new paragraph. A better option wo
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span>&gt;
+<pre class="src src-html"><code>&lt;<span class="org-function-name">ol</span>&gt;
 &lt;<span class="org-function-name">li</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
 &lt;<span class="org-function-name">li</span>&gt;&lt;<span class="org-function-name">u</span>&gt;<span class="org-underline">Second premise</span>&lt;/<span class="org-function-name">u</span>&gt;&lt;/<span class="org-function-name">li</span>&gt;
 &lt;<span class="org-function-name">li</span>&gt;Conclusion&lt;/<span class="org-function-name">li</span>&gt;
 &lt;/<span class="org-function-name">ol</span>&gt;
-</pre>
+</code></pre>
 </div>
 
 
@@ -118,7 +118,7 @@ The best option seemed to be to produce handouts as PDF&rsquo;s with LaTeX. They
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-keyword">!doctype</span> html&gt;
+<pre class="src src-html"><code>&lt;<span class="org-keyword">!doctype</span> html&gt;
 &lt;<span class="org-function-name">html</span>&gt;
         &lt;<span class="org-function-name">head</span>&gt;
                 &lt;<span class="org-function-name">link</span> <span class="org-variable-name">rel</span>=<span class="org-string">"stylesheet"</span> <span class="org-variable-name">href</span>=<span class="org-string">"mystyle.css"</span>&gt;
@@ -132,7 +132,7 @@ The best option seemed to be to produce handouts as PDF&rsquo;s with LaTeX. They
                 &lt;/<span class="org-function-name">ol</span>&gt;
         &lt;/<span class="org-function-name">body</span>&gt;
 &lt;/<span class="org-function-name">html</span>&gt;
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -140,7 +140,7 @@ That would have been nice and simple, if it had worked. I then tried internal CS
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-keyword">!doctype</span> html&gt;
+<pre class="src src-html"><code>&lt;<span class="org-keyword">!doctype</span> html&gt;
 &lt;<span class="org-function-name">html</span>&gt;
         &lt;<span class="org-function-name">head</span>&gt;
                 &lt;<span class="org-function-name">meta</span> <span class="org-variable-name">charset</span>=<span class="org-string">"utf-8"</span> /&gt;
@@ -158,7 +158,7 @@ That would have been nice and simple, if it had worked. I then tried internal CS
                 &lt;/<span class="org-function-name">ol</span>&gt;
         &lt;/<span class="org-function-name">body</span>&gt;
 &lt;/<span class="org-function-name">html</span>&gt;
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -166,12 +166,12 @@ Success! That is, until I clicked &ldquo;Edit&rdquo; again, and Canvas stripped 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
+<pre class="src src-html"><code>&lt;<span class="org-function-name">ol</span> <span class="org-variable-name">class</span>=<span class="org-string">"arg"</span>&gt;
         &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"margin: 0px;"</span>&gt;First premise&lt;/<span class="org-function-name">li</span>&gt;
         &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"margin: 0px; text-decoration: underline;"</span>&gt;Second premise&lt;/<span class="org-function-name">li</span>&gt;
         &lt;<span class="org-function-name">li</span> <span class="org-variable-name">style</span>=<span class="org-string">"margin: 0px; list-style: none;"</span>&gt;Conclusion&lt;/<span class="org-function-name">li</span>&gt;
 &lt;/<span class="org-function-name">ol</span>&gt;
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -179,13 +179,13 @@ That finally worked. Unfortunately, it meant that the CSS had to be explicitly d
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span class="org-keyword">function</span> <span class="org-function-name">canvas</span>
+<pre class="src src-shell"><code><span class="org-keyword">function</span> <span class="org-function-name">canvas</span>
         juice canvas.html canvas.html
         find . -type f -name <span class="org-string">"canvas.html"</span> -print0 | xargs -0 sed -i <span class="org-string">''</span> -e <span class="org-string">'s/body&gt;/div&gt;/g'</span>
         pbcopy &lt; <span class="org-string">"canvas.html"</span>
         rm canvas.html
 end
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -193,14 +193,14 @@ Line 2 runs the inliner on a file named &ldquo;canvas.html&rdquo; and overwrites
 </p>
 
 <div class="org-src-container">
-<pre class="src src-orgmode">#+AUTHOR: Randy Ridenour
+<pre class="src src-orgmode"><code>#+AUTHOR: Randy Ridenour
 #+LANGUAGE: en-us
 #+EXPORT_FILE_NAME: canvas.html
 #+HTML_DOCTYPE: html5
 #+OPTIONS: toc:nil
 #+OPTIONS: html-style:nil
 #+HTML_HEAD: &lt;link rel="stylesheet" type="text/css" href="https://randyridenour.net/css/canvas.css"/&gt;
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -212,17 +212,17 @@ Everything is tied together with a very simple Emacs function:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">canvas-copy</span> ()
+<pre class="src src-elisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">canvas-copy</span> <span class="org-rainbow-delimiters-depth-2">()</span>
   <span class="org-doc">"Copy html for canvas pages"</span>
-  (<span class="org-keyword">interactive</span>)
-  (org-html-export-to-html)
-  (shell-command <span class="org-string">"canvas"</span>)
-)
-</pre>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>org-html-export-to-html<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>shell-command <span class="org-string">"canvas"</span><span class="org-rainbow-delimiters-depth-2">)</span>
+<span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 
-<div class="tagline" id="org3e1ce29">
+<div class="tagline" id="org8996c29">
 <p>
 Tagged: <a href="../tags/teaching.html">Teaching</a>
 </p>
@@ -232,8 +232,8 @@ Tagged: <a href="../tags/teaching.html">Teaching</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Apr 08, 2025 19:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:44.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Apr 08, 2025 19:52 -->
+<!-- Mar 16, 2026 19:43 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Styling Arguments in Org Mode</title>
@@ -60,12 +60,12 @@ We often put arguments in what is called &ldquo;standard form.&rdquo; The premis
 </p>
 
 <div class="org-src-container">
-<pre class="src src-LaTeX"><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">enumerate</span>}
+<pre class="src src-LaTeX"><code><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">enumerate</span>}
 <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> First Premise
 <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> <span class="org-font-latex-sedate"><span class="org-keyword">\underline</span></span>{<span class="org-font-latex-underline">Last Premise</span>}
 <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> [<span class="org-variable-name"><span class="org-font-latex-math">$</span></span><span class="org-font-latex-sedate"><span class="org-variable-name"><span class="org-font-latex-math">\therefore</span></span></span><span class="org-variable-name"><span class="org-font-latex-math">$</span></span>] Conclusion
 <span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">enumerate</span>}
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -73,18 +73,18 @@ For HTML, I use a class  that I named &ldquo;arg&rdquo; and defined in my custom
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span class="org-css-selector">.arg li:last-child</span> {
+<pre class="src src-css"><code><span class="org-css-selector">.arg li:last-child</span> <span class="org-rainbow-delimiters-depth-1">{</span>
   <span class="org-css-property">list-style</span>: none;
-}
+<span class="org-rainbow-delimiters-depth-1">}</span>
 
-<span class="org-css-selector">.arg li:nth-last-child(2)</span> {
+<span class="org-css-selector">.arg li:nth-last-child</span><span class="org-css-selector"><span class="org-rainbow-delimiters-depth-1">(</span></span><span class="org-css-selector">2</span><span class="org-css-selector"><span class="org-rainbow-delimiters-depth-1">)</span></span> <span class="org-rainbow-delimiters-depth-1">{</span>
   <span class="org-css-property">text-decoration</span>: underline;
-}
+<span class="org-rainbow-delimiters-depth-1">}</span>
 
-<span class="org-css-selector">.arg li</span> {
+<span class="org-css-selector">.arg li</span> <span class="org-rainbow-delimiters-depth-1">{</span>
   <span class="org-css-property">margin</span>: 0px;
-}
-</pre>
+<span class="org-rainbow-delimiters-depth-1">}</span>
+</code></pre>
 </div>
 
 
@@ -97,8 +97,8 @@ To use an HTML class in org mode, just put this immediately before the element y
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-meta-line">#+ATTR_HTML: :class classname</span>
-</pre>
+<pre class="src src-org"><code><span class="org-org-meta-line">#+ATTR_HTML: :class classname</span>
+</code></pre>
 </div>
 
 <p>
@@ -106,11 +106,11 @@ The argument is written like this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil">#+ATTR_HTML: :class arg
+<pre class="src src-nil"><code>#+ATTR_HTML: :class arg
 1. First premise
 2. Second premise
 3. Conclusion
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -124,7 +124,7 @@ which produces this:
 </ol>
 
 
-<div class="tagline" id="org4edcbde">
+<div class="tagline" id="org7e2f35c">
 <p>
 Tagged: <a href="../tags/org.html">Org</a>
 </p>
@@ -134,8 +134,8 @@ Tagged: <a href="../tags/org.html">Org</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Apr 08, 2025 19:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:43.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

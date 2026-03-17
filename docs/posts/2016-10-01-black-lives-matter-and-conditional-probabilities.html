@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Apr 08, 2025 19:52 -->
+<!-- Mar 16, 2026 19:43 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Race, Police Shooting, and Probability</title>
@@ -30,38 +30,6 @@
        }
      }
 // @license-end
-</script>
-<script>
-  window.MathJax = {
-    tex: {
-      ams: {
-        multlineWidth: '85%'
-      },
-      tags: 'ams',
-      tagSide: 'right',
-      tagIndent: '.8em'
-    },
-    chtml: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    svg: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    output: {
-      font: 'mathjax-modern',
-      displayOverflow: 'overflow'
-    }
-  };
-</script>
-
-<script
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 </head>
 <body>
@@ -96,19 +64,391 @@ Whites comprise 62% of the population, while African-Americans are only 13%. Of 
 </p>
 
 <p>
-Let \(W\) be white, \(B\) be black, and \(K\) be killed by police. The probability that someone is white if they are killed by police, \(\Pr (W \vert K)\), is 0.49. The probability that someone is black if they are killed by police, \(\Pr (B \vert K)\), is 0.24. What we need to know, though, is the probability that someone will be killed by police given their race. To do this, we need to use Bayes&rsquo; theorem.
+Let 
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="p1.1.m1.1" class="ltx_Math" alttext="W" display="inline">
+  <semantics id="p1.1.m1.1a">
+    <mi id="p1.1.m1.1.1" xref="p1.1.m1.1.1.cmml">W</mi>
+    <annotation-xml encoding="MathML-Content" id="p1.1.m1.1b">
+      <ci id="p1.1.m1.1.1.cmml" xref="p1.1.m1.1.1">𝑊</ci>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="p1.1.m1.1c">W</annotation>
+  </semantics>
+</math>
+ be white, 
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="p1.1.m1.1" class="ltx_Math" alttext="B" display="inline">
+  <semantics id="p1.1.m1.1a">
+    <mi id="p1.1.m1.1.1" xref="p1.1.m1.1.1.cmml">B</mi>
+    <annotation-xml encoding="MathML-Content" id="p1.1.m1.1b">
+      <ci id="p1.1.m1.1.1.cmml" xref="p1.1.m1.1.1">𝐵</ci>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="p1.1.m1.1c">B</annotation>
+  </semantics>
+</math>
+ be black, and 
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="p1.1.m1.1" class="ltx_Math" alttext="K" display="inline">
+  <semantics id="p1.1.m1.1a">
+    <mi id="p1.1.m1.1.1" xref="p1.1.m1.1.1.cmml">K</mi>
+    <annotation-xml encoding="MathML-Content" id="p1.1.m1.1b">
+      <ci id="p1.1.m1.1.1.cmml" xref="p1.1.m1.1.1">𝐾</ci>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="p1.1.m1.1c">K</annotation>
+  </semantics>
+</math>
+ be killed by police. The probability that someone is white if they are killed by police, 
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="p1.1.m1.2" class="ltx_Math" alttext="\Pr(W|K)" display="inline">
+  <semantics id="p1.1.m1.2a">
+    <mrow id="p1.1.m1.2.2.1" xref="p1.1.m1.2.2.2.cmml">
+      <mi id="p1.1.m1.1.1" xref="p1.1.m1.1.1.cmml">Pr</mi>
+      <mo id="p1.1.m1.2.2.1a" xref="p1.1.m1.2.2.2.cmml">⁡</mo>
+      <mrow id="p1.1.m1.2.2.1.1" xref="p1.1.m1.2.2.2.cmml">
+        <mo stretchy="false" id="p1.1.m1.2.2.1.1.2" xref="p1.1.m1.2.2.2.cmml">(</mo>
+        <mrow id="p1.1.m1.2.2.1.1.1" xref="p1.1.m1.2.2.1.1.1.cmml">
+          <mi id="p1.1.m1.2.2.1.1.1.2" xref="p1.1.m1.2.2.1.1.1.2.cmml">W</mi>
+          <mo fence="false" id="p1.1.m1.2.2.1.1.1.1" xref="p1.1.m1.2.2.1.1.1.1.cmml">|</mo>
+          <mi id="p1.1.m1.2.2.1.1.1.3" xref="p1.1.m1.2.2.1.1.1.3.cmml">K</mi>
+        </mrow>
+        <mo stretchy="false" id="p1.1.m1.2.2.1.1.3" xref="p1.1.m1.2.2.2.cmml">)</mo>
+      </mrow>
+    </mrow>
+    <annotation-xml encoding="MathML-Content" id="p1.1.m1.2b">
+      <apply id="p1.1.m1.2.2.2.cmml" xref="p1.1.m1.2.2.1">
+        <ci id="p1.1.m1.1.1.cmml" xref="p1.1.m1.1.1">Pr</ci>
+        <apply id="p1.1.m1.2.2.1.1.1.cmml" xref="p1.1.m1.2.2.1.1.1">
+          <csymbol cd="latexml" id="p1.1.m1.2.2.1.1.1.1.cmml" xref="p1.1.m1.2.2.1.1.1.1">conditional</csymbol>
+          <ci id="p1.1.m1.2.2.1.1.1.2.cmml" xref="p1.1.m1.2.2.1.1.1.2">𝑊</ci>
+          <ci id="p1.1.m1.2.2.1.1.1.3.cmml" xref="p1.1.m1.2.2.1.1.1.3">𝐾</ci>
+        </apply>
+      </apply>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="p1.1.m1.2c">\Pr(W|K)</annotation>
+  </semantics>
+</math>
+, is 0.49. The probability that someone is black if they are killed by police, 
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="p1.1.m1.2" class="ltx_Math" alttext="\Pr(B|K)" display="inline">
+  <semantics id="p1.1.m1.2a">
+    <mrow id="p1.1.m1.2.2.1" xref="p1.1.m1.2.2.2.cmml">
+      <mi id="p1.1.m1.1.1" xref="p1.1.m1.1.1.cmml">Pr</mi>
+      <mo id="p1.1.m1.2.2.1a" xref="p1.1.m1.2.2.2.cmml">⁡</mo>
+      <mrow id="p1.1.m1.2.2.1.1" xref="p1.1.m1.2.2.2.cmml">
+        <mo stretchy="false" id="p1.1.m1.2.2.1.1.2" xref="p1.1.m1.2.2.2.cmml">(</mo>
+        <mrow id="p1.1.m1.2.2.1.1.1" xref="p1.1.m1.2.2.1.1.1.cmml">
+          <mi id="p1.1.m1.2.2.1.1.1.2" xref="p1.1.m1.2.2.1.1.1.2.cmml">B</mi>
+          <mo fence="false" id="p1.1.m1.2.2.1.1.1.1" xref="p1.1.m1.2.2.1.1.1.1.cmml">|</mo>
+          <mi id="p1.1.m1.2.2.1.1.1.3" xref="p1.1.m1.2.2.1.1.1.3.cmml">K</mi>
+        </mrow>
+        <mo stretchy="false" id="p1.1.m1.2.2.1.1.3" xref="p1.1.m1.2.2.2.cmml">)</mo>
+      </mrow>
+    </mrow>
+    <annotation-xml encoding="MathML-Content" id="p1.1.m1.2b">
+      <apply id="p1.1.m1.2.2.2.cmml" xref="p1.1.m1.2.2.1">
+        <ci id="p1.1.m1.1.1.cmml" xref="p1.1.m1.1.1">Pr</ci>
+        <apply id="p1.1.m1.2.2.1.1.1.cmml" xref="p1.1.m1.2.2.1.1.1">
+          <csymbol cd="latexml" id="p1.1.m1.2.2.1.1.1.1.cmml" xref="p1.1.m1.2.2.1.1.1.1">conditional</csymbol>
+          <ci id="p1.1.m1.2.2.1.1.1.2.cmml" xref="p1.1.m1.2.2.1.1.1.2">𝐵</ci>
+          <ci id="p1.1.m1.2.2.1.1.1.3.cmml" xref="p1.1.m1.2.2.1.1.1.3">𝐾</ci>
+        </apply>
+      </apply>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="p1.1.m1.2c">\Pr(B|K)</annotation>
+  </semantics>
+</math>
+, is 0.24. What we need to know, though, is the probability that someone will be killed by police given their race. To do this, we need to use Bayes&rsquo; theorem.
 </p>
 
 <p>
-\[ \Pr (K \vert R) = \Pr (K) \times \frac{\Pr (R \vert K)}{\Pr (R)}\]
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="S0.Ex1.m1.8" class="ltx_Math" alttext="\Pr(K|R)=\Pr(K)\times\frac{\Pr(R|K)}{\Pr(R)}" display="block">
+  <semantics id="S0.Ex1.m1.8a">
+    <mrow id="S0.Ex1.m1.8.8" xref="S0.Ex1.m1.8.8.cmml">
+      <mrow id="S0.Ex1.m1.8.8.1.1" xref="S0.Ex1.m1.8.8.1.2.cmml">
+        <mi id="S0.Ex1.m1.5.5" xref="S0.Ex1.m1.5.5.cmml">Pr</mi>
+        <mo id="S0.Ex1.m1.8.8.1.1a" xref="S0.Ex1.m1.8.8.1.2.cmml">⁡</mo>
+        <mrow id="S0.Ex1.m1.8.8.1.1.1" xref="S0.Ex1.m1.8.8.1.2.cmml">
+          <mo stretchy="false" id="S0.Ex1.m1.8.8.1.1.1.2" xref="S0.Ex1.m1.8.8.1.2.cmml">(</mo>
+          <mrow id="S0.Ex1.m1.8.8.1.1.1.1" xref="S0.Ex1.m1.8.8.1.1.1.1.cmml">
+            <mi id="S0.Ex1.m1.8.8.1.1.1.1.2" xref="S0.Ex1.m1.8.8.1.1.1.1.2.cmml">K</mi>
+            <mo fence="false" id="S0.Ex1.m1.8.8.1.1.1.1.1" xref="S0.Ex1.m1.8.8.1.1.1.1.1.cmml">|</mo>
+            <mi id="S0.Ex1.m1.8.8.1.1.1.1.3" xref="S0.Ex1.m1.8.8.1.1.1.1.3.cmml">R</mi>
+          </mrow>
+          <mo stretchy="false" id="S0.Ex1.m1.8.8.1.1.1.3" xref="S0.Ex1.m1.8.8.1.2.cmml">)</mo>
+        </mrow>
+      </mrow>
+      <mo id="S0.Ex1.m1.8.8.2" xref="S0.Ex1.m1.8.8.2.cmml">=</mo>
+      <mrow id="S0.Ex1.m1.8.8.3" xref="S0.Ex1.m1.8.8.3.cmml">
+        <mrow id="S0.Ex1.m1.8.8.3.2.2" xref="S0.Ex1.m1.8.8.3.2.1.cmml">
+          <mi id="S0.Ex1.m1.6.6" xref="S0.Ex1.m1.6.6.cmml">Pr</mi>
+          <mo id="S0.Ex1.m1.8.8.3.2.2a" xref="S0.Ex1.m1.8.8.3.2.1.cmml">⁡</mo>
+          <mrow id="S0.Ex1.m1.8.8.3.2.2.1" xref="S0.Ex1.m1.8.8.3.2.1.cmml">
+            <mo stretchy="false" id="S0.Ex1.m1.8.8.3.2.2.1.1" xref="S0.Ex1.m1.8.8.3.2.1.cmml">(</mo>
+            <mi id="S0.Ex1.m1.7.7" xref="S0.Ex1.m1.7.7.cmml">K</mi>
+            <mo rspace="0.055em" stretchy="false" id="S0.Ex1.m1.8.8.3.2.2.1.2" xref="S0.Ex1.m1.8.8.3.2.1.cmml">)</mo>
+          </mrow>
+        </mrow>
+        <mo rspace="0.222em" id="S0.Ex1.m1.8.8.3.1" xref="S0.Ex1.m1.8.8.3.1.cmml">×</mo>
+        <mfrac id="S0.Ex1.m1.4.4" xref="S0.Ex1.m1.4.4.cmml">
+          <mrow id="S0.Ex1.m1.2.2.2.2" xref="S0.Ex1.m1.2.2.2.3.cmml">
+            <mi id="S0.Ex1.m1.1.1.1.1" xref="S0.Ex1.m1.1.1.1.1.cmml">Pr</mi>
+            <mo id="S0.Ex1.m1.2.2.2.2a" xref="S0.Ex1.m1.2.2.2.3.cmml">⁡</mo>
+            <mrow id="S0.Ex1.m1.2.2.2.2.1" xref="S0.Ex1.m1.2.2.2.3.cmml">
+              <mo stretchy="false" id="S0.Ex1.m1.2.2.2.2.1.2" xref="S0.Ex1.m1.2.2.2.3.cmml">(</mo>
+              <mrow id="S0.Ex1.m1.2.2.2.2.1.1" xref="S0.Ex1.m1.2.2.2.2.1.1.cmml">
+                <mi id="S0.Ex1.m1.2.2.2.2.1.1.2" xref="S0.Ex1.m1.2.2.2.2.1.1.2.cmml">R</mi>
+                <mo fence="false" id="S0.Ex1.m1.2.2.2.2.1.1.1" xref="S0.Ex1.m1.2.2.2.2.1.1.1.cmml">|</mo>
+                <mi id="S0.Ex1.m1.2.2.2.2.1.1.3" xref="S0.Ex1.m1.2.2.2.2.1.1.3.cmml">K</mi>
+              </mrow>
+              <mo stretchy="false" id="S0.Ex1.m1.2.2.2.2.1.3" xref="S0.Ex1.m1.2.2.2.3.cmml">)</mo>
+            </mrow>
+          </mrow>
+          <mrow id="S0.Ex1.m1.4.4.4.4" xref="S0.Ex1.m1.4.4.4.3.cmml">
+            <mi id="S0.Ex1.m1.3.3.3.1" xref="S0.Ex1.m1.3.3.3.1.cmml">Pr</mi>
+            <mo id="S0.Ex1.m1.4.4.4.4a" xref="S0.Ex1.m1.4.4.4.3.cmml">⁡</mo>
+            <mrow id="S0.Ex1.m1.4.4.4.4.1" xref="S0.Ex1.m1.4.4.4.3.cmml">
+              <mo stretchy="false" id="S0.Ex1.m1.4.4.4.4.1.1" xref="S0.Ex1.m1.4.4.4.3.cmml">(</mo>
+              <mi id="S0.Ex1.m1.4.4.4.2" xref="S0.Ex1.m1.4.4.4.2.cmml">R</mi>
+              <mo stretchy="false" id="S0.Ex1.m1.4.4.4.4.1.2" xref="S0.Ex1.m1.4.4.4.3.cmml">)</mo>
+            </mrow>
+          </mrow>
+        </mfrac>
+      </mrow>
+    </mrow>
+    <annotation-xml encoding="MathML-Content" id="S0.Ex1.m1.8b">
+      <apply id="S0.Ex1.m1.8.8.cmml" xref="S0.Ex1.m1.8.8">
+        <eq id="S0.Ex1.m1.8.8.2.cmml" xref="S0.Ex1.m1.8.8.2"/>
+        <apply id="S0.Ex1.m1.8.8.1.2.cmml" xref="S0.Ex1.m1.8.8.1.1">
+          <ci id="S0.Ex1.m1.5.5.cmml" xref="S0.Ex1.m1.5.5">Pr</ci>
+          <apply id="S0.Ex1.m1.8.8.1.1.1.1.cmml" xref="S0.Ex1.m1.8.8.1.1.1.1">
+            <csymbol cd="latexml" id="S0.Ex1.m1.8.8.1.1.1.1.1.cmml" xref="S0.Ex1.m1.8.8.1.1.1.1.1">conditional</csymbol>
+            <ci id="S0.Ex1.m1.8.8.1.1.1.1.2.cmml" xref="S0.Ex1.m1.8.8.1.1.1.1.2">𝐾</ci>
+            <ci id="S0.Ex1.m1.8.8.1.1.1.1.3.cmml" xref="S0.Ex1.m1.8.8.1.1.1.1.3">𝑅</ci>
+          </apply>
+        </apply>
+        <apply id="S0.Ex1.m1.8.8.3.cmml" xref="S0.Ex1.m1.8.8.3">
+          <times id="S0.Ex1.m1.8.8.3.1.cmml" xref="S0.Ex1.m1.8.8.3.1"/>
+          <apply id="S0.Ex1.m1.8.8.3.2.1.cmml" xref="S0.Ex1.m1.8.8.3.2.2">
+            <ci id="S0.Ex1.m1.6.6.cmml" xref="S0.Ex1.m1.6.6">Pr</ci>
+            <ci id="S0.Ex1.m1.7.7.cmml" xref="S0.Ex1.m1.7.7">𝐾</ci>
+          </apply>
+          <apply id="S0.Ex1.m1.4.4.cmml" xref="S0.Ex1.m1.4.4">
+            <divide id="S0.Ex1.m1.4.4.5.cmml" xref="S0.Ex1.m1.4.4"/>
+            <apply id="S0.Ex1.m1.2.2.2.3.cmml" xref="S0.Ex1.m1.2.2.2.2">
+              <ci id="S0.Ex1.m1.1.1.1.1.cmml" xref="S0.Ex1.m1.1.1.1.1">Pr</ci>
+              <apply id="S0.Ex1.m1.2.2.2.2.1.1.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1">
+                <csymbol cd="latexml" id="S0.Ex1.m1.2.2.2.2.1.1.1.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1.1">conditional</csymbol>
+                <ci id="S0.Ex1.m1.2.2.2.2.1.1.2.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1.2">𝑅</ci>
+                <ci id="S0.Ex1.m1.2.2.2.2.1.1.3.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1.3">𝐾</ci>
+              </apply>
+            </apply>
+            <apply id="S0.Ex1.m1.4.4.4.3.cmml" xref="S0.Ex1.m1.4.4.4.4">
+              <ci id="S0.Ex1.m1.3.3.3.1.cmml" xref="S0.Ex1.m1.3.3.3.1">Pr</ci>
+              <ci id="S0.Ex1.m1.4.4.4.2.cmml" xref="S0.Ex1.m1.4.4.4.2">𝑅</ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="S0.Ex1.m1.8c">\Pr(K|R)=\Pr(K)\times\frac{\Pr(R|K)}{\Pr(R)}</annotation>
+  </semantics>
+</math>
+
 </p>
 
 <p>
-Since \(\Pr(K)\) is the same for both whites and blacks, we can safely ignore it when determining how much more likely a person is to be killed given that their race. We simply need to compare \(\frac{\Pr (W \vert K)}{\Pr (W)}\) to \(\frac{\Pr (B) \vert (K)}{\Pr (B)}\).
+Since 
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="p1.1.m1.2" class="ltx_Math" alttext="\Pr(K)" display="inline">
+  <semantics id="p1.1.m1.2a">
+    <mrow id="p1.1.m1.2.3.2" xref="p1.1.m1.2.3.1.cmml">
+      <mi id="p1.1.m1.1.1" xref="p1.1.m1.1.1.cmml">Pr</mi>
+      <mo id="p1.1.m1.2.3.2a" xref="p1.1.m1.2.3.1.cmml">⁡</mo>
+      <mrow id="p1.1.m1.2.3.2.1" xref="p1.1.m1.2.3.1.cmml">
+        <mo stretchy="false" id="p1.1.m1.2.3.2.1.1" xref="p1.1.m1.2.3.1.cmml">(</mo>
+        <mi id="p1.1.m1.2.2" xref="p1.1.m1.2.2.cmml">K</mi>
+        <mo stretchy="false" id="p1.1.m1.2.3.2.1.2" xref="p1.1.m1.2.3.1.cmml">)</mo>
+      </mrow>
+    </mrow>
+    <annotation-xml encoding="MathML-Content" id="p1.1.m1.2b">
+      <apply id="p1.1.m1.2.3.1.cmml" xref="p1.1.m1.2.3.2">
+        <ci id="p1.1.m1.1.1.cmml" xref="p1.1.m1.1.1">Pr</ci>
+        <ci id="p1.1.m1.2.2.cmml" xref="p1.1.m1.2.2">𝐾</ci>
+      </apply>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="p1.1.m1.2c">\Pr(K)</annotation>
+  </semantics>
+</math>
+ is the same for both whites and blacks, we can safely ignore it when determining how much more likely a person is to be killed given that their race. We simply need to compare 
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="p1.1.m1.4" class="ltx_Math" alttext="\frac{\Pr(W|K)}{\Pr(W)}" display="inline">
+  <semantics id="p1.1.m1.4a">
+    <mfrac id="p1.1.m1.4.4" xref="p1.1.m1.4.4.cmml">
+      <mrow id="p1.1.m1.2.2.2.2" xref="p1.1.m1.2.2.2.3.cmml">
+        <mi id="p1.1.m1.1.1.1.1" xref="p1.1.m1.1.1.1.1.cmml">Pr</mi>
+        <mo id="p1.1.m1.2.2.2.2a" xref="p1.1.m1.2.2.2.3.cmml">⁡</mo>
+        <mrow id="p1.1.m1.2.2.2.2.1" xref="p1.1.m1.2.2.2.3.cmml">
+          <mo stretchy="false" id="p1.1.m1.2.2.2.2.1.2" xref="p1.1.m1.2.2.2.3.cmml">(</mo>
+          <mrow id="p1.1.m1.2.2.2.2.1.1" xref="p1.1.m1.2.2.2.2.1.1.cmml">
+            <mi id="p1.1.m1.2.2.2.2.1.1.2" xref="p1.1.m1.2.2.2.2.1.1.2.cmml">W</mi>
+            <mo fence="false" id="p1.1.m1.2.2.2.2.1.1.1" xref="p1.1.m1.2.2.2.2.1.1.1.cmml">|</mo>
+            <mi id="p1.1.m1.2.2.2.2.1.1.3" xref="p1.1.m1.2.2.2.2.1.1.3.cmml">K</mi>
+          </mrow>
+          <mo stretchy="false" id="p1.1.m1.2.2.2.2.1.3" xref="p1.1.m1.2.2.2.3.cmml">)</mo>
+        </mrow>
+      </mrow>
+      <mrow id="p1.1.m1.4.4.4.4" xref="p1.1.m1.4.4.4.3.cmml">
+        <mi id="p1.1.m1.3.3.3.1" xref="p1.1.m1.3.3.3.1.cmml">Pr</mi>
+        <mo id="p1.1.m1.4.4.4.4a" xref="p1.1.m1.4.4.4.3.cmml">⁡</mo>
+        <mrow id="p1.1.m1.4.4.4.4.1" xref="p1.1.m1.4.4.4.3.cmml">
+          <mo stretchy="false" id="p1.1.m1.4.4.4.4.1.1" xref="p1.1.m1.4.4.4.3.cmml">(</mo>
+          <mi id="p1.1.m1.4.4.4.2" xref="p1.1.m1.4.4.4.2.cmml">W</mi>
+          <mo stretchy="false" id="p1.1.m1.4.4.4.4.1.2" xref="p1.1.m1.4.4.4.3.cmml">)</mo>
+        </mrow>
+      </mrow>
+    </mfrac>
+    <annotation-xml encoding="MathML-Content" id="p1.1.m1.4b">
+      <apply id="p1.1.m1.4.4.cmml" xref="p1.1.m1.4.4">
+        <divide id="p1.1.m1.4.4.5.cmml" xref="p1.1.m1.4.4"/>
+        <apply id="p1.1.m1.2.2.2.3.cmml" xref="p1.1.m1.2.2.2.2">
+          <ci id="p1.1.m1.1.1.1.1.cmml" xref="p1.1.m1.1.1.1.1">Pr</ci>
+          <apply id="p1.1.m1.2.2.2.2.1.1.cmml" xref="p1.1.m1.2.2.2.2.1.1">
+            <csymbol cd="latexml" id="p1.1.m1.2.2.2.2.1.1.1.cmml" xref="p1.1.m1.2.2.2.2.1.1.1">conditional</csymbol>
+            <ci id="p1.1.m1.2.2.2.2.1.1.2.cmml" xref="p1.1.m1.2.2.2.2.1.1.2">𝑊</ci>
+            <ci id="p1.1.m1.2.2.2.2.1.1.3.cmml" xref="p1.1.m1.2.2.2.2.1.1.3">𝐾</ci>
+          </apply>
+        </apply>
+        <apply id="p1.1.m1.4.4.4.3.cmml" xref="p1.1.m1.4.4.4.4">
+          <ci id="p1.1.m1.3.3.3.1.cmml" xref="p1.1.m1.3.3.3.1">Pr</ci>
+          <ci id="p1.1.m1.4.4.4.2.cmml" xref="p1.1.m1.4.4.4.2">𝑊</ci>
+        </apply>
+      </apply>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="p1.1.m1.4c">\frac{\Pr(W|K)}{\Pr(W)}</annotation>
+  </semantics>
+</math>
+ to 
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="p1.1.m1.5" class="ltx_Math" alttext="\frac{\Pr(B)|(K)}{\Pr(B)}" display="inline">
+  <semantics id="p1.1.m1.5a">
+    <mfrac id="p1.1.m1.5.5" xref="p1.1.m1.5.5.cmml">
+      <mrow id="p1.1.m1.3.3.3" xref="p1.1.m1.3.3.3.cmml">
+        <mrow id="p1.1.m1.3.3.3.5.2" xref="p1.1.m1.3.3.3.5.1.cmml">
+          <mi id="p1.1.m1.1.1.1.1" xref="p1.1.m1.1.1.1.1.cmml">Pr</mi>
+          <mo id="p1.1.m1.3.3.3.5.2a" xref="p1.1.m1.3.3.3.5.1.cmml">⁡</mo>
+          <mrow id="p1.1.m1.3.3.3.5.2.1" xref="p1.1.m1.3.3.3.5.1.cmml">
+            <mo stretchy="false" id="p1.1.m1.3.3.3.5.2.1.1" xref="p1.1.m1.3.3.3.5.1.cmml">(</mo>
+            <mi id="p1.1.m1.2.2.2.2" xref="p1.1.m1.2.2.2.2.cmml">B</mi>
+            <mo stretchy="false" id="p1.1.m1.3.3.3.5.2.1.2" xref="p1.1.m1.3.3.3.5.1.cmml">)</mo>
+          </mrow>
+        </mrow>
+        <mo fence="false" id="p1.1.m1.3.3.3.4" xref="p1.1.m1.3.3.3.4.cmml">|</mo>
+        <mrow id="p1.1.m1.3.3.3.6.2" xref="p1.1.m1.3.3.3.cmml">
+          <mo stretchy="false" id="p1.1.m1.3.3.3.6.2.1" xref="p1.1.m1.3.3.3.cmml">(</mo>
+          <mi id="p1.1.m1.3.3.3.3" xref="p1.1.m1.3.3.3.3.cmml">K</mi>
+          <mo stretchy="false" id="p1.1.m1.3.3.3.6.2.2" xref="p1.1.m1.3.3.3.cmml">)</mo>
+        </mrow>
+      </mrow>
+      <mrow id="p1.1.m1.5.5.5.4" xref="p1.1.m1.5.5.5.3.cmml">
+        <mi id="p1.1.m1.4.4.4.1" xref="p1.1.m1.4.4.4.1.cmml">Pr</mi>
+        <mo id="p1.1.m1.5.5.5.4a" xref="p1.1.m1.5.5.5.3.cmml">⁡</mo>
+        <mrow id="p1.1.m1.5.5.5.4.1" xref="p1.1.m1.5.5.5.3.cmml">
+          <mo stretchy="false" id="p1.1.m1.5.5.5.4.1.1" xref="p1.1.m1.5.5.5.3.cmml">(</mo>
+          <mi id="p1.1.m1.5.5.5.2" xref="p1.1.m1.5.5.5.2.cmml">B</mi>
+          <mo stretchy="false" id="p1.1.m1.5.5.5.4.1.2" xref="p1.1.m1.5.5.5.3.cmml">)</mo>
+        </mrow>
+      </mrow>
+    </mfrac>
+    <annotation-xml encoding="MathML-Content" id="p1.1.m1.5b">
+      <apply id="p1.1.m1.5.5.cmml" xref="p1.1.m1.5.5">
+        <divide id="p1.1.m1.5.5.6.cmml" xref="p1.1.m1.5.5"/>
+        <apply id="p1.1.m1.3.3.3.cmml" xref="p1.1.m1.3.3.3">
+          <csymbol cd="latexml" id="p1.1.m1.3.3.3.4.cmml" xref="p1.1.m1.3.3.3.4">conditional</csymbol>
+          <apply id="p1.1.m1.3.3.3.5.1.cmml" xref="p1.1.m1.3.3.3.5.2">
+            <ci id="p1.1.m1.1.1.1.1.cmml" xref="p1.1.m1.1.1.1.1">Pr</ci>
+            <ci id="p1.1.m1.2.2.2.2.cmml" xref="p1.1.m1.2.2.2.2">𝐵</ci>
+          </apply>
+          <ci id="p1.1.m1.3.3.3.3.cmml" xref="p1.1.m1.3.3.3.3">𝐾</ci>
+        </apply>
+        <apply id="p1.1.m1.5.5.5.3.cmml" xref="p1.1.m1.5.5.5.4">
+          <ci id="p1.1.m1.4.4.4.1.cmml" xref="p1.1.m1.4.4.4.1">Pr</ci>
+          <ci id="p1.1.m1.5.5.5.2.cmml" xref="p1.1.m1.5.5.5.2">𝐵</ci>
+        </apply>
+      </apply>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="p1.1.m1.5c">\frac{\Pr(B)|(K)}{\Pr(B)}</annotation>
+  </semantics>
+</math>
+.
 </p>
 
 <p>
-\[\frac{\Pr (W \vert K)}{\Pr (W)} = \frac{0.49}{0.62} = 0.79\]
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="S0.Ex1.m1.4" class="ltx_Math" alttext="\frac{\Pr(W|K)}{\Pr(W)}=\frac{0.49}{0.62}=0.79" display="block">
+  <semantics id="S0.Ex1.m1.4a">
+    <mrow id="S0.Ex1.m1.4.5" xref="S0.Ex1.m1.4.5.cmml">
+      <mfrac id="S0.Ex1.m1.4.4" xref="S0.Ex1.m1.4.4.cmml">
+        <mrow id="S0.Ex1.m1.2.2.2.2" xref="S0.Ex1.m1.2.2.2.3.cmml">
+          <mi id="S0.Ex1.m1.1.1.1.1" xref="S0.Ex1.m1.1.1.1.1.cmml">Pr</mi>
+          <mo id="S0.Ex1.m1.2.2.2.2a" xref="S0.Ex1.m1.2.2.2.3.cmml">⁡</mo>
+          <mrow id="S0.Ex1.m1.2.2.2.2.1" xref="S0.Ex1.m1.2.2.2.3.cmml">
+            <mo stretchy="false" id="S0.Ex1.m1.2.2.2.2.1.2" xref="S0.Ex1.m1.2.2.2.3.cmml">(</mo>
+            <mrow id="S0.Ex1.m1.2.2.2.2.1.1" xref="S0.Ex1.m1.2.2.2.2.1.1.cmml">
+              <mi id="S0.Ex1.m1.2.2.2.2.1.1.2" xref="S0.Ex1.m1.2.2.2.2.1.1.2.cmml">W</mi>
+              <mo fence="false" id="S0.Ex1.m1.2.2.2.2.1.1.1" xref="S0.Ex1.m1.2.2.2.2.1.1.1.cmml">|</mo>
+              <mi id="S0.Ex1.m1.2.2.2.2.1.1.3" xref="S0.Ex1.m1.2.2.2.2.1.1.3.cmml">K</mi>
+            </mrow>
+            <mo stretchy="false" id="S0.Ex1.m1.2.2.2.2.1.3" xref="S0.Ex1.m1.2.2.2.3.cmml">)</mo>
+          </mrow>
+        </mrow>
+        <mrow id="S0.Ex1.m1.4.4.4.4" xref="S0.Ex1.m1.4.4.4.3.cmml">
+          <mi id="S0.Ex1.m1.3.3.3.1" xref="S0.Ex1.m1.3.3.3.1.cmml">Pr</mi>
+          <mo id="S0.Ex1.m1.4.4.4.4a" xref="S0.Ex1.m1.4.4.4.3.cmml">⁡</mo>
+          <mrow id="S0.Ex1.m1.4.4.4.4.1" xref="S0.Ex1.m1.4.4.4.3.cmml">
+            <mo stretchy="false" id="S0.Ex1.m1.4.4.4.4.1.1" xref="S0.Ex1.m1.4.4.4.3.cmml">(</mo>
+            <mi id="S0.Ex1.m1.4.4.4.2" xref="S0.Ex1.m1.4.4.4.2.cmml">W</mi>
+            <mo stretchy="false" id="S0.Ex1.m1.4.4.4.4.1.2" xref="S0.Ex1.m1.4.4.4.3.cmml">)</mo>
+          </mrow>
+        </mrow>
+      </mfrac>
+      <mo id="S0.Ex1.m1.4.5.2" xref="S0.Ex1.m1.4.5.2.cmml">=</mo>
+      <mfrac id="S0.Ex1.m1.4.5.3" xref="S0.Ex1.m1.4.5.3.cmml">
+        <mn id="S0.Ex1.m1.4.5.3.2" xref="S0.Ex1.m1.4.5.3.2.cmml">0.49</mn>
+        <mn id="S0.Ex1.m1.4.5.3.3" xref="S0.Ex1.m1.4.5.3.3.cmml">0.62</mn>
+      </mfrac>
+      <mo id="S0.Ex1.m1.4.5.4" xref="S0.Ex1.m1.4.5.4.cmml">=</mo>
+      <mn id="S0.Ex1.m1.4.5.5" xref="S0.Ex1.m1.4.5.5.cmml">0.79</mn>
+    </mrow>
+    <annotation-xml encoding="MathML-Content" id="S0.Ex1.m1.4b">
+      <apply id="S0.Ex1.m1.4.5.cmml" xref="S0.Ex1.m1.4.5">
+        <and id="S0.Ex1.m1.4.5a.cmml" xref="S0.Ex1.m1.4.5"/>
+        <apply id="S0.Ex1.m1.4.5b.cmml" xref="S0.Ex1.m1.4.5">
+          <eq id="S0.Ex1.m1.4.5.2.cmml" xref="S0.Ex1.m1.4.5.2"/>
+          <apply id="S0.Ex1.m1.4.4.cmml" xref="S0.Ex1.m1.4.4">
+            <divide id="S0.Ex1.m1.4.4.5.cmml" xref="S0.Ex1.m1.4.4"/>
+            <apply id="S0.Ex1.m1.2.2.2.3.cmml" xref="S0.Ex1.m1.2.2.2.2">
+              <ci id="S0.Ex1.m1.1.1.1.1.cmml" xref="S0.Ex1.m1.1.1.1.1">Pr</ci>
+              <apply id="S0.Ex1.m1.2.2.2.2.1.1.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1">
+                <csymbol cd="latexml" id="S0.Ex1.m1.2.2.2.2.1.1.1.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1.1">conditional</csymbol>
+                <ci id="S0.Ex1.m1.2.2.2.2.1.1.2.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1.2">𝑊</ci>
+                <ci id="S0.Ex1.m1.2.2.2.2.1.1.3.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1.3">𝐾</ci>
+              </apply>
+            </apply>
+            <apply id="S0.Ex1.m1.4.4.4.3.cmml" xref="S0.Ex1.m1.4.4.4.4">
+              <ci id="S0.Ex1.m1.3.3.3.1.cmml" xref="S0.Ex1.m1.3.3.3.1">Pr</ci>
+              <ci id="S0.Ex1.m1.4.4.4.2.cmml" xref="S0.Ex1.m1.4.4.4.2">𝑊</ci>
+            </apply>
+          </apply>
+          <apply id="S0.Ex1.m1.4.5.3.cmml" xref="S0.Ex1.m1.4.5.3">
+            <divide id="S0.Ex1.m1.4.5.3.1.cmml" xref="S0.Ex1.m1.4.5.3"/>
+            <cn type="float" id="S0.Ex1.m1.4.5.3.2.cmml" xref="S0.Ex1.m1.4.5.3.2">0.49</cn>
+            <cn type="float" id="S0.Ex1.m1.4.5.3.3.cmml" xref="S0.Ex1.m1.4.5.3.3">0.62</cn>
+          </apply>
+        </apply>
+        <apply id="S0.Ex1.m1.4.5c.cmml" xref="S0.Ex1.m1.4.5">
+          <eq id="S0.Ex1.m1.4.5.4.cmml" xref="S0.Ex1.m1.4.5.4"/>
+          <share href="#S0.Ex1.m1.4.5.3.cmml" id="S0.Ex1.m1.4.5d.cmml" xref="S0.Ex1.m1.4.5"/>
+          <cn type="float" id="S0.Ex1.m1.4.5.5.cmml" xref="S0.Ex1.m1.4.5.5">0.79</cn>
+        </apply>
+      </apply>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="S0.Ex1.m1.4c">\frac{\Pr(W|K)}{\Pr(W)}=\frac{0.49}{0.62}=0.79</annotation>
+  </semantics>
+</math>
+
 </p>
 
 <p>
@@ -116,7 +456,79 @@ On the other hand,
 </p>
 
 <p>
-\[\frac{\Pr (B \vert K)}{\Pr (B)} = \frac{0.24}{0.13} = 1.84\]
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="S0.Ex1.m1.4" class="ltx_Math" alttext="\frac{\Pr(B|K)}{\Pr(B)}=\frac{0.24}{0.13}=1.84" display="block">
+  <semantics id="S0.Ex1.m1.4a">
+    <mrow id="S0.Ex1.m1.4.5" xref="S0.Ex1.m1.4.5.cmml">
+      <mfrac id="S0.Ex1.m1.4.4" xref="S0.Ex1.m1.4.4.cmml">
+        <mrow id="S0.Ex1.m1.2.2.2.2" xref="S0.Ex1.m1.2.2.2.3.cmml">
+          <mi id="S0.Ex1.m1.1.1.1.1" xref="S0.Ex1.m1.1.1.1.1.cmml">Pr</mi>
+          <mo id="S0.Ex1.m1.2.2.2.2a" xref="S0.Ex1.m1.2.2.2.3.cmml">⁡</mo>
+          <mrow id="S0.Ex1.m1.2.2.2.2.1" xref="S0.Ex1.m1.2.2.2.3.cmml">
+            <mo stretchy="false" id="S0.Ex1.m1.2.2.2.2.1.2" xref="S0.Ex1.m1.2.2.2.3.cmml">(</mo>
+            <mrow id="S0.Ex1.m1.2.2.2.2.1.1" xref="S0.Ex1.m1.2.2.2.2.1.1.cmml">
+              <mi id="S0.Ex1.m1.2.2.2.2.1.1.2" xref="S0.Ex1.m1.2.2.2.2.1.1.2.cmml">B</mi>
+              <mo fence="false" id="S0.Ex1.m1.2.2.2.2.1.1.1" xref="S0.Ex1.m1.2.2.2.2.1.1.1.cmml">|</mo>
+              <mi id="S0.Ex1.m1.2.2.2.2.1.1.3" xref="S0.Ex1.m1.2.2.2.2.1.1.3.cmml">K</mi>
+            </mrow>
+            <mo stretchy="false" id="S0.Ex1.m1.2.2.2.2.1.3" xref="S0.Ex1.m1.2.2.2.3.cmml">)</mo>
+          </mrow>
+        </mrow>
+        <mrow id="S0.Ex1.m1.4.4.4.4" xref="S0.Ex1.m1.4.4.4.3.cmml">
+          <mi id="S0.Ex1.m1.3.3.3.1" xref="S0.Ex1.m1.3.3.3.1.cmml">Pr</mi>
+          <mo id="S0.Ex1.m1.4.4.4.4a" xref="S0.Ex1.m1.4.4.4.3.cmml">⁡</mo>
+          <mrow id="S0.Ex1.m1.4.4.4.4.1" xref="S0.Ex1.m1.4.4.4.3.cmml">
+            <mo stretchy="false" id="S0.Ex1.m1.4.4.4.4.1.1" xref="S0.Ex1.m1.4.4.4.3.cmml">(</mo>
+            <mi id="S0.Ex1.m1.4.4.4.2" xref="S0.Ex1.m1.4.4.4.2.cmml">B</mi>
+            <mo stretchy="false" id="S0.Ex1.m1.4.4.4.4.1.2" xref="S0.Ex1.m1.4.4.4.3.cmml">)</mo>
+          </mrow>
+        </mrow>
+      </mfrac>
+      <mo id="S0.Ex1.m1.4.5.2" xref="S0.Ex1.m1.4.5.2.cmml">=</mo>
+      <mfrac id="S0.Ex1.m1.4.5.3" xref="S0.Ex1.m1.4.5.3.cmml">
+        <mn id="S0.Ex1.m1.4.5.3.2" xref="S0.Ex1.m1.4.5.3.2.cmml">0.24</mn>
+        <mn id="S0.Ex1.m1.4.5.3.3" xref="S0.Ex1.m1.4.5.3.3.cmml">0.13</mn>
+      </mfrac>
+      <mo id="S0.Ex1.m1.4.5.4" xref="S0.Ex1.m1.4.5.4.cmml">=</mo>
+      <mn id="S0.Ex1.m1.4.5.5" xref="S0.Ex1.m1.4.5.5.cmml">1.84</mn>
+    </mrow>
+    <annotation-xml encoding="MathML-Content" id="S0.Ex1.m1.4b">
+      <apply id="S0.Ex1.m1.4.5.cmml" xref="S0.Ex1.m1.4.5">
+        <and id="S0.Ex1.m1.4.5a.cmml" xref="S0.Ex1.m1.4.5"/>
+        <apply id="S0.Ex1.m1.4.5b.cmml" xref="S0.Ex1.m1.4.5">
+          <eq id="S0.Ex1.m1.4.5.2.cmml" xref="S0.Ex1.m1.4.5.2"/>
+          <apply id="S0.Ex1.m1.4.4.cmml" xref="S0.Ex1.m1.4.4">
+            <divide id="S0.Ex1.m1.4.4.5.cmml" xref="S0.Ex1.m1.4.4"/>
+            <apply id="S0.Ex1.m1.2.2.2.3.cmml" xref="S0.Ex1.m1.2.2.2.2">
+              <ci id="S0.Ex1.m1.1.1.1.1.cmml" xref="S0.Ex1.m1.1.1.1.1">Pr</ci>
+              <apply id="S0.Ex1.m1.2.2.2.2.1.1.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1">
+                <csymbol cd="latexml" id="S0.Ex1.m1.2.2.2.2.1.1.1.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1.1">conditional</csymbol>
+                <ci id="S0.Ex1.m1.2.2.2.2.1.1.2.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1.2">𝐵</ci>
+                <ci id="S0.Ex1.m1.2.2.2.2.1.1.3.cmml" xref="S0.Ex1.m1.2.2.2.2.1.1.3">𝐾</ci>
+              </apply>
+            </apply>
+            <apply id="S0.Ex1.m1.4.4.4.3.cmml" xref="S0.Ex1.m1.4.4.4.4">
+              <ci id="S0.Ex1.m1.3.3.3.1.cmml" xref="S0.Ex1.m1.3.3.3.1">Pr</ci>
+              <ci id="S0.Ex1.m1.4.4.4.2.cmml" xref="S0.Ex1.m1.4.4.4.2">𝐵</ci>
+            </apply>
+          </apply>
+          <apply id="S0.Ex1.m1.4.5.3.cmml" xref="S0.Ex1.m1.4.5.3">
+            <divide id="S0.Ex1.m1.4.5.3.1.cmml" xref="S0.Ex1.m1.4.5.3"/>
+            <cn type="float" id="S0.Ex1.m1.4.5.3.2.cmml" xref="S0.Ex1.m1.4.5.3.2">0.24</cn>
+            <cn type="float" id="S0.Ex1.m1.4.5.3.3.cmml" xref="S0.Ex1.m1.4.5.3.3">0.13</cn>
+          </apply>
+        </apply>
+        <apply id="S0.Ex1.m1.4.5c.cmml" xref="S0.Ex1.m1.4.5">
+          <eq id="S0.Ex1.m1.4.5.4.cmml" xref="S0.Ex1.m1.4.5.4"/>
+          <share href="#S0.Ex1.m1.4.5.3.cmml" id="S0.Ex1.m1.4.5d.cmml" xref="S0.Ex1.m1.4.5"/>
+          <cn type="float" id="S0.Ex1.m1.4.5.5.cmml" xref="S0.Ex1.m1.4.5.5">1.84</cn>
+        </apply>
+      </apply>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="S0.Ex1.m1.4c">\frac{\Pr(B|K)}{\Pr(B)}=\frac{0.24}{0.13}=1.84</annotation>
+  </semantics>
+</math>
+
 </p>
 
 <p>
@@ -128,14 +540,72 @@ All lives do indeed, objectively, equally matter. Unfortunately, though, we must
 </p>
 
 <p>
-<b>UPDATE (October  2, 2016)</b>: I want to be careful to note what I am arguing here, and more importantly what I am <i>not</i> arguing. I am merely pointing out the fairly trivial claim that \(\Pr(A \vert B)\) does not necessarily equal \( \Pr(B \vert A) \), and, in this case, actually does not.
+<b>UPDATE (October  2, 2016)</b>: I want to be careful to note what I am arguing here, and more importantly what I am <i>not</i> arguing. I am merely pointing out the fairly trivial claim that 
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="p1.1.m1.2" class="ltx_Math" alttext="\Pr(A|B)" display="inline">
+  <semantics id="p1.1.m1.2a">
+    <mrow id="p1.1.m1.2.2.1" xref="p1.1.m1.2.2.2.cmml">
+      <mi id="p1.1.m1.1.1" xref="p1.1.m1.1.1.cmml">Pr</mi>
+      <mo id="p1.1.m1.2.2.1a" xref="p1.1.m1.2.2.2.cmml">⁡</mo>
+      <mrow id="p1.1.m1.2.2.1.1" xref="p1.1.m1.2.2.2.cmml">
+        <mo stretchy="false" id="p1.1.m1.2.2.1.1.2" xref="p1.1.m1.2.2.2.cmml">(</mo>
+        <mrow id="p1.1.m1.2.2.1.1.1" xref="p1.1.m1.2.2.1.1.1.cmml">
+          <mi id="p1.1.m1.2.2.1.1.1.2" xref="p1.1.m1.2.2.1.1.1.2.cmml">A</mi>
+          <mo fence="false" id="p1.1.m1.2.2.1.1.1.1" xref="p1.1.m1.2.2.1.1.1.1.cmml">|</mo>
+          <mi id="p1.1.m1.2.2.1.1.1.3" xref="p1.1.m1.2.2.1.1.1.3.cmml">B</mi>
+        </mrow>
+        <mo stretchy="false" id="p1.1.m1.2.2.1.1.3" xref="p1.1.m1.2.2.2.cmml">)</mo>
+      </mrow>
+    </mrow>
+    <annotation-xml encoding="MathML-Content" id="p1.1.m1.2b">
+      <apply id="p1.1.m1.2.2.2.cmml" xref="p1.1.m1.2.2.1">
+        <ci id="p1.1.m1.1.1.cmml" xref="p1.1.m1.1.1">Pr</ci>
+        <apply id="p1.1.m1.2.2.1.1.1.cmml" xref="p1.1.m1.2.2.1.1.1">
+          <csymbol cd="latexml" id="p1.1.m1.2.2.1.1.1.1.cmml" xref="p1.1.m1.2.2.1.1.1.1">conditional</csymbol>
+          <ci id="p1.1.m1.2.2.1.1.1.2.cmml" xref="p1.1.m1.2.2.1.1.1.2">𝐴</ci>
+          <ci id="p1.1.m1.2.2.1.1.1.3.cmml" xref="p1.1.m1.2.2.1.1.1.3">𝐵</ci>
+        </apply>
+      </apply>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="p1.1.m1.2c">\Pr(A|B)</annotation>
+  </semantics>
+</math>
+ does not necessarily equal 
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="p1.1.m1.2" class="ltx_Math" alttext="\Pr(B|A)" display="inline">
+  <semantics id="p1.1.m1.2a">
+    <mrow id="p1.1.m1.2.2.1" xref="p1.1.m1.2.2.2.cmml">
+      <mi id="p1.1.m1.1.1" xref="p1.1.m1.1.1.cmml">Pr</mi>
+      <mo id="p1.1.m1.2.2.1a" xref="p1.1.m1.2.2.2.cmml">⁡</mo>
+      <mrow id="p1.1.m1.2.2.1.1" xref="p1.1.m1.2.2.2.cmml">
+        <mo stretchy="false" id="p1.1.m1.2.2.1.1.2" xref="p1.1.m1.2.2.2.cmml">(</mo>
+        <mrow id="p1.1.m1.2.2.1.1.1" xref="p1.1.m1.2.2.1.1.1.cmml">
+          <mi id="p1.1.m1.2.2.1.1.1.2" xref="p1.1.m1.2.2.1.1.1.2.cmml">B</mi>
+          <mo fence="false" id="p1.1.m1.2.2.1.1.1.1" xref="p1.1.m1.2.2.1.1.1.1.cmml">|</mo>
+          <mi id="p1.1.m1.2.2.1.1.1.3" xref="p1.1.m1.2.2.1.1.1.3.cmml">A</mi>
+        </mrow>
+        <mo stretchy="false" id="p1.1.m1.2.2.1.1.3" xref="p1.1.m1.2.2.2.cmml">)</mo>
+      </mrow>
+    </mrow>
+    <annotation-xml encoding="MathML-Content" id="p1.1.m1.2b">
+      <apply id="p1.1.m1.2.2.2.cmml" xref="p1.1.m1.2.2.1">
+        <ci id="p1.1.m1.1.1.cmml" xref="p1.1.m1.1.1">Pr</ci>
+        <apply id="p1.1.m1.2.2.1.1.1.cmml" xref="p1.1.m1.2.2.1.1.1">
+          <csymbol cd="latexml" id="p1.1.m1.2.2.1.1.1.1.cmml" xref="p1.1.m1.2.2.1.1.1.1">conditional</csymbol>
+          <ci id="p1.1.m1.2.2.1.1.1.2.cmml" xref="p1.1.m1.2.2.1.1.1.2">𝐵</ci>
+          <ci id="p1.1.m1.2.2.1.1.1.3.cmml" xref="p1.1.m1.2.2.1.1.1.3">𝐴</ci>
+        </apply>
+      </apply>
+    </annotation-xml>
+    <annotation encoding="application/x-tex" id="p1.1.m1.2c">\Pr(B|A)</annotation>
+  </semantics>
+</math>
+, and, in this case, actually does not.
 </p>
 
 <p>
 I am not accusing the police of being racist, and I have not endeavored to show that anyone has been unjustly shot. I am simply showing that, even though more white Americans are killed by police, black Americans are more likely to be killed by police. There are many possible explanations for this, ranging from racial bias in the police force to high rates of violent crime in predominately African-American communities. There are significant studies that conclude that the former is more likely than the latter to be the correct explanation, but that will have to wait for another post.
 </p>
 
-<div class="tagline" id="org4485257">
+<div class="tagline" id="orgab128a6">
 <p>
 Tagged:  <a href="../tags/critical-thinking.html">Critical Thinking</a> <a href="../tags/politics.html">Politics</a>
 </p>
@@ -157,8 +627,8 @@ politics
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Apr 08, 2025 19:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:43.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

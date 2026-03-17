@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Apr 08, 2025 19:52 -->
+<!-- Mar 16, 2026 19:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Org, Diary, and Dashboard</title>
@@ -67,20 +67,20 @@ I won&rsquo;t bother detailing all of the options that I tried, but here are the
 <li>I then explored using the diary. The <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Format-of-Diary-File.html">diary file</a> has an extremely simple format; simple appointments are made just by listing the date, time, and appointment title on a line. Complex appointments are made by using special <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Special-Diary-Entries.html">sexp entries</a>, which allowed me to create the appointments for my courses. It is also very easy to display these appointments in org-agenda, which very conveniently marks the current time with a line across the agenda, providing a nice visual representation of the relative time before my next appointment. I didn&rsquo;t quite like how the appointments were displayed in emphasized text, but everything else worked great. A reminder pops up in the minibuffer several minutes before the appointment. The pop-up reminder soon disappears, but the modeline continues to list, and update, the number of minutes until the appointment.</li>
 <li>Finally, as I researched how to form complex sexp appointments, I saw that Org mode is able to use the sexp appointment format. So, it was back to Org mode. Here is what I used in the end.</li>
 </ol>
-<section id="outline-container-org58b6052" class="outline-2">
-<h2 id="org58b6052">Init Settings</h2>
-<div class="outline-text-2" id="text-org58b6052">
+<section id="outline-container-org280b44e" class="outline-2">
+<h2 id="org280b44e">Init Settings</h2>
+<div class="outline-text-2" id="text-org280b44e">
 <p>
 I created an agenda display for just the current day:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(setq org-agenda-custom-commands
-    '((<span class="org-string">"d"</span> <span class="org-string">"Agenda for today"</span> agenda <span class="org-string">""</span>
-          ((org-agenda-overriding-header <span class="org-string">"Today's agenda"</span>)
-           (org-agenda-span 'day)
-          ))))
-</pre>
+<pre class="src src-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span>setq org-agenda-custom-commands
+    '<span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">(</span><span class="org-string">"d"</span> <span class="org-string">"Agenda for today"</span> agenda <span class="org-string">""</span>
+          <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>org-agenda-overriding-header <span class="org-string">"Today's agenda"</span><span class="org-rainbow-delimiters-depth-5">)</span>
+           <span class="org-rainbow-delimiters-depth-5">(</span>org-agenda-span 'day<span class="org-rainbow-delimiters-depth-5">)</span>
+          <span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -88,8 +88,8 @@ Next is to clear the existing appointment list when Emacs starts:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(setq appt-time-msg-list nil)
-</pre>
+<pre class="src src-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span>setq appt-time-msg-list nil<span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -97,9 +97,9 @@ Then generate the appointment list from the Org agenda files and update it hourl
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(org-agenda-to-appt)
-(run-at-time <span class="org-string">"24:01"</span> 3600 'org-agenda-to-appt)
-</pre>
+<pre class="src src-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span>org-agenda-to-appt<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>run-at-time <span class="org-string">"24:01"</span> 3600 'org-agenda-to-appt<span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -107,8 +107,8 @@ Finally, update the appointment list every time that an agenda is viewed:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
-</pre>
+<pre class="src src-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span>add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt<span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -120,13 +120,13 @@ I use the <a href="https://github.com/emacs-dashboard/emacs-dashboard">Emacs Das
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">dashboard-insert-agenda</span> (<span class="org-type">&amp;rest</span> _)
+<pre class="src src-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">dashboard-insert-agenda</span> <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-type">&amp;rest</span> _<span class="org-rainbow-delimiters-depth-2">)</span>
   <span class="org-doc">"Insert a copy of org-agenda buffer."</span>
-  (insert (save-window-excursion
-            (org-agenda nil <span class="org-string">"d"</span>)
-            (<span class="org-keyword">prog1</span> (buffer-string)
-              (kill-buffer)))))
-</pre>
+  <span class="org-rainbow-delimiters-depth-2">(</span>insert <span class="org-rainbow-delimiters-depth-3">(</span>save-window-excursion
+            <span class="org-rainbow-delimiters-depth-4">(</span>org-agenda nil <span class="org-string">"d"</span><span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">prog1</span> <span class="org-rainbow-delimiters-depth-5">(</span>buffer-string<span class="org-rainbow-delimiters-depth-5">)</span>
+              <span class="org-rainbow-delimiters-depth-5">(</span>kill-buffer<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -134,24 +134,24 @@ I don&rsquo;t need to see the time grid, just the current time and the appointme
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(setq org-agenda-time-grid
-  '((daily today require-timed remove-match)
-    ()
+<pre class="src src-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span>setq org-agenda-time-grid
+  '<span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">(</span>daily today require-timed remove-match<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">()</span>
     <span class="org-string">"......"</span>
-    <span class="org-string">""</span>))
-</pre>
+    <span class="org-string">""</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 </div>
 </section>
-<section id="outline-container-orgc62e8e0" class="outline-2">
-<h2 id="orgc62e8e0">The Agenda File</h2>
-<div class="outline-text-2" id="text-orgc62e8e0">
+<section id="outline-container-orge65f30a" class="outline-2">
+<h2 id="orge65f30a">The Agenda File</h2>
+<div class="outline-text-2" id="text-orge65f30a">
 <p>
 I have two separate agenda files, one for tasks and another for events. Here&rsquo;s how the event file is currently structured with an example or two in each category.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-level-1">* Birthdays and Anniversaries</span>
+<pre class="src src-org"><code><span class="org-org-level-1">* Birthdays and Anniversaries</span>
 
 <span class="org-org-sexp-date">%%(org-anniversary 2019 12 19) Lucy's %d%s birthday</span>
 
@@ -175,7 +175,7 @@ I have two separate agenda files, one for tasks and another for events. Here&rsq
 <span class="org-org-level-2">** Colloquium </span><span class="org-org-level-2"><span class="org-org-date">&lt;2024-02-09 Fri 15:00&gt;</span></span>
 
 <span class="org-org-level-1">* Past</span>
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -195,8 +195,8 @@ The recurring section is for any recurring appointment that is not a class. Note
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span class="org-org-level-2">** Edward </span><span class="org-org-level-2"><span class="org-org-date">&lt;2024-01-24 Wed 15:00 +1w&gt;</span></span>
-</pre>
+<pre class="src src-org"><code><span class="org-org-level-2">** Edward </span><span class="org-org-level-2"><span class="org-org-date">&lt;2024-01-24 Wed 15:00 +1w&gt;</span></span>
+</code></pre>
 </div>
 
 <p>
@@ -208,9 +208,9 @@ Finally, I added an org-capture template for easily creating simple appointments
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(<span class="org-string">"e"</span> <span class="org-string">"Event"</span> entry (file+headline <span class="org-string">"path to events.org"</span> <span class="org-string">"Future"</span>)
-             <span class="org-string">"** %? %T"</span>)
-</pre>
+<pre class="src src-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-string">"e"</span> <span class="org-string">"Event"</span> entry <span class="org-rainbow-delimiters-depth-2">(</span>file+headline <span class="org-string">"path to events.org"</span> <span class="org-string">"Future"</span><span class="org-rainbow-delimiters-depth-2">)</span>
+             <span class="org-string">"** %? %T"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
 </div>
 
 <p>
@@ -226,8 +226,8 @@ There are many examples that can be found online, but few were of the type that 
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Apr 08, 2025 19:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:44.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

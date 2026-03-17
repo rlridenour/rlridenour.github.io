@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Mar 03, 2026 14:52 -->
+<!-- Mar 16, 2026 19:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>A Simple Emacs Dashboard</title>
@@ -59,10 +59,10 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">agenda-home</span> ()
-  (<span class="org-keyword">interactive</span>)
-  (org-agenda-list 1)
-  (delete-other-windows))
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">agenda-home</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>org-agenda-list 1<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>delete-other-windows<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -71,7 +71,7 @@ Then, I make sure that new frames displayed this when created.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(add-hook 'server-after-make-frame-hook #'agenda-home)
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span>add-hook 'server-after-make-frame-hook #'agenda-home<span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -80,15 +80,15 @@ This function refreshes the agenda. It&rsquo;s run every minute. That&rsquo;s re
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">refresh-agenda-periodic-function</span> ()
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">refresh-agenda-periodic-function</span> <span class="org-rainbow-delimiters-depth-2">()</span>
   <span class="org-doc">"Recompute the Org Agenda buffer(s) periodically."</span>
-  (<span class="org-keyword">ignore-errors</span>
-    (<span class="org-keyword">when</span> (get-buffer <span class="org-string">"*Org Agenda*"</span>)
-          (<span class="org-keyword">with-selected-window</span> (get-buffer-window <span class="org-string">"*Org Agenda*"</span>)
-            (org-agenda-redo-all)))))
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">ignore-errors</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">when</span> <span class="org-rainbow-delimiters-depth-4">(</span>get-buffer <span class="org-string">"*Org Agenda*"</span><span class="org-rainbow-delimiters-depth-4">)</span>
+          <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">with-selected-window</span> <span class="org-rainbow-delimiters-depth-5">(</span>get-buffer-window <span class="org-string">"*Org Agenda*"</span><span class="org-rainbow-delimiters-depth-5">)</span>
+            <span class="org-rainbow-delimiters-depth-5">(</span>org-agenda-redo-all<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
 <span class="org-comment-delimiter">;; </span><span class="org-comment">Refresh agenda every minute.
-</span>(run-with-timer 60 60 'refresh-agenda-periodic-function)
+</span><span class="org-rainbow-delimiters-depth-1">(</span>run-with-timer 60 60 'refresh-agenda-periodic-function<span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -97,7 +97,7 @@ The line used to designate the current time is a bit too long by default. I didn
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">setq</span> org-agenda-current-time-string <span class="org-string">"now - - - - - - -"</span>)
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> org-agenda-current-time-string <span class="org-string">"now - - - - - - -"</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -106,8 +106,8 @@ Then change the color to something more noticeable.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(custom-set-faces
- '(org-agenda-current-time ((t (<span class="org-builtin">:foreground</span> <span class="org-string">"red"</span>)))))
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span>custom-set-faces
+ '<span class="org-rainbow-delimiters-depth-2">(</span>org-agenda-current-time <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>t <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-builtin">:foreground</span> <span class="org-string">"red"</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -116,14 +116,14 @@ Now, to make the dashboard links. For that, I use an org file that just contains
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/agenda-links</span> ()
-  (end-of-buffer)
-  (insert-file-contents <span class="org-string">"/Path to Org Directory/agenda-links.org"</span>)
-  (<span class="org-keyword">while</span> (org-activate-links (point-max))
-    (goto-char (match-end 0)))
-  (beginning-of-buffer))
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">rlr/agenda-links</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>end-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>insert-file-contents <span class="org-string">"/Path to Org Directory/agenda-links.org"</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-3">(</span>org-activate-links <span class="org-rainbow-delimiters-depth-4">(</span>point-max<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>goto-char <span class="org-rainbow-delimiters-depth-4">(</span>match-end 0<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
-(add-hook 'org-agenda-finalize-hook #'rlr/agenda-links)
+<span class="org-rainbow-delimiters-depth-1">(</span>add-hook 'org-agenda-finalize-hook #'rlr/agenda-links<span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -132,7 +132,7 @@ I don&rsquo;t like using the mouse, so make sure that pressing enter will work w
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">setq</span> org-return-follows-link t)
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> org-return-follows-link t<span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -141,7 +141,7 @@ This avoids having to confirm that the links that run Elisp are safe. I name the
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">setopt</span> org-link-elisp-skip-confirm-regexp <span class="org-string">"rlr.*"</span>)
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setopt</span> org-link-elisp-skip-confirm-regexp <span class="org-string">"rlr.*"</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -151,13 +151,13 @@ The result is this:
 
 <div class="org-center">
 
-<div id="org41ddc27" class="figure">
+<div id="orgf571182" class="figure">
 <p><img src="../images/posts/2025-agenda-screenshot.png" alt="2025-agenda-screenshot.png" width="100%" />
 </p>
 </div>
 </div>
 
-<div class="tagline" id="org3d12d37">
+<div class="tagline" id="org708a30d">
 <p>
 Tagged:  <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -167,8 +167,8 @@ Tagged:  <a href="../tags/emacs.html">Emacs</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 03, 2026 14:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:44.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

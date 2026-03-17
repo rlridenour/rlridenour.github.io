@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Mar 03, 2026 14:52 -->
+<!-- Mar 16, 2026 19:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Inserting Bible Passages With Emacs</title>
@@ -63,49 +63,49 @@ Here is the function:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">nrsv-insert-passage</span> ()
-  (<span class="org-keyword">interactive</span>)
-  (<span class="org-keyword">setq</span> oremus-passage (read-string <span class="org-string">"Passage: "</span>))
-  (<span class="org-keyword">setq</span> oremus-passage (s-replace <span class="org-string">" "</span> <span class="org-string">"%20"</span> oremus-passage))
-  (<span class="org-keyword">setq</span> oremus-link (concat <span class="org-string">"https://bible.oremus.org/?version=NRSV&amp;passage="</span> oremus-passage <span class="org-string">"&amp;vnum=NO&amp;fnote=NO&amp;omithidden=YES"</span>))
-  (switch-to-buffer (url-retrieve-synchronously oremus-link))
-  (beginning-of-buffer)
-  (search-forward <span class="org-string">"passageref\"&gt;"</span>)
-  (kill-region (point) 1)
-  (search-forward <span class="org-string">"&lt;/div&gt;&lt;!-- class=\"bibletext\" --&gt;"</span>)
-  (beginning-of-line)
-  (kill-region (point) (point-max))
-  (beginning-of-buffer)
-  (<span class="org-keyword">while</span> (re-search-forward <span class="org-string">"&lt;p&gt;"</span> nil t)
-    (replace-match <span class="org-string">"\n"</span>))
-  (beginning-of-buffer)
-  (<span class="org-keyword">while</span> (re-search-forward <span class="org-string">"&lt;!.+?-&gt;"</span> nil t)
-    (replace-match <span class="org-string">""</span>))
-  (beginning-of-buffer)
-  (<span class="org-keyword">while</span> (re-search-forward <span class="org-string">"&lt;.+?&gt;"</span> nil t)
-    (replace-match <span class="org-string">""</span>))
-  (beginning-of-buffer)
-  (<span class="org-keyword">while</span> (re-search-forward <span class="org-string">"&amp;nbsp;"</span> nil t)
-    (replace-match <span class="org-string">" "</span>))
-  (beginning-of-buffer)
-  (<span class="org-keyword">while</span> (re-search-forward <span class="org-string">"&amp;#147;"</span> nil t)
-    (replace-match <span class="org-string">"\""</span>))
-  (beginning-of-buffer)
-  (<span class="org-keyword">while</span> (re-search-forward <span class="org-string">"&amp;#148;"</span> nil t)
-    (replace-match <span class="org-string">"\""</span>))
-  (beginning-of-buffer)
-  (<span class="org-keyword">while</span> (re-search-forward <span class="org-string">"&amp;#145;"</span> nil t)
-    (replace-match <span class="org-string">"</span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">'"</span>))
-  (beginning-of-buffer)
-  (<span class="org-keyword">while</span> (re-search-forward <span class="org-string">"&amp;#146;"</span> nil t)
-    (replace-match <span class="org-string">"</span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">'"</span>))
-  (beginning-of-buffer)
-  (<span class="org-keyword">while</span> (re-search-forward <span class="org-string">"&amp;#151;"</span> nil t)
-    (replace-match <span class="org-string">"---"</span>))
-  (delete-extra-blank-lines)
-  (clipboard-kill-ring-save (point-min) (point-max))
-  (kill-buffer)
-  (yank))
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">nrsv-insert-passage</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">setq</span> oremus-passage <span class="org-rainbow-delimiters-depth-3">(</span>read-string <span class="org-string">"Passage: "</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">setq</span> oremus-passage <span class="org-rainbow-delimiters-depth-3">(</span>s-replace <span class="org-string">" "</span> <span class="org-string">"%20"</span> oremus-passage<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">setq</span> oremus-link <span class="org-rainbow-delimiters-depth-3">(</span>concat <span class="org-string">"https://bible.oremus.org/?version=NRSV&amp;passage="</span> oremus-passage <span class="org-string">"&amp;vnum=NO&amp;fnote=NO&amp;omithidden=YES"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>switch-to-buffer <span class="org-rainbow-delimiters-depth-3">(</span>url-retrieve-synchronously oremus-link<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>search-forward <span class="org-string">"passageref\"&gt;"</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>kill-region <span class="org-rainbow-delimiters-depth-3">(</span>point<span class="org-rainbow-delimiters-depth-3">)</span> 1<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>search-forward <span class="org-string">"&lt;/div&gt;&lt;!-- class=\"bibletext\" --&gt;"</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-line<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>kill-region <span class="org-rainbow-delimiters-depth-3">(</span>point<span class="org-rainbow-delimiters-depth-3">)</span> <span class="org-rainbow-delimiters-depth-3">(</span>point-max<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"&lt;p&gt;"</span> nil t<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>replace-match <span class="org-string">"\n"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"&lt;!.+?-&gt;"</span> nil t<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>replace-match <span class="org-string">""</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"&lt;.+?&gt;"</span> nil t<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>replace-match <span class="org-string">""</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"&amp;nbsp;"</span> nil t<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>replace-match <span class="org-string">" "</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"&amp;#147;"</span> nil t<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>replace-match <span class="org-string">"\""</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"&amp;#148;"</span> nil t<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>replace-match <span class="org-string">"\""</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"&amp;#145;"</span> nil t<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>replace-match <span class="org-string">"</span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">'"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"&amp;#146;"</span> nil t<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>replace-match <span class="org-string">"</span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">'"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>beginning-of-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"&amp;#151;"</span> nil t<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>replace-match <span class="org-string">"---"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>delete-extra-blank-lines<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>clipboard-kill-ring-save <span class="org-rainbow-delimiters-depth-3">(</span>point-min<span class="org-rainbow-delimiters-depth-3">)</span> <span class="org-rainbow-delimiters-depth-3">(</span>point-max<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>kill-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>yank<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -113,7 +113,7 @@ Here is the function:
 If another translation is preferred, there are other sites that also have API&rsquo;s. I have to add my usual disclaimer &mdash; I really don&rsquo;t know what I&rsquo;m doing; I just keep messing with it until I get the result I wanted. Surely, there are more elegant ways of solving the problem, and I&rsquo;d welcome hearing about them. This is definitely the sort of thing that will be useful to only a handful of people in the world, if that. It is, however, an example of how useful Emacs can be, even for those of us non-programming types.
 </p>
 
-<div class="tagline" id="org99eb199">
+<div class="tagline" id="org5654f5a">
 <p>
 Tagged:  <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -123,8 +123,8 @@ Tagged:  <a href="../tags/emacs.html">Emacs</a>
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 03, 2026 14:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:44.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

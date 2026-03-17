@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Mar 03, 2026 14:52 -->
+<!-- Mar 16, 2026 19:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beamer Article and Org Mode</title>
@@ -104,14 +104,14 @@ Now, the problem was getting Org mode to export the subtree to look like that. A
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp"><code>(<span class="org-keyword">defun</span> <span class="org-function-name">rlr/create-frametitle</span> ()
+<pre class="src src-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">rlr/create-frametitle</span> <span class="org-rainbow-delimiters-depth-2">()</span>
   <span class="org-doc">"Convert title to frametitle."</span>
-  (interactive)
-  (goto-char 1)
-  (<span class="org-keyword">while</span> (<span class="org-keyword">ignore-errors</span>
-               (re-search-forward <span class="org-string">"begin{frame}.*]"</span>))
-    (insert <span class="org-string">"\n \\frametitle"</span>))
-  )
+  <span class="org-rainbow-delimiters-depth-2">(</span>interactive<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>goto-char 1<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">ignore-errors</span>
+               <span class="org-rainbow-delimiters-depth-4">(</span>re-search-forward <span class="org-string">"begin{frame}.*]"</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>insert <span class="org-string">"\n \\frametitle"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -133,7 +133,7 @@ Here&rsquo;s the simple tcolorbox commands that go in the header:
 Simple enough, and only took four days&hellip;.
 </p>
 
-<div class="tagline" id="org1c11bef">
+<div class="tagline" id="org5968374">
 <p>
 Tagged:  <a href="../tags/org.html">Org</a> <a href="../tags/latex.html">Latex</a>
 </p>
@@ -153,8 +153,8 @@ I sketched out the process I use in <a href="2020-06-01-beamer-presentations-wit
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 03, 2026 14:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:44.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

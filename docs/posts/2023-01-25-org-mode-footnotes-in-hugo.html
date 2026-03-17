@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Apr 08, 2025 19:52 -->
+<!-- Mar 16, 2026 19:44 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Org Mode Footnotes in Hugo</title>
@@ -56,8 +56,8 @@ I mentioned yesterday that I couldn&rsquo;t remember what I didn&rsquo;t like ab
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil">1. Footnote text.
-</pre>
+<pre class="src src-nil"><code>1. Footnote text.
+</code></pre>
 </div>
 
 <p>
@@ -65,10 +65,10 @@ We get this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil">1.
+<pre class="src src-nil"><code>1.
 
 Footnote text.
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -76,10 +76,10 @@ A Google search resulted in one question on the <a href="https://discourse.gohug
 </p>
 
 <div class="org-src-container">
-<pre class="src src-markdown">This is a footnote test.<span class="org-markdown-markup">[^</span><span class="org-markdown-footnote-marker">1</span><span class="org-markdown-markup">]</span>
+<pre class="src src-markdown"><code>This is a footnote test.<span class="org-markdown-markup">[^</span><span class="org-markdown-footnote-marker">1</span><span class="org-markdown-markup">]</span>
 
 <span class="org-markdown-markup">[^</span><span class="org-markdown-footnote-marker">1</span><span class="org-markdown-markup">]:</span> <span class="org-markdown-url">Footnote content.</span>
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -87,7 +87,7 @@ results in this HTML code:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"article-post"</span>&gt;
+<pre class="src src-html"><code>&lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"article-post"</span>&gt;
     &lt;<span class="org-function-name">p</span>&gt;This is a footnote test.&lt;<span class="org-function-name">sup</span> <span class="org-variable-name">id</span>=<span class="org-string">"fnref:1"</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">href</span>=<span class="org-string">"#fn:1"</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-ref"</span> <span class="org-variable-name">role</span>=<span class="org-string">"doc-noteref"</span>&gt;1&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">sup</span>&gt;&lt;/<span class="org-function-name">p</span>&gt;
     &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnotes"</span> <span class="org-variable-name">role</span>=<span class="org-string">"doc-endnotes"</span>&gt;
         &lt;<span class="org-function-name">hr</span>&gt;
@@ -99,7 +99,7 @@ results in this HTML code:
     &lt;/<span class="org-function-name">div</span>&gt;
 
 &lt;/<span class="org-function-name">div</span>&gt;
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -111,10 +111,10 @@ This Org mode content, however,
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org">This is a footnote test.<span class="org-org-footnote">[fn:1]</span>
+<pre class="src src-org"><code>This is a footnote test.<span class="org-org-footnote">[fn:1]</span>
 
 <span class="org-org-footnote">[fn:1]</span> Footnote content. 
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -122,7 +122,7 @@ renders like this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"article-post"</span>&gt;
+<pre class="src src-html"><code>&lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"article-post"</span>&gt;
     &lt;<span class="org-function-name">p</span>&gt;
         This is a footnote test.&lt;<span class="org-function-name">sup</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnote-reference"</span>&gt;&lt;<span class="org-function-name">a</span> <span class="org-variable-name">id</span>=<span class="org-string">"footnote-reference-1"</span> <span class="org-variable-name">href</span>=<span class="org-string">"#footnote-1"</span>&gt;1&lt;/<span class="org-function-name">a</span>&gt;&lt;/<span class="org-function-name">sup</span>&gt;&lt;/<span class="org-function-name">p</span>&gt;
     &lt;<span class="org-function-name">div</span> <span class="org-variable-name">class</span>=<span class="org-string">"footnotes"</span>&gt;
@@ -138,7 +138,7 @@ renders like this:
     &lt;/<span class="org-function-name">div</span>&gt;
 
 &lt;/<span class="org-function-name">div</span>&gt;
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -150,14 +150,14 @@ Hacking around with some CSS, I managed to get the number and the text on the sa
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span class="org-css-selector">.footnote-definition</span> {
+<pre class="src src-css"><code><span class="org-css-selector">.footnote-definition</span> <span class="org-rainbow-delimiters-depth-1">{</span>
   <span class="org-css-property">display</span>: block;
-}
+<span class="org-rainbow-delimiters-depth-1">}</span>
 
-<span class="org-css-selector">.footnote-body</span> {
+<span class="org-css-selector">.footnote-body</span> <span class="org-rainbow-delimiters-depth-1">{</span>
   <span class="org-css-property">display</span>: inline-block;
-}
-</pre>
+<span class="org-rainbow-delimiters-depth-1">}</span>
+</code></pre>
 </div>
 
 
@@ -168,7 +168,7 @@ I&rsquo;m not quite satisfied with the superscript number in the footnote, but I
 
 
 
-<div class="tagline" id="org4ddf30a">
+<div class="tagline" id="org8e31702">
 <p>
 Tagged: <a href="../tags/org.html">Org</a>
 </p>
@@ -188,8 +188,8 @@ Like this.
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Apr 08, 2025 19:52.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.8-pre).
+  Last updated on Mar 16, 2026 19:44.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
 </div>
 </footer>
 </body>

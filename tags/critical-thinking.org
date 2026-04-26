@@ -15,3 +15,4 @@
 - [[file:../posts/2010-05-05-this-is-a-song-by-a-hs-psychology-teacher-designed.org][Cognitive Biases Song]]
 
 - [[file:../posts/2016-10-01-black-lives-matter-and-conditional-probabilities.org][Race, Police Shooting, and Probability]]
+- [[file:../posts/2026-04-25-emacs-sunk-cost-fallacy.org][Emacs and the Sunk Cost Fallacy]]

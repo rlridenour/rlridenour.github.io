@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Apr 26, 2026 13:57 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs and the Sunk Cost Fallacy</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Emacs and the Sunk Cost Fallacy
+<br />
+<span class="subtitle">Apr 25, 2026 14:41</span>
+</h1>
+<p>
+It&rsquo;s rare that I can write a post about Emacs and be able to claim some expertise — and by &ldquo;rare&rdquo; I mean that this is the first time ever. My usual Emacs posts are about the tools that I&rsquo;ve hacked together to do things that only I probably need. A recent post by Karl Voit, titled &ldquo;<a href="https://karl-voit.at/2021/07/23/emacs-lock-in/">The Emacs Lock-In Effect or the Emacs Sunk Cost Fallacy</a>&rdquo; caught my eye, since cognitive biases are a research interest of mine. Emacs and cognitive psychology is a combination that I can&rsquo;t resist.
+</p>
+
+<p>
+Voit&rsquo;s post was prompted by a Reddit post from five years ago which claimed, in part, that<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
+</p>
+
+<blockquote>
+<p>
+However I might admit that I exhibit some sunk cost fallacy thinking. It becomes clear when I realize that I WON&rsquo;T recommend Emacs to new users - unless they are going to invest large amounts of time learning it, like I did.
+</p>
+</blockquote>
+
+<p>
+In response, Voit makes an excellent point: 
+</p>
+
+<blockquote>
+<p>
+&hellip;I don&rsquo;t think that I&rsquo;m using Emacs just because I don&rsquo;t think of alternatives any more. I use it because all in all, it&rsquo;s the best package I can get for now and most probably also for the future.
+</p>
+</blockquote>
+
+<p>
+This is nicely summarized by him as &ldquo;Emacs knowledge is long-term knowledge.&rdquo;
+</p>
+
+<p>
+In the end, I find myself agreeing with both people. Learning Emacs is indeed a long-term investment that can pay off immensely, but I can&rsquo;t recommend it to someone who isn&rsquo;t willing to make the investment. I do have one small objection, though, to their use of the phrase, &ldquo;sunk cost fallacy.&rdquo; For example, Voit writes:
+</p>
+
+<blockquote>
+<p>
+I can not think of a different situation where you are using a flexible tool that you adapt to your situation which does not come with the sunk cost fallacy or some kind of lock-in effect&hellip;.
+</p>
+</blockquote>
+
+<p>
+Voit&rsquo;s reasoning is exactly right here, but he should say instead that there are no situations in which a person adapts a tool to their use that does not involve a sunk cost. The mistake is implying that every sunk cost is a case of the sunk cost fallacy. This happens often enough that maybe we should coin a new informal fallacy called &ldquo;the fallacy of the sunk cost fallacy.&rdquo;
+</p>
+
+<p>
+A sunk cost is something that has been spent and cannot be recovered. This can be money, time, effort, or, in war, even lives. Since every project takes some time and effort, there will always be associated sunk costs. A person commits the sunk cost fallacy when deciding to continue a project by considering the irrecoverable investment rather than the future utility of the project.
+</p>
+
+<p>
+We&rsquo;ve probably all committed the sunk cost fallacy at some point. A common example is the reluctance to hang up when one has been on hold for some time, even if there is something else that the person needs to be doing. The thought is that if I hang up now, then that time that I&rsquo;ve already spent will have been wasted. Sometimes, the sunk cost fallacy has tragic consequences, however. Climbers have died on Everest because they convinced themselves that if they turned back, the training, time, and money that they had already invested would be wasted.
+</p>
+
+<p>
+The classic paper on the sunk cost fallacy is &ldquo;The Psychology of Sunk Cost&rdquo; by Arkes and Blumer.<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup> One of their experiments involved subjects who were asked to imagine having spent $100 on a ticket for a future weekend ski trip to Michigan. Several weeks later, they buy a $50 ticket for an even better weekend ski trip to Wisconsin. As they are putting the Wisconsin ticket into their wallet, they notice that the tickets are for the same weekend. It&rsquo;s now too late to sell one of the tickets and neither is returnable, so only one of them can be used. Then, subjects were asked to decide which trip they would go on. 28 said they would go on the Wisconsin trip. 33 said they would go on on the Michigan trip, even though the Wisconsin trip was the better of the two.
+</p>
+
+<p>
+From an economic perspective, this is clearly irrational behavior, but the lure of sunk costs is very difficult to resist &mdash; just ask anyone who has sat through a movie they weren&rsquo;t enjoying simply because they had already paid for the ticket.
+</p>
+
+<p>
+What, though, does this have to do with Emacs? Using Emacs requires a certain amount of crafting and fine-tuning, which involves time and effort that one will never get back — all sunk costs. That does not necessarily mean that using Emacs is an example of the sunk cost fallacy, however. Seeing that requires understanding how one avoids being trapped by sunk costs. How should subjects have thought about the Arkes and Blumer ski trip experiment? They should have asked themselves which trip they would have taken had they been given both tickets for free. In that case, they would have obviously chosen the better trip of the two, which was the Wisconsin trip.
+</p>
+
+<p>
+The use of any tool will involve some sunk costs. If the tool is customizable, as Emacs is, then the time and effort spent customizing it to the way that you want to work will be a sunk cost. If the tool is not customizable, then the time learning to use the tool and adapting your workflow to the way the tool works be a sunk cost.
+</p>
+
+<p>
+As I and many others have said before, the beauty of Emacs is that it can be made to work the way that you want it to work. It does not demand that you do things its way. There is an out-of-the-box Emacs experience which can be, I admit, less than satisfying for many people. Don&rsquo;t like the colors? Change the theme then, it&rsquo;s easy. Don&rsquo;t like a keybinding? Change it, it&rsquo;s easy. I&rsquo;m a philosopher; trust me, if I can do it, then anyone can.
+</p>
+
+<p>
+Over the years, I&rsquo;ve invested many hours in tweaking my configuration files and writing small functions to accomplish various tasks. Would I continue to use Emacs if I hadn&rsquo;t spent that time and effort? Am I possibly guilty of committing the sunk cost fallacy? The test is to ask this:
+</p>
+
+<p>
+Imagine that you had not already been using a text editor and found yourself needing one. You go to an expert for help who gives you a choice between
+</p>
+
+<ol class="org-ol">
+<li>A mass-market editor that works well, but expects you to adapt to its workflow, or</li>
+<li>An editor that was custom-built for you, tweaked and configured to work exactly the way that you want it to work, with special built-in commands that perform the tasks that only you need.</li>
+</ol>
+
+<p>
+Which would you choose. I know I&rsquo;d choose the second option. So, even though I&rsquo;ve invested heavily in Emacs and built up some considerable sunk costs, my continued use is perfectly rational. There may be sunk costs, but with respect to my use of Emacs, there is no sunk cost fallacy.
+</p>
+
+
+
+<div class="tagline" id="org2a12f36">
+<p>
+Tagged:  <a href="../tags/emacs.html">Emacs</a> <a href="../tags/critical-thinking.html">Critical Thinking</a>
+</p>
+
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes</h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+The post is still available, but the user&rsquo;s account has been deleted. 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<i>Organizational Behavior and Human Decision Processes</i> 35, 124&ndash;140 (1985).
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Apr 26, 2026 13:57.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 10.0-pre).
+</div>
+</footer>
+</body>
+</html>

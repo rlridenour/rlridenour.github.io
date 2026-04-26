@@ -34,3 +34,4 @@
 - [[file:../posts/2025-10-05-simple-emacs-dashboard.org][A Simple Emacs Dashboard]]
 - [[file:../posts/2025-02-25-unlocking-file-invalid-argument-warning.org][Unlocking File: Invalid Argument Warning]]
 - [[file:../posts/2026-03-10-convert-claude-quizzes-emacs-org-mode.org][Convert Claude Quizzes to Emacs Org Mode]]
+- [[file:../posts/2026-04-25-emacs-sunk-cost-fallacy.org][Emacs and the Sunk Cost Fallacy]]

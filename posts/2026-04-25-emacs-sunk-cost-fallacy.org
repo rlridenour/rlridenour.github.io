@@ -1,0 +1,62 @@
+#+TITLE: Emacs and the Sunk Cost Fallacy
+#+date: <2026-04-25 Sat 14:41>
+#+filetags:  emacs critical-thinking
+#+setupfile: ../org-templates/post.org
+
+It's rare that I can write a post about Emacs and be able to claim some expertise — and by "rare" I mean that this is the first time ever. My usual Emacs posts are about the tools that I've hacked together to do things that only I probably need. A recent post by Karl Voit, titled "[[https://karl-voit.at/2021/07/23/emacs-lock-in/][The Emacs Lock-In Effect or the Emacs Sunk Cost Fallacy]]" caught my eye, since cognitive biases are a research interest of mine. Emacs and cognitive psychology is a combination that I can't resist.
+
+Voit's post was prompted by a Reddit post from five years ago which claimed, in part, that[fn:1]
+
+#+begin_quote
+However I might admit that I exhibit some sunk cost fallacy thinking. It becomes clear when I realize that I WON'T recommend Emacs to new users - unless they are going to invest large amounts of time learning it, like I did.
+#+end_quote
+
+In response, Voit makes an excellent point: 
+
+#+begin_quote
+...I don't think that I'm using Emacs just because I don't think of alternatives any more. I use it because all in all, it's the best package I can get for now and most probably also for the future.
+#+end_quote
+
+This is nicely summarized by him as "Emacs knowledge is long-term knowledge."
+
+In the end, I find myself agreeing with both people. Learning Emacs is indeed a long-term investment that can pay off immensely, but I can't recommend it to someone who isn't willing to make the investment. I do have one small objection, though, to their use of the phrase, "sunk cost fallacy." For example, Voit writes:
+
+#+begin_quote
+I can not think of a different situation where you are using a flexible tool that you adapt to your situation which does not come with the sunk cost fallacy or some kind of lock-in effect....
+#+end_quote
+
+Voit's reasoning is exactly right here, but he should say instead that there are no situations in which a person adapts a tool to their use that does not involve a sunk cost. The mistake is implying that every sunk cost is a case of the sunk cost fallacy. This happens often enough that maybe we should coin a new informal fallacy called "the fallacy of the sunk cost fallacy."
+
+A sunk cost is something that has been spent and cannot be recovered. This can be money, time, effort, or, in war, even lives. Since every project takes some time and effort, there will always be associated sunk costs. A person commits the sunk cost fallacy when deciding to continue a project by considering the irrecoverable investment rather than the future utility of the project.
+
+We've probably all committed the sunk cost fallacy at some point. A common example is the reluctance to hang up when one has been on hold for some time, even if there is something else that the person needs to be doing. The thought is that if I hang up now, then that time that I've already spent will have been wasted. Sometimes, the sunk cost fallacy has tragic consequences, however. Climbers have died on Everest because they convinced themselves that if they turned back, the training, time, and money that they had already invested would be wasted.
+
+The classic paper on the sunk cost fallacy is "The Psychology of Sunk Cost" by Arkes and Blumer.[fn:2] One of their experiments involved subjects who were asked to imagine having spent $100 on a ticket for a future weekend ski trip to Michigan. Several weeks later, they buy a $50 ticket for an even better weekend ski trip to Wisconsin. As they are putting the Wisconsin ticket into their wallet, they notice that the tickets are for the same weekend. It's now too late to sell one of the tickets and neither is returnable, so only one of them can be used. Then, subjects were asked to decide which trip they would go on. 28 said they would go on the Wisconsin trip. 33 said they would go on on the Michigan trip, even though the Wisconsin trip was the better of the two.
+
+From an economic perspective, this is clearly irrational behavior, but the lure of sunk costs is very difficult to resist --- just ask anyone who has sat through a movie they weren't enjoying simply because they had already paid for the ticket.
+
+What, though, does this have to do with Emacs? Using Emacs requires a certain amount of crafting and fine-tuning, which involves time and effort that one will never get back — all sunk costs. That does not necessarily mean that using Emacs is an example of the sunk cost fallacy, however. Seeing that requires understanding how one avoids being trapped by sunk costs. How should subjects have thought about the Arkes and Blumer ski trip experiment? They should have asked themselves which trip they would have taken had they been given both tickets for free. In that case, they would have obviously chosen the better trip of the two, which was the Wisconsin trip.
+
+The use of any tool will involve some sunk costs. If the tool is customizable, as Emacs is, then the time and effort spent customizing it to the way that you want to work will be a sunk cost. If the tool is not customizable, then the time learning to use the tool and adapting your workflow to the way the tool works be a sunk cost.
+
+As I and many others have said before, the beauty of Emacs is that it can be made to work the way that you want it to work. It does not demand that you do things its way. There is an out-of-the-box Emacs experience which can be, I admit, less than satisfying for many people. Don't like the colors? Change the theme then, it's easy. Don't like a keybinding? Change it, it's easy. I'm a philosopher; trust me, if I can do it, then anyone can.
+
+Over the years, I've invested many hours in tweaking my configuration files and writing small functions to accomplish various tasks. Would I continue to use Emacs if I hadn't spent that time and effort? Am I possibly guilty of committing the sunk cost fallacy? The test is to ask this:
+
+Imagine that you had not already been using a text editor and found yourself needing one. You go to an expert for help who gives you a choice between
+
+1. A mass-market editor that works well, but expects you to adapt to its workflow, or
+2. An editor that was custom-built for you, tweaked and configured to work exactly the way that you want it to work, with special built-in commands that perform the tasks that only you need.
+
+Which would you choose. I know I'd choose the second option. So, even though I've invested heavily in Emacs and built up some considerable sunk costs, my continued use is perfectly rational. There may be sunk costs, but with respect to my use of Emacs, there is no sunk cost fallacy.
+
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/emacs.org][Emacs]] [[file:../tags/critical-thinking.org][Critical Thinking]]
+#+end_tagline
+
+* Footnotes
+[fn:2] /Organizational Behavior and Human Decision Processes/ 35, 124--140 (1985).
+
+[fn:1] The post is still available, but the user's account has been deleted. 

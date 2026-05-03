@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Mar 16, 2026 19:44 -->
+<!-- May 03, 2026 16:22 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Open Dired From Shell</title>
@@ -42,7 +42,7 @@
       <li><a href="/posts/">Blog</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/tags/">Tags</a></li>
-      <li><a href="/atom.xml">Feed</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
     </ul>
   </nav>
 </div>
@@ -60,7 +60,7 @@ I got this from <a href="http://datko.net/2013/07/11/open-emacs-dired-buffer-fro
 Add this to your shell rc file (in my case, .zshrc):
 </p>
 
-<pre class="example" id="org9d7dfcb">
+<pre class="example" id="orgb431c50">
 # open a dired window for the current directory
 dired() {
     emacsclient -e "(dired \"$PWD\")"
@@ -76,7 +76,7 @@ buffer of that directory opens in the current Emacs frame.
 Just out of curiosity, I wondered what typing &ldquo;`emacsclient -c .`&rdquo; would do. It opens a dired buffer in a new frame. I have a shell script called &ldquo;ec&rdquo; that starts a new emacs client, but it&rsquo;s easy to do it with a zsh alias:
 </p>
 
-<pre class="example" id="org65dce2c">
+<pre class="example" id="org71ab39d">
 alias ec="emacsclient -c -a ''"
 </pre>
 
@@ -85,7 +85,7 @@ This starts a server if there is not one already, then opens a new client. So, t
 </p>
 
 
-<div class="tagline" id="org8566a80">
+<div class="tagline" id="org50750f6">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/shell.html">Shell</a>
 </p>
@@ -94,9 +94,9 @@ Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/shell.html">Shel
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>
-  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 16, 2026 19:44.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on May 03, 2026 16:22.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 10.0-pre).
 </div>
 </footer>
 </body>

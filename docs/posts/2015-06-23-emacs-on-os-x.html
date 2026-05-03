@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Mar 16, 2026 19:44 -->
+<!-- May 03, 2026 16:22 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs on OS X</title>
@@ -42,7 +42,7 @@
       <li><a href="/posts/">Blog</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/tags/">Tags</a></li>
-      <li><a href="/atom.xml">Feed</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
     </ul>
   </nav>
 </div>
@@ -51,9 +51,9 @@
 <header>
 <h1 class="title">Emacs on OS X</h1>
 <p class="subtitle" role="doc-subtitle">Jun 23, 2015 00:00</p>
-</header><section id="outline-container-orgc2c3b98" class="outline-2">
-<h2 id="orgc2c3b98">Homebrew</h2>
-<div class="outline-text-2" id="text-orgc2c3b98">
+</header><section id="outline-container-orgacf06d2" class="outline-2">
+<h2 id="orgacf06d2">Homebrew</h2>
+<div class="outline-text-2" id="text-orgacf06d2">
 <p>
 I install Emacs with <a href="http://brew.sh">Homebrew</a>. After installing Homebrew, just type the following in Terminal:
 </p>
@@ -71,9 +71,9 @@ This makes upgrading very easy, `brew upgrade` updates everything that you&rsquo
 </p>
 </div>
 </section>
-<section id="outline-container-orgb32336a" class="outline-2">
-<h2 id="orgb32336a">Prelude</h2>
-<div class="outline-text-2" id="text-orgb32336a">
+<section id="outline-container-org4ede2d1" class="outline-2">
+<h2 id="org4ede2d1">Prelude</h2>
+<div class="outline-text-2" id="text-org4ede2d1">
 <p>
 I use <a href="http://batsov.com/prelude/">Emacs Prelude</a>, a starter kit by Bozhidar Batsov. There are many Emacs users that advocate setting up your own configuration from scratch, and I&rsquo;ve done that many times. I keep coming back to Prelude, though, it just makes the initial work so much easier. Prelude includes a personal directory for individual configuration files. I keep all of those files in a git repository located in Dropbox with symbolic links in the Prelude personal directory. That way, I can use Github for version control, but have all machines in sync with no effort.
 </p>
@@ -83,7 +83,7 @@ There are two important files in my personal directory. The first is an emacs-li
 </p>
 
 
-<pre class="example" id="orgcff8f9a">
+<pre class="example" id="org5cf29f1">
 ;;Load emacs personal settings via org
 (prelude-require-package 'org)
 (org-babel-load-file
@@ -95,9 +95,9 @@ This file loads an org-mode file that contains the actual configuration.
 </p>
 </div>
 </section>
-<section id="outline-container-org8bf41fb" class="outline-2">
-<h2 id="org8bf41fb">Starting Emacs</h2>
-<div class="outline-text-2" id="text-org8bf41fb">
+<section id="outline-container-org59f4b05" class="outline-2">
+<h2 id="org59f4b05">Starting Emacs</h2>
+<div class="outline-text-2" id="text-org59f4b05">
 <p>
 I like to start Emacs using the daemon, which keeps an Emacs server running in the background, then connect to that server with Emacs Client. This makes opening Emacs nearly instantaneous.
 </p>
@@ -127,7 +127,7 @@ There are parts of this that I really didn&rsquo;t need to do, but too much is b
 </p>
 
 
-<div class="tagline" id="org335f4ca">
+<div class="tagline" id="org491140f">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -138,9 +138,9 @@ Tagged: <a href="../tags/emacs.html">Emacs</a>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>
-  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 16, 2026 19:44.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on May 03, 2026 16:22.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 10.0-pre).
 </div>
 </footer>
 </body>

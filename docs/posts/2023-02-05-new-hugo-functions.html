@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Mar 16, 2026 19:43 -->
+<!-- May 03, 2026 16:21 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>New Hugo Functions</title>
@@ -42,7 +42,7 @@
       <li><a href="/posts/">Blog</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/tags/">Tags</a></li>
-      <li><a href="/atom.xml">Feed</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
     </ul>
   </nav>
 </div>
@@ -61,13 +61,13 @@ I found some some new functions for automating Hugo in Emacs, that I was able to
 
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">hugo-select-tags</span> <span class="org-rainbow-delimiters-depth-2">()</span>
-  <span class="org-doc">"Select tags from the hugo org files in the current dir.
+  <span class="org-doc">"Select tags from the hugo org files in the current dir.</span>
 
-Note that it only extracts tags from lines like the below:
-#+tags[]: emacs org"</span>
+<span class="org-doc">Note that it only extracts tags from lines like the below:</span>
+<span class="org-doc">#+tags[]: emacs org"</span>
   <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
-  <span class="org-comment-delimiter">;; </span><span class="org-comment">Move to end of tag line.
-</span>  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">save-excursion</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">Move to end of tag line.</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">save-excursion</span>
     <span class="org-rainbow-delimiters-depth-3">(</span>goto-char 1<span class="org-rainbow-delimiters-depth-3">)</span>
     <span class="org-rainbow-delimiters-depth-3">(</span>re-search-forward <span class="org-string">"^#\\+tags"</span><span class="org-rainbow-delimiters-depth-3">)</span>
     <span class="org-rainbow-delimiters-depth-3">(</span>end-of-line<span class="org-rainbow-delimiters-depth-3">)</span>
@@ -111,14 +111,14 @@ Look at this post from <a href="https://lucidmanager.org/productivity/create-web
 
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><code><span class="org-comment-delimiter">;; </span><span class="org-comment">Follow Hugo links
-</span>  <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">org-hugo-follow</span> <span class="org-rainbow-delimiters-depth-2">(</span>link<span class="org-rainbow-delimiters-depth-2">)</span>
+<pre class="src src-emacs-lisp"><code><span class="org-comment-delimiter">;; </span><span class="org-comment">Follow Hugo links</span>
+  <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">org-hugo-follow</span> <span class="org-rainbow-delimiters-depth-2">(</span>link<span class="org-rainbow-delimiters-depth-2">)</span>
     <span class="org-doc">"Follow Hugo link shortcodes"</span>
     <span class="org-rainbow-delimiters-depth-2">(</span>org-link-open-as-file
      <span class="org-rainbow-delimiters-depth-3">(</span>string-trim <span class="org-string">"{{&lt;/* ref test.org */&gt;}}"</span> <span class="org-string">"{{&lt;/* ref "</span> <span class="org-string">"*/&gt;}}"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
-  <span class="org-comment-delimiter">;; </span><span class="org-comment">New link type for Org-Hugo internal links
-</span>  <span class="org-rainbow-delimiters-depth-1">(</span>org-link-set-parameters
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">New link type for Org-Hugo internal links</span>
+  <span class="org-rainbow-delimiters-depth-1">(</span>org-link-set-parameters
    <span class="org-string">"hugo"</span>
    <span class="org-builtin">:complete</span> <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-3">()</span>
                <span class="org-rainbow-delimiters-depth-3">(</span>concat <span class="org-string">"{{&lt;/* ref "</span>
@@ -136,7 +136,7 @@ They both have some other useful things that might also be helpful. I&rsquo;m gr
 </p>
 
 
-<div class="tagline" id="orge218156">
+<div class="tagline" id="orgf6e25a0">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a> 
 </p>
@@ -145,9 +145,9 @@ Tagged: <a href="../tags/emacs.html">Emacs</a>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>
-  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 16, 2026 19:43.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on May 03, 2026 16:21.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 10.0-pre).
 </div>
 </footer>
 </body>

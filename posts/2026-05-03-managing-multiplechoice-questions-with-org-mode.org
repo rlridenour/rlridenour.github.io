@@ -1,0 +1,128 @@
+#+TITLE: Managing Multiple-Choice Questions With Org Mode
+#+date: <2026-05-03 Sun 14:31>
+#+filetags:  emacs org teaching
+#+setupfile: ../org-templates/post.org
+
+I love teaching. I do not love grading, though. I've always thought it would be an ideal job if there were no requirement for grades, and if there were no grades, then there would be no need for exams. This, of course, isn't true. In an ideal world, each student would be motivated to acquire knowledge, wisdom, and understanding, not a mere grade. Good students would still want some kind of assessment, so that they could know if they had reached their desired level of understanding. It seems that I can't escape the necessity of testing.
+
+I prefer to give essay exams in my upper-level courses, but the larger sizes of introductory courses make that impractical. Multiple-choice questions are easy to grade, but good ones are difficult to write. It would be nice to have a question bank from which I could easily choose questions to include on an exam, all stored in an easy-to-write format that could be used to produce both online and print versions of a test. This sounds like a perfect task for Emacs and Org mode.
+
+Two years ago, I posted my method of [[https://randyridenour.net/posts/2023-12-31-converting-org-files-to-canvas-quizzes.html][writing quizzes in Org mode]] for import into Canvas, the LMS our university uses. I decided to use this format for multiple choice:
+
+#+begin_src org
+1. Multiple choice question (single correct answer)
+   a) Wrong
+   b) Wrong
+   c) Right*
+   d) Wrong
+#+end_src
+
+The multiple choice question bank will then consist of a collection of enumerated Org mode lists, something like this:
+
+
+#+begin_src org
+  1. Why is global skepticism especially difficult to rationally respond to?
+       a) It requires accepting the existence of the external world before any argument can begin.
+       b) It is logically self-contradictory and therefore cannot be engaged directly.
+       c) There are no premises the skeptic would grant that could be used against the position.*
+       d) It collapses into local skepticism when pressed by careful argument.
+  2. What is Mackie's central claim in "Evil and Omnipotence"?
+       a) The existence of evil makes theism unlikely but not impossible
+       b) Religious beliefs about God and evil are positively irrational, not merely unsupported*
+       c) Omnipotence is logically incompatible with omniscience
+       d) The free will defense successfully resolves the logical problem of evil
+  3. Why is proving the nonexistence of the evil demon insufficient to establish knowledge of the external world?
+       a) The evil demon could simply be replaced by an equally deceptive force.
+       b) Disproving active deception still leaves open the possibilities of dreaming and naturally broken senses.*
+       c) The evil demon argument applies only to sensory knowledge, not to rational knowledge.
+       d) Proving a negative is logically impossible within Descartes' method of doubt.    	 
+#+end_src
+
+I decided to have a frame split into two windows, the question bank in one and the scratch buffer in the other. I'd like to select questions from the bank and have them copied to the scratch buffer. Here's the function that I wrote with the help of Claude:
+
+
+#+begin_src emacs-lisp
+(defun rlr/copy-mcq-to-scratch ()
+  "Copy the multiple choice question at point to the *scratch* buffer."
+  (interactive)
+  (save-excursion
+    (let* ((question-start
+            (progn
+              (end-of-line)
+              (if (re-search-backward "^[0-9]+\\." nil t)
+                  (point)
+                (error "No question found at point"))))
+           (question-end
+            (progn
+              (goto-char question-start)
+              (forward-line 1)
+              (if (re-search-forward "^[0-9]+\\." nil t)
+                  (match-beginning 0)
+                (point-max))))
+           (text (buffer-substring-no-properties question-start question-end)))
+      (with-current-buffer (get-buffer-create "*scratch*")
+        (goto-char (point-max))
+        (insert text)))))
+#+end_src
+
+If the point is anywhere in a question or one of its answer options, calling =rlr/copy-mcq-to-scratch= appends the question to the scratch buffer. I could use a keybinding for this, but I'm not sure I write exams often enough to waste a good keybinding. It's easy enough to create a quick keyboard macro to select the first question and then press =F4= for other questions.
+
+If I want to create a Canvas Quiz, then it's ready to be converted into a QTI file using the method I wrote about earlier. For print exams, I use the LaTeX examdesign class[fn:1], which requires this format for multiple choice:
+
+
+#+begin_src latex
+  \begin{question}
+    Multiple choice question
+    \choice {Wrong}
+    \choice {Wrong}
+    \choice[!] {Right}
+    \choice {Wrong}
+  \end{question}
+#+end_src
+
+To convert the questions, I select the entire scratch buffer and call this function. It formats the questions properly and inserts a blank line between each of them.
+
+#+begin_src emacs-lisp
+  (defun rlr/org-mc-to-latex-questions (beg end)
+    "Convert org-mode multiple choice questions in region to LaTeX format. Questions are numbered lines followed by lettered choices (a-z). Correct answers are marked with * after the choice text."
+    (interactive "r")
+    (let* ((text (buffer-substring-no-properties beg end))
+           (lines (split-string text "\n"))
+           (result '())
+           (in-question nil))
+      (dolist (line lines)
+        (cond
+         ;; Numbered question line: "2. Question text"
+         ((string-match "^[[:space:]]*[0-9]+\\.[[:space:]]+\\(.+\\)$" line)
+          (when in-question
+            (push "  \\end{question}" result)
+  	(push "" result))
+          (push "  \\begin{question}" result)
+          (push (format "    %s" (match-string 1 line)) result)
+          (setq in-question t))
+         ;; Choice line: "  a) Choice text" or "  a) Choice text*"
+         ((string-match "^[[:space:]]*[a-z])[[:space:]]+\\(.+?\\)\\(*\\)?[[:space:]]*$" line)
+          (let* ((text (match-string 1 line))
+                 (correct (match-string 2 line))
+                 (tag (if correct "\\choice[!]" "\\choice")))
+            (push (format "    %s {%s}" tag text) result)))))
+      (when in-question
+        (push "  \\end{question}" result))
+      (let ((output (mapconcat #'identity (nreverse result) "\n")))
+        (goto-char beg)
+        (delete-region beg end)
+        (insert output))))
+#+end_src
+
+The next tasks are functions for easily removing and reordering questions. For that, I should probably wait until finals are over, though.
+
+Now, unfortunately, it's back to grading.
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/emacs.org][Emacs]] [[file:../tags/org.org][Org]] [[file:../tags/teaching.org][Teaching]]
+#+end_tagline
+
+* Footnotes
+
+[fn:1] There are several LaTeX packages for producing exams. I've found that examdesign has the best combination of features for my needs. It can be used to easily print different versions of an exam to discourage cheating with an answer key for each version. It can handle five different types of questions, and has a block environment for questions that need to be placed in a group with instructions for the group. The questions in the block stay together even if the rest of the exam is randomly shuffled. If you need printed exams, I highly recommend it.

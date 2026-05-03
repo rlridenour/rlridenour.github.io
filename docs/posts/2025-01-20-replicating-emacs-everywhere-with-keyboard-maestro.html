@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Mar 16, 2026 19:43 -->
+<!-- May 03, 2026 16:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Replicating Emacs Everywhere with Keyboard Maestro</title>
@@ -44,7 +44,7 @@
       <li><a href="/posts/">Blog</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/tags/">Tags</a></li>
-      <li><a href="/atom.xml">Feed</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
     </ul>
   </nav>
 </div>
@@ -61,9 +61,9 @@ I&rsquo;ve always loved the idea of Tecosaur&rsquo;s <a href="https://github.com
 <p>
 As always, I&rsquo;ll start with this disclaimer: I am an amateur elisp hack. I borrow and steal from others, cobbling things together that never initially work, then fiddle with them until they finally do what I had intended. With that out of the way, here&rsquo;s what I put together. 
 </p>
-<section id="outline-container-orge343d24" class="outline-2">
-<h2 id="orge343d24">Notepad Mode</h2>
-<div class="outline-text-2" id="text-orge343d24">
+<section id="outline-container-orge31d641" class="outline-2">
+<h2 id="orge31d641">Notepad Mode</h2>
+<div class="outline-text-2" id="text-orge31d641">
 <p>
 I wanted to use <code>C-c C-c</code> to easily quit and return to the initial application. The easiest way for me to do this was to create a new mode. Since I write everything with Org mode, it makes sense to just use it with a different name. I also defined a new keymap that calls a function that is defined below.
 </p>
@@ -106,8 +106,8 @@ After finishing writing the desired text in the notepad buffer, this function ad
   <span class="org-rainbow-delimiters-depth-2">(</span>mark-whole-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
   <span class="org-rainbow-delimiters-depth-2">(</span>copy-region-as-kill 1 <span class="org-rainbow-delimiters-depth-3">(</span>buffer-size<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
   <span class="org-rainbow-delimiters-depth-2">(</span>kill-buffer<span class="org-rainbow-delimiters-depth-2">)</span>
-  <span class="org-comment-delimiter">;; </span><span class="org-comment">(app-switch)
-</span>  <span class="org-rainbow-delimiters-depth-2">(</span>shell-command <span class="org-string">"open -a ~/icloud/scripts/beep.app"</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">(app-switch)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>shell-command <span class="org-string">"open -a ~/icloud/scripts/beep.app"</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -121,9 +121,9 @@ Beep.app is one line of AppleScript:
 </div>
 </div>
 </section>
-<section id="outline-container-org491d212" class="outline-2">
-<h2 id="org491d212">Keyboard Maestro</h2>
-<div class="outline-text-2" id="text-org491d212">
+<section id="outline-container-orgc9ba163" class="outline-2">
+<h2 id="orgc9ba163">Keyboard Maestro</h2>
+<div class="outline-text-2" id="text-orgc9ba163">
 <p>
 The piece that puts it all together is a Keyboard Maestro macro. It builds on a macro that I found by <a href="https://forum.keyboardmaestro.com/u/cdthomer/summary">Chris Thomerson</a> on <a href="https://forum.keyboardmaestro.com/t/going-back-to-previous-application-window/17963/6">this thread</a> in the Keyboard Maestro forum.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> His macro has two action groups. The first saves the current front application and window to variables before minimizing the front window. The second executes an AppleScript that activates the application named by the variable, then unminimizes the window and brings it to the front.
 </p>
@@ -172,7 +172,7 @@ For those who are interested, here&rsquo;s a picture of the entire macro:
 
 <div class="org-center">
 
-<div id="org3de33a4" class="figure">
+<div id="orgeb96781" class="figure">
 <p><img src="../images/posts/emacs-notepad.png" alt="emacs-notepad.png" width="100%" />
 </p>
 </div>
@@ -181,7 +181,7 @@ For those who are interested, here&rsquo;s a picture of the entire macro:
 
 
 
-<div class="tagline" id="orgf84b901">
+<div class="tagline" id="org2fd4b18">
 <p>
 Tagged:  <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -202,9 +202,9 @@ There&rsquo;s a link to download the macro at the end of the <a href="https://fo
 </div></main>
 <footer id="postamble" class="status">
 <div class='footer'>
-  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 16, 2026 19:43.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on May 03, 2026 16:21.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 10.0-pre).
 </div>
 </footer>
 </body>

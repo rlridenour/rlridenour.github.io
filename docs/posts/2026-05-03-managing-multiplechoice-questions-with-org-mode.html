@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- May 03, 2026 16:20 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Managing Multiple-Choice Questions With Org Mode</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Managing Multiple-Choice Questions With Org Mode
+<br />
+<span class="subtitle">May 03, 2026 14:31</span>
+</h1>
+<p>
+I love teaching. I do not love grading, though. I&rsquo;ve always thought it would be an ideal job if there were no requirement for grades, and if there were no grades, then there would be no need for exams. This, of course, isn&rsquo;t true. In an ideal world, each student would be motivated to acquire knowledge, wisdom, and understanding, not a mere grade. Good students would still want some kind of assessment, so that they could know if they had reached their desired level of understanding. It seems that I can&rsquo;t escape the necessity of testing.
+</p>
+
+<p>
+I prefer to give essay exams in my upper-level courses, but the larger sizes of introductory courses make that impractical. Multiple-choice questions are easy to grade, but good ones are difficult to write. It would be nice to have a question bank from which I could easily choose questions to include on an exam, all stored in an easy-to-write format that could be used to produce both online and print versions of a test. This sounds like a perfect task for Emacs and Org mode.
+</p>
+
+<p>
+Two years ago, I posted my method of <a href="https://randyridenour.net/posts/2023-12-31-converting-org-files-to-canvas-quizzes.html">writing quizzes in Org mode</a> for import into Canvas, the LMS our university uses. I decided to use this format for multiple choice:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code>1. Multiple choice question (single correct answer)
+   a) Wrong
+   b) Wrong
+   c) Right*
+   d) Wrong
+</code></pre>
+</div>
+
+<p>
+The multiple choice question bank will then consist of a collection of enumerated Org mode lists, something like this:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-org"><code>1. Why is global skepticism especially difficult to rationally respond to?
+     a) It requires accepting the existence of the external world before any argument can begin.
+     b) It is logically self-contradictory and therefore cannot be engaged directly.
+     c) There are no premises the skeptic would grant that could be used against the position.*
+     d) It collapses into local skepticism when pressed by careful argument.
+2. What is Mackie's central claim in "Evil and Omnipotence"?
+     a) The existence of evil makes theism unlikely but not impossible
+     b) Religious beliefs about God and evil are positively irrational, not merely unsupported*
+     c) Omnipotence is logically incompatible with omniscience
+     d) The free will defense successfully resolves the logical problem of evil
+3. Why is proving the nonexistence of the evil demon insufficient to establish knowledge of the external world?
+     a) The evil demon could simply be replaced by an equally deceptive force.
+     b) Disproving active deception still leaves open the possibilities of dreaming and naturally broken senses.*
+     c) The evil demon argument applies only to sensory knowledge, not to rational knowledge.
+     d) Proving a negative is logically impossible within Descartes' method of doubt.            
+</code></pre>
+</div>
+
+<p>
+I decided to have a frame split into two windows, the question bank in one and the scratch buffer in the other. I&rsquo;d like to select questions from the bank and have them copied to the scratch buffer. Here&rsquo;s the function that I wrote with the help of Claude:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">rlr/copy-mcq-to-scratch</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-doc">"Copy the multiple choice question at point to the *scratch* buffer."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">save-excursion</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">let*</span> <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>question-start
+            <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">progn</span>
+              <span class="org-rainbow-delimiters-depth-7">(</span>end-of-line<span class="org-rainbow-delimiters-depth-7">)</span>
+              <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-8">(</span>re-search-backward <span class="org-string">"^[0-9]+\\."</span> nil t<span class="org-rainbow-delimiters-depth-8">)</span>
+                  <span class="org-rainbow-delimiters-depth-8">(</span>point<span class="org-rainbow-delimiters-depth-8">)</span>
+                <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-warning">error</span> <span class="org-string">"No question found at point"</span><span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+           <span class="org-rainbow-delimiters-depth-5">(</span>question-end
+            <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">progn</span>
+              <span class="org-rainbow-delimiters-depth-7">(</span>goto-char question-start<span class="org-rainbow-delimiters-depth-7">)</span>
+              <span class="org-rainbow-delimiters-depth-7">(</span>forward-line 1<span class="org-rainbow-delimiters-depth-7">)</span>
+              <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-8">(</span>re-search-forward <span class="org-string">"^[0-9]+\\."</span> nil t<span class="org-rainbow-delimiters-depth-8">)</span>
+                  <span class="org-rainbow-delimiters-depth-8">(</span>match-beginning 0<span class="org-rainbow-delimiters-depth-8">)</span>
+                <span class="org-rainbow-delimiters-depth-8">(</span>point-max<span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+           <span class="org-rainbow-delimiters-depth-5">(</span>text <span class="org-rainbow-delimiters-depth-6">(</span>buffer-substring-no-properties question-start question-end<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">with-current-buffer</span> <span class="org-rainbow-delimiters-depth-5">(</span>get-buffer-create <span class="org-string">"*scratch*"</span><span class="org-rainbow-delimiters-depth-5">)</span>
+        <span class="org-rainbow-delimiters-depth-5">(</span>goto-char <span class="org-rainbow-delimiters-depth-6">(</span>point-max<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+        <span class="org-rainbow-delimiters-depth-5">(</span>insert text<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
+</div>
+
+<p>
+If the point is anywhere in a question or one of its answer options, calling <code>rlr/copy-mcq-to-scratch</code> appends the question to the scratch buffer. I could use a keybinding for this, but I&rsquo;m not sure I write exams often enough to waste a good keybinding. It&rsquo;s easy enough to create a quick keyboard macro to select the first question and then press <code>F4</code> for other questions.
+</p>
+
+<p>
+If I want to create a Canvas Quiz, then it&rsquo;s ready to be converted into a QTI file using the method I wrote about earlier. For print exams, I use the LaTeX examdesign class<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>, which requires this format for multiple choice:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-latex"><code><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">question</span>}
+  Multiple choice question
+  <span class="org-font-latex-sedate">\choice</span> {Wrong}
+  <span class="org-font-latex-sedate">\choice</span> {Wrong}
+  <span class="org-font-latex-sedate">\choice</span>[!] {Right}
+  <span class="org-font-latex-sedate">\choice</span> {Wrong}
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">question</span>}
+</code></pre>
+</div>
+
+<p>
+To convert the questions, I select the entire scratch buffer and call this function. It formats the questions properly and inserts a blank line between each of them.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">rlr/org-mc-to-latex-questions</span> <span class="org-rainbow-delimiters-depth-2">(</span>beg end<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-doc">"Convert org-mode multiple choice questions in region to LaTeX format. Questions are numbered lines followed by lettered choices (a-z). Correct answers are marked with * after the choice text."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span> <span class="org-string">"r"</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let*</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>text <span class="org-rainbow-delimiters-depth-5">(</span>buffer-substring-no-properties beg end<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span>lines <span class="org-rainbow-delimiters-depth-5">(</span>split-string text <span class="org-string">"\n"</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span>result '<span class="org-rainbow-delimiters-depth-5">()</span><span class="org-rainbow-delimiters-depth-4">)</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span>in-question nil<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">dolist</span> <span class="org-rainbow-delimiters-depth-4">(</span>line lines<span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">cond</span>
+       <span class="org-comment-delimiter">;; </span><span class="org-comment">Numbered question line: "2. Question text"</span>
+       <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-rainbow-delimiters-depth-6">(</span>string-match <span class="org-string">"^[[:space:]]*[0-9]+\\.[[:space:]]+</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">.+</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">$"</span> line<span class="org-rainbow-delimiters-depth-6">)</span>
+        <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">when</span> in-question
+          <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">push</span> <span class="org-string">"  \\end{question}"</span> result<span class="org-rainbow-delimiters-depth-7">)</span>
+          <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">push</span> <span class="org-string">""</span> result<span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span>
+        <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">push</span> <span class="org-string">"  \\begin{question}"</span> result<span class="org-rainbow-delimiters-depth-6">)</span>
+        <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">push</span> <span class="org-rainbow-delimiters-depth-7">(</span>format <span class="org-string">"    %s"</span> <span class="org-rainbow-delimiters-depth-8">(</span>match-string 1 line<span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span> result<span class="org-rainbow-delimiters-depth-6">)</span>
+        <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">setq</span> in-question t<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+       <span class="org-comment-delimiter">;; </span><span class="org-comment">Choice line: "  a) Choice text" or "  a) Choice text*"</span>
+       <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-rainbow-delimiters-depth-6">(</span>string-match <span class="org-string">"^[[:space:]]*[a-z])[[:space:]]+</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">.+?</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">(</span></span><span class="org-string">*</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">)</span></span><span class="org-string">?[[:space:]]*$"</span> line<span class="org-rainbow-delimiters-depth-6">)</span>
+        <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">let*</span> <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-rainbow-delimiters-depth-8">(</span>text <span class="org-rainbow-delimiters-depth-9">(</span>match-string 1 line<span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span>
+               <span class="org-rainbow-delimiters-depth-8">(</span>correct <span class="org-rainbow-delimiters-depth-9">(</span>match-string 2 line<span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span>
+               <span class="org-rainbow-delimiters-depth-8">(</span>tag <span class="org-rainbow-delimiters-depth-9">(</span><span class="org-keyword">if</span> correct <span class="org-string">"\\choice[!]"</span> <span class="org-string">"\\choice"</span><span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span>
+          <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">push</span> <span class="org-rainbow-delimiters-depth-8">(</span>format <span class="org-string">"    %s {%s}"</span> tag text<span class="org-rainbow-delimiters-depth-8">)</span> result<span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">when</span> in-question
+      <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">push</span> <span class="org-string">"  \\end{question}"</span> result<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>output <span class="org-rainbow-delimiters-depth-6">(</span>mapconcat #'identity <span class="org-rainbow-delimiters-depth-7">(</span>nreverse result<span class="org-rainbow-delimiters-depth-7">)</span> <span class="org-string">"\n"</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span>goto-char beg<span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span>delete-region beg end<span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span>insert output<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
+</div>
+
+<p>
+The next tasks are functions for easily removing and reordering questions. For that, I should probably wait until finals are over, though.
+</p>
+
+<p>
+Now, unfortunately, it&rsquo;s back to grading.
+</p>
+
+
+<div class="tagline" id="orgc27959e">
+<p>
+Tagged:  <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a> <a href="../tags/teaching.html">Teaching</a>
+</p>
+
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes</h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+There are several LaTeX packages for producing exams. I&rsquo;ve found that examdesign has the best combination of features for my needs. It can be used to easily print different versions of an exam to discourage cheating with an answer key for each version. It can handle five different types of questions, and has a block environment for questions that need to be placed in a group with instructions for the group. The questions in the block stay together even if the rest of the exam is randomly shuffled. If you need printed exams, I highly recommend it.
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on May 03, 2026 16:20.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 10.0-pre).
+</div>
+</footer>
+</body>
+</html>

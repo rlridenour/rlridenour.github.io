@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Mar 16, 2026 19:44 -->
+<!-- May 03, 2026 16:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>A Simple Emacs Dashboard</title>
@@ -44,7 +44,7 @@
       <li><a href="/posts/">Blog</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/tags/">Tags</a></li>
-      <li><a href="/atom.xml">Feed</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
     </ul>
   </nav>
 </div>
@@ -87,8 +87,8 @@ This function refreshes the agenda. It&rsquo;s run every minute. That&rsquo;s re
           <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">with-selected-window</span> <span class="org-rainbow-delimiters-depth-5">(</span>get-buffer-window <span class="org-string">"*Org Agenda*"</span><span class="org-rainbow-delimiters-depth-5">)</span>
             <span class="org-rainbow-delimiters-depth-5">(</span>org-agenda-redo-all<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
-<span class="org-comment-delimiter">;; </span><span class="org-comment">Refresh agenda every minute.
-</span><span class="org-rainbow-delimiters-depth-1">(</span>run-with-timer 60 60 'refresh-agenda-periodic-function<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">Refresh agenda every minute.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>run-with-timer 60 60 'refresh-agenda-periodic-function<span class="org-rainbow-delimiters-depth-1">)</span>
 </code></pre>
 </div>
 
@@ -151,13 +151,13 @@ The result is this:
 
 <div class="org-center">
 
-<div id="orgf571182" class="figure">
+<div id="org655989f" class="figure">
 <p><img src="../images/posts/2025-agenda-screenshot.png" alt="2025-agenda-screenshot.png" width="100%" />
 </p>
 </div>
 </div>
 
-<div class="tagline" id="org708a30d">
+<div class="tagline" id="org78ccfdf">
 <p>
 Tagged:  <a href="../tags/emacs.html">Emacs</a>
 </p>
@@ -166,9 +166,9 @@ Tagged:  <a href="../tags/emacs.html">Emacs</a>
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>
-  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 16, 2026 19:44.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on May 03, 2026 16:22.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 10.0-pre).
 </div>
 </footer>
 </body>

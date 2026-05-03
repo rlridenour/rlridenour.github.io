@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Mar 16, 2026 19:43 -->
+<!-- May 03, 2026 16:20 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Venn Diagrams in LaTeX</title>
@@ -42,7 +42,7 @@
       <li><a href="/posts/">Blog</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/tags/">Tags</a></li>
-      <li><a href="/atom.xml">Feed</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
     </ul>
   </nav>
 </div>
@@ -93,7 +93,7 @@ It produces this:
 </p>
 
 
-<figure id="org01f8350">
+<figure id="org64ce450">
 <img src="../images/posts/a-sentence.png" alt="a-sentence.png" width="400">
 
 <figcaption><span class="figure-number">Figure 1: </span>Venn diagram of an A-sentence in categorical logic.</figcaption>
@@ -121,7 +121,7 @@ The resulting diagram looks like this:
 </p>
 
 
-<figure id="orgf22c39d">
+<figure id="org1f3e802">
 <img src="../images/posts/disamis.png" alt="disamis.png" width="400px">
 
 <figcaption><span class="figure-number">Figure 2: </span>Venn diagram of Disamis in categorical logic.</figcaption>
@@ -159,22 +159,22 @@ I use this for a 3-circle diagram:
   [
   tikzoptions={scale=1,thick},
   showframe=false,
-  labelA=S, <span class="org-comment">%label circle A with "S"
-</span>  labelB=P, <span class="org-comment">%label circle B with "P"
-</span>  labelC=M, <span class="org-comment">%label circle M with "M"
-</span>  labelOnlyA={x}, <span class="org-comment">%puts an "x" in the region belonging only to A
-</span>  labelOnlyBC={x}, <span class="org-comment">%puts an "x" in intersection of B and C.
-</span>  labelABC={x} <span class="org-comment">%puts an "x" in the the intersection of A, B, and C.
-</span>  ]
-  <span class="org-font-latex-sedate">\fillANotB</span> <span class="org-comment">%fills the region belonging only to B
-</span>  <span class="org-font-latex-sedate">\fillBCapC</span> <span class="org-comment">%fills the intersection of B and C.
-</span>  <span class="org-comment">% To put an x on the lines, uncomment the following:
-</span>  <span class="org-comment">% </span><span class="org-font-latex-sedate"><span class="org-comment">\setpostvennhook</span></span><span class="org-comment"> % places an "x" in other locations of the diagram.
-</span>  <span class="org-comment">% {
-</span>  <span class="org-comment">% </span><span class="org-font-latex-sedate"><span class="org-comment">\node</span></span><span class="org-comment">[above = 1.6cm of labelC] {X};
-</span>  <span class="org-comment">% </span><span class="org-font-latex-sedate"><span class="org-comment">\node</span></span><span class="org-comment">[above left = 1.4cm and .25cm of labelC, rotate=45] {X};
-</span>  <span class="org-comment">% }
-</span><span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">venndiagram3sets</span>}
+  labelA=S, <span class="org-comment">%label circle A with "S"</span>
+  labelB=P, <span class="org-comment">%label circle B with "P"</span>
+  labelC=M, <span class="org-comment">%label circle M with "M"</span>
+  labelOnlyA={x}, <span class="org-comment">%puts an "x" in the region belonging only to A</span>
+  labelOnlyBC={x}, <span class="org-comment">%puts an "x" in intersection of B and C.</span>
+  labelABC={x} <span class="org-comment">%puts an "x" in the the intersection of A, B, and C.</span>
+  ]
+  <span class="org-font-latex-sedate">\fillANotB</span> <span class="org-comment">%fills the region belonging only to B</span>
+  <span class="org-font-latex-sedate">\fillBCapC</span> <span class="org-comment">%fills the intersection of B and C.</span>
+  <span class="org-comment">% To put an x on the lines, uncomment the following:</span>
+  <span class="org-comment">% </span><span class="org-font-latex-sedate"><span class="org-comment">\setpostvennhook</span></span><span class="org-comment"> % places an "x" in other locations of the diagram.</span>
+  <span class="org-comment">% {</span>
+  <span class="org-comment">% </span><span class="org-font-latex-sedate"><span class="org-comment">\node</span></span><span class="org-comment">[above = 1.6cm of labelC] {X};</span>
+  <span class="org-comment">% </span><span class="org-font-latex-sedate"><span class="org-comment">\node</span></span><span class="org-comment">[above left = 1.4cm and .25cm of labelC, rotate=45] {X};</span>
+  <span class="org-comment">% }</span>
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">venndiagram3sets</span>}
 </code></pre>
 </div>
 
@@ -189,7 +189,7 @@ Both have enough detail that I can remember what to change to make a particular 
 
 
 
-<div class="tagline" id="org6f3bda6">
+<div class="tagline" id="orgde199b9">
 <p>
 Tagged: <a href="../tags/LaTeX.html">Latex</a> <a href="../tags/logic.html">Logic</a>
 </p>
@@ -198,9 +198,9 @@ Tagged: <a href="../tags/LaTeX.html">Latex</a> <a href="../tags/logic.html">Logi
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>
-  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 16, 2026 19:43.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on May 03, 2026 16:20.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 10.0-pre).
 </div>
 </footer>
 </body>

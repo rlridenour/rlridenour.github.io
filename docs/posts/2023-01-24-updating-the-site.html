@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Mar 16, 2026 19:44 -->
+<!-- May 03, 2026 16:22 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Updating the Site</title>
@@ -42,7 +42,7 @@
       <li><a href="/posts/">Blog</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/tags/">Tags</a></li>
-      <li><a href="/atom.xml">Feed</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
     </ul>
   </nav>
 </div>
@@ -58,16 +58,16 @@ I&rsquo;ve had trouble getting verified as an educator with GitLab. After gettin
 <p>
 This seemed to be a good opportunity to update the site&rsquo;s theme. I had started with another theme and rewrote it into my own, but lately I&rsquo;ve been happier letting other people do as much of the configuration work as possible, which explains my move back to <a href="https://github.com/doomemacs/doomemacs">Doom Emacs</a>. I picked the <a href="https://github.com/WingLim/hugo-tania">Hugo Tania</a> theme, since it has nice built-in search and tag support.
 </p>
-<section id="outline-container-org809b2b2" class="outline-2">
-<h2 id="org809b2b2">Hugo and Org Mode</h2>
-<div class="outline-text-2" id="text-org809b2b2">
+<section id="outline-container-orgf332d69" class="outline-2">
+<h2 id="orgf332d69">Hugo and Org Mode</h2>
+<div class="outline-text-2" id="text-orgf332d69">
 <p>
 I do most of my writing in Org mode in Emacs. Markdown is the most commonly used simple markup language, and Hugo has always had excellent native support for it. I remember its native support for Org mode to be missing some important things, although I can&rsquo;t really remember what they were. So, I was using <a href="https://ox-hugo.scripter.co">ox-hugo</a> to convert the Org files to Markdown. Evidently, Hugo&rsquo;s parser for Org mode is much more robust than it was, because I haven&rsquo;t had a problem with it parsing native Org files. So, I removed the ox-hugo package and now my posts are written in Org mode and not converted to Markdown. To do so, simply put the Hugo front-matter at the beginning in typical Org fashion. For instance, the front-matter for this post looks like this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><code><span class="org-org-document-info-keyword">#+TITLE:</span> <span class="org-org-document-title">Updating the Site
-</span><span class="org-org-meta-line">#+draft: false</span>
+<pre class="src src-org"><code><span class="org-org-document-info-keyword">#+TITLE:</span> <span class="org-org-document-title">Updating the Site</span>
+<span class="org-org-meta-line">#+draft: false</span>
 <span class="org-org-meta-line">#+tags[]: hugo emacs org</span>
 <span class="org-org-document-info-keyword">#+date:</span> <span class="org-org-document-info">2023-01-24T06:41:27</span>
 </code></pre>
@@ -204,7 +204,7 @@ I have a few more things to do, like create &ldquo;About&rdquo; and tag pages, a
 </p>
 
 
-<div class="tagline" id="orga2fd4ae">
+<div class="tagline" id="orgd870bfc">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a>
 </p>
@@ -215,9 +215,9 @@ Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a
 </main>
 <footer id="postamble" class="status">
 <div class='footer'>
-  Copyright © 2024 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Mar 16, 2026 19:44.<br>
-  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11).
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on May 03, 2026 16:22.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 10.0-pre).
 </div>
 </footer>
 </body>

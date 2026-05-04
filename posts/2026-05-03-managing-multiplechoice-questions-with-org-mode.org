@@ -118,6 +118,31 @@ The next tasks are functions for easily removing and reordering questions. For t
 
 Now, unfortunately, it's back to grading.
 
+EDIT (May  4, 2026):
+
+I must not be able to think when it's later in the day. Reordering the questions is easy. Since they're just Org lists, =M-up= and =M-down= moves an item and its child lists up and down. Deleting questions is not quite as easy, but it still wasn't difficult:
+
+#+begin_src emacs-lisp
+  (defun rlr/delete-mcq-at-point ()
+    "Delete the multiple choice question at point, including all its choices."
+    (interactive)
+    (save-excursion
+      (beginning-of-line)
+      ;; If on a choice line, move up to the question line first
+      (unless (looking-at "[[:space:]]*[0-9]+\\.")
+	(re-search-backward "^[[:space:]]*[0-9]+\\." nil t))
+      (let ((start (line-beginning-position))
+	    (end (progn
+		   (forward-line 1)
+		   (if (re-search-forward "^[[:space:]]*[0-9]+\\." nil t)
+		       (match-beginning 0)
+		     (point-max)))))
+	(kill-region start end)))
+    (org-list-repair))
+#+end_src
+
+I used =kill-region= to save the question to the kill ring, followed by =org-list-repair= to renumber the list. Killing instead of deleting is useful in cases where one might want to move the question farther than would be convenient with a simple reordering.
+
 
 #+begin_tagline
 Tagged:  [[file:../tags/emacs.org][Emacs]] [[file:../tags/org.org][Org]] [[file:../tags/teaching.org][Teaching]]

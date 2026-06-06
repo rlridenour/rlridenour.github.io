@@ -1,0 +1,12 @@
+#+TITLE: Coincidence?
+#+date: <2026-06-06 Sat 11:35>
+#+filetags:  family
+#+setupfile: ../org-templates/post.org
+
+My mother-in-law died yesterday after a long period of decline. She had been admitted to hospital for breathing issues a few days ago. On the wall opposite her hospital bed was a broken clock that was stopped at 8:04. She complained about the clock to every visitor and every hospital employee that entered the room.
+
+After a family decision to start her on end-of-life comfort care, the nurse removed her oxygen mask and started administering morphine intravenously. Her oxygen level and pulse rate  quickly dropped. As the end grew near, the nurse came in to note the time of death. She would look at the machines and her watch, and said in disbelief, "She's waiting for right minute." Finally, she marked the time of death at /8:04/.
+
+#+begin_tagline
+Tagged:  [[file:../tags/family.org][Family]]
+#+end_tagline

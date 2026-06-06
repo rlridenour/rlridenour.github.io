@@ -1,0 +1,4 @@
+#+title: Tagged: Family
+#+setupfile: ../org-templates/post.org
+
+- [[file:../posts/2026-06-06-coincidence.org][Coincidence?]]

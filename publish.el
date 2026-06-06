@@ -1,4 +1,6 @@
-;; publish.el --- Publish org-mode project on Gitlab Pages
+;; -*- lexical-binding: t; -*-
+
+;; publish.el --- Publish org-mode project on Gitlab Pages  
 ;; Author: Sachin Patil <iclcoolster@gmail.com, psachin@redhat.com>
 
 ;;; Commentary:

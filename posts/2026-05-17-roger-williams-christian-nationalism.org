@@ -1,0 +1,15 @@
+#+TITLE: Roger Williams on Christian Nationalism
+#+date: <2026-06-06 Sat 08:15>
+#+filetags:  religion politics
+#+setupfile: ../org-templates/post.org
+
+Roger Williams, in /The Bloudy Tenent of Persecution/ (1644):
+
+#+ATTR_HTML: :class bigquote
+#+begin_quote
+The civil sword may make a nation of hypocrites, but it shall never make one true Christian.
+#+end_quote
+
+#+begin_tagline
+Tagged:  [[file:../tags/religion.org][Religion]] [[file:../tags/politics.org][Politics]]
+#+end_tagline

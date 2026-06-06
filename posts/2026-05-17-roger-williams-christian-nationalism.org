@@ -3,7 +3,7 @@
 #+filetags:  religion politics
 #+setupfile: ../org-templates/post.org
 
-Roger Williams, in /The Bloudy Tenent of Persecution/ (1644):
+Roger Williams, founder of the first Baptist church in America, writing in /The Bloudy Tenent of Persecution/ (1644):
 
 #+ATTR_HTML: :class bigquote
 #+begin_quote

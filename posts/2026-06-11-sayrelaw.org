@@ -5,7 +5,7 @@
 
 #+ATTR_HTML: :class bigquote
 #+begin_quote
-Sayre's Law: In any dispute, the intensity of feeling is inversely proportional to the value of the issues at stake.
+In any dispute, the intensity of feeling is inversely proportional to the value of the issues at stake.
 #+end_quote
 
 #+ATTR_HTML: :class bigquote

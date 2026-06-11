@@ -115,3 +115,4 @@
 - [[file:../posts/2026-02-16-dorothy-day-love.org][Dorothy Day on Love]]
 - [[file:../posts/2026-02-21-comforting-words.org][Comforting Words]]
 - [[file:../posts/2026-03-03-fighting-for-servitude.org][Fighting for Servitude]]
+- [[file:../posts/2026-06-11-sayrelaw.org][Sayre's Law]]

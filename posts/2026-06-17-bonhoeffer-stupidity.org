@@ -1,0 +1,26 @@
+#+TITLE: Bonhoeffer on Stupidity
+#+date: <2026-06-17 Wed 05:26>
+#+filetags:  religion
+#+setupfile: ../org-templates/post.org
+
+While preparing a sermon on Dietrich Bonhoeffer for last Sunday, I was struck by how much his 1942 essay, "Ten Years Later" sounds like it was written for 2026, especially the section "On Stupidity." Here are some excerpts:
+
+#+begin_quote
+Stupidity is a more dangerous enemy of the good than malice. One may protest against evil; it can be exposed and, if need be, prevented by use of force. Evil always carries within itself the germ of its own subversion in that it leaves behind in human beings at least a sense of unease....
+
+Against stupidity we are defenseless....
+
+Neither protests nor the use of force accomplish anything here; reasons fall on deaf ears; facts that contradict one’s prejudgment simply need not be believed — in such moments the stupid person even becomes critical — and when facts are irrefutable, they are just pushed aside as inconsequential, as incidental. In all this the stupid person, in contrast to the malicious one, is utterly self-satisfied and, being easily irritated, becomes dangerous by going on the attack....
+
+It is a particular form of the impact of historical circumstances on human beings, a psychological concomitant of certain external conditions. Upon closer observation, it becomes apparent that every strong upsurge of power in the public sphere, be it of a political or of a religious nature, infects a large part of humankind with stupidity....
+
+It would even seem that this is virtually a sociological-psychological law. The power of the one needs the stupidity of the other....
+
+The fact that the stupid person is often stubborn must not blind us to the fact that he is not independent. In conversation with him, one virtually feels that one is dealing not at all with a person, but with slogans, catchwords and the like that have taken possession of him. He is under a spell, blinded, misused, and abused in his very being. Having thus become a mindless tool, the stupid person will also be capable of any evil and at the same time incapable of seeing that it is evil. This is where the danger of diabolical misuse lurks, for it is this that can once and for all destroy human beings....
+#+end_quote
+
+
+
+#+begin_tagline
+Tagged:  [[file:../tags/religion.org][Religion]]
+#+end_tagline

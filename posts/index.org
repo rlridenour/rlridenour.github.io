@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2026-06-17-bonhoeffer-stupidity.org][Bonhoeffer on Stupidity]]
 - [[file:2026-06-11-sayrelaw.org][Sayre's Law]]
 - [[file:2026-06-06-coincidence.org][Coincidence?]]
 - [[file:2026-05-17-roger-williams-christian-nationalism.org][Roger Williams on Christian Nationalism]]

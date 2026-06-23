@@ -1,0 +1,36 @@
+#+TITLE:
+Toggle Ghostel
+#+date: <2026-06-23 Tue 10:36>
+#+filetags:  emacs
+#+setupfile: ../org-templates/post.org
+
+
+I have been using [[https://codeberg.org/akib/emacs-eat][Eat]] and [[https://github.com/justinlime/toggle-term.el][toggle-term.el]] for terminal emulation in Emacs. After seeing some recommendations for [[https://github.com/dakra/ghostel][Ghostel]], I decided to give it a try, especially since I use [[https://ghostty.org][Ghostty]] as my terminal emulator on the Mac anyway. All the reports were correct, Ghostel works like a charm, but I didn't have as smooth a toggle experience as I had with Eat. Before switching back, I wondered if I really needed to install a package just to toggle the Ghostel buffer. It turns out that writing a simple toggle function was fairly easy.
+
+The first function returns the name of the ghostel buffer if there is one. The second function starts ghostel if there is no existing ghostel buffer, switches to the buffer if there is one, and buries the ghostel buffer if it is currently the active buffer. I had to use =bind-key*= to override the ghostel key-map. 
+
+
+#+begin_src emacs-lisp
+  (defun rlr/ghostel-buffer ()
+    "Return the active ghostel buffer, or nil if none exists."
+    (seq-find (lambda (buf)
+                (string-match-p "\\*ghostel:" (buffer-name buf)))
+              (buffer-list)))
+
+  (defun rlr/ghostel-toggle ()
+    (interactive)
+    (let ((buf (rlr/ghostel-buffer)))
+      (cond
+       ((not buf)
+        (ghostel))
+       ((eq (current-buffer) buf)
+        (bury-buffer))
+       (t
+        (switch-to-buffer buf)))))
+
+  (bind-key* "<f2>" 'rlr/ghostel-toggle)
+#+end_src
+
+#+begin_tagline
+Tagged:  [[file:../tags/emacs.org][Emacs]]
+#+end_tagline

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Jun 23, 2026 11:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Toggle Ghostel</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Toggle Ghostel
+<br />
+<span class="subtitle">Jun 23, 2026 10:36</span>
+</h1>
+<p>
+I have been using <a href="https://codeberg.org/akib/emacs-eat">Eat</a> and <a href="https://github.com/justinlime/toggle-term.el">toggle-term.el</a> for terminal emulation in Emacs. After seeing some recommendations for <a href="https://github.com/dakra/ghostel">Ghostel</a>, I decided to give it a try, especially since I use <a href="https://ghostty.org">Ghostty</a> as my terminal emulator on the Mac anyway. All the reports were correct, Ghostel works like a charm, but I didn&rsquo;t have as smooth a toggle experience as I had with Eat. Before switching back, I wondered if I really needed to install a package just to toggle the Ghostel buffer. It turns out that writing a simple toggle function was fairly easy.
+</p>
+
+<p>
+The first function returns the name of the ghostel buffer if there is one. The second function starts ghostel if there is no existing ghostel buffer, switches to the buffer if there is one, and buries the ghostel buffer if it is currently the active buffer. I had to use <code>bind-key*</code> to override the ghostel key-map. 
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">rlr/ghostel-buffer</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-doc">"Return the active ghostel buffer, or nil if none exists."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>seq-find <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-4">(</span>buf<span class="org-rainbow-delimiters-depth-4">)</span>
+              <span class="org-rainbow-delimiters-depth-4">(</span>string-match-p <span class="org-string">"\\*ghostel:"</span> <span class="org-rainbow-delimiters-depth-5">(</span>buffer-name buf<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+            <span class="org-rainbow-delimiters-depth-3">(</span>buffer-list<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">rlr/ghostel-toggle</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>buf <span class="org-rainbow-delimiters-depth-5">(</span>rlr/ghostel-buffer<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">cond</span>
+     <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>not buf<span class="org-rainbow-delimiters-depth-5">)</span>
+      <span class="org-rainbow-delimiters-depth-5">(</span>ghostel<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+     <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>eq <span class="org-rainbow-delimiters-depth-6">(</span>current-buffer<span class="org-rainbow-delimiters-depth-6">)</span> buf<span class="org-rainbow-delimiters-depth-5">)</span>
+      <span class="org-rainbow-delimiters-depth-5">(</span>bury-buffer<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+     <span class="org-rainbow-delimiters-depth-4">(</span>t
+      <span class="org-rainbow-delimiters-depth-5">(</span>switch-to-buffer buf<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">bind-key*</span> <span class="org-string">"&lt;f2&gt;"</span> 'rlr/ghostel-toggle<span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
+</div>
+
+<div class="tagline" id="org72ad262">
+<p>
+Tagged:  <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Jun 23, 2026 11:06.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 31.0.90 (<a href="https://orgmode.org">Org</a> mode 9.8.6).
+</div>
+</footer>
+</body>
+</html>

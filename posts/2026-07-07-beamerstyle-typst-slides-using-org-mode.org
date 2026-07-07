@@ -131,7 +131,7 @@ Most slides are bulleted or numbered lists, but I do sometimes need some layouts
 Two columns, side by side:
 
 #+begin_src org
-  ,** Stoicism
+  ,* Stoicism
   ,** Major Figures
 
   ,#+begin_columns

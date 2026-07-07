@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- Jul 07, 2026 13:34 -->
+<!-- Jul 07, 2026 17:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beamer-Style Typst Slides Using Org Mode</title>
@@ -124,9 +124,9 @@ Emacs does have an Org mode exporter for Typst, <a href="https://github.com/jmpu
 <p>
 Then I started wondering how difficult it would be to make an exporter for Org to Typst that would do what I needed. It turned out to be, once again with the help of Claude, not so difficult. Here is the resulting workflow, from beginning to end.
 </p>
-<section id="outline-container-org0f8ef2a" class="outline-2">
-<h2 id="org0f8ef2a">The Pieces</h2>
-<div class="outline-text-2" id="text-org0f8ef2a">
+<section id="outline-container-org8a9c085" class="outline-2">
+<h2 id="org8a9c085">The Pieces</h2>
+<div class="outline-text-2" id="text-org8a9c085">
 <p>
 Three things work together:
 </p>
@@ -143,9 +143,9 @@ To summarize, a lecture lives in one Org file. Compiling that file produces two 
 </p>
 </div>
 </section>
-<section id="outline-container-orgcf45d65" class="outline-2">
-<h2 id="orgcf45d65">Creating a New Lecture</h2>
-<div class="outline-text-2" id="text-orgcf45d65">
+<section id="outline-container-org1f6f32a" class="outline-2">
+<h2 id="org1f6f32a">Creating a New Lecture</h2>
+<div class="outline-text-2" id="text-org1f6f32a">
 <p>
 <code>M-x rlr/new-touying-presentation</code> asks for a title and a directory, then creates a subdirectory containing:
 </p>
@@ -162,9 +162,9 @@ From then on the loop is: edit <code>talk.org</code>, run <code>M-x rlr/org-expo
 </p>
 </div>
 </section>
-<section id="outline-container-org1b7fae4" class="outline-2">
-<h2 id="org1b7fae4">Two Configuration Options</h2>
-<div class="outline-text-2" id="text-org1b7fae4">
+<section id="outline-container-org4387194" class="outline-2">
+<h2 id="org4387194">Two Configuration Options</h2>
+<div class="outline-text-2" id="text-org4387194">
 <p>
 <code>config.typ</code>&rsquo;s <code>project()</code> function takes two options.
 </p>
@@ -192,9 +192,9 @@ With <code>slide-level: 2</code>, <code>*</code> is a section and <code>**</code
 </p>
 </div>
 </section>
-<section id="outline-container-org1f2b786" class="outline-2">
-<h2 id="org1f2b786">Writing Content</h2>
-<div class="outline-text-2" id="text-org1f2b786">
+<section id="outline-container-orgd416d3f" class="outline-2">
+<h2 id="orgd416d3f">Writing Content</h2>
+<div class="outline-text-2" id="text-orgd416d3f">
 <p>
 Inside <code>talk.org</code>, Org mode headings provide the section, subsection, and slide structure. Plain prose under a frame heading needs no special markup at all.  it just becomes the body of the slide:
 </p>
@@ -237,9 +237,9 @@ Both do not compile to the side on which they don&rsquo;t belong. i.e., speaker 
 </p>
 </div>
 </section>
-<section id="outline-container-org45b6130" class="outline-2">
-<h2 id="org45b6130">Layout Blocks</h2>
-<div class="outline-text-2" id="text-org45b6130">
+<section id="outline-container-org9209411" class="outline-2">
+<h2 id="org9209411">Layout Blocks</h2>
+<div class="outline-text-2" id="text-org9209411">
 <p>
 Most slides are bulleted or numbered lists, but I do sometimes need some layouts that plain prose can&rsquo;t quite capture. There are three more  <code>#+begin_...#+end</code> blocks to cover those cases.
 </p>
@@ -249,7 +249,7 @@ Two columns, side by side:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><code><span class="org-org-level-2">** Stoicism</span>
+<pre class="src src-org"><code><span class="org-org-level-1">* Stoicism</span>
 <span class="org-org-level-2">** Major Figures</span>
 
 <span class="org-org-block-begin-line">#+begin_columns
@@ -326,9 +326,9 @@ frame&rsquo;s title showing above it.
 </p>
 </div>
 </section>
-<section id="outline-container-org34909cd" class="outline-2">
-<h2 id="org34909cd">Compiling</h2>
-<div class="outline-text-2" id="text-org34909cd">
+<section id="outline-container-org54dd3f8" class="outline-2">
+<h2 id="org54dd3f8">Compiling</h2>
+<div class="outline-text-2" id="text-org54dd3f8">
 <p>
 Once <code>talk.org</code> says what I want, <code>M-x rlr/org-export-to-touying-content</code>
 regenerates <code>content.typ</code>, and then it&rsquo;s ordinary Typst:
@@ -408,9 +408,9 @@ The slide deck paginates normally, respects the progressive reveals, and shows s
 </p>
 </div>
 </section>
-<section id="outline-container-orgcc8e0d6" class="outline-2">
-<h2 id="orgcc8e0d6">Why bother</h2>
-<div class="outline-text-2" id="text-orgcc8e0d6">
+<section id="outline-container-orgec6c4b3" class="outline-2">
+<h2 id="orgec6c4b3">Why bother</h2>
+<div class="outline-text-2" id="text-orgec6c4b3">
 <p>
 None of this is strictly necessary &ndash; Touying is perfectly usable directly, and I could just write Typst by hand. What Org buys me is the same thing it buys me everywhere else &mdash; ease of writing and portability of content. In the end, producing the slides in Typst is no harder at all than it is with Beamer, with the added benefit of instant compilation and more accessible final documents.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
 </p>
@@ -419,7 +419,7 @@ None of this is strictly necessary &ndash; Touying is perfectly usable directly,
 The code is on <a href="https://github.com/rlridenour/touying-basic-theme">Github</a>.
 </p>
 
-<div class="tagline" id="orgadcc9a0">
+<div class="tagline" id="orge16e24d">
 <p>
 Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a>  <a href="../tags/typst.html">Typst</a>
 </p>
@@ -441,7 +441,7 @@ Accessibility has, for very good reasons, become very important. We obviously wa
 <footer id="postamble" class="status">
 <div class='footer'>
   Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
-  Last updated on Jul 07, 2026 13:34.<br>
+  Last updated on Jul 07, 2026 17:35.<br>
   Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 31.0.90 (<a href="https://orgmode.org">Org</a> mode 9.8.6).
 </div>
 </footer>

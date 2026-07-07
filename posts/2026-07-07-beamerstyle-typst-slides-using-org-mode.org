@@ -262,7 +262,7 @@ The slide deck paginates normally, respects the progressive reveals, and shows s
 
 None of this is strictly necessary -- Touying is perfectly usable directly, and I could just write Typst by hand. What Org buys me is the same thing it buys me everywhere else --- ease of writing and portability of content. In the end, producing the slides in Typst is no harder at all than it is with Beamer, with the added benefit of instant compilation and more accessible final documents.[fn:1]
 
-The code is on [[https://github.com/rlridenour/touying-basic-theme][Github]].
+The code and a sample presentation is on [[https://github.com/rlridenour/touying-basic-theme][Github]].
 
 #+begin_tagline
 Tagged: [[file:../tags/emacs.org][Emacs]] [[file:../tags/org.org][Org]]  [[file:../tags/typst.org][Typst]]

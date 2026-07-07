@@ -37,3 +37,4 @@
 - [[file:../posts/2026-04-25-emacs-sunk-cost-fallacy.org][Emacs and the Sunk Cost Fallacy]]
 - [[file:../posts/2026-05-03-managing-multiplechoice-questions-with-org-mode.org][Managing Multiple-Choice Questions With Org Mode]]
 - [[file:../posts/2026-06-23-toggle-ghostel.org][Toggle Ghostel]]
+- [[file:../posts/2026-07-07-beamerstyle-typst-slides-using-org-mode.org][Beamer-Style Typst Slides Using Org Mode]]

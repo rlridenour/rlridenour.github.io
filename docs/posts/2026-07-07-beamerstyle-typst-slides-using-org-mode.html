@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Jul 07, 2026 13:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Beamer-Style Typst Slides Using Org Mode</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Beamer-Style Typst Slides Using Org Mode
+<br />
+<span class="subtitle">Jul 07, 2026 09:56</span>
+</h1>
+<p>
+You should note one thing before investing too much time reading what follows: I could not have done this in the time I had available without using an AI tool. So, if you are averse to anything tainted by such things, you&rsquo;re welcome to close the window at any time.
+</p>
+
+<p>
+For years, almost everything that I have written was done with LaTeX. After using several editors, I eventually settled on Emacs. I&rsquo;ve found nothing better than Emacs plus Auctex for editing LaTeX files. The basics of LaTeX are not difficult, so long as you don&rsquo;t need to get into the weeds of the actual TeX code. Still, though, there is a kind of complexity to LaTeX files that would be nice to avoid. For example, a simple enumerated list looks like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><code><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">enumerate</span>}
+  <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> One
+  <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> Two
+  <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> Three
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">enumerate</span>}
+</code></pre>
+</div>
+
+<p>
+The combination of Auctex and Yasnippet makes writing this code simple, but it gets very busy very quickly. If we wanted to add some sub-points to the first item, we&rsquo;d have to do this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex"><code><span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">enumerate</span>}
+  <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> One
+  <span class="org-font-latex-sedate"><span class="org-keyword">\begin</span></span>{<span class="org-function-name">enumerate</span>}
+    <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> One
+    <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> Two
+  <span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">enumerate</span>}
+  <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> Two
+  <span class="org-font-latex-sedate"><span class="org-keyword">\item</span></span> Three
+<span class="org-font-latex-sedate"><span class="org-keyword">\end</span></span>{<span class="org-function-name">enumerate</span>}
+</code></pre>
+</div>
+
+<p>
+Then, I discovered Org mode and life changed for the better. The same list was simply:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code>1. One
+     1. One
+     2. Two
+2. Two
+3. Three
+</code></pre>
+</div>
+
+<p>
+Emacs handles all the numbering automatically. With Org mode, it became possible to write very simple documents, export to LaTeX, and compile the PDF without even having to touch the LaTeX file. Even better, I now had source documents that could become anything I needed, LaTeX, HTML, or even, God forbid, DOCX.
+</p>
+
+<p>
+Org Mode&rsquo;s LaTeX Beamer support made producing lecture slides incredibly quick and easy. Eventually, I developed a workflow by which I could produce Beamer slides and a handout that contained more detailed explanations not found on the slides all from the same source document. I wrote my own Beamer theme called <a href="https://github.com/rlridenour/basic">basic</a>, replicating the Keynote Basic White theme. It&rsquo;s a very simple theme that has white, gray, and black variations and a title slide with room for the university&rsquo;s logo. It works well, and gives me everything I need. The only downside is compilation time. A large presentation that I used this week compiled in twelve seconds for the slides, another seventeen seconds for the handout. Then, as it often goes, I immediately notice a mistake, fix, recompile, repeat&hellip;.
+</p>
+
+<p>
+I played with <a href="https://typst.app">Typst</a> when it first came out. I was impressed, but it wasn&rsquo;t able to do then what I needed. It&rsquo;s now become a robust publishing system with a package system that provides powerful functionality, including a very good presentation package, <a href="https://typst.app/universe/package/touying">Touying</a>. Typst text markup syntax is similar to Org syntax in complexity, and It compiles even complex documents instantly. So, I wondered if I could replicate my slide/handout workflow in Typst.
+</p>
+
+<p>
+With much help from Claude code, I replicated my basic theme and worked out a way to generate the handouts and slides from the same source files. I also made sure that the theme could easily be able to produce the kinds of slides I occasionally used: two-column slides, full-frame image slides with no titles, and slides with a main point centered in the slide, bold-face, with a large type size. Everything worked well, but, in the end, I concluded that I really didn&rsquo;t want to write in Typst, I wanted to write in Org mode.
+</p>
+
+<p>
+Emacs does have an Org mode exporter for Typst, <a href="https://github.com/jmpunkt/ox-typst">ox-typst</a>, which works beautifully for articles, but not so much for my slides. So I concluded that it was a fun exercise for the past few days, but I would just continue making slides using Beamer and Org Mode in my usual way.
+</p>
+
+<p>
+Then I started wondering how difficult it would be to make an exporter for Org to Typst that would do what I needed. It turned out to be, once again with the help of Claude, not so difficult. Here is the resulting workflow, from beginning to end.
+</p>
+<section id="outline-container-org0f8ef2a" class="outline-2">
+<h2 id="org0f8ef2a">The Pieces</h2>
+<div class="outline-text-2" id="text-org0f8ef2a">
+<p>
+Three things work together:
+</p>
+
+<dl class="org-dl">
+<dt><code>basic-theme</code></dt><dd>a theme for Touying that replicates my Beamer theme. It handles the styling of the title and  section slides and provides some  white, black, and gray color variants.</dd>
+<dt><code>rlr-touying-scaffold.el</code></dt><dd>this provides an Emacs command that scaffolds the required files in a new folder. The include an Org file, a config file, and the two Typst files that are compiled to produce the slide deck and the handout.</dd>
+<dt><code>ox-touying.el</code></dt><dd>a custom Org export backend. It turns the Org
+file into the Typst source that is read by the slide deck and handout files. With this, I never need to hand-write Typst markup for ordinary content.</dd>
+</dl>
+
+<p>
+To summarize, a lecture lives in one Org file. Compiling that file produces two documents,  slides to present from, and a handout for students to read.
+</p>
+</div>
+</section>
+<section id="outline-container-orgcf45d65" class="outline-2">
+<h2 id="orgcf45d65">Creating a New Lecture</h2>
+<div class="outline-text-2" id="text-orgcf45d65">
+<p>
+<code>M-x rlr/new-touying-presentation</code> asks for a title and a directory, then creates a subdirectory containing:
+</p>
+
+<ul class="org-ul">
+<li><code>config.typ</code>: theme setup and metadata (title, author, date, institution, logo).</li>
+<li><code>talk.org</code>: where the actual content goes. This starts out as just a <code>#+TITLE:</code> line and a comment to remind me of the conventions below.</li>
+<li><code>&lt;slug&gt;-slides.typ</code> and <code>&lt;slug&gt;-handout.typ</code>: the two compile targets. The file names are created from the lecture title, making it easier to find them with a search.</li>
+<li><code>content.typ</code>: generated from <code>talk.org</code> automatically. I never touch this file directly.</li>
+</ul>
+
+<p>
+From then on the loop is: edit <code>talk.org</code>, run <code>M-x rlr/org-export-to-touying-content</code> to regenerate <code>content.typ</code>, then <code>typst compile</code> whichever target I want to look at. Of course, this being Emacs, I wrote a function that executes both the export, the compilation, and opens the resulting PDF&rsquo;s with a single command.
+</p>
+</div>
+</section>
+<section id="outline-container-org1b7fae4" class="outline-2">
+<h2 id="org1b7fae4">Two Configuration Options</h2>
+<div class="outline-text-2" id="text-org1b7fae4">
+<p>
+<code>config.typ</code>&rsquo;s <code>project()</code> function takes two options.
+</p>
+
+<p>
+<code>variant</code> picks the color scheme: <code>"white"</code> (black on white, the default), <code>"black"</code> (white on black, good for a dim room), or <code>"gray"</code> (black on light gray). Modifying this requires changing one line in <code>config.typ</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-typst"><code>#show: project.with(variant: "black")
+</code></pre>
+</div>
+
+<p>
+<code>slide-level</code> decides how many heading levels a talk uses. Most of my talks are flat require no subsections, so the default is <code>2</code>: a top-level heading is a section, the next level down is a frame. Talks that need a subsection layer in-between require <code>slide-level: 3</code> instead:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-typst"><code>#let project(variant: "white", slide-level: 3, body) = { ... }
+</code></pre>
+</div>
+
+<p>
+With <code>slide-level: 2</code>, <code>*</code> is a section and <code>**</code> is a frame. With <code>slide-level: 3</code>, <code>*</code> is a section, <code>**</code> is a subsection, and <code>***</code> is the frame. Whichever level is &ldquo;the frame&rdquo; is the one whose heading shows up as the bold title at the top of the slide; the levels above it get their own dedicated section/subsection slides instead.
+</p>
+</div>
+</section>
+<section id="outline-container-org1f2b786" class="outline-2">
+<h2 id="org1f2b786">Writing Content</h2>
+<div class="outline-text-2" id="text-org1f2b786">
+<p>
+Inside <code>talk.org</code>, Org mode headings provide the section, subsection, and slide structure. Plain prose under a frame heading needs no special markup at all.  it just becomes the body of the slide:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code><span class="org-org-level-1">* Hellenistic Philosophy</span>
+
+<span class="org-org-level-2">** The Cyrenaics</span>
+
+<span class="org-org-level-3">*** Cyrenaic Hedonism</span>
+
+- Aristippus <span class="org-comment">@@</span><span class="org-org-tag">typst:</span>#pause<span class="org-comment">@@</span>
+- Pleasure is the only good <span class="org-comment">@@</span><span class="org-org-tag">typst:</span>#pause<span class="org-comment">@@</span>
+- Goal: maximize pleasure in every moment
+</code></pre>
+</div>
+
+
+<p>
+The <code>@@typst:#pause@@</code> line is Org&rsquo;s own &ldquo;export snippet&rdquo; syntax, which passes raw target-format text straight through untouched. It provides the reveal content function It&rsquo;s equivalent to the Beamer <code>\pause</code> command.
+</p>
+
+<p>
+Speaker notes (shown only to the speaker, via Touying&rsquo;s second-screen view) and handout notes (reader-only context that never appears on the live slides, only in the printed handout) are each their own block:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code><span class="org-org-block-begin-line">  #+begin_speakernote
+</span>  The goal is maximizing pleasure across a lifetime by maximizing pleasure in every single moement through self-indulgence.
+<span class="org-org-block-end-line">  #+end_speakernote
+</span>
+<span class="org-org-block-begin-line">  #+begin_handoutnote
+</span>The goal is maximizing pleasure across a lifetime by maximizing pleasure in every single moement through self-indulgence. This is a naive hedonism, especially compared to the Epicureans. For example, consider a person who spends any money they have as soon as they get it vs. a person who saves her money for a year to get something she really wants. Who will have the greatest pleasure over the course of their life?
+<span class="org-org-block-end-line">  #+end_handoutnote</span>
+</code></pre>
+</div>
+
+<p>
+Both do not compile to the side on which they don&rsquo;t belong. i.e., speaker notes never reach the handout and handout notes never reach the slide deck.
+</p>
+</div>
+</section>
+<section id="outline-container-org45b6130" class="outline-2">
+<h2 id="org45b6130">Layout Blocks</h2>
+<div class="outline-text-2" id="text-org45b6130">
+<p>
+Most slides are bulleted or numbered lists, but I do sometimes need some layouts that plain prose can&rsquo;t quite capture. There are three more  <code>#+begin_...#+end</code> blocks to cover those cases.
+</p>
+
+<p>
+Two columns, side by side:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code><span class="org-org-level-2">** Stoicism</span>
+<span class="org-org-level-2">** Major Figures</span>
+
+<span class="org-org-block-begin-line">#+begin_columns
+</span>#+begin<span class="org-org-latex-and-related">_column</span>
+- <span class="org-bold">Classical</span>
+    - Zeno of Citium
+    - Cleanthes
+    - Chrysippus
+#+end<span class="org-org-latex-and-related">_column</span>
+#+begin<span class="org-org-latex-and-related">_column</span>
+- <span class="org-bold">Roman</span>
+    - Marcus Aurelius
+    - Seneca
+    - Epictetus
+#+end<span class="org-org-latex-and-related">_column</span>
+<span class="org-org-block-end-line">#+end_columns</span>
+</code></pre>
+</div>
+
+<p>
+A full-frame image, no title, no margins:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code><span class="org-org-level-2">** The School of Athens</span>
+
+<span class="org-org-block-begin-line">#+begin_fullslide
+</span><span class="org-org-link"><a href="file:school-athens.jpg">file:school-athens.jpg</a></span>
+<span class="org-org-block-end-line">#+end_fullslide</span>
+</code></pre>
+</div>
+
+<p>
+A lone image inside <code>#+begin_fullslide</code> is automatically sized to cover the whole slide. That&rsquo;s fine for an image that is close to the 16:9 landscape slide format. If a specific size is desired instead, an <code>#+ATTR_TOUYING:</code> line right before the image link overrides that:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code><span class="org-org-block-begin-line">#+begin_fullslide
+</span>#+ATTR<span class="org-org-latex-and-related">_TOUYING</span>: :width 60% :height 300pt :fit "contain"
+<span class="org-org-link"><a href="file:school-athens.jpg">file:school-athens.jpg</a></span>
+<span class="org-org-block-end-line">#+end_fullslide</span>
+</code></pre>
+</div>
+
+<p>
+The same <code>#+ATTR_TOUYING:</code> mechanism works on any image, full-bleed or not;  <code>:width</code>, <code>:height</code>, and <code>:fit</code> pass straight through to Typst&rsquo;s <code>image()</code>, and <code>:align</code> (e.g. <code>center</code>, <code>center + horizon</code>) wraps the image so it&rsquo;s centered in its container, since alignment belongs to the surrounding box in Typst, not to the image itself:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code><span class="org-org-meta-line">#+ATTR_TOUYING: :width 40% :align center</span>
+<span class="org-org-link"><a href="file:diagram.png">file:diagram.png</a></span>
+</code></pre>
+</div>
+
+<p>
+And last, a big centered &ldquo;statement&rdquo; slide &ndash; the kind of slide that&rsquo;s just one line, large, in the middle of an otherwise empty frame, for the one claim in a lecture I want to land without any visual clutter around it:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code><span class="org-org-level-2">** The Thesis</span>
+
+<span class="org-org-block-begin-line">#+begin_fullslide
+</span>#+ATTR<span class="org-org-latex-and-related">_TOUYING</span>: :size 2.5em
+#+begin<span class="org-org-latex-and-related">_statement</span>
+Virtue is the only good.
+#+end<span class="org-org-latex-and-related">_statement</span>
+<span class="org-org-block-end-line">#+end_fullslide</span>
+</code></pre>
+</div>
+
+<p>
+Nested inside <code>#+begin_fullslide</code> like that, the frame has no title at all &ndash; just the sentence, centered both horizontally and vertically, at whatever size <code>:size</code> asks for (<code>2em</code> if omitted). Left outside a <code>fullslide</code>, the same block still centers its text but leaves the
+frame&rsquo;s title showing above it.
+</p>
+</div>
+</section>
+<section id="outline-container-org34909cd" class="outline-2">
+<h2 id="org34909cd">Compiling</h2>
+<div class="outline-text-2" id="text-org34909cd">
+<p>
+Once <code>talk.org</code> says what I want, <code>M-x rlr/org-export-to-touying-content</code>
+regenerates <code>content.typ</code>, and then it&rsquo;s ordinary Typst:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><code>typst compile my-talk-slides.typ    <span class="org-comment-delimiter"># </span><span class="org-comment">what I present from
+</span>typst compile my-talk-handout.typ   <span class="org-comment-delimiter"># </span><span class="org-comment">what students get afterward</span>
+</code></pre>
+</div>
+
+
+<p>
+I use this Fish function to compile both and open the respective PDF files without Emacs losing focus:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-fish"><code><span class="org-keyword">function</span> <span class="org-function-name">compile-touying-deck</span> <span class="org-negation-char">--description</span> <span class="org-string">'typst compile the *slides.typ and *handout.typ files in a directory'</span>
+    <span class="org-keyword">set</span> <span class="org-negation-char">-l</span> <span class="org-variable-name">dir</span> .
+    <span class="org-keyword">if</span> <span class="org-keyword">test</span> <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-builtin">count</span> <span class="org-string">$</span><span class="org-variable-name">argv</span><span class="org-rainbow-delimiters-depth-1">)</span> -gt <span class="org-constant">0</span>
+        <span class="org-keyword">set</span> <span class="org-variable-name">dir</span> <span class="org-string">$</span><span class="org-variable-name">argv</span><span class="org-rainbow-delimiters-depth-1">[</span><span class="org-constant">1</span><span class="org-rainbow-delimiters-depth-1">]</span>
+    <span class="org-keyword">end</span>
+
+    <span class="org-keyword">if</span> <span class="org-negation-char">not</span> <span class="org-keyword">test</span> -d <span class="org-string">$</span><span class="org-variable-name">dir</span>
+        <span class="org-builtin">echo</span> <span class="org-string">"compile-touying-deck: not a directory: $dir"</span><span class="org-negation-char"> &gt;&amp;2
+</span>        <span class="org-keyword">return</span> <span class="org-builtin">1</span>
+    <span class="org-keyword">end</span>
+
+    <span class="org-keyword">set</span> <span class="org-negation-char">-l</span> <span class="org-variable-name">files</span> <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-builtin">find</span> <span class="org-string">$</span><span class="org-variable-name">dir</span> -maxdepth <span class="org-constant">1</span> -type f <span class="org-negation-char">\</span>( -name <span class="org-string">'*slides.typ'</span> -o -name <span class="org-string">'*handout.typ'</span> <span class="org-negation-char">\</span>) <span class="org-negation-char">|</span> <span class="org-builtin">sort</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+    <span class="org-keyword">if</span> <span class="org-keyword">test</span> <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-builtin">count</span> <span class="org-string">$</span><span class="org-variable-name">files</span><span class="org-rainbow-delimiters-depth-1">)</span> -eq <span class="org-constant">0</span>
+        <span class="org-builtin">echo</span> <span class="org-string">"compile-touying-deck: no *slides.typ or *handout.typ files found in $dir"</span><span class="org-negation-char"> &gt;&amp;2
+</span>        <span class="org-keyword">return</span> <span class="org-builtin">1</span>
+    <span class="org-keyword">end</span>
+
+    <span class="org-keyword">set</span> <span class="org-negation-char">-l</span> <span class="org-variable-name">failed</span> <span class="org-constant">0</span>
+    <span class="org-keyword">for</span> <span class="org-builtin">file</span> in <span class="org-string">$</span><span class="org-variable-name">files</span>
+        <span class="org-builtin">echo</span> <span class="org-string">"Compiling $file..."</span>
+        <span class="org-keyword">if</span> <span class="org-negation-char">not</span> typst compile <span class="org-string">$</span><span class="org-variable-name">file</span>
+            <span class="org-keyword">set</span> <span class="org-variable-name">failed</span> <span class="org-constant">1</span>
+        <span class="org-keyword">end</span>
+    <span class="org-keyword">end</span>
+    <span class="org-builtin">wait</span>
+    <span class="org-builtin">open</span> -g *.pdf
+
+    <span class="org-keyword">return</span> <span class="org-string">$</span><span class="org-variable-name">failed</span>
+<span class="org-keyword">end</span>
+</code></pre>
+</div>
+
+<p>
+There is, of course, no need to leave Emacs for the shell.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">compile-typst-lecture</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-doc">"Compiles the slides.typ and handout.typ files in the directory."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+    <span class="org-rainbow-delimiters-depth-2">(</span>shell-command <span class="org-string">"compile-touying-deck"</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
+</div>
+
+<p>
+Even better is to export, compile, and open the PDF files with a single command:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">rlr/org-mktouying</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+    <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+<span class="org-rainbow-delimiters-depth-2">(</span>rlr/org-export-to-touying-content<span class="org-rainbow-delimiters-depth-2">)</span>
+<span class="org-rainbow-delimiters-depth-2">(</span>compile-typst-lecture<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
+</div>
+
+<p>
+The slide deck paginates normally, respects the progressive reveals, and shows speaker notes on a second screen. The handout collapses the whole thing into one flowing document &ndash; no pagination, headings numbered (1, 1.1, 1.2, &hellip;), and a plain line above each handout note marking where the text stops being something the audience actually saw and starts being added context for the reader.
+</p>
+</div>
+</section>
+<section id="outline-container-orgcc8e0d6" class="outline-2">
+<h2 id="orgcc8e0d6">Why bother</h2>
+<div class="outline-text-2" id="text-orgcc8e0d6">
+<p>
+None of this is strictly necessary &ndash; Touying is perfectly usable directly, and I could just write Typst by hand. What Org buys me is the same thing it buys me everywhere else &mdash; ease of writing and portability of content. In the end, producing the slides in Typst is no harder at all than it is with Beamer, with the added benefit of instant compilation and more accessible final documents.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
+</p>
+
+<p>
+The code is on <a href="https://github.com/rlridenour/touying-basic-theme">Github</a>.
+</p>
+
+<div class="tagline" id="orgadcc9a0">
+<p>
+Tagged: <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a>  <a href="../tags/typst.html">Typst</a>
+</p>
+
+</div>
+</div>
+</section>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes</h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Accessibility has, for very good reasons, become very important. We obviously want all of our products to be as accessible as possible to all of our students. Typst has an excellent <a href="https://typst.app/docs/guides/accessibility/">accessibility guide</a> to help in that endeavor.
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Jul 07, 2026 13:34.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 31.0.90 (<a href="https://orgmode.org">Org</a> mode 9.8.6).
+</div>
+</footer>
+</body>
+</html>

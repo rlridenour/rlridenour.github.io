@@ -1,6 +1,7 @@
 #+TITLE: Blog Index
 
-- [[file:2026-06-23-toggle-ghostel.org][Toggle Ghostel]]
+- [[file:2026-07-07-beamerstyle-typst-slides-using-org-mode.org][Beamer-Style Typst Slides Using Org Mode]]
+- [[file:2026-06-23-toggle-ghostel.org][2026-06-23-toggle-ghostel]]
 - [[file:2026-06-17-bonhoeffer-stupidity.org][Bonhoeffer on Stupidity]]
 - [[file:2026-06-11-sayrelaw.org][Sayre's Law]]
 - [[file:2026-06-06-coincidence.org][Coincidence?]]

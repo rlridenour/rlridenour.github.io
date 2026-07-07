@@ -1,0 +1,273 @@
+#+TITLE: Beamer-Style Typst Slides Using Org Mode
+#+date: <2026-07-07 Tue 09:56>
+#+filetags: emacs org typst
+#+setupfile: ../org-templates/post.org
+
+You should note one thing before investing too much time reading what follows: I could not have done this in the time I had available without using an AI tool. So, if you are averse to anything tainted by such things, you're welcome to close the window at any time.
+
+For years, almost everything that I have written was done with LaTeX. After using several editors, I eventually settled on Emacs. I've found nothing better than Emacs plus Auctex for editing LaTeX files. The basics of LaTeX are not difficult, so long as you don't need to get into the weeds of the actual TeX code. Still, though, there is a kind of complexity to LaTeX files that would be nice to avoid. For example, a simple enumerated list looks like this:
+
+#+begin_src latex
+  \begin{enumerate}
+    \item One
+    \item Two
+    \item Three
+  \end{enumerate}
+#+end_src
+
+The combination of Auctex and Yasnippet makes writing this code simple, but it gets very busy very quickly. If we wanted to add some sub-points to the first item, we'd have to do this:
+
+#+begin_src latex
+  \begin{enumerate}
+    \item One
+    \begin{enumerate}
+      \item One
+      \item Two
+    \end{enumerate}
+    \item Two
+    \item Three
+  \end{enumerate}
+#+end_src
+
+Then, I discovered Org mode and life changed for the better. The same list was simply:
+
+#+begin_src org
+  1. One
+       1. One
+       2. Two
+  2. Two
+  3. Three
+#+end_src
+
+Emacs handles all the numbering automatically. With Org mode, it became possible to write very simple documents, export to LaTeX, and compile the PDF without even having to touch the LaTeX file. Even better, I now had source documents that could become anything I needed, LaTeX, HTML, or even, God forbid, DOCX.
+
+Org Mode's LaTeX Beamer support made producing lecture slides incredibly quick and easy. Eventually, I developed a workflow by which I could produce Beamer slides and a handout that contained more detailed explanations not found on the slides all from the same source document. I wrote my own Beamer theme called [[https://github.com/rlridenour/basic][basic]], replicating the Keynote Basic White theme. It's a very simple theme that has white, gray, and black variations and a title slide with room for the university's logo. It works well, and gives me everything I need. The only downside is compilation time. A large presentation that I used this week compiled in twelve seconds for the slides, another seventeen seconds for the handout. Then, as it often goes, I immediately notice a mistake, fix, recompile, repeat....
+
+I played with [[https://typst.app][Typst]] when it first came out. I was impressed, but it wasn't able to do then what I needed. It's now become a robust publishing system with a package system that provides powerful functionality, including a very good presentation package, [[https://typst.app/universe/package/touying][Touying]]. Typst text markup syntax is similar to Org syntax in complexity, and It compiles even complex documents instantly. So, I wondered if I could replicate my slide/handout workflow in Typst.
+
+With much help from Claude code, I replicated my basic theme and worked out a way to generate the handouts and slides from the same source files. I also made sure that the theme could easily be able to produce the kinds of slides I occasionally used: two-column slides, full-frame image slides with no titles, and slides with a main point centered in the slide, bold-face, with a large type size. Everything worked well, but, in the end, I concluded that I really didn't want to write in Typst, I wanted to write in Org mode.
+
+Emacs does have an Org mode exporter for Typst, [[https://github.com/jmpunkt/ox-typst][ox-typst]], which works beautifully for articles, but not so much for my slides. So I concluded that it was a fun exercise for the past few days, but I would just continue making slides using Beamer and Org Mode in my usual way.
+
+Then I started wondering how difficult it would be to make an exporter for Org to Typst that would do what I needed. It turned out to be, once again with the help of Claude, not so difficult. Here is the resulting workflow, from beginning to end.
+
+* The Pieces
+
+Three things work together:
+
+- ~basic-theme~ :: a theme for Touying that replicates my Beamer theme. It handles the styling of the title and  section slides and provides some  white, black, and gray color variants.
+- ~rlr-touying-scaffold.el~ :: this provides an Emacs command that scaffolds the required files in a new folder. The include an Org file, a config file, and the two Typst files that are compiled to produce the slide deck and the handout.
+- ~ox-touying.el~ :: a custom Org export backend. It turns the Org
+  file into the Typst source that is read by the slide deck and handout files. With this, I never need to hand-write Typst markup for ordinary content.
+
+To summarize, a lecture lives in one Org file. Compiling that file produces two documents,  slides to present from, and a handout for students to read.
+
+* Creating a New Lecture
+
+~M-x rlr/new-touying-presentation~ asks for a title and a directory, then creates a subdirectory containing:
+
+- ~config.typ~: theme setup and metadata (title, author, date, institution, logo).
+- ~talk.org~: where the actual content goes. This starts out as just a ~#+TITLE:~ line and a comment to remind me of the conventions below.
+- ~<slug>-slides.typ~ and ~<slug>-handout.typ~: the two compile targets. The file names are created from the lecture title, making it easier to find them with a search.
+- ~content.typ~: generated from ~talk.org~ automatically. I never touch this file directly.
+
+From then on the loop is: edit ~talk.org~, run ~M-x rlr/org-export-to-touying-content~ to regenerate ~content.typ~, then ~typst compile~ whichever target I want to look at. Of course, this being Emacs, I wrote a function that executes both the export, the compilation, and opens the resulting PDF's with a single command.
+
+* Two Configuration Options
+
+~config.typ~'s ~project()~ function takes two options.
+
+~variant~ picks the color scheme: ~"white"~ (black on white, the default), ~"black"~ (white on black, good for a dim room), or ~"gray"~ (black on light gray). Modifying this requires changing one line in ~config.typ~:
+
+#+begin_src typst
+#show: project.with(variant: "black")
+#+end_src
+
+~slide-level~ decides how many heading levels a talk uses. Most of my talks are flat require no subsections, so the default is ~2~: a top-level heading is a section, the next level down is a frame. Talks that need a subsection layer in-between require ~slide-level: 3~ instead:
+
+#+begin_src typst
+#let project(variant: "white", slide-level: 3, body) = { ... }
+#+end_src
+
+With ~slide-level: 2~, ~*~ is a section and ~**~ is a frame. With ~slide-level: 3~, ~*~ is a section, ~**~ is a subsection, and ~***~ is the frame. Whichever level is "the frame" is the one whose heading shows up as the bold title at the top of the slide; the levels above it get their own dedicated section/subsection slides instead.
+
+* Writing Content
+
+Inside ~talk.org~, Org mode headings provide the section, subsection, and slide structure. Plain prose under a frame heading needs no special markup at all.  it just becomes the body of the slide:
+
+#+begin_src org
+,* Hellenistic Philosophy
+
+,** The Cyrenaics
+
+,*** Cyrenaic Hedonism
+
+- Aristippus @@typst:#pause@@
+- Pleasure is the only good @@typst:#pause@@
+- Goal: maximize pleasure in every moment
+#+end_src
+
+
+The ~@@typst:#pause@@~ line is Org's own "export snippet" syntax, which passes raw target-format text straight through untouched. It provides the reveal content function It's equivalent to the Beamer =\pause= command.
+
+Speaker notes (shown only to the speaker, via Touying's second-screen view) and handout notes (reader-only context that never appears on the live slides, only in the printed handout) are each their own block:
+
+#+begin_src org
+  ,#+begin_speakernote
+  The goal is maximizing pleasure across a lifetime by maximizing pleasure in every single moement through self-indulgence.
+  ,#+end_speakernote
+
+  ,#+begin_handoutnote
+The goal is maximizing pleasure across a lifetime by maximizing pleasure in every single moement through self-indulgence. This is a naive hedonism, especially compared to the Epicureans. For example, consider a person who spends any money they have as soon as they get it vs. a person who saves her money for a year to get something she really wants. Who will have the greatest pleasure over the course of their life?
+  ,#+end_handoutnote
+#+end_src
+
+Both do not compile to the side on which they don't belong. i.e., speaker notes never reach the handout and handout notes never reach the slide deck.
+
+* Layout Blocks
+
+Most slides are bulleted or numbered lists, but I do sometimes need some layouts that plain prose can't quite capture. There are three more  ~#+begin_...#+end~ blocks to cover those cases.
+
+Two columns, side by side:
+
+#+begin_src org
+  ,** Stoicism
+  ,** Major Figures
+
+  ,#+begin_columns
+  ,#+begin_column
+  - *Classical*
+      - Zeno of Citium
+      - Cleanthes
+      - Chrysippus
+  ,#+end_column
+  ,#+begin_column
+  - *Roman*
+      - Marcus Aurelius
+      - Seneca
+      - Epictetus
+  ,#+end_column
+  ,#+end_columns
+#+end_src
+
+A full-frame image, no title, no margins:
+
+#+begin_src org
+,** The School of Athens
+
+,#+begin_fullslide
+[[file:school-athens.jpg]]
+,#+end_fullslide
+#+end_src
+
+A lone image inside ~#+begin_fullslide~ is automatically sized to cover the whole slide. That's fine for an image that is close to the 16:9 landscape slide format. If a specific size is desired instead, an ~#+ATTR_TOUYING:~ line right before the image link overrides that:
+
+#+begin_src org
+,#+begin_fullslide
+,#+ATTR_TOUYING: :width 60% :height 300pt :fit "contain"
+[[file:school-athens.jpg]]
+,#+end_fullslide
+#+end_src
+
+The same ~#+ATTR_TOUYING:~ mechanism works on any image, full-bleed or not;  ~:width~, ~:height~, and ~:fit~ pass straight through to Typst's ~image()~, and ~:align~ (e.g. ~center~, ~center + horizon~) wraps the image so it's centered in its container, since alignment belongs to the surrounding box in Typst, not to the image itself:
+
+#+begin_src org
+,#+ATTR_TOUYING: :width 40% :align center
+[[file:diagram.png]]
+#+end_src
+
+And last, a big centered "statement" slide -- the kind of slide that's just one line, large, in the middle of an otherwise empty frame, for the one claim in a lecture I want to land without any visual clutter around it:
+
+#+begin_src org
+  ,** The Thesis
+
+  ,#+begin_fullslide
+  ,#+ATTR_TOUYING: :size 2.5em
+  ,#+begin_statement
+  Virtue is the only good.
+  ,#+end_statement
+  ,#+end_fullslide
+#+end_src
+
+Nested inside ~#+begin_fullslide~ like that, the frame has no title at all -- just the sentence, centered both horizontally and vertically, at whatever size ~:size~ asks for (~2em~ if omitted). Left outside a ~fullslide~, the same block still centers its text but leaves the
+frame's title showing above it.
+
+* Compiling
+
+Once ~talk.org~ says what I want, ~M-x rlr/org-export-to-touying-content~
+regenerates ~content.typ~, and then it's ordinary Typst:
+
+#+begin_src sh
+typst compile my-talk-slides.typ    # what I present from
+typst compile my-talk-handout.typ   # what students get afterward
+#+end_src
+
+
+I use this Fish function to compile both and open the respective PDF files without Emacs losing focus:
+
+#+begin_src fish
+function compile-touying-deck --description 'typst compile the *slides.typ and *handout.typ files in a directory'
+    set -l dir .
+    if test (count $argv) -gt 0
+        set dir $argv[1]
+    end
+
+    if not test -d $dir
+        echo "compile-touying-deck: not a directory: $dir" >&2
+        return 1
+    end
+
+    set -l files (find $dir -maxdepth 1 -type f \( -name '*slides.typ' -o -name '*handout.typ' \) | sort)
+
+    if test (count $files) -eq 0
+        echo "compile-touying-deck: no *slides.typ or *handout.typ files found in $dir" >&2
+        return 1
+    end
+
+    set -l failed 0
+    for file in $files
+        echo "Compiling $file..."
+        if not typst compile $file
+	  set failed 1
+        end
+    end
+    wait
+    open -g *.pdf
+
+    return $failed
+end
+#+end_src
+
+There is, of course, no need to leave Emacs for the shell.
+
+#+begin_src emacs-lisp
+(defun compile-typst-lecture ()
+  "Compiles the slides.typ and handout.typ files in the directory."
+  (interactive)
+    (shell-command "compile-touying-deck"))
+#+end_src
+
+Even better is to export, compile, and open the PDF files with a single command:
+
+#+begin_src emacs-lisp
+  (defun rlr/org-mktouying ()
+      (interactive)
+  (rlr/org-export-to-touying-content)
+  (compile-typst-lecture))
+#+end_src
+
+The slide deck paginates normally, respects the progressive reveals, and shows speaker notes on a second screen. The handout collapses the whole thing into one flowing document -- no pagination, headings numbered (1, 1.1, 1.2, ...), and a plain line above each handout note marking where the text stops being something the audience actually saw and starts being added context for the reader.
+
+* Why bother
+
+None of this is strictly necessary -- Touying is perfectly usable directly, and I could just write Typst by hand. What Org buys me is the same thing it buys me everywhere else --- ease of writing and portability of content. In the end, producing the slides in Typst is no harder at all than it is with Beamer, with the added benefit of instant compilation and more accessible final documents.[fn:1]
+
+The code is on [[https://github.com/rlridenour/touying-basic-theme][Github]].
+
+#+begin_tagline
+Tagged: [[file:../tags/emacs.org][Emacs]] [[file:../tags/org.org][Org]]  [[file:../tags/typst.org][Typst]]
+#+end_tagline
+
+* Footnotes
+
+[fn:1] Accessibility has, for very good reasons, become very important. We obviously want all of our products to be as accessible as possible to all of our students. Typst has an excellent [[https://typst.app/docs/guides/accessibility/][accessibility guide]] to help in that endeavor.

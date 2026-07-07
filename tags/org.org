@@ -13,3 +13,5 @@
 - [[file:../posts/2025-02-12-duplicate-org-beamer-title-slides.org][Duplicate Org Beamer Title Slides]]
 
 - [[file:../posts/2026-05-03-managing-multiplechoice-questions-with-org-mode.org][Managing Multiple-Choice Questions With Org Mode]]
+- [[file:../posts/2026-07-07-beamerstyle-typst-slides-using-org-mode.org][Beamer-Style Typst Slides Using Org Mode]]
+- [[file:../posts/2026-07-07-beamerstyle-typst-slides-using-org-mode.org][Beamer-Style Typst Slides Using Org Mode]]

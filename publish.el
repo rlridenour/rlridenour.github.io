@@ -186,6 +186,12 @@ publishing directory. Returns output file name."
          :publishing-directory "./docs/assets"
          :publishing-function org-publish-attachment
          :recursive t)
+        ("slipshow"
+         :base-directory "./slipshow"
+         :base-extension "html"
+         :publishing-directory "./docs/slipshow"
+         :publishing-function org-publish-attachment
+         :recursive t)
         ("cname"
          :base-directory "./cname"
          ;; :base-extension ,site-attachments

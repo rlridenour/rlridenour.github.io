@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Aug 17, 2026 19:55 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HTML Preview for Org Files</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">HTML Preview for Org Files
+<br />
+<span class="subtitle">Aug 17, 2026 18:49</span>
+</h1>
+<p>
+I&rsquo;ve long been a fan of Brett Terpstra&rsquo;s <a href="https://markedapp.com/">Marked</a> for easily reading Markdown files. Over the years, he&rsquo;s added more and more features. He&rsquo;s recently released <a href="https://markedapp.com/">Marked 3</a> which, if you need those features, is well worth the purchase price of $2.99/month subscription or a one-time purchase of $69.99. There are only two small things keeping me from upgrading:
+</p>
+
+<ol class="org-ol">
+<li>I don&rsquo;t need any of those features — in fact, since everything I write begins as an Org mode file, I don&rsquo;t really need a Markdown previewer.</li>
+<li>I teach philosophy at a small liberal arts college in a rapidly collapsing market.</li>
+</ol>
+
+<p>
+So, I don&rsquo;t need a Markdown previewer, but an Org mode previewer would be nice. I guess I could have Claude code a Mac app like Marked for Org files, but since Org exports to HTML, it shouldn&rsquo;t be that difficult to export the HTML to a temporary file, style it with some CSS, open it in a browser, then have it automatically deleted when no longer needed.
+</p>
+
+<p>
+Here is the export function and the CSS for styling the output.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><code><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">rlr/org-export-html-to-browser</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-doc">"Export the current Org buffer to a temporary HTML file in the system temp directory, open it, and then delete it when Emacs is killed."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">unless</span> <span class="org-rainbow-delimiters-depth-3">(</span>derived-mode-p 'org-mode<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-warning">user-error</span> <span class="org-string">"Not in an Org buffer"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let*</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>tmp <span class="org-rainbow-delimiters-depth-5">(</span>make-temp-file <span class="org-string">"org-preview-"</span> nil <span class="org-string">".html"</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span>org-export-in-background nil<span class="org-rainbow-delimiters-depth-4">)</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span>org-html-head-include-default-style nil<span class="org-rainbow-delimiters-depth-4">)</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span>org-html-head-include-scripts nil<span class="org-rainbow-delimiters-depth-4">)</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span>org-html-head rlr/org-preview-css<span class="org-rainbow-delimiters-depth-4">)</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span>org-html-validation-link nil<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>org-export-to-file 'html tmp<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>add-hook 'kill-emacs-hook
+              <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-5">()</span> <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">ignore-errors</span> <span class="org-rainbow-delimiters-depth-6">(</span>delete-file tmp<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>browse-url-of-file tmp<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-css"><code><span class="org-rainbow-delimiters-depth-1">(</span>defvar rlr/org-preview-css <span class="org-string">"
+&lt;style&gt;
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 40rem;
+    margin: 3rem auto;
+    padding: 0 1.25rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Iowan Old Style','Palatino Linotype', Georgia, serif;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: #24292f;
+    background: #fdfdfc;
+    text-rendering: optimizeLegibility;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    line-height: 1.25;
+    margin-top: 2.25em;
+    color: #14181c;
+  }
+  h1 { font-size: 1.9rem; margin-bottom: 0.2em; }
+  h2 { font-size: 1.45rem; }
+  h3 { font-size: 1.2rem; }
+  .title { text-align: left; margin-bottom: 2rem; }
+  #table-of-contents { font-size: 0.95rem; }
+  a { color: #0b5cad; text-underline-offset: 2px; }
+  blockquote {
+    margin: 1.5em 0; padding: 0.25em 0 0.25em 1.25em;
+    border-left: 3px solid #d0d7de; color: #4a5058; font-style: italic;
+  }
+  pre, code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.9rem; }
+  pre {
+    background: #f4f4f2; padding: 0.9em 1.1em;
+    border-radius: 6px; overflow-x: auto; line-height: 1.45;
+  }
+  code { background: #f0f0ee; padding: 0.1em 0.3em; border-radius: 3px; }
+  pre code { background: none; padding: 0; }
+  table { border-collapse: collapse; margin: 1.5em 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #d0d7de; padding: 0.4em 0.7em; text-align: left; }
+  th { background: #f4f4f2; }
+  hr { border: none; border-top: 1px solid #d8d8d4; margin: 2.5em 0; }
+  .footpara { display: inline; }
+  #postamble { margin-top: 3rem; font-size: 0.85rem; color: #6a707a; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #d6d3cd; background: #16181a; }
+    h1, h2, h3, h4 { color: #f0ede8; }
+    a { color: #6cb3f5; }
+    blockquote { border-left-color: #3a3f45; color: #a8a49d; }
+    pre { background: #1e2124; }
+    code { background: #24282c; }
+    th, td { border-color: #3a3f45; }
+    th { background: #1e2124; }
+    hr { border-top-color: #2e3236; }
+  }
+&lt;/style&gt;"</span>
+  <span class="org-string">"Stylesheet injected into throwaway HTML previews of Org buffers."</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</code></pre>
+</div>
+
+<div class="tagline" id="org99c72c7">
+<p>
+Tagged:  <a href="../tags/emacs.html">Emacs</a> <a href="../tags/org.html">Org</a>
+</p>
+
+</div>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Aug 17, 2026 19:55.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 31.0.91 (<a href="https://orgmode.org">Org</a> mode 9.8.7).
+</div>
+</footer>
+</body>
+</html>

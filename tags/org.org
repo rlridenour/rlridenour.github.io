@@ -15,3 +15,4 @@
 - [[file:../posts/2026-05-03-managing-multiplechoice-questions-with-org-mode.org][Managing Multiple-Choice Questions With Org Mode]]
 - [[file:../posts/2026-07-07-beamerstyle-typst-slides-using-org-mode.org][Beamer-Style Typst Slides Using Org Mode]]
 - [[file:../posts/2026-07-07-beamerstyle-typst-slides-using-org-mode.org][Beamer-Style Typst Slides Using Org Mode]]
+- [[file:../posts/2026-08-17-html-preview-for-org-files.org][HTML Preview for Org Files]]

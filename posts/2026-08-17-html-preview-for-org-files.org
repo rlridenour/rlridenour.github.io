@@ -1,0 +1,95 @@
+#+TITLE: HTML Preview for Org Files
+#+date: <2026-08-17 Mon 18:49>
+#+filetags:  emacs org
+#+setupfile: ../org-templates/post.org
+
+I've long been a fan of Brett Terpstra's [[https://markedapp.com/][Marked]] for easily reading Markdown files. Over the years, he's added more and more features. He's recently released [[https://markedapp.com/][Marked 3]] which, if you need those features, is well worth the purchase price of $2.99/month subscription or a one-time purchase of $69.99. There are only two small things keeping me from upgrading:
+
+1. I don't need any of those features — in fact, since everything I write begins as an Org mode file, I don't really need a Markdown previewer.
+2. I teach philosophy at a small liberal arts college in a rapidly collapsing market.
+
+So, I don't need a Markdown previewer, but an Org mode previewer would be nice. I guess I could have Claude code a Mac app like Marked for Org files, but since Org exports to HTML, it shouldn't be that difficult to export the HTML to a temporary file, style it with some CSS, open it in a browser, then have it automatically deleted when no longer needed.
+
+Here is the export function and the CSS for styling the output.
+
+#+begin_src emacs-lisp
+(defun rlr/org-export-html-to-browser ()
+  "Export the current Org buffer to a temporary HTML file in the system temp directory, open it, and then delete it when Emacs is killed."
+  (interactive)
+  (unless (derived-mode-p 'org-mode)
+    (user-error "Not in an Org buffer"))
+  (let* ((tmp (make-temp-file "org-preview-" nil ".html"))
+         (org-export-in-background nil)
+         (org-html-head-include-default-style nil)
+         (org-html-head-include-scripts nil)
+         (org-html-head rlr/org-preview-css)
+         (org-html-validation-link nil))
+    (org-export-to-file 'html tmp)
+    (add-hook 'kill-emacs-hook
+              (lambda () (ignore-errors (delete-file tmp))))
+    (browse-url-of-file tmp)))
+#+end_src
+
+#+begin_src css
+(defvar rlr/org-preview-css "
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 40rem;
+    margin: 3rem auto;
+    padding: 0 1.25rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Iowan Old Style','Palatino Linotype', Georgia, serif;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: #24292f;
+    background: #fdfdfc;
+    text-rendering: optimizeLegibility;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    line-height: 1.25;
+    margin-top: 2.25em;
+    color: #14181c;
+  }
+  h1 { font-size: 1.9rem; margin-bottom: 0.2em; }
+  h2 { font-size: 1.45rem; }
+  h3 { font-size: 1.2rem; }
+  .title { text-align: left; margin-bottom: 2rem; }
+  #table-of-contents { font-size: 0.95rem; }
+  a { color: #0b5cad; text-underline-offset: 2px; }
+  blockquote {
+    margin: 1.5em 0; padding: 0.25em 0 0.25em 1.25em;
+    border-left: 3px solid #d0d7de; color: #4a5058; font-style: italic;
+  }
+  pre, code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.9rem; }
+  pre {
+    background: #f4f4f2; padding: 0.9em 1.1em;
+    border-radius: 6px; overflow-x: auto; line-height: 1.45;
+  }
+  code { background: #f0f0ee; padding: 0.1em 0.3em; border-radius: 3px; }
+  pre code { background: none; padding: 0; }
+  table { border-collapse: collapse; margin: 1.5em 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #d0d7de; padding: 0.4em 0.7em; text-align: left; }
+  th { background: #f4f4f2; }
+  hr { border: none; border-top: 1px solid #d8d8d4; margin: 2.5em 0; }
+  .footpara { display: inline; }
+  #postamble { margin-top: 3rem; font-size: 0.85rem; color: #6a707a; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #d6d3cd; background: #16181a; }
+    h1, h2, h3, h4 { color: #f0ede8; }
+    a { color: #6cb3f5; }
+    blockquote { border-left-color: #3a3f45; color: #a8a49d; }
+    pre { background: #1e2124; }
+    code { background: #24282c; }
+    th, td { border-color: #3a3f45; }
+    th { background: #1e2124; }
+    hr { border-top-color: #2e3236; }
+  }
+</style>"
+  "Stylesheet injected into throwaway HTML previews of Org buffers.")
+#+end_src
+
+#+begin_tagline
+Tagged:  [[file:../tags/emacs.org][Emacs]] [[file:../tags/org.org][Org]]
+#+end_tagline

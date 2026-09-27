@@ -1,0 +1,10 @@
+#+TITLE: Movie Poster Collection
+#+date: <2026-09-27 Sun 05:37>
+#+filetags:  film
+#+setupfile: ../org-templates/post.org
+
+[[https://www.reelizer.com][Reelizer]], is a collection of movie art by [[https://tinch.co][Roger Erik Tinch.]] Have fun browsing!
+
+#+begin_tagline
+Tagged:  [[file:../tags/film.org][Film]]
+#+end_tagline

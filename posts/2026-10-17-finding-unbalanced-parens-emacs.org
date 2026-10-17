@@ -1,0 +1,12 @@
+#+TITLE: Finding Unbalanced Parens in Emacs
+#+date: <2026-10-17 Sat 05:46>
+#+filetags:  emacs
+#+setupfile: ../org-templates/post.org
+
+I live in Emacs, and usually only restart it when absolutely necessary. When I do restart, I occasionally get the dreaded message that there's something wrong with my init file. I'm then prompted to start with the =--debug-init= switch, which I rarely find helpful. It's been my experience that the error is often from having unbalanced parens somewhere, and I've always found them by brute force---commenting out half of the file, restarting, commenting out another half, restarting, etc. This is a tedious job with an init file that is thousands of lines long.
+
+Recently, I stumbled on the =check-parens= function. Run it from the beginning of the buffer, and it will stop at the outermost open paren that contains the error. I don't know how many hours this would have saved me in the past, but better late than never.
+
+#+begin_tagline
+Tagged:  [[file:../tags/emacs.org][Emacs]]
+#+end_tagline

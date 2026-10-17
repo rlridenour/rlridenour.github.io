@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Oct 17, 2026 06:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Finding Unbalanced Parens in Emacs</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Finding Unbalanced Parens in Emacs
+<br />
+<span class="subtitle">Oct 17, 2026 05:46</span>
+</h1>
+<p>
+I live in Emacs, and usually only restart it when absolutely necessary. When I do restart, I occasionally get the dreaded message that there&rsquo;s something wrong with my init file. I&rsquo;m then prompted to start with the <code>--debug-init</code> switch, which I rarely find helpful. It&rsquo;s been my experience that the error is often from having unbalanced parens somewhere, and I&rsquo;ve always found them by brute force&mdash;commenting out half of the file, restarting, commenting out another half, restarting, etc. This is a tedious job with an init file that is thousands of lines long.
+</p>
+
+<p>
+Recently, I stumbled on the <code>check-parens</code> function. Run it from the beginning of the buffer, and it will stop at the outermost open paren that contains the error. I don&rsquo;t know how many hours this would have saved me in the past, but better late than never.
+</p>
+
+<div class="tagline" id="org3c8b2ff">
+<p>
+Tagged:  <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+</main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Oct 17, 2026 06:08.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 31.1 (<a href="https://orgmode.org">Org</a> mode 9.8.7).
+</div>
+</footer>
+</body>
+</html>

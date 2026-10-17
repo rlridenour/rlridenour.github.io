@@ -1,5 +1,6 @@
 #+TITLE: Blog Index
 
+- [[file:2026-10-17-finding-unbalanced-parens-emacs.org][Finding Unbalanced Parens in Emacs]]
 - [[file:2026-09-27-movie-poster-collection.org][Movie Poster Collection]]
 - [[file:2026-08-17-html-preview-for-org-files.org][HTML Preview for Org Files]]
 - [[file:2026-07-07-beamerstyle-typst-slides-using-org-mode.org][Beamer-Style Typst Slides Using Org Mode]]

@@ -1,0 +1,44 @@
+#+TITLE: Emacs Literate Calc Mode
+#+date: <2026-11-01 Sun 16:56>
+#+filetags:  emacs
+#+setupfile: ../org-templates/post.org
+
+My calculation needs are usually fairly simple — adding up exam scores, solving a few basic probability problems, etc. Most of the time, Emacs Calc is  more than enough. There are a few times, though, when it's useful to have the calculation embedded in a page of notes. In these instances, I've always used [[https://soulver.app][Soulver]] on the Mac.
+
+I recently stumbled on [[https://github.com/sulami/literate-calc-mode.el][Literate Calc Mode]] by Robin[fn:1] that does everything I was using Soulver for, and I now have one more reason to not leave Emacs. It's in Melpa, so installing it is simple. Once required, it provides both =literate-calc-mode= and =literate-calc-minor-mode=. I find the minor mode particularly useful for Org mode scratch buffers. For example, I used it recently to sketch out some details for a conference funding request. In an Org buffer, I entered:
+
+#+begin_src org
+Expenses for February 2027 Baylor Trip
+
+Hotel = 500
+Parking = 10
+Registration = 295
+Mileage = 300
+Meals = 200
+
+Total = Hotel + Parking + Registration + Mileage + Meals
+#+end_src
+
+Then, =M-x literate-calc-minor-mode= instantly changed it to this:
+
+#+begin_src org
+Expenses for February 2027 Baylor Trip
+
+Hotel = 500 => Hotel: 500
+Parking = 10 => Parking: 10
+Registration = 295 => Registration: 295
+Mileage = 300 => Mileage: 300
+Meals = 200 => Meals: 200
+
+Total = Hotel + Parking + Registration + Mileage + Meals => Total: 1,305
+#+end_src
+
+The part of each line beginning with ==>= is not editable and displayed in a lighter shade. Changing one of the variable values results in an instant update of the total. It uses Calc, so it is able to do almost anything that Calc can do. So far, I've used it to plan travel expenses and to build material lists for woodworking projects. It works flawlessly and I've found it surprisingly useful to have a scratchpad that can automatically do the math.
+
+#+begin_tagline
+Tagged:  [[file:../tags/emacs.org][Emacs]]
+#+end_tagline
+
+* Footnotes
+
+[fn:1] I couldn't find a last name on the site. 

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Nov 02, 2026 13:13 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs Literate Calc Mode</title>
+<meta name="author" content="Randy Ridenour" />
+<meta name="generator" content="Org Mode" />
+<link rel='icon' type='image/x-icon' href='/images/favicon.ico'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='/css/normalize.css' type='text/css'/>
+<link rel='stylesheet' href='/css/main.css' type='text/css'/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<header id="top" class="status">
+<div class="banner">
+  <h2><a href="/">Randy Ridenour</a></h2>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/posts/rss.xml">Feed</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main id="content" class="content">
+<h1 class="title">Emacs Literate Calc Mode
+<br />
+<span class="subtitle">Nov 01, 2026 16:56</span>
+</h1>
+<p>
+My calculation needs are usually fairly simple — adding up exam scores, solving a few basic probability problems, etc. Most of the time, Emacs Calc is  more than enough. There are a few times, though, when it&rsquo;s useful to have the calculation embedded in a page of notes. In these instances, I&rsquo;ve always used <a href="https://soulver.app">Soulver</a> on the Mac.
+</p>
+
+<p>
+I recently stumbled on <a href="https://github.com/sulami/literate-calc-mode.el">Literate Calc Mode</a> by Robin<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> that does everything I was using Soulver for, and I now have one more reason to not leave Emacs. It&rsquo;s in Melpa, so installing it is simple. Once required, it provides both <code>literate-calc-mode</code> and <code>literate-calc-minor-mode</code>. I find the minor mode particularly useful for Org mode scratch buffers. For example, I used it recently to sketch out some details for a conference funding request. In an Org buffer, I entered:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code>Expenses for February 2027 Baylor Trip
+
+Hotel = 500
+Parking = 10
+Registration = 295
+Mileage = 300
+Meals = 200
+
+Total = Hotel + Parking + Registration + Mileage + Meals
+</code></pre>
+</div>
+
+<p>
+Then, <code>M-x literate-calc-minor-mode</code> instantly changed it to this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code>Expenses for February 2027 Baylor Trip
+
+Hotel = 500 =&gt; Hotel: 500
+Parking = 10 =&gt; Parking: 10
+Registration = 295 =&gt; Registration: 295
+Mileage = 300 =&gt; Mileage: 300
+Meals = 200 =&gt; Meals: 200
+
+Total = Hotel + Parking + Registration + Mileage + Meals =&gt; Total: 1,305
+</code></pre>
+</div>
+
+<p>
+The part of each line beginning with <code>=&gt;</code> is not editable and displayed in a lighter shade. Changing one of the variable values results in an instant update of the total. It uses Calc, so it is able to do almost anything that Calc can do. So far, I&rsquo;ve used it to plan travel expenses and to build material lists for woodworking projects. It works flawlessly and I&rsquo;ve found it surprisingly useful to have a scratchpad that can automatically do the math.
+</p>
+
+<div class="tagline" id="orge7e628f">
+<p>
+Tagged:  <a href="../tags/emacs.html">Emacs</a>
+</p>
+
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes</h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+I couldn&rsquo;t find a last name on the site. 
+</p></div></div>
+
+
+</div>
+</div></main>
+<footer id="postamble" class="status">
+<div class='footer'>
+  Copyright © 2026 <a href='mailto:rlridenour@fastmail.com'>Randy Ridenour.</a><br>
+  Last updated on Nov 02, 2026 13:13.<br>
+  Generated using <a href="https://www.gnu.org/software/emacs/">Emacs</a> 31.1 (<a href="https://orgmode.org">Org</a> mode 9.8.7).
+</div>
+</footer>
+</body>
+</html>
